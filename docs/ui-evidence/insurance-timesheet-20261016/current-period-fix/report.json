@@ -1,0 +1,147 @@
+{
+  "recordedAt": "2026-10-16T01:40:27.771Z",
+  "states": [
+    {
+      "width": 320,
+      "geometry": {
+        "section": {
+          "x": 31,
+          "y": 524.890625,
+          "width": 248,
+          "height": 235.078125
+        },
+        "header": {
+          "x": 32,
+          "y": 525.890625,
+          "width": 246,
+          "height": 92.796875
+        },
+        "facts": {
+          "x": 32,
+          "y": 618.6875,
+          "width": 246,
+          "height": 140.28125
+        },
+        "body": {
+          "x": 13,
+          "y": 93.59375,
+          "width": 284,
+          "height": 793.40625,
+          "clientHeight": 793,
+          "scrollHeight": 1913,
+          "overflowY": "auto",
+          "gridAutoRows": "max-content"
+        },
+        "headerText": "Kỳ đóng gần nhất\n10/2026\nChưa đóng",
+        "factsText": "Mức lương đóng\n12.000.000 ₫\nTỷ lệ đóng\n10%\nTạm tính\n1.200.000 ₫\nĐã đóng\n—"
+      }
+    },
+    {
+      "width": 390,
+      "geometry": {
+        "section": {
+          "x": 31,
+          "y": 501,
+          "width": 318,
+          "height": 235.078125
+        },
+        "header": {
+          "x": 32,
+          "y": 502,
+          "width": 316,
+          "height": 92.796875
+        },
+        "facts": {
+          "x": 32,
+          "y": 594.796875,
+          "width": 316,
+          "height": 140.28125
+        },
+        "body": {
+          "x": 13,
+          "y": 90,
+          "width": 354,
+          "height": 797,
+          "clientHeight": 797,
+          "scrollHeight": 1833,
+          "overflowY": "auto",
+          "gridAutoRows": "max-content"
+        },
+        "headerText": "Kỳ đóng gần nhất\n10/2026\nChưa đóng",
+        "factsText": "Mức lương đóng\n12.000.000 ₫\nTỷ lệ đóng\n10%\nTạm tính\n1.200.000 ₫\nĐã đóng\n—"
+      }
+    },
+    {
+      "width": 768,
+      "geometry": {
+        "section": {
+          "x": 41,
+          "y": 357.375,
+          "width": 676,
+          "height": 145.125
+        },
+        "header": {
+          "x": 42,
+          "y": 358.375,
+          "width": 674,
+          "height": 60.546875
+        },
+        "facts": {
+          "x": 42,
+          "y": 418.921875,
+          "width": 674,
+          "height": 82.578125
+        },
+        "body": {
+          "x": 17,
+          "y": 94,
+          "width": 724,
+          "height": 789,
+          "clientHeight": 789,
+          "scrollHeight": 888,
+          "overflowY": "auto",
+          "gridAutoRows": "max-content"
+        },
+        "headerText": "Kỳ đóng gần nhất\n10/2026\nChưa đóng",
+        "factsText": "Mức lương đóng\n12.000.000 ₫\nTỷ lệ đóng\n10%\nTạm tính\n1.200.000 ₫\nĐã đóng\n—"
+      }
+    },
+    {
+      "width": 1440,
+      "geometry": {
+        "section": {
+          "x": 300,
+          "y": 357.375,
+          "width": 830,
+          "height": 145.125
+        },
+        "header": {
+          "x": 301,
+          "y": 358.375,
+          "width": 828,
+          "height": 60.546875
+        },
+        "facts": {
+          "x": 301,
+          "y": 418.921875,
+          "width": 828,
+          "height": 82.578125
+        },
+        "body": {
+          "x": 276,
+          "y": 94,
+          "width": 878,
+          "height": 789,
+          "clientHeight": 789,
+          "scrollHeight": 888,
+          "overflowY": "auto",
+          "gridAutoRows": "max-content"
+        },
+        "headerText": "Kỳ đóng gần nhất\n10/2026\nChưa đóng",
+        "factsText": "Mức lương đóng\n12.000.000 ₫\nTỷ lệ đóng\n10%\nTạm tính\n1.200.000 ₫\nĐã đóng\n—"
+      }
+    }
+  ],
+  "runtimeErrors": [],
+  "passed": true
+}

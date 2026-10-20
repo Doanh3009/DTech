@@ -1,0 +1,1 @@
+import { documentReverse } from "@/features/warehouse/services/documentRouteHandlers"; export function POST(request:Request,context:RouteContext<"/api/v1/warehouse/issues/[id]/reverse">){return documentReverse(request,context.params,"issue");}

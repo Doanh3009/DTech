@@ -1,0 +1,126 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "dimensions": {
+      "viewport": 1440,
+      "content": 1430,
+      "images": [
+        {
+          "width": 500,
+          "height": 320,
+          "frameHeight": 320,
+          "fit": "contain"
+        },
+        {
+          "width": 500,
+          "height": 320,
+          "frameHeight": 320,
+          "fit": "contain"
+        }
+      ],
+      "hasTable": false
+    },
+    "markAndNext": true,
+    "undo": true,
+    "photoZoom": true,
+    "flagsPersisted": true,
+    "dateScope": true,
+    "runtimeErrors": []
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "dimensions": {
+      "viewport": 1920,
+      "content": 1910,
+      "images": [
+        {
+          "width": 732,
+          "height": 378,
+          "frameHeight": 378,
+          "fit": "contain"
+        },
+        {
+          "width": 732,
+          "height": 378,
+          "frameHeight": 378,
+          "fit": "contain"
+        }
+      ],
+      "hasTable": false
+    },
+    "markAndNext": true,
+    "undo": true,
+    "photoZoom": true,
+    "flagsPersisted": true,
+    "dateScope": true,
+    "runtimeErrors": []
+  },
+  {
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "dimensions": {
+      "viewport": 768,
+      "content": 758,
+      "images": [
+        {
+          "width": 340,
+          "height": 358,
+          "frameHeight": 358,
+          "fit": "contain"
+        },
+        {
+          "width": 340,
+          "height": 358,
+          "frameHeight": 358,
+          "fit": "contain"
+        }
+      ],
+      "hasTable": false
+    },
+    "markAndNext": true,
+    "undo": true,
+    "photoZoom": true,
+    "flagsPersisted": true,
+    "dateScope": true,
+    "runtimeErrors": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "dimensions": {
+      "viewport": 390,
+      "content": 390,
+      "images": [
+        {
+          "width": 330,
+          "height": 270,
+          "frameHeight": 270,
+          "fit": "contain"
+        },
+        {
+          "width": 330,
+          "height": 270,
+          "frameHeight": 270,
+          "fit": "contain"
+        }
+      ],
+      "hasTable": false
+    },
+    "markAndNext": true,
+    "undo": true,
+    "photoZoom": true,
+    "flagsPersisted": true,
+    "dateScope": true,
+    "runtimeErrors": []
+  }
+]

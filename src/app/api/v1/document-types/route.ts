@@ -1,0 +1,2 @@
+import { listDocumentTypes } from "@/features/shared-platforms/services/documentRepository";import { errorResponse } from "@/lib/api/errors";import { successResponse } from "@/lib/api/responses";import { getRequestUser } from "@/services/auth/getRequestUser";import { requireAuthenticatedUser } from "@/services/authorization/requirePermission";
+export async function GET(){try{requireAuthenticatedUser(await getRequestUser());return successResponse(await listDocumentTypes());}catch(error){return errorResponse(error);}}

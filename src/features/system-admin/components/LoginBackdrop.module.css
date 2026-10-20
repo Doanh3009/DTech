@@ -1,0 +1,226 @@
+.scene {
+  --edge-inset: clamp(16px, 2vw, 40px);
+  --edge-size: clamp(108px, calc((100vw - 1080px) / 2 - 56px), 220px);
+  position: absolute;
+  container-type: size;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(135deg, #fcfefa 0%, #fffffe 48%, #fbfdff 100%);
+}
+.washes { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mintWash { fill: #e4f7ee; opacity: .56; }
+.mintRibbon { fill: #e9f8f2; opacity: .46; }
+.blueWash { fill: #e9f4fc; opacity: .68; }
+.blueRibbon { fill: #e5f2fc; opacity: .46; }
+.beigeWash { fill: #fff4e5; opacity: .5; }
+.beigeRibbon { fill: #faeedc; opacity: .3; }
+.icon { position: absolute; width: var(--edge-size); height: auto; color: #80b7b6; opacity: .62; overflow: visible; }
+.icon :is(path, line, polyline, polygon, circle, ellipse, rect) { vector-effect: non-scaling-stroke; }
+.crane { top: 6%; left: clamp(16px, calc((100vw - 1320px) / 2), 156px); --crane-lift: 6px; --cable-stretch: 1.0714; }
+.helmet { top: 42%; left: var(--edge-inset); width: calc(var(--edge-size) * .82); color: #c1a080; --float-distance: 4px; animation: float 8s ease-in-out -2.6s infinite; }
+.gear { top: 21%; left: var(--edge-inset); width: clamp(60px, calc(var(--edge-size) * .38), 86px); color: #8fb7ca; }
+.blueprint { bottom: 16%; left: var(--edge-inset); width: calc(var(--edge-size) * .94); color: #a0b6cb; }
+.wrench { bottom: 4%; left: calc(var(--edge-inset) + var(--edge-size) * .42); width: calc(var(--edge-size) * .58); --float-distance: 4px; animation: float 11s ease-in-out -7.1s infinite; }
+.beam { top: 3%; right: calc(var(--edge-inset) + var(--edge-size) * .65); width: calc(var(--edge-size) * .88); color: #89abcd; }
+.hook { top: 5%; right: var(--edge-inset); width: calc(var(--edge-size) * .46); color: #c7a583; }
+.vest { top: 31%; right: var(--edge-inset); width: calc(var(--edge-size) * .65); }
+.building { top: 52%; right: var(--edge-inset); width: calc(var(--edge-size) * .9); color: #94b7d2; }
+.rail { bottom: 4%; right: calc(var(--edge-inset) + var(--edge-size) * .5); width: calc(var(--edge-size) * 1.08); color: #9db6ce; }
+.tape { bottom: 3%; right: 12px; width: calc(var(--edge-size) * .42); color: #c9a98a; --float-distance: 3px; animation: float 9.5s ease-in-out -4.2s infinite; }
+
+.crane [data-part="crane-hook"] { animation: crane-lift 9s ease-in-out -1.8s infinite; }
+.crane [data-part="crane-cable"] { transform-box: fill-box; transform-origin: 50% 0%; animation: cable-lift 9s ease-in-out -1.8s infinite; }
+.gear [data-part="gear-rotor"] { transform-box: fill-box; transform-origin: center; animation: gear-turn 28s linear infinite; }
+.rail [data-part="rail-sheen"] { opacity: 0; stroke: #e9f7ff; stroke-width: 2.2; stroke-dasharray: .12 .88; animation: rail-pass 10s ease-in-out -3.2s infinite; }
+.rail [data-part="rail-sheen"][data-stage="2"] { animation-delay: -6.8s; }
+.beam [data-part="beam-line"] { stroke-dasharray: 1; animation: beam-draw 10s ease-in-out infinite; }
+.beam [data-stage="2"] { animation-delay: -.9s; }
+.beam [data-stage="3"] { animation-delay: -1.8s; }
+.beam [data-stage="4"] { animation-delay: -2.7s; }
+.beam [data-stage="5"] { animation-delay: -3.6s; }
+.blueprint [data-part="blueprint-layer"] { animation: trace-reveal 11s ease-in-out infinite; }
+.blueprint [data-stage="1"] { animation-delay: -1s; }
+.blueprint [data-stage="2"] { animation-delay: -4.2s; }
+.blueprint [data-stage="3"] { animation-delay: -7.4s; }
+.building [data-part="building-floor"] { animation: floor-reveal 12s ease-in-out infinite; }
+.building [data-stage="1"] { animation-delay: -9s; }
+.building [data-stage="2"] { animation-delay: -6s; }
+.building [data-stage="3"] { animation-delay: -3s; }
+.hook [data-part="industrial-hook"] { animation: hook-lift 8.5s ease-in-out -5.3s infinite; }
+.vest [data-part="vest-lines"] { animation: vest-breathe 9.2s ease-in-out -6.4s infinite; }
+
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(calc(-1 * var(--float-distance, 4px))); } }
+@keyframes crane-lift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(var(--crane-lift, 6px)); } }
+@keyframes cable-lift { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(var(--cable-stretch, 1.0714)); } }
+@keyframes gear-turn { to { transform: rotate(360deg); } }
+@keyframes rail-pass { 0% { stroke-dashoffset: 1; opacity: 0; } 12%, 82% { opacity: .7; } 100% { stroke-dashoffset: -1; opacity: 0; } }
+@keyframes beam-draw { 0%, 8% { stroke-dashoffset: 1; opacity: .35; } 38%, 68% { stroke-dashoffset: 0; opacity: .9; } 94%, 100% { stroke-dashoffset: 1; opacity: .35; } }
+@keyframes trace-reveal { 0%, 100% { opacity: .22; } 38%, 58% { opacity: .9; } }
+@keyframes floor-reveal { 0%, 100% { opacity: .2; } 30%, 57% { opacity: .9; } }
+@keyframes hook-lift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+@keyframes vest-breathe { 0%, 100% { opacity: .52; } 50% { opacity: .94; } }
+
+@media (max-width: 1599px) and (min-width: 1101px) {
+  .scene { --edge-inset: 16px; --edge-size: clamp(92px, calc((100vw - 1080px) / 2 - 34px), 170px); }
+  .crane { left: var(--edge-inset); top: 5%; }
+  .gear { top: 33%; left: 26px; width: 58px; }
+  .helmet { top: 48%; }
+  .beam { top: 2%; right: var(--edge-inset); }
+  .hook { top: 15%; right: calc(var(--edge-inset) + 18px); width: 64px; }
+  .vest { top: 36%; }
+  .building { top: 54%; }
+  .rail { bottom: 8%; right: var(--edge-inset); }
+  .tape { right: 22px; bottom: 1%; width: 62px; }
+  .blueprint { bottom: 14%; }
+  .wrench { left: 28px; bottom: 2%; width: 72px; }
+}
+@media (max-width: 1100px) {
+  .scene { --edge-size: 110px; }
+  .icon { opacity: .42; }
+  .crane { top: 3%; left: 8px; }
+  .gear { left: 12px; top: 43%; width: 60px; }
+  .helmet { top: 68%; left: 8px; width: 92px; }
+  .beam { top: 2%; right: 8px; width: 110px; }
+  .building { top: 44%; right: 8px; width: 105px; }
+  .rail { bottom: 1%; right: 12px; width: 120px; }
+  .blueprint, .wrench, .hook, .vest, .tape { display: none; }
+}
+@media (max-width: 767px) {
+  .icon { opacity: .34; }
+  .crane { left: -18px; top: 2%; width: 78px; --crane-lift: 3px; --cable-stretch: 1.0357; }
+  .helmet { left: -12px; top: auto; bottom: 8%; width: 78px; --float-distance: 2px; }
+  .beam { top: 5%; right: -18px; width: 88px; }
+  .rail { right: -18px; bottom: 1%; width: 104px; }
+  .gear, .building { display: none; }
+  .mintWash, .blueWash, .beigeWash { opacity: .38; }
+  .mintRibbon, .blueRibbon, .beigeRibbon { opacity: .22; }
+}
+@media (min-width: 901px) and (max-width: 1100px) {
+  .building { top: auto; bottom: 2%; }
+}
+@media (max-width: 360px) {
+  .helmet { bottom: 4%; }
+  .rail { bottom: 0; width: 88px; }
+}
+
+/* Travel and local drawing motion use separate elements so they can run together. */
+.traveler {
+  --travel-size: clamp(96px, calc((100cqw - 1080px) / 4 - 32px), 150px);
+  --route-left: clamp(80px, calc((100cqw - 1080px) / 4), 220px);
+  --route-right: calc(100cqw - var(--route-left));
+  --route-top: clamp(84px, calc((100cqh - 650px) / 4), 160px);
+  --route-bottom: calc(100cqh - var(--route-top));
+  --turn: 48px;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: var(--travel-size);
+  height: var(--travel-size);
+  opacity: .8;
+  animation: perimeter-travel 60s linear var(--orbit-delay, 0s) infinite;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .traveler .icon { position: static; width: 100%; height: 100%; opacity: 1; }
+  .traveler .helmet, .traveler .wrench { --float-distance: 8px; }
+  .traveler .tape { --float-distance: 7px; }
+}
+.traveler.crane { --orbit-delay: -56s; --lane-delay: 0s; }
+.traveler.gear { --orbit-delay: -51s; --lane-delay: -5.6s; }
+.traveler.helmet { --orbit-delay: -45s; --lane-delay: -11.2s; --float-distance: 8px; }
+.traveler.blueprint { --orbit-delay: -40s; --lane-delay: -16.8s; }
+.traveler.wrench { --orbit-delay: -34s; --lane-delay: -22.4s; --float-distance: 8px; }
+.traveler.rail { --orbit-delay: -29s; --lane-delay: -23.3s; }
+.traveler.tape { --orbit-delay: -23s; --lane-delay: -18.6s; --float-distance: 7px; }
+.traveler.building { --orbit-delay: -18s; --lane-delay: -14s; }
+.traveler.vest { --orbit-delay: -12s; --lane-delay: -9.3s; }
+.traveler.hook { --orbit-delay: -7s; --lane-delay: -4.6s; }
+.traveler.beam { --orbit-delay: -1s; --lane-delay: 0s; }
+
+@keyframes perimeter-travel {
+  0%, 100% { transform: translate(calc(var(--route-left) + var(--turn)), var(--route-top)) translate(-50%, -50%); }
+  23% { transform: translate(calc(var(--route-right) - var(--turn)), var(--route-top)) translate(-50%, -50%); }
+  24% { transform: translate(calc(var(--route-right) - 14px), calc(var(--route-top) + 14px)) translate(-50%, -50%); }
+  25% { transform: translate(var(--route-right), calc(var(--route-top) + var(--turn))) translate(-50%, -50%); }
+  48% { transform: translate(var(--route-right), calc(var(--route-bottom) - var(--turn))) translate(-50%, -50%); }
+  49% { transform: translate(calc(var(--route-right) - 14px), calc(var(--route-bottom) - 14px)) translate(-50%, -50%); }
+  50% { transform: translate(calc(var(--route-right) - var(--turn)), var(--route-bottom)) translate(-50%, -50%); }
+  73% { transform: translate(calc(var(--route-left) + var(--turn)), var(--route-bottom)) translate(-50%, -50%); }
+  74% { transform: translate(calc(var(--route-left) + 14px), calc(var(--route-bottom) - 14px)) translate(-50%, -50%); }
+  75% { transform: translate(var(--route-left), calc(var(--route-bottom) - var(--turn))) translate(-50%, -50%); }
+  98% { transform: translate(var(--route-left), calc(var(--route-top) + var(--turn))) translate(-50%, -50%); }
+  99% { transform: translate(calc(var(--route-left) + 14px), calc(var(--route-top) + 14px)) translate(-50%, -50%); }
+}
+
+/* Shorter screens have no room for a complete orbit above the login card. */
+@media (max-width: 1599px), (max-height: 899px) {
+  .traveler {
+    --travel-size: clamp(64px, calc((100cqw - 1080px) / 2 - 40px), 94px);
+    --side-center: max(12px, calc((100cqw - 1080px) / 4));
+    --lane-x: var(--side-center);
+    --lane-top: calc(-1 * var(--travel-size));
+    --lane-bottom: calc(100cqh + var(--travel-size));
+    animation: side-travel 28s linear var(--lane-delay, 0s) infinite;
+  }
+  .traveler:is(.beam, .hook, .vest, .building, .rail, .tape) {
+    --lane-x: calc(100cqw - var(--side-center));
+    animation-direction: reverse;
+  }
+}
+@keyframes side-travel {
+  0% { transform: translate(var(--lane-x), var(--lane-top)) translate(-50%, -50%); opacity: 0; }
+  8%, 92% { opacity: .82; }
+  100% { transform: translate(var(--lane-x), var(--lane-bottom)) translate(-50%, -50%); opacity: 0; }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .traveler { --travel-size: 76px; opacity: .72; }
+  .traveler:is(.crane, .beam) { --lane-delay: 0s; }
+  .traveler:is(.gear, .building) { --lane-delay: -9.33s; }
+  .traveler:is(.helmet, .rail) { --lane-delay: -18.66s; }
+}
+@media (max-width: 767px) {
+  .traveler { --travel-size: 60px; opacity: .72; }
+  .traveler .helmet { --float-distance: 2px; }
+  .traveler:is(.crane, .beam) { --travel-size: 76px; animation: mobile-top-swap 22s ease-in-out infinite; opacity: .94; }
+  .traveler.beam { animation-delay: -11s; }
+  .traveler:is(.helmet, .rail) {
+    --travel-size: 76px;
+    --bottom-top: max(606px, calc(100cqh - 140px));
+    --bottom-bottom: max(664px, calc(100cqh - 44px));
+    --bottom-middle: calc((var(--bottom-top) + var(--bottom-bottom)) / 2);
+    --bottom-upper: calc((var(--bottom-top) * 3 + var(--bottom-bottom)) / 4);
+    --bottom-lower: calc((var(--bottom-top) + var(--bottom-bottom) * 3) / 4);
+    animation: mobile-bottom-swap 20s linear infinite;
+  }
+  .traveler.rail { animation-delay: -10s; }
+}
+@keyframes mobile-top-swap {
+  0%, 100% { transform: translate(17px, 52px) translate(-50%, -50%); }
+  20% { transform: translate(17px, 160px) translate(-50%, -50%); }
+  27%, 93% { transform: translate(17px, -38px) translate(-50%, -50%); }
+  43%, 77% { transform: translate(calc(100cqw - 17px), -38px) translate(-50%, -50%); }
+  50% { transform: translate(calc(100cqw - 17px), 52px) translate(-50%, -50%); }
+  70% { transform: translate(calc(100cqw - 17px), 160px) translate(-50%, -50%); }
+}
+@keyframes mobile-bottom-swap {
+  0%, 100% { transform: translate(52px, var(--bottom-middle)) translate(-50%, -50%); }
+  12.5% { transform: translate(25cqw, var(--bottom-upper)) translate(-50%, -50%); }
+  25% { transform: translate(50cqw, var(--bottom-top)) translate(-50%, -50%); }
+  37.5% { transform: translate(75cqw, var(--bottom-upper)) translate(-50%, -50%); }
+  50% { transform: translate(calc(100cqw - 52px), var(--bottom-middle)) translate(-50%, -50%); }
+  62.5% { transform: translate(75cqw, var(--bottom-lower)) translate(-50%, -50%); }
+  75% { transform: translate(50cqw, var(--bottom-bottom)) translate(-50%, -50%); }
+  87.5% { transform: translate(25cqw, var(--bottom-lower)) translate(-50%, -50%); }
+}
+@media (max-width: 360px) {
+  .traveler:is(.helmet, .rail) { --travel-size: 52px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene .traveler { width: 100%; height: 100%; opacity: 1; animation: none; transform: none; }
+  .scene .icon, .scene .icon * { animation: none; transform: none; }
+  .rail [data-part="rail-sheen"] { opacity: 0; }
+  .beam [data-part="beam-line"] { stroke-dashoffset: 0; opacity: .8; }
+  .blueprint [data-part="blueprint-layer"], .building [data-part="building-floor"] { opacity: .75; }
+  .vest [data-part="vest-lines"] { opacity: .8; }
+}

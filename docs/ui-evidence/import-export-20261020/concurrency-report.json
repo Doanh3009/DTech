@@ -1,0 +1,549 @@
+{
+  "runId": "20261020385186",
+  "startedAt": "2026-10-20T03:26:15.517Z",
+  "baseUrl": "http://localhost:3300",
+  "environment": "test",
+  "cases": [
+    {
+      "id": "SETUP",
+      "name": "Dữ liệu riêng và phiên đăng nhập theo vai trò",
+      "kind": "SETUP",
+      "status": "PASS",
+      "ms": 30900
+    },
+    {
+      "id": "WH-01",
+      "name": "Tạo hàng hóa, đơn vị tính và hai kho riêng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 17702
+    },
+    {
+      "id": "XNK-01",
+      "name": "Nhà cung cấp → hợp đồng → lô hàng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 13199
+    },
+    {
+      "id": "CONCURRENT-01",
+      "name": "Tám vai trò đọc dữ liệu đồng thời bằng phiên riêng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 7781
+    },
+    {
+      "id": "CONCURRENT-02",
+      "name": "Hai người cập nhật ETA cùng phiên bản: một thành công, một xung đột",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 10233
+    },
+    {
+      "id": "CONCURRENT-03",
+      "name": "Hai người sửa thông quan cùng phiên bản không ghi đè nhau",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1708
+    },
+    {
+      "id": "CONCURRENT-04",
+      "name": "Gửi lập phiếu nhập đồng thời cùng mã yêu cầu chỉ tạo một phiếu",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 4429
+    },
+    {
+      "id": "CONCURRENT-05",
+      "name": "Ghi sổ cùng phiếu từ hai phiên chỉ tăng tồn và thực nhận một lần",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 25537
+    },
+    {
+      "id": "CONCURRENT-06",
+      "name": "Hai phiếu khác nhau ghi sổ đồng thời không nhận vượt lô hàng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 15701
+    },
+    {
+      "id": "UI-SHIPMENT-NAV",
+      "name": "Đổi cả bảy tab giữ trang, bản nháp và không tải lại dữ liệu lô hàng",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 87713
+    },
+    {
+      "id": "SEAL",
+      "name": "Khóa tài khoản E2E, giữ chứng từ và audit trên database test",
+      "kind": "SETUP",
+      "status": "PASS",
+      "ms": 3200
+    }
+  ],
+  "timings": [
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "admin",
+      "ms": 8605,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "hr",
+      "ms": 2942,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "employee",
+      "ms": 952,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "outsider",
+      "ms": 3226,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "accountant",
+      "ms": 1012,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 830,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 4004,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 3252,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/uom",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 4395,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/items",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 3942,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouses",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 4072,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouses",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 971,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/transaction-types",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 3799,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/partners",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 5565,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/import-contracts",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 5794,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 1837,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 3997,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "employee",
+      "ms": 4007,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "hr",
+      "ms": 4009,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 4372,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "admin",
+      "ms": 4377,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 4379,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 4382,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 4386,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "employee",
+      "ms": 3115,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 2776,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "hr",
+      "ms": 3197,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 3231,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "admin",
+      "ms": 2887,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 2901,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 2934,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 3015,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "employee",
+      "ms": 312,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 333,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "hr",
+      "ms": 362,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 345,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "admin",
+      "ms": 362,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 357,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 361,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 387,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 4209,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/update-eta",
+      "method": "POST",
+      "role": "admin",
+      "status": 409,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/update-eta",
+      "method": "POST",
+      "role": "shipping",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 3196,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/customs",
+      "method": "PATCH",
+      "role": "admin",
+      "status": 409,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/customs",
+      "method": "PATCH",
+      "role": "shipping",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 541,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouses",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 592,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/create-warehouse-receipt",
+      "method": "POST",
+      "role": "admin",
+      "status": 201,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/create-warehouse-receipt",
+      "method": "POST",
+      "role": "shipping",
+      "status": 201,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 862,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=b50924e7-016f-4e4a-ad5b-c85c62aae566&itemId=ff94c18b-818a-43f3-998b-b1ee4b9f1d19",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 320,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/66c03f89-0aa4-4402-b2c2-388a067cb761/post",
+      "method": "POST",
+      "role": "warehouse",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/66c03f89-0aa4-4402-b2c2-388a067cb761/post",
+      "method": "POST",
+      "role": "admin",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "kind": "receiving-cross-session-sync",
+      "ms": 3718
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=b50924e7-016f-4e4a-ad5b-c85c62aae566&itemId=ff94c18b-818a-43f3-998b-b1ee4b9f1d19",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 389,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 1153,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 2869,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/create-warehouse-receipt",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 5959,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/create-warehouse-receipt",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 6111,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments/76e592a8-5c6b-4c93-bf06-46fb86af9e5f/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 3198,
+      "status": 200
+    },
+    {
+      "route": "/import-export/shipments",
+      "kind": "sidebar-navigation",
+      "ms": 11806
+    },
+    {
+      "route": "/import-export/transport",
+      "kind": "sidebar-navigation",
+      "ms": 2587
+    },
+    {
+      "route": "/import-export/customs",
+      "kind": "sidebar-navigation",
+      "ms": 6930
+    },
+    {
+      "route": "/import-export/contracts",
+      "kind": "sidebar-navigation",
+      "ms": 13232
+    },
+    {
+      "route": "/import-export/documents",
+      "kind": "sidebar-navigation",
+      "ms": 10453
+    },
+    {
+      "route": "/import-export/partners",
+      "kind": "sidebar-navigation",
+      "ms": 11865
+    }
+  ],
+  "readOnly": false,
+  "staticRouteCount": 141,
+  "finishedAt": "2026-10-20T03:29:57.892Z",
+  "summary": {
+    "PASS": 11,
+    "FAIL": 0,
+    "BLOCKED": 0
+  }
+}

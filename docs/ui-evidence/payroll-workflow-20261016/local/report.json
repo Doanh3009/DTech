@@ -1,0 +1,1539 @@
+{
+  "kind": "isolated-real-components",
+  "recordedAt": "2026-10-16T07:32:50.938Z",
+  "screens": [
+    {
+      "label": "preparation",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "1\nChuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "calculated",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 61.3125,
+            "width": 286,
+            "height": 777.375,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "review",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "reviewed-lock",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "locked-publication",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Khóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivery-failure",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Khóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivered",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Khóa lương",
+            "width": 54,
+            "height": 92.53125
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 54,
+            "height": 92.53125
+          }
+        ]
+      }
+    },
+    {
+      "label": "pending-list",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "create-payroll",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 219.703125,
+            "width": 286,
+            "height": 460.59375,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "preparation",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "1\nChuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "calculated",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 20.6875,
+            "y": 91.109375,
+            "width": 338.625,
+            "height": 717.78125,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "review",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "reviewed-lock",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "locked-publication",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Khóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivery-failure",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Khóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivered",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Khóa lương",
+            "width": 66,
+            "height": 77.6875
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 66,
+            "height": 77.6875
+          }
+        ]
+      }
+    },
+    {
+      "label": "pending-list",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "create-payroll",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 46.5,
+            "y": 219.703125,
+            "width": 287,
+            "height": 460.59375,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "preparation",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "1\nChuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "calculated",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 198.375,
+            "y": 125.34375,
+            "width": 361.25,
+            "height": 649.296875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "review",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "reviewed-lock",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "locked-publication",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Khóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivery-failure",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Khóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivered",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 137.84375,
+            "height": 72.1875
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Khóa lương",
+            "width": 137.859375,
+            "height": 72.1875
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 137.84375,
+            "height": 72.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "pending-list",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "create-payroll",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 253.5,
+            "y": 279,
+            "width": 251,
+            "height": 342,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "preparation",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "1\nChuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "calculated",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 534.375,
+            "y": 125.34375,
+            "width": 361.25,
+            "height": 649.296875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "review",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "reviewed-lock",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "4\nKhóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "locked-publication",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "Khóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "5\nGửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivery-failure",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "Khóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "published-delivered",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": [
+          {
+            "label": "Chuẩn bị",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Tính và điều chỉnh",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Kiểm tra",
+            "width": 265.609375,
+            "height": 48
+          },
+          {
+            "label": "Khóa lương",
+            "width": 265.59375,
+            "height": 48
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 265.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "label": "pending-list",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "create-payroll",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 589.5,
+            "y": 279,
+            "width": 251,
+            "height": 342,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "actions": [
+    {
+      "rowVersion": 1,
+      "action": "calculate",
+      "payBasis": "actual"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "review"
+    },
+    {
+      "rowVersion": 4,
+      "action": "lock"
+    },
+    {
+      "rowVersion": 5,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 7,
+      "action": "retry_delivery"
+    },
+    {
+      "rowVersion": 1,
+      "action": "calculate",
+      "payBasis": "actual"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "review"
+    },
+    {
+      "rowVersion": 4,
+      "action": "lock"
+    },
+    {
+      "rowVersion": 5,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 7,
+      "action": "retry_delivery"
+    },
+    {
+      "rowVersion": 1,
+      "action": "calculate",
+      "payBasis": "actual"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "review"
+    },
+    {
+      "rowVersion": 4,
+      "action": "lock"
+    },
+    {
+      "rowVersion": 5,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 7,
+      "action": "retry_delivery"
+    },
+    {
+      "rowVersion": 1,
+      "action": "calculate",
+      "payBasis": "actual"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "review"
+    },
+    {
+      "rowVersion": 4,
+      "action": "lock"
+    },
+    {
+      "rowVersion": 5,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 7,
+      "action": "retry_delivery"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,75 @@
+.form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "alerts alerts"
+    "personal photo"
+    "employment additional"
+    "contact contact"
+    "actions actions";
+  align-items: stretch;
+  width: 100% !important;
+  max-width: none;
+}
+
+.alerts {
+  grid-area: alerts;
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+}
+
+.sectionCard {
+  display: flex;
+  min-width: 0;
+}
+
+.sectionCard > :global(.form-section) {
+  width: 100%;
+  align-content: start;
+}
+
+.sectionCard > :global(.form-section) > :global(.form-section__grid) {
+  align-content: start;
+}
+
+.personalCard {
+  grid-area: personal;
+}
+
+.photoCard {
+  grid-area: photo;
+  align-self: start;
+}
+
+.employmentCard {
+  grid-area: employment;
+}
+
+.contactCard {
+  grid-area: contact;
+}
+
+.additionalCard {
+  grid-area: additional;
+}
+
+.form > :global(.sticky-action-bar) {
+  grid-area: actions;
+}
+.form > :global(.sticky-action-bar),
+.editForm > :global(.sticky-action-bar) { position: static; }
+
+@media (max-width: 1080px) {
+  .form {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "alerts"
+      "photo"
+      "personal"
+      "employment"
+      "contact"
+      "additional"
+      "actions";
+    width: 100% !important;
+  }
+}

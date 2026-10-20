@@ -1,0 +1,33 @@
+.toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid var(--border-subtle); padding: 0 18px 16px; }
+.toolbar > :global(.search-input) { width: min(100%, 360px); min-width: 0; }
+.toolbar > span { color: var(--text-secondary); font-size: 13px; }
+.employee { display: grid; min-width: 0; gap: 4px; }
+.employee strong { overflow-wrap: anywhere; }
+.employee small { color: var(--text-secondary); font-size: 12px; font-weight: 400; }
+.editor:global(.drawer-form) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-content: start; }
+.editor > :global(.field) { min-width: 0; }
+.singleForm:global(.drawer-form) { display: grid; gap: 16px; align-content: start; }
+.singleForm > :global(.form-actions) { border-top: 1px solid var(--border-subtle); padding-top: 16px; }
+.deleteSummary { display: grid; gap: 8px; border: 1px solid var(--border-subtle); border-radius: 12px; background: var(--surface-2); padding: 14px; }
+.deleteSummary strong { color: var(--text-primary); font-size: 20px; font-variant-numeric: tabular-nums; }
+.deleteSummary span { color: var(--text-secondary); font-size: 13px; }
+.fullWidth, .editor > :global(.form-actions) { grid-column: 1 / -1; }
+.editor > :global(.form-actions) { border-top: 1px solid var(--border-subtle); padding-top: 16px; }
+.history:global(.salary-history-list) { display: grid; gap: 14px; margin: 0; padding: 18px; list-style: none; }
+.history > li { min-width: 0; border: 1px solid var(--border-subtle); border-radius: 14px; background: var(--surface-1); padding: 16px; }
+.history > li > div { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.history strong { color: var(--primary); font-size: 18px; font-variant-numeric: tabular-nums; }
+.history p { margin: 10px 0; overflow-wrap: anywhere; }
+.history :is(span, small) { color: var(--text-secondary); font-size: 13px; }
+@media (max-width: 767px) {
+  .toolbar { padding: 0 14px 14px; gap: 10px; }
+  .toolbar > :global(.search-input) { width: 100%; }
+  .editor:global(.drawer-form) { gap: 14px; }
+  .editor > :global(.field) :global(.input) { font-size: 16px; }
+  .editor > :global(.form-actions) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .editor > :global(.form-actions) :global(.button) { width: 100%; min-height: 46px; }
+  .history:global(.salary-history-list) { padding: 14px; }
+}
+@media (max-width: 380px) {
+  .editor:global(.drawer-form) { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,0 +1,1609 @@
+{
+  "capturedAt": "2026-10-13T07:54:45.588Z",
+  "sourceChecks": {
+    "count": 18,
+    "unchanged": true,
+    "changed": []
+  },
+  "normal": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sampleCount": 241,
+      "meta": [
+        {
+          "kind": "crane",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -56000
+        },
+        {
+          "kind": "helmet",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -45000
+        },
+        {
+          "kind": "rail",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -29000
+        },
+        {
+          "kind": "gear",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -51000
+        },
+        {
+          "kind": "beam",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -1000
+        },
+        {
+          "kind": "blueprint",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -40000
+        },
+        {
+          "kind": "building",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -18000
+        },
+        {
+          "kind": "hook",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -7000
+        },
+        {
+          "kind": "tape",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -23000
+        },
+        {
+          "kind": "wrench",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -34000
+        },
+        {
+          "kind": "vest",
+          "name": "LoginBackdrop_perimeter-travel__9G5lX",
+          "duration": 60000,
+          "delay": -12000
+        }
+      ],
+      "movement": [
+        {
+          "kind": "crane",
+          "distanceInFirstFiveSeconds": 252.86608707476617,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 132.5,
+            "y": 236.52899169921875
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 1627.5,
+            "y": 693.4710083007812
+          }
+        },
+        {
+          "kind": "helmet",
+          "distanceInFirstFiveSeconds": 272.8248291015625,
+          "xSpan": 1495,
+          "ySpan": 872.9808616638184,
+          "initial": {
+            "t": 0,
+            "x": 132.5,
+            "y": 843.5438842773438
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 1627.5,
+            "y": 80.13832092285156
+          }
+        },
+        {
+          "kind": "rail",
+          "distanceInFirstFiveSeconds": 450.3357733455295,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 1622.8333740234375,
+            "y": 860.8333129882812
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 137.1666717529297,
+            "y": 69.16667175292969
+          }
+        },
+        {
+          "kind": "gear",
+          "distanceInFirstFiveSeconds": 278.6231689453125,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 132.5,
+            "y": 515.1521606445312
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 1627.5,
+            "y": 414.84783935546875
+          }
+        },
+        {
+          "kind": "beam",
+          "distanceInFirstFiveSeconds": 506.8840637207031,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 281.8768005371094,
+            "y": 32.5
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 1478.1231689453125,
+            "y": 897.5
+          }
+        },
+        {
+          "kind": "blueprint",
+          "distanceInFirstFiveSeconds": 435.8828459582066,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 565.7318725585938,
+            "y": 897.5
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 1194.26806640625,
+            "y": 32.5
+          }
+        },
+        {
+          "kind": "building",
+          "distanceInFirstFiveSeconds": 278.6231994628906,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 1627.5,
+            "y": 247.67391967773438
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 132.5,
+            "y": 682.3261108398438
+          }
+        },
+        {
+          "kind": "hook",
+          "distanceInFirstFiveSeconds": 506.884033203125,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 890.1376953125,
+            "y": 32.5
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 869.8623046875,
+            "y": 897.5
+          }
+        },
+        {
+          "kind": "tape",
+          "distanceInFirstFiveSeconds": 285.3826904296875,
+          "xSpan": 1495,
+          "ySpan": 871.9970626831055,
+          "initial": {
+            "t": 0,
+            "x": 1627.5,
+            "y": 519.4833374023438
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 132.5,
+            "y": 397.2745361328125
+          }
+        },
+        {
+          "kind": "wrench",
+          "distanceInFirstFiveSeconds": 506.91887888570307,
+          "xSpan": 1495,
+          "ySpan": 872.9898948669434,
+          "initial": {
+            "t": 0,
+            "x": 1173.9927978515625,
+            "y": 890.9083251953125
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 586.0072631835938,
+            "y": 25.57217025756836
+          }
+        },
+        {
+          "kind": "vest",
+          "distanceInFirstFiveSeconds": 280.25757162016214,
+          "xSpan": 1495,
+          "ySpan": 865,
+          "initial": {
+            "t": 0,
+            "x": 1397.021728515625,
+            "y": 32.5
+          },
+          "halfCycle": {
+            "t": 30000,
+            "x": 362.978271484375,
+            "y": 897.5
+          }
+        }
+      ],
+      "form": {
+        "x": 1062.890625,
+        "y": 449.734375,
+        "right": 1440,
+        "bottom": 673.734375,
+        "width": 377.109375,
+        "height": 224
+      },
+      "logo": {
+        "x": 587.4375,
+        "y": 383.6875,
+        "right": 837.4375,
+        "bottom": 696.3125,
+        "width": 250,
+        "height": 312.625
+      },
+      "overlapsFound": [],
+      "pairIntersections": [],
+      "visibleCountRange": {
+        "minimum": 11,
+        "maximum": 11
+      },
+      "controlFailures": [],
+      "maximumScrollWidth": 1910,
+      "scrollHeight": 1080,
+      "pointerEvents": "none",
+      "ariaHidden": "true",
+      "writes": [
+        {
+          "method": "POST",
+          "path": "/__nextjs_original-stack-frames"
+        }
+      ],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "sampleCount": 241,
+      "meta": [
+        {
+          "kind": "crane",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": 0
+        },
+        {
+          "kind": "helmet",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -11200
+        },
+        {
+          "kind": "rail",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -23300
+        },
+        {
+          "kind": "gear",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -5600
+        },
+        {
+          "kind": "beam",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": 0
+        },
+        {
+          "kind": "blueprint",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -16800
+        },
+        {
+          "kind": "building",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -14000
+        },
+        {
+          "kind": "hook",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -4600
+        },
+        {
+          "kind": "tape",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -18600
+        },
+        {
+          "kind": "wrench",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -22400
+        },
+        {
+          "kind": "vest",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -9300
+        }
+      ],
+      "movement": [
+        {
+          "kind": "crane",
+          "distanceInFirstFiveSeconds": 170.71428680419922,
+          "xSpan": 0,
+          "ySpan": 947.4642944335938,
+          "initial": {
+            "t": 0,
+            "x": 22,
+            "y": -141
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 22,
+            "y": 337
+          }
+        },
+        {
+          "kind": "helmet",
+          "distanceInFirstFiveSeconds": 176.51263427734375,
+          "xSpan": 0,
+          "ySpan": 954.8802185058594,
+          "initial": {
+            "t": 0,
+            "x": 22,
+            "y": 235.44387817382812
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 22,
+            "y": 719.038330078125
+          }
+        },
+        {
+          "kind": "rail",
+          "distanceInFirstFiveSeconds": 785.2857131958008,
+          "xSpan": 0,
+          "ySpan": 947.4642639160156,
+          "initial": {
+            "t": 0,
+            "x": 1240,
+            "y": 19.47142791748047
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 1240,
+            "y": 497.471435546875
+          }
+        },
+        {
+          "kind": "gear",
+          "distanceInFirstFiveSeconds": 170.7142791748047,
+          "xSpan": 0,
+          "ySpan": 947.4643249511719,
+          "initial": {
+            "t": 0,
+            "x": 22,
+            "y": 50.19999694824219
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 22,
+            "y": 528.2000122070312
+          }
+        },
+        {
+          "kind": "beam",
+          "distanceInFirstFiveSeconds": 170.71429443359375,
+          "xSpan": 0,
+          "ySpan": 947.4642944335938,
+          "initial": {
+            "t": 0,
+            "x": 1240,
+            "y": 815
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 1240,
+            "y": 337
+          }
+        },
+        {
+          "kind": "blueprint",
+          "distanceInFirstFiveSeconds": 170.71426391601562,
+          "xSpan": 0,
+          "ySpan": 947.4642944335938,
+          "initial": {
+            "t": 0,
+            "x": 22,
+            "y": 432.6000061035156
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 22,
+            "y": -45.400001525878906
+          }
+        },
+        {
+          "kind": "building",
+          "distanceInFirstFiveSeconds": 170.7142791748047,
+          "xSpan": 0,
+          "ySpan": 947.4642944335938,
+          "initial": {
+            "t": 0,
+            "x": 1240,
+            "y": 337
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 1240,
+            "y": 815
+          }
+        },
+        {
+          "kind": "hook",
+          "distanceInFirstFiveSeconds": 170.71429443359375,
+          "xSpan": 0,
+          "ySpan": 947.4642639160156,
+          "initial": {
+            "t": 0,
+            "x": 1240,
+            "y": 657.94287109375
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 1240,
+            "y": 179.94285583496094
+          }
+        },
+        {
+          "kind": "tape",
+          "distanceInFirstFiveSeconds": 163.95476245880127,
+          "xSpan": 0,
+          "ySpan": 947.7650756835938,
+          "initial": {
+            "t": 0,
+            "x": 1240,
+            "y": 173.12908935546875
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 1240,
+            "y": 657.5413818359375
+          }
+        },
+        {
+          "kind": "wrench",
+          "distanceInFirstFiveSeconds": 176.6527099609375,
+          "xSpan": 0,
+          "ySpan": 951.0457000732422,
+          "initial": {
+            "t": 0,
+            "x": 22,
+            "y": 617.2083129882812
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 22,
+            "y": 145.36756896972656
+          }
+        },
+        {
+          "kind": "vest",
+          "distanceInFirstFiveSeconds": 170.71429443359375,
+          "xSpan": 0,
+          "ySpan": 947.4642639160156,
+          "initial": {
+            "t": 0,
+            "x": 1240,
+            "y": 497.471435546875
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 1240,
+            "y": 19.47142791748047
+          }
+        }
+      ],
+      "form": {
+        "x": 785.890625,
+        "y": 293.734375,
+        "right": 1163,
+        "bottom": 517.734375,
+        "width": 377.109375,
+        "height": 224
+      },
+      "logo": {
+        "x": 310.4375,
+        "y": 227.6875,
+        "right": 560.4375,
+        "bottom": 540.3125,
+        "width": 250,
+        "height": 312.625
+      },
+      "overlapsFound": [],
+      "pairIntersections": [],
+      "visibleCountRange": {
+        "minimum": 9,
+        "maximum": 11
+      },
+      "controlFailures": [],
+      "maximumScrollWidth": 1356,
+      "scrollHeight": 768,
+      "pointerEvents": "none",
+      "ariaHidden": "true",
+      "writes": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "sampleCount": 241,
+      "meta": [
+        {
+          "kind": "crane",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": 0
+        },
+        {
+          "kind": "helmet",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -18660
+        },
+        {
+          "kind": "rail",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -18660
+        },
+        {
+          "kind": "gear",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -9330
+        },
+        {
+          "kind": "beam",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": 0
+        },
+        {
+          "kind": "building",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -9330
+        }
+      ],
+      "movement": [
+        {
+          "kind": "crane",
+          "distanceInFirstFiveSeconds": 164.28571319580078,
+          "xSpan": 0,
+          "ySpan": 911.7857055664062,
+          "initial": {
+            "t": 0,
+            "x": -26,
+            "y": -114
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": -26,
+            "y": 346
+          }
+        },
+        {
+          "kind": "helmet",
+          "distanceInFirstFiveSeconds": 170.0841064453125,
+          "xSpan": 0,
+          "ySpan": 919.7545471191406,
+          "initial": {
+            "t": 0,
+            "x": -26,
+            "y": 493.15814208984375
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": -26,
+            "y": 38.75260543823242
+          }
+        },
+        {
+          "kind": "rail",
+          "distanceInFirstFiveSeconds": 164.28571319580078,
+          "xSpan": 0,
+          "ySpan": 911.7857131958008,
+          "initial": {
+            "t": 0,
+            "x": 964,
+            "y": 192.88571166992188
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 964,
+            "y": 652.8857421875
+          }
+        },
+        {
+          "kind": "gear",
+          "distanceInFirstFiveSeconds": 164.2857208251953,
+          "xSpan": 0,
+          "ySpan": 911.7857360839844,
+          "initial": {
+            "t": 0,
+            "x": -26,
+            "y": 192.55714416503906
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": -26,
+            "y": 652.55712890625
+          }
+        },
+        {
+          "kind": "beam",
+          "distanceInFirstFiveSeconds": 164.28570556640625,
+          "xSpan": 0,
+          "ySpan": 911.7857131958008,
+          "initial": {
+            "t": 0,
+            "x": 964,
+            "y": 806
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 964,
+            "y": 346
+          }
+        },
+        {
+          "kind": "building",
+          "distanceInFirstFiveSeconds": 164.28573608398438,
+          "xSpan": 0,
+          "ySpan": 911.7856826782227,
+          "initial": {
+            "t": 0,
+            "x": 964,
+            "y": 499.44287109375
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 964,
+            "y": 39.44285583496094
+          }
+        }
+      ],
+      "form": {
+        "x": 608.796875,
+        "y": 311.234375,
+        "right": 930.984375,
+        "bottom": 535.234375,
+        "width": 322.1875,
+        "height": 224
+      },
+      "logo": {
+        "x": 179.265625,
+        "y": 243.140625,
+        "right": 404.53125,
+        "bottom": 524.84375,
+        "width": 225.265625,
+        "height": 281.703125
+      },
+      "overlapsFound": [],
+      "pairIntersections": [],
+      "visibleCountRange": {
+        "minimum": 4,
+        "maximum": 6
+      },
+      "controlFailures": [],
+      "maximumScrollWidth": 1014,
+      "scrollHeight": 768,
+      "pointerEvents": "none",
+      "ariaHidden": "true",
+      "writes": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sampleCount": 241,
+      "meta": [
+        {
+          "kind": "crane",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": 0
+        },
+        {
+          "kind": "helmet",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -18660
+        },
+        {
+          "kind": "rail",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -18660
+        },
+        {
+          "kind": "gear",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -9330
+        },
+        {
+          "kind": "beam",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": 0
+        },
+        {
+          "kind": "building",
+          "name": "LoginBackdrop_side-travel__6x8Mo",
+          "duration": 28000,
+          "delay": -9330
+        }
+      ],
+      "movement": [
+        {
+          "kind": "crane",
+          "distanceInFirstFiveSeconds": 210,
+          "xSpan": 0,
+          "ySpan": 1165.5,
+          "initial": {
+            "t": 0,
+            "x": -26,
+            "y": -114
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": -26,
+            "y": 474
+          }
+        },
+        {
+          "kind": "helmet",
+          "distanceInFirstFiveSeconds": 215.79833984375,
+          "xSpan": 0,
+          "ySpan": 1173.4688110351562,
+          "initial": {
+            "t": 0,
+            "x": -26,
+            "y": 663.7638549804688
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": -26,
+            "y": 81.35832214355469
+          }
+        },
+        {
+          "kind": "rail",
+          "distanceInFirstFiveSeconds": 210,
+          "xSpan": 0,
+          "ySpan": 1165.5000305175781,
+          "initial": {
+            "t": 0,
+            "x": 708,
+            "y": 278.2799987792969
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 708,
+            "y": 866.280029296875
+          }
+        },
+        {
+          "kind": "gear",
+          "distanceInFirstFiveSeconds": 210,
+          "xSpan": 0,
+          "ySpan": 1165.499984741211,
+          "initial": {
+            "t": 0,
+            "x": -26,
+            "y": 277.8599853515625
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": -26,
+            "y": 865.8599853515625
+          }
+        },
+        {
+          "kind": "beam",
+          "distanceInFirstFiveSeconds": 210,
+          "xSpan": 0,
+          "ySpan": 1165.5,
+          "initial": {
+            "t": 0,
+            "x": 708,
+            "y": 1062
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 708,
+            "y": 474
+          }
+        },
+        {
+          "kind": "building",
+          "distanceInFirstFiveSeconds": 210,
+          "xSpan": 0,
+          "ySpan": 1165.500015258789,
+          "initial": {
+            "t": 0,
+            "x": 708,
+            "y": 670.1400146484375
+          },
+          "halfCycle": {
+            "t": 14000,
+            "x": 708,
+            "y": 82.13999938964844
+          }
+        }
+      ],
+      "form": {
+        "x": 163,
+        "y": 513.359375,
+        "right": 595,
+        "bottom": 737.359375,
+        "width": 432,
+        "height": 224
+      },
+      "logo": {
+        "x": 313.71875,
+        "y": 11,
+        "right": 444.265625,
+        "bottom": 174.25,
+        "width": 130.546875,
+        "height": 163.25
+      },
+      "overlapsFound": [],
+      "pairIntersections": [],
+      "visibleCountRange": {
+        "minimum": 4,
+        "maximum": 6
+      },
+      "controlFailures": [],
+      "maximumScrollWidth": 758,
+      "scrollHeight": 1024,
+      "pointerEvents": "none",
+      "ariaHidden": "true",
+      "writes": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sampleCount": 241,
+      "meta": [
+        {
+          "kind": "crane",
+          "name": "LoginBackdrop_mobile-top-swap__kZF7E",
+          "duration": 22000,
+          "delay": 0
+        },
+        {
+          "kind": "helmet",
+          "name": "LoginBackdrop_mobile-bottom-swap__dItWF",
+          "duration": 20000,
+          "delay": 0
+        },
+        {
+          "kind": "rail",
+          "name": "LoginBackdrop_mobile-bottom-swap__dItWF",
+          "duration": 20000,
+          "delay": -10000
+        },
+        {
+          "kind": "beam",
+          "name": "LoginBackdrop_mobile-top-swap__kZF7E",
+          "duration": 22000,
+          "delay": -11000
+        }
+      ],
+      "movement": [
+        {
+          "kind": "crane",
+          "distanceInFirstFiveSeconds": 45.54573059082031,
+          "xSpan": 346,
+          "ySpan": 197.75918579101562,
+          "initial": {
+            "t": 0,
+            "x": -21,
+            "y": 14
+          },
+          "halfCycle": {
+            "t": 11000,
+            "x": 325,
+            "y": 14
+          }
+        },
+        {
+          "kind": "helmet",
+          "distanceInFirstFiveSeconds": 145.63976496928635,
+          "xSpan": 276,
+          "ySpan": 97.29681396484375,
+          "initial": {
+            "t": 0,
+            "x": 14,
+            "y": 712.510986328125
+          },
+          "halfCycle": {
+            "t": 10000,
+            "x": 290,
+            "y": 712.0903930664062
+          }
+        },
+        {
+          "kind": "rail",
+          "distanceInFirstFiveSeconds": 146.10954794263105,
+          "xSpan": 276,
+          "ySpan": 96,
+          "initial": {
+            "t": 0,
+            "x": 290,
+            "y": 714
+          },
+          "halfCycle": {
+            "t": 10000,
+            "x": 14,
+            "y": 714
+          }
+        },
+        {
+          "kind": "beam",
+          "distanceInFirstFiveSeconds": 45.54573059082031,
+          "xSpan": 346,
+          "ySpan": 197.75918579101562,
+          "initial": {
+            "t": 0,
+            "x": 325,
+            "y": 14
+          },
+          "halfCycle": {
+            "t": 11000,
+            "x": -21,
+            "y": 14
+          }
+        }
+      ],
+      "form": {
+        "x": 41,
+        "y": 329.953125,
+        "right": 339,
+        "bottom": 562.546875,
+        "width": 298,
+        "height": 232.59375
+      },
+      "logo": {
+        "x": 134,
+        "y": 24,
+        "right": 246,
+        "bottom": 164.0625,
+        "width": 112,
+        "height": 140.0625
+      },
+      "overlapsFound": [],
+      "pairIntersections": [],
+      "visibleCountRange": {
+        "minimum": 2,
+        "maximum": 4
+      },
+      "controlFailures": [],
+      "maximumScrollWidth": 380,
+      "scrollHeight": 844,
+      "pointerEvents": "none",
+      "ariaHidden": "true",
+      "writes": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "sampleCount": 241,
+      "meta": [
+        {
+          "kind": "crane",
+          "name": "LoginBackdrop_mobile-top-swap__kZF7E",
+          "duration": 22000,
+          "delay": 0
+        },
+        {
+          "kind": "helmet",
+          "name": "LoginBackdrop_mobile-bottom-swap__dItWF",
+          "duration": 20000,
+          "delay": 0
+        },
+        {
+          "kind": "rail",
+          "name": "LoginBackdrop_mobile-bottom-swap__dItWF",
+          "duration": 20000,
+          "delay": -10000
+        },
+        {
+          "kind": "beam",
+          "name": "LoginBackdrop_mobile-top-swap__kZF7E",
+          "duration": 22000,
+          "delay": -11000
+        }
+      ],
+      "movement": [
+        {
+          "kind": "crane",
+          "distanceInFirstFiveSeconds": 45.54573059082031,
+          "xSpan": 286,
+          "ySpan": 197.75918579101562,
+          "initial": {
+            "t": 0,
+            "x": -21,
+            "y": 14
+          },
+          "halfCycle": {
+            "t": 11000,
+            "x": 265,
+            "y": 14
+          }
+        },
+        {
+          "kind": "helmet",
+          "distanceInFirstFiveSeconds": 111.45862626474722,
+          "xSpan": 216,
+          "ySpan": 59.29681396484375,
+          "initial": {
+            "t": 0,
+            "x": 26,
+            "y": 607.510986328125
+          },
+          "halfCycle": {
+            "t": 10000,
+            "x": 242,
+            "y": 607.0903930664062
+          }
+        },
+        {
+          "kind": "rail",
+          "distanceInFirstFiveSeconds": 111.82575731914359,
+          "xSpan": 216,
+          "ySpan": 58,
+          "initial": {
+            "t": 0,
+            "x": 242,
+            "y": 609
+          },
+          "halfCycle": {
+            "t": 10000,
+            "x": 26,
+            "y": 609
+          }
+        },
+        {
+          "kind": "beam",
+          "distanceInFirstFiveSeconds": 45.54573059082031,
+          "xSpan": 286,
+          "ySpan": 197.75918579101562,
+          "initial": {
+            "t": 0,
+            "x": 265,
+            "y": 14
+          },
+          "halfCycle": {
+            "t": 11000,
+            "x": -21,
+            "y": 14
+          }
+        }
+      ],
+      "form": {
+        "x": 41,
+        "y": 329.953125,
+        "right": 279,
+        "bottom": 562.546875,
+        "width": 238,
+        "height": 232.59375
+      },
+      "logo": {
+        "x": 104,
+        "y": 24,
+        "right": 216,
+        "bottom": 164.0625,
+        "width": 112,
+        "height": 140.0625
+      },
+      "overlapsFound": [],
+      "pairIntersections": [],
+      "visibleCountRange": {
+        "minimum": 1,
+        "maximum": 4
+      },
+      "controlFailures": [],
+      "maximumScrollWidth": 320,
+      "scrollHeight": 674,
+      "pointerEvents": "none",
+      "ariaHidden": "true",
+      "writes": [],
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "reduced": [
+    {
+      "animations": 0,
+      "animatedNodes": 0,
+      "visibleIconCount": 11,
+      "overlaps": [],
+      "scrollWidth": 1910,
+      "positions": [
+        {
+          "kind": "crane",
+          "x": 156,
+          "y": 64.796875,
+          "right": 376,
+          "bottom": 266.453125
+        },
+        {
+          "kind": "helmet",
+          "x": 38.390625,
+          "y": 453.59375,
+          "right": 218.78125,
+          "bottom": 591.25
+        },
+        {
+          "kind": "rail",
+          "x": 1524.015625,
+          "y": 756.03125,
+          "right": 1761.609375,
+          "bottom": 1036.8125
+        },
+        {
+          "kind": "gear",
+          "x": 38.390625,
+          "y": 226.796875,
+          "right": 121.984375,
+          "bottom": 310.390625
+        },
+        {
+          "kind": "beam",
+          "x": 1535.015625,
+          "y": 32.390625,
+          "right": 1728.609375,
+          "bottom": 182.515625
+        },
+        {
+          "kind": "blueprint",
+          "x": 38.390625,
+          "y": 728.609375,
+          "right": 245.1875,
+          "bottom": 907.203125
+        },
+        {
+          "kind": "building",
+          "x": 1673.609375,
+          "y": 561.59375,
+          "right": 1871.609375,
+          "bottom": 738.515625
+        },
+        {
+          "kind": "hook",
+          "x": 1770.421875,
+          "y": 54,
+          "right": 1871.609375,
+          "bottom": 208.9375
+        },
+        {
+          "kind": "tape",
+          "x": 1805.609375,
+          "y": 957.796875,
+          "right": 1898,
+          "bottom": 1047.609375
+        },
+        {
+          "kind": "wrench",
+          "x": 130.796875,
+          "y": 901.5,
+          "right": 258.390625,
+          "bottom": 1036.8125
+        },
+        {
+          "kind": "vest",
+          "x": 1728.609375,
+          "y": 334.796875,
+          "right": 1871.609375,
+          "bottom": 477.796875
+        }
+      ],
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "writes": [],
+      "errors": [],
+      "staticPositions": true,
+      "passed": true
+    },
+    {
+      "animations": 0,
+      "animatedNodes": 0,
+      "visibleIconCount": 11,
+      "overlaps": [],
+      "scrollWidth": 1356,
+      "positions": [
+        {
+          "kind": "crane",
+          "x": 16,
+          "y": 38.390625,
+          "right": 125,
+          "bottom": 138.296875
+        },
+        {
+          "kind": "helmet",
+          "x": 16,
+          "y": 368.625,
+          "right": 105.375,
+          "bottom": 436.828125
+        },
+        {
+          "kind": "rail",
+          "x": 1222.28125,
+          "y": 567.453125,
+          "right": 1340,
+          "bottom": 706.5625
+        },
+        {
+          "kind": "gear",
+          "x": 26,
+          "y": 253.4375,
+          "right": 84,
+          "bottom": 311.4375
+        },
+        {
+          "kind": "beam",
+          "x": 1244.09375,
+          "y": 15.359375,
+          "right": 1340,
+          "bottom": 89.734375
+        },
+        {
+          "kind": "blueprint",
+          "x": 16,
+          "y": 572.015625,
+          "right": 118.453125,
+          "bottom": 660.484375
+        },
+        {
+          "kind": "building",
+          "x": 1241.90625,
+          "y": 414.71875,
+          "right": 1340,
+          "bottom": 502.375
+        },
+        {
+          "kind": "hook",
+          "x": 1258,
+          "y": 115.1875,
+          "right": 1322,
+          "bottom": 213.1875
+        },
+        {
+          "kind": "tape",
+          "x": 1272,
+          "y": 700.0625,
+          "right": 1334,
+          "bottom": 760.328125
+        },
+        {
+          "kind": "wrench",
+          "x": 28,
+          "y": 676.28125,
+          "right": 100,
+          "bottom": 752.640625
+        },
+        {
+          "kind": "vest",
+          "x": 1269.15625,
+          "y": 276.46875,
+          "right": 1340,
+          "bottom": 347.3125
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "writes": [],
+      "errors": [],
+      "staticPositions": true,
+      "passed": true
+    },
+    {
+      "animations": 0,
+      "animatedNodes": 0,
+      "visibleIconCount": 6,
+      "overlaps": [],
+      "scrollWidth": 1014,
+      "positions": [
+        {
+          "kind": "crane",
+          "x": 8,
+          "y": 23.03125,
+          "right": 118,
+          "bottom": 123.859375
+        },
+        {
+          "kind": "helmet",
+          "x": 8,
+          "y": 522.234375,
+          "right": 100,
+          "bottom": 592.4375
+        },
+        {
+          "kind": "rail",
+          "x": 882,
+          "y": 618.515625,
+          "right": 1002,
+          "bottom": 760.328125
+        },
+        {
+          "kind": "gear",
+          "x": 12,
+          "y": 330.234375,
+          "right": 72,
+          "bottom": 390.234375
+        },
+        {
+          "kind": "beam",
+          "x": 896,
+          "y": 15.359375,
+          "right": 1006,
+          "bottom": 100.65625
+        },
+        {
+          "kind": "building",
+          "x": 901,
+          "y": 658.8125,
+          "right": 1006,
+          "bottom": 752.640625
+        }
+      ],
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "writes": [],
+      "errors": [],
+      "staticPositions": true,
+      "passed": true
+    },
+    {
+      "animations": 0,
+      "animatedNodes": 0,
+      "visibleIconCount": 6,
+      "overlaps": [],
+      "scrollWidth": 758,
+      "positions": [
+        {
+          "kind": "crane",
+          "x": 8,
+          "y": 30.71875,
+          "right": 118,
+          "bottom": 131.546875
+        },
+        {
+          "kind": "helmet",
+          "x": 8,
+          "y": 696.3125,
+          "right": 100,
+          "bottom": 766.515625
+        },
+        {
+          "kind": "rail",
+          "x": 626,
+          "y": 871.953125,
+          "right": 746,
+          "bottom": 1013.765625
+        },
+        {
+          "kind": "gear",
+          "x": 12,
+          "y": 440.3125,
+          "right": 72,
+          "bottom": 500.3125
+        },
+        {
+          "kind": "beam",
+          "x": 640,
+          "y": 20.46875,
+          "right": 750,
+          "bottom": 105.765625
+        },
+        {
+          "kind": "building",
+          "x": 645,
+          "y": 450.546875,
+          "right": 750,
+          "bottom": 544.375
+        }
+      ],
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "writes": [],
+      "errors": [],
+      "staticPositions": true,
+      "passed": true
+    },
+    {
+      "animations": 0,
+      "animatedNodes": 0,
+      "visibleIconCount": 4,
+      "overlaps": [],
+      "scrollWidth": 380,
+      "positions": [
+        {
+          "kind": "crane",
+          "x": -18,
+          "y": 16.875,
+          "right": 60,
+          "bottom": 88.375
+        },
+        {
+          "kind": "helmet",
+          "x": -12,
+          "y": 716.96875,
+          "right": 66,
+          "bottom": 776.484375
+        },
+        {
+          "kind": "rail",
+          "x": 294,
+          "y": 712.65625,
+          "right": 398,
+          "bottom": 835.5625
+        },
+        {
+          "kind": "beam",
+          "x": 310,
+          "y": 42.1875,
+          "right": 398,
+          "bottom": 110.421875
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "writes": [],
+      "errors": [],
+      "staticPositions": true,
+      "passed": true
+    },
+    {
+      "animations": 0,
+      "animatedNodes": 0,
+      "visibleIconCount": 4,
+      "overlaps": [],
+      "scrollWidth": 320,
+      "positions": [
+        {
+          "kind": "crane",
+          "x": -18,
+          "y": 13.46875,
+          "right": 60,
+          "bottom": 84.96875
+        },
+        {
+          "kind": "helmet",
+          "x": -12,
+          "y": 587.09375,
+          "right": 66,
+          "bottom": 646.609375
+        },
+        {
+          "kind": "rail",
+          "x": 250,
+          "y": 569.546875,
+          "right": 338,
+          "bottom": 673.546875
+        },
+        {
+          "kind": "beam",
+          "x": 250,
+          "y": 33.671875,
+          "right": 338,
+          "bottom": 101.90625
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "writes": [],
+      "errors": [],
+      "staticPositions": true,
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    "desktop-1920-0s.png",
+    "desktop-1920-10s.png",
+    "laptop-1366-0s.png",
+    "laptop-1366-10s.png",
+    "mobile-390-0s.png",
+    "mobile-390-4s.png",
+    "mobile-390-10s.png",
+    "mobile-390-15s.png"
+  ],
+  "limitations": [
+    "Anonymous read-only page; no credential submission.",
+    "Animation positions sampled every 250 ms through 60 s using deterministic paused CSS animations; no physical device FPS benchmark."
+  ],
+  "visibilityNotes": [
+    "Desktop at 1920×1080 keeps all 11 SVG drawings in view.",
+    "Laptop/tablet conveyors fade and reset outside the viewport, so visible counts vary during a loop.",
+    "Mobile crane and I-beam briefly leave the top viewport to exchange sides; helmet and rail swap below the form. Mobile has four configured drawings, not four continuously visible drawings."
+  ],
+  "pairIntersectionsPassed": true,
+  "passed": true,
+  "visualReview": {
+    "desktop": "0 s and 10 s snapshots show distinct exchanged positions, clean spacing and exposed drawings.",
+    "laptop": "10 s snapshot shows clean glyph spacing along the one-way side conveyors.",
+    "mobile": "4 s and 15 s snapshots show exposed crane tower and I-beam ends exchanging outer sides, while helmet and rail move below the form. Top transit is intentionally clipped above viewport to avoid merged drawing strips."
+  }
+}

@@ -1,0 +1,12 @@
+[
+  { "username": "admin.test", "label": "Quản trị viên", "roleCode": "admin", "department": "hr", "position": "director" },
+  { "username": "director.test", "label": "Giám đốc", "roleCode": "qa_director", "permissionKeys": ["dashboard.view", "project.view", "project_monitoring.view_all", "project_update.view_all", "report.view"], "department": "construction", "position": "director" },
+  { "username": "manager.test", "label": "Quản lý", "roleCode": "qa_manager", "permissionKeys": ["dashboard.view", "project.view", "project.manage_team", "project_update.view_project", "project_monitoring.view", "worksite.view", "worker_attendance.view", "report.view"], "department": "construction", "position": "site_supervisor" },
+  { "username": "engineer.test", "label": "Kỹ sư · Công trường A", "roleCode": "supervisor", "department": "construction", "position": "site_supervisor" },
+  { "username": "engineer02.test", "label": "Kỹ sư · Công trường B", "roleCode": "supervisor", "department": "construction", "position": "site_supervisor" },
+  { "username": "accountant.test", "label": "Kế toán", "roleCode": "accountant", "department": "accounting", "position": "accountant" },
+  { "username": "hr.test", "label": "Nhân sự", "roleCode": "hr", "excludedPermissionKeys": ["account.assign_role", "role.view", "permission.view", "audit.view"], "department": "hr", "position": "hr_specialist" },
+  { "username": "warehouse.test", "label": "Quản lý kho", "roleCode": "qa_warehouse", "permissionPrefixes": ["warehouse."], "department": "warehouse", "position": "warehouse_keeper" },
+  { "username": "import.test", "label": "Xuất nhập khẩu", "roleCode": "qa_import", "permissionKeys": ["warehouse.view", "warehouse.item.view", "warehouse.receipt.create", "warehouse.receipt.view"], "permissionPrefixes": ["import_export.", "import_contract.", "shipment.", "shipment_document.", "shipment_receiving.", "partner.", "customs."], "warehouseScopeCodes": ["KHO-CHINH"], "department": "import_export", "position": "worker" },
+  { "username": "employee.test", "label": "Nhân viên", "roleCode": "employee", "department": "hr", "position": "hr_specialist" }
+]

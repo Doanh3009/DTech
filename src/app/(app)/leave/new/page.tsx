@@ -1,0 +1,1 @@
+import { BackLink } from "@/components/shared/BackLink";import { PageHeader } from "@/components/shared/PageHeader";import { LeaveRequestForm } from "@/features/leave/components/LeaveRequestForm";export default function Page(){return <div className="page-stack"><BackLink href="/leave"/><PageHeader title="Tạo đơn nghỉ"/><LeaveRequestForm/></div>}

@@ -1,0 +1,69 @@
+.workspace { display: grid; min-width: 0; gap: 14px; }
+.summary { display: grid; gap: 20px; }
+.identity { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-width: 0; }
+.identity > div:first-child { min-width: 0; }
+.identity h2 { margin: 0 0 6px; font-size: 21px; overflow-wrap: anywhere; }
+.identity > div > span { font-size: 13px; color: var(--text-secondary); overflow-wrap: anywhere; }
+.period { display: flex; align-items: center; gap: 10px; color: var(--primary); }
+.period > span { display: grid; gap: 4px; }
+.period strong { font-size: 14px; }
+.period small { color: var(--text-secondary); font-size: 12px; }
+.metrics { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin: 0; }
+.metrics > div { display: grid; gap: 8px; min-width: 0; padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-control); background: var(--surface-2); }
+.metrics dt { color: var(--text-secondary); font-size: 13px; }
+.metrics dd { margin: 0; color: var(--text-primary); font-size: 24px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.metrics > div:first-child dd { color: var(--primary); }
+.dataAlert { margin: 0; border-radius: var(--radius-control); padding: 12px 14px; background: var(--color-warning-soft); color: var(--color-warning); font-size: 13px; }
+.calendar { min-width: 0; width: 100%; max-width: 1000px; }
+.calendarHeading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+.calendarHeading h2 { margin: 0; font-size: 18px; }
+.calendarHeading > :global(.button) { width: 44px; flex: 0 0 44px; min-width: 44px; min-height: 44px; padding: 0; }
+.weekdays, .calendarGrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.weekdays { margin-bottom: 8px; color: var(--text-secondary); text-align: center; font-size: 13px; }
+.weekdays > span { padding-block: 6px; }
+.day { display: grid; grid-template-rows: 24px 24px; align-content: center; justify-items: center; gap: 4px; min-width: 0; min-height: 84px; padding: 8px 2px; border: 1px solid transparent; border-radius: var(--radius-control); background: var(--surface-2); color: var(--text-primary); font: inherit; cursor: pointer; transition: background 160ms ease, border-color 160ms ease; }
+.dayNumber { display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.dayNumber small { font-size: 10px; font-weight: 400; }
+.daySymbol { display: inline-flex; align-items: center; justify-content: center; min-height: 24px; font-size: 12px; font-weight: 600; }
+.empty { color: var(--text-tertiary, var(--text-secondary)); }
+.full_work, .worker_site { color: var(--primary); background: var(--color-primary-soft); }
+.late, .early_leave, .missing_check_in, .missing_check_out, .needs_review { color: var(--color-warning); background: var(--color-warning-soft); }
+.annual_leave, .business_trip, .holiday { color: var(--color-info); background: var(--color-info-soft); }
+.absent, .unpaid_leave { color: var(--color-danger); background: var(--color-danger-soft); }
+.day:hover { border-color: var(--primary); }
+.day:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--border-subtle); color: var(--text-secondary); font-size: 12px; }
+.legend > span { display: inline-flex; align-items: center; gap: 6px; }
+.legend b { min-width: 24px; padding: 3px; border-radius: 6px; background: var(--surface-2); color: var(--text-primary); text-align: center; font-size: 11px; }
+.dayDetail { display: grid; align-content: start; gap: 18px; }
+.dayHeading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 0; border: 1px solid var(--border-subtle); border-radius: var(--radius-control); overflow: hidden; background: var(--border-subtle); }
+.facts > div { min-width: 0; padding: 12px; background: var(--surface-1); }
+.facts dt { color: var(--text-secondary); font-size: 12px; }
+.facts dd { margin: 6px 0 0; font-weight: 600; overflow-wrap: anywhere; }
+.dayDetail h3 { margin: 0 0 10px; font-size: 15px; }
+.dayDetail p { margin: 0; overflow-wrap: anywhere; }
+.sources, .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions:empty { display: none; }
+.actions:not(:empty) { padding-top: 16px; border-top: 1px solid var(--border-subtle); }
+.actions > :global(.button) { flex: 1 1 160px; min-height: 46px; }
+.adjustment { display: grid; gap: 4px; margin-bottom: 12px; padding: 4px 12px; border-left: 2px solid var(--primary); }
+.adjustment small { color: var(--text-secondary); }
+@media (max-width: 767px) {
+  .summary, .calendar { padding: 14px; }
+  .identity { flex-direction: column; align-items: stretch; gap: 14px; }
+  .identity h2 { font-size: 19px; }
+  .period { padding-top: 12px; border-top: 1px solid var(--border-subtle); }
+  .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .metrics > div { padding: 10px 8px; gap: 5px; }
+  .metrics dt { font-size: 12px; }
+  .metrics dd { font-size: 21px; }
+  .calendarHeading { margin-bottom: 10px; }
+  .weekdays, .calendarGrid { gap: 4px; }
+  .weekdays { font-size: 12px; }
+  .day { grid-template-rows: 20px 20px; min-height: 58px; gap: 2px; border-radius: 10px; padding-block: 5px; }
+  .dayNumber { font-size: 12px; }
+  .dayNumber small { font-size: 8px; }
+  .daySymbol { min-height: 20px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .day { transition: none; } }

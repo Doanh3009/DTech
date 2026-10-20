@@ -1,0 +1,84 @@
+{
+  "appliedAt": "2026-10-19T02:16:32.413Z",
+  "target": "lgmlkagcytfjazulgfbz",
+  "filename": "scripts/testing/repairs/20261019_import_warehouse_access.sql",
+  "sha256": "847133742677acf80eb465cafdf88d58bdf1c407572219cb8413a11b76dee4b0",
+  "migrationCount": 54,
+  "beforeAccess": {
+    "permissions": [
+      "customs.manage",
+      "customs.view",
+      "import_contract.close",
+      "import_contract.create",
+      "import_contract.edit",
+      "import_contract.view",
+      "import_export.report.export",
+      "import_export.view",
+      "import_export.view_all",
+      "partner.manage",
+      "partner.view",
+      "shipment_document.replace",
+      "shipment_document.upload",
+      "shipment_document.view",
+      "shipment_receiving.create_receipt",
+      "shipment_receiving.view",
+      "shipment.cancel",
+      "shipment.close",
+      "shipment.create",
+      "shipment.edit",
+      "shipment.update_schedule",
+      "shipment.view",
+      "warehouse.item.view",
+      "warehouse.receipt.create",
+      "warehouse.receipt.view",
+      "warehouse.view"
+    ],
+    "scopes": [
+      {
+        "canView": true,
+        "warehouse": "KHO-CHINH",
+        "canOperate": true
+      }
+    ]
+  },
+  "afterAccess": {
+    "permissions": [
+      "customs.manage",
+      "customs.view",
+      "import_contract.close",
+      "import_contract.create",
+      "import_contract.edit",
+      "import_contract.view",
+      "import_export.report.export",
+      "import_export.view",
+      "import_export.view_all",
+      "partner.manage",
+      "partner.view",
+      "shipment_document.replace",
+      "shipment_document.upload",
+      "shipment_document.view",
+      "shipment_receiving.create_receipt",
+      "shipment_receiving.view",
+      "shipment.cancel",
+      "shipment.close",
+      "shipment.create",
+      "shipment.edit",
+      "shipment.update_schedule",
+      "shipment.view",
+      "warehouse.item.view",
+      "warehouse.receipt.create",
+      "warehouse.receipt.view",
+      "warehouse.view"
+    ],
+    "scopes": [
+      {
+        "canView": true,
+        "warehouse": "KHO-CHINH",
+        "canOperate": true
+      }
+    ]
+  },
+  "businessDataUnchanged": true,
+  "productionLinkUnchanged": true,
+  "seedOrReset": false
+}

@@ -1,0 +1,64 @@
+.workspace { min-width: 0; }
+.employeeButton { display: grid; min-width: 0; min-height: 44px; align-content: center; gap: 4px; border: 0; border-radius: var(--radius-control); background: transparent; padding: 4px 0; color: var(--color-primary-active); text-align: left; font: inherit; cursor: pointer; }
+.employeeButton strong { overflow-wrap: anywhere; }
+.employeeButton small { color: var(--text-secondary); font-size: 12px; font-weight: 400; overflow-wrap: anywhere; }
+.employeeButton:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.employeeButton:focus-visible { outline: 2px solid var(--border-focus); outline-offset: 4px; }
+.rowActions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.rowActions > :global(.button) { white-space: nowrap; }
+:global(.app-shell .page-main) .workspace :global(.data-table col[data-column="actions"]),
+:global(.app-shell .page-main) .workspace :global(.data-table :is(th, td).data-table__actions) { width: 180px; }
+.heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.heading > div { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-width: 0; }
+.heading h2 { margin: 0; font-size: 18px; }
+.heading > div > span, .filters > span { color: var(--text-secondary); font-size: 13px; }
+.workspace .heading > :global(.button--primary) > span { color: var(--color-primary-foreground); }
+.filters { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid var(--border-subtle); padding: 0 18px 16px; }
+.filters > :global(.search-input) { flex: 1 1 220px; max-width: 360px; min-width: 0; }
+.filters > :global(.field) { flex: 0 1 240px; min-width: 0; }
+.filters > span { margin-left: auto; }
+.editor:global(.modal) { width: min(680px, 100%); }
+.form:global(.insurance-form) { gap: 16px; }
+.fullWidth { grid-column: 1 / -1; }
+.form > :global(.field) { min-width: 0; }
+.form > :global(.form-actions) { margin-top: 4px; border-top: 1px solid var(--border-subtle); padding-top: 16px; }
+.form :global(.input[type="file"]) { max-width: 100%; font-size: 13px; }
+.historyModal:global(.modal) { width: min(760px, 100%); }
+.historyBody { display: grid; min-width: 0; gap: 16px; padding: 20px; }
+.historyToolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.historyToolbar :global(.field) { min-width: 0; flex: 0 1 250px; }
+.historyToolbar > span { color: var(--text-secondary); font-size: 13px; white-space: nowrap; }
+.historyList { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.historyList > li { border: 1px solid var(--border-default); border-radius: 16px; background: var(--surface-1); padding: 18px; }
+.historyList header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.historyList header strong { font-size: 15px; }
+.historyList time { color: var(--text-secondary); font-size: 13px; }
+.historyList dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; margin: 18px 0; }
+.historyList dl > div { display: grid; min-width: 0; gap: 5px; }
+.historyList dt { color: var(--text-secondary); font-size: 12px; }
+.historyList dd { margin: 0; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.historyReason { margin: 0 0 14px; border-radius: 10px; background: var(--surface-2); padding: 10px 12px; font-size: 13px; overflow-wrap: anywhere; }
+.historyList footer { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 10px; border-top: 1px solid var(--border-default); padding-top: 12px; }
+.historyList footer span { color: var(--text-secondary); font-size: 12px; }
+.historyList footer a { min-height: 36px; display: inline-flex; align-items: center; color: var(--color-primary); font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+.historyEmpty { padding: 30px 12px; color: var(--text-secondary); text-align: center; }
+@media (max-width: 767px) {
+  .heading { align-items: stretch; }
+  .rowActions { width: 100%; justify-content: stretch; }
+  .rowActions > :global(.button) { flex: 1 1 auto; min-height: 46px; }
+  .heading > div { justify-content: space-between; width: 100%; }
+  .heading > :global(.button) { width: 100%; min-height: 44px; }
+  .filters { gap: 10px; padding: 0 14px 14px; }
+  .filters > :global(.search-input), .filters > :global(.field) { flex: 1 1 100%; width: 100%; max-width: none; }
+  .filters > span { width: 100%; margin: 0; }
+  .editor:global(.modal) { width: 100%; }
+  .form:global(.insurance-form) { gap: 14px; }
+  .form > :global(.form-actions) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .form > :global(.form-actions) :global(.button) { min-height: 46px; width: 100%; }
+  .historyBody { padding: 16px; }
+  .historyList > li { padding: 16px; }
+  .historyToolbar { align-items: stretch; flex-direction: column; }
+  .historyToolbar :global(.field) { flex-basis: auto; }
+  .historyList footer { align-items: flex-start; flex-direction: column; }
+  .historyList footer a { min-height: 44px; }
+}

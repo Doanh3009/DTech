@@ -1,0 +1,612 @@
+[
+  {
+    "width": 1920,
+    "inspector": false,
+    "viewport": 1920,
+    "pageWidth": 1910,
+    "tableWidth": 1514,
+    "scrollerWidth": 1514,
+    "scrollMode": "hidden",
+    "columns": [
+      {
+        "id": "fullName",
+        "width": 147
+      },
+      {
+        "id": "departmentName",
+        "width": 326
+      },
+      {
+        "id": "positionName",
+        "width": 212
+      },
+      {
+        "id": "employmentTypeName",
+        "width": 244
+      },
+      {
+        "id": "phone",
+        "width": 179
+      },
+      {
+        "id": "employmentStatus",
+        "width": 212
+      },
+      {
+        "id": "actions",
+        "width": 195
+      }
+    ],
+    "names": [
+      {
+        "name": "test",
+        "width": 25,
+        "scrollWidth": 25,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Châu Tuấn",
+        "width": 79,
+        "scrollWidth": 79,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thị Bình",
+        "width": 79,
+        "scrollWidth": 88,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Văn Hùng",
+        "width": 79,
+        "scrollWidth": 122,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Văn Cường",
+        "width": 79,
+        "scrollWidth": 95,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "doanh",
+        "width": 42,
+        "scrollWidth": 42,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Phạm Mai Anh",
+        "width": 79,
+        "scrollWidth": 96,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Minh Giám Sát",
+        "width": 79,
+        "scrollWidth": 153,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Anh Kế Toán Test",
+        "width": 79,
+        "scrollWidth": 137,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thu Nhân Viên",
+        "width": 79,
+        "scrollWidth": 133,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      }
+    ],
+    "mobileRecords": 0
+  },
+  {
+    "width": 1920,
+    "inspector": true,
+    "viewport": 1920,
+    "pageWidth": 1910,
+    "tableWidth": 1174,
+    "scrollerWidth": 1174,
+    "scrollMode": "hidden",
+    "columns": [
+      {
+        "id": "fullName",
+        "width": 114
+      },
+      {
+        "id": "departmentName",
+        "width": 252
+      },
+      {
+        "id": "positionName",
+        "width": 164
+      },
+      {
+        "id": "employmentTypeName",
+        "width": 189
+      },
+      {
+        "id": "phone",
+        "width": 139
+      },
+      {
+        "id": "employmentStatus",
+        "width": 164
+      },
+      {
+        "id": "actions",
+        "width": 152
+      }
+    ],
+    "names": [
+      {
+        "name": "test",
+        "width": 25,
+        "scrollWidth": 25,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Châu Tuấn",
+        "width": 46,
+        "scrollWidth": 72,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thị Bình",
+        "width": 46,
+        "scrollWidth": 88,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Văn Hùng",
+        "width": 46,
+        "scrollWidth": 122,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Văn Cường",
+        "width": 46,
+        "scrollWidth": 95,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "doanh",
+        "width": 42,
+        "scrollWidth": 42,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Phạm Mai Anh",
+        "width": 46,
+        "scrollWidth": 96,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Minh Giám Sát",
+        "width": 46,
+        "scrollWidth": 153,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Anh Kế Toán Test",
+        "width": 46,
+        "scrollWidth": 137,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thu Nhân Viên",
+        "width": 46,
+        "scrollWidth": 133,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      }
+    ],
+    "mobileRecords": 0
+  },
+  {
+    "width": 1600,
+    "inspector": false,
+    "viewport": 1600,
+    "pageWidth": 1590,
+    "tableWidth": 1201.21875,
+    "scrollerWidth": 1201,
+    "scrollMode": "hidden",
+    "columns": [
+      {
+        "id": "fullName",
+        "width": 116
+      },
+      {
+        "id": "departmentName",
+        "width": 258
+      },
+      {
+        "id": "positionName",
+        "width": 168
+      },
+      {
+        "id": "employmentTypeName",
+        "width": 194
+      },
+      {
+        "id": "phone",
+        "width": 142
+      },
+      {
+        "id": "employmentStatus",
+        "width": 168
+      },
+      {
+        "id": "actions",
+        "width": 155
+      }
+    ],
+    "names": [
+      {
+        "name": "test",
+        "width": 25,
+        "scrollWidth": 25,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Châu Tuấn",
+        "width": 48,
+        "scrollWidth": 72,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thị Bình",
+        "width": 48,
+        "scrollWidth": 88,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Văn Hùng",
+        "width": 48,
+        "scrollWidth": 122,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Văn Cường",
+        "width": 48,
+        "scrollWidth": 95,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "doanh",
+        "width": 42,
+        "scrollWidth": 42,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Phạm Mai Anh",
+        "width": 48,
+        "scrollWidth": 96,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Minh Giám Sát",
+        "width": 48,
+        "scrollWidth": 153,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Anh Kế Toán Test",
+        "width": 48,
+        "scrollWidth": 137,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thu Nhân Viên",
+        "width": 48,
+        "scrollWidth": 133,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      }
+    ],
+    "mobileRecords": 0
+  },
+  {
+    "width": 1600,
+    "inspector": true,
+    "viewport": 1600,
+    "pageWidth": 1590,
+    "tableWidth": 861.21875,
+    "scrollerWidth": 861,
+    "scrollMode": "hidden",
+    "columns": [
+      {
+        "id": "fullName",
+        "width": 83
+      },
+      {
+        "id": "departmentName",
+        "width": 185
+      },
+      {
+        "id": "positionName",
+        "width": 120
+      },
+      {
+        "id": "employmentTypeName",
+        "width": 139
+      },
+      {
+        "id": "phone",
+        "width": 102
+      },
+      {
+        "id": "employmentStatus",
+        "width": 120
+      },
+      {
+        "id": "actions",
+        "width": 111
+      }
+    ],
+    "names": [
+      {
+        "name": "test",
+        "width": 15,
+        "scrollWidth": 25,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Châu Tuấn",
+        "width": 15,
+        "scrollWidth": 72,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thị Bình",
+        "width": 15,
+        "scrollWidth": 88,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Văn Hùng",
+        "width": 15,
+        "scrollWidth": 122,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Văn Cường",
+        "width": 15,
+        "scrollWidth": 95,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "doanh",
+        "width": 15,
+        "scrollWidth": 42,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Phạm Mai Anh",
+        "width": 15,
+        "scrollWidth": 96,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Minh Giám Sát",
+        "width": 15,
+        "scrollWidth": 153,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Anh Kế Toán Test",
+        "width": 15,
+        "scrollWidth": 137,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thu Nhân Viên",
+        "width": 15,
+        "scrollWidth": 133,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      }
+    ],
+    "mobileRecords": 0
+  },
+  {
+    "width": 1366,
+    "inspector": false,
+    "viewport": 1366,
+    "pageWidth": 1356,
+    "tableWidth": 978.4375,
+    "scrollerWidth": 978,
+    "scrollMode": "hidden",
+    "columns": [
+      {
+        "id": "fullName",
+        "width": 95
+      },
+      {
+        "id": "departmentName",
+        "width": 210
+      },
+      {
+        "id": "positionName",
+        "width": 137
+      },
+      {
+        "id": "employmentTypeName",
+        "width": 158
+      },
+      {
+        "id": "phone",
+        "width": 116
+      },
+      {
+        "id": "employmentStatus",
+        "width": 137
+      },
+      {
+        "id": "actions",
+        "width": 126
+      }
+    ],
+    "names": [
+      {
+        "name": "test",
+        "width": 25,
+        "scrollWidth": 25,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Châu Tuấn",
+        "width": 27,
+        "scrollWidth": 72,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thị Bình",
+        "width": 27,
+        "scrollWidth": 88,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Văn Hùng",
+        "width": 27,
+        "scrollWidth": 122,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Văn Cường",
+        "width": 27,
+        "scrollWidth": 95,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "doanh",
+        "width": 27,
+        "scrollWidth": 42,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Phạm Mai Anh",
+        "width": 27,
+        "scrollWidth": 96,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Nguyễn Minh Giám Sát",
+        "width": 27,
+        "scrollWidth": 153,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Lê Anh Kế Toán Test",
+        "width": 27,
+        "scrollWidth": 137,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      },
+      {
+        "name": "Trần Thu Nhân Viên",
+        "width": 27,
+        "scrollWidth": 133,
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "ellipsis": true
+      }
+    ],
+    "mobileRecords": 0
+  }
+]

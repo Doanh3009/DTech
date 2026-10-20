@@ -1,0 +1,119 @@
+/* Shared toolbar geometry. The established theme continues to own its colors. */
+.app-header__desktop-leading { display: none; }
+.app-shell .app-header.app-header--compact .app-header__testing { display: inline-flex; flex: 0 0 auto; }
+.app-shell .app-header.app-header--compact .app-header__test-button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--border-subtle); border-radius: var(--ui-radius-control); background: inherit; color: inherit; font: inherit; white-space: nowrap; cursor: pointer; touch-action: manipulation; }
+.app-shell .app-header.app-header--compact .app-header__test-button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.app-shell .app-header.app-header--compact .app-header__test-button > svg:last-child { transition: transform var(--motion-fast) var(--ease-standard); }
+.app-shell .app-header.app-header--compact .app-header__test-button[aria-expanded="true"] > svg:last-child { transform: rotate(180deg); }
+
+/* FloatingPanel portals this panel outside the header DOM. */
+.app-header__test-popover { padding: 16px; }
+.app-header__test-panel { min-width: 0; font-size: 13px; }
+.app-header__test-panel .test-account-picker--compact { display: grid; min-width: 0; gap: 14px; margin: 0; }
+.app-header__test-panel .test-account-picker--compact > header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; font-size: 12px; line-height: 1.4; }
+.app-header__test-panel .test-account-picker--compact > header > strong { font-size: 13px; font-weight: 600; }
+.app-header__test-panel .test-account-picker__accounts { display: block; }
+.app-header__test-panel .field { min-width: 0; gap: 6px; }
+.app-header__test-panel .field > label { font-size: 13px; }
+.app-header__test-panel select[name="testAccount"] { width: 100%; min-width: 0; min-height: 44px; font-size: 14px; }
+
+@media (min-width: 768px) {
+  .app-shell .app-header.app-header--compact {
+    display: grid;
+    height: var(--topbar-height);
+    min-height: var(--topbar-height);
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-rows: var(--topbar-height);
+    align-items: center;
+    gap: 12px;
+    padding-block: 0;
+    padding-inline: var(--workspace-safe-inline);
+    font-size: 13px;
+  }
+
+  .app-shell .app-header.app-header--compact .app-header__desktop-leading {
+    display: flex;
+    min-width: 0;
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .app-shell .app-header.app-header--compact .app-header__mobile-leading { display: none; }
+  .app-shell .app-header.app-header--compact .app-header__context { display: flex; min-width: 0; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; line-height: 1.4; white-space: nowrap; }
+  .app-shell .app-header.app-header--compact .app-header__context > a { flex: 0 0 auto; }
+  .app-shell .app-header.app-header--compact .app-header__context > svg { width: 14px; height: 14px; flex: 0 0 auto; }
+  .app-shell .app-header.app-header--compact .app-header__context > [aria-current="page"] { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .app-shell .app-header.app-header--compact .app-header__nav-toggle { flex: 0 0 auto; }
+
+  .app-shell .app-header.app-header--compact .app-header__search {
+    display: flex;
+    width: 220px;
+    min-width: 0;
+    max-width: 220px;
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  .app-shell .app-header.app-header--compact .app-header__search .header-search { display: flex; width: 100%; min-width: 0; height: 36px; min-height: 36px; gap: 8px; padding-inline: 12px; font-size: 13px; line-height: 1.4; }
+  .app-shell .app-header.app-header--compact .app-header__search .header-search-mobile { display: none; }
+  .app-shell .app-header.app-header--compact .header-search kbd { padding: 1px 4px; font-size: 10px; line-height: 1.4; }
+
+  .app-shell .app-header.app-header--compact .app-header__actions { display: flex; min-width: 0; grid-column: 3; grid-row: 1; align-items: center; justify-content: flex-end; gap: 8px; padding: 0; }
+  .app-shell .app-header.app-header--compact :is(.app-header__nav-toggle, .notification-bell, .message-bell) { width: 40px; min-width: 40px; height: 40px; min-height: 40px; padding: 0; }
+  .app-shell .app-header.app-header--compact :is(.app-header__nav-toggle, .notification-bell, .message-bell) > svg { width: 18px; height: 18px; }
+  .app-shell .app-header.app-header--compact .app-header__actions > .dropdown > .dropdown__trigger { min-width: 40px; height: 40px; min-height: 40px; padding: 0 6px; font-size: 13px; }
+  .app-shell .app-header.app-header--compact .user-menu__trigger { display: inline-flex; width: auto; min-width: 0; height: auto; align-items: center; gap: 8px; padding: 0; font-size: 13px; font-weight: 500; line-height: 1.4; }
+  .app-shell .app-header.app-header--compact .user-menu__name { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .app-shell .app-header.app-header--compact .user-menu__chevron { width: 14px; height: 14px; flex: 0 0 auto; }
+  .app-shell .app-header.app-header--compact .user-menu__trigger .avatar { width: 28px; height: 28px; flex: 0 0 28px; font-size: 11px; }
+  .app-shell .app-header.app-header--compact .app-header__test-button { min-width: 40px; height: 36px; min-height: 36px; padding: 0 10px; font-size: 13px; }
+  .app-shell .app-header.app-header--compact .app-header__test-button > svg { width: 16px; height: 16px; }
+  .app-shell .app-header.app-header--compact .app-header__test-button > svg:last-child { width: 13px; height: 13px; }
+  .app-shell .app-header.app-header--compact .connection-status { max-width: 180px; min-height: 28px; padding-inline: 8px; font-size: 12px; }
+  .app-shell .app-content:has(> .app-header--compact) .page-main { padding-top: 16px; }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .app-shell .app-header.app-header--compact { gap: 8px; }
+  .app-shell .app-header.app-header--compact .app-header__context > a,
+  .app-shell .app-header.app-header--compact .app-header__context > svg { display: none; }
+  .app-shell .app-header.app-header--compact .app-header__search { width: 40px; max-width: 40px; }
+  .app-shell .app-header.app-header--compact .app-header__search .header-search { display: none; }
+  .app-shell .app-header.app-header--compact .app-header__search .header-search-mobile { display: inline-flex; width: 40px; min-width: 40px; height: 40px; min-height: 40px; align-items: center; justify-content: center; padding: 0; }
+  .app-shell .app-header.app-header--compact .app-header__search .header-search-mobile > svg { width: 18px; height: 18px; }
+  .app-shell .app-header.app-header--compact .app-header__actions { gap: 6px; }
+  .app-shell .app-header.app-header--compact .app-header__test-label,
+  .app-shell .app-header.app-header--compact .app-header__test-button > svg:last-child,
+  .app-shell .app-header.app-header--compact .user-menu__name,
+  .app-shell .app-header.app-header--compact .user-menu__chevron,
+  .app-shell .app-header.app-header--compact .connection-status > span { display: none; }
+  .app-shell .app-header.app-header--compact .app-header__test-button { width: 40px; height: 40px; min-height: 40px; padding: 0; }
+}
+
+@media (max-width: 767px) {
+  .app-shell .app-header.app-header--compact .app-header__desktop-leading { display: none; }
+  .app-shell .app-header.app-header--compact .app-header__test-button { display: inline-flex; width: 44px; min-width: 44px; height: 44px; min-height: 44px; align-items: center; justify-content: center; padding: 0; }
+  .app-shell .app-header.app-header--compact .app-header__test-label,
+  .app-shell .app-header.app-header--compact .app-header__test-button > svg:last-child,
+  .app-shell .app-header.app-header--compact .user-menu__name,
+  .app-shell .app-header.app-header--compact .user-menu__chevron { display: none; }
+  .app-shell .app-header.app-header--compact .app-header__test-button > svg { width: 18px; height: 18px; }
+  .app-header__test-panel { padding-block: 4px; }
+  .app-header__test-panel select[name="testAccount"] { font-size: 16px; }
+}
+
+@media (min-width: 768px) and (pointer: coarse) {
+  .app-shell .app-header.app-header--compact :is(.app-header__nav-toggle, .notification-bell, .message-bell),
+  .app-shell .app-header.app-header--compact .app-header__actions > .dropdown > .dropdown__trigger,
+  .app-shell .app-header.app-header--compact .app-header__test-button,
+  .app-shell .app-header.app-header--compact .app-header__search .header-search-mobile { min-width: 44px; min-height: 44px; height: 44px; }
+  .app-shell .app-header.app-header--compact .app-header__search .header-search { min-height: 44px; height: 44px; }
+  .app-shell .app-header.app-header--compact .app-header__search:has(.header-search-mobile) { min-width: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell .app-header.app-header--compact .app-header__test-button > svg:last-child { transition: none; }
+}

@@ -1,0 +1,883 @@
+/* Final component geometry and interaction tokens; no change to workspace gutters. */
+:root {
+  --ui-motion-fast: 120ms;
+  --ui-motion-enter: 180ms;
+  --ui-motion-page: 210ms;
+  --ui-motion-ease: cubic-bezier(.2,.7,.2,1);
+  --desktop-shell-inset: 12px;
+}
+/* One canvas continues through the rail corners and the scrollbar gutter. */
+html:has(.app-shell) {
+  background: var(--workspace-canvas);
+  background-attachment: fixed;
+}
+body:has(.app-shell),
+.app-shell,
+.app-shell .app-content {
+  background: transparent;
+}
+.app-shell {
+  --radius-control: var(--ui-radius-control);
+  --radius-input: var(--ui-radius-control);
+  --radius-button: var(--ui-radius-control);
+  --radius-card: var(--ui-radius-card);
+  --radius-panel: var(--ui-radius-overlay);
+  --radius-modal: var(--ui-radius-overlay);
+}
+.app-shell__skip-link {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: max(12px, env(safe-area-inset-left));
+  z-index: var(--z-dropdown, 60);
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--ui-radius-control);
+  padding: 10px 16px;
+  background: var(--surface-1);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(calc(-100% - 24px));
+}
+.app-shell__skip-link:focus-visible {
+  outline: 2px solid var(--color-focus-ring, var(--primary));
+  outline-offset: 3px;
+  transform: none;
+}
+@media (min-width: 768px) {
+  .app-shell .app-rail {
+    top: var(--desktop-shell-inset);
+    height: calc(100dvh - 2 * var(--desktop-shell-inset));
+    align-self: flex-start;
+    margin: var(--desktop-shell-inset) 0 var(--desktop-shell-inset) var(--desktop-shell-inset);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--ui-radius-overlay);
+    background-clip: padding-box;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--text-primary) 7%, transparent);
+  }
+  .app-shell .chat-dock-launcher {
+    left: calc(var(--desktop-shell-inset) + var(--sidebar-width) / 2 - 24px);
+    bottom: calc(72px + var(--desktop-shell-inset));
+  }
+  .app-shell:has(.app-rail.is-collapsed) .chat-dock-launcher {
+    left: calc(var(--desktop-shell-inset) + var(--sidebar-collapsed-width) / 2 - 24px);
+  }
+}
+@media (max-width: 767px) {
+  html:has(.app-shell) { background-attachment: scroll; }
+}
+.app-shell .page-main :is(.card,.data-surface,.work-canvas,.operational-workspace) {
+  border-radius: var(--ui-radius-card);
+  border-color: #dfe8f3;
+}
+.app-shell .page-main :is(.input,.select,.textarea,.select-control__trigger) {
+  border-radius: var(--ui-radius-control);
+  border-color: #d9e4f1;
+  box-shadow: none;
+  transition: border-color var(--ui-motion-fast) ease, background-color var(--ui-motion-fast) ease;
+}
+.app-shell .page-main :is(.input,.select,.textarea,.select-control__trigger):focus-visible {
+  outline: 2px solid #83b2f0;
+  outline-offset: 2px;
+  border-color: #8db9ee;
+}
+.app-shell .page-main .search-input {
+  border-radius: 999px;
+  background: #ffffffd9;
+}
+.app-shell .page-main .search-input > .input,
+.app-shell .page-main .search-input > .input:is(:hover, :focus, :focus-visible) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
+  outline-offset: 0;
+  appearance: none;
+}
+.app-shell .page-main .search-input:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+@media (forced-colors: active) {
+  .app-shell .page-main .search-input:focus-within { outline: 2px solid Highlight; outline-offset: 2px; }
+}
+.app-shell .page-main :is(.button,.icon-button) {
+  border-radius: var(--ui-radius-control);
+  transition: background-color var(--ui-motion-fast) ease, border-color var(--ui-motion-fast) ease, box-shadow var(--ui-motion-fast) ease, transform var(--ui-motion-fast) var(--ui-motion-ease);
+}
+.app-shell .page-main :is(.button,.icon-button):active:not(:disabled):not([aria-disabled="true"]) { transform: scale(.98); }
+.app-shell .page-main :is(.button,.icon-button):disabled { box-shadow: none; }
+.app-shell .page-main .data-table { border-radius: 14px; }
+.app-shell .page-main:focus { outline: none; }
+.app-shell .page-main .data-table thead tr:first-child > :first-child { border-top-left-radius: 14px; }
+.app-shell .page-main .data-table thead tr:first-child > :last-child { border-top-right-radius: 14px; }
+.app-shell .page-main .data-table tbody tr:last-child > :first-child { border-bottom-left-radius: 14px; }
+.app-shell .page-main .data-table tbody tr:last-child > :last-child { border-bottom-right-radius: 14px; }
+.app-shell .page-main .data-table__mobile-card { border-radius: var(--ui-radius-card); border-color: #dfe8f3; }
+.app-shell .page-main :is(.form-grid,.drawer-form,.leave-form) { gap: 14px; }
+.app-shell .page-main .field { gap: 6px; min-width: 0; }
+.app-shell .page-main .field > label { font-size: 13px; font-weight: 500; }
+.app-shell .page-main .timesheet-adjustment-heading { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; min-height: 0; }
+.app-shell .page-main .timesheet-adjustment-heading h2 { margin: 0; font-size: 17px; }
+.app-shell .page-main .status-badge { border-radius: 999px; }
+.overlay :is(.input,.textarea,.select-control__trigger,.button,.icon-button) { border-radius: var(--ui-radius-control); }
+.overlay .modal { border-radius: var(--ui-radius-overlay); }
+.overlay .drawer { border-radius: var(--ui-radius-overlay) 0 0 var(--ui-radius-overlay); }
+.overlay__header h2 { font-size: 18px; line-height: 1.4; }
+.overlay:not([hidden]) { animation: ui-overlay-fade var(--ui-motion-fast) ease; }
+.overlay:not([hidden]) .modal { animation: ui-modal-enter var(--ui-motion-enter) var(--ui-motion-ease); }
+.overlay:not([hidden]) .drawer { animation: ui-drawer-enter var(--ui-motion-enter) var(--ui-motion-ease); }
+.dropdown__content, .select-control__listbox { border-radius: 14px; }
+.dropdown__content > :is(a,button) { border-radius: 8px; }
+
+/* Read-only detail content needs the same inset as forms. Module-specific
+   padding takes precedence over this zero-specificity default. */
+:where(.overlay > :is(.modal, .drawer):not(.mobile-app-sheet) > :not(.overlay__header, .floating-panel)) {
+  padding: 20px;
+}
+.overlay > .modal {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  max-height: calc(var(--overlay-viewport-height, 100dvh) - 32px);
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+.overlay > .modal > :not(.overlay__header, .floating-panel) {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.overlay > :is(.modal, .drawer:not(.mobile-app-sheet), .lightbox) > .overlay__header {
+  min-width: 0;
+  flex: 0 0 auto;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 16px 20px;
+}
+.overlay > :is(.modal, .drawer:not(.mobile-app-sheet), .lightbox) > .overlay__header h2 {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  white-space: normal;
+}
+.overlay > :is(.modal, .drawer:not(.mobile-app-sheet), .lightbox) > .overlay__header .icon-button {
+  width: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  flex: 0 0 auto;
+}
+.overlay :is(.button, .icon-button, .dropdown__trigger, .password-input__toggle, .switch):focus-visible,
+.dropdown__trigger:focus-visible,
+.dropdown__content :is(a, button):focus-visible,
+.context-tabs .tabs__item:focus-visible,
+.data-table__sort:focus-visible {
+  outline: 2px solid var(--color-focus-ring, var(--primary));
+  outline-offset: 2px;
+}
+.dropdown__content > div {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+.dropdown__content > div > :is(a, button) {
+  min-height: 40px;
+  gap: 8px;
+  border-radius: 10px;
+  padding: 8px 10px;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.dropdown__content :is(a, button)[aria-disabled="true"] {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+.data-table-shell,
+.data-table-scroll { min-width: 0; max-width: 100%; }
+.data-table-scroll,
+.employee-roster .data-table-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  border-radius: 14px;
+}
+.data-table-scroll:focus-visible {
+  outline: 2px solid var(--color-focus-ring, var(--primary));
+  outline-offset: -2px;
+}
+.switch-field__label { cursor: pointer; }
+.switch-field[data-disabled="true"] .switch-field__label { cursor: not-allowed; }
+
+/* Only the workspace changes; the rail, header and background remain steady. */
+::view-transition { pointer-events: none; }
+::view-transition-group(root), ::view-transition-new(root) { animation: none; }
+::view-transition-old(root) { display: none; }
+::view-transition-group(.workspace-page-motion) {
+  animation-duration: var(--ui-motion-page);
+  animation-timing-function: cubic-bezier(.22,.72,.2,1);
+}
+::view-transition-old(.workspace-page-motion) {
+  animation: ui-page-leave 120ms ease-out both;
+  mix-blend-mode: normal;
+}
+::view-transition-new(.workspace-page-motion) {
+  animation: ui-page-arrive var(--ui-motion-page) cubic-bezier(.22,.72,.2,1) both;
+  mix-blend-mode: normal;
+}
+@keyframes ui-page-leave { from { opacity: 1; } to { opacity: 0; } }
+@keyframes ui-page-arrive { from { opacity: 0; transform: translateY(8px) scale(.995); } to { opacity: 1; transform: none; } }
+@keyframes ui-overlay-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ui-modal-enter { from { opacity: .88; transform: translateY(8px) scale(.99); } to { opacity: 1; transform: none; } }
+@keyframes ui-drawer-enter { from { opacity: .9; transform: translateX(12px); } to { opacity: 1; transform: none; } }
+@keyframes ui-sheet-enter { from { opacity: .9; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media(max-width:767px) {
+  .app-shell { --mobile-radius: var(--ui-radius-card); --mobile-input-radius: var(--ui-radius-control); }
+  .app-shell .page-main :is(.button,.icon-button) { min-height: 44px; font-size: 14px; }
+  .app-shell .page-main .textarea { min-height: 104px; }
+  .overlay > .drawer:not(.mobile-app-sheet), .overlay > .drawer:not(.mobile-app-sheet):has(form) { border-radius: var(--ui-radius-overlay) var(--ui-radius-overlay) 0 0; }
+  .overlay:not([hidden]) > .drawer:not(.mobile-app-sheet), .overlay:not([hidden]) > .drawer:not(.mobile-app-sheet):has(form) { animation: ui-sheet-enter var(--ui-motion-enter) var(--ui-motion-ease); }
+  .overlay__header h2 { font-size: 17px; }
+  .overlay > .modal {
+    max-height: calc(var(--overlay-viewport-height, 100dvh) - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom)));
+  }
+  .overlay > :is(.modal, .drawer:not(.mobile-app-sheet), .lightbox) > .overlay__header { padding: 16px; }
+  :where(.overlay > :is(.modal, .drawer):not(.mobile-app-sheet) > :not(.overlay__header, .floating-panel)) { padding: 16px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+  .app-shell .page-main :is(.button,.icon-button,.input,.select,.textarea,.select-control__trigger) { transition: none; }
+  .app-shell .page-main :is(.button,.icon-button):active:not(:disabled) { transform: none; }
+  .overlay:not([hidden]), .overlay:not([hidden]) :is(.modal,.drawer) { animation: none; }
+  .overlay:not([hidden]) > .drawer:not(.mobile-app-sheet), .overlay:not([hidden]) > .drawer:not(.mobile-app-sheet):has(form) { animation: none; }
+}
+
+/* Keep workspace panels in the user's focus and show all four rounded corners. */
+.overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) {
+  display: grid;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer {
+  display: flex;
+  width: min(720px, 100%);
+  max-width: 720px;
+  height: auto;
+  min-height: 0;
+  max-height: calc(var(--overlay-viewport-height, 100dvh) - 32px);
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--surface-border, var(--border-subtle));
+  border-radius: var(--ui-radius-overlay);
+  padding: 0;
+  background: var(--surface-1, #fff);
+  box-shadow: 0 24px 70px rgba(22, 31, 40, .22), 0 3px 12px rgba(22, 31, 40, .08);
+  animation: ui-modal-enter var(--ui-motion-enter) var(--ui-motion-ease);
+}
+.overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer > :not(.overlay__header) {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (min-width: 768px) {
+  .contract-workspace-grid { gap: 24px; }
+  .contract-filter-bar .filter-bar__controls { align-items: flex-end; }
+  .contract-filter-bar .search-input {
+    width: min(100%, 420px);
+    max-width: 420px;
+    min-height: 44px;
+    flex: 1 1 280px;
+    align-self: flex-end;
+  }
+  .contract-filter-bar .field { flex: 0 1 210px; }
+}
+
+@media (max-width: 767px) {
+  .overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+  .overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer {
+    width: 100%;
+    max-width: 640px;
+    max-height: calc(var(--overlay-viewport-height, 100dvh) - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom)));
+    border-radius: var(--ui-radius-overlay);
+    padding-bottom: 0;
+  }
+  .contract-workspace-grid { gap: 14px; }
+  .employee-contract-list[data-view="mobile"] .mobile-record-list { gap: 12px; }
+  .employee-contract-list[data-view="mobile"] .mobile-record {
+    overflow: hidden;
+    border-color: var(--border-subtle);
+    border-radius: var(--ui-radius-card);
+  }
+  .employee-contract-list[data-view="mobile"] .mobile-record__facts { border: 0; background: transparent; padding: 0; }
+  .employee-contract-list[data-view="mobile"] .mobile-record__more { border-top: 1px solid var(--border-subtle); }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer { animation: none; }
+}
+
+/* Give the roster, attendance page, and urgent work a clearer visual anchor. */
+.app-shell .page-main .employee-roster {
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid #cbd8e7;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(24, 47, 73, .08);
+}
+.employee-roster__heading {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #d7e1ec;
+  padding: 14px 20px;
+  background: linear-gradient(105deg, #edf4fb, #f7f5ff 70%, #fafcff);
+}
+.employee-roster__heading h2 {
+  margin: 0;
+  color: #183653;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+}
+.employee-roster__heading > span {
+  flex: 0 0 auto;
+  border: 1px solid #d4dfeb;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, .82);
+  color: #40566d;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.employee-roster .employee-filter-bar {
+  border-bottom-color: #d7e1ec;
+  background: #f7f9fc;
+  padding: 14px 18px;
+}
+.employee-roster .list-summary-bar { display: none; }
+.employee-roster .data-table-scroll {
+  margin: 12px;
+  overflow: hidden;
+  border: 1px solid #d5dfeb;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 5px 16px rgba(24, 47, 73, .045);
+}
+.employee-roster .data-table th {
+  height: 46px;
+  border-bottom-color: #cad7e5;
+  background: #eaf1f8;
+  color: #23415f;
+  font-weight: 700;
+}
+.employee-roster .data-table td {
+  height: 52px;
+  border-bottom-color: #e1e8f0;
+  padding-block: 9px;
+  color: #29435e;
+}
+.employee-roster .data-table tbody tr:hover { background: #f2f7fc; }
+.employee-roster .employee-name-cell .table-link { color: #173d61; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.employee-roster .employee-name-cell .table-link:focus-visible { border-radius: 4px; outline: 2px solid #1478a8; outline-offset: 3px; }
+.employee-roster .employee-table-footer { border-top: 1px solid #d7e1ec; padding: 14px 18px; }
+
+.app-shell .page-main .attendance-page { width: min(100%, 1080px); margin-inline: auto; }
+.attendance-home-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.attendance-clock-card {
+  display: flex;
+  min-height: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  border: 1px solid #d5dfeb;
+  border-radius: 16px;
+  padding: 14px 18px;
+  background: linear-gradient(110deg, #f3f7fc, #fff 68%);
+  text-align: left;
+}
+.attendance-clock-card > strong { color: #25597b; font-size: 27px; font-weight: 650; letter-spacing: -.04em; }
+.attendance-clock-card .attendance-date { color: #4c6075; font-size: 13px; font-weight: 550; }
+.attendance-clock-card .attendance-shift { margin-left: auto; color: #435a71; font-size: 13px; }
+.attendance-clock-card--loading { justify-content: flex-start; }
+.attendance-clock-card--loading .status-badge { margin-left: auto; }
+.attendance-status-card {
+  gap: 14px;
+  border: 1px solid #cbd8e7;
+  border-radius: 18px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(24, 47, 73, .07);
+}
+.attendance-timeline-title { margin: 4px 0 0; color: #173a5b; font-size: 18px; font-weight: 700; }
+.attendance-primary-action { border-radius: 13px; box-shadow: 0 7px 18px rgba(0, 93, 137, .18); }
+
+.attention > .chartHeader {
+  border-bottom: 1px solid #d9e2ec;
+  background: linear-gradient(105deg, #f0f5fb, #fff);
+}
+.attentionItem {
+  border-top-color: #e0e7ef;
+  background: #fff;
+}
+.attentionItem[data-priority="HIGH"] { box-shadow: inset 3px 0 #d28a19; }
+.attentionItem[data-priority="CRITICAL"] { box-shadow: inset 4px 0 #c34242; background: #fffafa; }
+.attentionItem[data-priority="HIGH"] .workIdentity strong,
+.attentionItem[data-priority="CRITICAL"] .workIdentity strong { color: #173a5b; }
+.attentionContext { color: #52677c; }
+
+@media (max-width: 767px) {
+  .app-shell .page-main .employee-roster {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .app-shell .page-main .employee-roster__canvas { gap: 12px; }
+  .app-shell .page-main .employee-roster__canvas:has(> .data-table-shell[data-view="mobile"]) > .employee-roster__heading {
+    min-height: 58px;
+    border: 1px solid #cfdae7;
+    border-radius: 16px;
+    padding: 12px 15px;
+    background: linear-gradient(105deg, #edf4fb, #f7f5ff);
+  }
+  .employee-roster__heading h2 { font-size: 17px; }
+  .employee-roster__heading > span { padding: 4px 8px; font-size: 11px; }
+  .app-shell .page-main .employee-roster__canvas:has(> .data-table-shell[data-view="mobile"]) > form { margin: 0; }
+  .app-shell .page-main .employee-roster__canvas:has(> .data-table-shell[data-view="mobile"]) > form .filter-bar {
+    border: 1px solid #cfdae7;
+    border-radius: 16px;
+    padding: 12px;
+    background: #fff;
+  }
+  .employee-roster .data-table-shell[data-view="mobile"] { border: 0; overflow: visible; background: transparent; }
+  .employee-roster .mobile-record-list { gap: 14px; padding: 0; }
+  .employee-roster .mobile-record {
+    overflow: hidden;
+    border: 1px solid #cbd9e8;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 7px 18px rgba(24, 47, 73, .075);
+  }
+  .employee-roster .mobile-record__facts { border: 0; border-radius: 12px; background: #f2f6fa; }
+  .employee-roster .mobile-record__more,
+  .employee-roster .mobile-record__footer { border-color: #e1e8f0; }
+  .attendance-clock-card { flex-wrap: wrap; gap: 8px 12px; padding: 13px 15px; }
+  .attendance-clock-card > strong { font-size: 23px; }
+  .attendance-clock-card .attendance-date { flex: 1 1 52%; font-size: 12px; }
+  .attendance-clock-card .attendance-shift { flex: 1 1 100%; margin-left: 0; }
+  .attendance-clock-card--loading .status-badge { margin-left: 0; }
+  .attendance-status-card { border-radius: 16px; padding: 15px; }
+  .attentionItem[data-priority="HIGH"], .attentionItem[data-priority="CRITICAL"] { border-radius: 10px; }
+}
+
+/* Finish the phone card system after the legacy responsive overrides. */
+@media (max-width: 767px) {
+  :root {
+    --ui-radius-card: 18px;
+    --mobile-radius: 18px;
+  }
+
+  .app-shell .page-main :is(.card, .data-table__mobile-card, .mobile-record, .timesheet-mobile-card, .workspace-card, .panel-card, .detail-section, .section) {
+    border-radius: var(--ui-radius-card);
+  }
+
+  .app-shell .page-main .data-surface:not(:has(.data-table-shell[data-view="mobile"])) {
+    overflow: hidden;
+    border: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    border-radius: var(--ui-radius-card);
+    background: var(--mobile-surface-pearl, var(--surface-1));
+    box-shadow: var(--mobile-shadow);
+  }
+
+  .app-shell .page-main .data-surface:not(:has(.data-table-shell[data-view="mobile"])) > .data-surface__toolbar {
+    min-height: 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    border-radius: var(--ui-radius-card) var(--ui-radius-card) 0 0;
+    padding: 12px;
+    background: var(--surface-1);
+  }
+
+  .app-shell .page-main .personal-workspace-cards {
+    gap: 12px;
+  }
+
+  .app-shell .page-main .personal-workspace-cards > section {
+    border: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    border-radius: var(--ui-radius-card);
+    background: var(--mobile-surface-pearl, var(--surface-1));
+    padding: 14px;
+    box-shadow: var(--mobile-shadow);
+  }
+
+  .app-shell .page-main .attendance-home-grid {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .app-shell .page-main .attendance-clock-card {
+    display: grid;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 6px 10px;
+    border-radius: var(--ui-radius-card);
+    padding: 14px;
+  }
+
+  .app-shell .page-main .attendance-clock-card .attendance-date {
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .app-shell .page-main .attendance-clock-card > strong {
+    justify-self: end;
+    font-size: clamp(21px, 7vw, 25px);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .app-shell .page-main .attendance-clock-card .attendance-shift {
+    display: grid;
+    min-width: 0;
+    grid-column: 1 / -1;
+    grid-template-columns: 20px minmax(0, 1fr);
+    align-items: start;
+    gap: 2px 8px;
+    margin: 2px 0 0;
+    line-height: 1.45;
+  }
+
+  .app-shell .page-main .attendance-clock-card .attendance-shift > svg {
+    grid-row: 1 / span 2;
+    margin-top: 2px;
+  }
+
+  .app-shell .page-main .attendance-clock-card .attendance-shift > :is(span, b) {
+    min-width: 0;
+    grid-column: 2;
+    overflow-wrap: anywhere;
+  }
+
+  .app-shell .page-main .attendance-status-card {
+    display: grid;
+    min-width: 0;
+    gap: 10px;
+    overflow: hidden;
+    border: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    border-radius: var(--ui-radius-card);
+    padding: 14px;
+    background: var(--surface-1);
+    box-shadow: none;
+  }
+
+  .app-shell .page-main .attendance-status-card .attendance-status-row {
+    display: grid;
+    min-width: 0;
+    grid-template-columns: 20px minmax(0, 1fr);
+    align-items: start;
+    gap: 6px 8px;
+    border-bottom: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    padding-bottom: 10px;
+    line-height: 1.45;
+  }
+
+  .app-shell .page-main .attendance-status-card .attendance-status-row > svg {
+    grid-row: 1 / span 2;
+    margin-top: 2px;
+  }
+
+  .app-shell .page-main .attendance-status-card .attendance-status-row > span:not(.status-badge) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .app-shell .page-main .attendance-status-card .attendance-status-row > .status-badge {
+    max-width: 100%;
+    grid-column: 2;
+    justify-self: start;
+    white-space: normal;
+  }
+
+  .app-shell .page-main .attendance-timeline-title {
+    margin: 2px 0 0;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .app-shell .page-main .attendance-today-events {
+    display: grid;
+    min-width: 0;
+    gap: 8px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .app-shell .page-main .attendance-today-events > div {
+    display: grid;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    padding-top: 10px;
+  }
+
+  .app-shell .page-main .attendance-today-events .status-badge {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .app-shell .page-main .attendance-primary-action {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .app-shell .page-main .attendance-last-link {
+    display: flex;
+    min-width: 0;
+    min-height: 44px;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    padding-top: 8px;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .app-shell .page-main .attendance-last-link > svg {
+    flex: 0 0 auto;
+  }
+
+  .app-shell .page-main :is(.attendance-warning, .attendance-notice, .attendance-pending-bar) {
+    min-width: 0;
+    border: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    border-radius: 14px;
+    padding: 12px;
+    background: var(--surface-1);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .app-shell .page-main .attendance-warning {
+    border-color: color-mix(in srgb, var(--warning) 28%, var(--mobile-workspace-line));
+    background: var(--warning-soft);
+  }
+
+  .app-shell .page-main .attendance-notice,
+  .app-shell .page-main .attendance-pending-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .app-shell .page-main :is(.attendance-photo-review, .attendance-success-card, .attendance-quick-empty) {
+    display: grid;
+    min-width: 0;
+    justify-items: center;
+    gap: 14px;
+    border: 1px solid var(--mobile-workspace-line, var(--border-subtle));
+    border-radius: var(--ui-radius-card);
+    padding: 16px;
+    background: var(--surface-1);
+    text-align: center;
+  }
+
+  .app-shell .page-main .attendance-photo-review > img {
+    display: block;
+    width: 100%;
+    max-height: min(54dvh, 520px);
+    border-radius: 12px;
+    object-fit: contain;
+  }
+
+  .app-shell .page-main .attendance-photo-review .action-row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .app-shell .page-main .attendance-photo-review .action-row > .button--primary {
+    grid-column: 1 / -1;
+  }
+
+  .app-shell .page-main .attendance-success-card > .button {
+    width: 100%;
+  }
+
+  .app-shell .page-main .attendance-capture-status {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .app-shell .page-main .attendance-capture-status > span {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+/* Keep navigation captions on one line and use a consistent section-heading case. */
+.app-rail__section-label {
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: .055em;
+  padding-inline: 6px;
+}
+
+.app-rail__link > span,
+.mobile-bottom-nav__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-menu__content > .user-menu__identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 8px 4px 14px;
+}
+
+.user-menu__identity > .avatar {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.user-menu__identity > .avatar > span {
+  color: inherit;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.user-menu__identity-copy {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 4px;
+}
+
+.user-menu__identity-copy > :is(strong, span) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .app-shell .page-main :is(.page-header h1, .entity-context-header h1, .section-title, .section-header h2, .card__title) {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .overlay.overlay--drawer:not([hidden]):has(.user-menu__content) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .overlay.overlay--drawer:not([hidden]):has(.user-menu__content) > .drawer.mobile-dropdown-sheet {
+    width: 100%;
+    max-width: none;
+    margin: auto 0 0;
+    border-radius: 24px 24px 0 0;
+    padding-bottom: 0;
+    box-shadow: var(--mobile-shadow-raised);
+  }
+
+  .mobile-dropdown-sheet:has(.user-menu__content) .mobile-dropdown-sheet__items {
+    padding: 12px 16px max(20px, env(safe-area-inset-bottom));
+  }
+
+  .mobile-dropdown-sheet .user-menu__content {
+    min-width: 0;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    animation: none;
+  }
+
+  .mobile-dropdown-sheet .user-menu__identity {
+    margin-bottom: 4px;
+    border-bottom: 0;
+    padding: 4px 4px 14px;
+  }
+
+  .mobile-dropdown-sheet .user-menu__identity > .avatar {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    border-radius: 16px;
+  }
+
+  .mobile-dropdown-sheet .user-menu__identity-copy > strong {
+    color: var(--mobile-ink);
+    font-size: 16px;
+    font-weight: 650;
+  }
+
+  .mobile-dropdown-sheet .user-menu__content > :is(a, button) {
+    min-height: 52px;
+    border: 1px solid var(--mobile-line);
+    border-radius: var(--mobile-input-radius);
+    background: var(--mobile-surface-inset);
+    padding: 12px 14px;
+    font-size: 15px;
+    font-weight: 550;
+    white-space: nowrap;
+  }
+}
+.modal:focus, .drawer:focus { outline: none; }

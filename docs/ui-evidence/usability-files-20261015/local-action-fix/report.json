@@ -1,0 +1,583 @@
+{
+  "kind": "isolated-real-component-layout",
+  "screens": [
+    {
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "actions": [
+          {
+            "text": "Tất cả công trường",
+            "label": "Chọn công trường",
+            "width": 227.4375,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 135,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Công việc",
+            "label": null,
+            "width": 135,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Nhân lực",
+            "label": null,
+            "width": 135,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Thông tin",
+            "label": null,
+            "width": 135,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Tài liệu",
+            "label": null,
+            "width": 274,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 104,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 94,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 89.53125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 67.890625,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 55.9375,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 52.609375,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 74.921875,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 101,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Xuất Excel",
+            "label": null,
+            "width": 129,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Điểm danh",
+            "label": "Điểm danh công nhân",
+            "width": 129,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Phân công",
+            "label": null,
+            "width": 130,
+            "height": 44,
+            "fontSize": "14px"
+          }
+        ],
+        "clipped": [],
+        "title": {
+          "whiteSpace": "normal",
+          "height": 48.59375,
+          "lineHeight": "24.3px",
+          "text": "Công trường kiểm tra kết cấu thép Châu Tuấn"
+        }
+      }
+    },
+    {
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "actions": [
+          {
+            "text": "Tất cả công trường",
+            "label": "Chọn công trường",
+            "width": 287.171875,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 108.65625,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Công việc",
+            "label": null,
+            "width": 108.671875,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Nhân lực",
+            "label": null,
+            "width": 108.671875,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Thông tin",
+            "label": null,
+            "width": 165,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Tài liệu",
+            "label": null,
+            "width": 165,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 104,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 94,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 89.53125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 67.890625,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 55.9375,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 52.609375,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 74.921875,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 101,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Xuất Excel",
+            "label": null,
+            "width": 159,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Điểm danh",
+            "label": "Điểm danh công nhân",
+            "width": 159,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Phân công",
+            "label": null,
+            "width": 130,
+            "height": 44,
+            "fontSize": "14px"
+          }
+        ],
+        "clipped": [],
+        "title": {
+          "whiteSpace": "normal",
+          "height": 48.59375,
+          "lineHeight": "24.3px",
+          "text": "Công trường kiểm tra kết cấu thép Châu Tuấn"
+        }
+      }
+    },
+    {
+      "width": 430,
+      "metrics": {
+        "width": 430,
+        "scrollWidth": 420,
+        "actions": [
+          {
+            "text": "Tất cả công trường",
+            "label": "Chọn công trường",
+            "width": 327.046875,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 122,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Công việc",
+            "label": null,
+            "width": 122,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Nhân lực",
+            "label": null,
+            "width": 122,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Thông tin",
+            "label": null,
+            "width": 185,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Tài liệu",
+            "label": null,
+            "width": 185,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 104,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 62.953125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 94,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 89.53125,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 67.890625,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 55.9375,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 52.609375,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 74.921875,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "",
+            "label": null,
+            "width": 101,
+            "height": 36,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Xuất Excel",
+            "label": null,
+            "width": 179,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Điểm danh",
+            "label": "Điểm danh công nhân",
+            "width": 179,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Phân công",
+            "label": null,
+            "width": 130,
+            "height": 44,
+            "fontSize": "14px"
+          }
+        ],
+        "clipped": [],
+        "title": {
+          "whiteSpace": "normal",
+          "height": 48.59375,
+          "lineHeight": "24.3px",
+          "text": "Công trường kiểm tra kết cấu thép Châu Tuấn"
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "actions": [
+          {
+            "text": "Tất cả công trường",
+            "label": "Chọn công trường",
+            "width": 178.390625,
+            "height": 38,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 150,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Công việc",
+            "label": null,
+            "width": 150,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Nhân lực",
+            "label": null,
+            "width": 150,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Thông tin",
+            "label": null,
+            "width": 150,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Tài liệu",
+            "label": null,
+            "width": 150,
+            "height": 44,
+            "fontSize": "13px"
+          },
+          {
+            "text": "Hôm nay",
+            "label": null,
+            "width": 86,
+            "height": 40,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Chức danh",
+            "label": null,
+            "width": 140,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Ca làm",
+            "label": null,
+            "width": 130,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Trạng thái",
+            "label": null,
+            "width": 140,
+            "height": 44,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Xuất Excel",
+            "label": null,
+            "width": 121.453125,
+            "height": 40,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Điểm danh công nhân",
+            "label": "Điểm danh công nhân",
+            "width": 198.3125,
+            "height": 40,
+            "fontSize": "14px"
+          },
+          {
+            "text": "Phân công",
+            "label": null,
+            "width": 114,
+            "height": 40,
+            "fontSize": "14px"
+          }
+        ],
+        "clipped": [],
+        "title": {
+          "whiteSpace": "normal",
+          "height": 32.5,
+          "lineHeight": "32.5px",
+          "text": "Công trường kiểm tra kết cấu thép Châu Tuấn"
+        }
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "blockedWrites": []
+}

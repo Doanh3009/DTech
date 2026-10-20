@@ -1,0 +1,3677 @@
+{
+  "runId": "202610204003df",
+  "startedAt": "2026-10-20T03:19:52.203Z",
+  "baseUrl": "http://localhost:3300",
+  "environment": "test",
+  "cases": [
+    {
+      "id": "SETUP",
+      "name": "Dữ liệu riêng và phiên đăng nhập theo vai trò",
+      "kind": "SETUP",
+      "status": "PASS",
+      "ms": 18333
+    },
+    {
+      "id": "AUTH-01",
+      "name": "API yêu cầu đăng nhập và trang được chuyển về đăng nhập",
+      "kind": "BROWSER + API",
+      "status": "PASS",
+      "ms": 16210
+    },
+    {
+      "id": "AUTH-02",
+      "name": "Mật khẩu sai bị từ chối",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1117
+    },
+    {
+      "id": "RBAC-01",
+      "name": "employee bị chặn /api/v1/employees",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 199
+    },
+    {
+      "id": "RBAC-02",
+      "name": "employee bị chặn /api/v1/accounting/salaries",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3623
+    },
+    {
+      "id": "RBAC-03",
+      "name": "employee bị chặn /api/v1/accounting/payroll",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1178
+    },
+    {
+      "id": "RBAC-04",
+      "name": "employee bị chặn /api/v1/warehouse/inventory",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3603
+    },
+    {
+      "id": "RBAC-05",
+      "name": "employee bị chặn /api/v1/shipments",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3434
+    },
+    {
+      "id": "RBAC-06",
+      "name": "employee bị chặn /api/v1/audit-log",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1167
+    },
+    {
+      "id": "RBAC-07",
+      "name": "employee bị chặn /api/v1/settings-catalog",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2481
+    },
+    {
+      "id": "RBAC-08",
+      "name": "warehouse bị chặn /api/v1/accounting/salaries",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 356
+    },
+    {
+      "id": "HR-01",
+      "name": "Tạo nhân viên và tìm lại trong danh sách",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1314
+    },
+    {
+      "id": "HR-02",
+      "name": "Không tạo trùng mã nhân viên",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 320
+    },
+    {
+      "id": "HR-03",
+      "name": "Dữ liệu nhân viên sai bị chặn",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 154
+    },
+    {
+      "id": "HR-04",
+      "name": "Sửa hồ sơ có phiên bản và đọc lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2252
+    },
+    {
+      "id": "HR-05",
+      "name": "Tạo hợp đồng nhân viên mới và đọc lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3467
+    },
+    {
+      "id": "HR-06",
+      "name": "Ghi nhận tham gia bảo hiểm và đối chiếu hồ sơ",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2972
+    },
+    {
+      "id": "ATT-01",
+      "name": "Chấm vào với GPS tại địa điểm cho phép",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 7357
+    },
+    {
+      "id": "ATT-02",
+      "name": "Gửi lại thao tác chấm công không tạo lượt mới",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 707
+    },
+    {
+      "id": "ATT-03",
+      "name": "Tải ảnh chấm công và đồng bộ hoàn tất",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3434
+    },
+    {
+      "id": "ATT-04",
+      "name": "Chấm ra rồi chặn lượt thứ ba trong ngày",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2003
+    },
+    {
+      "id": "ATT-05",
+      "name": "Thời gian/GPS không hợp lệ và truy cập chéo hồ sơ bị chặn",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1602
+    },
+    {
+      "id": "LEAVE-01",
+      "name": "Tạo luồng duyệt và loại phép riêng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5714
+    },
+    {
+      "id": "LEAVE-02",
+      "name": "Nhân viên tạo đơn nháp rồi gửi duyệt",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 9059
+    },
+    {
+      "id": "LEAVE-03",
+      "name": "Nhân viên khác không đọc được đơn cá nhân",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3018
+    },
+    {
+      "id": "LEAVE-04",
+      "name": "Người được chỉ định duyệt, sổ phép trừ đúng một ngày",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5947
+    },
+    {
+      "id": "LEAVE-05",
+      "name": "Duyệt lại bị chặn và không trừ phép lần hai",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2190
+    },
+    {
+      "id": "LEAVE-06",
+      "name": "Tải phiếu nghỉ phép PDF thật",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2790
+    },
+    {
+      "id": "LEAVE-07",
+      "name": "Đơn mới được từ chối kèm lý do",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 16643
+    },
+    {
+      "id": "LEAVE-08",
+      "name": "Rút đơn đang chờ duyệt",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 11130
+    },
+    {
+      "id": "LEAVE-09",
+      "name": "Tổng hợp số dư toàn công ty giữ đúng phép và phản hồi dưới 10 giây",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2756
+    },
+    {
+      "id": "TIME-01",
+      "name": "Tạo kỳ công riêng, không đụng kỳ đang vận hành",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 9548
+    },
+    {
+      "id": "TIME-02",
+      "name": "Tổng hợp công và điều chỉnh công của nhân viên E2E",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 17894
+    },
+    {
+      "id": "TIME-03",
+      "name": "Khóa công, chặn tổng hợp lại, mở khóa có lý do rồi khóa lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 23360
+    },
+    {
+      "id": "PAY-01",
+      "name": "Lưu mức lương hiệu lực và đọc lịch sử",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3714
+    },
+    {
+      "id": "PAY-02",
+      "name": "Lập và tính bảng lương từ kỳ công khóa",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5303
+    },
+    {
+      "id": "PAY-03",
+      "name": "Chặn cập nhật bằng phiên bản cũ",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1068
+    },
+    {
+      "id": "PAY-03B",
+      "name": "Sửa dòng đã kiểm tra buộc kiểm tra lại và đổi phiên bản kỳ lương",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 6782
+    },
+    {
+      "id": "PAY-03C",
+      "name": "Hai thao tác đồng thời chỉ một phiên bản được ghi",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3795
+    },
+    {
+      "id": "PAY-04",
+      "name": "Kiểm tra → khóa → phát hành đúng nhân viên E2E",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 10913
+    },
+    {
+      "id": "PAY-05",
+      "name": "Bảng lương phát hành không tính lại được",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1398
+    },
+    {
+      "id": "PAY-06",
+      "name": "Không đọc được phiếu lương của người khác",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3228
+    },
+    {
+      "id": "PAY-07",
+      "name": "Xuất bảng lương XLSX và phiếu lương PDF",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 7656
+    },
+    {
+      "id": "PAY-08",
+      "name": "Nhân viên xác nhận phiếu đã gửi; thao tác lặp không tạo xác nhận mới",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 4057
+    },
+    {
+      "id": "PAY-09",
+      "name": "Khóa lương bảo vệ dòng lương và chặn mở công trước khi mở lại lương",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2464
+    },
+    {
+      "id": "PAY-10",
+      "name": "Mở lại thu hồi phiếu cũ; công đổi phiên bản buộc tính lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 17475
+    },
+    {
+      "id": "PROJECT-01",
+      "name": "Tạo gói, công trường và phân công đúng phạm vi",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 10164
+    },
+    {
+      "id": "PROJECT-02",
+      "name": "Tạo nhật ký có vấn đề và cập nhật tiến độ",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 8582
+    },
+    {
+      "id": "PROJECT-03",
+      "name": "Xử lý vấn đề rồi mở lại có lý do",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5787
+    },
+    {
+      "id": "WORKER-01",
+      "name": "Mở phiên điểm danh có roster và chống ghi trùng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5387
+    },
+    {
+      "id": "WORKER-02",
+      "name": "Chưa đủ checklist/ảnh thì không được gửi điểm danh",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1946
+    },
+    {
+      "id": "WORKER-03",
+      "name": "Lưu trạng thái công nhân và nội dung công việc",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2341
+    },
+    {
+      "id": "WORKER-04",
+      "name": "Đồng bộ đủ ảnh điểm danh theo chính sách",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3853
+    },
+    {
+      "id": "WORKER-05",
+      "name": "Gửi điểm danh và chốt ngày với ngoại lệ nửa ngày",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3818
+    },
+    {
+      "id": "WH-01",
+      "name": "Tạo hàng hóa, đơn vị tính và hai kho riêng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 9899
+    },
+    {
+      "id": "WH-02",
+      "name": "Nhập 100 và gửi ghi sổ lại không tăng tồn lần hai",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 9958
+    },
+    {
+      "id": "WH-03",
+      "name": "Phiếu đã ghi sổ không được sửa",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2001
+    },
+    {
+      "id": "WH-04",
+      "name": "Xuất 30, chuyển 20, đối chiếu tồn hai kho",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 13790
+    },
+    {
+      "id": "WH-05",
+      "name": "Xuất vượt tồn bị chặn và tồn không thay đổi",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2253
+    },
+    {
+      "id": "WH-06",
+      "name": "Điều chỉnh giảm 5 kèm lý do",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 6263
+    },
+    {
+      "id": "WH-07",
+      "name": "Đảo phiếu xuất và hoàn đúng 30 về kho",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3304
+    },
+    {
+      "id": "WH-08",
+      "name": "Sổ kho đối chiếu với tồn",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5184
+    },
+    {
+      "id": "XNK-01",
+      "name": "Nhà cung cấp → hợp đồng → lô hàng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 13151
+    },
+    {
+      "id": "XNK-02",
+      "name": "Cập nhật ETA có lịch sử và chặn phiên bản cũ",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5580
+    },
+    {
+      "id": "XNK-03",
+      "name": "Tiếp nhận một phần, ghi sổ kho và kiểm tra phần còn lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 7895
+    },
+    {
+      "id": "XNK-04",
+      "name": "Không nhận vượt số lượng còn lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1491
+    },
+    {
+      "id": "XNK-05",
+      "name": "Xử lý vướng mắc hải quan rồi thông quan",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5319
+    },
+    {
+      "id": "XNK-06",
+      "name": "Nhận nốt 6 hàng và đối chiếu đủ 10 trên sổ nhận/kho",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5532
+    },
+    {
+      "id": "WH-09",
+      "name": "Kiểm kê 85 → 83, ghi sổ đúng chênh lệch và chống ghi lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 18380
+    },
+    {
+      "id": "CHAT-01",
+      "name": "Tạo hội thoại riêng, gửi và đọc lại tin nhắn",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 18777
+    },
+    {
+      "id": "CHAT-02",
+      "name": "Người ngoài hội thoại không đọc được tin",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 655
+    },
+    {
+      "id": "NOTICE-01",
+      "name": "Thông báo chỉ gửi nhóm vai trò E2E, người nhận đọc lại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 19378
+    },
+    {
+      "id": "AUDIT-01",
+      "name": "Có audit cho hành động E2E và nhân viên không đọc được audit",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 6779
+    },
+    {
+      "id": "SESSION-01",
+      "name": "Khóa tài khoản làm phiên cũ mất hiệu lực, mở lại đăng nhập được",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5058
+    },
+    {
+      "id": "CONCURRENT-01",
+      "name": "Tám vai trò đọc dữ liệu đồng thời bằng phiên riêng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1744
+    },
+    {
+      "id": "CONCURRENT-02",
+      "name": "Hai người cập nhật ETA cùng phiên bản: một thành công, một xung đột",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 6077
+    },
+    {
+      "id": "CONCURRENT-03",
+      "name": "Hai người sửa thông quan cùng phiên bản không ghi đè nhau",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1616
+    },
+    {
+      "id": "CONCURRENT-04",
+      "name": "Gửi lập phiếu nhập đồng thời cùng mã yêu cầu chỉ tạo một phiếu",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 10342
+    },
+    {
+      "id": "CONCURRENT-05",
+      "name": "Ghi sổ cùng phiếu từ hai phiên chỉ tăng tồn và thực nhận một lần",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 12710
+    },
+    {
+      "id": "UI-SHIPMENT-NAV",
+      "name": "Đổi cả bảy tab giữ trang, bản nháp và không tải lại dữ liệu lô hàng",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 38209
+    },
+    {
+      "id": "SHIFT-01",
+      "name": "Tạo ca riêng và đọc lại cấu hình ca",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 4489
+    },
+    {
+      "id": "SHIFT-02",
+      "name": "Gán ca và ngày nghỉ chỉ cho nhân viên E2E",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 7135
+    },
+    {
+      "id": "SHIFT-03",
+      "name": "Đổi phiên bản ca có ngày/lý do; chặn giờ sai",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1378
+    },
+    {
+      "id": "DOC-01",
+      "name": "Upload tài liệu hư cấu và kiểm tra file riêng",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 17526
+    },
+    {
+      "id": "DOC-02",
+      "name": "Thay file giữ đủ hai phiên bản và file cũ",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 16274
+    },
+    {
+      "id": "DOC-03",
+      "name": "Chặn nhân viên lưu trữ tài liệu; Admin archive và chặn lặp",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 11560
+    },
+    {
+      "id": "REPORT-01",
+      "name": "Tạo và sửa mẫu báo cáo riêng theo phiên bản",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 11673
+    },
+    {
+      "id": "REPORT-02",
+      "name": "Xuất kỳ công thật thành XLSX; người khác không tải được",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 16949
+    },
+    {
+      "id": "REPORT-03",
+      "name": "Chặn xuất thiếu kỳ và mẫu không tồn tại",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 841
+    },
+    {
+      "id": "WORKSPACE-01",
+      "name": "Ghi chú cá nhân không xuất hiện ở tài khoản khác",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 6611
+    },
+    {
+      "id": "WORKSPACE-02",
+      "name": "Tạo việc cá nhân và chặn sửa/xóa khác chủ",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 6857
+    },
+    {
+      "id": "WORKSPACE-03",
+      "name": "Hoàn thành/xóa việc cá nhân và validation tiêu đề",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 1658
+    },
+    {
+      "id": "INTEGRATION-01",
+      "name": "Tạo service account riêng với scope thực",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2293
+    },
+    {
+      "id": "INTEGRATION-02",
+      "name": "API key chỉ nhận scope service account; secret không lưu plaintext",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 3413
+    },
+    {
+      "id": "INTEGRATION-03",
+      "name": "Rotate key thu hồi khóa cũ và revoke khóa mới",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 5594
+    },
+    {
+      "id": "INTEGRATION-04",
+      "name": "Đăng ký webhook hư cấu; không cấu hình provider thật",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 2377
+    },
+    {
+      "id": "INTEGRATION-05",
+      "name": "Gửi thử bị chặn trước network; không có delivery attempt",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 7000
+    },
+    {
+      "id": "TESTER-01",
+      "name": "Thiếu cổng tester thì API đăng nhập nhanh bị chặn",
+      "kind": "BROWSER + API",
+      "status": "PASS",
+      "ms": 3020
+    },
+    {
+      "id": "TESTER-02",
+      "name": "Mở cổng tester và đăng nhập nhanh bằng nút trên điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 24806
+    },
+    {
+      "id": "TESTER-03",
+      "name": "Chuyển admin → nhân viên thu hồi phiên trước và tải lại đúng quyền",
+      "kind": "BROWSER + API",
+      "status": "PASS",
+      "ms": 62940
+    },
+    {
+      "id": "TESTER-04",
+      "name": "Kỹ sư chỉ truy cập gói được phân công, API gói khác trả 404",
+      "kind": "BROWSER + API",
+      "status": "PASS",
+      "ms": 59588
+    },
+    {
+      "id": "TESTER-05",
+      "name": "Request sửa role không nâng quyền và tài khoản ngoài whitelist bị chặn",
+      "kind": "API",
+      "status": "PASS",
+      "ms": 680
+    },
+    {
+      "id": "TESTER-06",
+      "name": "API chậm hiển thị trạng thái tải rồi trả dữ liệu; offline có phản hồi",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 12340
+    },
+    {
+      "id": "SCREEN-001",
+      "name": "Mở /accounting trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 19579
+    },
+    {
+      "id": "SCREEN-002",
+      "name": "Mở /accounting/payroll trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 5280
+    },
+    {
+      "id": "SCREEN-003",
+      "name": "Mở /accounting/payslips trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7107
+    },
+    {
+      "id": "SCREEN-004",
+      "name": "Mở /accounting/salaries trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13475
+    },
+    {
+      "id": "SCREEN-005",
+      "name": "Mở /accounting/salary-history trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7796
+    },
+    {
+      "id": "SCREEN-006",
+      "name": "Mở /applications trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7159
+    },
+    {
+      "id": "SCREEN-007",
+      "name": "Mở /approvals trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 17320
+    },
+    {
+      "id": "SCREEN-008",
+      "name": "Mở /approvals/completed trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7072
+    },
+    {
+      "id": "SCREEN-009",
+      "name": "Mở /approvals/delegated trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 10854
+    },
+    {
+      "id": "SCREEN-010",
+      "name": "Mở /approvals/leave trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13856
+    },
+    {
+      "id": "SCREEN-011",
+      "name": "Mở /approvals/pending trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 5384
+    },
+    {
+      "id": "SCREEN-012",
+      "name": "Mở /attendance trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: Trang chưa tải xong sau 30 giây: /api/v1/attendance/dashboard\n    at Object.ready (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/page-ready.mjs:65:13)\n    at async screen (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/browser.mjs:25:7)\n    at async Object.fn (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/browser.mjs:45:22)\n    at async execute (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 52526
+    },
+    {
+      "id": "SCREEN-013",
+      "name": "Mở /attendance/history trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: /attendance/history: Lịch sử chấm công\nKhông thể tải dữ liệu\n\nTải lịch công quá lâu. Vui lòng mở lại.\n\nThử lại\n    at screen (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/browser.mjs:28:7)\n    at async Object.fn (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/browser.mjs:45:22)\n    at async execute (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 28576
+    },
+    {
+      "id": "SCREEN-014",
+      "name": "Mở /attendance/logs trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForFunction: Timeout 29626ms exceeded.\n    at Object.ready (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\page-ready.mjs:60:22)\n    at async screen (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:25:7)\n    at async Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:45:22)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 58131
+    },
+    {
+      "id": "SCREEN-015",
+      "name": "Mở /attendance/me trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 10741
+    },
+    {
+      "id": "SCREEN-016",
+      "name": "Mở /attendance/notifications trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 10244
+    },
+    {
+      "id": "SCREEN-017",
+      "name": "Mở /attendance/quick trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9139
+    },
+    {
+      "id": "SCREEN-018",
+      "name": "Mở /attendance/records trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 15054
+    },
+    {
+      "id": "SCREEN-019",
+      "name": "Mở /attendance/requests trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 14937
+    },
+    {
+      "id": "SCREEN-020",
+      "name": "Mở /attendance/today trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 14017
+    },
+    {
+      "id": "SCREEN-021",
+      "name": "Mở /command trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 35483
+    },
+    {
+      "id": "SCREEN-022",
+      "name": "Mở /dashboard trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 21897
+    },
+    {
+      "id": "SCREEN-023",
+      "name": "Mở /dashboard/hr trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 25457
+    },
+    {
+      "id": "SCREEN-024",
+      "name": "Mở /dashboard/import-export trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 40275
+    },
+    {
+      "id": "SCREEN-025",
+      "name": "Mở /dashboard/management trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 41761
+    },
+    {
+      "id": "SCREEN-026",
+      "name": "Mở /dashboard/warehouse trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 35042
+    },
+    {
+      "id": "SCREEN-027",
+      "name": "Mở /documents trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 40535
+    },
+    {
+      "id": "SCREEN-028",
+      "name": "Mở /documents/recent trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 19830
+    },
+    {
+      "id": "SCREEN-029",
+      "name": "Mở /documents/shared trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7662
+    },
+    {
+      "id": "SCREEN-030",
+      "name": "Mở /employees trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8551
+    },
+    {
+      "id": "SCREEN-031",
+      "name": "Mở /employees/contracts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 12075
+    },
+    {
+      "id": "SCREEN-032",
+      "name": "Mở /employees/departments trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11072
+    },
+    {
+      "id": "SCREEN-033",
+      "name": "Mở /employees/insurance trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 14961
+    },
+    {
+      "id": "SCREEN-034",
+      "name": "Mở /employees/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6494
+    },
+    {
+      "id": "SCREEN-035",
+      "name": "Mở /employees/positions trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 15524
+    },
+    {
+      "id": "SCREEN-036",
+      "name": "Mở /home trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForFunction: Timeout 29939ms exceeded.\n    at Object.ready (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\page-ready.mjs:60:22)\n    at async screen (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:25:7)\n    at async Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:45:22)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 46285
+    },
+    {
+      "id": "SCREEN-037",
+      "name": "Mở /import-export trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForFunction: Timeout 29765ms exceeded.\n    at Object.ready (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\page-ready.mjs:60:22)\n    at async screen (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:25:7)\n    at async Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:45:22)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 35161
+    },
+    {
+      "id": "SCREEN-038",
+      "name": "Mở /import-export/contracts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 26243
+    },
+    {
+      "id": "SCREEN-039",
+      "name": "Mở /import-export/contracts/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 14328
+    },
+    {
+      "id": "SCREEN-040",
+      "name": "Mở /import-export/customs trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13872
+    },
+    {
+      "id": "SCREEN-041",
+      "name": "Mở /import-export/documents trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11596
+    },
+    {
+      "id": "SCREEN-042",
+      "name": "Mở /import-export/partners trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11771
+    },
+    {
+      "id": "SCREEN-043",
+      "name": "Mở /import-export/shipments trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13872
+    },
+    {
+      "id": "SCREEN-044",
+      "name": "Mở /import-export/shipments/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7825
+    },
+    {
+      "id": "SCREEN-045",
+      "name": "Mở /import-export/transport trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9021
+    },
+    {
+      "id": "SCREEN-046",
+      "name": "Mở /leave trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 21801
+    },
+    {
+      "id": "SCREEN-047",
+      "name": "Mở /leave/adjustments trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9697
+    },
+    {
+      "id": "SCREEN-048",
+      "name": "Mở /leave/balance trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9872
+    },
+    {
+      "id": "SCREEN-049",
+      "name": "Mở /leave/balances trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4829
+    },
+    {
+      "id": "SCREEN-050",
+      "name": "Mở /leave/manage trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 5266
+    },
+    {
+      "id": "SCREEN-051",
+      "name": "Mở /leave/manage/adjustments trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6126
+    },
+    {
+      "id": "SCREEN-052",
+      "name": "Mở /leave/manage/balances trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3547
+    },
+    {
+      "id": "SCREEN-053",
+      "name": "Mở /leave/my-requests trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3300/leave/my-requests\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at screen (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:23:35)\n    at async Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:45:22)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 60141
+    },
+    {
+      "id": "SCREEN-054",
+      "name": "Mở /leave/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13179
+    },
+    {
+      "id": "SCREEN-055",
+      "name": "Mở /leave/settlements trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8991
+    },
+    {
+      "id": "SCREEN-056",
+      "name": "Mở /messages trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4741
+    },
+    {
+      "id": "SCREEN-057",
+      "name": "Mở /notifications trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 5178
+    },
+    {
+      "id": "SCREEN-058",
+      "name": "Mở /notifications/unread trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3965
+    },
+    {
+      "id": "SCREEN-059",
+      "name": "Mở /personal trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13256
+    },
+    {
+      "id": "SCREEN-060",
+      "name": "Mở /personal/payslips trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8522
+    },
+    {
+      "id": "SCREEN-061",
+      "name": "Mở /profile trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3627
+    },
+    {
+      "id": "SCREEN-062",
+      "name": "Mở /project-monitoring trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4221
+    },
+    {
+      "id": "SCREEN-063",
+      "name": "Mở /project-monitoring/issues trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3205
+    },
+    {
+      "id": "SCREEN-064",
+      "name": "Mở /project-monitoring/recent trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3875
+    },
+    {
+      "id": "SCREEN-065",
+      "name": "Mở /projects trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8028
+    },
+    {
+      "id": "SCREEN-066",
+      "name": "Mở /projects/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3931
+    },
+    {
+      "id": "SCREEN-067",
+      "name": "Mở /projects/updates trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3333
+    },
+    {
+      "id": "SCREEN-068",
+      "name": "Mở /reports trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8291
+    },
+    {
+      "id": "SCREEN-069",
+      "name": "Mở /search trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6939
+    },
+    {
+      "id": "SCREEN-070",
+      "name": "Mở /search/results trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4673
+    },
+    {
+      "id": "SCREEN-071",
+      "name": "Mở /settings trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4116
+    },
+    {
+      "id": "SCREEN-072",
+      "name": "Mở /settings/approval-delegations trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7037
+    },
+    {
+      "id": "SCREEN-073",
+      "name": "Mở /settings/approval-workflows trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6751
+    },
+    {
+      "id": "SCREEN-074",
+      "name": "Mở /settings/attendance trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11034
+    },
+    {
+      "id": "SCREEN-075",
+      "name": "Mở /settings/attendance/calendar trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9441
+    },
+    {
+      "id": "SCREEN-076",
+      "name": "Mở /settings/attendance/locations trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6615
+    },
+    {
+      "id": "SCREEN-077",
+      "name": "Mở /settings/attendance/policies trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4966
+    },
+    {
+      "id": "SCREEN-078",
+      "name": "Mở /settings/attendance/shifts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7092
+    },
+    {
+      "id": "SCREEN-079",
+      "name": "Mở /settings/audit-log trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13396
+    },
+    {
+      "id": "SCREEN-080",
+      "name": "Mở /settings/export-templates trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 16892
+    },
+    {
+      "id": "SCREEN-081",
+      "name": "Mở /settings/import-export trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 19763
+    },
+    {
+      "id": "SCREEN-082",
+      "name": "Mở /settings/integrations trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8409
+    },
+    {
+      "id": "SCREEN-083",
+      "name": "Mở /settings/integrations/api-docs trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3585
+    },
+    {
+      "id": "SCREEN-084",
+      "name": "Mở /settings/integrations/api-keys trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9446
+    },
+    {
+      "id": "SCREEN-085",
+      "name": "Mở /settings/integrations/attendance-devices trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 10707
+    },
+    {
+      "id": "SCREEN-086",
+      "name": "Mở /settings/integrations/conflicts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 18741
+    },
+    {
+      "id": "SCREEN-087",
+      "name": "Mở /settings/integrations/imports trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11627
+    },
+    {
+      "id": "SCREEN-088",
+      "name": "Mở /settings/integrations/service-accounts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6573
+    },
+    {
+      "id": "SCREEN-089",
+      "name": "Mở /settings/integrations/webhook-deliveries trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7344
+    },
+    {
+      "id": "SCREEN-090",
+      "name": "Mở /settings/integrations/webhooks trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7928
+    },
+    {
+      "id": "SCREEN-091",
+      "name": "Mở /settings/leave trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4795
+    },
+    {
+      "id": "SCREEN-092",
+      "name": "Mở /settings/leave/policies trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7481
+    },
+    {
+      "id": "SCREEN-093",
+      "name": "Mở /settings/leave/types trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 16667
+    },
+    {
+      "id": "SCREEN-094",
+      "name": "Mở /settings/leave/workflows trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11634
+    },
+    {
+      "id": "SCREEN-095",
+      "name": "Mở /settings/notifications trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11298
+    },
+    {
+      "id": "SCREEN-096",
+      "name": "Mở /settings/organization trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9628
+    },
+    {
+      "id": "SCREEN-097",
+      "name": "Mở /settings/permissions trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForFunction: Timeout 1266ms exceeded.\n    at Object.ready (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\page-ready.mjs:70:22)\n    at async screen (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:25:7)\n    at async Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:45:22)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 43926
+    },
+    {
+      "id": "SCREEN-098",
+      "name": "Mở /settings/roles trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3182
+    },
+    {
+      "id": "SCREEN-099",
+      "name": "Mở /settings/users trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6443
+    },
+    {
+      "id": "SCREEN-100",
+      "name": "Mở /settings/warehouse trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 21170
+    },
+    {
+      "id": "SCREEN-101",
+      "name": "Mở /shifts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 19838
+    },
+    {
+      "id": "SCREEN-102",
+      "name": "Mở /shifts/calendar trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7742
+    },
+    {
+      "id": "SCREEN-103",
+      "name": "Mở /system-admin trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9838
+    },
+    {
+      "id": "SCREEN-104",
+      "name": "Mở /system-admin/appearance trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3440
+    },
+    {
+      "id": "SCREEN-105",
+      "name": "Mở /system-admin/attendance-checklist trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8224
+    },
+    {
+      "id": "SCREEN-106",
+      "name": "Mở /system-admin/audit trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6552
+    },
+    {
+      "id": "SCREEN-107",
+      "name": "Mở /system-admin/branding trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4042
+    },
+    {
+      "id": "SCREEN-108",
+      "name": "Mở /system-admin/config-history trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 20255
+    },
+    {
+      "id": "SCREEN-109",
+      "name": "Mở /system-admin/dashboard trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3186
+    },
+    {
+      "id": "SCREEN-110",
+      "name": "Mở /system-admin/localization trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3766
+    },
+    {
+      "id": "SCREEN-111",
+      "name": "Mở /system-admin/modules trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 5104
+    },
+    {
+      "id": "SCREEN-112",
+      "name": "Mở /system-admin/navigation trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4345
+    },
+    {
+      "id": "SCREEN-113",
+      "name": "Mở /system-admin/notices trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8842
+    },
+    {
+      "id": "SCREEN-114",
+      "name": "Mở /system-admin/operations trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 5001
+    },
+    {
+      "id": "SCREEN-115",
+      "name": "Mở /system-admin/organization trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3030
+    },
+    {
+      "id": "SCREEN-116",
+      "name": "Mở /system-admin/payslip-template trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 3091
+    },
+    {
+      "id": "SCREEN-117",
+      "name": "Mở /system-admin/security trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6150
+    },
+    {
+      "id": "SCREEN-118",
+      "name": "Mở /timesheets trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 4138
+    },
+    {
+      "id": "SCREEN-119",
+      "name": "Mở /timesheets/adjustments trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 10922
+    },
+    {
+      "id": "SCREEN-120",
+      "name": "Mở /timesheets/exceptions trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 12892
+    },
+    {
+      "id": "SCREEN-121",
+      "name": "Mở /timesheets/matrix trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13286
+    },
+    {
+      "id": "SCREEN-122",
+      "name": "Mở /warehouse trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 14075
+    },
+    {
+      "id": "SCREEN-123",
+      "name": "Mở /warehouse/adjustments trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 25129
+    },
+    {
+      "id": "SCREEN-124",
+      "name": "Mở /warehouse/adjustments/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 13234
+    },
+    {
+      "id": "SCREEN-125",
+      "name": "Mở /warehouse/inventory trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8220
+    },
+    {
+      "id": "SCREEN-126",
+      "name": "Mở /warehouse/issues trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 34888
+    },
+    {
+      "id": "SCREEN-127",
+      "name": "Mở /warehouse/issues/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 8184
+    },
+    {
+      "id": "SCREEN-128",
+      "name": "Mở /warehouse/items trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 23417
+    },
+    {
+      "id": "SCREEN-129",
+      "name": "Mở /warehouse/items/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 24223
+    },
+    {
+      "id": "SCREEN-130",
+      "name": "Mở /warehouse/ledger trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForFunction: Timeout 29951ms exceeded.\n    at Object.ready (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\page-ready.mjs:60:22)\n    at async screen (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:25:7)\n    at async Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:45:22)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 43403
+    },
+    {
+      "id": "SCREEN-131",
+      "name": "Mở /warehouse/receipts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 38930
+    },
+    {
+      "id": "SCREEN-132",
+      "name": "Mở /warehouse/receipts/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 16604
+    },
+    {
+      "id": "SCREEN-133",
+      "name": "Mở /warehouse/stock-counts trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 16680
+    },
+    {
+      "id": "SCREEN-134",
+      "name": "Mở /warehouse/stock-counts/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6432
+    },
+    {
+      "id": "SCREEN-135",
+      "name": "Mở /warehouse/transfers trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 14039
+    },
+    {
+      "id": "SCREEN-136",
+      "name": "Mở /warehouse/transfers/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 9254
+    },
+    {
+      "id": "SCREEN-137",
+      "name": "Mở /warehouse/warehouses trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 31138
+    },
+    {
+      "id": "SCREEN-138",
+      "name": "Mở /warehouse/warehouses/new trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 11696
+    },
+    {
+      "id": "SCREEN-139",
+      "name": "Mở /worker-attendance trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 50915
+    },
+    {
+      "id": "SCREEN-140",
+      "name": "Mở /worker-attendance/today trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 26893
+    },
+    {
+      "id": "SCREEN-141",
+      "name": "Mở /workspace trên desktop và điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForFunction: Timeout 18298ms exceeded.\n    at Object.ready (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\page-ready.mjs:60:22)\n    at async screen (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:25:7)\n    at async Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:45:22)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 31414
+    },
+    {
+      "id": "SHELL-360",
+      "name": "Khung cấu hình 360px và một viền focus",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 40677
+    },
+    {
+      "id": "SHELL-390",
+      "name": "Khung cấu hình 390px và một viền focus",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 2797
+    },
+    {
+      "id": "SHELL-430",
+      "name": "Khung cấu hình 430px và một viền focus",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 1722
+    },
+    {
+      "id": "SHELL-1366",
+      "name": "Khung cấu hình 1366px và một viền focus",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 6670
+    },
+    {
+      "id": "SHELL-1440",
+      "name": "Khung cấu hình 1440px và một viền focus",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 1776
+    },
+    {
+      "id": "SHELL-1920",
+      "name": "Khung cấu hình 1920px và một viền focus",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 7210
+    },
+    {
+      "id": "UI-PERSONAL",
+      "name": "Nhân viên chỉ thấy Cá nhân và mở phiếu lương từ Cá nhân",
+      "kind": "BROWSER",
+      "status": "PASS",
+      "ms": 31711
+    },
+    {
+      "id": "UI-PAYROLL",
+      "name": "Bảng lương lên cao và thao tác có thể chạm trên điện thoại",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: Bảng bị đẩy xuống 408.625px\n    at Object.fn (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/browser.mjs:93:7)\n    at async execute (file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 23016
+    },
+    {
+      "id": "UI-HR-CREATE",
+      "name": "Nhân sự tạo hồ sơ bằng form trình duyệt và mở hồ sơ vừa tạo",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForURL: Timeout 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================\n    at Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:125:18)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 54647
+    },
+    {
+      "id": "UI-AUTH",
+      "name": "Đăng nhập bằng form, đăng xuất và không dùng lại phiên được",
+      "kind": "BROWSER",
+      "status": "FAIL",
+      "error": "page.waitForURL: Timeout 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================\n    at Object.fn (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\browser.mjs:136:31)\n    at async execute (C:\\Users\\Admin\\CT_NoiBo\\scripts\\e2e\\run.mjs:76:9)\n    at async file:///C:/Users/Admin/CT_NoiBo/scripts/e2e/run.mjs:109:124",
+      "ms": 49848
+    },
+    {
+      "id": "SEAL",
+      "name": "Khóa tài khoản E2E, giữ chứng từ và audit trên database test",
+      "kind": "SETUP",
+      "status": "PASS",
+      "ms": 3405
+    }
+  ],
+  "timings": [
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "admin",
+      "ms": 1234,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "hr",
+      "ms": 2009,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "employee",
+      "ms": 2212,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "outsider",
+      "ms": 2290,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "accountant",
+      "ms": 940,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 928,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 1150,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 1057,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "outsider",
+      "ms": 1117,
+      "status": 401
+    },
+    {
+      "route": "/api/v1/employees",
+      "method": "GET",
+      "role": "employee",
+      "ms": 199,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/accounting/salaries",
+      "method": "GET",
+      "role": "employee",
+      "ms": 3623,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/accounting/payroll",
+      "method": "GET",
+      "role": "employee",
+      "ms": 1178,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/warehouse/inventory",
+      "method": "GET",
+      "role": "employee",
+      "ms": 3603,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/shipments",
+      "method": "GET",
+      "role": "employee",
+      "ms": 3434,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/audit-log",
+      "method": "GET",
+      "role": "employee",
+      "ms": 1167,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/settings-catalog",
+      "method": "GET",
+      "role": "employee",
+      "ms": 2481,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/accounting/salaries",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 356,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/employees",
+      "method": "POST",
+      "role": "hr",
+      "ms": 943,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/employees?q=E2E_202610204003DF_HIRE",
+      "method": "GET",
+      "role": "hr",
+      "ms": 370,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/employees",
+      "method": "POST",
+      "role": "hr",
+      "ms": 320,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/employees",
+      "method": "POST",
+      "role": "hr",
+      "ms": 154,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/employees/3a2378fc-b97e-48ea-bbf3-ce85131434db",
+      "method": "PATCH",
+      "role": "hr",
+      "ms": 1830,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/employees/3a2378fc-b97e-48ea-bbf3-ce85131434db",
+      "method": "GET",
+      "role": "hr",
+      "ms": 422,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/employees/3a2378fc-b97e-48ea-bbf3-ce85131434db/contracts",
+      "method": "GET",
+      "role": "hr",
+      "ms": 532,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/insurance",
+      "method": "GET",
+      "role": "hr",
+      "ms": 397,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/attendance/dashboard",
+      "method": "GET",
+      "role": "employee",
+      "ms": 4879,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/attendance/events",
+      "method": "POST",
+      "role": "employee",
+      "ms": 2476,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/attendance/events",
+      "method": "POST",
+      "role": "employee",
+      "ms": 465,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/attendance/events",
+      "method": "POST",
+      "role": "employee",
+      "ms": 1230,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/attendance/events",
+      "method": "POST",
+      "role": "employee",
+      "ms": 771,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/attendance/events",
+      "method": "POST",
+      "role": "employee",
+      "ms": 168,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/attendance/records/ecc1c427-5bfd-426c-b2ac-58babb4640d6",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 1434,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/leave-workflows",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2298,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/leave-types",
+      "method": "POST",
+      "role": "admin",
+      "ms": 1618,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/leave-balances/grants",
+      "method": "POST",
+      "role": "admin",
+      "ms": 1796,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-requests",
+      "method": "POST",
+      "role": "employee",
+      "ms": 3545,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/leave-requests/04c6a0f3-9af0-4c86-a12a-1f7e2d31747c/submit",
+      "method": "POST",
+      "role": "employee",
+      "ms": 5510,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-requests/04c6a0f3-9af0-4c86-a12a-1f7e2d31747c",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 3018,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/leave-requests/04c6a0f3-9af0-4c86-a12a-1f7e2d31747c/approve",
+      "method": "POST",
+      "role": "hr",
+      "ms": 3034,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/employees/4fcbb4b1-c719-4d9c-bb75-8e1f8e5c7f4b/leave-ledger?year=2026",
+      "method": "GET",
+      "role": "admin",
+      "ms": 2913,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-requests/04c6a0f3-9af0-4c86-a12a-1f7e2d31747c/approve",
+      "method": "POST",
+      "role": "hr",
+      "ms": 811,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/leave-requests/04c6a0f3-9af0-4c86-a12a-1f7e2d31747c",
+      "method": "GET",
+      "role": "hr",
+      "ms": 830,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/employees/4fcbb4b1-c719-4d9c-bb75-8e1f8e5c7f4b/leave-ledger?year=2026",
+      "method": "GET",
+      "role": "admin",
+      "ms": 549,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-requests",
+      "method": "POST",
+      "role": "employee",
+      "ms": 2428,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/leave-requests/e24c7c47-27d1-4beb-8c90-7594f02e7628/submit",
+      "method": "POST",
+      "role": "employee",
+      "ms": 3980,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-requests/e24c7c47-27d1-4beb-8c90-7594f02e7628/reject",
+      "method": "POST",
+      "role": "hr",
+      "ms": 10232,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-requests",
+      "method": "POST",
+      "role": "employee",
+      "ms": 2931,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/leave-requests/f01117ef-dc4b-45b4-805d-eb80f8822899/submit",
+      "method": "POST",
+      "role": "employee",
+      "ms": 4259,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-requests/f01117ef-dc4b-45b4-805d-eb80f8822899/withdraw",
+      "method": "POST",
+      "role": "employee",
+      "ms": 3937,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-balances?scope=all&year=2026",
+      "method": "GET",
+      "role": "hr",
+      "ms": 2523,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/leave-balances?scope=all",
+      "method": "GET",
+      "role": "employee",
+      "ms": 222,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/timesheet-periods",
+      "method": "POST",
+      "role": "hr",
+      "ms": 9321,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/recompute",
+      "method": "POST",
+      "role": "hr",
+      "ms": 4415,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 3200,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/adjustments",
+      "method": "POST",
+      "role": "hr",
+      "ms": 9734,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 1267,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-exceptions?periodId=04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 1149,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 527,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/lock",
+      "method": "POST",
+      "role": "hr",
+      "ms": 1909,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/recompute",
+      "method": "POST",
+      "role": "hr",
+      "ms": 460,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 467,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/unlock",
+      "method": "POST",
+      "role": "hr",
+      "ms": 1866,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 4859,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/lock",
+      "method": "POST",
+      "role": "hr",
+      "ms": 10852,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/salaries",
+      "method": "POST",
+      "role": "accountant",
+      "ms": 3160,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/accounting/salaries",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 548,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll",
+      "method": "POST",
+      "role": "accountant",
+      "ms": 1939,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 3362,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 1068,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 2739,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 2919,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 1123,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 999,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 2145,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 1946,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 3254,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payslips?scope=self",
+      "method": "GET",
+      "role": "employee",
+      "ms": 3567,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 1397,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/accounting/payslips/a6f95572-3240-4503-a8dd-dd48b1f54a5b",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 3228,
+      "status": 404
+    },
+    {
+      "route": "/api/v1/accounting/payslips/a6f95572-3240-4503-a8dd-dd48b1f54a5b/confirm",
+      "method": "POST",
+      "role": "outsider",
+      "ms": 2392,
+      "status": 404
+    },
+    {
+      "route": "/api/v1/accounting/payslips/a6f95572-3240-4503-a8dd-dd48b1f54a5b/confirm",
+      "method": "POST",
+      "role": "employee",
+      "ms": 965,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payslips/a6f95572-3240-4503-a8dd-dd48b1f54a5b/confirm",
+      "method": "POST",
+      "role": "employee",
+      "ms": 700,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 705,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/unlock",
+      "method": "POST",
+      "role": "hr",
+      "ms": 1476,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 2142,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 565,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/unlock",
+      "method": "POST",
+      "role": "hr",
+      "ms": 619,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf",
+      "method": "GET",
+      "role": "hr",
+      "ms": 488,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timesheet-periods/04072b4a-5fa4-4bcb-a35d-0293c0c5abdf/lock",
+      "method": "POST",
+      "role": "hr",
+      "ms": 822,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 1003,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 855,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 2101,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 2441,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 2230,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/e587c1f5-cb6c-4b5f-a165-3295865d3175",
+      "method": "PATCH",
+      "role": "accountant",
+      "ms": 3474,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payslips?scope=self",
+      "method": "GET",
+      "role": "employee",
+      "ms": 456,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects",
+      "method": "POST",
+      "role": "admin",
+      "ms": 3491,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e/worksites",
+      "method": "POST",
+      "role": "admin",
+      "ms": 1755,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e/assignments",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2262,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e/assignments",
+      "method": "POST",
+      "role": "admin",
+      "ms": 889,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 1761,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e/updates",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 3726,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e/issues",
+      "method": "GET",
+      "role": "admin",
+      "ms": 1588,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e/progress",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2358,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/bab20e72-40d7-4900-81b2-6a37bbb2970e/progress",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 906,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/project-issues/f5bad6d2-d72f-4daf-ae61-220b9b256991/resolve",
+      "method": "POST",
+      "role": "admin",
+      "ms": 3695,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/project-issues/f5bad6d2-d72f-4daf-ae61-220b9b256991/reopen",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2092,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/worker-attendance/sessions",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 4933,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/worker-attendance/sessions",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 450,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/worker-attendance/sessions/4d874727-8504-44eb-8b64-80af01ee4081/submit",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 1946,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/worker-attendance/sessions/4d874727-8504-44eb-8b64-80af01ee4081/draft",
+      "method": "PATCH",
+      "role": "supervisor",
+      "ms": 2340,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/worker-attendance/sessions/4d874727-8504-44eb-8b64-80af01ee4081/submit",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 1564,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/worker-attendance/sessions/4d874727-8504-44eb-8b64-80af01ee4081/close-day",
+      "method": "POST",
+      "role": "supervisor",
+      "ms": 2254,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/uom",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 1256,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/items",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 3462,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouses",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 2068,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouses",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 737,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/transaction-types",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 2014,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/receipts",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 3603,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/9c678924-1eba-4d9e-a1a5-41b77db1b1a6/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 3051,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/9c678924-1eba-4d9e-a1a5-41b77db1b1a6/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 1475,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 1827,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/9c678924-1eba-4d9e-a1a5-41b77db1b1a6",
+      "method": "PATCH",
+      "role": "warehouse",
+      "ms": 2001,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/warehouse/issues",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 2044,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/issues/559964b5-dd98-46da-b7bb-019b8f445460/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 4198,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/transfers",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 4129,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/transfers/28fc9e27-02e0-410a-8866-0fdc02cd34e1/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 2597,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 542,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=b5424b5f-4a8a-45d4-bc49-20fbd58024af&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 277,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/issues",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 827,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/issues/06334a17-8d5d-4c83-a4fc-98c2d32b1341/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 1108,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 316,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/adjustments",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 2684,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/adjustments/9f053bba-616e-4b62-9a1a-afcdda980913/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 3075,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 503,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/issues/559964b5-dd98-46da-b7bb-019b8f445460/reverse",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 3008,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 295,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/ledger?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 2642,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/reconciliation?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 2541,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/partners",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 6938,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/import-contracts",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 2755,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 3454,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/update-eta",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 4004,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/update-eta",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 1576,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/create-warehouse-receipt",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 4151,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/69c1a0b0-0898-4ea6-ab8b-46315df60f17/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 1459,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 2283,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/create-warehouse-receipt",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 1491,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/customs",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 2202,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/customs",
+      "method": "PATCH",
+      "role": "shipping",
+      "ms": 1602,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/customs",
+      "method": "PATCH",
+      "role": "shipping",
+      "ms": 1515,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/create-warehouse-receipt",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 2941,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/c7078458-7a99-4fce-9dfc-4822bc184b9a/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 1415,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/ed617234-45ca-4b67-9a40-b5091d75692c/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 866,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 308,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/stock-counts",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 7410,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/warehouse/stock-counts/0fda1973-68a0-49ae-9358-47f88710fca4",
+      "method": "PATCH",
+      "role": "warehouse",
+      "ms": 4956,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/stock-counts/0fda1973-68a0-49ae-9358-47f88710fca4/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 4419,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 322,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/stock-counts/0fda1973-68a0-49ae-9358-47f88710fca4/post",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 983,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=097818c9-4cbb-41cd-8ee4-8dc3651a13e5&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 288,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/chat/conversations",
+      "method": "POST",
+      "role": "employee",
+      "ms": 6615,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/chat/conversations/b34f7c40-b9bc-4bfd-8a6a-8d738e855e46/messages",
+      "method": "POST",
+      "role": "employee",
+      "ms": 3423,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/chat/conversations/b34f7c40-b9bc-4bfd-8a6a-8d738e855e46/messages",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 2669,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/chat/conversations/b34f7c40-b9bc-4bfd-8a6a-8d738e855e46/read",
+      "method": "POST",
+      "role": "outsider",
+      "ms": 6069,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/chat/conversations/b34f7c40-b9bc-4bfd-8a6a-8d738e855e46/messages",
+      "method": "GET",
+      "role": "hr",
+      "ms": 655,
+      "status": 404
+    },
+    {
+      "route": "/api/v1/system-notices",
+      "method": "POST",
+      "role": "admin",
+      "ms": 5206,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/system-notices/active",
+      "method": "GET",
+      "role": "employee",
+      "ms": 10759,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/system-notices/active",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 519,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/notifications",
+      "method": "GET",
+      "role": "employee",
+      "ms": 2544,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/audit-log",
+      "method": "GET",
+      "role": "admin",
+      "ms": 6542,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/audit-log",
+      "method": "GET",
+      "role": "employee",
+      "ms": 237,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/accounts/b50d4422-38c2-4485-b614-27fa8091bd18/status",
+      "method": "PATCH",
+      "role": "admin",
+      "ms": 3463,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 156,
+      "status": 401
+    },
+    {
+      "route": "/api/v1/accounts/b50d4422-38c2-4485-b614-27fa8091bd18/status",
+      "method": "PATCH",
+      "role": "admin",
+      "ms": 463,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "method": "POST",
+      "role": "outsider",
+      "ms": 976,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "admin",
+      "ms": 461,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "employee",
+      "ms": 573,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "hr",
+      "ms": 673,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 694,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 761,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 766,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 845,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 860,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "admin",
+      "ms": 407,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "hr",
+      "ms": 361,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 405,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "employee",
+      "ms": 543,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 421,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 412,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "admin",
+      "ms": 411,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 464,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "hr",
+      "ms": 284,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "supervisor",
+      "ms": 291,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 697,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "employee",
+      "ms": 353,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "accountant",
+      "ms": 309,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 260,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 298,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/auth/sessions",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 280,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments",
+      "method": "POST",
+      "role": "shipping",
+      "ms": 1481,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/update-eta",
+      "method": "POST",
+      "role": "shipping",
+      "status": 409,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/update-eta",
+      "method": "POST",
+      "role": "admin",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 487,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/customs",
+      "method": "PATCH",
+      "role": "shipping",
+      "status": 409,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/customs",
+      "method": "PATCH",
+      "role": "admin",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 522,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouses",
+      "method": "POST",
+      "role": "warehouse",
+      "ms": 591,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/create-warehouse-receipt",
+      "method": "POST",
+      "role": "admin",
+      "status": 201,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/create-warehouse-receipt",
+      "method": "POST",
+      "role": "shipping",
+      "status": 201,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 5934,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=37b63cc1-1ed1-4f27-9f44-1490aca3bac0&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 4492,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/cadb8330-fb0f-4400-a4bd-770cb571eaeb/post",
+      "method": "POST",
+      "role": "admin",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/warehouse/receipts/cadb8330-fb0f-4400-a4bd-770cb571eaeb/post",
+      "method": "POST",
+      "role": "warehouse",
+      "status": 200,
+      "concurrent": true
+    },
+    {
+      "route": "/api/v1/warehouse/inventory?warehouseId=37b63cc1-1ed1-4f27-9f44-1490aca3bac0&itemId=040cb5c0-2e7a-41bb-8a03-7c89844e7966",
+      "method": "GET",
+      "role": "warehouse",
+      "ms": 483,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shipments/6eafc26c-6755-4599-9f83-8c0f075f4072/receiving",
+      "method": "GET",
+      "role": "shipping",
+      "ms": 2261,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shifts",
+      "method": "POST",
+      "role": "admin",
+      "ms": 4121,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/shifts",
+      "method": "GET",
+      "role": "admin",
+      "ms": 367,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shifts/assignments",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2034,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/work-calendar",
+      "method": "POST",
+      "role": "admin",
+      "ms": 4801,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/work-calendar?from=2097-11-01&to=2097-11-01",
+      "method": "GET",
+      "role": "admin",
+      "ms": 296,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shifts",
+      "method": "PATCH",
+      "role": "admin",
+      "ms": 720,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shifts",
+      "method": "GET",
+      "role": "admin",
+      "ms": 484,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/shifts",
+      "method": "POST",
+      "role": "admin",
+      "ms": 173,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/document-types",
+      "method": "GET",
+      "role": "admin",
+      "ms": 2556,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/documents?q=E2E_202610204003DF",
+      "method": "GET",
+      "role": "admin",
+      "ms": 353,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/documents/87485e41-0c4e-48ed-bb26-5d9d00acde86",
+      "method": "GET",
+      "role": "admin",
+      "ms": 9213,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/documents/87485e41-0c4e-48ed-bb26-5d9d00acde86/archive",
+      "method": "POST",
+      "role": "employee",
+      "ms": 3449,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/documents/87485e41-0c4e-48ed-bb26-5d9d00acde86/archive",
+      "method": "POST",
+      "role": "admin",
+      "ms": 4393,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/documents/87485e41-0c4e-48ed-bb26-5d9d00acde86",
+      "method": "GET",
+      "role": "admin",
+      "ms": 2977,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/documents/87485e41-0c4e-48ed-bb26-5d9d00acde86/archive",
+      "method": "POST",
+      "role": "admin",
+      "ms": 741,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/report-templates",
+      "method": "POST",
+      "role": "admin",
+      "ms": 10474,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/report-templates",
+      "method": "PATCH",
+      "role": "admin",
+      "ms": 1197,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/report-exports",
+      "method": "POST",
+      "role": "admin",
+      "ms": 5726,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/report-exports/9974b084-3758-4917-a480-cfcfb8df6f56",
+      "method": "GET",
+      "role": "employee",
+      "ms": 7917,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/report-exports",
+      "method": "POST",
+      "role": "admin",
+      "ms": 453,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/report-exports",
+      "method": "POST",
+      "role": "admin",
+      "ms": 387,
+      "status": 404
+    },
+    {
+      "route": "/api/v1/workspace/note",
+      "method": "PUT",
+      "role": "employee",
+      "ms": 5677,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/workspace/note",
+      "method": "GET",
+      "role": "employee",
+      "ms": 533,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/workspace/note",
+      "method": "GET",
+      "role": "outsider",
+      "ms": 401,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/workspace/todos",
+      "method": "POST",
+      "role": "employee",
+      "ms": 2698,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/workspace/todos",
+      "method": "GET",
+      "role": "employee",
+      "ms": 548,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/workspace/todos/7681ceec-1766-45b8-855b-62c5db7ed109",
+      "method": "PATCH",
+      "role": "outsider",
+      "ms": 3189,
+      "status": 404
+    },
+    {
+      "route": "/api/v1/workspace/todos/7681ceec-1766-45b8-855b-62c5db7ed109",
+      "method": "DELETE",
+      "role": "outsider",
+      "ms": 420,
+      "status": 404
+    },
+    {
+      "route": "/api/v1/workspace/todos/7681ceec-1766-45b8-855b-62c5db7ed109",
+      "method": "PATCH",
+      "role": "employee",
+      "ms": 396,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/workspace/todos/7681ceec-1766-45b8-855b-62c5db7ed109",
+      "method": "DELETE",
+      "role": "employee",
+      "ms": 656,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/workspace/todos",
+      "method": "GET",
+      "role": "employee",
+      "ms": 422,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/workspace/todos",
+      "method": "POST",
+      "role": "employee",
+      "ms": 184,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/integrations/service-accounts",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2144,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/integrations/service-accounts",
+      "method": "GET",
+      "role": "employee",
+      "ms": 145,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/integrations/api-keys",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2248,
+      "status": 400
+    },
+    {
+      "route": "/api/v1/integrations/api-keys",
+      "method": "POST",
+      "role": "admin",
+      "ms": 677,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/integrations/api-keys",
+      "method": "GET",
+      "role": "admin",
+      "ms": 273,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/integrations/api-keys/056a7b4a-cf24-48b6-8c81-66b5cd6eb572/rotate",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2965,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/integrations/api-keys/ea9f61a1-c9b1-4b4a-a0d7-3c604127f584/revoke",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2099,
+      "status": 200
+    },
+    {
+      "route": "/api/v1/integrations/api-keys/ea9f61a1-c9b1-4b4a-a0d7-3c604127f584/revoke",
+      "method": "POST",
+      "role": "admin",
+      "ms": 388,
+      "status": 409
+    },
+    {
+      "route": "/api/v1/integrations/webhooks",
+      "method": "POST",
+      "role": "admin",
+      "ms": 2247,
+      "status": 201
+    },
+    {
+      "route": "/api/v1/integrations/webhooks/2253d140-f4ce-4375-a9c2-d236a1f9693d/test",
+      "method": "POST",
+      "role": "admin",
+      "ms": 4742,
+      "status": 403
+    },
+    {
+      "route": "/api/v1/integrations/webhooks/2253d140-f4ce-4375-a9c2-d236a1f9693d",
+      "method": "PATCH",
+      "role": "admin",
+      "ms": 1852,
+      "status": 200
+    },
+    {
+      "route": "/settings",
+      "kind": "local-filter",
+      "width": 360,
+      "ms": 15,
+      "catalogRequests": 0
+    },
+    {
+      "route": "/settings",
+      "kind": "local-filter",
+      "width": 390,
+      "ms": 29,
+      "catalogRequests": 0
+    },
+    {
+      "route": "/settings",
+      "kind": "local-filter",
+      "width": 430,
+      "ms": 15,
+      "catalogRequests": 0
+    },
+    {
+      "route": "/settings",
+      "kind": "local-filter",
+      "width": 1366,
+      "ms": 17,
+      "catalogRequests": 0
+    },
+    {
+      "route": "/settings",
+      "kind": "local-filter",
+      "width": 1440,
+      "ms": 16,
+      "catalogRequests": 0
+    },
+    {
+      "route": "/settings",
+      "kind": "local-filter",
+      "width": 1920,
+      "ms": 14,
+      "catalogRequests": 0
+    },
+    {
+      "route": "/api/v1/accounting/payslips/5b2e9d16-db54-4be4-a09b-ee139947abfd",
+      "method": "GET",
+      "role": "employee",
+      "ms": 5154,
+      "status": 200
+    }
+  ],
+  "readOnly": false,
+  "staticRouteCount": 141,
+  "finishedAt": "2026-10-20T04:11:00.458Z",
+  "summary": {
+    "PASS": 243,
+    "FAIL": 12,
+    "BLOCKED": 0
+  }
+}

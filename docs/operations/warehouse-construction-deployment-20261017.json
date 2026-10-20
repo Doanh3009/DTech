@@ -1,0 +1,254 @@
+{
+  "createdAt": "2026-10-17T07:13:58.154Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "df6fb71e259751b39dafdf89ae744167a7b2dcb1cb809d400d20cf58219800ed",
+  "previousDeployment": "dpl_CfvAi49SXZ7qy9xpjTrEe2Vve9tw",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_4RnUm8dprL3SFqNGVdYcEfUxvKRW",
+  "url": "ct-noi-e4jeftj04-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-17T07:14:55.156Z",
+  "publicUrl": "https://ct-noi-bo-test-chau-tuan.vercel.app",
+  "verifiedAt": "2026-10-17T07:20:12.723Z",
+  "public": true,
+  "databaseMigrationCount": 54,
+  "productionAliasUnchanged": true,
+  "checks": [
+    {
+      "route": "/api/health/live",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "checkedAt": "2026-10-17T07:15:38.720Z"
+      }
+    },
+    {
+      "route": "/api/health/ready",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checks": [
+          {
+            "component": "database",
+            "status": "healthy"
+          }
+        ],
+        "checkedAt": "2026-10-17T07:15:38.957Z"
+      }
+    },
+    {
+      "route": "/login",
+      "authorized": false,
+      "status": 200,
+      "travelerCount": 11,
+      "testAccountPicker": true
+    },
+    {
+      "route": "/testing",
+      "authorized": false,
+      "status": 200,
+      "testingPage": true
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": false,
+      "status": 401
+    },
+    {
+      "route": "/ui-preview/attendance-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/leave-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/payroll-simple-review",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/warehouse-construction-review",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": true,
+      "status": 200,
+      "accountCount": 10,
+      "activeAccountCount": 10
+    },
+    {
+      "route": "/api/v1/leave-types",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 9
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 41
+    },
+    {
+      "route": "/api/v1/leave-policies",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/insurance",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=2026",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-workflows",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-workflows/approvers",
+      "status": 200,
+      "scope": "managed admin test account",
+      "accountCount": 10,
+      "roleCount": 2
+    },
+    {
+      "route": "/api/v1/leave-balances?scope=all&year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 1092
+    },
+    {
+      "route": "/api/v1/leave-balances/employees",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 182
+    },
+    {
+      "route": "/api/v1/accounting/payroll",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 13
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=bad",
+      "status": 400,
+      "scope": "invalid year safely rejected"
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&employeeId=41000000-0000-4000-8000-000000000001&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-requests/aa3bbce2-4e34-4e92-94c3-0d7bd4ddaf53",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/auth/logout",
+      "status": 200,
+      "scope": "verification session revoked"
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Browser checks use Chrome at simulated viewport sizes, not physical mobile devices.",
+    "Real business mutations are exercised in SQL rollback and isolated browser fixtures; live business writes are blocked.",
+    "Multi-session database lock contention is not simulated."
+  ],
+  "deploymentId": "dpl_4RnUm8dprL3SFqNGVdYcEfUxvKRW",
+  "migration": {
+    "filename": "202610170002_warehouse_completion.sql",
+    "sha256": "3884956cb92b3168657362990df31187431f1f5c2d1efe009088f9c5f3a2242d",
+    "rollbackChecksBefore": 49,
+    "rollbackChecksAfter": 49,
+    "existingBusinessDataUnchanged": true
+  },
+  "validation": {
+    "typescript": "passed; local tsc and deployed Next build",
+    "eslint": "passed; src, scripts, root configuration and final changed files",
+    "localNextBuild": {
+      "passed": true,
+      "staticPages": 288
+    },
+    "deployedNextBuild": "READY",
+    "fixture": {
+      "passed": true,
+      "screens": 57,
+      "actions": 9,
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    "live": {
+      "passed": true,
+      "screens": 50,
+      "apiChecks": 18,
+      "roles": [
+        "warehouse.test",
+        "admin.test",
+        "employee.test"
+      ],
+      "runtimeErrors": 0,
+      "apiErrors": 0,
+      "issues": 0,
+      "selectedWorksiteNavigation": {
+        "passed": true,
+        "transitions": 2
+      },
+      "submittedPostingAction": {
+        "present": true,
+        "type": "issue"
+      }
+    },
+    "motion": {
+      "passed": true,
+      "screens": 6,
+      "reducedMotion": false,
+      "widths": [
+        390,
+        1440
+      ],
+      "expectedTransitionCancellations": []
+    }
+  },
+  "seedOrReset": false,
+  "evidence": {
+    "workflow": "docs/warehouse-construction-completion-20261017.md",
+    "fixture": "docs/ui-evidence/warehouse-construction-20261017/local/report.json",
+    "live": "docs/ui-evidence/warehouse-construction-20261017/live/report.json",
+    "motion": "docs/ui-evidence/warehouse-construction-20261017/motion/report.json"
+  }
+}

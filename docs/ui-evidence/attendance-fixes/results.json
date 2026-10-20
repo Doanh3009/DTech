@@ -1,0 +1,101 @@
+[
+  {
+    "username": "test.employee",
+    "route": "/dashboard",
+    "viewport": "1920x1080",
+    "width": 1920,
+    "pageWidth": 1910,
+    "backLeft": null,
+    "headerLeft": 272,
+    "cardLeft": null,
+    "cardPadding": null,
+    "hrLauncher": false,
+    "loadErrors": []
+  },
+  {
+    "username": "test.employee",
+    "route": "/attendance/me",
+    "viewport": "1920x1080",
+    "width": 1920,
+    "pageWidth": 1910,
+    "backLeft": null,
+    "headerLeft": 272,
+    "cardLeft": null,
+    "cardPadding": null,
+    "hrLauncher": false,
+    "loadErrors": []
+  },
+  {
+    "username": "test.employee",
+    "route": "/profile",
+    "viewport": "1920x1080",
+    "width": 1920,
+    "pageWidth": 1910,
+    "backLeft": null,
+    "headerLeft": 272,
+    "cardLeft": null,
+    "cardPadding": null,
+    "hrLauncher": false,
+    "loadErrors": []
+  },
+  {
+    "username": "test.employee",
+    "loader": {
+      "dx": 0,
+      "dy": 0,
+      "animation": "LogoSpinner_logo-turn__CTTMM"
+    }
+  },
+  {
+    "username": "test.supervisor",
+    "route": "/projects",
+    "viewport": "1920x1080",
+    "width": 1920,
+    "pageWidth": 1910,
+    "backLeft": null,
+    "headerLeft": 272,
+    "cardLeft": null,
+    "cardPadding": null,
+    "hrLauncher": true,
+    "loadErrors": []
+  },
+  {
+    "username": "test.supervisor",
+    "route": "/projects/b0000000-0000-4000-8000-000000000001/today",
+    "viewport": "1920x1080",
+    "width": 1920,
+    "pageWidth": 1910,
+    "backLeft": 272,
+    "headerLeft": 273,
+    "cardLeft": 272,
+    "cardPadding": "0px",
+    "hrLauncher": true,
+    "loadErrors": []
+  },
+  {
+    "username": "test.payroll",
+    "route": "/accounting/payroll",
+    "viewport": "1920x1080",
+    "width": 1920,
+    "pageWidth": 1910,
+    "backLeft": null,
+    "headerLeft": 272,
+    "cardLeft": 272,
+    "cardPadding": "0px",
+    "hrLauncher": false,
+    "loadErrors": []
+  },
+  {
+    "username": "test.payroll",
+    "route": "/accounting/payslips",
+    "viewport": "1920x1080",
+    "width": 1920,
+    "pageWidth": 1910,
+    "backLeft": null,
+    "headerLeft": 272,
+    "cardLeft": 272,
+    "cardPadding": "0px",
+    "hrLauncher": false,
+    "loadErrors": []
+  }
+]

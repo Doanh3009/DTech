@@ -1,0 +1,4033 @@
+{
+  "capturedAt": "2026-10-13T07:22:18.703Z",
+  "url": "http://localhost:3000/login",
+  "browser": "chrome.exe",
+  "sourceChecks": {
+    "protectedSourceCount": 18,
+    "unchanged": true,
+    "changedProtectedSources": [],
+    "newProtectedSources": []
+  },
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "visibleIcons": 11
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [],
+      "interactionChecks": {
+        "usernameFocused": true,
+        "passwordFocused": true,
+        "toggledVisible": true,
+        "valuePreserved": true,
+        "toggledHidden": true
+      },
+      "measurements": {
+        "width": 1920,
+        "height": 1080,
+        "scrollWidth": 1910,
+        "scrollHeight": 1080,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1910,
+          "height": 1080,
+          "right": 1910,
+          "bottom": 1080
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 415,
+          "y": 215,
+          "width": 1080,
+          "height": 650,
+          "right": 1495,
+          "bottom": 865
+        },
+        "formRect": {
+          "x": 1062.890625,
+          "y": 449.734375,
+          "width": 377.109375,
+          "height": 224,
+          "right": 1440,
+          "bottom": 673.734375
+        },
+        "logoRect": {
+          "x": 587.4375,
+          "y": 383.6875,
+          "width": 250,
+          "height": 312.625,
+          "right": 837.4375,
+          "bottom": 696.3125
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1062.890625,
+              "y": 478.734375,
+              "width": 377.109375,
+              "height": 44,
+              "right": 1440,
+              "bottom": 522.734375
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1062.890625,
+              "y": 567.734375,
+              "width": 377.109375,
+              "height": 44,
+              "right": 1440,
+              "bottom": 611.734375
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1399,
+              "y": 570.734375,
+              "width": 38,
+              "height": 38,
+              "right": 1437,
+              "bottom": 608.734375
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1062.890625,
+              "y": 627.734375,
+              "width": 377.109375,
+              "height": 46,
+              "right": 1440,
+              "bottom": 673.734375
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": 156,
+              "y": 64.796875,
+              "width": 220,
+              "height": 201.65625,
+              "right": 376,
+              "bottom": 266.453125
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": 38.390625,
+              "y": 449.8419189453125,
+              "width": 180.390625,
+              "height": 137.65625,
+              "right": 218.78125,
+              "bottom": 587.4981689453125
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 1524.015625,
+              "y": 756.03125,
+              "width": 237.59375,
+              "height": 280.78125,
+              "right": 1761.609375,
+              "bottom": 1036.8125
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": true,
+            "rect": {
+              "x": 38.390625,
+              "y": 226.796875,
+              "width": 83.59375,
+              "height": 83.59375,
+              "right": 121.984375,
+              "bottom": 310.390625
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 1535.015625,
+              "y": 32.390625,
+              "width": 193.59375,
+              "height": 150.125,
+              "right": 1728.609375,
+              "bottom": 182.515625
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": true,
+            "rect": {
+              "x": 38.390625,
+              "y": 728.609375,
+              "width": 206.796875,
+              "height": 178.59375,
+              "right": 245.1875,
+              "bottom": 907.203125
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": true,
+            "rect": {
+              "x": 1673.609375,
+              "y": 561.59375,
+              "width": 198,
+              "height": 176.921875,
+              "right": 1871.609375,
+              "bottom": 738.515625
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": true,
+            "rect": {
+              "x": 1770.421875,
+              "y": 54,
+              "width": 101.1875,
+              "height": 154.9375,
+              "right": 1871.609375,
+              "bottom": 208.9375
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": true,
+            "rect": {
+              "x": 1805.609375,
+              "y": 954.8026123046875,
+              "width": 92.390625,
+              "height": 89.8125,
+              "right": 1898,
+              "bottom": 1044.6151123046875
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": true,
+            "rect": {
+              "x": 130.796875,
+              "y": 898.9452514648438,
+              "width": 127.59375,
+              "height": 135.31256103515625,
+              "right": 258.390625,
+              "bottom": 1034.2578125
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": true,
+            "rect": {
+              "x": 1728.609375,
+              "y": 334.796875,
+              "width": 143,
+              "height": 143,
+              "right": 1871.609375,
+              "bottom": 477.796875
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-cable",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-hook",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 8000,
+            "delay": -2600,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "helmet",
+            "cssDuration": "8s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -3200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -6800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "duration": 28000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "gear-rotor",
+            "icon": "gear",
+            "cssDuration": "28s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -900,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -2700,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "duration": 11000,
+            "delay": -1000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "blueprint-layer",
+            "icon": "blueprint",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "duration": 11000,
+            "delay": -4200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "blueprint-layer",
+            "icon": "blueprint",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "duration": 11000,
+            "delay": -7400,
+            "iterations": null,
+            "easing": "linear",
+            "part": "blueprint-layer",
+            "icon": "blueprint",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -9000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -6000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -3000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "duration": 8500,
+            "delay": -5300,
+            "iterations": null,
+            "easing": "linear",
+            "part": "industrial-hook",
+            "icon": "hook",
+            "cssDuration": "8.5s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 9500,
+            "delay": -4200,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "tape",
+            "cssDuration": "9.5s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 11000,
+            "delay": -7100,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "wrench",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "duration": 9200,
+            "delay": -6400,
+            "iterations": null,
+            "easing": "linear",
+            "part": "vest-lines",
+            "icon": "vest",
+            "cssDuration": "9.2s",
+            "playState": "running"
+          }
+        ],
+        "animatedDescendants": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "part": "crane-cable",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "part": "crane-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "helmet"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "part": "gear-rotor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "part": "industrial-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "tape"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "wrench"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "part": "vest-lines",
+            "icon": null
+          }
+        ],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 2.8808813526797194e-7,
+        "decorativeLayoutShiftCount": 0,
+        "motionSample": {
+          "before": {
+            "crane-frame": {
+              "x": 175.0713653564453,
+              "y": 75.0630111694336,
+              "transform": "none"
+            },
+            "crane-hook": {
+              "x": 313.55108642578125,
+              "y": 186.60775756835938,
+              "transform": "matrix(1, 0, 0, 1, 0, 4.11433)"
+            }
+          },
+          "after": {
+            "crane-frame": {
+              "x": 175.0713653564453,
+              "y": 75.0630111694336,
+              "transform": "none"
+            },
+            "crane-hook": {
+              "x": 313.55108642578125,
+              "y": 187.6712646484375,
+              "transform": "matrix(1, 0, 0, 1, 0, 5.56464)"
+            }
+          },
+          "frameStatic": true,
+          "hookMoves": true
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768,
+        "visibleIcons": 11
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [],
+      "interactionChecks": null,
+      "measurements": {
+        "width": 1366,
+        "height": 768,
+        "scrollWidth": 1356,
+        "scrollHeight": 768,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1356,
+          "height": 768,
+          "right": 1356,
+          "bottom": 768
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 138,
+          "y": 59,
+          "width": 1080,
+          "height": 650,
+          "right": 1218,
+          "bottom": 709
+        },
+        "formRect": {
+          "x": 785.890625,
+          "y": 293.734375,
+          "width": 377.109375,
+          "height": 224,
+          "right": 1163,
+          "bottom": 517.734375
+        },
+        "logoRect": {
+          "x": 310.4375,
+          "y": 227.6875,
+          "width": 250,
+          "height": 312.625,
+          "right": 560.4375,
+          "bottom": 540.3125
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 785.890625,
+              "y": 322.734375,
+              "width": 377.109375,
+              "height": 44,
+              "right": 1163,
+              "bottom": 366.734375
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 785.890625,
+              "y": 411.734375,
+              "width": 377.109375,
+              "height": 44,
+              "right": 1163,
+              "bottom": 455.734375
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1122,
+              "y": 414.734375,
+              "width": 38,
+              "height": 38,
+              "right": 1160,
+              "bottom": 452.734375
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 785.890625,
+              "y": 471.734375,
+              "width": 377.109375,
+              "height": 46,
+              "right": 1163,
+              "bottom": 517.734375
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": 16,
+              "y": 38.390625,
+              "width": 109,
+              "height": 99.90625,
+              "right": 125,
+              "bottom": 138.296875
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": 16,
+              "y": 364.86114501953125,
+              "width": 89.375,
+              "height": 68.203125,
+              "right": 105.375,
+              "bottom": 433.06427001953125
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 1222.28125,
+              "y": 567.453125,
+              "width": 117.71875,
+              "height": 139.109375,
+              "right": 1340,
+              "bottom": 706.5625
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": true,
+            "rect": {
+              "x": 26,
+              "y": 253.4375,
+              "width": 58,
+              "height": 58,
+              "right": 84,
+              "bottom": 311.4375
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 1244.09375,
+              "y": 15.359375,
+              "width": 95.90625,
+              "height": 74.375,
+              "right": 1340,
+              "bottom": 89.734375
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": true,
+            "rect": {
+              "x": 16,
+              "y": 572.015625,
+              "width": 102.453125,
+              "height": 88.46875,
+              "right": 118.453125,
+              "bottom": 660.484375
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": true,
+            "rect": {
+              "x": 1241.90625,
+              "y": 414.71875,
+              "width": 98.09375,
+              "height": 87.65625,
+              "right": 1340,
+              "bottom": 502.375
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": true,
+            "rect": {
+              "x": 1258,
+              "y": 115.1875,
+              "width": 64,
+              "height": 98,
+              "right": 1322,
+              "bottom": 213.1875
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": true,
+            "rect": {
+              "x": 1272,
+              "y": 697.069580078125,
+              "width": 62,
+              "height": 60.265625,
+              "right": 1334,
+              "bottom": 757.335205078125
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": true,
+            "rect": {
+              "x": 28,
+              "y": 673.7464599609375,
+              "width": 72,
+              "height": 76.359375,
+              "right": 100,
+              "bottom": 750.1058349609375
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": true,
+            "rect": {
+              "x": 1269.15625,
+              "y": 276.46875,
+              "width": 70.84375,
+              "height": 70.84375,
+              "right": 1340,
+              "bottom": 347.3125
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-cable",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-hook",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 8000,
+            "delay": -2600,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "helmet",
+            "cssDuration": "8s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -3200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -6800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "duration": 28000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "gear-rotor",
+            "icon": "gear",
+            "cssDuration": "28s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -900,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -2700,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "duration": 11000,
+            "delay": -1000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "blueprint-layer",
+            "icon": "blueprint",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "duration": 11000,
+            "delay": -4200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "blueprint-layer",
+            "icon": "blueprint",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "duration": 11000,
+            "delay": -7400,
+            "iterations": null,
+            "easing": "linear",
+            "part": "blueprint-layer",
+            "icon": "blueprint",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -9000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -6000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -3000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "duration": 8500,
+            "delay": -5300,
+            "iterations": null,
+            "easing": "linear",
+            "part": "industrial-hook",
+            "icon": "hook",
+            "cssDuration": "8.5s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 9500,
+            "delay": -4200,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "tape",
+            "cssDuration": "9.5s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 11000,
+            "delay": -7100,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "wrench",
+            "cssDuration": "11s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "duration": 9200,
+            "delay": -6400,
+            "iterations": null,
+            "easing": "linear",
+            "part": "vest-lines",
+            "icon": "vest",
+            "cssDuration": "9.2s",
+            "playState": "running"
+          }
+        ],
+        "animatedDescendants": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "part": "crane-cable",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "part": "crane-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "helmet"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "part": "gear-rotor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "part": "industrial-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "tape"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "wrench"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "part": "vest-lines",
+            "icon": null
+          }
+        ],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 8.003666180923701e-7,
+        "decorativeLayoutShiftCount": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 768,
+        "visibleIcons": [
+          6,
+          7
+        ]
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [],
+      "interactionChecks": null,
+      "measurements": {
+        "width": 1024,
+        "height": 768,
+        "scrollWidth": 1014,
+        "scrollHeight": 768,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1014,
+          "height": 768,
+          "right": 1014,
+          "bottom": 768
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 28,
+          "y": 59,
+          "width": 958,
+          "height": 650,
+          "right": 986,
+          "bottom": 709
+        },
+        "formRect": {
+          "x": 608.796875,
+          "y": 311.234375,
+          "width": 322.1875,
+          "height": 224,
+          "right": 930.984375,
+          "bottom": 535.234375
+        },
+        "logoRect": {
+          "x": 179.265625,
+          "y": 243.140625,
+          "width": 225.265625,
+          "height": 281.703125,
+          "right": 404.53125,
+          "bottom": 524.84375
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 608.796875,
+              "y": 340.234375,
+              "width": 322.1875,
+              "height": 44,
+              "right": 930.984375,
+              "bottom": 384.234375
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 608.796875,
+              "y": 429.234375,
+              "width": 322.1875,
+              "height": 44,
+              "right": 930.984375,
+              "bottom": 473.234375
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 889.984375,
+              "y": 432.234375,
+              "width": 38,
+              "height": 38,
+              "right": 927.984375,
+              "bottom": 470.234375
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 608.796875,
+              "y": 489.234375,
+              "width": 322.1875,
+              "height": 46,
+              "right": 930.984375,
+              "bottom": 535.234375
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": 8,
+              "y": 23.03125,
+              "width": 110,
+              "height": 100.828125,
+              "right": 118,
+              "bottom": 123.859375
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": 8,
+              "y": 518.4588012695312,
+              "width": 92,
+              "height": 70.203125,
+              "right": 100,
+              "bottom": 588.6619262695312
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 882,
+              "y": 618.515625,
+              "width": 120,
+              "height": 141.8125,
+              "right": 1002,
+              "bottom": 760.328125
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": true,
+            "rect": {
+              "x": 12,
+              "y": 330.234375,
+              "width": 60,
+              "height": 60,
+              "right": 72,
+              "bottom": 390.234375
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 896,
+              "y": 15.359375,
+              "width": 110,
+              "height": 85.296875,
+              "right": 1006,
+              "bottom": 100.65625
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": true,
+            "rect": {
+              "x": 901,
+              "y": 658.8125,
+              "width": 105,
+              "height": 93.828125,
+              "right": 1006,
+              "bottom": 752.640625
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-cable",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-hook",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 8000,
+            "delay": -2600,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "helmet",
+            "cssDuration": "8s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -3200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -6800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "duration": 28000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "gear-rotor",
+            "icon": "gear",
+            "cssDuration": "28s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -900,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -2700,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -9000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -6000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -3000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          }
+        ],
+        "animatedDescendants": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "part": "crane-cable",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "part": "crane-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "helmet"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "part": "gear-rotor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "part": "industrial-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "tape"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "wrench"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "part": "vest-lines",
+            "icon": null
+          }
+        ],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 0.0000014242638523379962,
+        "decorativeLayoutShiftCount": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "visibleIcons": [
+          6,
+          7
+        ]
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [],
+      "interactionChecks": null,
+      "measurements": {
+        "width": 768,
+        "height": 1024,
+        "scrollWidth": 758,
+        "scrollHeight": 1024,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 758,
+          "height": 1024,
+          "right": 758,
+          "bottom": 1024
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 0,
+          "y": 0,
+          "width": 758,
+          "height": 1024,
+          "right": 758,
+          "bottom": 1024
+        },
+        "formRect": {
+          "x": 163,
+          "y": 513.359375,
+          "width": 432,
+          "height": 224,
+          "right": 595,
+          "bottom": 737.359375
+        },
+        "logoRect": {
+          "x": 313.71875,
+          "y": 11,
+          "width": 130.546875,
+          "height": 163.25,
+          "right": 444.265625,
+          "bottom": 174.25
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 163,
+              "y": 542.359375,
+              "width": 432,
+              "height": 44,
+              "right": 595,
+              "bottom": 586.359375
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 163,
+              "y": 631.359375,
+              "width": 432,
+              "height": 44,
+              "right": 595,
+              "bottom": 675.359375
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 554,
+              "y": 634.359375,
+              "width": 38,
+              "height": 38,
+              "right": 592,
+              "bottom": 672.359375
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 163,
+              "y": 691.359375,
+              "width": 432,
+              "height": 46,
+              "right": 595,
+              "bottom": 737.359375
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": 8,
+              "y": 30.71875,
+              "width": 110,
+              "height": 100.828125,
+              "right": 118,
+              "bottom": 131.546875
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": 8,
+              "y": 692.5371704101562,
+              "width": 92,
+              "height": 70.203125,
+              "right": 100,
+              "bottom": 762.7402954101562
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 626,
+              "y": 871.953125,
+              "width": 120,
+              "height": 141.8125,
+              "right": 746,
+              "bottom": 1013.765625
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": true,
+            "rect": {
+              "x": 12,
+              "y": 440.3125,
+              "width": 60,
+              "height": 60,
+              "right": 72,
+              "bottom": 500.3125
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 640,
+              "y": 20.46875,
+              "width": 110,
+              "height": 85.296875,
+              "right": 750,
+              "bottom": 105.765625
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": true,
+            "rect": {
+              "x": 645,
+              "y": 450.546875,
+              "width": 105,
+              "height": 93.828125,
+              "right": 750,
+              "bottom": 544.375
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-cable",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-hook",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 8000,
+            "delay": -2600,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "helmet",
+            "cssDuration": "8s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -3200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -6800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "duration": 28000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "gear-rotor",
+            "icon": "gear",
+            "cssDuration": "28s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -900,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -2700,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -9000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -6000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": -3000,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "duration": 12000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "building-floor",
+            "icon": "building",
+            "cssDuration": "12s",
+            "playState": "running"
+          }
+        ],
+        "animatedDescendants": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "part": "crane-cable",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "part": "crane-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "helmet"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "part": "gear-rotor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "part": "industrial-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "tape"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "wrench"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "part": "vest-lines",
+            "icon": null
+          }
+        ],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 0.0000014242638523379962,
+        "decorativeLayoutShiftCount": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "visibleIcons": 4
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [],
+      "interactionChecks": {
+        "usernameFocused": true,
+        "passwordFocused": true,
+        "toggledVisible": true,
+        "valuePreserved": true,
+        "toggledHidden": true
+      },
+      "measurements": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 380,
+        "scrollHeight": 844,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 380,
+          "height": 844,
+          "right": 380,
+          "bottom": 844
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 20,
+          "y": 16,
+          "width": 340,
+          "height": 633.546875,
+          "right": 360,
+          "bottom": 649.546875
+        },
+        "formRect": {
+          "x": 41,
+          "y": 329.953125,
+          "width": 298,
+          "height": 232.59375,
+          "right": 339,
+          "bottom": 562.546875
+        },
+        "logoRect": {
+          "x": 134,
+          "y": 24,
+          "width": 112,
+          "height": 140.0625,
+          "right": 246,
+          "bottom": 164.0625
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 358.25,
+              "width": 298,
+              "height": 44,
+              "right": 339,
+              "bottom": 402.25
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 448.546875,
+              "width": 298,
+              "height": 44,
+              "right": 339,
+              "bottom": 492.546875
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 288,
+              "y": 446.546875,
+              "width": 48,
+              "height": 48,
+              "right": 336,
+              "bottom": 494.546875
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 510.546875,
+              "width": 298,
+              "height": 52,
+              "right": 339,
+              "bottom": 562.546875
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": -18,
+              "y": 16.875,
+              "width": 78,
+              "height": 71.5,
+              "right": 60,
+              "bottom": 88.375
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": -12,
+              "y": 715.0868530273438,
+              "width": 78,
+              "height": 59.515625,
+              "right": 66,
+              "bottom": 774.6024780273438
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 294,
+              "y": 712.65625,
+              "width": 104,
+              "height": 122.90625,
+              "right": 398,
+              "bottom": 835.5625
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 310,
+              "y": 42.1875,
+              "width": 88,
+              "height": 68.234375,
+              "right": 398,
+              "bottom": 110.421875
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-cable",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-hook",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 8000,
+            "delay": -2600,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "helmet",
+            "cssDuration": "8s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -3200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -6800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -900,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -2700,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          }
+        ],
+        "animatedDescendants": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "part": "crane-cable",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "part": "crane-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "helmet"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "part": "gear-rotor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "part": "industrial-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "tape"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "wrench"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "part": "vest-lines",
+            "icon": null
+          }
+        ],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 0.000004128593125744751,
+        "decorativeLayoutShiftCount": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640,
+        "visibleIcons": 4
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [],
+      "interactionChecks": {
+        "usernameFocused": true,
+        "passwordFocused": true,
+        "toggledVisible": true,
+        "valuePreserved": true,
+        "toggledHidden": true
+      },
+      "measurements": {
+        "width": 320,
+        "height": 640,
+        "scrollWidth": 320,
+        "scrollHeight": 674,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 673.546875,
+          "right": 320,
+          "bottom": 673.546875
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 20,
+          "y": 16,
+          "width": 280,
+          "height": 633.546875,
+          "right": 300,
+          "bottom": 649.546875
+        },
+        "formRect": {
+          "x": 41,
+          "y": 329.953125,
+          "width": 238,
+          "height": 232.59375,
+          "right": 279,
+          "bottom": 562.546875
+        },
+        "logoRect": {
+          "x": 104,
+          "y": 24,
+          "width": 112,
+          "height": 140.0625,
+          "right": 216,
+          "bottom": 164.0625
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 358.25,
+              "width": 238,
+              "height": 44,
+              "right": 279,
+              "bottom": 402.25
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 448.546875,
+              "width": 238,
+              "height": 44,
+              "right": 279,
+              "bottom": 492.546875
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 228,
+              "y": 446.546875,
+              "width": 48,
+              "height": 48,
+              "right": 276,
+              "bottom": 494.546875
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 510.546875,
+              "width": 238,
+              "height": 52,
+              "right": 279,
+              "bottom": 562.546875
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": -18,
+              "y": 13.46875,
+              "width": 78,
+              "height": 71.5,
+              "right": 60,
+              "bottom": 84.96875
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": -12,
+              "y": 585.2059936523438,
+              "width": 78,
+              "height": 59.515625,
+              "right": 66,
+              "bottom": 644.7216186523438
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 250,
+              "y": 569.546875,
+              "width": 88,
+              "height": 104,
+              "right": 338,
+              "bottom": 673.546875
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 250,
+              "y": 33.671875,
+              "width": 88,
+              "height": 68.234375,
+              "right": 338,
+              "bottom": 101.90625
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-cable",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "duration": 9000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "crane-hook",
+            "icon": "crane",
+            "cssDuration": "9s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "duration": 8000,
+            "delay": -2600,
+            "iterations": null,
+            "easing": "linear",
+            "part": null,
+            "icon": "helmet",
+            "cssDuration": "8s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -3200,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "duration": 10000,
+            "delay": -6800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "rail-sheen",
+            "icon": "rail",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": 0,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -900,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -1800,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "duration": 10000,
+            "delay": -2700,
+            "iterations": null,
+            "easing": "linear",
+            "part": "beam-line",
+            "icon": "beam",
+            "cssDuration": "10s",
+            "playState": "running"
+          }
+        ],
+        "animatedDescendants": [
+          {
+            "name": "LoginBackdrop_cable-lift__GA_k2",
+            "part": "crane-cable",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_crane-lift__bIbJi",
+            "part": "crane-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "helmet"
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_rail-pass__UTEQg",
+            "part": "rail-sheen",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_gear-turn__KTQrd",
+            "part": "gear-rotor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_beam-draw__rB20C",
+            "part": "beam-line",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_trace-reveal__ya2zJ",
+            "part": "blueprint-layer",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_floor-reveal__yyhdJ",
+            "part": "building-floor",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_hook-lift__aXm3n",
+            "part": "industrial-hook",
+            "icon": null
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "tape"
+          },
+          {
+            "name": "LoginBackdrop_float__kih7T",
+            "part": null,
+            "icon": "wrench"
+          },
+          {
+            "name": "LoginBackdrop_vest-breathe__RgDWa",
+            "part": "vest-lines",
+            "icon": null
+          }
+        ],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 0.000006740570068359375,
+        "decorativeLayoutShiftCount": 0
+      }
+    }
+  ],
+  "reducedMotion": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [],
+      "measurements": {
+        "width": 1920,
+        "height": 1080,
+        "scrollWidth": 1910,
+        "scrollHeight": 1080,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1910,
+          "height": 1080,
+          "right": 1910,
+          "bottom": 1080
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 415,
+          "y": 215,
+          "width": 1080,
+          "height": 650,
+          "right": 1495,
+          "bottom": 865
+        },
+        "formRect": {
+          "x": 1062.890625,
+          "y": 449.734375,
+          "width": 377.109375,
+          "height": 224,
+          "right": 1440,
+          "bottom": 673.734375
+        },
+        "logoRect": {
+          "x": 587.4375,
+          "y": 383.6875,
+          "width": 250,
+          "height": 312.625,
+          "right": 837.4375,
+          "bottom": 696.3125
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1062.890625,
+              "y": 478.734375,
+              "width": 377.109375,
+              "height": 44,
+              "right": 1440,
+              "bottom": 522.734375
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1062.890625,
+              "y": 567.734375,
+              "width": 377.109375,
+              "height": 44,
+              "right": 1440,
+              "bottom": 611.734375
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1399,
+              "y": 570.734375,
+              "width": 38,
+              "height": 38,
+              "right": 1437,
+              "bottom": 608.734375
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 1062.890625,
+              "y": 627.734375,
+              "width": 377.109375,
+              "height": 46,
+              "right": 1440,
+              "bottom": 673.734375
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": 156,
+              "y": 64.796875,
+              "width": 220,
+              "height": 201.65625,
+              "right": 376,
+              "bottom": 266.453125
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": 38.390625,
+              "y": 453.59375,
+              "width": 180.390625,
+              "height": 137.65625,
+              "right": 218.78125,
+              "bottom": 591.25
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 1524.015625,
+              "y": 756.03125,
+              "width": 237.59375,
+              "height": 280.78125,
+              "right": 1761.609375,
+              "bottom": 1036.8125
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": true,
+            "rect": {
+              "x": 38.390625,
+              "y": 226.796875,
+              "width": 83.59375,
+              "height": 83.59375,
+              "right": 121.984375,
+              "bottom": 310.390625
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 1535.015625,
+              "y": 32.390625,
+              "width": 193.59375,
+              "height": 150.125,
+              "right": 1728.609375,
+              "bottom": 182.515625
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": true,
+            "rect": {
+              "x": 38.390625,
+              "y": 728.609375,
+              "width": 206.796875,
+              "height": 178.59375,
+              "right": 245.1875,
+              "bottom": 907.203125
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": true,
+            "rect": {
+              "x": 1673.609375,
+              "y": 561.59375,
+              "width": 198,
+              "height": 176.921875,
+              "right": 1871.609375,
+              "bottom": 738.515625
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": true,
+            "rect": {
+              "x": 1770.421875,
+              "y": 54,
+              "width": 101.1875,
+              "height": 154.9375,
+              "right": 1871.609375,
+              "bottom": 208.9375
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": true,
+            "rect": {
+              "x": 1805.609375,
+              "y": 957.796875,
+              "width": 92.390625,
+              "height": 89.8125,
+              "right": 1898,
+              "bottom": 1047.609375
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": true,
+            "rect": {
+              "x": 130.796875,
+              "y": 901.5,
+              "width": 127.59375,
+              "height": 135.3125,
+              "right": 258.390625,
+              "bottom": 1036.8125
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": true,
+            "rect": {
+              "x": 1728.609375,
+              "y": 334.796875,
+              "width": 143,
+              "height": 143,
+              "right": 1871.609375,
+              "bottom": 477.796875
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [],
+        "animatedDescendants": [],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 2.141253938400206e-7,
+        "decorativeLayoutShiftCount": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "failures": [],
+      "pageErrors": [],
+      "blockedWrites": [
+        {
+          "method": "POST",
+          "path": "/__nextjs_original-stack-frames"
+        }
+      ],
+      "measurements": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 380,
+        "scrollHeight": 844,
+        "sceneFound": true,
+        "scenePointerEvents": "none",
+        "sceneHidden": "true",
+        "sceneZIndex": "0",
+        "sceneRect": {
+          "x": 0,
+          "y": 0,
+          "width": 380,
+          "height": 844,
+          "right": 380,
+          "bottom": 844
+        },
+        "shellZIndex": "1",
+        "shellRect": {
+          "x": 20,
+          "y": 16,
+          "width": 340,
+          "height": 633.546875,
+          "right": 360,
+          "bottom": 649.546875
+        },
+        "formRect": {
+          "x": 41,
+          "y": 329.953125,
+          "width": 298,
+          "height": 232.59375,
+          "right": 339,
+          "bottom": 562.546875
+        },
+        "logoRect": {
+          "x": 134,
+          "y": 24,
+          "width": 112,
+          "height": 140.0625,
+          "right": 246,
+          "bottom": 164.0625
+        },
+        "controls": [
+          {
+            "name": "username",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 358.25,
+              "width": 298,
+              "height": 44,
+              "right": 339,
+              "bottom": 402.25
+            }
+          },
+          {
+            "name": "password",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 448.546875,
+              "width": 298,
+              "height": 44,
+              "right": 339,
+              "bottom": 492.546875
+            }
+          },
+          {
+            "name": "button",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 288,
+              "y": 446.546875,
+              "width": 48,
+              "height": 48,
+              "right": 336,
+              "bottom": 494.546875
+            }
+          },
+          {
+            "name": "submit",
+            "topHit": true,
+            "visible": true,
+            "rect": {
+              "x": 41,
+              "y": 510.546875,
+              "width": 298,
+              "height": 52,
+              "right": 339,
+              "bottom": 562.546875
+            }
+          }
+        ],
+        "icons": [
+          {
+            "kind": "crane",
+            "visible": true,
+            "rect": {
+              "x": -18,
+              "y": 16.875,
+              "width": 78,
+              "height": 71.5,
+              "right": 60,
+              "bottom": 88.375
+            },
+            "viewBox": "0 0 300 275",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "helmet",
+            "visible": true,
+            "rect": {
+              "x": -12,
+              "y": 716.96875,
+              "width": 78,
+              "height": 59.515625,
+              "right": 66,
+              "bottom": 776.484375
+            },
+            "viewBox": "0 0 190 145",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "rail",
+            "visible": true,
+            "rect": {
+              "x": 294,
+              "y": 712.65625,
+              "width": 104,
+              "height": 122.90625,
+              "right": 398,
+              "bottom": 835.5625
+            },
+            "viewBox": "0 0 220 260",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "gear",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 160",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "beam",
+            "visible": true,
+            "rect": {
+              "x": 310,
+              "y": 42.1875,
+              "width": 88,
+              "height": 68.234375,
+              "right": 398,
+              "bottom": 110.421875
+            },
+            "viewBox": "0 0 245 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "blueprint",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 220 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "building",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 235 210",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "hook",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 160 245",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "tape",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 180 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "wrench",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 165 175",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          },
+          {
+            "kind": "vest",
+            "visible": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "viewBox": "0 0 190 190",
+            "pointerEvents": "none",
+            "overlapsForm": false,
+            "overlapsLogo": false
+          }
+        ],
+        "animations": [],
+        "animatedDescendants": [],
+        "smilAnimationCount": 0,
+        "logoLoaded": true,
+        "iconElementCount": 64,
+        "layoutShiftScore": 0.000004128593125744751,
+        "decorativeLayoutShiftCount": 0
+      }
+    }
+  ],
+  "sourceAnimationChecks": {
+    "noJsFrameLoop": true,
+    "noRasterIconBackground": true,
+    "no3dMotion": true
+  },
+  "limitations": [
+    "Read-only login page verification using a fresh browser context with no authentication cookies.",
+    "Credential submission and authenticated business pages were not exercised; all browser write requests were blocked.",
+    "CSS animation metadata and short samples were checked; a complete cycle is not recorded as video."
+  ],
+  "passed": true
+}

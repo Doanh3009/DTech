@@ -1,0 +1,179 @@
+{
+  "createdAt": "2026-10-15T01:32:37.244Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "73ea72c82a5a216071d2a9348f994452a60f34c4dc1a29a8332933ffc3fd26c7",
+  "previousDeployment": "dpl_9HqowjSdyH8sXJPNWtvuqgZiBKAg",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_CKA5WcXq8JTzB8ihJYF9EUTuvoHT",
+  "url": "ct-noi-e4l1ooggu-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-15T01:34:34.708Z",
+  "publicUrl": "https://ct-noi-bo-test-chau-tuan.vercel.app",
+  "verifiedAt": "2026-10-15T01:35:27.946Z",
+  "public": true,
+  "databaseMigrationCount": 49,
+  "productionAliasUnchanged": true,
+  "unitVerification": { "total": 837, "passed": 800, "failed": 0, "skippedOptInLiveAudit": 37 },
+  "uiVerification": { "screens": 85, "layoutIssues": 0, "runtimeErrors": 0, "businessApiErrors": 0, "missingAvatarFallbacks": 77, "businessWrites": 0 },
+  "sqlVerification": { "mode": "TEST fixtures rolled back", "fieldChecks": 29, "insuranceChecks": 16, "cashoutScenarios": "passed", "cronActive": true },
+  "checks": [
+    {
+      "route": "/api/health/live",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "checkedAt": "2026-10-15T01:35:22.325Z"
+      }
+    },
+    {
+      "route": "/api/health/ready",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checks": [
+          {
+            "component": "database",
+            "status": "healthy"
+          }
+        ],
+        "checkedAt": "2026-10-15T01:35:22.972Z"
+      }
+    },
+    {
+      "route": "/login",
+      "authorized": false,
+      "status": 200,
+      "travelerCount": 11,
+      "testAccountPicker": true
+    },
+    {
+      "route": "/testing",
+      "authorized": false,
+      "status": 200,
+      "testingPage": true
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": false,
+      "status": 401
+    },
+    {
+      "route": "/ui-preview/attendance-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/leave-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": true,
+      "status": 200,
+      "accountCount": 10,
+      "activeAccountCount": 10
+    },
+    {
+      "route": "/api/v1/accounting/payroll",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 13
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 41
+    },
+    {
+      "route": "/api/v1/leave-types",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 9
+    },
+    {
+      "route": "/api/v1/insurance",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-workflows",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-balances?scope=all&year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 1092
+    },
+    {
+      "route": "/api/v1/leave-policies",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-workflows/approvers",
+      "status": 200,
+      "scope": "managed admin test account",
+      "accountCount": 10,
+      "roleCount": 2
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=2026",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-balances/employees",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 182
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=bad",
+      "status": 400,
+      "scope": "invalid year safely rejected"
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&employeeId=41000000-0000-4000-8000-000000000001&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-requests/aa3bbce2-4e34-4e92-94c3-0d7bd4ddaf53",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/auth/logout",
+      "status": 200,
+      "scope": "verification session revoked"
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Read-only leave API checks; managed test-account session login/logout only. No leave, approval, grant, or adjustment business transaction submitted."
+  ]
+}

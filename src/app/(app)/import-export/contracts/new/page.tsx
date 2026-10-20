@@ -1,0 +1,1 @@
+import { PageHeader } from "@/components/shared/PageHeader";import { ContractEditor } from "@/features/import-export/components/ImportExportViews";export default function Page(){return <div className="page-stack"><PageHeader title="Tạo hợp đồng mua hàng"/><ContractEditor/></div>;}

@@ -1,0 +1,817 @@
+{
+  "deploymentId": "dpl_GrGWNUuq9SDA1zJPtSeYuSyY4CMr",
+  "sourceSha": "1d3dd4577374b10d9c783c11233a6fd94e417163c1642e8e9c9c0980cf9fe94a",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "guard": {
+    "receiptReady": true,
+    "providerReady": true,
+    "testAliasMatches": true,
+    "productionAliasUnchanged": true,
+    "sourceShaMatches": true
+  },
+  "injectedStyles": false,
+  "screens": [
+    {
+      "kind": "layout",
+      "label": "payroll",
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "pageWidth": 320,
+        "clientWidth": 320,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 4689.203125,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 4689.203125,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 4689.203125,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 4689.203125,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px 28px 28px 0px",
+            "overflow": "hidden"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "skip-link",
+      "label": "keyboard-skip",
+      "width": 320,
+      "box": {
+        "x": 12,
+        "y": 12,
+        "width": 162.515625,
+        "height": 44
+      }
+    },
+    {
+      "kind": "layout",
+      "label": "payroll",
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "pageWidth": 390,
+        "clientWidth": 390,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 4758,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 4758,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 4758,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 4758,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px 28px 28px 0px",
+            "overflow": "hidden"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "skip-link",
+      "label": "keyboard-skip",
+      "width": 390,
+      "box": {
+        "x": 12,
+        "y": 12,
+        "width": 162.515625,
+        "height": 44
+      }
+    },
+    {
+      "kind": "layout",
+      "label": "payroll",
+      "width": 768,
+      "geometry": {
+        "viewport": 768,
+        "pageWidth": 758,
+        "clientWidth": 768,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 244,
+            "y": 0,
+            "width": 514,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 12,
+            "y": 12,
+            "width": 232,
+            "height": 876,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box padding-box",
+            "radius": "22px",
+            "overflow": "hidden"
+          }
+        ],
+        "railCornerClipped": true
+      }
+    },
+    {
+      "kind": "skip-link",
+      "label": "keyboard-skip",
+      "width": 768,
+      "box": {
+        "x": 12,
+        "y": 12,
+        "width": 162.515625,
+        "height": 44
+      }
+    },
+    {
+      "kind": "layout",
+      "label": "payroll-scrolled",
+      "width": 768,
+      "geometry": {
+        "viewport": 768,
+        "pageWidth": 758,
+        "clientWidth": 768,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": -2765,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": -2765,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": -2765,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 244,
+            "y": -2765,
+            "width": 514,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 12,
+            "y": 12,
+            "width": 232,
+            "height": 876,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box padding-box",
+            "radius": "22px",
+            "overflow": "hidden"
+          }
+        ],
+        "railCornerClipped": true
+      }
+    },
+    {
+      "kind": "layout",
+      "label": "collapsed-tooltip",
+      "width": 768,
+      "geometry": {
+        "viewport": 768,
+        "pageWidth": 758,
+        "clientWidth": 768,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 96,
+            "y": 0,
+            "width": 662,
+            "height": 3665.265625,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 12,
+            "y": 12,
+            "width": 84,
+            "height": 876,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box padding-box",
+            "radius": "22px",
+            "overflow": "hidden"
+          }
+        ],
+        "railCornerClipped": true
+      }
+    },
+    {
+      "kind": "layout",
+      "label": "payroll",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "pageWidth": 1430,
+        "clientWidth": 1440,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 244,
+            "y": 0,
+            "width": 1186,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 12,
+            "y": 12,
+            "width": 232,
+            "height": 876,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box padding-box",
+            "radius": "22px",
+            "overflow": "hidden"
+          }
+        ],
+        "railCornerClipped": true
+      }
+    },
+    {
+      "kind": "skip-link",
+      "label": "keyboard-skip",
+      "width": 1440,
+      "box": {
+        "x": 12,
+        "y": 12,
+        "width": 162.515625,
+        "height": 44
+      }
+    },
+    {
+      "kind": "layout",
+      "label": "payroll-scrolled",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "pageWidth": 1430,
+        "clientWidth": 1440,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": -360,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": -360,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": -360,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 244,
+            "y": -360,
+            "width": 1186,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 12,
+            "y": 11.5,
+            "width": 232,
+            "height": 876,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box padding-box",
+            "radius": "22px",
+            "overflow": "hidden"
+          }
+        ],
+        "railCornerClipped": true
+      }
+    },
+    {
+      "kind": "layout",
+      "label": "collapsed-tooltip",
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "pageWidth": 1430,
+        "clientWidth": 1440,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible"
+          },
+          {
+            "selector": ".app-content",
+            "x": 96,
+            "y": 0,
+            "width": 1334,
+            "height": 1259.5,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 12,
+            "y": 12,
+            "width": 84,
+            "height": 876,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box padding-box",
+            "radius": "22px",
+            "overflow": "hidden"
+          }
+        ],
+        "railCornerClipped": true
+      }
+    },
+    {
+      "kind": "motion",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "target": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "transitions": 1,
+      "animations": [
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 280
+        },
+        {
+          "name": "mobile-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 280
+        },
+        {
+          "name": "mobile-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 130
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": false,
+      "mainTransform": "none",
+      "overflow": false
+    },
+    {
+      "kind": "motion",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "target": "/accounting/salaries",
+      "transitions": 1,
+      "animations": [
+        {
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__reveal",
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__spinner-turn",
+          "pseudo": null,
+          "duration": 900
+        },
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 210
+        },
+        {
+          "name": "ui-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 210
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 120
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": false,
+      "mainTransform": "none",
+      "overflow": false
+    },
+    {
+      "kind": "motion",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "target": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "transitions": 1,
+      "animations": [
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "mobile-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "mobile-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": true,
+      "mainTransform": "none",
+      "overflow": false
+    },
+    {
+      "kind": "motion",
+      "width": 1440,
+      "reducedMotion": "reduce",
+      "target": "/accounting/salaries",
+      "transitions": 1,
+      "animations": [
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "ui-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": true,
+      "mainTransform": "none",
+      "overflow": false
+    }
+  ],
+  "interactions": [
+    {
+      "width": 320,
+      "keyboardSkipReachedMain": true
+    },
+    {
+      "width": 390,
+      "keyboardSkipReachedMain": true
+    },
+    {
+      "width": 768,
+      "keyboardSkipReachedMain": true
+    },
+    {
+      "width": 1440,
+      "keyboardSkipReachedMain": true
+    }
+  ],
+  "errors": [],
+  "runtimeErrors": [],
+  "apiErrors": [],
+  "expectedAvatarFallbacks": [
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    }
+  ],
+  "blockedBusinessWrites": [
+    {
+      "method": "PUT",
+      "path": "/api/v1/workspace/preferences"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/workspace/preferences"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/workspace/preferences"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/workspace/preferences"
+    }
+  ],
+  "authentication": [
+    {
+      "username": "admin.test",
+      "action": "login",
+      "status": 200,
+      "reducedMotion": "reduce"
+    },
+    {
+      "username": "admin.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "login",
+      "status": 200,
+      "reducedMotion": "no-preference"
+    },
+    {
+      "username": "admin.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "login",
+      "status": 200,
+      "reducedMotion": "reduce"
+    },
+    {
+      "username": "admin.test",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "Read-only UI navigation using managed TEST accounts; production is not accessed.",
+    "WebSockets are blocked for this audit; a realtime connection warning is expected.",
+    "Sidebar collapse/expand preference persistence is aborted before submission."
+  ],
+  "passed": true
+}

@@ -1,0 +1,114 @@
+{
+  "recordedAt": "2026-10-15T01:35:23.562Z",
+  "deploymentId": "dpl_CKA5WcXq8JTzB8ihJYF9EUTuvoHT",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "kind": "live_read_only_ui_review",
+  "screens": [
+    {
+      "label": "overview",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "errors": [],
+        "dialogs": [],
+        "clippedButtons": [],
+        "smallTargets": [
+          {
+            "label": "",
+            "x": 72.390625,
+            "y": 102.40625,
+            "width": 271.609375,
+            "height": 25.1875
+          }
+        ]
+      }
+    },
+    {
+      "label": "rate-editor",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "errors": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 129.453125,
+            "width": 366,
+            "height": 585.078125
+          }
+        ],
+        "clippedButtons": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "overview",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "errors": [],
+        "dialogs": [],
+        "clippedButtons": [],
+        "smallTargets": [
+          {
+            "label": "Kiểm thử",
+            "x": 1280.828125,
+            "y": 76,
+            "width": 117.5,
+            "height": 36
+          },
+          {
+            "label": "",
+            "x": 325.984375,
+            "y": 273.03125,
+            "width": 259.421875,
+            "height": 22.296875
+          }
+        ]
+      }
+    },
+    {
+      "label": "rate-editor",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "errors": [],
+        "dialogs": [
+          {
+            "x": 435,
+            "y": 198.671875,
+            "width": 560,
+            "height": 502.640625
+          }
+        ],
+        "clippedButtons": [],
+        "smallTargets": []
+      }
+    }
+  ],
+  "apiErrors": [],
+  "runtimeErrors": [],
+  "blockedBusinessWrites": [],
+  "issues": [],
+  "limitations": [
+    "Managed owned test-account login and logout only; no rates, payroll, balances, leave requests, or other business records are written.",
+    "Screenshots and client interaction observations do not establish scheduler or payroll mutation correctness."
+  ],
+  "logoutStatus": 200
+}

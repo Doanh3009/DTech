@@ -1,0 +1,2303 @@
+﻿{
+    "recordedAt":  "2026-10-13T09:09:39.988Z",
+    "protectedSources":  {
+                             "count":  34,
+                             "changed":  [
+
+                                         ]
+                         },
+    "screens":  [
+                    {
+                        "label":  "personal",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "22px",
+                                                               "padding":  "0px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history-day",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "22px",
+                                                               "padding":  "0px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "logs",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  0,
+                                                            "y":  0,
+                                                            "width":  0,
+                                                            "height":  0
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "log-photo",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  0,
+                                                            "y":  0,
+                                                            "width":  0,
+                                                            "height":  0
+                                                        },
+                                                        {
+                                                            "x":  0,
+                                                            "y":  32,
+                                                            "width":  310,
+                                                            "height":  608
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "detail",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "20px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "20px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "20px",
+                                                               "padding":  "18px 16px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review-photo",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  3,
+                                                            "y":  106.015625,
+                                                            "width":  304,
+                                                            "height":  533.984375
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "requests",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "request-reject",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  12,
+                                                            "y":  53.96875,
+                                                            "width":  286,
+                                                            "height":  532.046875
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "policy",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "locations",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal-card",
+                        "viewport":  {
+                                         "width":  320,
+                                         "height":  640
+                                     },
+                        "metrics":  {
+                                        "width":  320,
+                                        "scrollWidth":  320,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "22px",
+                                                               "padding":  "0px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history-day",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "22px",
+                                                               "padding":  "0px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           },
+                                                           {
+                                                               "radius":  "15px",
+                                                               "padding":  "14px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "logs",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  0,
+                                                            "y":  0,
+                                                            "width":  0,
+                                                            "height":  0
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "log-photo",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  0,
+                                                            "y":  0,
+                                                            "width":  0,
+                                                            "height":  0
+                                                        },
+                                                        {
+                                                            "x":  0,
+                                                            "y":  32,
+                                                            "width":  380,
+                                                            "height":  812
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "detail",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "20px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "20px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "20px",
+                                                               "padding":  "18px 16px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review-photo",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  3,
+                                                            "y":  219.765625,
+                                                            "width":  374,
+                                                            "height":  624.234375
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "requests",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "request-reject",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  12,
+                                                            "y":  183.96875,
+                                                            "width":  356,
+                                                            "height":  476.046875
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "policy",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "locations",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "18px 16px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal-card",
+                        "viewport":  {
+                                         "width":  390,
+                                         "height":  844
+                                     },
+                        "metrics":  {
+                                        "width":  390,
+                                        "scrollWidth":  380,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history-day",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  223.796875,
+                                                            "y":  191.21875,
+                                                            "width":  310.390625,
+                                                            "height":  641.5625
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "logs",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "log-photo",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  16,
+                                                            "y":  54.5625,
+                                                            "width":  726,
+                                                            "height":  914.875
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "detail",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review-photo",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  16,
+                                                            "y":  97.546875,
+                                                            "width":  728,
+                                                            "height":  828.90625
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "requests",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "request-reject",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  119,
+                                                            "y":  317.125,
+                                                            "width":  520,
+                                                            "height":  389.75
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "policy",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "locations",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal-card",
+                        "viewport":  {
+                                         "width":  768,
+                                         "height":  1024
+                                     },
+                        "metrics":  {
+                                        "width":  768,
+                                        "scrollWidth":  758,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history-day",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  351.796875,
+                                                            "y":  63.21875,
+                                                            "width":  310.390625,
+                                                            "height":  641.5625
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "logs",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "log-photo",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  47,
+                                                            "y":  117.59375,
+                                                            "width":  920,
+                                                            "height":  532.8125
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "detail",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review-photo",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  16,
+                                                            "y":  43.78125,
+                                                            "width":  984,
+                                                            "height":  680.4375
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "requests",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "request-reject",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  247,
+                                                            "y":  189.125,
+                                                            "width":  520,
+                                                            "height":  389.75
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "policy",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "locations",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal-card",
+                        "viewport":  {
+                                         "width":  1024,
+                                         "height":  768
+                                     },
+                        "metrics":  {
+                                        "width":  1024,
+                                        "scrollWidth":  1014,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "history-day",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  559.796875,
+                                                            "y":  129.21875,
+                                                            "width":  310.390625,
+                                                            "height":  641.5625
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "logs",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "log-photo",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  255,
+                                                            "y":  183.59375,
+                                                            "width":  920,
+                                                            "height":  532.8125
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "detail",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "review-photo",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  185,
+                                                            "y":  71.5,
+                                                            "width":  1060,
+                                                            "height":  757
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "requests",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "request-reject",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "0px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+                                                        {
+                                                            "x":  455,
+                                                            "y":  255.125,
+                                                            "width":  520,
+                                                            "height":  389.75
+                                                        }
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "policy",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "locations",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           },
+                                                           {
+                                                               "radius":  "18px",
+                                                               "padding":  "24px"
+                                                           }
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    },
+                    {
+                        "label":  "personal-card",
+                        "viewport":  {
+                                         "width":  1440,
+                                         "height":  900
+                                     },
+                        "metrics":  {
+                                        "width":  1440,
+                                        "scrollWidth":  1430,
+                                        "clippedButtons":  [
+
+                                                           ],
+                                        "roundCards":  [
+
+                                                       ],
+                                        "dialogs":  [
+
+                                                    ]
+                                    }
+                    }
+                ],
+    "interactions":  [
+                         {
+                             "viewport":  {
+                                              "width":  320,
+                                              "height":  640
+                                          },
+                             "daySelection":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  320,
+                                              "height":  640
+                                          },
+                             "logPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  320,
+                                              "height":  640
+                                          },
+                             "reviewPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  320,
+                                              "height":  640
+                                          },
+                             "rejectDialog":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  320,
+                                              "height":  640
+                                          },
+                             "policyToggle":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  390,
+                                              "height":  844
+                                          },
+                             "daySelection":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  390,
+                                              "height":  844
+                                          },
+                             "logPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  390,
+                                              "height":  844
+                                          },
+                             "reviewPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  390,
+                                              "height":  844
+                                          },
+                             "rejectDialog":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  390,
+                                              "height":  844
+                                          },
+                             "policyToggle":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  768,
+                                              "height":  1024
+                                          },
+                             "daySelection":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  768,
+                                              "height":  1024
+                                          },
+                             "logPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  768,
+                                              "height":  1024
+                                          },
+                             "reviewPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  768,
+                                              "height":  1024
+                                          },
+                             "rejectDialog":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  768,
+                                              "height":  1024
+                                          },
+                             "policyToggle":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1024,
+                                              "height":  768
+                                          },
+                             "daySelection":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1024,
+                                              "height":  768
+                                          },
+                             "logPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1024,
+                                              "height":  768
+                                          },
+                             "reviewPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1024,
+                                              "height":  768
+                                          },
+                             "rejectDialog":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1024,
+                                              "height":  768
+                                          },
+                             "policyToggle":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1440,
+                                              "height":  900
+                                          },
+                             "daySelection":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1440,
+                                              "height":  900
+                                          },
+                             "logPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1440,
+                                              "height":  900
+                                          },
+                             "reviewPhotoViewer":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1440,
+                                              "height":  900
+                                          },
+                             "rejectDialog":  true
+                         },
+                         {
+                             "viewport":  {
+                                              "width":  1440,
+                                              "height":  900
+                                          },
+                             "policyToggle":  true
+                         }
+                     ],
+    "errors":  [
+
+               ],
+    "blockedWrites":  [
+
+                      ],
+    "limitations":  [
+                        "UI uses a development-only fixture with API responses intercepted; no production data or authentication submitted.",
+                        "Fake camera and GPS are used; physical phone hardware and permissions are not verified."
+                    ],
+    "passed":  true,
+    "cameraReports":  [
+                          {
+                              "recordedAt":  "2026-10-13T09:11:52.988Z",
+                              "protectedSources":  {
+                                                       "count":  34,
+                                                       "changed":  [
+
+                                                                   ]
+                                                   },
+                              "screens":  [
+                                              {
+                                                  "label":  "personal",
+                                                  "viewport":  {
+                                                                   "width":  320,
+                                                                   "height":  640
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  320,
+                                                                  "scrollWidth":  320,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "camera",
+                                                  "viewport":  {
+                                                                   "width":  320,
+                                                                   "height":  640
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  320,
+                                                                  "scrollWidth":  320,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "photo-preview",
+                                                  "viewport":  {
+                                                                   "width":  320,
+                                                                   "height":  640
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  320,
+                                                                  "scrollWidth":  320,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              }
+                                          ],
+                              "interactions":  [
+                                                   {
+                                                       "viewport":  {
+                                                                        "width":  320,
+                                                                        "height":  640
+                                                                    },
+                                                       "cameraCapturePreview":  true,
+                                                       "noSubmission":  true
+                                                   }
+                                               ],
+                              "errors":  [
+
+                                         ],
+                              "blockedWrites":  [
+
+                                                ],
+                              "limitations":  [
+                                                  "UI uses a development-only fixture with API responses intercepted; no production data or authentication submitted.",
+                                                  "Fake camera and GPS are used; physical phone hardware and permissions are not verified."
+                                              ],
+                              "passed":  true
+                          },
+                          {
+                              "recordedAt":  "2026-10-13T09:11:53.790Z",
+                              "protectedSources":  {
+                                                       "count":  34,
+                                                       "changed":  [
+
+                                                                   ]
+                                                   },
+                              "screens":  [
+                                              {
+                                                  "label":  "personal",
+                                                  "viewport":  {
+                                                                   "width":  390,
+                                                                   "height":  844
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  390,
+                                                                  "scrollWidth":  380,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "camera",
+                                                  "viewport":  {
+                                                                   "width":  390,
+                                                                   "height":  844
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  390,
+                                                                  "scrollWidth":  380,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "photo-preview",
+                                                  "viewport":  {
+                                                                   "width":  390,
+                                                                   "height":  844
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  390,
+                                                                  "scrollWidth":  380,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              }
+                                          ],
+                              "interactions":  [
+                                                   {
+                                                       "viewport":  {
+                                                                        "width":  390,
+                                                                        "height":  844
+                                                                    },
+                                                       "cameraCapturePreview":  true,
+                                                       "noSubmission":  true
+                                                   }
+                                               ],
+                              "errors":  [
+
+                                         ],
+                              "blockedWrites":  [
+
+                                                ],
+                              "limitations":  [
+                                                  "UI uses a development-only fixture with API responses intercepted; no production data or authentication submitted.",
+                                                  "Fake camera and GPS are used; physical phone hardware and permissions are not verified."
+                                              ],
+                              "passed":  true
+                          },
+                          {
+                              "recordedAt":  "2026-10-13T09:11:53.194Z",
+                              "protectedSources":  {
+                                                       "count":  34,
+                                                       "changed":  [
+
+                                                                   ]
+                                                   },
+                              "screens":  [
+                                              {
+                                                  "label":  "personal",
+                                                  "viewport":  {
+                                                                   "width":  768,
+                                                                   "height":  1024
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  768,
+                                                                  "scrollWidth":  758,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "camera",
+                                                  "viewport":  {
+                                                                   "width":  768,
+                                                                   "height":  1024
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  768,
+                                                                  "scrollWidth":  758,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "photo-preview",
+                                                  "viewport":  {
+                                                                   "width":  768,
+                                                                   "height":  1024
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  768,
+                                                                  "scrollWidth":  758,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              }
+                                          ],
+                              "interactions":  [
+                                                   {
+                                                       "viewport":  {
+                                                                        "width":  768,
+                                                                        "height":  1024
+                                                                    },
+                                                       "cameraCapturePreview":  true,
+                                                       "noSubmission":  true
+                                                   }
+                                               ],
+                              "errors":  [
+
+                                         ],
+                              "blockedWrites":  [
+
+                                                ],
+                              "limitations":  [
+                                                  "UI uses a development-only fixture with API responses intercepted; no production data or authentication submitted.",
+                                                  "Fake camera and GPS are used; physical phone hardware and permissions are not verified."
+                                              ],
+                              "passed":  true
+                          },
+                          {
+                              "recordedAt":  "2026-10-13T09:11:53.479Z",
+                              "protectedSources":  {
+                                                       "count":  34,
+                                                       "changed":  [
+
+                                                                   ]
+                                                   },
+                              "screens":  [
+                                              {
+                                                  "label":  "personal",
+                                                  "viewport":  {
+                                                                   "width":  1024,
+                                                                   "height":  768
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  1024,
+                                                                  "scrollWidth":  1014,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "camera",
+                                                  "viewport":  {
+                                                                   "width":  1024,
+                                                                   "height":  768
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  1024,
+                                                                  "scrollWidth":  1014,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "photo-preview",
+                                                  "viewport":  {
+                                                                   "width":  1024,
+                                                                   "height":  768
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  1024,
+                                                                  "scrollWidth":  1014,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              }
+                                          ],
+                              "interactions":  [
+                                                   {
+                                                       "viewport":  {
+                                                                        "width":  1024,
+                                                                        "height":  768
+                                                                    },
+                                                       "cameraCapturePreview":  true,
+                                                       "noSubmission":  true
+                                                   }
+                                               ],
+                              "errors":  [
+
+                                         ],
+                              "blockedWrites":  [
+
+                                                ],
+                              "limitations":  [
+                                                  "UI uses a development-only fixture with API responses intercepted; no production data or authentication submitted.",
+                                                  "Fake camera and GPS are used; physical phone hardware and permissions are not verified."
+                                              ],
+                              "passed":  true
+                          },
+                          {
+                              "recordedAt":  "2026-10-13T09:11:54.054Z",
+                              "protectedSources":  {
+                                                       "count":  34,
+                                                       "changed":  [
+
+                                                                   ]
+                                                   },
+                              "screens":  [
+                                              {
+                                                  "label":  "personal",
+                                                  "viewport":  {
+                                                                   "width":  1440,
+                                                                   "height":  900
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  1440,
+                                                                  "scrollWidth":  1430,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "camera",
+                                                  "viewport":  {
+                                                                   "width":  1440,
+                                                                   "height":  900
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  1440,
+                                                                  "scrollWidth":  1430,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              },
+                                              {
+                                                  "label":  "photo-preview",
+                                                  "viewport":  {
+                                                                   "width":  1440,
+                                                                   "height":  900
+                                                               },
+                                                  "metrics":  {
+                                                                  "width":  1440,
+                                                                  "scrollWidth":  1430,
+                                                                  "clippedButtons":  [
+
+                                                                                     ],
+                                                                  "roundCards":  [
+
+                                                                                 ],
+                                                                  "dialogs":  [
+
+                                                                              ]
+                                                              }
+                                              }
+                                          ],
+                              "interactions":  [
+                                                   {
+                                                       "viewport":  {
+                                                                        "width":  1440,
+                                                                        "height":  900
+                                                                    },
+                                                       "cameraCapturePreview":  true,
+                                                       "noSubmission":  true
+                                                   }
+                                               ],
+                              "errors":  [
+
+                                         ],
+                              "blockedWrites":  [
+
+                                                ],
+                              "limitations":  [
+                                                  "UI uses a development-only fixture with API responses intercepted; no production data or authentication submitted.",
+                                                  "Fake camera and GPS are used; physical phone hardware and permissions are not verified."
+                                              ],
+                              "passed":  true
+                          }
+                      ],
+    "finalChecks":  {
+                        "cameraBrowserPerViewport":  true,
+                        "uniqueStates":  75,
+                        "cameraViewports":  [
+                                                320,
+                                                390,
+                                                768,
+                                                1024,
+                                                1440
+                                            ],
+                        "cameraCases":  15,
+                        "layoutCases":  65
+                    }
+}

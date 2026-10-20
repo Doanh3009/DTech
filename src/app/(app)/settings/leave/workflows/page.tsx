@@ -1,0 +1,1 @@
+import { BackLink } from "@/components/shared/BackLink";import { PageHeader } from "@/components/shared/PageHeader";import { LeaveSettings } from "@/features/leave/components/LeaveSettings";export default function Page(){return <div className="page-stack"><BackLink href="/leave/manage"/><PageHeader title="Quy trình duyệt nghỉ"/><LeaveSettings section="workflows"/></div>}

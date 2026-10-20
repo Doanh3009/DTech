@@ -1,0 +1,1 @@
+.error { display: block; flex-basis: 100%; max-width: 100%; color: var(--danger); font-size: var(--font-meta); line-height: 1.5; overflow-wrap: anywhere; }

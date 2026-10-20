@@ -1,0 +1,440 @@
+{
+  "isolatedDataFixture": true,
+  "viewports": [
+    {
+      "width": 1680,
+      "pageWidth": 1670,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "16px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 36.953125,
+          "top": 92,
+          "right": 289.625,
+          "bottom": 216
+        },
+        {
+          "left": 305.625,
+          "top": 92,
+          "right": 558.3125,
+          "bottom": 216
+        },
+        {
+          "left": 574.3125,
+          "top": 92,
+          "right": 827,
+          "bottom": 216
+        },
+        {
+          "left": 843,
+          "top": 92,
+          "right": 1095.671875,
+          "bottom": 216
+        },
+        {
+          "left": 1111.671875,
+          "top": 92,
+          "right": 1364.359375,
+          "bottom": 216
+        },
+        {
+          "left": 1380.359375,
+          "top": 92,
+          "right": 1633.046875,
+          "bottom": 216
+        }
+      ],
+      "nameFont": "16px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "20px",
+      "headerFont": "14px",
+      "statusFont": "13px"
+    },
+    {
+      "width": 1440,
+      "pageWidth": 1430,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "16px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 31.671875,
+          "top": 92,
+          "right": 246.109375,
+          "bottom": 216
+        },
+        {
+          "left": 262.109375,
+          "top": 92,
+          "right": 476.546875,
+          "bottom": 216
+        },
+        {
+          "left": 492.546875,
+          "top": 92,
+          "right": 706.984375,
+          "bottom": 216
+        },
+        {
+          "left": 722.984375,
+          "top": 92,
+          "right": 937.4375,
+          "bottom": 216
+        },
+        {
+          "left": 953.4375,
+          "top": 92,
+          "right": 1167.875,
+          "bottom": 216
+        },
+        {
+          "left": 1183.875,
+          "top": 92,
+          "right": 1398.3125,
+          "bottom": 216
+        }
+      ],
+      "nameFont": "16px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "20px",
+      "headerFont": "14px",
+      "statusFont": "13px"
+    },
+    {
+      "width": 1280,
+      "pageWidth": 1270,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "16px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 28.15625,
+          "top": 92,
+          "right": 422.046875,
+          "bottom": 216
+        },
+        {
+          "left": 438.046875,
+          "top": 92,
+          "right": 831.9375,
+          "bottom": 216
+        },
+        {
+          "left": 847.9375,
+          "top": 92,
+          "right": 1241.84375,
+          "bottom": 216
+        },
+        {
+          "left": 28.15625,
+          "top": 232,
+          "right": 422.046875,
+          "bottom": 356
+        },
+        {
+          "left": 438.046875,
+          "top": 232,
+          "right": 831.9375,
+          "bottom": 356
+        },
+        {
+          "left": 847.9375,
+          "top": 232,
+          "right": 1241.84375,
+          "bottom": 356
+        }
+      ],
+      "nameFont": "16px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "20px",
+      "headerFont": "14px",
+      "statusFont": "13px"
+    },
+    {
+      "width": 1024,
+      "pageWidth": 1014,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "16px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 22.515625,
+          "top": 92,
+          "right": 334.828125,
+          "bottom": 216
+        },
+        {
+          "left": 350.828125,
+          "top": 92,
+          "right": 663.15625,
+          "bottom": 216
+        },
+        {
+          "left": 679.15625,
+          "top": 92,
+          "right": 991.46875,
+          "bottom": 216
+        },
+        {
+          "left": 22.515625,
+          "top": 232,
+          "right": 334.828125,
+          "bottom": 356
+        },
+        {
+          "left": 350.828125,
+          "top": 232,
+          "right": 663.15625,
+          "bottom": 356
+        },
+        {
+          "left": 679.15625,
+          "top": 232,
+          "right": 991.46875,
+          "bottom": 356
+        }
+      ],
+      "nameFont": "16px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "20px",
+      "headerFont": "14px",
+      "statusFont": "13px"
+    },
+    {
+      "width": 768,
+      "pageWidth": 758,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "16px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 20,
+          "top": 92,
+          "right": 248.65625,
+          "bottom": 216
+        },
+        {
+          "left": 264.65625,
+          "top": 92,
+          "right": 493.328125,
+          "bottom": 216
+        },
+        {
+          "left": 509.328125,
+          "top": 92,
+          "right": 738,
+          "bottom": 216
+        },
+        {
+          "left": 20,
+          "top": 232,
+          "right": 248.65625,
+          "bottom": 356
+        },
+        {
+          "left": 264.65625,
+          "top": 232,
+          "right": 493.328125,
+          "bottom": 356
+        },
+        {
+          "left": 509.328125,
+          "top": 232,
+          "right": 738,
+          "bottom": 356
+        }
+      ],
+      "nameFont": "16px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "20px",
+      "headerFont": "14px",
+      "statusFont": "13px"
+    },
+    {
+      "width": 767,
+      "pageWidth": 757,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "12px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 16,
+          "top": 84,
+          "right": 372.5,
+          "bottom": 196
+        },
+        {
+          "left": 384.5,
+          "top": 84,
+          "right": 741,
+          "bottom": 196
+        },
+        {
+          "left": 16,
+          "top": 208,
+          "right": 372.5,
+          "bottom": 320
+        },
+        {
+          "left": 384.5,
+          "top": 208,
+          "right": 741,
+          "bottom": 320
+        },
+        {
+          "left": 16,
+          "top": 332,
+          "right": 372.5,
+          "bottom": 444
+        },
+        {
+          "left": 384.5,
+          "top": 332,
+          "right": 741,
+          "bottom": 444
+        }
+      ],
+      "nameFont": "17px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "18px",
+      "headerFont": null,
+      "statusFont": "13px"
+    },
+    {
+      "width": 390,
+      "pageWidth": 380,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "12px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 16,
+          "top": 80,
+          "right": 184,
+          "bottom": 192
+        },
+        {
+          "left": 196,
+          "top": 80,
+          "right": 364,
+          "bottom": 192
+        },
+        {
+          "left": 16,
+          "top": 204,
+          "right": 184,
+          "bottom": 316
+        },
+        {
+          "left": 196,
+          "top": 204,
+          "right": 364,
+          "bottom": 316
+        },
+        {
+          "left": 16,
+          "top": 328,
+          "right": 184,
+          "bottom": 440
+        },
+        {
+          "left": 196,
+          "top": 328,
+          "right": 364,
+          "bottom": 440
+        }
+      ],
+      "nameFont": "17px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "18px",
+      "headerFont": null,
+      "statusFont": "13px"
+    },
+    {
+      "width": 360,
+      "pageWidth": 350,
+      "summaryBackground": "rgba(0, 0, 0, 0)",
+      "gap": "12px",
+      "cardCount": 6,
+      "cardBorder": "1px",
+      "cardRadius": "16px",
+      "cardBackground": "color(srgb 0.971137 0.981176 1)",
+      "cardRects": [
+        {
+          "left": 16,
+          "top": 80,
+          "right": 169,
+          "bottom": 192
+        },
+        {
+          "left": 181,
+          "top": 80,
+          "right": 334,
+          "bottom": 192
+        },
+        {
+          "left": 16,
+          "top": 204,
+          "right": 169,
+          "bottom": 316
+        },
+        {
+          "left": 181,
+          "top": 204,
+          "right": 334,
+          "bottom": 316
+        },
+        {
+          "left": 16,
+          "top": 328,
+          "right": 169,
+          "bottom": 440
+        },
+        {
+          "left": 181,
+          "top": 328,
+          "right": 334,
+          "bottom": 440
+        }
+      ],
+      "nameFont": "17px",
+      "nameWeight": "600",
+      "metadataFont": "14px",
+      "titleFont": "18px",
+      "headerFont": null,
+      "statusFont": "13px"
+    }
+  ],
+  "dateFilter": true,
+  "employeeFilter": true,
+  "runtimeErrors": []
+}

@@ -1,0 +1,1 @@
+import { BackLink } from "@/components/shared/BackLink";import { PageHeader } from "@/components/shared/PageHeader";import { LeaveBalanceView } from "@/features/leave/components/LeaveBalanceView";export default function Page(){return <div className="page-stack"><BackLink href="/leave/manage"/><PageHeader title="Số dư phép nhân viên"/><LeaveBalanceView all/></div>}

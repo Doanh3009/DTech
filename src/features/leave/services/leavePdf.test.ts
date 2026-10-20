@@ -1,0 +1,12 @@
+import { describe,expect,it } from "vitest";
+import { defaultSystemSettings } from "@/config/systemSettings";
+import type { LeaveRequest } from "@/features/leave/types/leaveTypes";
+import { generateLeaveRequestPdf } from "./leavePdf";
+import { PDFDocument } from "pdf-lib";
+
+const request:LeaveRequest={id:"id",requestNumber:"NP-2026-000001",employeeId:"employee",employeeCode:"HR002",employeeName:"Nguyễn Thị Thúy Hằng",departmentName:"Nhân sự",positionName:"Chuyên viên",leaveTypeId:"type",leaveTypeName:"Phép năm",deductsBalance:true,startDate:"2026-09-14",endDate:"2026-09-15",startDayPart:"full_day",endDayPart:"morning",calculatedDays:1.5,reason:"Quản lý nhân sự – Chấm công – Điều chuyển kho – Xuất nhập khẩu. Ắ Ằ Ẳ Ẵ Ặ – Ấ Ầ Ẩ Ẫ Ậ – Ố Ồ Ổ Ỗ Ộ – Ứ Ừ Ử Ữ Ự.",status:"approved",approvedAt:new Date().toISOString(),version:3,createdAt:new Date().toISOString(),warnings:[],attachments:[],approvalSteps:[{id:"step",stepOrder:1,approverSource:"hr_role",approverName:"Võ Hoàng Phương",status:"approved",actedAt:new Date().toISOString(),comment:"Đồng ý"}]};
+describe("leave PDF",()=>{
+  it.each(["pending_approval","approved","rejected"] as const)("renders %s with Vietnamese text",async(status)=>{const bytes=await generateLeaveRequestPdf({...request,status},defaultSystemSettings);expect(new TextDecoder().decode(bytes.slice(0,5))).toBe("%PDF-");expect(bytes.length).toBeGreaterThan(5000);});
+  it("paginates a long reason and multiple approvers without being affected by attachments",async()=>{const approvalSteps=Array.from({length:12},(_,index)=>({...request.approvalSteps[0],id:`step-${index}`,stepOrder:index+1,approverName:`Người duyệt ${index+1}`}));const bytes=await generateLeaveRequestPdf({...request,reason:"Nội dung lý do nghỉ phép có dấu. ".repeat(90),approvalSteps,attachments:[{id:"file",fileName:"giay-xac-nhan.pdf",createdAt:new Date().toISOString()}]},defaultSystemSettings);const document=await PDFDocument.load(bytes);expect(document.getPageCount()).toBeGreaterThan(1);for(const page of document.getPages())expect(page.getSize()).toMatchObject({width:595.28,height:841.89});});
+  it("uses fallback settings when optional company fields and logo are missing",async()=>{const settings=structuredClone(defaultSystemSettings);settings.organization.address="";settings.organization.phone="";settings.organization.email="";settings.branding.logoMainUrl=null;await expect(generateLeaveRequestPdf(request,settings)).resolves.toBeInstanceOf(Uint8Array);});
+});

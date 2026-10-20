@@ -1,0 +1,106 @@
+/* Movement stays on the workspace; navigation keeps its position. */
+:root {
+  --ui-motion-exit: 160ms;
+  --ui-motion-fluid: cubic-bezier(.16, 1, .3, 1);
+}
+
+.overlay[data-state="closing"]:not([hidden]) {
+  animation: mobile-overlay-leave var(--ui-motion-exit) ease-in both;
+}
+
+.overlay[data-state="closing"]:not([hidden]) > :is(.modal, .drawer, .lightbox),
+.overlay.overlay--drawer[data-state="closing"]:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer {
+  pointer-events: none;
+  animation: mobile-panel-leave var(--ui-motion-exit) ease-in both;
+}
+
+@keyframes mobile-overlay-leave { to { opacity: 0; } }
+@keyframes mobile-panel-leave { to { opacity: 0; transform: translateY(6px) scale(.985); } }
+
+@media (max-width: 767px) {
+  ::view-transition-group(.workspace-page-motion) {
+    animation-duration: 280ms;
+    animation-timing-function: var(--ui-motion-fluid);
+  }
+
+  ::view-transition-old(.workspace-page-motion) {
+    animation: mobile-page-leave 130ms ease-out both;
+  }
+
+  ::view-transition-new(.workspace-page-motion) {
+    animation: mobile-page-arrive 280ms var(--ui-motion-fluid) both;
+  }
+
+  .overlay[data-state="open"]:not([hidden]) {
+    animation: mobile-overlay-arrive 180ms ease-out both;
+  }
+
+  .overlay[data-state="open"]:not([hidden]) > :is(.modal, .drawer, .lightbox),
+  .overlay.overlay--drawer[data-state="open"]:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer {
+    animation: mobile-panel-arrive 280ms var(--ui-motion-fluid) both;
+  }
+
+  .overlay.overlay--drawer[data-state="open"]:not([hidden]) > .drawer.mobile-app-sheet {
+    animation: mobile-sheet-arrive 300ms var(--ui-motion-fluid) both;
+  }
+
+  .overlay.overlay--drawer[data-state="closing"]:not([hidden]) > .drawer.mobile-app-sheet {
+    animation: mobile-sheet-leave var(--ui-motion-exit) ease-in both;
+  }
+
+  .app-shell .app-header :is(.mobile-app-launcher__trigger, .dropdown__trigger, .app-header__mobile-back, .notification-bell),
+  .personal-home__links > a,
+  .mobile-app-sheet :is(.mobile-app-sheet__grid a, .mobile-app-sheet__links a) {
+    transition: transform 140ms var(--ui-motion-fluid), background-color 140ms ease, color 140ms ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .app-shell .app-header :is(.mobile-app-launcher__trigger, .dropdown__trigger, .app-header__mobile-back, .notification-bell):active,
+  .personal-home__links > a:active,
+  .mobile-app-sheet :is(.mobile-app-sheet__grid a, .mobile-app-sheet__links a):active {
+    transform: scale(.97);
+  }
+
+  .personal-workspace-tools > summary > svg:last-child,
+  .app-shell__test-toggle > svg:last-child {
+    transition: transform 220ms var(--ui-motion-fluid);
+  }
+
+  .personal-workspace-tools[open] > .personal-workspace-cards,
+  .app-shell__test-switcher.is-expanded > .app-shell__test-body {
+    animation: mobile-disclosure-arrive 200ms var(--ui-motion-fluid) both;
+  }
+}
+
+@keyframes mobile-page-leave { to { opacity: 0; transform: translateY(-3px); } }
+@keyframes mobile-page-arrive { from { opacity: .55; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes mobile-overlay-arrive { from { opacity: 0; } to { opacity: 1; } }
+@keyframes mobile-panel-arrive { from { opacity: .45; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes mobile-sheet-arrive { from { opacity: .7; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes mobile-sheet-leave { to { opacity: .2; transform: translateY(20px); } }
+@keyframes mobile-disclosure-arrive { from { opacity: .6; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  .overlay[data-state]:not([hidden]),
+  .overlay[data-state]:not([hidden]) > :is(.modal, .drawer, .lightbox),
+  .overlay.overlay--drawer[data-state]:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer,
+  .overlay.overlay--drawer[data-state]:not([hidden]) > .drawer.mobile-app-sheet,
+  .personal-workspace-tools[open] > .personal-workspace-cards,
+  .app-shell__test-switcher.is-expanded > .app-shell__test-body { animation: none; }
+
+  .app-shell .app-header :is(.mobile-app-launcher__trigger, .dropdown__trigger, .app-header__mobile-back, .notification-bell),
+  .personal-home__links > a,
+  .mobile-app-sheet :is(.mobile-app-sheet__grid a, .mobile-app-sheet__links a),
+  .personal-workspace-tools > summary > svg:last-child,
+  .app-shell__test-toggle > svg:last-child { transition: none; }
+
+  .app-shell .app-header :is(.mobile-app-launcher__trigger, .dropdown__trigger, .app-header__mobile-back, .notification-bell):active,
+  .personal-home__links > a:active,
+  .mobile-app-sheet :is(.mobile-app-sheet__grid a, .mobile-app-sheet__links a):active { transform: none; }
+}

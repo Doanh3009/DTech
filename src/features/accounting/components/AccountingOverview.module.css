@@ -1,0 +1,7 @@
+.recent > a { display: grid; grid-template-columns: minmax(80px, 1fr) auto minmax(120px, 1fr); align-items: center; gap: 16px; min-height: 60px; border: 1px solid var(--border-subtle); border-radius: 12px; background: var(--surface-1); padding: 14px; }
+.recent > a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.amount { text-align: right; color: var(--primary); font-weight: 650; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+@media (max-width: 550px) {
+  .recent > a { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+  .amount { grid-column: 1 / -1; text-align: left; font-size: 18px; }
+}

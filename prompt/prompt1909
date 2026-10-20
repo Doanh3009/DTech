@@ -1,0 +1,1516 @@
+# MASTER PROMPT — REDESIGN ERP CHÂU TUẤN THEO UI/UX PRO MAX + BLUEPRINT
+
+## Mục tiêu
+Tiếp tục trực tiếp trên source code ERP nội bộ Châu Tuấn hiện tại.
+
+Đây là một đợt:
+- Business Preservation Audit;
+- UI/UX Pro Max redesign;
+- Design System refactor;
+- Responsive redesign;
+- khôi phục nghiệp vụ bị thiếu/thay đổi;
+- sửa lỗi frontend hiện tại;
+- regression test toàn hệ thống.
+
+Mục tiêu cuối:
+- một design system duy nhất;
+- UI/UX Pro Max chỉ làm lớp thiết kế, KHÔNG thay đổi nghiệp vụ;
+- Blueprint Châu Tuấn là source of truth;
+- phát hiện và phục hồi nghiệp vụ đã bị đơn giản hóa/mất sau các lần sửa UI;
+- desktop lớn không loãng/trống bất thường;
+- mobile không trống trơn;
+- dữ liệu ít/nhiều đều hiển thị hợp lý;
+- Back/Forward/Refresh đúng;
+- không phá realtime, auth, permission, audit, offline, upload, report, inventory ledger hoặc workflow.
+
+---
+
+# 1. THỨ TỰ ƯU TIÊN / SOURCE OF TRUTH
+
+Thứ tự ưu tiên tuyệt đối:
+
+1. Blueprint nghiệp vụ Châu Tuấn.
+2. Business invariants, permission, data integrity.
+3. Route, API/service, auth, realtime.
+4. Design System của project.
+5. UI/UX Pro Max.
+6. Visual polish.
+
+Nếu xung đột:
+- Blueprint thắng UI/UX Pro Max.
+- Nghiệp vụ thắng aesthetic.
+- Data integrity thắng convenience.
+- Backend permission thắng việc chỉ ẩn/hiện nút frontend.
+
+UI/UX Pro Max chỉ được quyết định:
+- hierarchy;
+- spacing;
+- typography;
+- information density;
+- responsive composition;
+- component proportions;
+- semantic color;
+- mobile ergonomics;
+- form/table/dashboard UX;
+- empty/loading/error state;
+- accessibility;
+- anti-AI-generated appearance.
+
+UI/UX Pro Max KHÔNG được tự ý quyết định:
+- entity;
+- data model;
+- business workflow;
+- permission;
+- approval flow;
+- timesheet rules;
+- leave ledger;
+- stock ledger;
+- warehouse posting;
+- project/worksite relation;
+- worker attendance domain;
+- export semantics;
+- audit semantics;
+- API contract.
+
+---
+
+# 2. UI/UX PRO MAX — KIỂM TRA VÀ DÙNG ĐÚNG
+
+Nếu UI/UX Pro Max đã cài:
+- tìm skill tại vị trí Codex hiện dùng;
+- đọc SKILL.md;
+- không cài duplicate.
+
+Nếu chưa cài:
+- kiểm tra Node/npm/Python;
+- dùng cách cài chính thức phù hợp với Codex hiện tại;
+- verify skill files;
+- không dùng nguồn không rõ;
+- không thay project dependencies nếu không cần.
+
+Sau khi skill sẵn sàng:
+- dùng để audit và tạo design direction;
+- không dừng ở setup;
+- không để skill redesign tự do.
+
+---
+
+# 3. BUSINESS PRESERVATION AUDIT — BẮT BUỘC TRƯỚC REDESIGN
+
+Đối chiếu source hiện tại với Blueprint và tạo ma trận:
+
+| Blueprint Requirement | Current Implementation | Status | Files/API/DB | Action |
+|---|---|---|---|---|
+
+Status:
+- COMPLETE
+- PARTIAL
+- MISSING
+- CHANGED
+- CONFLICT
+- UNKNOWN
+
+Không xóa code/chức năng trước khi biết nó có thuộc Blueprint hay không.
+
+Nếu chức năng hiện tại ngoài Blueprint:
+- đánh dấu EXTENSION;
+- không tự xóa nếu đang dùng;
+- báo cáo riêng.
+
+Ví dụ Worker Attendance phải được audit theo chuỗi:
+Assignment → Daily Roster → Attendance Session → Group Photos → Confirm → Timesheet.
+
+Nếu current chỉ còn Project → Worker list → Checklist → Save thì phải đánh dấu PARTIAL/BUSINESS REGRESSION, không được coi là hoàn chỉnh.
+
+---
+
+# 4. BLUEPRINT — CÁC NGUYÊN TẮC KHÔNG ĐƯỢC PHÁ
+
+Hệ thống là một “AMIS mini” riêng cho Châu Tuấn.
+
+Nguyên tắc:
+- dữ liệu có cấu trúc;
+- API/service layer rõ;
+- cấu hình thay hard-code;
+- audit đầy đủ;
+- routing thật;
+- business logic không rải tùy tiện trong UI;
+- policy dễ đổi đưa vào Admin;
+- dữ liệu quan trọng có lịch sử thay đổi.
+
+## 4.1 Chấm công cá nhân và điểm danh công nhân là hai domain riêng
+
+Không gộp UI/data model một cách máy móc.
+
+### Chấm công cá nhân
+Dành cho nhân viên/kỹ sư có account:
+- check-in/out;
+- camera;
+- GPS;
+- preview;
+- compress ảnh;
+- persistent offline queue;
+- attendance event;
+- upload/sync;
+- idempotency.
+
+### Điểm danh công nhân
+Dành cho giám sát; công nhân có thể không có account:
+- Project/Worksite;
+- Assignment;
+- Daily Roster;
+- chọn tất cả có mặt;
+- chỉnh ngoại lệ;
+- nhiều ảnh tập thể;
+- nội dung công việc;
+- submit attendance session;
+- close-day exception;
+- sinh Timesheet.
+
+Hai domain chỉ hội tụ tại Timesheet.
+
+## 4.2 Employee Profile khác User Account
+Một người có thể có hồ sơ nhưng không có account.
+Khi nghỉ việc: hồ sơ giữ lịch sử, account bị disable.
+
+## 4.3 User → Role(s) → Permission(s)
+Không dùng `role === HR` làm nguồn bảo mật.
+Frontend permission-aware; backend/service bắt buộc kiểm tra permission thật.
+
+## 4.4 Approved / Posted / Locked không sửa âm thầm
+Dùng adjustment/reversal/version/snapshot theo domain.
+
+---
+
+# 5. ROUTING BẮT BUỘC
+
+Không dùng giant page + activeTab để thay routing chính.
+
+Giữ/chuẩn hóa route tương đương:
+
+/employees
+/employees/:id/profile
+/employees/:id/attendance
+/employees/:id/leave
+/attendance
+/timesheets
+/worker-attendance
+/projects
+/projects/:id/updates
+/warehouse/items
+/warehouse/receipts
+/import-export/shipments
+/settings/roles
+/settings/export-templates
+
+Yêu cầu:
+- refresh đúng page;
+- Back/Forward đúng;
+- detail có URL riêng;
+- filter quan trọng phản ánh trên URL khi hợp lý.
+
+---
+
+# 6. NHÂN SỰ — KHÔNG ĐƯỢC ĐƠN GIẢN HÓA THÀNH CRUD
+
+Các nhóm dữ liệu phải được bảo toàn:
+
+## Định danh
+- mã nhân viên;
+- họ tên;
+- ảnh;
+- ngày sinh;
+- giới tính.
+
+## CCCD
+- số;
+- ngày cấp;
+- nơi cấp;
+- ngày hết hạn nếu áp dụng;
+- mặt trước/mặt sau.
+
+## Liên hệ
+- điện thoại;
+- email;
+- địa chỉ hiện tại;
+- thường trú.
+
+## Công việc
+- đơn vị/công ty;
+- phòng ban;
+- chức vụ;
+- vị trí;
+- quản lý trực tiếp;
+- ngày vào làm;
+- thử việc/chính thức;
+- loại nhân sự;
+- trạng thái.
+
+## Hợp đồng
+- số;
+- loại;
+- ngày bắt đầu/kết thúc;
+- file.
+
+## Ngân hàng
+- ngân hàng;
+- số tài khoản;
+- chủ tài khoản.
+
+## Thuế/BHXH
+- MST;
+- mã BHXH.
+
+## Khẩn cấp
+- người liên hệ;
+- quan hệ;
+- số điện thoại.
+
+## Tài liệu
+- CCCD;
+- hợp đồng;
+- bằng cấp;
+- chứng chỉ;
+- CV;
+- hồ sơ khác.
+
+Không bắt nhập toàn bộ khi tạo mới.
+Bộ tối thiểu có thể gồm:
+- mã NV;
+- họ tên;
+- phòng ban/đội;
+- chức vụ/vai trò;
+- ngày vào;
+- điện thoại.
+
+Có thể hiển thị mức hoàn thiện hồ sơ.
+
+## Lịch sử công tác
+Không ghi đè history.
+Điều chuyển/chức vụ/hợp đồng/tạm nghỉ/nghỉ việc phải sinh event/timeline.
+
+---
+
+# 7. CHẤM CÔNG CÁ NHÂN — CAMERA/GPS/OFFLINE
+
+Luồng:
+Chấm vào/chấm ra
+→ camera + GPS song song
+→ chụp
+→ preview
+→ chụp lại / dùng ảnh
+→ compress/normalize
+→ local persistent storage
+→ attendance event
+→ upload/sync nền
+→ feedback rõ.
+
+Không để:
+- ảnh upload lỗi làm mất record công;
+- reload/browser close làm mất queue;
+- double tap tạo duplicate.
+
+Cần:
+- idempotency;
+- persistent queue như IndexedDB hoặc tương đương;
+- attendance/photo/sync state tách nhau.
+
+## HR xem ảnh
+- thumbnail;
+- lazy load;
+- lightbox;
+- metadata dễ hiểu;
+- Excel chỉ link “Xem ảnh”;
+- không signed URL ngắn hạn cố định trong Excel;
+- dùng stable internal route + permission check.
+
+---
+
+# 8. ĐIỂM DANH CÔNG NHÂN
+
+Nguồn roster:
+- Project Assignment;
+- Supervisor Assignment;
+- Daily Roster.
+
+Giám sát không nhập lại tên mỗi ngày.
+
+Luồng:
+Project/Worksite
+→ roster ngày/ca
+→ chọn tất cả có mặt
+→ chỉnh ngoại lệ
+→ thêm người phát sinh
+→ nhiều ảnh tập thể
+→ nội dung công việc
+→ xác nhận session
+→ sinh dữ liệu công.
+
+Trạng thái:
+- có mặt;
+- vắng;
+- nghỉ phép;
+- đi trễ;
+- điều chuyển;
+- chưa rõ.
+
+Approved leave phải phản ánh vào roster.
+
+Cho phép công nhân tạm chờ HR hoàn thiện.
+
+## Ảnh tập thể
+Một session có nhiều ảnh.
+Không copy ảnh thành nhiều bản theo worker.
+Worker attendance row reference session.
+
+## Chốt ngày
+Không bắt điểm danh lại toàn bộ chiều.
+Chỉ ghi ngoại lệ:
+- về sớm;
+- điều chuyển;
+- OT;
+- nghỉ nửa ngày.
+
+---
+
+# 9. PROJECT / WORKSITE / ASSIGNMENT
+
+Không coi Project và Worksite là một entity duy nhất.
+
+Project:
+- mã;
+- tên;
+- trạng thái;
+- thời gian;
+- người phụ trách.
+
+Worksite:
+- tên;
+- địa chỉ;
+- GPS;
+- radius;
+- trạng thái.
+
+Project Assignment:
+- người;
+- vai trò;
+- từ ngày;
+- đến ngày;
+- ca;
+- trạng thái.
+
+Supervisor Assignment:
+- giám sát chính/thay thế;
+- khoảng thời gian.
+
+Daily Roster:
+- sinh từ assignment;
+- override có audit.
+
+---
+
+# 10. TIMESHEET LÀ TẦNG TỔNG HỢP
+
+Timesheet nhận từ:
+1. Attendance Event cá nhân
+2. Worker Attendance Session
+3. Leave Request đã duyệt
+4. Manual Adjustment
+
+Không cho từng module tự tính công riêng.
+
+Kỳ công:
+OPEN → HR REVIEW → LOCKED.
+
+Sau khi khóa:
+- snapshot ổn định.
+
+Mở lại:
+- permission;
+- lý do;
+- audit;
+- recalculation có kiểm soát.
+
+---
+
+# 11. NGHỈ PHÉP / ĐƠN TỪ / PHÉP NĂM
+
+Luồng:
+Draft → Submit → Approval Workflow → Approved / Rejected / Request More → Timesheet / Leave Ledger.
+
+PDF:
+- xuất sau khi lưu;
+- trạng thái chờ duyệt có thể watermark;
+- approved có approval info;
+- template configurable;
+- version/audit nếu sửa.
+
+PDF chỉ là presentation; record hệ thống là source of truth.
+
+## Phép năm là ledger
+remaining =
+opening
++ carry over
++ positive adjustments
+- negative adjustments
+- used.
+
+Approved annual leave:
+- ledger deduction.
+
+Cancel hợp lệ:
+- hoàn ledger.
+
+Pending:
+- có thể hiển thị chờ;
+- chưa trừ chính thức.
+
+Hỗ trợ 0.5 day.
+Manual adjustment phải có lý do/audit.
+
+---
+
+# 12. PROJECT UPDATES — V1 KHÔNG ÉP KPI/WBS NẶNG
+
+Dùng structured timeline.
+
+Không bắt nhập % tiến độ nếu công ty chưa có chuẩn đo lường.
+
+Field:
+- loại cập nhật: tiến độ / vấn đề / vật tư / an toàn / thay đổi / thông tin chung;
+- tiêu đề;
+- nội dung;
+- trạng thái;
+- ảnh/tài liệu;
+- severity nếu issue;
+- người cập nhật;
+- thời gian.
+
+Có:
+- pin update quan trọng;
+- overall project status nếu permission cho phép.
+
+Không biến V1 thành WBS/KPI phức tạp.
+
+---
+
+# 13. REPORT / EXPORT ENGINE
+
+Không mỗi nút export một đoạn code hard-code.
+
+Phải template-driven.
+
+Workbook bảng công có thể gồm:
+- 01_Tong_hop_cong
+- 02_Chi_tiet_cong
+- 03_Lich_su_cham_cong
+- 04_Don_nghi
+- 05_Phep_nam
+- 06_Lich_su_phep
+
+Admin cấu hình:
+- sheet;
+- cột;
+- thứ tự;
+- header;
+- format ngày/giờ;
+- width;
+- freeze;
+- filter;
+- logo/company info khi cần.
+
+Dữ liệu nhạy cảm có permission export riêng.
+
+---
+
+# 14. DOCUMENT / APPROVAL / NOTIFICATION
+
+Documents:
+- private;
+- permission;
+- metadata;
+- uploader;
+- timestamp;
+- version nếu cần.
+
+Approval Engine:
+- request type;
+- steps;
+- role/person;
+- condition.
+
+Không hard-code workflow cố định.
+
+Notifications:
+- approval pending;
+- attendance issue;
+- sync/photo fail;
+- project issue;
+- low stock;
+- ETA;
+- missing documents.
+
+Không spam BGĐ.
+
+---
+
+# 15. WAREHOUSE — PHẢI DÙNG STOCK LEDGER
+
+Kho không phải CRUD tồn kho.
+
+Không update trực tiếp on-hand.
+
+V1:
+- item master;
+- receipt;
+- issue;
+- transfer;
+- stocktake;
+- stock ledger;
+- inventory balance;
+- attachments;
+- reports.
+
+State:
+DRAFT → PENDING_APPROVAL → APPROVED → POSTED.
+
+POSTED:
+- không sửa âm thầm.
+
+Nếu sai:
+- reverse/cancel;
+- permission;
+- reason;
+- audit;
+- tạo chứng từ đúng.
+
+Receipt:
+- stock movement +.
+
+Issue:
+- kiểm tra available;
+- stock movement -.
+
+Transfer:
+- OUT source;
+- IN destination.
+
+Stocktake:
+- snapshot;
+- actual;
+- difference;
+- approved adjustment.
+
+---
+
+# 16. XNK
+
+Core entity:
+- Partner
+- Order/Contract
+- Shipment
+- Shipment Line
+- Container
+- Document
+- Milestone
+- Cost
+
+Workflow:
+Order/Contract
+→ Shipment
+→ ETD/ETA
+→ Container
+→ Document Checklist
+→ Transport
+→ Customs
+→ Arrival
+→ Goods Receipt from Shipment Lines
+→ Warehouse POST
+→ Reconciliation
+→ Close.
+
+Bắt buộc tính:
+- one order → many shipments;
+- one shipment → many containers;
+- partial receipt;
+- shortage/excess/damage;
+- ETA history;
+- document version;
+- cancellation/close with variance.
+
+Không nhập lại shipment line khi sang warehouse.
+
+## Liên kết XNK → Kho → Dự án
+Shipment → Receipt → Warehouse Stock → Issue → Project.
+Phải truy vết được.
+
+---
+
+# 17. ADMIN CONTROL CENTER
+
+Admin chỉnh business configuration, không sửa core schema/security tùy ý.
+
+Nhóm config:
+- tổ chức;
+- phòng ban;
+- chức vụ;
+- đội;
+- employee type;
+- attendance;
+- shifts;
+- GPS radius;
+- worksite;
+- project types/status;
+- leave types;
+- leave policies;
+- approval workflow;
+- warehouse masters;
+- XNK checklist/status/cost types;
+- report templates;
+- role/permission;
+- integrations.
+
+Policy dễ thay đổi:
+- không hard-code frontend.
+
+---
+
+# 18. API / INTEGRATION / AUDIT / SECURITY
+
+API-first.
+Frontend business workflow đi qua service/API layer rõ.
+
+Version route:
+/api/v1/...
+
+External system:
+- không kết nối trực tiếp DB.
+
+API key/service account:
+- scope;
+- revoke;
+- rotate;
+- audit.
+
+Webhook ví dụ:
+- employee.created
+- attendance.checked_in
+- leave.approved
+- warehouse.receipt.posted
+- shipment.eta_changed
+
+Audit:
+- permission;
+- config;
+- attendance;
+- leave;
+- roster;
+- worker attendance;
+- warehouse;
+- stock movement;
+- shipment;
+- document version.
+
+Private storage:
+- ảnh;
+- CCCD;
+- hợp đồng;
+- chứng từ.
+
+---
+
+# 19. UI/UX PRO MAX REDESIGN — SAU BUSINESS AUDIT
+
+Tạo enterprise ERP design direction:
+
+- professional;
+- minimal;
+- data-dense;
+- clear;
+- not AI-template;
+- không glassmorphism;
+- không gradient trang trí;
+- không pastel tràn lan;
+- không card màu mè;
+- không excessive whitespace.
+
+---
+
+# 20. SINGLE SOURCE OF TRUTH CHO DESIGN SYSTEM
+
+Chuẩn hóa:
+
+## Typography
+- font hỗ trợ tiếng Việt;
+- Page Title;
+- Section Title;
+- Card Title;
+- Body;
+- Label;
+- Small;
+- Caption.
+
+## Spacing
+- page padding;
+- section gap;
+- card padding;
+- field gap;
+- toolbar gap;
+- table density.
+
+## Sizing
+- header;
+- sidebar;
+- control height;
+- row height;
+- form width;
+- dashboard width.
+
+## Radius / border / shadow
+- một system.
+
+## Semantic colors
+- neutral;
+- info;
+- success;
+- warning;
+- danger.
+
+Không mỗi module một token system.
+
+---
+
+# 21. TRỊ DỨT ĐIỂM SPACING KHÔNG ĐỒNG BỘ
+
+Parent chịu trách nhiệm spacing giữa children.
+
+Không để:
+PageHeader margin-bottom
++ PageContent padding-top
++ Card margin-top
+cộng chồng.
+
+Chuẩn flow:
+Breadcrumb → Page Title → Page Actions/Toolbar → Content.
+
+Page cùng loại:
+- title cùng baseline;
+- content start cùng vị trí;
+- toolbar cùng height;
+- card padding cùng system.
+
+Không vá từng page bằng margin riêng.
+
+---
+
+# 22. PAGE TEMPLATE SYSTEM
+
+## List/Data Page
+Dùng cho:
+- nhân viên;
+- dự án list;
+- kho;
+- shipment;
+- audit;
+- timesheet list.
+
+Cho phép:
+- gần full workspace;
+- table rộng;
+- filter compact.
+
+## Form Page
+Dùng cho create/edit.
+Desktop:
+- khoảng 1000–1200px;
+- 2 columns khi hợp lý.
+Mobile:
+- 1 column.
+
+## Detail Page
+Dùng cho employee/project/shipment/item detail.
+Bounded width, section rõ.
+
+## Dashboard Page
+- responsive grid;
+- auto-height;
+- widget theo data.
+
+---
+
+# 23. SHARED COMPONENTS
+
+Chuẩn hóa/reuse các component tương đương:
+- AppPage
+- PageHeader
+- PageBreadcrumb
+- PageActions
+- PageToolbar
+- SectionCard
+- FormSection
+- FormGrid
+- FormField
+- DataTable
+- FilterBar
+- SearchInput
+- StatusBadge
+- PriorityBadge
+- EmptyState
+- ErrorState
+- LoadingState
+- DashboardGrid
+- MetricCard
+- DashboardPanel
+- ConfirmDialog
+- FileUpload
+- ImageUpload
+- Timeline
+- ApprovalStatus
+- AuditHistory
+- DocumentList
+
+Không duplicate.
+Sau migrate, xóa legacy component/CSS workaround.
+
+---
+
+# 24. MÀN HÌNH LỚN — KHÔNG LOÃNG
+
+Không áp một max-width cho mọi page.
+
+Gợi ý:
+- Dashboard: ~1440–1600
+- Form: ~1000–1200
+- Detail: ~1200–1400
+- List/Table: gần full workspace
+
+Không stretch input/card vô hạn ở 1920/2560.
+
+Màn lớn:
+- tăng thông tin hữu ích;
+- không tăng padding/card size vô nghĩa.
+
+---
+
+# 25. INFORMATION DENSITY
+
+Giảm:
+- card quá cao;
+- header quá lớn;
+- input quá rộng;
+- KPI card quá cao;
+- section gap quá lớn;
+- decorative whitespace.
+
+Không compact đến mức khó dùng.
+
+Mục tiêu:
+professional enterprise density.
+
+---
+
+# 26. ADAPTIVE DATA — KHÔNG TỐI ƯU CHỈ CHO SEED DATA
+
+Test UI với:
+- 0
+- 1
+- 5
+- 20
+- 100+
+
+Panel:
+- 0 → EmptyState
+- 1–4 → auto-height
+- 5–8 → bounded
+- >8 → Xem tất cả / scroll / pagination
+
+Chart:
+- 0 → không chart
+- 1 meaningful group → compact summary
+- >=2 meaningful groups → chart
+
+Không xóa chart vĩnh viễn nếu sau này data thật cần.
+Không thêm KPI giả để chia grid.
+
+---
+
+# 27. DASHBOARD = PERSONAL WORKSPACE THEO ROLE/PERMISSION
+
+Dùng chung widget system, thay data/widget theo permission.
+
+## BGĐ
+- dự án rủi ro/chậm;
+- issue quan trọng;
+- hiện diện tổng quát;
+- tồn cần chú ý;
+- shipment sắp về/trễ.
+
+## HR
+- thiếu công;
+- đi trễ;
+- đơn chờ;
+- sync/ảnh lỗi;
+- hồ sơ chưa hoàn thiện.
+
+## Giám sát
+- dự án hôm nay;
+- roster;
+- điểm danh chưa hoàn tất;
+- update cần gửi.
+
+## Kho
+- phiếu chờ;
+- tồn thấp;
+- kiểm kê mở;
+- hàng XNK sắp nhập.
+
+## XNK
+- shipment theo trạng thái;
+- ETA;
+- chứng từ thiếu;
+- lô cần receipt.
+
+Không render widget không liên quan.
+
+---
+
+# 28. “ỨNG DỤNG CỦA TÔI”
+
+Đổi toàn bộ:
+Phân hệ của tôi → Ứng dụng của tôi.
+
+Grid responsive:
+- không để icon cuối rơi dòng xấu;
+- không kéo card cuối full row;
+- không mỗi icon một pastel ngẫu nhiên.
+
+---
+
+# 29. SEMANTIC COLOR / BADGE / TAG / ICON
+
+Màu:
+- neutral = bình thường
+- success = tốt
+- warning = cần chú ý
+- danger = nghiêm trọng
+- info = thông tin
+
+KPI warning = 0:
+- không tô đỏ/cam mạnh.
+
+Badge phân biệt:
+- status;
+- priority;
+- category;
+- warning.
+
+Tag:
+- chip;
+- tối đa 2–3;
+- sau đó +N.
+
+Icon:
+- cùng action → cùng icon;
+- action khác → không dùng icon trùng;
+- không icon chỉ để trang trí.
+
+---
+
+# 30. MOBILE — KHÔNG PHẢI DESKTOP XẾP DỌC
+
+Mobile-first cho hiện trường.
+
+Nguyên tắc:
+- một màn hình = một nhiệm vụ chính;
+- button đủ lớn;
+- chữ rõ;
+- không thuật ngữ kỹ thuật;
+- feedback rõ;
+- offline/sync/GPS dễ hiểu.
+
+Mobile dashboard ưu tiên:
+1. Việc cần xử lý
+2. Trạng thái quan trọng
+3. Action thường dùng
+4. Nội dung gần đây
+5. App truy cập nhanh
+
+Chart/analytics ít quan trọng:
+- ẩn;
+- rút gọn;
+- hoặc đưa vào detail.
+
+Nếu sidebar desktop không phù hợp:
+- dùng mobile navigation riêng theo permission;
+- tối đa khoảng 4–5 mục;
+- không copy nguyên sidebar dài xuống mobile.
+
+---
+
+# 31. EMPTY / LOADING / ERROR STATE
+
+Không page blank.
+
+Không dùng `return null` cho loading/data/auth state mà không có UI.
+
+Mỗi page:
+- Loading
+- Error
+- Empty
+- Success
+
+EmptyState:
+- icon;
+- title;
+- description;
+- CTA nếu user thực sự làm được.
+
+---
+
+# 32. CÁC LỖI UI HIỆN TẠI PHẢI SỬA
+
+- title cách content quá xa → sửa shared layout, không patch page;
+- active menu sai route → derive từ pathname/current route;
+- thêm Dashboard vào navigation chính;
+- từ mọi module quay về Dashboard được;
+- bỏ Dashboard chức năng trung gian không cần thiết nhưng KHÔNG xóa Personal/Role Dashboard;
+- toolbar cùng viewport phải đồng bộ;
+- mỗi page chỉ 1 Page Title;
+- breadcrumb hợp lệ không còn “Hệ thống > Không tìm thấy”;
+- “Thêm tác vụ” và “Tạo mới” nếu cùng mục đích thì giữ 1 CTA;
+- Deadline không được giống Audit Log;
+- employee code không overflow;
+- form tạo dự án không full-width vô hạn;
+- Grid app/KPI không bố trí lẻ xấu;
+- card/panel auto-height, không fixed empty space.
+
+---
+
+# 33. FORM TẠO DỰ ÁN
+
+Dùng FormPage.
+Desktop khoảng 1000–1200px.
+2 cột khi hợp lý:
+
+Mã | Tên
+Khách hàng | Trạng thái
+Bắt đầu | Kết thúc
+Tóm tắt span 2
+
+Không ép % tiến độ nếu Blueprint chưa yêu cầu.
+
+---
+
+# 34. EMPLOYEE UI
+
+## Overflow
+Mã nhân viên/project code/product code/email/file name:
+- max width;
+- ellipsis;
+- tooltip;
+- responsive column.
+
+## Thêm nhân viên
+Có:
+- ảnh;
+- preview;
+- replace;
+- remove;
+- validation;
+- upload.
+
+Personal information:
+- optional theo Blueprint.
+
+Bỏ “Đơn vị nhà thầu” khỏi form nhân viên nội bộ nếu đúng requirement hiện tại, nhưng KHÔNG xóa khái niệm organization/work data khỏi data model.
+
+---
+
+# 35. CHẤM CÔNG UI
+
+Time picker:
+- 24h `HH:mm`.
+
+Leave UI:
+- compact;
+- rõ trạng thái;
+- semantic.
+
+Nhưng redesign không được làm mất:
+- GPS;
+- camera;
+- offline;
+- idempotency;
+- sync state.
+
+---
+
+# 36. CHECKLIST ĐIỂM DANH
+
+Checklist là requirement bổ sung:
+- Admin add/edit/delete/enable/order/group;
+- không hard-code;
+- worker attendance lấy template từ config;
+- history giữ snapshot.
+
+Checklist KHÔNG được thay thế:
+- Daily Roster;
+- Attendance Session;
+- Timesheet;
+- business state của worker attendance.
+
+---
+
+# 37. IMAGE / FILE UPLOAD
+
+Audit shared flow:
+Select → Validate → Preview → Upload → Save path/URL → DB → Reload → Render.
+
+Áp dụng cho:
+- employee image;
+- item image;
+- project update files;
+- attendance photos;
+- worker attendance group photos;
+- documents.
+
+Nếu duplicate upload logic:
+- refactor shared component/hook/service.
+
+File nhạy cảm:
+- private;
+- permission;
+- không public lâu dài.
+
+---
+
+# 38. LOGIN / PASSWORD / SESSION
+
+Login:
+- show/hide password.
+
+Password:
+- tối thiểu 8 ký tự;
+- không `maxLength=8`.
+
+Admin password hiện tại cần đổi thành:
+`Chautuan`
+
+Nhưng:
+- không hard-code plaintext;
+- update qua auth mechanism phù hợp;
+- không lưu plaintext DB.
+
+Session:
+- 12 giờ không hoạt động → logout;
+- không phải 12 giờ từ login;
+- không reset timer bằng mousemove liên tục;
+- session expired → sign out + redirect + thông báo;
+- refresh không bypass timeout.
+
+---
+
+# 39. P0 — BACK TRÊN VERCEL MẤT DATA
+
+Hiện tượng:
+A có data → B → Browser Back → route A đúng nhưng content rỗng.
+
+Phải sửa root cause.
+
+Test production-like:
+- npm run build
+- npm run start
+
+Audit:
+- useEffect dependencies;
+- query keys;
+- AbortController;
+- auth hydration;
+- BFCache;
+- router cache;
+- client state reset;
+- route params/searchParams;
+- React Query/SWR/Zustand nếu có.
+
+Không workaround bằng:
+- window.location.reload();
+- router.refresh() ở mọi page;
+- setTimeout;
+- random key;
+- disable cache toàn app.
+
+List → detail → Back:
+- ưu tiên giữ filter/search/page/scroll nếu hợp lý.
+
+---
+
+# 40. REALTIME / PERFORMANCE
+
+Không phá realtime.
+
+Audit:
+- duplicate subscription;
+- cleanup;
+- reconnect loop;
+- stale listener;
+- duplicate event.
+
+Performance audit:
+- duplicate fetch;
+- request waterfall;
+- unnecessary rerender;
+- heavy context;
+- client bundle;
+- listener leak;
+- full page reload;
+- table render quá nhiều;
+- chart/animation nặng.
+
+Không làm UI đẹp hơn nhưng app chậm hơn.
+
+---
+
+# 41. RESPONSIVE TEST
+
+Bắt buộc test:
+
+Mobile:
+- 375x812
+- 390x844
+- 430x932
+
+Tablet:
+- 768x1024
+
+Desktop:
+- 1366x768
+- 1440x900
+- 1920x1080
+- 2560x1440
+
+Không chấp nhận:
+- desktop đẹp nhưng mobile trống;
+- mobile đẹp nhưng desktop loãng.
+
+---
+
+# 42. BUSINESS REGRESSION TEST
+
+## HR
+- create/update employee;
+- timeline;
+- grant/disable account;
+- sensitive permission.
+
+## Attendance
+- check-in/out;
+- photo;
+- GPS;
+- offline;
+- retry;
+- idempotency.
+
+## Worker Attendance
+- roster;
+- select all;
+- exceptions;
+- group photos;
+- temporary worker;
+- approved leave;
+- submit;
+- close day;
+- timesheet generation;
+- edit submitted with audit.
+
+## Leave
+- draft;
+- submit;
+- approve/reject/request-more;
+- PDF;
+- leave ledger;
+- half day;
+- cancel approved.
+
+## Timesheet
+- merge 4 sources;
+- review;
+- lock;
+- reopen permission/audit.
+
+## Projects
+- project;
+- worksite;
+- assignment;
+- supervisor assignment;
+- updates timeline;
+- issue;
+- attachment;
+- pin.
+
+## Warehouse
+- receipt draft;
+- approval;
+- post;
+- issue;
+- transfer;
+- stocktake;
+- reversal;
+- ledger integrity.
+
+## XNK
+- shipment;
+- container;
+- document checklist;
+- ETA update;
+- partial receipt;
+- warehouse receipt;
+- close variance.
+
+## Reports
+- template;
+- multi-sheet;
+- stable image link;
+- sensitive export permission.
+
+---
+
+# 43. ACCEPTANCE CRITERIA — BUSINESS
+
+- [ ] Chấm công cá nhân và worker attendance vẫn là hai workflow riêng.
+- [ ] Timesheet tổng hợp đủ nguồn.
+- [ ] Employee profile tách User account.
+- [ ] Permission là permission-level, không chỉ role label.
+- [ ] Project/Worksite/Assignment/Roster đúng Blueprint.
+- [ ] Leave ledger không bị thay bằng field remaining.
+- [ ] Warehouse dùng stock ledger.
+- [ ] Posted/locked/approved không sửa âm thầm.
+- [ ] XNK liên kết receipt sang warehouse.
+- [ ] Partial receipt được hỗ trợ.
+- [ ] Report engine không bị biến thành export hard-code.
+- [ ] File nhạy cảm private.
+- [ ] Audit không mất.
+- [ ] Admin config không bị hard-code.
+- [ ] API/service conventions được giữ.
+
+# 44. ACCEPTANCE CRITERIA — UI/UX
+
+- [ ] Một design token system.
+- [ ] Shared PageHeader.
+- [ ] Shared page templates.
+- [ ] Shared Button/Input/Select/Card/Badge.
+- [ ] Spacing đồng bộ.
+- [ ] Form không stretch vô hạn.
+- [ ] Table dùng chiều ngang hợp lý.
+- [ ] Dashboard adaptive.
+- [ ] Mobile không trống.
+- [ ] 1920/2560 không loãng vô lý.
+- [ ] Empty/Loading/Error rõ.
+- [ ] Semantic colors đúng.
+- [ ] Không pastel tràn lan.
+- [ ] Không AI-template feeling.
+- [ ] Không chart/KPI giả.
+- [ ] Không duplicate title.
+- [ ] Toolbar đồng bộ.
+- [ ] Active menu đúng route.
+- [ ] Breadcrumb đúng.
+- [ ] Upload preview hoạt động.
+
+# 45. ACCEPTANCE CRITERIA — PRODUCTION
+
+- [ ] Browser Back không mất content.
+- [ ] Forward không mất content.
+- [ ] Refresh detail route đúng.
+- [ ] Auth hydration ổn.
+- [ ] 12h inactivity logout.
+- [ ] Realtime không duplicate.
+- [ ] Production build pass.
+- [ ] Typecheck pass.
+- [ ] Lint pass hoặc chỉ còn legacy issue được giải thích.
+- [ ] Không dùng any/@ts-ignore để che lỗi mới.
+- [ ] Không catch rỗng.
+- [ ] Không force reload workaround.
+
+---
+
+# 46. BÁO CÁO CUỐI BẮT BUỘC
+
+Không chỉ nói “đã sửa”.
+
+Báo cáo:
+
+1. UI/UX Pro Max detect/setup thế nào.
+2. Business Preservation Matrix.
+3. Nghiệp vụ COMPLETE.
+4. Nghiệp vụ PARTIAL.
+5. Nghiệp vụ MISSING.
+6. Nghiệp vụ CHANGED trước đó.
+7. Những nghiệp vụ đã khôi phục.
+8. Những phần chưa khôi phục và lý do.
+9. Design tokens nằm ở đâu.
+10. Shared components chuẩn.
+11. Page templates chuẩn.
+12. Legacy component/CSS đã xóa.
+13. Module đã migrate UI.
+14. Override còn giữ và lý do.
+15. Mobile redesign.
+16. Large-screen redesign.
+17. Adaptive data handling.
+18. Back/Vercel root cause và fix.
+19. Auth/session changes.
+20. Realtime verification.
+21. Upload/file changes.
+22. Checklist admin implementation.
+23. Warehouse/XNK preservation verification.
+24. Report/export verification.
+25. Permission/audit verification.
+26. Responsive viewport test.
+27. Data volume test.
+28. Business workflow regression test.
+29. Build/typecheck/lint.
+30. Files changed.
+31. Migration/seed/storage/auth change.
+32. Các quyết định còn cần người dùng xác nhận.
+
+---
+
+# 47. KHÔNG ĐƯỢC TỰ ĐOÁN
+
+Nếu Blueprint/source chưa đủ, không invent business rule cho:
+
+- giờ làm chuẩn;
+- cách tính đi trễ/về sớm;
+- OT;
+- ngày lễ;
+- thiếu check-in/out;
+- approval flow thực tế;
+- field HR bắt buộc/nhạy cảm;
+- Project/Worksite mapping thực tế;
+- số lượng kho;
+- UOM conversion;
+- lot/bin/barcode;
+- XNK document checklist thực tế;
+- Incoterm/currency requirement;
+- PDF mẫu chính thức;
+- retention/backup policy.
+
+Trong các phần này:
+- giữ kiến trúc configurable;
+- đánh dấu cần xác nhận;
+- không hard-code giả định.
+
+---
+
+# 48. QUY TẮC CUỐI
+
+Không tối ưu chỉ cho screenshot hiện tại.
+Không tối ưu chỉ cho seed data hiện tại.
+Không tối ưu chỉ cho một module.
+Không tối ưu chỉ cho desktop.
+Không để UI/UX Pro Max làm thay đổi domain model.
+Không vì muốn giao diện gọn mà xóa nghiệp vụ.
+Không vì feature chưa có data test mà kết luận feature thừa.
+Không vì workflow phức tạp mà rút gọn thành CRUD nếu Blueprint không cho phép.
+
+Mục tiêu cuối:
+
+> Một ERP nội bộ Châu Tuấn có nghiệp vụ đúng Blueprint, frontend nhất quán, UI/UX enterprise chuyên nghiệp, mobile thực dụng cho hiện trường, desktop giàu dữ liệu cho văn phòng, dữ liệu ít/nhiều đều ổn định, có khả năng kế thừa và mở rộng mà không phá domain logic.

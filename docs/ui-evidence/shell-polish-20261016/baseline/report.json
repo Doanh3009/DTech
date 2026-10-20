@@ -1,0 +1,395 @@
+{
+  "deploymentId": "dpl_A9T58R3ReyHr7iBT41yruSCYhfAn",
+  "screens": [
+    {
+      "width": 320,
+      "geometry": {
+        "viewport": 320,
+        "pageWidth": 320,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 3781.625,
+            "background": "rgb(246, 247, 251) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 3781.625,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 3781.625,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-content",
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 3781.625,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px 28px 28px 0px",
+            "overflow": "hidden",
+            "position": "sticky"
+          },
+          {
+            "selector": ".app-rail__brand",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__nav",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "auto",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__footer",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "geometry": {
+        "viewport": 390,
+        "pageWidth": 390,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 3858,
+            "background": "rgb(246, 247, 251) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 3858,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 3858,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-content",
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 3858,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat scroll 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat scroll 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px 28px 28px 0px",
+            "overflow": "hidden",
+            "position": "sticky"
+          },
+          {
+            "selector": ".app-rail__brand",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__nav",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "auto",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__footer",
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          }
+        ]
+      }
+    },
+    {
+      "width": 768,
+      "geometry": {
+        "viewport": 768,
+        "pageWidth": 758,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 2872.265625,
+            "background": "rgb(248, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 2872.265625,
+            "background": "rgb(248, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 758,
+            "height": 2872.265625,
+            "background": "rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-content",
+            "x": 232,
+            "y": 0,
+            "width": 526,
+            "height": 2872.265625,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 900,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px 28px 28px 0px",
+            "overflow": "hidden",
+            "position": "sticky"
+          },
+          {
+            "selector": ".app-rail__brand",
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 56,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__nav",
+            "x": 0,
+            "y": 56,
+            "width": 232,
+            "height": 724,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "auto",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__footer",
+            "x": 0,
+            "y": 780,
+            "width": 232,
+            "height": 120,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "geometry": {
+        "viewport": 1440,
+        "pageWidth": 1430,
+        "items": [
+          {
+            "selector": "html",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 974,
+            "background": "rgb(248, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": "body",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 974,
+            "background": "rgb(248, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-shell",
+            "x": 0,
+            "y": 0,
+            "width": 1430,
+            "height": 974,
+            "background": "rgb(243, 240, 246) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "clip visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-content",
+            "x": 232,
+            "y": 0,
+            "width": 1198,
+            "height": 974,
+            "background": "radial-gradient(at 14% 8%, rgba(249, 205, 222, 0.78), rgba(0, 0, 0, 0) 44%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 90% 27%, rgba(255, 218, 193, 0.74), rgba(0, 0, 0, 0) 46%) repeat fixed 0% 0% / auto padding-box border-box, radial-gradient(at 42% 100%, rgba(220, 207, 245, 0.76), rgba(0, 0, 0, 0) 51%) repeat fixed 0% 0% / auto padding-box border-box, rgb(243, 240, 246) none repeat fixed 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail",
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 900,
+            "background": "rgb(253, 253, 253) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px 28px 28px 0px",
+            "overflow": "hidden",
+            "position": "sticky"
+          },
+          {
+            "selector": ".app-rail__brand",
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 56,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__nav",
+            "x": 0,
+            "y": 56,
+            "width": 232,
+            "height": 724,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "auto",
+            "position": "static"
+          },
+          {
+            "selector": ".app-rail__footer",
+            "x": 0,
+            "y": 780,
+            "width": 232,
+            "height": 120,
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "radius": "0px",
+            "overflow": "visible",
+            "position": "static"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "writes": []
+}

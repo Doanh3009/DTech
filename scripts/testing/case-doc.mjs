@@ -1,0 +1,14 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { registerBusinessCases } from "../e2e/workflows.mjs";
+import { registerPlatformCases } from "../e2e/platform-workflows.mjs";
+import { registerTesterCases } from "../e2e/tester.mjs";
+import { registerBrowserCases } from "../e2e/browser.mjs";
+const cases = [];
+const scope = { state: {}, report: {}, test: (id, name, fn, kind = "API") => cases.push({ id, name, kind }) };
+registerBusinessCases(scope); registerPlatformCases(scope); registerTesterCases(scope); await registerBrowserCases(scope);
+const counts = Object.fromEntries([...new Set(cases.map((row) => row.kind))].map((kind) => [kind, cases.filter((row) => row.kind === kind).length]));
+const introduction = await readFile("docs/testing/E2E_SCENARIOS.md", "utf8");
+const header = `# E2E cases CT_NOIBO\n\n**${cases.length} ca đã đăng ký**. Đây không phải kết quả pass. Loại: ${JSON.stringify(counts)}.\n\n`;
+await mkdir("docs/testing", { recursive: true });
+await writeFile("docs/testing/E2E_CASES.md", header + introduction + "\n\n## Catalog tự động\n\n| Mã | Loại | Tình huống |\n|---|---|---|\n" + cases.map((row) => `| ${row.id} | ${row.kind} | ${row.name.replaceAll("|", "/")} |`).join("\n") + "\n");
+console.log(`Generated docs/testing/E2E_CASES.md: ${cases.length} cases; no cases executed`);

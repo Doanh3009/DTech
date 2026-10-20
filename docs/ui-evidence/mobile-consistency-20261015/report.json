@@ -1,0 +1,1781 @@
+{
+  "kind": "isolated-fixture-ui-review",
+  "recordedAt": "2026-10-15T06:22:06.887Z",
+  "screens": [
+    {
+      "name": "leave-initial",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 33,
+            "y": 351.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-single-day",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 33,
+            "y": 351.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-multiday",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 33,
+            "y": 351.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-full-day",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 33,
+            "y": 351.296875,
+            "width": 254,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "personal-calendar",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dates": [],
+        "calendar": [
+          {
+            "label": "28",
+            "empty": true,
+            "y": 336.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "29",
+            "empty": true,
+            "y": 336.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 336.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "1",
+            "empty": false,
+            "y": 336.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "2",
+            "empty": true,
+            "y": 336.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "3",
+            "empty": false,
+            "y": 336.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "4",
+            "empty": true,
+            "y": 336.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "5",
+            "empty": false,
+            "y": 394.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "6",
+            "empty": true,
+            "y": 394.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "7",
+            "empty": false,
+            "y": 394.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "8",
+            "empty": true,
+            "y": 394.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "9",
+            "empty": false,
+            "y": 394.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "10",
+            "empty": true,
+            "y": 394.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "11",
+            "empty": false,
+            "y": 394.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "12",
+            "empty": true,
+            "y": 452.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "13",
+            "empty": false,
+            "y": 452.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "14",
+            "empty": true,
+            "y": 452.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "15",
+            "empty": false,
+            "y": 452.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "16",
+            "empty": true,
+            "y": 452.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "17",
+            "empty": false,
+            "y": 452.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "18",
+            "empty": true,
+            "y": 452.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "19",
+            "empty": false,
+            "y": 510.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "20",
+            "empty": true,
+            "y": 510.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "21",
+            "empty": false,
+            "y": 510.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "22",
+            "empty": true,
+            "y": 510.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "23",
+            "empty": false,
+            "y": 510.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "24",
+            "empty": true,
+            "y": 510.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "25",
+            "empty": false,
+            "y": 510.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "26",
+            "empty": true,
+            "y": 568.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "27",
+            "empty": false,
+            "y": 568.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "28",
+            "empty": true,
+            "y": 568.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "29",
+            "empty": false,
+            "y": 568.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 568.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "31",
+            "empty": true,
+            "y": 568.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "1",
+            "empty": true,
+            "y": 568.1875,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          }
+        ]
+      }
+    },
+    {
+      "name": "package-shell",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dates": [],
+        "calendar": [],
+        "package": {
+          "outer": {
+            "x": 16,
+            "y": 66.296875,
+            "width": 288,
+            "height": 549.171875,
+            "radius": "18px"
+          },
+          "header": {
+            "x": 17,
+            "y": 67.296875,
+            "width": 286,
+            "height": 129.59375,
+            "radius": "17px 17px 0px 0px"
+          },
+          "body": {
+            "x": 17,
+            "y": 296.890625,
+            "width": 286,
+            "height": 317.578125,
+            "radius": "0px 0px 17px 17px"
+          }
+        }
+      }
+    },
+    {
+      "name": "leave-initial",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 195,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-single-day",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 195,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-multiday",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 195,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-full-day",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dates": [
+          {
+            "x": 33,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 195,
+            "y": 263.296875,
+            "width": 152,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "personal-calendar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dates": [],
+        "calendar": [
+          {
+            "label": "28",
+            "empty": true,
+            "y": 339.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "29",
+            "empty": true,
+            "y": 339.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 339.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "1",
+            "empty": false,
+            "y": 339.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "2",
+            "empty": true,
+            "y": 339.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "3",
+            "empty": false,
+            "y": 339.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "4",
+            "empty": true,
+            "y": 339.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "5",
+            "empty": false,
+            "y": 397.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "6",
+            "empty": true,
+            "y": 397.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "7",
+            "empty": false,
+            "y": 397.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "8",
+            "empty": true,
+            "y": 397.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "9",
+            "empty": false,
+            "y": 397.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "10",
+            "empty": true,
+            "y": 397.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "11",
+            "empty": false,
+            "y": 397.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "12",
+            "empty": true,
+            "y": 455.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "13",
+            "empty": false,
+            "y": 455.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "14",
+            "empty": true,
+            "y": 455.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "15",
+            "empty": false,
+            "y": 455.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "16",
+            "empty": true,
+            "y": 455.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "17",
+            "empty": false,
+            "y": 455.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "18",
+            "empty": true,
+            "y": 455.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "19",
+            "empty": false,
+            "y": 513.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "20",
+            "empty": true,
+            "y": 513.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "21",
+            "empty": false,
+            "y": 513.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "22",
+            "empty": true,
+            "y": 513.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "23",
+            "empty": false,
+            "y": 513.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "24",
+            "empty": true,
+            "y": 513.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "25",
+            "empty": false,
+            "y": 513.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "26",
+            "empty": true,
+            "y": 571.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "27",
+            "empty": false,
+            "y": 571.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "28",
+            "empty": true,
+            "y": 571.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "29",
+            "empty": false,
+            "y": 571.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 571.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "31",
+            "empty": true,
+            "y": 571.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          },
+          {
+            "label": "1",
+            "empty": true,
+            "y": 571.78125,
+            "offset": 10,
+            "style": "grid",
+            "height": 54
+          }
+        ]
+      }
+    },
+    {
+      "name": "package-shell",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dates": [],
+        "calendar": [],
+        "package": {
+          "outer": {
+            "x": 16,
+            "y": 66.296875,
+            "width": 348,
+            "height": 502.46875,
+            "radius": "18px"
+          },
+          "header": {
+            "x": 17,
+            "y": 67.296875,
+            "width": 346,
+            "height": 130.890625,
+            "radius": "17px 17px 0px 0px"
+          },
+          "body": {
+            "x": 17,
+            "y": 250.1875,
+            "width": 346,
+            "height": 317.578125,
+            "radius": "0px 0px 17px 17px"
+          }
+        }
+      }
+    },
+    {
+      "name": "leave-initial",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 387,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-single-day",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 387,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-multiday",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 387,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-full-day",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 387,
+            "y": 265.296875,
+            "width": 330,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "personal-calendar",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dates": [],
+        "calendar": [
+          {
+            "label": "28",
+            "empty": true,
+            "y": 298.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "29",
+            "empty": true,
+            "y": 298.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 298.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "1",
+            "empty": false,
+            "y": 298.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "2",
+            "empty": true,
+            "y": 298.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "3",
+            "empty": false,
+            "y": 298.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "4",
+            "empty": true,
+            "y": 298.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "5",
+            "empty": false,
+            "y": 401.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "6",
+            "empty": true,
+            "y": 401.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "7",
+            "empty": false,
+            "y": 401.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "8",
+            "empty": true,
+            "y": 401.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "9",
+            "empty": false,
+            "y": 401.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "10",
+            "empty": true,
+            "y": 401.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "11",
+            "empty": false,
+            "y": 401.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "12",
+            "empty": true,
+            "y": 504.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "13",
+            "empty": false,
+            "y": 504.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "14",
+            "empty": true,
+            "y": 504.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "15",
+            "empty": false,
+            "y": 504.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "16",
+            "empty": true,
+            "y": 504.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "17",
+            "empty": false,
+            "y": 504.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "18",
+            "empty": true,
+            "y": 504.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "19",
+            "empty": false,
+            "y": 607.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "20",
+            "empty": true,
+            "y": 607.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "21",
+            "empty": false,
+            "y": 607.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "22",
+            "empty": true,
+            "y": 607.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "23",
+            "empty": false,
+            "y": 607.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "24",
+            "empty": true,
+            "y": 607.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "25",
+            "empty": false,
+            "y": 607.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "26",
+            "empty": true,
+            "y": 710.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "27",
+            "empty": false,
+            "y": 710.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "28",
+            "empty": true,
+            "y": 710.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "29",
+            "empty": false,
+            "y": 710.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 710.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "31",
+            "empty": true,
+            "y": 710.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          },
+          {
+            "label": "1",
+            "empty": true,
+            "y": 710.125,
+            "offset": 11,
+            "style": "flex",
+            "height": 96
+          }
+        ]
+      }
+    },
+    {
+      "name": "package-shell",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dates": [],
+        "calendar": [],
+        "package": {
+          "outer": {
+            "x": 16,
+            "y": 54.296875,
+            "width": 726,
+            "height": 350.640625,
+            "radius": "18px"
+          },
+          "header": {
+            "x": 17,
+            "y": 55.296875,
+            "width": 724,
+            "height": 138.5,
+            "radius": "18px"
+          },
+          "body": {
+            "x": 17,
+            "y": 238.796875,
+            "width": 724,
+            "height": 165.140625,
+            "radius": "0px"
+          }
+        }
+      }
+    },
+    {
+      "name": "leave-initial",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 723,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-single-day",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 723,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-multiday",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 723,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "leave-full-day",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dates": [
+          {
+            "x": 41,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          },
+          {
+            "x": 723,
+            "y": 265.296875,
+            "width": 666,
+            "height": 48,
+            "radius": "12px"
+          }
+        ],
+        "calendar": []
+      }
+    },
+    {
+      "name": "personal-calendar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dates": [],
+        "calendar": [
+          {
+            "label": "28",
+            "empty": true,
+            "y": 298.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "29",
+            "empty": true,
+            "y": 298.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 298.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "1",
+            "empty": false,
+            "y": 298.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "2",
+            "empty": true,
+            "y": 298.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "3",
+            "empty": false,
+            "y": 298.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "4",
+            "empty": true,
+            "y": 298.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "5",
+            "empty": false,
+            "y": 409.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "6",
+            "empty": true,
+            "y": 409.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "7",
+            "empty": false,
+            "y": 409.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "8",
+            "empty": true,
+            "y": 409.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "9",
+            "empty": false,
+            "y": 409.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "10",
+            "empty": true,
+            "y": 409.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "11",
+            "empty": false,
+            "y": 409.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "12",
+            "empty": true,
+            "y": 520.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "13",
+            "empty": false,
+            "y": 520.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "14",
+            "empty": true,
+            "y": 520.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "15",
+            "empty": false,
+            "y": 520.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "16",
+            "empty": true,
+            "y": 520.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "17",
+            "empty": false,
+            "y": 520.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "18",
+            "empty": true,
+            "y": 520.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "19",
+            "empty": false,
+            "y": 631.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "20",
+            "empty": true,
+            "y": 631.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "21",
+            "empty": false,
+            "y": 631.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "22",
+            "empty": true,
+            "y": 631.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "23",
+            "empty": false,
+            "y": 631.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "24",
+            "empty": true,
+            "y": 631.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "25",
+            "empty": false,
+            "y": 631.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "26",
+            "empty": true,
+            "y": 742.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "27",
+            "empty": false,
+            "y": 742.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "28",
+            "empty": true,
+            "y": 742.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "29",
+            "empty": false,
+            "y": 742.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "30",
+            "empty": true,
+            "y": 742.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "31",
+            "empty": true,
+            "y": 742.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          },
+          {
+            "label": "1",
+            "empty": true,
+            "y": 742.125,
+            "offset": 13,
+            "style": "flex",
+            "height": 104
+          }
+        ]
+      }
+    },
+    {
+      "name": "package-shell",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dates": [],
+        "calendar": [],
+        "package": {
+          "outer": {
+            "x": 16,
+            "y": 54.296875,
+            "width": 1398,
+            "height": 358.640625,
+            "radius": "18px"
+          },
+          "header": {
+            "x": 17,
+            "y": 55.296875,
+            "width": 1396,
+            "height": 146.5,
+            "radius": "18px"
+          },
+          "body": {
+            "x": 17,
+            "y": 246.796875,
+            "width": 1396,
+            "height": 165.140625,
+            "radius": "0px"
+          }
+        }
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "blockedWrites": [],
+  "limitations": [
+    "Local fixture uses real components and styles with fictional intercepted API data. No business data was submitted.",
+    "Not a hardware, server authorization, or production browser test."
+  ]
+}

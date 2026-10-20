@@ -1,0 +1,61 @@
+{
+  "publishedAt": "2026-10-13T09:47:01.466Z",
+  "sourceSha": "719909cec8d81dbd79d5e0b773fc655337da3663d79d04521d11e1a22b1f3fc5",
+  "baseGitCommit": "bcecf83759d67e2be5eda7fbcd6761d3bd5d2ae7",
+  "previousDeployment": "dpl_CVw3z1jeQCGjw8EPKHUnPiKaA1aB",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "target": "production",
+  "alias": "ct-noi-bo.vercel.app",
+  "id": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "url": "ct-noi-6i7fit32t-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "aliases": [
+    "ct-noi-bo.vercel.app",
+    "ct-noi-bo-chau-tuan.vercel.app"
+  ],
+  "checkedAt": "2026-10-13T09:49:15.286Z",
+  "verifiedAt": "2026-10-13T09:49:52.910Z",
+  "databaseMigrationCount": 45,
+  "checks": [
+    {
+      "route": "/api/health/live",
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "checkedAt": "2026-10-13T09:49:55.332Z"
+      }
+    },
+    {
+      "route": "/api/health/ready",
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checks": [
+          {
+            "component": "database",
+            "status": "healthy"
+          }
+        ],
+        "checkedAt": "2026-10-13T09:49:56.952Z"
+      }
+    },
+    {
+      "route": "/login",
+      "status": 200,
+      "travelerCount": 11,
+      "testAccountPicker": false
+    },
+    {
+      "route": "/api/testing/accounts",
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/attendance-design",
+      "status": 404
+    }
+  ],
+  "limitations": [
+    "Public read-only checks; no production credential submission or attendance transaction."
+  ],
+  "passed": true
+}

@@ -1,0 +1,155 @@
+{
+  "routes": 37,
+  "failed": [],
+  "timings": [
+    {
+      "path": "dashboard",
+      "durationMs": 3321
+    },
+    {
+      "path": "dashboard?scope=global",
+      "durationMs": 3284
+    },
+    {
+      "path": "employees",
+      "durationMs": 404
+    },
+    {
+      "path": "hr/departments",
+      "durationMs": 206
+    },
+    {
+      "path": "hr/positions",
+      "durationMs": 210
+    },
+    {
+      "path": "hr/contracts",
+      "durationMs": 361
+    },
+    {
+      "path": "hr/contract-templates",
+      "durationMs": 169
+    },
+    {
+      "path": "insurance",
+      "durationMs": 214
+    },
+    {
+      "path": "shifts",
+      "durationMs": 219
+    },
+    {
+      "path": "timesheet-periods",
+      "durationMs": 167
+    },
+    {
+      "path": "timesheet-exceptions",
+      "durationMs": 169
+    },
+    {
+      "path": "report-templates",
+      "durationMs": 179
+    },
+    {
+      "path": "projects",
+      "durationMs": 217
+    },
+    {
+      "path": "project-monitoring/summary",
+      "durationMs": 619
+    },
+    {
+      "path": "project-monitoring/attention",
+      "durationMs": 670
+    },
+    {
+      "path": "project-issues",
+      "durationMs": 176
+    },
+    {
+      "path": "warehouse/inventory",
+      "durationMs": 350
+    },
+    {
+      "path": "warehouse/references",
+      "durationMs": 198
+    },
+    {
+      "path": "warehouse/ledger",
+      "durationMs": 188
+    },
+    {
+      "path": "warehouse/receipts",
+      "durationMs": 172
+    },
+    {
+      "path": "warehouse/issues",
+      "durationMs": 175
+    },
+    {
+      "path": "warehouse/transfers",
+      "durationMs": 183
+    },
+    {
+      "path": "warehouse/stock-counts",
+      "durationMs": 178
+    },
+    {
+      "path": "items",
+      "durationMs": 167
+    },
+    {
+      "path": "warehouses",
+      "durationMs": 200
+    },
+    {
+      "path": "import-export/dashboard",
+      "durationMs": 3150
+    },
+    {
+      "path": "shipments",
+      "durationMs": 417
+    },
+    {
+      "path": "import-contracts",
+      "durationMs": 203
+    },
+    {
+      "path": "partners",
+      "durationMs": 175
+    },
+    {
+      "path": "accounting/salaries",
+      "durationMs": 223
+    },
+    {
+      "path": "accounting/payroll",
+      "durationMs": 225
+    },
+    {
+      "path": "accounting/payroll/references",
+      "durationMs": 173
+    },
+    {
+      "path": "accounting/payslips",
+      "durationMs": 621
+    },
+    {
+      "path": "leave-requests",
+      "durationMs": 785
+    },
+    {
+      "path": "leave-balances",
+      "durationMs": 1439
+    },
+    {
+      "path": "approvals",
+      "durationMs": 369
+    },
+    {
+      "path": "documents",
+      "durationMs": 796
+    }
+  ],
+  "queryFailures": []
+}

@@ -1,0 +1,60 @@
+/* Phone design tokens: shared by the shell, worklists and business screens. */
+@media (max-width: 767px) {
+  :root {
+    --mobile-canvas: #f6f7fb;
+    --mobile-surface: #ffffff;
+    --mobile-ink: #18324b;
+    --mobile-muted: #62758a;
+    --mobile-line: #dfe6f0;
+    --mobile-soft: #eff3fa;
+    --mobile-surface-inset: #f5f7fc;
+    --mobile-surface-pearl: linear-gradient(145deg, #ffffff 0%, #fcfdff 100%);
+    --mobile-blue: #397de9;
+    --mobile-blue-ink: #2769cb;
+    --mobile-blue-soft: #eaf2ff;
+    --mobile-cyan: #2bbac8;
+    --mobile-cyan-soft: #e5f8fb;
+    --mobile-coral: #ef987e;
+    --mobile-coral-soft: #fff1e9;
+    --mobile-violet: #ac8be7;
+    --mobile-violet-soft: #f3edff;
+    --mobile-shadow: 0 8px 24px rgb(39 58 88 / 5%), 0 1px 3px rgb(39 58 88 / 3%);
+    --mobile-shadow-raised: 0 16px 40px rgb(39 58 88 / 11%), 0 2px 8px rgb(39 58 88 / 5%);
+    --mobile-control-shadow: 0 2px 5px rgb(39 58 88 / 3%);
+    --mobile-radius: var(--ui-radius-card);
+    --mobile-input-radius: var(--ui-radius-control);
+    --mobile-control-height: 48px;
+    --mobile-gutter: 16px;
+
+    --app-bg: var(--mobile-canvas);
+    --app-bg-soft: var(--mobile-soft);
+    --surface-1: var(--mobile-surface);
+    --surface-2: var(--mobile-surface-inset);
+    --surface-3: #e8eff7;
+    --surface-elevated: var(--mobile-surface);
+    --surface-border: var(--mobile-line);
+    --border-subtle: var(--mobile-line);
+    --border-default: #d2deec;
+    --text-primary: var(--mobile-ink);
+    --text-secondary: var(--mobile-muted);
+    --text-muted: var(--mobile-muted);
+    --reference-text: var(--mobile-ink);
+    --reference-muted: var(--mobile-muted);
+    --reference-surface: var(--mobile-surface);
+    --reference-border: var(--mobile-line);
+    --reference-shadow: var(--mobile-shadow);
+    --reference-control-shadow: var(--mobile-control-shadow);
+    --radius-card: var(--mobile-radius);
+    --radius-control: var(--mobile-input-radius);
+    --shadow-card: var(--mobile-shadow);
+    --shadow-sm: var(--mobile-control-shadow);
+    --font-body: 15px;
+    --font-meta: 13px;
+    --font-card: 17px;
+    --font-section: 21px;
+  }
+
+  body { background: var(--workspace-canvas); }
+  :is(button, a, summary, input, select, textarea) { -webkit-tap-highlight-color: transparent; }
+  :is(input, textarea, select) { scroll-margin-block: 96px 100px; }
+}

@@ -1,0 +1,207 @@
+{
+  "createdAt": "2026-10-16T01:52:28.485Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "a052fe92d46f9b256ed8dd1ba5e452aa84953cba375a37473d46d2d59f694996",
+  "previousDeployment": "dpl_B5zYrhm63Rbn2L97f1A1wBB3JwSp",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_A9T58R3ReyHr7iBT41yruSCYhfAn",
+  "url": "ct-noi-5qhprzeju-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-16T01:53:53.075Z",
+  "publicUrl": "https://ct-noi-bo-test-chau-tuan.vercel.app",
+  "verifiedAt": "2026-10-16T06:41:31.859Z",
+  "public": true,
+  "databaseMigrationCount": 51,
+  "productionAliasUnchanged": true,
+  "checks": [
+    {
+      "route": "/api/health/live",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "checkedAt": "2026-10-16T01:55:22.507Z"
+      }
+    },
+    {
+      "route": "/api/health/ready",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checks": [
+          {
+            "component": "database",
+            "status": "healthy"
+          }
+        ],
+        "checkedAt": "2026-10-16T01:55:22.697Z"
+      }
+    },
+    {
+      "route": "/login",
+      "authorized": false,
+      "status": 200,
+      "travelerCount": 11,
+      "testAccountPicker": true
+    },
+    {
+      "route": "/testing",
+      "authorized": false,
+      "status": 200,
+      "testingPage": true
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": false,
+      "status": 401
+    },
+    {
+      "route": "/ui-preview/attendance-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/leave-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": true,
+      "status": 200,
+      "accountCount": 10,
+      "activeAccountCount": 10
+    },
+    {
+      "route": "/api/v1/leave-balances/employees",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 182
+    },
+    {
+      "route": "/api/v1/leave-policies",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 41
+    },
+    {
+      "route": "/api/v1/leave-workflows/approvers",
+      "status": 200,
+      "scope": "managed admin test account",
+      "accountCount": 10,
+      "roleCount": 2
+    },
+    {
+      "route": "/api/v1/accounting/payroll",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 13
+    },
+    {
+      "route": "/api/v1/leave-types",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 9
+    },
+    {
+      "route": "/api/v1/leave-balances?scope=all&year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 1092
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=2026",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-workflows",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/insurance",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=bad",
+      "status": 400,
+      "scope": "invalid year safely rejected"
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&employeeId=41000000-0000-4000-8000-000000000001&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-requests/aa3bbce2-4e34-4e92-94c3-0d7bd4ddaf53",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/auth/logout",
+      "status": 200,
+      "scope": "verification session revoked"
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Live UI/API checks read existing TEST business data, open forms without submitting, and reject an invalid month before any write. Valid save/atomicity/concurrency are covered by unit/API mocks and real PostgreSQL rollback fixtures.",
+    "The five existing TEST profiles have no recorded months. No fictional payment or missing-month debt was created.",
+    "Existing September period has 52 saved summaries but one daily row. Summary totals stay intact; empty calendar dates remain unknown.",
+    "Chrome device viewports were checked; physical iOS/Android hardware was not used."
+  ],
+  "unitTests": {
+    "total": 961,
+    "passed": 924,
+    "failed": 0,
+    "skippedOptIn": 37
+  },
+  "sqlChecks": {
+    "passed": 30,
+    "transaction": "ROLLBACK"
+  },
+  "featureApiChecks": 14,
+  "migration": {
+    "file": "202610160001_insurance_monthly_contributions.sql",
+    "sha256": "b6358c2e31015044d881f2aaa63c96893b80ce92f1e54a90ce25a3ab6c837887",
+    "profilesUnchanged": true,
+    "historyUnchanged": true,
+    "contributionRowsAfterMigration": 0
+  },
+  "ui": {
+    "localScreens": 32,
+    "liveInsuranceScreens": 18,
+    "liveTimesheetScreens": 18,
+    "issues": 0,
+    "runtimeErrors": 0,
+    "businessWriteAttempts": 0,
+    "liveInsuranceReport": "../ui-evidence/insurance-timesheet-20261016/live-insurance/report.json",
+    "liveTimesheetsReport": "../ui-evidence/insurance-timesheet-20261016/live-timesheets/report.json"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "createdAt": "2026-10-19T07:35:19.616Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "f38aebe96e879defd1603e10c8cc0fd5f2df28e23be49e1817511cf8b808fe72",
+  "previousDeployment": "dpl_F76k2GiLXGGHcSnLzoiNB6C2ZNaf",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_8eNxKWeHuVmceeYyXh276wv9eUf4",
+  "url": "ct-noi-lv2yy1qnh-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-19T07:37:17.024Z",
+  "publishedAt": "2026-10-19T07:37:55.608Z",
+  "productionUnchanged": true,
+  "databaseMigrationRequired": false,
+  "hrRoleRepair": "docs/operations/hr-role-access-repair-20261019.json",
+  "noPayslipSent": true,
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "build": "passed",
+    "generatedPages": 288,
+    "sourceCssReview": "passed",
+    "browserUi": "not_run",
+    "automatedTests": "not_run",
+    "hrApprovalInbox": "http_200_three_views",
+    "hrRoleAdmin": "http_403",
+    "payrollRecipientMetadata": "13_periods_80_lines_68_active_accounts"
+  },
+  "health": [
+    {
+      "route": "/api/health/live",
+      "status": 200,
+      "health": "alive"
+    },
+    {
+      "route": "/api/health/ready",
+      "status": 200,
+      "health": "ready"
+    }
+  ],
+  "readOnlyApiAudit": {
+    "deployment": "dpl_8eNxKWeHuVmceeYyXh276wv9eUf4",
+    "readAt": "2026-10-19T07:38:38.750Z",
+    "onlyBusinessReads": true,
+    "noPayslipSend": true,
+    "reads": [
+      {
+        "role": "hr",
+        "resource": "approvals",
+        "view": "pending",
+        "status": 200,
+        "records": 0
+      },
+      {
+        "role": "hr",
+        "resource": "approvals",
+        "view": "completed",
+        "status": 200,
+        "records": 0
+      },
+      {
+        "role": "hr",
+        "resource": "approvals",
+        "view": "delegated",
+        "status": 200,
+        "records": 0
+      },
+      {
+        "role": "hr",
+        "resource": "roles",
+        "status": 403
+      },
+      {
+        "role": "accountant",
+        "resource": "payrollRecipientMetadata",
+        "periods": 13,
+        "lines": 80,
+        "activeAccounts": 68,
+        "status": 200
+      }
+    ]
+  }
+}

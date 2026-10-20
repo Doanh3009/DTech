@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" width="480" height="640" role="img" aria-labelledby="title">
+<title id="title">Trần Ngọc Bình · Ảnh mẫu chấm vào 07:57</title>
+<defs><linearGradient id="scene" x2=".1" y2="1"><stop stop-color="#bfd6de"/><stop offset="1" stop-color="#e8eff0"/></linearGradient></defs>
+<rect width="480" height="640" fill="url(#scene)"/>
+<g opacity=".78"><path d="M0 118h480v317H0z" fill="#f0eee8"/><rect x="27" y="140" width="212" height="250" rx="9" fill="#90b8c8"/><g stroke="#e8f0ef" stroke-width="10"><path d="M132 145v240M32 262h204"/></g><rect x="318" y="277" width="125" height="155" rx="7" fill="#c5b9a9"/><path d="M380 391v-149" stroke="#518471" stroke-width="8"/><path d="M380 335c-55 0-75-45-29-67 30 8 36 32 29 67zm0-48c-4-45 45-58 57-23-6 23-30 25-57 23z" fill="#6a9a7c"/><path d="M349 385h66l-10 65h-45z" fill="#ad8a70"/><path d="M0 452h480v188H0z" fill="#d1cac1"/></g>
+<rect x="26" y="86" width="274" height="27" rx="7" fill="#fff" opacity=".74"/>
+<text x="39" y="104" fill="#546571" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">VĂN PHÒNG MẪU</text>
+<ellipse cx="240" cy="554" rx="159" ry="42" fill="#687580" opacity=".13"/>
+<path d="M82 640V538c0-80 60-131 158-131s158 51 158 131v102z" fill="#376d9a"/>
+<path d="M211 365h58v63c-11 30-47 30-58 0z" fill="#e5b18c"/>
+<path d="m186 425 54 57 54-57" fill="none" stroke="#e8eff4" stroke-width="8"/><path d="M240 489v151" stroke="#ffffff" opacity=".13" stroke-width="4"/>
+<g transform="rotate(0 240 310)">
+<ellipse cx="240" cy="306" rx="97" ry="139" fill="#49352d"/><path d="M159 312v114c-4 24-21 40-39 40 24-25 19-57 22-100zM321 312v111c4 24 21 40 39 40-24-25-19-57-22-100z" fill="#49352d"/>
+<ellipse cx="162" cy="309" rx="16" ry="24" fill="#e5b18c"/><ellipse cx="318" cy="309" rx="16" ry="24" fill="#e5b18c"/>
+<ellipse cx="240" cy="303" rx="76" ry="95" fill="#e5b18c"/>
+<path d="M172 310c0 53 26 82 67 87-46 2-81-41-81-90z" fill="#79583c" opacity=".10"/>
+<path d="M163 277c-12-78 111-141 156-37l-6 51c-28-10-55-39-73-62-11 21-43 45-77 48z" fill="#49352d"/>
+<g stroke="#49352d" stroke-linecap="round"><path d="M194 285q14-8 27-1m39 0q13-7 26 1" fill="none" stroke-width="5"/><path d="M207 301v5m66-5v5" stroke-width="8"/></g>
+<path d="m240 305-6 29h12" fill="none" stroke="#9a664e" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<path d="M219 354q21 15 42 0" fill="none" stroke="#875147" stroke-width="4" stroke-linecap="round"/>
+</g>
+<rect x="315" y="24" width="139" height="39" rx="9" fill="#174861"/>
+<text x="384.5" y="50" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="20" font-weight="700">ẢNH MẪU</text>
+<rect x="24" y="548" width="432" height="68" rx="12" fill="#ffffff" opacity=".93"/>
+<text x="41" y="575" fill="#243d50" font-family="Arial,sans-serif" font-size="20" font-weight="700">Trần Ngọc Bình</text>
+<text x="41" y="598" fill="#426579" font-family="Arial,sans-serif" font-size="14" font-weight="700">CHẤM VÀO · 07:57</text>
+<text x="439" y="598" text-anchor="end" fill="#6e8392" font-family="Arial,sans-serif" font-size="12">DEMO-002</text>
+</svg>

@@ -1,0 +1,141 @@
+{
+  "recordedAt": "2026-10-17T07:19:14.439Z",
+  "deploymentId": "dpl_4RnUm8dprL3SFqNGVdYcEfUxvKRW",
+  "sourceSha": "df6fb71e259751b39dafdf89ae744167a7b2dcb1cb809d400d20cf58219800ed",
+  "guard": {
+    "receiptReady": true,
+    "providerReady": true,
+    "testAliasMatches": true,
+    "productionAliasUnchanged": true,
+    "sourceShaMatches": true
+  },
+  "apiChecks": [
+    {
+      "route": "/api/v1/projects",
+      "status": 200
+    }
+  ],
+  "screens": [
+    {
+      "label": "warehouse-link-motion",
+      "width": 390,
+      "path": "/warehouse/inventory",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-back-motion",
+      "width": 390,
+      "path": "/warehouse",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-link-motion",
+      "width": 1440,
+      "path": "/warehouse/inventory",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-back-motion",
+      "width": 1440,
+      "path": "/warehouse",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-tab-motion",
+      "width": 390,
+      "path": "/projects/81cb1c02-ec4b-4e13-884e-e15590dfc98b/materials",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-tab-motion",
+      "width": 1440,
+      "path": "/projects/81cb1c02-ec4b-4e13-884e-e15590dfc98b/materials",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "apiErrors": [],
+  "expectedAvatarFallbacks": [
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    }
+  ],
+  "blockedBusinessWrites": [],
+  "authentication": [
+    {
+      "username": "warehouse.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "warehouse.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "Managed TEST accounts and existing business data. No warehouse or construction mutation is submitted.",
+    "Positive mutations exercised with isolated browser fixtures and SQL rollback. No physical mobile device or simultaneous multi-session contention."
+  ],
+  "passed": true
+}

@@ -1,0 +1,56 @@
+{
+  "deploymentId": "dpl_8gCwv5ALi82pqsRSKBuHUUekBwhk",
+  "screens": 40,
+  "layoutAndLabelIssues": 0,
+  "runtimeErrors": 0,
+  "blockedBusinessWrites": 0,
+  "addressLookups": 4,
+  "expectedAvatar404": 34,
+  "businessApiErrors": [],
+  "authentication": [
+    {
+      "username": "admin.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "engineer.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "engineer.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "manualVisualReview": [
+    {
+      "screen": "final-009-admin-test-package-team-390.png",
+      "result": "Today and attendance action labels fully visible; package title no forced single-line ellipsis; rounded shell."
+    },
+    {
+      "screen": "final-035-employee-test-leave-new-320.png",
+      "result": "Leave form inputs fit 320px viewport."
+    },
+    {
+      "screen": "final-040-employee-test-personal-calendar-390.png",
+      "result": "Calendar dates align for cells with and without status dots."
+    }
+  ]
+}

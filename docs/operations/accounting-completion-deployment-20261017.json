@@ -1,0 +1,254 @@
+{
+  "createdAt": "2026-10-17T01:34:32.171Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "1d3dd4577374b10d9c783c11233a6fd94e417163c1642e8e9c9c0980cf9fe94a",
+  "previousDeployment": "dpl_DXMpjd91XQazDKUxZt78vKcEnkHJ",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_GrGWNUuq9SDA1zJPtSeYuSyY4CMr",
+  "url": "ct-noi-7ywc5msxp-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-17T01:35:30.778Z",
+  "publicUrl": "https://ct-noi-bo-test-chau-tuan.vercel.app",
+  "verifiedAt": "2026-10-17T01:40:43.234Z",
+  "public": true,
+  "databaseMigrationCount": 52,
+  "productionAliasUnchanged": true,
+  "checks": [
+    {
+      "route": "/api/health/live",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "checkedAt": "2026-10-17T01:37:01.763Z"
+      }
+    },
+    {
+      "route": "/api/health/ready",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checks": [
+          {
+            "component": "database",
+            "status": "healthy"
+          }
+        ],
+        "checkedAt": "2026-10-17T01:37:01.818Z"
+      }
+    },
+    {
+      "route": "/login",
+      "authorized": false,
+      "status": 200,
+      "travelerCount": 11,
+      "testAccountPicker": true
+    },
+    {
+      "route": "/testing",
+      "authorized": false,
+      "status": 200,
+      "testingPage": true
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": false,
+      "status": 401
+    },
+    {
+      "route": "/ui-preview/attendance-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/leave-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": true,
+      "status": 200,
+      "accountCount": 10,
+      "activeAccountCount": 10
+    },
+    {
+      "route": "/api/v1/leave-policies",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 41
+    },
+    {
+      "route": "/api/v1/leave-types",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 9
+    },
+    {
+      "route": "/api/v1/leave-balances?scope=all&year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 1092
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=2026",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-balances/employees",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 182
+    },
+    {
+      "route": "/api/v1/leave-workflows/approvers",
+      "status": 200,
+      "scope": "managed admin test account",
+      "accountCount": 10,
+      "roleCount": 2
+    },
+    {
+      "route": "/api/v1/insurance",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/accounting/payroll",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 13
+    },
+    {
+      "route": "/api/v1/leave-workflows",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=bad",
+      "status": 400,
+      "scope": "invalid year safely rejected"
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&employeeId=41000000-0000-4000-8000-000000000001&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-requests/aa3bbce2-4e34-4e92-94c3-0d7bd4ddaf53",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/auth/logout",
+      "status": 200,
+      "scope": "verification session revoked"
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Live audits only read existing business data and open forms. Positive mutation paths use real components with browser mocks and PostgreSQL rollback fixtures. No salary, publication, revoke, delivery retry or employee confirmation is submitted to live TEST.",
+    "Avatar 404 uses the initials fallback. WebSockets are intentionally blocked in the audits, so a realtime warning may appear in evidence. Four sidebar preference PUT attempts are aborted before submission.",
+    "Physical iOS/Android and full transactional UAT for every module/role are outside these browser observations. Tax, OT and insurance formulas remain the existing configured/manual inputs; no company policy is invented.",
+    "Delivery retries are explicit from the payroll workspace; no automatic delivery cron was configured. Existing publications without receipts are not inferred to be delivered."
+  ],
+  "unitTests": {
+    "total": 1053,
+    "passed": 1016,
+    "failed": 0,
+    "skippedOptIn": 37
+  },
+  "staticChecks": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "vercelBuild": "READY"
+  },
+  "sqlChecks": {
+    "passed": 35,
+    "transaction": "ROLLBACK",
+    "report": ".tmp/payslip-outbox-sql-report-20261016.json"
+  },
+  "migration": {
+    "file": "202610160002_payslip_delivery_outbox.sql",
+    "sha256": "99c74bdb47f032978ad90506445ec8f3cfa41e262cdad21bbef5bbe3c3800cf8",
+    "count": 52,
+    "existingBusinessDataUnchanged": true,
+    "deliveryRowsCreatedForOldSlips": 0
+  },
+  "featureApiChecks": [
+    {
+      "route": "/api/v1/accounting/payroll",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payslips",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/summary",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/dashboard",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "status": 200
+    }
+  ],
+  "ui": {
+    "localScreens": 76,
+    "liveScreens": 154,
+    "mainScreens": 81,
+    "extraScreens": 25,
+    "shellScreens": 16,
+    "accountingScreens": 32,
+    "issues": 0,
+    "runtimeErrors": 0,
+    "businessApiErrors": 0,
+    "expectedAvatarFallbacks": 142,
+    "expectedTransitionCancellations": 0,
+    "abortedPreferenceWrites": 4,
+    "reports": [
+      "../ui-evidence/accounting-completion-20261016/final-live/whole-system/report.json",
+      "../ui-evidence/accounting-completion-20261016/final-live/whole-system/report-extra.json",
+      "../ui-evidence/accounting-completion-20261016/final-live/shell/report.json",
+      "../ui-evidence/accounting-completion-20261016/final-live/accounting/report.json"
+    ]
+  },
+  "accountingFacts": {
+    "payrollPeriods": 13,
+    "pendingPeriods": 1,
+    "rawPayslips": 79,
+    "reportingFrom": "2026-05",
+    "reportingThrough": "2026-10",
+    "closedReportingPeriods": 4,
+    "receiptMonth": "2026-09",
+    "receiptTotal": 62
+  }
+}

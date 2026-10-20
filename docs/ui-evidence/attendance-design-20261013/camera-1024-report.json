@@ -1,0 +1,68 @@
+{
+  "recordedAt": "2026-10-13T09:11:53.479Z",
+  "protectedSources": {
+    "count": 34,
+    "changed": []
+  },
+  "screens": [
+    {
+      "label": "personal",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "metrics": {
+        "width": 1024,
+        "scrollWidth": 1014,
+        "clippedButtons": [],
+        "roundCards": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "camera",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "metrics": {
+        "width": 1024,
+        "scrollWidth": 1014,
+        "clippedButtons": [],
+        "roundCards": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "photo-preview",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "metrics": {
+        "width": 1024,
+        "scrollWidth": 1014,
+        "clippedButtons": [],
+        "roundCards": [],
+        "dialogs": []
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "cameraCapturePreview": true,
+      "noSubmission": true
+    }
+  ],
+  "errors": [],
+  "blockedWrites": [],
+  "limitations": [
+    "UI uses a development-only fixture with API responses intercepted; no production data or authentication submitted.",
+    "Fake camera and GPS are used; physical phone hardware and permissions are not verified."
+  ],
+  "passed": true
+}

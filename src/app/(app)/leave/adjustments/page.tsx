@@ -1,0 +1,1 @@
+import { BackLink } from "@/components/shared/BackLink";import { PageHeader } from "@/components/shared/PageHeader";import { LeaveAdjustmentForm } from "@/features/leave/components/LeaveAdjustmentForm";export default function Page(){return <div className="page-stack"><BackLink href="/leave/manage"/><PageHeader title="Điều chỉnh phép"/><LeaveAdjustmentForm/></div>}

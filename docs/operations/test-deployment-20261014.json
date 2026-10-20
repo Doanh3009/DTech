@@ -1,0 +1,80 @@
+{
+  "createdAt": "2026-10-13T09:59:55.185Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "9615c1848128ef0f38c538ff3ec94ee18eb965a3bca63f942e2a7418648f987d",
+  "previousDeployment": "dpl_7d7ocXNuPnwETMG617PCrVpXSoUN",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_Ezoe2NS53eJfk3KTXyHKFvUhMGJn",
+  "url": "ct-noi-mbmtt65gw-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-14T01:19:55.114Z",
+  "publicUrl": "https://ct-noi-bo-test-chau-tuan.vercel.app",
+  "verifiedAt": "2026-10-14T01:24:10.398Z",
+  "public": true,
+  "databaseMigrationCount": 45,
+  "productionAliasUnchanged": true,
+  "checks": [
+    {
+      "route": "/api/health/live",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "checkedAt": "2026-10-14T01:24:09.053Z"
+      }
+    },
+    {
+      "route": "/api/health/ready",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checks": [
+          {
+            "component": "database",
+            "status": "healthy"
+          }
+        ],
+        "checkedAt": "2026-10-14T01:24:10.252Z"
+      }
+    },
+    {
+      "route": "/login",
+      "authorized": false,
+      "status": 200,
+      "travelerCount": 11,
+      "testAccountPicker": true
+    },
+    {
+      "route": "/testing",
+      "authorized": false,
+      "status": 200,
+      "testingPage": true
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": false,
+      "status": 401
+    },
+    {
+      "route": "/ui-preview/attendance-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": true,
+      "status": 200,
+      "accountCount": 10,
+      "activeAccountCount": 10
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Read-only HTTP and provider checks; no test-account login or business transaction submitted."
+  ]
+}

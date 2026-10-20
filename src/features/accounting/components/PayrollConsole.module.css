@@ -1,0 +1,65 @@
+.mobilePeriods { display: none; }
+.toolbarLeft { display: flex; min-width: 0; align-items: center; flex-wrap: wrap; gap: 12px; }
+.toolbarLeft :global(.button) { flex: 0 0 auto; }
+.workQueue { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.workQueue > button { display: flex; min-width: 0; min-height: 80px; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); background: var(--surface-1); padding: 16px 20px; text-align: left; color: var(--text-primary); font: inherit; cursor: pointer; }
+.workQueue > button[aria-pressed="true"] { border-color: var(--primary); background: var(--primary-soft); }
+.workQueue span { font-size: 13px; color: var(--text-secondary); }
+.workQueue strong { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.workQueue button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.filters { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(160px, 240px) minmax(130px, 180px); gap: 12px; padding: 14px; border-top: 1px solid var(--border-subtle); }
+.filters > :global(.search-input), .filters > :global(.field) { width: 100%; min-width: 0; }
+.referenceSummary { display: grid; gap: 14px; margin: 0; padding: 16px; border: 1px solid var(--border-subtle); border-radius: var(--radius-control); background: var(--surface-2, #f6f8fb); }
+.referenceSummary > div { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.referenceSummary dt { color: var(--text-secondary); font-size: 13px; }
+.referenceSummary dd { margin: 0; min-width: 0; text-align: right; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.retry { display: flex; justify-content: center; padding: 0 16px 20px; }
+.statusStack { display: grid; justify-items: start; gap: 6px; }
+
+@media (max-width: 767px), (max-width: 900px) and (max-height: 500px) {
+  .workQueue { gap: 8px; }
+  .workQueue > button { display: grid; align-content: space-between; gap: 8px; min-height: 96px; padding: 12px; }
+  .workQueue span { font-size: 12px; line-height: 1.45; }
+  .workQueue strong { font-size: 24px; }
+  .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 0 14px; border: 0; }
+  .filters > :global(.search-input) { grid-column: 1 / -1; }
+  .periods :global(.data-table-scroll) { display: none; }
+  .periods:has(.mobilePeriods) :global(.mobile-record-list) { display: none; }
+  .periods { overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .periods > :global(.data-surface__toolbar) { display: flex; min-height: 40px; align-items: center; justify-content: space-between; margin-bottom: 12px; border: 0; border-radius: var(--radius-control); background: transparent; padding: 0; color: var(--mobile-muted); font-size: 14px; box-shadow: none; }
+  .toolbarLeft h2 { margin: 0; color: var(--mobile-ink); font-size: 18px; font-weight: 700; }
+  .mobilePeriods { display: grid; gap: 10px; }
+  .period {
+    display: grid;
+    gap: 8px;
+    overflow: hidden;
+    border: 1px solid var(--mobile-line);
+    border-radius: var(--radius-card);
+    background: var(--mobile-surface);
+    padding: 12px;
+    color: var(--mobile-ink);
+    text-decoration: none;
+    box-shadow: var(--mobile-shadow);
+  }
+  .period:last-child { border-bottom: 1px solid var(--mobile-line); }
+  .periodTop { display: flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 12px; color: inherit; text-decoration: none; }
+  .periodTop > strong { font-size: 16px; font-weight: 600; letter-spacing: -.025em; }
+  .periodTop > :global(.status-badge) { flex: 0 0 auto; }
+  .periodNet { display: grid; gap: 4px; border-radius: 8px; background: var(--primary-soft); padding: 12px; }
+  .periodNet small, .periodMeta { color: var(--mobile-muted); font-size: 14px; }
+  .periodNet strong { color: var(--primary); font-size: clamp(22px, 7vw, 28px); font-weight: 600; line-height: 1.2; letter-spacing: -.025em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .periodMeta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .periodMeta > span { display: flex; min-width: 0; align-items: center; gap: 8px; }
+  .periodMeta > span > svg { color: var(--mobile-blue-ink); }
+  .periodOpen { display: grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; border-radius: 13px; background: var(--mobile-blue-soft); color: var(--mobile-blue-ink); }
+  .periodBreakdown { border-top: 1px solid var(--mobile-line); }
+  .periodBreakdown > summary { display: flex; min-height: 48px; align-items: center; justify-content: space-between; gap: 8px; color: var(--mobile-muted); font-size: 14px; font-weight: 600; list-style: none; cursor: pointer; }
+  .periodBreakdown > summary::-webkit-details-marker { display: none; }
+  .periodBreakdown[open] > summary svg { transform: rotate(180deg); }
+  .periodBreakdown dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 4px 0 8px; }
+  .periodBreakdown dl > div { display: grid; min-width: 0; gap: 6px; }
+  .periodBreakdown dt { color: var(--mobile-muted); font-size: 13px; }
+  .periodBreakdown dd { margin: 0; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .period :is(a, summary):focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 12px; }
+  .period :is(a, summary):active { opacity: .75; }
+}

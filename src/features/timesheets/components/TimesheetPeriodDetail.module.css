@@ -1,0 +1,10 @@
+.metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; margin: 0; }
+.metrics > div { display: grid; gap: 6px; min-width: 0; border: 1px solid #e5edf7; border-radius: 14px; background: #ffffffb3; padding: 12px 16px; }
+.metrics dt { color: var(--text-secondary); font-size: 12px; }
+.metrics dd { margin: 0; font-size: 22px; font-weight: 600; }
+.warning { padding: 12px 14px; border-radius: 12px; background: #fff6e4; color: #9b692b; font-size: 13px; }
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 14px; }
+.filters > :global(.search-input) { flex: 0 1 220px; }
+.filters > :global(.field) { flex: 0 1 180px; }
+.pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; padding: 12px; font-size: 12px; }
+@media(max-width:767px) { .metrics { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; } .metrics > div { padding: 10px 12px; } .metrics dd { font-size: 20px; } .filters { padding: 10px 0; } .filters > :global(.field) { flex: 1 1 140px; } .filters > :global(.search-input) { flex: 1 1 140px; } }

@@ -1,0 +1,48 @@
+.page {
+  min-height: 100dvh;
+  padding: clamp(20px, 5vw, 64px) max(16px, env(safe-area-inset-right));
+  color: var(--text-primary);
+  background: var(--workspace-canvas);
+}
+
+.shell { width: min(1040px, 100%); margin-inline: auto; }
+.pageHeader { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+.pageHeader h1 { margin: 0; font-size: clamp(26px, 3vw, 36px); line-height: 1.2; letter-spacing: -0.025em; }
+.brand { display: block; margin-bottom: 10px; color: var(--text-secondary); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; }
+.pageLink { color: var(--primary, var(--text-primary)); min-height: 44px; display: inline-flex; align-items: center; font-weight: 600; text-decoration: none; }
+.pageLink:focus-visible { outline: 3px solid var(--focus-ring, var(--border-default)); outline-offset: 4px; border-radius: 6px; }
+
+.picker { margin: 0; padding: clamp(16px, 3vw, 28px); border-radius: 22px; box-shadow: 0 16px 48px rgb(18 44 70 / 8%); }
+.picker > header { margin-bottom: 24px; gap: 10px; }
+.picker > header h2 { margin: 0; margin-right: auto; font-size: 20px; line-height: 1.35; }
+.databaseBadge { padding: 6px 10px; border: 1px solid var(--border-default); border-radius: 999px; color: var(--text-secondary); font-size: 12px; }
+.accounts { width: 100%; min-width: 0; }
+.table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--border-default); border-radius: 14px; background: var(--surface-elevated); }
+.table th, .table td { padding: 18px; text-align: left; border-bottom: 1px solid var(--border-default); vertical-align: middle; }
+.table thead th { background: var(--surface-2); color: var(--text-secondary); font-size: 12px; font-weight: 600; }
+.table tbody th { font-weight: 650; }
+.table tbody tr:last-child > * { border-bottom: 0; }
+.table td:last-child, .table thead th:last-child { text-align: right; }
+.table :global(.button) { min-height: 44px; white-space: nowrap; touch-action: manipulation; }
+.table tbody tr[data-active="true"] { cursor: pointer; }
+.table tbody tr[data-active="true"]:hover { background: var(--surface-2); }
+.username { color: var(--text-secondary); font-family: var(--font-mono, monospace); font-size: 13px; overflow-wrap: anywhere; }
+.current { background: var(--surface-selected); }
+.currentLabel { display: block; margin-top: 6px; color: var(--text-secondary); font-size: 12px; }
+
+@media (max-width: 640px) {
+  .pageHeader { margin-bottom: 20px; }
+  .picker { padding: 16px; border-radius: 18px; }
+  .picker > header { margin-bottom: 18px; }
+  .picker > header h2 { flex-basis: 100%; }
+  .table { display: block; border: 0; border-radius: 0; background: transparent; overflow: visible; }
+  .table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .table tbody { display: grid; gap: 14px; }
+  .table tbody tr { display: grid; gap: 12px; padding: 16px; border: 1px solid var(--border-default); border-radius: 14px; background: var(--surface-elevated); }
+  .table th, .table td { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 0; border: 0; text-align: left; }
+  .table tbody th { font-size: 17px; }
+  .table td:not(:last-child)::before { content: attr(data-label); flex: 0 0 78px; color: var(--text-secondary); font-size: 12px; }
+  .table td:last-child { display: block; margin-top: 2px; }
+  .table td:last-child :global(.button) { width: 100%; }
+  .currentLabel { display: inline; margin: 0; }
+}

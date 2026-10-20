@@ -1,0 +1,85 @@
+.page { min-width: 0; display: grid; gap: 18px; }
+.page .calendar { min-width: 0; overflow: hidden; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); background: var(--surface-1); padding: 0; box-shadow: 0 8px 30px rgb(22 45 64 / 4%); }
+.page .calendar .header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; min-height: 0; border: 0; padding: 24px 24px 20px; }
+.page .calendar .heading { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.page .calendar .heading .headingIcon { display: grid; width: 46px; height: 46px; flex: 0 0 46px; place-items: center; border: 1px solid color-mix(in srgb, var(--color-primary) 13%, var(--border-subtle)); border-radius: 15px; background: color-mix(in srgb, var(--color-primary) 7%, var(--surface-1)); color: var(--color-primary); }
+.page .heading h2 { display: block; margin: 0 0 4px; color: var(--text-primary); font-size: 21px; font-weight: 650; line-height: 1.35; }
+.heading > div > span { color: var(--text-secondary); font-size: 14px; font-variant-numeric: tabular-nums; }
+.page .calendar .controls { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border-subtle); border-radius: 15px; background: var(--surface-2); padding: 4px; }
+.page .controls :global(.button) { min-height: 38px; border: 0; border-radius: 11px; padding-inline: 12px; background: transparent; box-shadow: none; }
+.page .controls :global(.button--secondary) { background: var(--surface-1); box-shadow: 0 2px 6px rgb(22 45 64 / 5%); }
+.page .calendar .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 24px 20px; border: 0; padding: 0; }
+.page .stats > div { position: relative; display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr) 34px; gap: 4px 8px; align-items: center; border: 1px solid color-mix(in srgb, var(--attendance-dot) 16%, var(--border-subtle)); border-radius: 16px; background: color-mix(in srgb, var(--attendance-dot) 5%, var(--surface-1)); padding: 15px 16px; }
+.page .stats dd { grid-column: 1; grid-row: 1; margin: 0; color: var(--text-primary); font-size: 28px; font-weight: 650; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.page .stats dt { grid-column: 1 / -1; color: var(--text-secondary); font-size: 13px; line-height: 1.4; }
+.statIcon { display: grid; grid-column: 2; grid-row: 1; width: 34px; height: 34px; place-items: center; border-radius: 11px; background: color-mix(in srgb, var(--attendance-dot) 10%, transparent); color: var(--attendance-dot); }
+.page .calendar .weekdays, .page .calendar .grid { display: grid; width: auto; min-width: 0; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px; margin: 0; padding-inline: 24px; }
+.page .calendar .weekdays { border: 0; padding-bottom: 8px; background: transparent; }
+.page .weekdays span { display: grid; min-width: 0; min-height: 30px; place-items: center; padding: 0; color: var(--text-secondary); font-size: 13px; font-weight: 550; }
+.page .weekdays span:last-child { color: var(--color-danger); }
+.page .calendar .grid { padding-bottom: 22px; }
+.page .calendar .grid > .day { position: relative; display: flex; width: auto; min-width: 0; min-height: 104px; max-height: none; flex-direction: column; align-items: start; gap: 7px; margin: 0; border: 1px solid color-mix(in srgb, var(--attendance-dot, var(--border-subtle)) 20%, var(--border-subtle)); border-radius: 14px; background: color-mix(in srgb, var(--attendance-dot, var(--surface-2)) 5%, var(--surface-1)); padding: 12px; color: var(--text-primary); font-family: inherit; text-align: left; box-shadow: none; transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease; overflow: hidden; }
+.page .calendar .grid > .day > span { display: block; width: auto; min-width: 0; height: auto; min-height: 0; border: 0; border-radius: 0; background: transparent; padding: 0; color: inherit; font-size: 20px; font-weight: 650; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.page .calendar .grid > .day strong { display: flex; align-items: center; gap: 5px; margin: 0; color: var(--text-secondary); font-size: 12px; font-weight: 550; line-height: 1.35; }
+.page .calendar .grid > .day strong::before { width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: var(--attendance-dot); content: ""; }
+.page .calendar .grid > .day small { display: block; margin: 0; color: var(--text-secondary); font-size: 11px; line-height: 1.5; font-variant-numeric: tabular-nums; }
+.page .calendar .grid > .day::after { display: none; }
+.page .calendar .grid > .day:global(.is-outside) { border-color: transparent; background: var(--surface-2); opacity: .4; }
+.page .calendar .grid > .day:not(:disabled):hover { border-color: color-mix(in srgb, var(--color-primary) 45%, var(--border-subtle)); background: color-mix(in srgb, var(--color-primary) 5%, var(--surface-1)); box-shadow: 0 3px 10px rgb(22 45 64 / 5%); cursor: pointer; }
+.page .calendar .grid > .day[aria-current="date"] { border-color: color-mix(in srgb, var(--color-primary) 50%, var(--border-subtle)); }
+.page .calendar .grid > .day[aria-current="date"] > span { color: var(--color-primary); }
+.page .calendar .grid > .day[aria-pressed="true"] { border-color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 8%, var(--surface-1)); box-shadow: 0 0 0 1px var(--color-primary); }
+.page .calendar .grid > .day:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.page :global(.is-complete), .page :global(.is-checked_in) { --attendance-dot: #239674; }
+.page :global(.is-late), .page :global(.is-holiday) { --attendance-dot: #b77b17; }
+.page :global(.is-missing_check_out) { --attendance-dot: #cb576d; }
+.page :global(.is-leave) { --attendance-dot: #9270c7; }
+.page :global(.is-business_trip), .page :global(.is-pending) { --attendance-dot: #5d87c4; }
+.page :global(.is-rest_day) { --attendance-dot: #84909f; }
+.page .calendar .legend { margin: 0; border-top: 1px solid var(--border-subtle); padding: 0; }
+.page .legend > summary { display: flex; min-height: 44px; align-items: center; justify-content: space-between; padding: 10px 24px; color: var(--text-secondary); font-size: 13px; font-weight: 550; list-style: none; cursor: pointer; }
+.legend > summary::-webkit-details-marker { display: none; }
+.legend[open] > summary > svg { transform: rotate(180deg); }
+.page .legend > footer { display: flex; flex-wrap: wrap; gap: 10px 20px; border: 0; padding: 0 24px 18px; color: var(--text-secondary); font-size: 12px; }
+.page .legend > footer > span::before { display: inline-block; width: 6px; height: 6px; margin-right: 6px; border-radius: 50%; background: var(--attendance-dot); content: ""; }
+.page .selected { margin: 0; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); background: var(--surface-1); padding: 20px; box-shadow: 0 8px 30px rgb(22 45 64 / 4%); }
+.page .selected > h3 { margin: 0 0 16px; color: var(--text-primary); font-size: 18px; font-weight: 650; }
+@media (max-width: 1100px) and (min-width: 768px) {
+  .page .calendar .grid > .day { min-height: 96px; gap: 6px; padding: 10px 8px; }
+  .page .calendar .grid > .day small { font-size: 10px; }
+  .page .calendar .grid > .day strong { font-size: 11px; }
+}
+@media (max-width: 767px) {
+  :global(.app-shell .page-main) .page { gap: 14px; }
+  :global(.app-shell .page-main) .page .calendar { width: 100%; margin: 0; border-radius: var(--radius-card); padding: 0; }
+  :global(.app-shell .page-main) .page .calendar .header { display: flex; gap: 14px; padding: 18px 16px 16px; }
+  .page .calendar .heading { gap: 10px; }
+  .page .calendar .heading .headingIcon { width: 40px; height: 40px; flex-basis: 40px; border-radius: 13px; }
+  :global(.app-shell .page-main) .page .heading h2 { margin-bottom: 3px; font-size: 18px; }
+  .heading > div > span { font-size: 13px; }
+  .page .calendar .controls { display: grid; width: 100%; grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 6px; padding: 3px; }
+  :global(.app-shell .page-main) .page .controls :global(.button) { width: 100%; min-height: 44px; padding-inline: 8px; }
+  :global(.app-shell .page-main) .page .calendar .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; margin: 0 16px 16px; border: 0; padding: 0; background: transparent; }
+  :global(.app-shell .page-main) .page .stats > div { display: flex; flex-direction: column; align-items: center; gap: 5px; border: 1px solid color-mix(in srgb, var(--attendance-dot) 16%, var(--border-subtle)); border-radius: 13px; padding: 12px 3px; }
+  .page .stats dd { font-size: 25px; }
+  .page .stats dt { font-size: 11px; white-space: nowrap; }
+  .statIcon { display: none; }
+  :global(.app-shell .page-main) .page .calendar .weekdays, :global(.app-shell .page-main) .page .calendar .grid { display: grid; width: auto; min-width: 0; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; margin: 0; padding-inline: 9px; }
+  :global(.app-shell .page-main) .page .calendar .weekdays { border: 0; padding-bottom: 3px; background: transparent; }
+  :global(.app-shell .page-main) .page .calendar .weekdays span { height: 32px; padding: 0; font-size: 12px; }
+  :global(.app-shell .page-main) .page .calendar .grid { grid-auto-rows: 54px; row-gap: 4px; padding-bottom: 14px; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day { display: grid; width: 100%; height: 54px; min-height: 0; max-height: none; grid-template-rows: 25px 5px; align-content: center; justify-items: center; gap: 4px; margin: 0; border: 1px solid transparent; border-radius: var(--radius-control); padding: 2px; text-align: center; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day > span { display: grid; width: auto; height: 25px; min-width: 0; min-height: 0; flex: 0 0 25px; place-items: center; border: 0; border-radius: 0; background: transparent; padding: 0; color: inherit; font-size: 15px; line-height: 1; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day strong, :global(.app-shell .page-main) .page .calendar .grid > .day small { display: none; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day::after { position: static; display: block; width: 5px; height: 5px; min-height: 5px; margin: 0; border-radius: 50%; background: var(--attendance-dot, transparent); content: ""; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day:global(.is-empty)::after { visibility: hidden; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day[aria-pressed="true"] { border-color: var(--color-primary); background: var(--color-primary); color: #fff; box-shadow: none; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day[aria-pressed="true"]::after { background: #fff; }
+  :global(.app-shell .page-main) .page .calendar .grid > .day[aria-current="date"]:not([aria-pressed="true"]) > span { color: var(--color-primary); }
+  .page .legend > summary { padding-inline: 16px; }
+  .page .legend > footer { gap: 9px 14px; padding: 0 16px 16px; font-size: 11px; }
+  :global(.app-shell .page-main) .page .selected { margin: 0; border-radius: var(--radius-card); padding: 18px 16px; }
+}
+@media (max-width: 359px) { .page .stats dt { font-size: 10px; } .page .stats dd { font-size: 23px; } }
+@media (prefers-reduced-motion: reduce) { .page .calendar .grid > .day { transition: none; } }
+

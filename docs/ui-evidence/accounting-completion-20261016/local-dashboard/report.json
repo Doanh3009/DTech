@@ -1,0 +1,217 @@
+{
+  "kind": "isolated-real-dashboard-components",
+  "recordedAt": "2026-10-16T07:19:00.152Z",
+  "screens": [
+    {
+      "width": 320,
+      "label": "real-period",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "panels": [
+          {
+            "width": 296,
+            "scrollWidth": 294,
+            "clientWidth": 294
+          },
+          {
+            "width": 294,
+            "scrollWidth": 294,
+            "clientWidth": 294
+          },
+          {
+            "width": 294,
+            "scrollWidth": 294,
+            "clientWidth": 294
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương1Kỳ cần xử lý0Chờ gửi phiếu13Phiếu chưa xemKỳ lương cần xử lý1Kỳ lương cần xử lý1 việcBảng lươngKiểm tra lương · 10/202652 nhân viên · 640.000.000 đLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐ680 Tr510 Tr340 Tr170 Tr0640.000.00005/2026650.000.00006/2026660.000.00007/2026670.000.00008/2026680.000.00009/20260680 Tr05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Xem số liệuThực nhận đã chốt · 05/2026 – 10/2026 (VNĐ)NhãnGiá trị05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Tiếp nhận phiếu lương09/2026phiếu52phiếuChưa xem1325%Chờ xác nhận59,62%Đã xác nhận3465,4%Xem số liệuTiếp nhận phiếu lương · 09/2026 (phiếu)NhãnGiá trịChưa xem13Chờ xác nhận5Đã xác nhận34"
+      }
+    },
+    {
+      "width": 320,
+      "label": "empty",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "panels": [
+          {
+            "width": 296,
+            "scrollWidth": 294,
+            "clientWidth": 294
+          },
+          {
+            "width": 294,
+            "scrollWidth": 294,
+            "clientWidth": 294
+          },
+          {
+            "width": 294,
+            "scrollWidth": 294,
+            "clientWidth": 294
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương0Kỳ cần xử lý0Chờ gửi phiếu0Phiếu chưa xemKỳ lương cần xử lý0Kỳ lương cần xử lý0 việcKhông có việc cần xử lýLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐChưa có kỳ lương đã chốt trong 6 tháng nàyTiếp nhận phiếu lươngĐến 10/2026phiếuChưa có phiếu lương đã phát hành"
+      }
+    },
+    {
+      "width": 390,
+      "label": "real-period",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "panels": [
+          {
+            "width": 356,
+            "scrollWidth": 354,
+            "clientWidth": 354
+          },
+          {
+            "width": 354,
+            "scrollWidth": 354,
+            "clientWidth": 354
+          },
+          {
+            "width": 354,
+            "scrollWidth": 354,
+            "clientWidth": 354
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương1Kỳ cần xử lý0Chờ gửi phiếu13Phiếu chưa xemKỳ lương cần xử lý1Kỳ lương cần xử lý1 việcBảng lươngKiểm tra lương · 10/202652 nhân viên · 640.000.000 đLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐ680 Tr510 Tr340 Tr170 Tr0640.000.00005/2026650.000.00006/2026660.000.00007/2026670.000.00008/2026680.000.00009/20260680 Tr05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Xem số liệuThực nhận đã chốt · 05/2026 – 10/2026 (VNĐ)NhãnGiá trị05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Tiếp nhận phiếu lương09/2026phiếu52phiếuChưa xem1325%Chờ xác nhận59,62%Đã xác nhận3465,4%Xem số liệuTiếp nhận phiếu lương · 09/2026 (phiếu)NhãnGiá trịChưa xem13Chờ xác nhận5Đã xác nhận34"
+      }
+    },
+    {
+      "width": 390,
+      "label": "empty",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "panels": [
+          {
+            "width": 356,
+            "scrollWidth": 354,
+            "clientWidth": 354
+          },
+          {
+            "width": 354,
+            "scrollWidth": 354,
+            "clientWidth": 354
+          },
+          {
+            "width": 354,
+            "scrollWidth": 354,
+            "clientWidth": 354
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương0Kỳ cần xử lý0Chờ gửi phiếu0Phiếu chưa xemKỳ lương cần xử lý0Kỳ lương cần xử lý0 việcKhông có việc cần xử lýLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐChưa có kỳ lương đã chốt trong 6 tháng nàyTiếp nhận phiếu lươngĐến 10/2026phiếuChưa có phiếu lương đã phát hành"
+      }
+    },
+    {
+      "width": 768,
+      "label": "real-period",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "panels": [
+          {
+            "width": 727.28125,
+            "scrollWidth": 725,
+            "clientWidth": 725
+          },
+          {
+            "width": 727.28125,
+            "scrollWidth": 725,
+            "clientWidth": 725
+          },
+          {
+            "width": 727.28125,
+            "scrollWidth": 725,
+            "clientWidth": 725
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương1Kỳ cần xử lý0Chờ gửi phiếu13Phiếu chưa xemKỳ lương cần xử lý1Kỳ lương cần xử lý1 việcBảng lươngKiểm tra lương · 10/202652 nhân viên · 640.000.000 đLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐ680 Tr510 Tr340 Tr170 Tr0640.000.00005/2026650.000.00006/2026660.000.00007/2026670.000.00008/2026680.000.00009/20260680 Tr05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Xem số liệuThực nhận đã chốt · 05/2026 – 10/2026 (VNĐ)NhãnGiá trị05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Tiếp nhận phiếu lương09/2026phiếu52phiếuChưa xem1325%Chờ xác nhận59,62%Đã xác nhận3465,4%Xem số liệuTiếp nhận phiếu lương · 09/2026 (phiếu)NhãnGiá trịChưa xem13Chờ xác nhận5Đã xác nhận34"
+      }
+    },
+    {
+      "width": 768,
+      "label": "empty",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "panels": [
+          {
+            "width": 727.28125,
+            "scrollWidth": 725,
+            "clientWidth": 725
+          },
+          {
+            "width": 727.28125,
+            "scrollWidth": 725,
+            "clientWidth": 725
+          },
+          {
+            "width": 727.28125,
+            "scrollWidth": 725,
+            "clientWidth": 725
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương0Kỳ cần xử lý0Chờ gửi phiếu0Phiếu chưa xemKỳ lương cần xử lý0Kỳ lương cần xử lý0 việcKhông có việc cần xử lýLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐChưa có kỳ lương đã chốt trong 6 tháng nàyTiếp nhận phiếu lươngĐến 10/2026phiếuChưa có phiếu lương đã phát hành"
+      }
+    },
+    {
+      "width": 1440,
+      "label": "real-period",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "panels": [
+          {
+            "width": 1372.40625,
+            "scrollWidth": 1370,
+            "clientWidth": 1370
+          },
+          {
+            "width": 901.59375,
+            "scrollWidth": 900,
+            "clientWidth": 900
+          },
+          {
+            "width": 450.8125,
+            "scrollWidth": 449,
+            "clientWidth": 449
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương1Kỳ cần xử lý0Chờ gửi phiếu13Phiếu chưa xemKỳ lương cần xử lý1Kỳ lương cần xử lý1 việcBảng lươngKiểm tra lương · 10/202652 nhân viên · 640.000.000 đLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐ680 Tr510 Tr340 Tr170 Tr0640.000.00005/2026650.000.00006/2026660.000.00007/2026670.000.00008/2026680.000.00009/20260680 Tr05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Xem số liệuThực nhận đã chốt · 05/2026 – 10/2026 (VNĐ)NhãnGiá trị05/2026640.000.00006/2026650.000.00007/2026660.000.00008/2026670.000.00009/2026680.000.000Tiếp nhận phiếu lương09/2026phiếu52phiếuChưa xem1325%Chờ xác nhận59,62%Đã xác nhận3465,4%Xem số liệuTiếp nhận phiếu lương · 09/2026 (phiếu)NhãnGiá trịChưa xem13Chờ xác nhận5Đã xác nhận34"
+      }
+    },
+    {
+      "width": 1440,
+      "label": "empty",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "panels": [
+          {
+            "width": 1372.40625,
+            "scrollWidth": 1370,
+            "clientWidth": 1370
+          },
+          {
+            "width": 901.59375,
+            "scrollWidth": 900,
+            "clientWidth": 900
+          },
+          {
+            "width": 450.8125,
+            "scrollWidth": 449,
+            "clientWidth": 449
+          }
+        ],
+        "text": "Lương và kỳ chốt0Hồ sơ lương0Kỳ cần xử lý0Chờ gửi phiếu0Phiếu chưa xemKỳ lương cần xử lý0Kỳ lương cần xử lý0 việcKhông có việc cần xử lýLương và phiếu lương2Thực nhận đã chốt05/2026 – 10/2026VNĐChưa có kỳ lương đã chốt trong 6 tháng nàyTiếp nhận phiếu lươngĐến 10/2026phiếuChưa có phiếu lương đã phát hành"
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "passed": true
+}

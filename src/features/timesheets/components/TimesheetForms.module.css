@@ -1,0 +1,21 @@
+.stack:global(.drawer-form), .stack { display: grid; min-width: 0; align-content: start; gap: 16px; }
+.stack > :global(.form-error) { margin: 0; }
+.stack > :global(.form-actions) { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border-subtle); padding-top: 16px; }
+.stack > :global(.panel-header) { margin: 0; flex-wrap: wrap; gap: 10px; }
+.stack > :global(.panel-header) h2 { margin: 0; font-size: 18px; }
+.stack :global(.form-grid) { gap: 16px; }
+.stack :global(.field) { min-width: 0; }
+.editor:global(.modal) { width: min(680px, 100%); }
+.assignments { display: grid; min-width: 0; gap: 10px; padding: 16px; }
+.assignments > div { display: grid; grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr) auto; align-items: center; gap: 12px; border: 1px solid var(--border-subtle); border-radius: 12px; background: var(--surface-1); padding: 14px; }
+.assignments > div > span { color: var(--text-secondary); font-size: 13px; }
+.assignments strong { overflow-wrap: anywhere; }
+.assignments p { margin: 0; color: var(--text-secondary); }
+@media (max-width: 767px) {
+  .stack > :global(.form-actions) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack > :global(.form-actions) > :only-child { grid-column: 1 / -1; }
+  .stack > :global(.form-actions) :global(.button) { width: 100%; min-height: 46px; }
+  .stack :global(.input), .stack :global(.textarea) { font-size: 16px; }
+  .assignments > div { grid-template-columns: minmax(0, 1fr) auto; }
+  .assignments > div > strong { grid-column: 1 / -1; grid-row: 2; }
+}

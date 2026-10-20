@@ -1,0 +1,1 @@
+import{PageHeader}from"@/components/shared/PageHeader";import{ApiKeyManager}from"@/features/integrations/components/IntegrationConsole";export default function Page(){return <div className="page-stack"><PageHeader title="Khóa API"/><ApiKeyManager/></div>}

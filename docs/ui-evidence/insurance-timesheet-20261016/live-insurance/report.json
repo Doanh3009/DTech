@@ -1,0 +1,560 @@
+{
+  "recordedAt": "2026-10-16T01:55:20.044Z",
+  "kind": "live_read_only_insurance_person_details",
+  "deploymentId": "dpl_A9T58R3ReyHr7iBT41yruSCYhfAn",
+  "sourceSha": "a052fe92d46f9b256ed8dd1ba5e452aa84953cba375a37473d46d2d59f694996",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "guard": {
+    "receiptReady": true,
+    "providerReady": true,
+    "testAliasMatches": true,
+    "productionAliasUnchanged": true
+  },
+  "authentication": [
+    {
+      "username": "hr.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "hr.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "accountant.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "accountant.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "screens": [
+    {
+      "actor": "hr.test",
+      "label": "list",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "person-name",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 296,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 31,
+          "y": 572.75,
+          "width": 258,
+          "height": 235.078125,
+          "headerHeight": 92.796875,
+          "factsHeight": 140.28125,
+          "clientHeight": 233,
+          "scrollHeight": 233,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "audit",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 296,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 31,
+          "y": 577.75,
+          "width": 258,
+          "height": 235.078125,
+          "headerHeight": 92.796875,
+          "factsHeight": 140.28125,
+          "clientHeight": 233,
+          "scrollHeight": 233,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "contribution-form",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 296,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "paid-form-unsent",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 296,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "second-person",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 296,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 31,
+          "y": 588.75,
+          "width": 258,
+          "height": 235.078125,
+          "headerHeight": 92.796875,
+          "factsHeight": 140.28125,
+          "clientHeight": 233,
+          "scrollHeight": 233,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "list",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "person-name",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 366,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 31,
+          "y": 524.359375,
+          "width": 328,
+          "height": 235.078125,
+          "headerHeight": 92.796875,
+          "factsHeight": 140.28125,
+          "clientHeight": 233,
+          "scrollHeight": 233,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "audit",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 366,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 31,
+          "y": 524.359375,
+          "width": 328,
+          "height": 235.078125,
+          "headerHeight": 92.796875,
+          "factsHeight": 140.28125,
+          "clientHeight": 233,
+          "scrollHeight": 233,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "contribution-form",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [
+          {
+            "x": 18.28125,
+            "y": 12,
+            "width": 353.421875,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "paid-form-unsent",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [
+          {
+            "x": 18.28125,
+            "y": 12,
+            "width": 353.421875,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "second-person",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 366,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 31,
+          "y": 524.359375,
+          "width": 328,
+          "height": 235.078125,
+          "headerHeight": 92.796875,
+          "factsHeight": 140.28125,
+          "clientHeight": 233,
+          "scrollHeight": 233,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "list",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "person-name",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 416.15625,
+            "y": 56.59375,
+            "width": 597.671875,
+            "height": 786.796875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 441.15625,
+          "y": 397.96875,
+          "width": 547.671875,
+          "height": 145.125,
+          "headerHeight": 60.546875,
+          "factsHeight": 82.578125,
+          "clientHeight": 143,
+          "scrollHeight": 143,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "audit",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 416.15625,
+            "y": 39.140625,
+            "width": 597.671875,
+            "height": 821.71875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 441.15625,
+          "y": 380.515625,
+          "width": 547.671875,
+          "height": 145.125,
+          "headerHeight": 60.546875,
+          "factsHeight": 82.578125,
+          "clientHeight": 143,
+          "scrollHeight": 143,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "contribution-form",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 505,
+            "y": 79.6875,
+            "width": 420,
+            "height": 740.625,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "paid-form-unsent",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 505,
+            "y": 34.1875,
+            "width": 420,
+            "height": 831.625,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": []
+      }
+    },
+    {
+      "actor": "hr.test",
+      "label": "second-person",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 415.0625,
+            "y": 56.59375,
+            "width": 599.859375,
+            "height": 786.796875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "currentPeriod": {
+          "x": 440.0625,
+          "y": 397.96875,
+          "width": 549.859375,
+          "height": 145.125,
+          "headerHeight": 60.546875,
+          "factsHeight": 82.578125,
+          "clientHeight": 143,
+          "scrollHeight": 143,
+          "bodyOverflowY": "auto"
+        },
+        "alerts": []
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "width": 320,
+      "actor": "hr.test",
+      "openedByName": true,
+      "openedByVisibleDetail": true,
+      "switchedPersonCorrectly": true,
+      "paidFieldsFilled": true,
+      "submitted": false
+    },
+    {
+      "width": 390,
+      "actor": "hr.test",
+      "openedByName": true,
+      "openedByVisibleDetail": true,
+      "switchedPersonCorrectly": true,
+      "paidFieldsFilled": true,
+      "submitted": false
+    },
+    {
+      "width": 1440,
+      "actor": "hr.test",
+      "openedByName": true,
+      "openedByVisibleDetail": true,
+      "switchedPersonCorrectly": true,
+      "paidFieldsFilled": true,
+      "submitted": false
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "apiErrors": [],
+  "expectedAvatarFallbacks": [
+    {
+      "actor": "hr.test",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "actor": "hr.test",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "actor": "hr.test",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    }
+  ],
+  "blockedBusinessWrites": [],
+  "readOnlyActors": [
+    {
+      "username": "accountant.test",
+      "insuranceViewAllowed": false,
+      "status": 403
+    },
+    {
+      "username": "employee.test",
+      "insuranceViewAllowed": false,
+      "status": 403
+    }
+  ],
+  "limitations": [
+    "Uses owned managed test accounts and existing test records.",
+    "No insurance profile, monthly contribution, document, or permission is submitted, changed, or seeded.",
+    "Positive paid/overdue ledger states are covered by local fixtures; live data is reported as stored."
+  ],
+  "recordSummary": {
+    "recordCount": 5,
+    "contributionCount": 0,
+    "unrecordedCount": 5,
+    "canViewHistory": true
+  },
+  "passed": true
+}

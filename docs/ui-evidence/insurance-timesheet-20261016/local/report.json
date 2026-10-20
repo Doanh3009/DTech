@@ -1,0 +1,642 @@
+{
+  "kind": "isolated-real-components",
+  "recordedAt": "2026-10-16T01:41:00.513Z",
+  "screens": [
+    {
+      "label": "timesheet-list",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-calendar",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-day",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 162.359375,
+            "width": 286,
+            "height": 575.28125,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-list",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-detail",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 235.078125,
+          "clientHeight": 233,
+          "scrollHeight": 233
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-contribution-form",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-paid-form",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-audit",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 235.078125,
+          "clientHeight": 233,
+          "scrollHeight": 233
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "timesheet-list",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-calendar",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-day",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 16.125,
+            "y": 164.15625,
+            "width": 347.734375,
+            "height": 571.6875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-list",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-detail",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 235.078125,
+          "clientHeight": 233,
+          "scrollHeight": 233
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-contribution-form",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 46.90625,
+            "y": 12,
+            "width": 286.171875,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-paid-form",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 46.90625,
+            "y": 12,
+            "width": 286.171875,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-audit",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 235.078125,
+          "clientHeight": 233,
+          "scrollHeight": 233
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "timesheet-list",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-calendar",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-day",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 193.546875,
+            "y": 160.15625,
+            "width": 370.890625,
+            "height": 579.6875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-list",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-detail",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 16,
+            "y": 16,
+            "width": 726,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 145.125,
+          "clientHeight": 143,
+          "scrollHeight": 143
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-contribution-form",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 112.4375,
+            "y": 66.265625,
+            "width": 533.125,
+            "height": 767.46875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-paid-form",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 112.4375,
+            "y": 20.765625,
+            "width": 533.125,
+            "height": 858.46875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-audit",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 102.625,
+            "y": 39.140625,
+            "width": 552.75,
+            "height": 821.71875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 145.125,
+          "clientHeight": 143,
+          "scrollHeight": 143
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "timesheet-list",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-calendar",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-day",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 529.546875,
+            "y": 160.15625,
+            "width": 370.890625,
+            "height": 579.6875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 1,
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-list",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-detail",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 275,
+            "y": 16,
+            "width": 880,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 145.125,
+          "clientHeight": 143,
+          "scrollHeight": 143
+        },
+        "alerts": []
+      }
+    },
+    {
+      "label": "insurance-contribution-form",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 448.4375,
+            "y": 66.265625,
+            "width": 533.125,
+            "height": 767.46875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-paid-form",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 448.4375,
+            "y": 20.765625,
+            "width": 533.125,
+            "height": 858.46875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "alerts": [
+          "Kỳ đóng đã có trong quá trình đóng."
+        ]
+      }
+    },
+    {
+      "label": "insurance-audit",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 438.625,
+            "y": 39.140625,
+            "width": 552.75,
+            "height": 821.71875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "calendarGrids": 0,
+        "currentPeriod": {
+          "height": 145.125,
+          "clientHeight": 143,
+          "scrollHeight": 143
+        },
+        "alerts": []
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "unexpectedRequests": [],
+  "passed": true
+}

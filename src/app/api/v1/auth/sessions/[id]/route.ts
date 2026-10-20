@@ -1,0 +1,2 @@
+import {z} from "zod";import {errorResponse} from "@/lib/api/errors";import {successResponse} from "@/lib/api/responses";import {parseWithSchema} from "@/lib/api/validation";import {revokeOwnSession} from "@/services/auth/sessionService";
+export async function DELETE(_request:Request,context:RouteContext<"/api/v1/auth/sessions/[id]">){try{const id=parseWithSchema(z.string().min(32).max(128),(await context.params).id);await revokeOwnSession(id);return successResponse(null);}catch(error){return errorResponse(error);}}

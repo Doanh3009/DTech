@@ -1,0 +1,1985 @@
+{
+  "generatedAt": "2026-10-05T07:44:02.225Z",
+  "baseUrl": "http://localhost:3000",
+  "label": "before",
+  "environment": "development",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "reports": [
+    {
+      "username": "test.supervisor",
+      "directSamples": [
+        {
+          "headersMs": 611.7,
+          "readyMs": 5106.8,
+          "navigation": {
+            "ttfbMs": 596,
+            "responseEndMs": 5039,
+            "domContentLoadedMs": 5040.300000071526,
+            "loadMs": 6099.200000047684,
+            "transferBytes": 15036,
+            "decodedHtmlBytes": 69895
+          },
+          "paints": [
+            {
+              "name": "first-paint",
+              "startTime": 1948
+            },
+            {
+              "name": "first-contentful-paint",
+              "startTime": 1948
+            }
+          ],
+          "longTasks": [
+            {
+              "startTime": 5715.800000071526,
+              "duration": 235
+            }
+          ]
+        }
+      ],
+      "transitions": [
+        {
+          "route": "/employees",
+          "kind": "sidebar",
+          "readyMs": 10883,
+          "feedback": {
+            "firstLoaderMs": null,
+            "urlChangeMs": 10809.700000047684,
+            "dataReadyMs": 10848.899999976158
+          }
+        },
+        {
+          "route": "/dashboard",
+          "kind": "browser-back",
+          "readyMs": 1869.2,
+          "feedback": {
+            "firstLoaderMs": 24.299999952316284,
+            "urlChangeMs": 24.100000023841858,
+            "dataReadyMs": 1870.2999999523163
+          }
+        }
+      ],
+      "mobileScroll": {
+        "durationMs": 971.1000000238419,
+        "count": 60,
+        "medianMs": 16.69999999999709,
+        "p95Ms": 16.80000000000291,
+        "worstMs": 17,
+        "framesOver34Ms": 0,
+        "distancePx": 2051,
+        "caveat": "Headless software browser sample; physical device performance was not measured."
+      },
+      "phases": [
+        {
+          "phase": "dashboard-direct-1",
+          "requestCount": 37,
+          "apiCount": 11,
+          "rscCount": 1,
+          "totalBytes": 5396797,
+          "endpoints": [
+            {
+              "path": "/api/v1/workspace/note",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 5644.5,
+              "longestMs": 5644.5,
+              "bytes": 1015,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/workspace/avatar",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 5379.4,
+              "longestMs": 5379.4,
+              "bytes": 135,
+              "statuses": [
+                404
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/main-app.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 5100.5,
+              "longestMs": 5100.5,
+              "bytes": 3087792,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/dashboard",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 5037.4,
+              "longestMs": 5037.4,
+              "bytes": 15860,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/dashboard [RSC]",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 4627,
+              "longestMs": 4627,
+              "bytes": 0,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/workspace/todos",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 4626.1,
+              "longestMs": 4626.1,
+              "bytes": 1369,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/(app)/not-found.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 3929.3,
+              "longestMs": 3929.3,
+              "bytes": 79720,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/(app)/dashboard/page.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 3892.4,
+              "longestMs": 3892.4,
+              "bytes": 410634,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/brand/chau-tuan-logo.png",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 3694.2,
+              "longestMs": 3694.2,
+              "bytes": 117476,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/system-notices/active",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 6332.6,
+              "longestMs": 3262.5,
+              "bytes": 1756,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/chat/unread",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 4473.4,
+              "longestMs": 2689.3,
+              "bytes": 1774,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/layout.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 2646.8,
+              "longestMs": 2646.8,
+              "bytes": 133929,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/workspace/preferences",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 2540,
+              "longestMs": 2540,
+              "bytes": 1025,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/notifications/unread-count",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 3819.2,
+              "longestMs": 2354,
+              "bytes": 1774,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/auth/realtime-token",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1382,
+              "longestMs": 1382,
+              "bytes": 1854,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/media/inter-latin-400-normal.ef6d3f52.woff2",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1258.9,
+              "longestMs": 1258.9,
+              "bytes": 24483,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/media/inter-vietnamese-400-normal.de4fc44f.woff2",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1255.6,
+              "longestMs": 1255.6,
+              "bytes": 5790,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/global-error.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1152.4,
+              "longestMs": 1152.4,
+              "bytes": 15451,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/(app)/error.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1148,
+              "longestMs": 1148,
+              "bytes": 20098,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app-pages-internals.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1131.2,
+              "longestMs": 1131.2,
+              "bytes": 65675,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/error.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1131.1,
+              "longestMs": 1131.1,
+              "bytes": 19662,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/layout.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1096.5,
+              "longestMs": 1096.5,
+              "bytes": 83062,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/__nextjs_font/geist-latin.woff2",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1051.6,
+              "longestMs": 1051.6,
+              "bytes": 28674,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/media/inter-vietnamese-600-normal.9d518599.woff2",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 232.8,
+              "longestMs": 232.8,
+              "bytes": 5918,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/(app)/layout.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 115.2,
+              "longestMs": 115.2,
+              "bytes": 1174460,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/webpack.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 77.3,
+              "longestMs": 77.3,
+              "bytes": 29654,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/media/inter-vietnamese-500-normal.7c0a695f.woff2",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 56.8,
+              "longestMs": 56.8,
+              "bytes": 5930,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/media/inter-latin-500-normal.b7b43ace.woff2",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 41.8,
+              "longestMs": 41.8,
+              "bytes": 25091,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/media/inter-latin-600-normal.8fb1a964.woff2",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 38.7,
+              "longestMs": 38.7,
+              "bytes": 25271,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/layout.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 22.2,
+              "longestMs": 22.2,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/page.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 22,
+              "longestMs": 22,
+              "bytes": 5353,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/loading.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 21.6,
+              "longestMs": 21.6,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 21.4,
+              "longestMs": 21.4,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/not-found.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 12.9,
+              "longestMs": 12.9,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "dashboard-idle",
+          "requestCount": 20,
+          "apiCount": 0,
+          "rscCount": 2,
+          "totalBytes": 283581,
+          "endpoints": [
+            {
+              "path": "/dashboard [RSC]",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 2639.4,
+              "longestMs": 1756.1,
+              "bytes": 0,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/page.css",
+              "count": 3,
+              "prefetch": 0,
+              "totalMs": 843.6,
+              "longestMs": 333,
+              "bytes": 16059,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+              "count": 3,
+              "prefetch": 0,
+              "totalMs": 767.9,
+              "longestMs": 332.9,
+              "bytes": 4584,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/layout.css",
+              "count": 3,
+              "prefetch": 0,
+              "totalMs": 778.8,
+              "longestMs": 326.8,
+              "bytes": 249186,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/layout.css",
+              "count": 3,
+              "prefetch": 0,
+              "totalMs": 744.7,
+              "longestMs": 323.8,
+              "bytes": 4584,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/loading.css",
+              "count": 3,
+              "prefetch": 0,
+              "totalMs": 657.4,
+              "longestMs": 300,
+              "bytes": 4584,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/not-found.css",
+              "count": 3,
+              "prefetch": 0,
+              "totalMs": 317.1,
+              "longestMs": 158,
+              "bytes": 4584,
+              "statuses": [
+                200
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "dashboard-focus-burst",
+          "requestCount": 4,
+          "apiCount": 3,
+          "rscCount": 1,
+          "totalBytes": 7302,
+          "endpoints": [
+            {
+              "path": "/api/v1/dashboard",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 3572.3,
+              "longestMs": 3572.3,
+              "bytes": 5537,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/system-notices/active",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1310.8,
+              "longestMs": 1310.8,
+              "bytes": 878,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/notifications/unread-count",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 984.3,
+              "longestMs": 984.3,
+              "bytes": 887,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/dashboard [RSC]",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 906,
+              "longestMs": 906,
+              "bytes": 0,
+              "statuses": [
+                200
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "dashboard-focus",
+          "requestCount": 6,
+          "apiCount": 0,
+          "rscCount": 0,
+          "totalBytes": 94527,
+          "endpoints": [
+            {
+              "path": "/_next/static/css/app/layout.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 30.5,
+              "longestMs": 30.5,
+              "bytes": 83062,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/page.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 18.9,
+              "longestMs": 18.9,
+              "bytes": 5353,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/layout.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 16.4,
+              "longestMs": 16.4,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 16.1,
+              "longestMs": 16.1,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/loading.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 14.9,
+              "longestMs": 14.9,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/not-found.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 11.4,
+              "longestMs": 11.4,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "sidebar-to-employees",
+          "requestCount": 13,
+          "apiCount": 0,
+          "rscCount": 2,
+          "totalBytes": 928063,
+          "endpoints": [
+            {
+              "path": "/employees [RSC]",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 11910.4,
+              "longestMs": 11339.6,
+              "bytes": 6513,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/chunks/app/(app)/employees/page.js",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 224.8,
+              "longestMs": 224.8,
+              "bytes": 822418,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/employees/loading.css",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 125.4,
+              "longestMs": 105.3,
+              "bytes": 3056,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/employees/page.css",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 128.7,
+              "longestMs": 105.2,
+              "bytes": 5374,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/employees/layout.css",
+              "count": 2,
+              "prefetch": 0,
+              "totalMs": 125.1,
+              "longestMs": 104.7,
+              "bytes": 3056,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/not-found.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 49.5,
+              "longestMs": 49.5,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/layout.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 30.5,
+              "longestMs": 30.5,
+              "bytes": 83062,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/layout.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 13,
+              "longestMs": 13,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/loading.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 12.9,
+              "longestMs": 12.9,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "browser-back-to-dashboard",
+          "requestCount": 6,
+          "apiCount": 3,
+          "rscCount": 1,
+          "totalBytes": 15240,
+          "endpoints": [
+            {
+              "path": "/dashboard [RSC]",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 1469.9,
+              "longestMs": 1469.9,
+              "bytes": 4950,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/workspace/todos",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 857.4,
+              "longestMs": 857.4,
+              "bytes": 1369,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/workspace/note",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 850.2,
+              "longestMs": 850.2,
+              "bytes": 1015,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/api/v1/workspace/preferences",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 613.1,
+              "longestMs": 613.1,
+              "bytes": 1025,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 7.2,
+              "longestMs": 7.2,
+              "bytes": 1528,
+              "statuses": [
+                200
+              ]
+            },
+            {
+              "path": "/_next/static/css/app/(app)/dashboard/page.css",
+              "count": 1,
+              "prefetch": 0,
+              "totalMs": 7,
+              "longestMs": 7,
+              "bytes": 5353,
+              "statuses": [
+                200
+              ]
+            }
+          ]
+        }
+      ],
+      "requests": [
+        {
+          "path": "/dashboard",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "document",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 5037.4,
+          "ttfbMs": 596.6,
+          "bytes": 15860,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/layout.css",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1096.5,
+          "ttfbMs": 8.7,
+          "bytes": 83062,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/layout.css",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 22.2,
+          "ttfbMs": 7.2,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/page.css",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 22,
+          "ttfbMs": 8,
+          "bytes": 5353,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 21.4,
+          "ttfbMs": 6.6,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/loading.css",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 21.6,
+          "ttfbMs": 7.7,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/workspace/avatar",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "image",
+          "rsc": false,
+          "prefetch": false,
+          "status": 404,
+          "durationMs": 5379.4,
+          "ttfbMs": 5366.1,
+          "bytes": 135,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/webpack.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 77.3,
+          "ttfbMs": 19.6,
+          "bytes": 29654,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/main-app.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 5100.5,
+          "ttfbMs": 19.9,
+          "bytes": 3087792,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app-pages-internals.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1131.2,
+          "ttfbMs": 33.5,
+          "bytes": 65675,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/error.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1131.1,
+          "ttfbMs": 1088.4,
+          "bytes": 19662,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/(app)/error.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1148,
+          "ttfbMs": 1058.4,
+          "bytes": 20098,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/(app)/dashboard/page.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 3892.4,
+          "ttfbMs": 51.2,
+          "bytes": 410634,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/global-error.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1152.4,
+          "ttfbMs": 47.4,
+          "bytes": 15451,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/layout.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 2646.8,
+          "ttfbMs": 1281.1,
+          "bytes": 133929,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/(app)/not-found.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 3929.3,
+          "ttfbMs": 1479.3,
+          "bytes": 79720,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/media/inter-latin-600-normal.8fb1a964.woff2",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "font",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 38.7,
+          "ttfbMs": 30.7,
+          "bytes": 25271,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/media/inter-latin-500-normal.b7b43ace.woff2",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "font",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 41.8,
+          "ttfbMs": 33.4,
+          "bytes": 25091,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/media/inter-vietnamese-500-normal.7c0a695f.woff2",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "font",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 56.8,
+          "ttfbMs": 50,
+          "bytes": 5930,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/media/inter-vietnamese-600-normal.9d518599.woff2",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "font",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 232.8,
+          "ttfbMs": 226.1,
+          "bytes": 5918,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/media/inter-vietnamese-400-normal.de4fc44f.woff2",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "font",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1255.6,
+          "ttfbMs": 1247.4,
+          "bytes": 5790,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/media/inter-latin-400-normal.ef6d3f52.woff2",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "font",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1258.9,
+          "ttfbMs": 1249.9,
+          "bytes": 24483,
+          "completed": true
+        },
+        {
+          "path": "/brand/chau-tuan-logo.png",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "image",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 3694.2,
+          "ttfbMs": 3656.3,
+          "bytes": 117476,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/(app)/layout.js",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 115.2,
+          "ttfbMs": 4.7,
+          "bytes": 1174460,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/not-found.css",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 12.9,
+          "ttfbMs": 2.2,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/chat/unread",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 2689.3,
+          "ttfbMs": 2684.6,
+          "bytes": 887,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/auth/realtime-token",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1382,
+          "ttfbMs": 1378.3,
+          "bytes": 1854,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/notifications/unread-count",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 2354,
+          "ttfbMs": 2345.7,
+          "bytes": 887,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/workspace/preferences",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 2540,
+          "ttfbMs": 2536.5,
+          "bytes": 1025,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/chat/unread",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1784.1,
+          "ttfbMs": 1780,
+          "bytes": 887,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/notifications/unread-count",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1465.2,
+          "ttfbMs": 1461.8,
+          "bytes": 887,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/system-notices/active",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 3070.1,
+          "ttfbMs": 3066.3,
+          "bytes": 878,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/system-notices/active",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 3262.5,
+          "ttfbMs": 3259.5,
+          "bytes": 878,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/workspace/todos",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 4626.1,
+          "ttfbMs": 4622.6,
+          "bytes": 1369,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/workspace/note",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 5644.5,
+          "ttfbMs": 5640.9,
+          "bytes": 1015,
+          "completed": true
+        },
+        {
+          "path": "/__nextjs_font/geist-latin.woff2",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "font",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1051.6,
+          "ttfbMs": 1041.5,
+          "bytes": 28674,
+          "completed": true
+        },
+        {
+          "path": "/dashboard",
+          "method": "GET",
+          "phase": "dashboard-direct-1",
+          "resourceType": "fetch",
+          "rsc": true,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 4627,
+          "ttfbMs": 4172.4,
+          "bytes": 0,
+          "completed": false,
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "path": "/dashboard",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "fetch",
+          "rsc": true,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1756.1,
+          "ttfbMs": 1270,
+          "bytes": 0,
+          "completed": false,
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "path": "/dashboard",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "fetch",
+          "rsc": true,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 883.3,
+          "ttfbMs": 387.8,
+          "bytes": 0,
+          "completed": false,
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "path": "/_next/static/css/app/layout.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 140.1,
+          "ttfbMs": 51,
+          "bytes": 83062,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/loading.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 59.1,
+          "ttfbMs": 50.4,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/layout.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 120.6,
+          "ttfbMs": 117,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 134.9,
+          "ttfbMs": 131.2,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/page.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 208.7,
+          "ttfbMs": 203.3,
+          "bytes": 5353,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/layout.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 326.8,
+          "ttfbMs": 191.5,
+          "bytes": 83062,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/loading.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 298.3,
+          "ttfbMs": 293.2,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/layout.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 323.8,
+          "ttfbMs": 316,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 332.9,
+          "ttfbMs": 322.6,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/page.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 333,
+          "ttfbMs": 325.9,
+          "bytes": 5353,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/layout.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 311.9,
+          "ttfbMs": 290.3,
+          "bytes": 83062,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/loading.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 300,
+          "ttfbMs": 290.8,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/layout.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 300.3,
+          "ttfbMs": 293.1,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 300.1,
+          "ttfbMs": 294.7,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/page.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 301.9,
+          "ttfbMs": 297.6,
+          "bytes": 5353,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/not-found.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 158,
+          "ttfbMs": 151,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/not-found.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 104.6,
+          "ttfbMs": 98.2,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/not-found.css",
+          "method": "GET",
+          "phase": "dashboard-idle",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 54.5,
+          "ttfbMs": 48,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/notifications/unread-count",
+          "method": "GET",
+          "phase": "dashboard-focus-burst",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 984.3,
+          "ttfbMs": 981.2,
+          "bytes": 887,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/system-notices/active",
+          "method": "GET",
+          "phase": "dashboard-focus-burst",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1310.8,
+          "ttfbMs": 1307.4,
+          "bytes": 878,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/dashboard",
+          "method": "GET",
+          "phase": "dashboard-focus-burst",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 3572.3,
+          "ttfbMs": 3568.3,
+          "bytes": 5537,
+          "completed": true
+        },
+        {
+          "path": "/dashboard",
+          "method": "GET",
+          "phase": "dashboard-focus-burst",
+          "resourceType": "fetch",
+          "rsc": true,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 906,
+          "ttfbMs": 289.3,
+          "bytes": 0,
+          "completed": false,
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "path": "/_next/static/css/app/layout.css",
+          "method": "GET",
+          "phase": "dashboard-focus",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 30.5,
+          "ttfbMs": 7.9,
+          "bytes": 83062,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/loading.css",
+          "method": "GET",
+          "phase": "dashboard-focus",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 14.9,
+          "ttfbMs": 7.6,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/layout.css",
+          "method": "GET",
+          "phase": "dashboard-focus",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 16.4,
+          "ttfbMs": 8.1,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+          "method": "GET",
+          "phase": "dashboard-focus",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 16.1,
+          "ttfbMs": 8.2,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/page.css",
+          "method": "GET",
+          "phase": "dashboard-focus",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 18.9,
+          "ttfbMs": 11.3,
+          "bytes": 5353,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/not-found.css",
+          "method": "GET",
+          "phase": "dashboard-focus",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 11.4,
+          "ttfbMs": 6.6,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/employees",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "fetch",
+          "rsc": true,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 11339.6,
+          "ttfbMs": 10103.1,
+          "bytes": 6513,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/chunks/app/(app)/employees/page.js",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "script",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 224.8,
+          "ttfbMs": 98.3,
+          "bytes": 822418,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/employees/loading.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 105.3,
+          "ttfbMs": 98.1,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/employees/layout.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 104.7,
+          "ttfbMs": 98.2,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/employees/page.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 105.2,
+          "ttfbMs": 99.5,
+          "bytes": 2687,
+          "completed": true
+        },
+        {
+          "path": "/employees",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "fetch",
+          "rsc": true,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 570.8,
+          "ttfbMs": 97.9,
+          "bytes": 0,
+          "completed": false,
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "path": "/_next/static/css/app/layout.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 30.5,
+          "ttfbMs": 7.2,
+          "bytes": 83062,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/loading.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 12.9,
+          "ttfbMs": 6.1,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/layout.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 13,
+          "ttfbMs": 6,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/employees/loading.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 20.1,
+          "ttfbMs": 14.6,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/employees/layout.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 20.4,
+          "ttfbMs": 15.6,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/employees/page.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 23.5,
+          "ttfbMs": 19.7,
+          "bytes": 2687,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/not-found.css",
+          "method": "GET",
+          "phase": "sidebar-to-employees",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 49.5,
+          "ttfbMs": 47,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/dashboard",
+          "method": "GET",
+          "phase": "browser-back-to-dashboard",
+          "resourceType": "fetch",
+          "rsc": true,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 1469.9,
+          "ttfbMs": 57.9,
+          "bytes": 4950,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/loading.css",
+          "method": "GET",
+          "phase": "browser-back-to-dashboard",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 7.2,
+          "ttfbMs": 2.4,
+          "bytes": 1528,
+          "completed": true
+        },
+        {
+          "path": "/_next/static/css/app/(app)/dashboard/page.css",
+          "method": "GET",
+          "phase": "browser-back-to-dashboard",
+          "resourceType": "stylesheet",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 7,
+          "ttfbMs": 3.5,
+          "bytes": 5353,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/workspace/preferences",
+          "method": "GET",
+          "phase": "browser-back-to-dashboard",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 613.1,
+          "ttfbMs": 610,
+          "bytes": 1025,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/workspace/todos",
+          "method": "GET",
+          "phase": "browser-back-to-dashboard",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 857.4,
+          "ttfbMs": 854.1,
+          "bytes": 1369,
+          "completed": true
+        },
+        {
+          "path": "/api/v1/workspace/note",
+          "method": "GET",
+          "phase": "browser-back-to-dashboard",
+          "resourceType": "fetch",
+          "rsc": false,
+          "prefetch": false,
+          "status": 200,
+          "durationMs": 850.2,
+          "ttfbMs": 846.6,
+          "bytes": 1015,
+          "completed": true
+        }
+      ],
+      "failures": []
+    }
+  ]
+}

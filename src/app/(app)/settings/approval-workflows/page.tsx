@@ -1,0 +1,1 @@
+import { PageHeader } from "@/components/shared/PageHeader";import { WorkflowManager } from "@/features/shared-platforms/components/WorkflowManager";export default function Page(){return <div className="page-stack"><PageHeader title="Quy trình phê duyệt"/><WorkflowManager/></div>}

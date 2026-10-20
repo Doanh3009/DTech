@@ -1,0 +1,37 @@
+.evidence { display: grid; justify-items: start; align-content: start; gap: 8px; min-width: 96px; max-width: 190px; }
+.time { color: var(--text-primary); font-size: 18px; font-weight: 650; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.thumbnail { position: relative; display: grid; width: 104px; height: 78px; padding: 0; overflow: hidden; border: 1px solid var(--border-subtle); border-radius: 13px; background: var(--surface-2); color: var(--text-secondary); box-shadow: 0 3px 8px rgb(22 45 64 / 4%); cursor: pointer; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.thumbnail:hover { border-color: var(--color-primary); box-shadow: 0 4px 12px rgb(22 45 64 / 10%); }
+.thumbnail:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.gps { display: flex; align-items: start; gap: 5px; max-width: 100%; color: var(--color-primary); font-size: 12px; font-weight: 500; line-height: 1.5; text-decoration: none; white-space: normal; }
+.gps span { min-width: 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.gps svg { flex: 0 0 14px; margin-top: 2px; }
+.gps:hover { text-decoration: underline; }
+.gps:focus-visible { border-radius: 5px; outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.noGps { display: inline-block; color: var(--text-secondary); font-size: 12px; }
+.imageFailure { display: grid; place-content: center; justify-items: center; gap: 5px; width: 100%; height: 100%; padding: 8px; color: var(--text-secondary); font-size: 11px; line-height: 1.4; text-align: center; white-space: normal; }
+.evidence :global(.status-badge) { max-width: 100%; min-height: 25px; font-size: 11px; white-space: normal; }
+.viewer { display: flex; flex-direction: column; width: min(1060px, calc(100vw - 40px)); max-height: calc(100dvh - 40px); overflow: hidden; border: 1px solid var(--border-subtle); border-radius: 24px; background: var(--surface-1); box-shadow: 0 24px 90px rgb(15 33 47 / 24%); }
+.viewer .viewerMedia { display: grid; min-height: 0; gap: 0; overflow-y: auto; overscroll-behavior: contain; background: var(--surface-1); padding: 20px; }
+.viewerImage { display: grid; min-height: 200px; height: min(58dvh, 620px); place-items: center; overflow: hidden; border: 1px solid var(--border-subtle); border-radius: 17px; background: var(--surface-2); }
+.viewerImage img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.viewerMetadata { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 18px; padding: 18px 2px; color: var(--text-primary); font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.viewerMetadata strong { font-weight: 600; }
+.viewerMetadata .gps { font-size: 13px; }
+.viewerControls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border-subtle); padding: 16px 2px 0; }
+.viewerControls > span { color: var(--text-secondary); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.viewerControls :global(.button) { min-height: 42px; border-radius: 12px; }
+@media (max-width: 767px) {
+  .evidence { max-width: 100%; }
+  .thumbnail { width: 104px; height: 78px; }
+  .viewer { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 20px; }
+  .viewer .viewerMedia { padding: 12px; }
+  .viewerImage { height: 46dvh; min-height: 160px; border-radius: 14px; }
+  .viewerMetadata { gap: 9px; padding: 14px 2px; font-size: 13px; }
+  .viewerControls { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px; padding-top: 12px; }
+  .viewerControls :global(.button) { min-height: 44px; padding-inline: 9px; font-size: 12px; }
+  .viewerControls > span { font-size: 12px; white-space: nowrap; }
+}
+@media (max-width: 359px) { .viewerControls :global(.button) { gap: 3px; padding-inline: 6px; font-size: 11px; } .viewerControls :global(.button) svg { width: 15px; } }
+@media (prefers-reduced-motion: reduce) { .thumbnail { transition: none; } }

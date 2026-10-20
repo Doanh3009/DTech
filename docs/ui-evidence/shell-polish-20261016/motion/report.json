@@ -1,0 +1,335 @@
+{
+  "deploymentId": "dpl_A9T58R3ReyHr7iBT41yruSCYhfAn",
+  "screens": [
+    {
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "target": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "transitions": 2,
+      "animations": [
+        {
+          "name": "LoadingSpinner-module__8QnIaW__reveal",
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__spinner-turn",
+          "pseudo": null,
+          "duration": 900
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 120
+        },
+        {
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        },
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 210
+        },
+        {
+          "name": "ui-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 210
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 120
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": false,
+      "supportsNative": true,
+      "mainTransform": "none",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "target": "/accounting/salaries",
+      "transitions": 3,
+      "animations": [
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 120
+        },
+        {
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        },
+        {
+          "pseudo": null,
+          "duration": 149.78143287979418
+        },
+        {
+          "pseudo": null,
+          "duration": 149.78143287979418
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__spinner-turn",
+          "pseudo": null,
+          "duration": 900
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__reveal",
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__spinner-turn",
+          "pseudo": null,
+          "duration": 900
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 120
+        },
+        {
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        },
+        {
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__reveal",
+          "pseudo": null,
+          "duration": 150
+        },
+        {
+          "name": "LoadingSpinner-module__8QnIaW__spinner-turn",
+          "pseudo": null,
+          "duration": 900
+        },
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 210
+        },
+        {
+          "name": "ui-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 210
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 120
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": false,
+      "supportsNative": true,
+      "mainTransform": "none",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "reducedMotion": "reduce",
+      "target": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "transitions": 3,
+      "animations": [
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        },
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "ui-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": true,
+      "supportsNative": true,
+      "mainTransform": "none",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "reducedMotion": "reduce",
+      "target": "/accounting/salaries",
+      "transitions": 3,
+      "animations": [
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition-group(root)",
+          "duration": 0
+        },
+        {
+          "pseudo": "::view-transition",
+          "duration": 0
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "pseudo": null,
+          "duration": 0.01
+        },
+        {
+          "name": "-ua-view-transition-group-anim-workspace-content",
+          "pseudo": "::view-transition-group(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "ui-page-arrive",
+          "pseudo": "::view-transition-new(workspace-content)",
+          "duration": 0
+        },
+        {
+          "name": "ui-page-leave",
+          "pseudo": "::view-transition-old(workspace-content)",
+          "duration": 0
+        }
+      ],
+      "promiseErrors": [],
+      "reduced": true,
+      "supportsNative": true,
+      "mainTransform": "none",
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Read-only navigation on the existing test deployment; candidate CSS applied in the browser. No payroll or salary mutation performed."
+  ]
+}

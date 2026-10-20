@@ -1,0 +1,1734 @@
+{
+  "recordedAt": "2026-10-14T07:26:20.767Z",
+  "kind": "fixture_ui_visual_review",
+  "screens": [
+    {
+      "label": "management-calendar",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": [
+          {
+            "name": "01/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "02/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "03/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "04/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "05/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "06/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "07/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "08/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "09/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "10/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "11/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "12/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 73
+          },
+          {
+            "name": "13/10/2026, 1 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 73
+          },
+          {
+            "name": "14/10/2026, 2 nhân viên nghỉ đã duyệt, 2 chờ duyệt",
+            "width": 35.140625,
+            "height": 73
+          },
+          {
+            "name": "15/10/2026, 1 nhân viên nghỉ đã duyệt, 1 chờ duyệt",
+            "width": 35.140625,
+            "height": 73
+          },
+          {
+            "name": "16/10/2026, 1 nhân viên nghỉ đã duyệt, 1 chờ duyệt",
+            "width": 35.140625,
+            "height": 73
+          },
+          {
+            "name": "17/10/2026, 0 nhân viên nghỉ đã duyệt, 1 chờ duyệt",
+            "width": 35.140625,
+            "height": 73
+          },
+          {
+            "name": "18/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 73
+          },
+          {
+            "name": "19/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "20/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "21/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "22/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "23/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "24/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "25/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "26/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "27/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "28/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "29/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "30/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          },
+          {
+            "name": "31/10/2026, 0 nhân viên nghỉ đã duyệt, 0 chờ duyệt",
+            "width": 35.140625,
+            "height": 70
+          }
+        ]
+      }
+    },
+    {
+      "label": "management-list",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "balances",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-balance-drawer",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 616,
+            "scrollHeight": 614,
+            "clientHeight": 614
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-request-history",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 616,
+            "scrollHeight": 614,
+            "clientHeight": 614
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "personal-balance",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-list",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-edit",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 616,
+            "scrollHeight": 616,
+            "clientHeight": 616
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-types",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-type-edit",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 616,
+            "scrollHeight": 616,
+            "clientHeight": 616
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "policy",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "request-detail",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "approve-confirmation",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 45.171875,
+            "width": 286,
+            "height": 549.65625,
+            "scrollHeight": 550,
+            "clientHeight": 550
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "grant-form",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "adjustment-form",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "new-request-form",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "management-calendar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "management-list",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "balances",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-balance-drawer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 28.46875,
+            "y": 12,
+            "width": 323.0625,
+            "height": 820,
+            "scrollHeight": 818,
+            "clientHeight": 818
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-request-history",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 820,
+            "scrollHeight": 818,
+            "clientHeight": 818
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "personal-balance",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-list",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-edit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 820,
+            "scrollHeight": 820,
+            "clientHeight": 820
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-types",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-type-edit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 820,
+            "scrollHeight": 820,
+            "clientHeight": 820
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "policy",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "request-detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "approve-confirmation",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 157.3125,
+            "width": 356,
+            "height": 529.359375,
+            "scrollHeight": 529,
+            "clientHeight": 529
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "grant-form",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "adjustment-form",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "new-request-form",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "management-calendar",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "management-list",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": [
+          {
+            "name": "Thao tác",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "name": "Thao tác",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "name": "Thao tác",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "name": "Thao tác",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "name": "Thao tác",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "name": "Thao tác",
+            "width": 36,
+            "height": 36
+          }
+        ]
+      }
+    },
+    {
+      "label": "balances",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-balance-drawer",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 142.71875,
+            "y": 16,
+            "width": 472.546875,
+            "height": 992,
+            "scrollHeight": 990,
+            "clientHeight": 990
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-request-history",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 142.71875,
+            "y": 95.515625,
+            "width": 472.546875,
+            "height": 832.96875,
+            "scrollHeight": 831,
+            "clientHeight": 831
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "personal-balance",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-list",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-edit",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 16,
+            "y": 48,
+            "width": 736,
+            "height": 928,
+            "scrollHeight": 926,
+            "clientHeight": 926
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-types",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-type-edit",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 16,
+            "y": 185,
+            "width": 736,
+            "height": 654,
+            "scrollHeight": 652,
+            "clientHeight": 652
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "policy",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "request-detail",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "approve-confirmation",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 69,
+            "y": 265.46875,
+            "width": 620,
+            "height": 493.0625,
+            "scrollHeight": 491,
+            "clientHeight": 491
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "grant-form",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "adjustment-form",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "new-request-form",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "management-calendar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "management-list",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "balances",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-balance-drawer",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 478.71875,
+            "y": 16,
+            "width": 472.546875,
+            "height": 868,
+            "scrollHeight": 866,
+            "clientHeight": 866
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "employee-request-history",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 478.71875,
+            "y": 33.515625,
+            "width": 472.546875,
+            "height": 832.96875,
+            "scrollHeight": 831,
+            "clientHeight": 831
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "personal-balance",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-list",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "workflow-edit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 325,
+            "y": 16,
+            "width": 780,
+            "height": 868,
+            "scrollHeight": 866,
+            "clientHeight": 866
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-types",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "leave-type-edit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 325,
+            "y": 123,
+            "width": 780,
+            "height": 654,
+            "scrollHeight": 652,
+            "clientHeight": 652
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "policy",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "request-detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "approve-confirmation",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [
+          {
+            "x": 405,
+            "y": 203.46875,
+            "width": 620,
+            "height": 493.0625,
+            "scrollHeight": 491,
+            "clientHeight": 491
+          }
+        ],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "grant-form",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "adjustment-form",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    },
+    {
+      "label": "new-request-form",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "clippedButtons": [],
+        "dialogs": [],
+        "smallTargets": []
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "openedEmployeeDetails": true,
+      "openedEmployeeRequests": true,
+      "openedWorkflowEditor": true,
+      "openedTypeEditor": true,
+      "openedApprovalConfirmation": true,
+      "selectedGrantEmployee": true,
+      "submittedBusinessMutations": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "openedEmployeeDetails": true,
+      "openedEmployeeRequests": true,
+      "openedWorkflowEditor": true,
+      "openedTypeEditor": true,
+      "openedApprovalConfirmation": true,
+      "selectedGrantEmployee": true,
+      "submittedBusinessMutations": false
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "openedEmployeeDetails": true,
+      "openedEmployeeRequests": true,
+      "openedWorkflowEditor": true,
+      "openedTypeEditor": true,
+      "openedApprovalConfirmation": true,
+      "selectedGrantEmployee": true,
+      "submittedBusinessMutations": false
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "openedEmployeeDetails": true,
+      "openedEmployeeRequests": true,
+      "openedWorkflowEditor": true,
+      "openedTypeEditor": true,
+      "openedApprovalConfirmation": true,
+      "selectedGrantEmployee": true,
+      "submittedBusinessMutations": false
+    }
+  ],
+  "runtimeErrors": [],
+  "blockedWrites": [],
+  "mockedPreviewRequests": 4,
+  "unhandledApiPaths": [],
+  "issues": [],
+  "limitations": [
+    "All business API data is fictitious and intercepted locally. No authentication or actual leave decisions, grants, adjustments, or database writes are performed.",
+    "This review covers layout and client interactions; it does not establish business workflow correctness or actual mobile hardware behavior."
+  ],
+  "apiReads": [
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows/approvers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows/approvers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-policies"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests/61000000-0000-4000-8000-000000000001"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/leave-requests/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows/approvers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows/approvers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-workflows"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-policies"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests/61000000-0000-4000-8000-000000000001"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances/employees"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/leave-requests/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-types"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/leave-balances"
+    }
+  ]
+}

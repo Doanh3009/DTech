@@ -1,0 +1,546 @@
+{
+  "recordedAt": "2026-10-17T01:38:55.423Z",
+  "deploymentId": "dpl_GrGWNUuq9SDA1zJPtSeYuSyY4CMr",
+  "sourceSha": "1d3dd4577374b10d9c783c11233a6fd94e417163c1642e8e9c9c0980cf9fe94a",
+  "guard": {
+    "receiptReady": true,
+    "providerReady": true,
+    "testAliasMatches": true,
+    "productionAliasUnchanged": true,
+    "sourceShaMatches": true
+  },
+  "apiChecks": [
+    {
+      "route": "/api/v1/accounting/payroll",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payslips",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/summary",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/dashboard",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "status": 200
+    }
+  ],
+  "screens": [
+    {
+      "label": "dashboard",
+      "width": 320,
+      "path": "/dashboard",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-pending",
+      "width": 320,
+      "path": "/accounting/payroll",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-stage",
+      "width": 320,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-delivery",
+      "width": 320,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "employee-salary-detail",
+      "width": 320,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6/employees/893a9672-02eb-40ba-a733-b73fe1fc9b24",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslips-month",
+      "width": 320,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-versions",
+      "width": 320,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 45.125,
+            "width": 296,
+            "height": 809.75
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-detail",
+      "width": 320,
+      "path": "/accounting/payslips/b9d3b1cc-e154-4cd6-a3b0-6d463eb90232",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "dashboard",
+      "width": 390,
+      "path": "/dashboard",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-pending",
+      "width": 390,
+      "path": "/accounting/payroll",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-stage",
+      "width": 390,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-delivery",
+      "width": 390,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "employee-salary-detail",
+      "width": 390,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6/employees/893a9672-02eb-40ba-a733-b73fe1fc9b24",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslips-month",
+      "width": 390,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-versions",
+      "width": 390,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 66.859375,
+            "width": 366,
+            "height": 766.265625
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-detail",
+      "width": 390,
+      "path": "/accounting/payslips/b9d3b1cc-e154-4cd6-a3b0-6d463eb90232",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "dashboard",
+      "width": 768,
+      "path": "/dashboard",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-pending",
+      "width": 768,
+      "path": "/accounting/payroll",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-stage",
+      "width": 768,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-delivery",
+      "width": 768,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "employee-salary-detail",
+      "width": 768,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6/employees/893a9672-02eb-40ba-a733-b73fe1fc9b24",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslips-month",
+      "width": 768,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-versions",
+      "width": 768,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 167.390625,
+            "y": 75.609375,
+            "width": 423.203125,
+            "height": 748.765625
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-detail",
+      "width": 768,
+      "path": "/accounting/payslips/b9d3b1cc-e154-4cd6-a3b0-6d463eb90232",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "dashboard",
+      "width": 1440,
+      "path": "/dashboard",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-pending",
+      "width": 1440,
+      "path": "/accounting/payroll",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-stage",
+      "width": 1440,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payroll-delivery",
+      "width": 1440,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "employee-salary-detail",
+      "width": 1440,
+      "path": "/accounting/payroll/6d199f60-c02b-44b6-a8fd-20b217d10de6/employees/893a9672-02eb-40ba-a733-b73fe1fc9b24",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslips-month",
+      "width": 1440,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-versions",
+      "width": 1440,
+      "path": "/accounting/payslips",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 503.390625,
+            "y": 75.609375,
+            "width": 423.203125,
+            "height": 748.765625
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "payslip-detail",
+      "width": 1440,
+      "path": "/accounting/payslips/b9d3b1cc-e154-4cd6-a3b0-6d463eb90232",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "apiErrors": [],
+  "expectedAvatarFallbacks": [
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    }
+  ],
+  "blockedBusinessWrites": [],
+  "authentication": [
+    {
+      "username": "accountant.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "accountant.test",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "Managed accountant TEST account and existing business data only; no salary, publication, retry, revoke, confirmation or transfer is submitted.",
+    "No self-detail GET is used, because it records first view.",
+    "Interactive positive mutation paths use isolated browser fixtures and PostgreSQL rollback checks. Physical mobile devices are not used."
+  ],
+  "facts": {
+    "payrollPeriods": 13,
+    "pendingPeriods": 1,
+    "rawPayslips": 79,
+    "reportingFrom": "2026-05",
+    "reportingThrough": "2026-10",
+    "closedReportingPeriods": 4,
+    "receiptMonth": "2026-09",
+    "receiptTotal": 62
+  },
+  "passed": true
+}

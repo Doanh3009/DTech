@@ -1,0 +1,53 @@
+.accountModal { width: min(760px, calc(100vw - 32px)); }
+.roleModal { width: min(1040px, calc(100vw - 32px)); }
+
+.accessForm,
+.credentialResult { display: grid; min-width: 0; gap: var(--space-4); overflow-y: auto; padding: var(--space-4); }
+.formSection { display: grid; min-width: 0; gap: var(--space-3); }
+.formSection + .formSection { border-top: 1px solid var(--border-subtle); padding-top: var(--space-4); }
+.formSection h3 { display: flex; align-items: center; gap: var(--space-2); margin: 0; color: var(--text-primary); font-size: 15px; font-weight: var(--font-weight-semibold); }
+.formSection h3 svg { color: var(--primary); }
+.twoColumns { display: grid; min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.twoColumns > :global(.field) { align-content: start; }
+
+.formError { margin: 0; border: 1px solid color-mix(in srgb, var(--danger) 30%, var(--border-default)); border-radius: var(--radius-control); background: var(--danger-soft); padding: var(--space-3); color: var(--danger); font-size: 14px; font-weight: var(--font-weight-medium); }
+.formFooter { position: sticky; bottom: calc(var(--space-4) * -1); z-index: 2; display: flex; justify-content: flex-end; gap: var(--space-2); margin: 0 calc(var(--space-4) * -1) calc(var(--space-4) * -1); border-top: 1px solid var(--border-subtle); background: var(--surface-1); padding: var(--space-3) var(--space-4); }
+.formFooter :global(.button) { min-width: 104px; }
+
+.credentialResult { place-items: center; padding-block: var(--space-6); text-align: center; }
+.successIcon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: var(--radius-pill); background: var(--success-soft); color: var(--success); }
+.credentialResult dl { display: grid; width: min(100%, 520px); margin: 0; overflow: hidden; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); text-align: left; }
+.credentialResult dl > div { display: grid; gap: var(--space-1); padding: var(--space-3) var(--space-4); }
+.credentialResult dl > div + div { border-top: 1px solid var(--border-subtle); }
+.credentialResult dt { color: var(--text-secondary); font-size: var(--font-meta); }
+.credentialResult dd { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin: 0; color: var(--text-primary); font-weight: var(--font-weight-semibold); }
+.credentialResult code { overflow-wrap: anywhere; user-select: all; }
+.credentialResult footer { display: flex; width: min(100%, 520px); justify-content: flex-end; }
+
+.roleToolbar { display: flex; min-height: 58px; align-items: center; justify-content: flex-end; border-bottom: 1px solid var(--border-subtle); padding: var(--space-2) var(--space-3); }
+.permissionEditor { display: grid; max-height: min(48vh, 520px); overflow-y: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); padding-right: var(--space-1); }
+.permissionGroup { display: grid; align-content: start; gap: var(--space-2); margin: 0; border: 1px solid var(--border-subtle); border-radius: var(--radius-control); background: var(--surface-1); padding: var(--space-3); }
+.permissionGroup legend { padding: 0 var(--space-1); color: var(--text-primary); font-size: 14px; font-weight: var(--font-weight-semibold); }
+.permissionGroupTools { display: flex; min-height: 34px; align-items: center; justify-content: space-between; gap: var(--space-2); }
+.permissionGroupTools button { min-height: 34px; border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--primary); padding: 0 var(--space-2); font: inherit; font-size: 13px; font-weight: var(--font-weight-semibold); cursor: pointer; }
+.permissionGroupTools button:hover,
+.permissionGroupTools button:focus-visible { background: var(--primary-soft); outline: none; }
+.permissionGroup label { display: grid; min-height: 42px; align-items: center; grid-template-columns: 20px minmax(0, 1fr) auto; gap: var(--space-2); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-2); cursor: pointer; }
+.permissionGroup label:hover { background: var(--surface-hover); }
+.permissionGroup label[data-selected] { background: var(--primary-soft); }
+.permissionGroup input { width: 17px; height: 17px; accent-color: var(--primary); }
+.permissionGroup label > span:not(:global(.status-badge)) { min-width: 0; color: var(--text-primary); font-size: 13px; line-height: 1.35; }
+
+@media (max-width: 700px) {
+  .accountModal,
+  .roleModal { width: calc(100vw - 16px); }
+  .accessForm,
+  .credentialResult { padding: var(--space-3); }
+  .twoColumns,
+  .permissionEditor { grid-template-columns: 1fr; }
+  .permissionEditor { max-height: none; overflow: visible; }
+  .formFooter { margin: 0 calc(var(--space-3) * -1) calc(var(--space-3) * -1); padding: var(--space-3); }
+  .formFooter :global(.button) { min-height: 48px; flex: 1; }
+  .credentialResult dd { align-items: stretch; flex-direction: column; }
+  .credentialResult dd :global(.button) { width: 100%; }
+}

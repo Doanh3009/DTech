@@ -1,0 +1,1 @@
+import{externalTimesheets}from"@/features/integrations/services/externalDataRepository";import{withExternalApi}from"@/features/integrations/services/externalApi";export async function GET(request:Request){return withExternalApi(request,{scope:"timesheets.read",category:"timesheets.read"},()=>externalTimesheets(request));}

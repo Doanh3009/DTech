@@ -1,0 +1,814 @@
+{
+  "recordedAt": "2026-10-17T07:00:30.602Z",
+  "kind": "isolated-real-components",
+  "screens": [
+    {
+      "label": "overview",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "inventory",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "documents",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "issue",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "warehouse",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-today",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-progress",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "overview",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "inventory",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "documents",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "issue",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "warehouse",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-today",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-progress",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "overview",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "inventory",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "documents",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "issue",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "warehouse",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-today",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-progress",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 69,
+            "y": 16,
+            "width": 620,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "overview",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "inventory",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "documents",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "issue",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "warehouse",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-today",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-progress",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 405,
+            "y": 16,
+            "width": 620,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "progress-editor",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 64.109375,
+            "width": 356,
+            "height": 771.78125,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "progress-conflict",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite-conflict",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "issue-post-conflict",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count-empty-saved",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count-partial-saved",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count-completed",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "count-cancelled",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "new-count-selected",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials-finish",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite-finish",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 286,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials-finish",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite-finish",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 356,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials-finish",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite-finish",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 69,
+            "y": 16,
+            "width": 620,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    },
+    {
+      "label": "site-materials-finish",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": []
+      }
+    },
+    {
+      "label": "worksite-finish",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 405,
+            "y": 16,
+            "width": 620,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": []
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "actions": [
+    {
+      "path": "/api/v1/projects/17000000-0000-4000-8000-000000000001/progress",
+      "method": "POST",
+      "body": {
+        "nodeType": "work_item",
+        "name": "Lắp ray đoạn phía Đông",
+        "status": "not_started",
+        "completionPercent": 0,
+        "sortOrder": 9
+      }
+    },
+    {
+      "path": "/api/v1/projects/17000000-0000-4000-8000-000000000001/worksites/18000000-0000-4000-8000-000000000001",
+      "method": "PATCH",
+      "body": {
+        "name": "Công trường khu vực phía Đông",
+        "address": "Địa chỉ mới tại Long Thành",
+        "latitude": 10.8,
+        "longitude": 106.9,
+        "radiusMeters": 200,
+        "gpsRequired": true,
+        "allowedAccuracyThresholdMeters": 100,
+        "status": "active",
+        "updatedAt": "2026-10-17T03:00:00Z"
+      }
+    },
+    {
+      "path": "/api/v1/warehouse/issues/21000000-0000-4000-8000-000000000001",
+      "method": "PATCH",
+      "body": {
+        "documentDate": "2026-10-17",
+        "sourceWarehouseId": "16000000-0000-4000-8000-000000000001",
+        "transactionTypeCode": "PROJECT",
+        "projectId": "17000000-0000-4000-8000-000000000001",
+        "worksiteId": "18000000-0000-4000-8000-000000000001",
+        "recipient": "Nguyễn Minh Anh",
+        "lines": [
+          {
+            "itemId": "19000000-0000-4000-8000-000000000001",
+            "itemCode": "VT-001",
+            "itemName": "Thép ray P50 dùng cho tuyến chính",
+            "uomId": "20000000-0000-4000-8000-000000000001",
+            "uomCode": "KG",
+            "quantity": 6,
+            "unitPrice": 25000,
+            "expectedQuantity": 8,
+            "reference": "Yêu cầu vật tư 18",
+            "purpose": "Lắp đặt ray",
+            "note": "Giữ nguyên ghi chú"
+          }
+        ],
+        "rowVersion": 1
+      }
+    },
+    {
+      "path": "/api/v1/warehouse/issues/21000000-0000-4000-8000-000000000001/post",
+      "method": "POST",
+      "body": {
+        "rowVersion": 2,
+        "postingDate": "2026-10-17",
+        "idempotencyKey": "2d95ef26-4ec1-4ca0-9b9c-364acbf06782",
+        "allowNegativeOverride": false
+      }
+    },
+    {
+      "path": "/api/v1/warehouse/stock-counts/22000000-0000-4000-8000-000000000001",
+      "method": "PATCH",
+      "body": {
+        "rowVersion": 1,
+        "lines": [
+          {
+            "id": "25000000-0000-4000-8000-000000000001",
+            "countedQuantity": null
+          },
+          {
+            "id": "25000000-0000-4000-8000-000000000002",
+            "countedQuantity": null
+          },
+          {
+            "id": "25000000-0000-4000-8000-000000000003",
+            "countedQuantity": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/warehouse/stock-counts/22000000-0000-4000-8000-000000000001",
+      "method": "PATCH",
+      "body": {
+        "rowVersion": 2,
+        "lines": [
+          {
+            "id": "25000000-0000-4000-8000-000000000001",
+            "countedQuantity": 11
+          },
+          {
+            "id": "25000000-0000-4000-8000-000000000002",
+            "countedQuantity": null
+          },
+          {
+            "id": "25000000-0000-4000-8000-000000000003",
+            "countedQuantity": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/warehouse/stock-counts/22000000-0000-4000-8000-000000000001",
+      "method": "PATCH",
+      "body": {
+        "rowVersion": 3,
+        "lines": [
+          {
+            "id": "25000000-0000-4000-8000-000000000001",
+            "countedQuantity": 11
+          },
+          {
+            "id": "25000000-0000-4000-8000-000000000002",
+            "countedQuantity": 0
+          },
+          {
+            "id": "25000000-0000-4000-8000-000000000003",
+            "countedQuantity": 200
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/warehouse/stock-counts/22000000-0000-4000-8000-000000000001/post",
+      "method": "POST",
+      "body": {
+        "rowVersion": 4,
+        "postingDate": "2026-10-17",
+        "idempotencyKey": "951387fc-c9df-4e26-9972-3409721af8f0"
+      }
+    },
+    {
+      "path": "/api/v1/warehouse/stock-counts/22000000-0000-4000-8000-000000000001",
+      "method": "PATCH",
+      "body": {
+        "action": "cancel",
+        "rowVersion": 1,
+        "reason": "Không tiếp tục kiểm kê đợt này"
+      }
+    }
+  ],
+  "passed": true
+}

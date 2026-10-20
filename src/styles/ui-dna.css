@@ -1,0 +1,295 @@
+/* Shared geometry for workspaces. Feature styles own content and color. */
+.app-shell .page-main,
+.overlay,
+.floating-panel {
+  --radius-control: var(--ui-radius-control);
+  --radius-input: var(--ui-radius-control);
+  --radius-button: var(--ui-radius-control);
+  --radius-card: var(--ui-radius-card);
+  --radius-panel: var(--ui-radius-overlay);
+  --radius-modal: var(--ui-radius-overlay);
+}
+
+.app-shell .page-main :is(.card, .data-surface, .data-management-workspace, .work-canvas, .operational-workspace, .detail-panel, .form-section, .detail-section) {
+  border-radius: var(--radius-card);
+  background-clip: padding-box;
+}
+
+.app-shell .page-main .data-surface {
+  overflow: hidden;
+}
+
+.app-shell .page-main :is(.input, .select, .textarea, .button, .icon-button, .dropdown__trigger),
+.overlay :is(.input, .select, .textarea, .button, .icon-button, .dropdown__trigger) {
+  border-radius: var(--radius-control);
+}
+
+.app-shell .page-main :is(.action-bar, .form-actions, .sticky-action-bar, [data-ui="actions"]),
+.overlay :is(.action-bar, .form-actions, .confirm-dialog > footer, [data-ui="actions"]) {
+  --action-control-height: 44px;
+  align-items: center;
+  gap: var(--toolbar-gap);
+}
+
+.app-shell .page-main :is(.action-bar, .form-actions, .sticky-action-bar, [data-ui="actions"]) :is(.button, .icon-button, .dropdown__trigger),
+.overlay :is(.action-bar, .form-actions, .confirm-dialog > footer, [data-ui="actions"]) :is(.button, .icon-button, .dropdown__trigger) {
+  height: var(--action-control-height);
+  min-height: var(--action-control-height);
+  align-self: center;
+  padding-block: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.app-shell .page-main :is(.action-bar, .form-actions, .sticky-action-bar, [data-ui="actions"]) .icon-button,
+.overlay :is(.action-bar, .form-actions, .confirm-dialog > footer, [data-ui="actions"]) .icon-button {
+  width: var(--action-control-height);
+  min-width: var(--action-control-height);
+  flex-shrink: 0;
+}
+
+/* One border and focus ring belong to the search shell, never its input. */
+.app-shell .page-main .search-input[data-ui="search-input"],
+.overlay .search-input[data-ui="search-input"],
+.app-shell .page-main [data-ui="filter-search"] {
+  width: min(100%, var(--toolbar-search-width));
+  min-width: 0;
+  min-height: var(--toolbar-control-height);
+  height: var(--toolbar-control-height);
+  gap: var(--toolbar-gap);
+  border-radius: var(--radius-control);
+  padding-inline: 11px;
+}
+
+.app-shell .page-main .search-input[data-ui="search-input"] > .input,
+.overlay .search-input[data-ui="search-input"] > .input,
+.app-shell .page-main [data-ui="filter-search"] > input {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
+  font-size: var(--toolbar-font-size);
+  line-height: 1.4;
+}
+
+.app-shell .page-main .search-input[data-ui="search-input"] > svg,
+.overlay .search-input[data-ui="search-input"] > svg,
+.app-shell .page-main [data-ui="filter-search"] > svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+.app-shell .page-main .search-input[data-ui="search-input"]:focus-within,
+.overlay .search-input[data-ui="search-input"]:focus-within,
+.app-shell .page-main [data-ui="filter-search"]:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+  outline: 0;
+  outline-offset: 0;
+}
+
+.app-shell .page-main .filter-bar[data-ui="filter-bar"] {
+  min-width: 0;
+  border-radius: var(--radius-control);
+}
+
+/* Standalone settings navigation follows the same rounded surface. */
+.app-shell .page-main :is(.settings-subnav, .system-admin-subnav) {
+  min-width: 0;
+  border-radius: var(--radius-card);
+  background-clip: padding-box;
+}
+
+.app-shell .page-main :is(.settings-subnav, .system-admin-subnav) nav {
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+}
+
+.app-shell .page-main :is(.settings-subnav, .system-admin-subnav) a {
+  display: inline-flex;
+  min-height: var(--toolbar-control-height);
+  align-items: center;
+  border-radius: var(--radius-control);
+  padding: 8px 10px;
+  font-size: var(--toolbar-font-size);
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .filter-bar__desktop {
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: var(--toolbar-gap) 12px;
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .filter-bar__controls,
+  .app-shell .page-main [data-ui="filter-controls"] {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 360px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--toolbar-gap);
+  }
+
+  .app-shell .page-main [data-ui="filter-controls"] {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .filter-bar__controls > .field,
+  .app-shell .page-main [data-ui="filter-controls"] > .field {
+    width: min(100%, var(--toolbar-filter-width));
+    min-width: 0;
+    flex: 0 1 var(--toolbar-filter-width);
+    gap: 4px;
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .filter-bar__controls > .search-input,
+  .app-shell .page-main [data-ui="filter-controls"] > :is(.search-input, [data-ui="filter-search"], :has(> .search-input)) {
+    width: min(100%, var(--toolbar-search-width));
+    min-width: min(200px, 100%);
+    flex: 0 1 var(--toolbar-search-width);
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .field__label,
+  .app-shell .page-main [data-ui="filter-controls"] .field__label {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .field :is(.input, .select, .select-control__trigger),
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] :is(.button, .icon-button, .dropdown__trigger),
+  .app-shell .page-main [data-ui="filter-controls"] .field :is(.input, .select, .select-control__trigger),
+  .app-shell .page-main [data-ui="filter-controls"] :is(.button, .icon-button, .dropdown__trigger),
+  .app-shell .page-main [data-ui="filter-controls"] button:not([role="switch"]),
+  .app-shell .page-main :is(.page-action-bar, .page-toolbar, .table-action-bar, .function-toolbar, .row-actions) :is(.button, .icon-button, .dropdown__trigger) {
+    --action-control-height: var(--toolbar-control-height);
+    height: var(--toolbar-control-height);
+    min-height: var(--toolbar-control-height);
+    padding-block: 0;
+    font-size: var(--toolbar-font-size);
+    line-height: 1.4;
+  }
+
+  .app-shell .page-main [data-ui="filter-controls"] .field .select-control__trigger > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .app-shell .page-main [data-ui="filter-controls"] > .field:has(input:is([type="date"], [type="month"])) {
+    width: min(100%, 160px);
+    flex-basis: 160px;
+  }
+
+  .app-shell .page-main [data-ui="filter-controls"] > .field:has(input[type="number"]) {
+    width: min(100%, 112px);
+    flex-basis: 112px;
+  }
+
+  .app-shell .page-main [data-ui="filter-controls"] > [data-ui="actions"] {
+    --action-control-height: var(--toolbar-control-height);
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+  }
+
+  .app-shell .page-main :is(.page-action-bar, .page-toolbar, .table-action-bar, .function-toolbar, .row-actions) {
+    --action-control-height: var(--toolbar-control-height);
+    min-height: var(--toolbar-control-height);
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .filter-bar__actions {
+    flex: 0 0 auto;
+    align-self: flex-end;
+    margin-inline-start: auto;
+  }
+
+  .app-shell .page-main .data-surface__toolbar:has(> .filter-bar[data-ui="filter-bar"]) {
+    min-height: 0;
+    padding-block: 10px;
+  }
+
+  .app-shell .page-main nav.context-tabs[data-ui="context-tabs"] > .context-tabs__scroller > .tabs__item {
+    min-height: var(--toolbar-control-height);
+    padding-block: 8px;
+    border-radius: var(--radius-control);
+    font-size: var(--toolbar-font-size);
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  .app-shell .page-main,
+  .overlay,
+  .floating-panel {
+    --toolbar-control-height: 44px;
+    --toolbar-font-size: 14px;
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] :is(.button, .icon-button, .dropdown__trigger),
+  .app-shell .page-main [data-ui="filter-controls"] :is(.button, .icon-button, .dropdown__trigger),
+  .app-shell .page-main [data-ui="filter-controls"] button:not([role="switch"]),
+  .app-shell .page-main :is(.action-bar, .form-actions, .sticky-action-bar, [data-ui="actions"]) :is(.button, .icon-button, .dropdown__trigger) {
+    min-height: 44px;
+    height: 44px;
+    border-radius: var(--radius-control);
+  }
+
+  .app-shell .page-main .search-input[data-ui="search-input"],
+  .overlay .search-input[data-ui="search-input"],
+  .app-shell .page-main [data-ui="filter-search"] {
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .app-shell .page-main .search-input[data-ui="search-input"] > .input,
+  .overlay .search-input[data-ui="search-input"] > .input,
+  .app-shell .page-main [data-ui="filter-search"] > input {
+    min-height: 0;
+    height: 100%;
+    font-size: 16px;
+  }
+
+  .app-shell .page-main .filter-bar[data-ui="filter-bar"] .field :is(.input, .select, .select-control__trigger),
+  .app-shell .page-main [data-ui="filter-controls"] .field :is(.input, .select, .select-control__trigger) {
+    height: 44px;
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .app-shell .page-main .mobile-filter-bar__primary > .search-input[data-ui="search-input"] {
+    width: 100%;
+  }
+
+  .app-shell .page-main [data-ui="filter-controls"] > :is(.search-input, [data-ui="filter-search"]),
+  .app-shell .page-main [data-ui="filter-controls"] > :has(> .search-input) > .search-input {
+    width: 100%;
+  }
+
+  .app-shell .page-main nav.context-tabs[data-ui="context-tabs"] {
+    border-radius: var(--radius-card);
+  }
+
+  .app-shell .page-main nav.context-tabs[data-ui="context-tabs"] .tabs__item {
+    border-radius: var(--radius-control);
+  }
+}
+
+@media (forced-colors: active) {
+  .app-shell .page-main .search-input[data-ui="search-input"]:focus-within,
+  .overlay .search-input[data-ui="search-input"]:focus-within,
+  .app-shell .page-main [data-ui="filter-search"]:focus-within {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+}

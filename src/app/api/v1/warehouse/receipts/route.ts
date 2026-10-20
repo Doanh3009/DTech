@@ -1,0 +1,1 @@
+import { documentCreate,documentList } from "@/features/warehouse/services/documentRouteHandlers"; export function GET(request:Request){return documentList(request,"receipt");} export function POST(request:Request){return documentCreate(request,"receipt");}

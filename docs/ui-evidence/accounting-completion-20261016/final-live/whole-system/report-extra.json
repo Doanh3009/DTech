@@ -1,0 +1,1890 @@
+{
+  "recordedAt": "2026-10-17T01:36:36.947Z",
+  "environment": "isolated public test Preview",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "deploymentId": "dpl_GrGWNUuq9SDA1zJPtSeYuSyY4CMr",
+  "sourceSha": "1d3dd4577374b10d9c783c11233a6fd94e417163c1642e8e9c9c0980cf9fe94a",
+  "guard": {
+    "receiptReady": true,
+    "providerReady": true,
+    "testAliasMatches": true,
+    "productionAliasUnchanged": true,
+    "sourceShaMatches": true
+  },
+  "kind": "live_read_only_ui_audit",
+  "injectedStyles": false,
+  "screens": [
+    {
+      "label": "project-create",
+      "route": "/projects/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/projects/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chuẩn bị",
+            "width": 154,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Tạo gói",
+            "width": 320,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-receipt-create",
+      "route": "/warehouse/receipts/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/warehouse/receipts/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Tạo phiếu nhập"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Lưu nháp",
+            "width": 324,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn loại giao dịch",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 123,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 248,
+            "height": 48,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-issue-create",
+      "route": "/warehouse/issues/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/warehouse/issues/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Tạo phiếu xuất"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Lưu nháp",
+            "width": 324,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Xuất công trình",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Không gắn dự án",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Không gắn công trường",
+            "width": 328,
+            "height": 48,
+            "disabled": true
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 123,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 248,
+            "height": 48,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-transfer-create",
+      "route": "/warehouse/transfers/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/warehouse/transfers/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Tạo phiếu chuyển"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Lưu nháp",
+            "width": 324,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chuyển kho",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 328,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 123,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 248,
+            "height": 48,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-item-create",
+      "route": "/warehouse/items/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/warehouse/items/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Thêm hàng hóa"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn ảnh",
+            "width": 123,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chưa phân nhóm",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chọn đơn vị",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Hoạt động",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Lưu",
+            "width": 336,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-stockcount-create",
+      "route": "/warehouse/stock-counts/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/warehouse/stock-counts/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Tạo kiểm kê"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Khóa giao dịch kho",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Tạo kiểm kê",
+            "width": 336,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "shipment-create",
+      "route": "/import-export/shipments/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/import-export/shipments/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Tạo lô hàng"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Không gắn hợp đồng",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chọn nhà cung cấp",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "SEA",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chưa chọn",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chưa chọn",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 324,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 294,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "20261009fd2291",
+            "width": 141,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Tạo lô hàng",
+            "width": 336,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "import-export-contract-create",
+      "route": "/import-export/contracts/new",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/import-export/contracts/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Tạo hợp đồng mua hàng"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn nhà cung cấp",
+            "width": 324,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 324,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 294,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "20261009fd2291",
+            "width": 141,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Lưu hợp đồng",
+            "width": 336,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "employee-detail",
+      "route": "/employees/41000000-0000-4000-8000-000000000001/profile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/employees/41000000-0000-4000-8000-000000000001/profile",
+      "scope": "existing test record read only",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Trần Thị Bình"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 0,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chỉnh sửa",
+            "width": 125,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Tải ảnh",
+            "width": 107,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Tải ảnh",
+            "width": 107,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chỉnh sửa",
+            "width": 324,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "timesheet-period-detail",
+      "route": "/timesheets/periods/272b40f2-da21-42ab-829f-2f50ec0fd7a5",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/timesheets/periods/272b40f2-da21-42ab-829f-2f50ec0fd7a5",
+      "scope": "existing test record read only",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [
+          "Chi tiết kỳ công",
+          "[E2E] Kỳ công"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 0,
+        "visibleRecords": 1,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Bảng công - HR",
+            "width": 358,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Chuyển tính lương",
+            "width": 157,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Thao tác khác",
+            "width": 358,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Tổng hợp (1)",
+            "width": 105,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chi tiết (123)",
+            "width": 105,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Tất cả nhân viên",
+            "width": 334,
+            "height": 48,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "project-create",
+      "route": "/projects/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/projects/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Tạo gói"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Chuẩn bị",
+            "width": 391,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Tạo gói",
+            "width": 101,
+            "height": 40,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-receipt-create",
+      "route": "/warehouse/receipts/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/warehouse/receipts/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Tạo phiếu nhập"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Quay lại",
+            "width": 80,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Lưu nháp",
+            "width": 89,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Nhập mua hàng",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 127,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 328,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-issue-create",
+      "route": "/warehouse/issues/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/warehouse/issues/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Tạo phiếu xuất"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Quay lại",
+            "width": 80,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Lưu nháp",
+            "width": 89,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Xuất công trình",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Không gắn dự án",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Không gắn công trường",
+            "width": 375,
+            "height": 44,
+            "disabled": true
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 127,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 328,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-transfer-create",
+      "route": "/warehouse/transfers/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/warehouse/transfers/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Tạo phiếu chuyển"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Quay lại",
+            "width": 80,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Lưu nháp",
+            "width": 89,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chuyển kho",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 375,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 127,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 328,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-item-create",
+      "route": "/warehouse/items/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/warehouse/items/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Thêm hàng hóa"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Chọn ảnh",
+            "width": 107,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chưa phân nhóm",
+            "width": 422,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn đơn vị",
+            "width": 422,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Hoạt động",
+            "width": 422,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Quay lại",
+            "width": 80,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Lưu",
+            "width": 52,
+            "height": 40,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "warehouse-stockcount-create",
+      "route": "/warehouse/stock-counts/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/warehouse/stock-counts/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Tạo kiểm kê"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Chọn kho",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Khóa giao dịch kho",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Quay lại",
+            "width": 80,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Tạo kiểm kê",
+            "width": 108,
+            "height": 40,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "shipment-create",
+      "route": "/import-export/shipments/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/import-export/shipments/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Tạo lô hàng"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Không gắn hợp đồng",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chọn nhà cung cấp",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "SEA",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chưa chọn",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chưa chọn",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 103,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 522,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "20261009fd2291",
+            "width": 261,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Quay lại",
+            "width": 80,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Tạo lô hàng",
+            "width": 105,
+            "height": 40,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "import-export-contract-create",
+      "route": "/import-export/contracts/new",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/import-export/contracts/new",
+      "httpStatus": 200,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Tạo hợp đồng mua hàng"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 1,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Chọn nhà cung cấp",
+            "width": 533,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Thêm dòng",
+            "width": 103,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chọn hàng",
+            "width": 522,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "20261009fd2291",
+            "width": 261,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Quay lại",
+            "width": 80,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Lưu hợp đồng",
+            "width": 119,
+            "height": 40,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "employee-detail",
+      "route": "/employees/41000000-0000-4000-8000-000000000001/profile",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/employees/41000000-0000-4000-8000-000000000001/profile",
+      "scope": "existing test record read only",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Trần Thị Bình"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 0,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Chỉnh sửa",
+            "width": 117,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Tải ảnh",
+            "width": 91,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Tải ảnh",
+            "width": 91,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chỉnh sửa",
+            "width": 86,
+            "height": 40,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "payroll-detail",
+      "route": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "scope": "existing test record read only",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 0,
+        "visibleRecords": 1,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Tải lại bảng lương",
+            "width": 90,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Xuất Excel",
+            "width": 96,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Mở lại điều chỉnh",
+            "width": 140,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "1\nChuẩn bị",
+            "width": 215,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "2\nTính và điều chỉnh",
+            "width": 215,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "3\nKiểm tra",
+            "width": 215,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Khóa lương",
+            "width": 215,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Gửi phiếu",
+            "width": 215,
+            "height": 48,
+            "disabled": false
+          },
+          {
+            "label": "Mở lại điều chỉnh",
+            "width": 132,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Công thực tế",
+            "width": 360,
+            "height": 44,
+            "disabled": true
+          },
+          {
+            "label": "Hồ sơ lương nhân viên",
+            "width": 175,
+            "height": 40,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "timesheet-period-detail",
+      "route": "/timesheets/periods/272b40f2-da21-42ab-829f-2f50ec0fd7a5",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/timesheets/periods/272b40f2-da21-42ab-829f-2f50ec0fd7a5",
+      "scope": "existing test record read only",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "Chi tiết kỳ công",
+          "[E2E] Kỳ công"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 0,
+        "visibleRecords": 1,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Mở khóa",
+            "width": 84,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Chuyển tính lương",
+            "width": 150,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Bảng công tháng",
+            "width": 140,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Bảng công - HR",
+            "width": 220,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Xuất Excel",
+            "width": 97,
+            "height": 40,
+            "disabled": false
+          },
+          {
+            "label": "Tổng hợp (1)",
+            "width": 102,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Chi tiết (123)",
+            "width": 102,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Tất cả nhân viên",
+            "width": 280,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "project-detail",
+      "route": "/projects/81cb1c02-ec4b-4e13-884e-e15590dfc98b/today",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "urlPath": "/projects/81cb1c02-ec4b-4e13-884e-e15590dfc98b/today",
+      "scope": "existing test record read only",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "mainScrollWidth": 1186,
+        "mainClientWidth": 1186,
+        "headings": [
+          "[E2E] Công trường kiểm thử"
+        ],
+        "permissionDenied": false,
+        "errorStates": [],
+        "visibleForms": 0,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 118,
+            "height": 36,
+            "disabled": false
+          },
+          {
+            "label": "Chọn công trường",
+            "width": 178,
+            "height": 38,
+            "disabled": false
+          },
+          {
+            "label": "Hôm nay",
+            "width": 150,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Công việc",
+            "width": 150,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Nhân lực",
+            "width": 150,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Thông tin",
+            "width": 150,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Tài liệu",
+            "width": 150,
+            "height": 44,
+            "disabled": false
+          },
+          {
+            "label": "Xem tất cả công việc",
+            "width": 783,
+            "height": 46,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "employee-role-hr-access",
+      "route": "/employees",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/employees",
+      "httpStatus": 200,
+      "scope": "managed employee permission observation",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [],
+        "permissionDenied": true,
+        "errorStates": [
+          "Không có quyền truy cập\n\nBạn không có quyền xem nội dung này."
+        ],
+        "visibleForms": 0,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "employee-role-payroll-access",
+      "route": "/accounting/payroll",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/accounting/payroll",
+      "httpStatus": 200,
+      "scope": "managed employee permission observation",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [],
+        "permissionDenied": true,
+        "errorStates": [
+          "Không có quyền truy cập\n\nBạn không có quyền xem nội dung này."
+        ],
+        "visibleForms": 0,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    },
+    {
+      "label": "employee-role-system-access",
+      "route": "/settings/users",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "urlPath": "/settings/users",
+      "httpStatus": 200,
+      "scope": "managed employee permission observation",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "mainScrollWidth": 390,
+        "mainClientWidth": 390,
+        "headings": [],
+        "permissionDenied": true,
+        "errorStates": [
+          "Không có quyền truy cập\n\nBạn không có quyền xem nội dung này."
+        ],
+        "visibleForms": 0,
+        "visibleRecords": 0,
+        "buttons": [
+          {
+            "label": "Kiểm thử",
+            "width": 111,
+            "height": 44,
+            "disabled": false
+          }
+        ],
+        "clippedButtons": [],
+        "dialogs": []
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "route": "/accounting/payroll",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "detailLinkAvailable": false
+    },
+    {
+      "route": "/projects",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "detailLinkAvailable": false
+    },
+    {
+      "route": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "employeePayslipLinkAvailable": false
+    }
+  ],
+  "apiErrors": [],
+  "expectedAvatarFallbacks": [
+    {
+      "route": "/projects/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/receipts/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/issues/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/transfers/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/items/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/stock-counts/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/import-export/shipments/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/import-export/contracts/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/employees",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/employees/41000000-0000-4000-8000-000000000001/profile",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/accounting/payroll",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/timesheets",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/timesheets/periods/272b40f2-da21-42ab-829f-2f50ec0fd7a5",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/projects",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/projects/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/receipts/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/issues/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/transfers/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/items/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/warehouse/stock-counts/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/import-export/shipments/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/import-export/contracts/new",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/employees",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/employees/41000000-0000-4000-8000-000000000001/profile",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/accounting/payroll",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/accounting/payroll/8f93750b-21c8-4911-801a-47697a704c58",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/timesheets",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/timesheets/periods/272b40f2-da21-42ab-829f-2f50ec0fd7a5",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/projects",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/projects/81cb1c02-ec4b-4e13-884e-e15590dfc98b/today",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/employees",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/accounting/payroll",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    },
+    {
+      "route": "/settings/users",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "kind": "optional-avatar-not-set-initials-fallback"
+    }
+  ],
+  "expectedPermissionResponses": [],
+  "runtimeErrors": [],
+  "blockedBusinessWrites": [],
+  "issues": [],
+  "authentication": [
+    {
+      "username": "admin.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "Uses managed owned test-account sessions and live test data; production is not accessed.",
+    "No business submission, attendance, payroll calculation, salary change, grant, approval, import, export, delete, or seed operation is performed.",
+    "Read-only UI/API observations do not validate mutation correctness, physical mobile hardware, or all permission combinations.",
+    "WebSockets are blocked for this audit; a realtime connection warning is expected and is not a server failure."
+  ],
+  "passed": true
+}

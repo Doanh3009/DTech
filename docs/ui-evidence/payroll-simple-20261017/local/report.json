@@ -1,0 +1,771 @@
+{
+  "kind": "isolated-real-components",
+  "recordedAt": "2026-10-17T02:49:36.408Z",
+  "screens": [
+    {
+      "label": "salary-pending",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 61.3125,
+            "width": 286,
+            "height": 777.375,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "salary-approved",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "approval-invalidated-by-edit",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-dropdown",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 189.4375,
+            "width": 286,
+            "height": 521.125,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-search",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 281.8125,
+            "width": 286,
+            "height": 336.375,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "single-recipient-sent",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "bulk-delivery-failure",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "all-delivered",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "automatic-payroll-list",
+      "width": 320,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "salary-pending",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 89.3125,
+            "width": 356,
+            "height": 721.375,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "salary-approved",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "approval-invalidated-by-edit",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-dropdown",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 199.234375,
+            "width": 356,
+            "height": 501.53125,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-search",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [
+          {
+            "x": 36.5,
+            "y": 281.8125,
+            "width": 307,
+            "height": 336.375,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "single-recipient-sent",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "bulk-delivery-failure",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "all-delivered",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "automatic-payroll-list",
+      "width": 390,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 390,
+        "scrollWidth": 380,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "salary-pending",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 174.40625,
+            "y": 125.34375,
+            "width": 409.171875,
+            "height": 649.296875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "salary-approved",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "approval-invalidated-by-edit",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-dropdown",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-search",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "single-recipient-sent",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "bulk-delivery-failure",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "all-delivered",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "automatic-payroll-list",
+      "width": 768,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "salary-pending",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "adjustment-error-preserved",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 510.40625,
+            "y": 125.34375,
+            "width": 409.171875,
+            "height": 649.296875,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "salary-approved",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "approval-invalidated-by-edit",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-dropdown",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "recipient-search",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "single-recipient-sent",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "bulk-delivery-failure",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "all-delivered",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    },
+    {
+      "label": "automatic-payroll-list",
+      "width": 1440,
+      "metrics": {
+        "contentOverflow": [],
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "steps": []
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "actions": [
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 4,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 2,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 700000,
+      "deduction": 200000,
+      "reason": "Điều chỉnh trước khi trình sếp"
+    },
+    {
+      "rowVersion": 5,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 7,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 8,
+      "action": "retry_delivery"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 4,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 2,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 700000,
+      "deduction": 200000,
+      "reason": "Điều chỉnh trước khi trình sếp"
+    },
+    {
+      "rowVersion": 5,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 7,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 8,
+      "action": "retry_delivery"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 4,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 2,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 700000,
+      "deduction": 200000,
+      "reason": "Điều chỉnh trước khi trình sếp"
+    },
+    {
+      "rowVersion": 5,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 7,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 8,
+      "action": "retry_delivery"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 2,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 1,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 500000,
+      "deduction": 200000,
+      "reason": "Bổ sung phụ cấp công trường"
+    },
+    {
+      "rowVersion": 3,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 4,
+      "action": "update_line",
+      "lineId": "line-1",
+      "lineRowVersion": 2,
+      "baseSalary": 20000000,
+      "allowance": 2500000,
+      "bonus": 700000,
+      "deduction": 200000,
+      "reason": "Điều chỉnh trước khi trình sếp"
+    },
+    {
+      "rowVersion": 5,
+      "action": "approve_salary"
+    },
+    {
+      "rowVersion": 6,
+      "action": "publish_employee",
+      "employeeId": "employee-1"
+    },
+    {
+      "rowVersion": 7,
+      "action": "publish"
+    },
+    {
+      "rowVersion": 8,
+      "action": "retry_delivery"
+    }
+  ],
+  "passed": true
+}

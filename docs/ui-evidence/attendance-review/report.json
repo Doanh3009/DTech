@@ -1,0 +1,44 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "dimensions": {
+      "viewport": 1440,
+      "content": 1430,
+      "thumbnails": 2
+    },
+    "realStorageImage": true,
+    "isolatedDataFixture": true,
+    "photoNavigation": true,
+    "dateFilter": true,
+    "employeeFilter": true,
+    "runtimeErrors": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "dimensions": {
+      "viewport": 390,
+      "content": 390,
+      "thumbnails": 2
+    },
+    "realStorageImage": true,
+    "isolatedDataFixture": true,
+    "photoNavigation": true,
+    "dateFilter": true,
+    "employeeFilter": true,
+    "runtimeErrors": []
+  },
+  {
+    "employeeGps": {
+      "anywhereCoordinates": true,
+      "photoReadyOutsideRadius": true,
+      "deniedPermissionVisible": true,
+      "noDatabaseWrites": true
+    }
+  }
+]

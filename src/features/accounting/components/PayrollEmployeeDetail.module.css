@@ -1,0 +1,39 @@
+.layout { gap: 18px; }
+.header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.header > div:first-child { min-width: 0; }
+.header h1 { overflow-wrap: anywhere; }
+.header h1 { margin: 4px 0; color: var(--text-primary); font-size: clamp(24px, 3vw, 32px); line-height: 1.2; }
+.eyebrow, .employeeCode { color: var(--text-secondary); font-size: 13px; }
+.headerActions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.total { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 6px 16px; border: 1px solid #cfe8da; border-radius: var(--radius-card); background: linear-gradient(120deg,#eaf8f0,#f5fbf7); padding: 20px 24px; }
+.total > span { color: #287b52; font-size: 14px; font-weight: 600; }
+.total > strong { grid-column: 1; color: #168451; font-size: clamp(28px,4vw,38px); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.total > a { grid-column: 2; grid-row: 1 / span 2; color: #176ba3; font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.panel { min-width: 0; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); background: var(--surface-1); padding: 18px; box-shadow: 0 8px 24px rgb(24 47 73 / 5%); }
+.delivery { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); background: var(--surface-1); padding: 14px 18px; }
+.delivery > :global(.button) { margin-left: auto; }
+.panel h2 { margin: 0 0 12px; color: var(--text-primary); font-size: 17px; }
+.panel p { margin: 0; overflow-wrap: anywhere; }
+.amounts, .basis { display: grid; margin: 0; }
+.amounts > div, .basis > div { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--border-subtle); padding: 11px 0; }
+.amounts > div:last-child, .basis > div:last-child { border-bottom: 0; }
+.amounts dt, .basis dt { color: var(--text-secondary); font-size: 13px; }
+.amounts dd, .basis dd { margin: 0; text-align: right; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.amounts .netRow { border-top: 1px solid #cfe8da; border-bottom: 0; color: #168451; }
+.amounts .netRow dt, .amounts .netRow dd { color: #168451; font-size: 16px; font-weight: 700; }
+.editForm:global(.drawer-form) { display: grid; gap: 16px; align-content: start; }
+.editForm > :global(.form-actions) { display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--border-subtle); padding-top: 16px; }
+@media (max-width: 767px) {
+  .layout { gap: 14px; }
+  .header { flex-direction: column; }
+  .headerActions { justify-content: flex-start; }
+  .headerActions > :global(.button) { min-height: 46px; }
+  .total { padding: 16px; }
+  .grid { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .panel { padding: 14px; }
+  .delivery { padding: 14px; }
+  .delivery > :global(.button) { width: 100%; min-height: 48px; margin-left: 0; }
+  .editForm > :global(.form-actions) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .editForm > :global(.form-actions) :global(.button) { min-height: 46px; width: 100%; }
+}

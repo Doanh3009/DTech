@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" width="480" height="640" role="img" aria-labelledby="title">
+<title id="title">Phạm Anh Dũng · Ảnh mẫu chấm ra 17:06</title>
+<defs><linearGradient id="scene" x2=".1" y2="1"><stop stop-color="#e1bca0"/><stop offset="1" stop-color="#e9d9cb"/></linearGradient></defs>
+<rect width="480" height="640" fill="url(#scene)"/>
+<g opacity=".76"><path d="M36 124h408v305H36z" fill="#a5b5bb"/><path d="M49 140h383v281H49z" fill="#d8e2e4"/><g stroke="#8ba0a8" stroke-width="8"><path d="M47 189h385M47 266h385M47 343h385M121 143v279M236 143v279M352 143v279"/><path d="m49 141 114 125m189 77 78 78m-308 0 114-155" stroke-width="5"/></g><path d="M0 438h480v202H0z" fill="#c6b9a8"/><path d="M34 455h88v24H34zm324 14h93v29h-93z" fill="#ac9983"/></g>
+<rect x="26" y="86" width="274" height="27" rx="7" fill="#fff" opacity=".74"/>
+<text x="39" y="104" fill="#546571" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">CÔNG TRƯỜNG MẪU</text>
+<ellipse cx="240" cy="554" rx="159" ry="42" fill="#687580" opacity=".13"/>
+<path d="M82 640V538c0-80 60-131 158-131s158 51 158 131v102z" fill="#465465"/>
+<path d="M211 365h58v63c-11 30-47 30-58 0z" fill="#bd835d"/>
+<path d="m141 437 40-25 45 86v142H86v-103c0-42 19-76 55-100zm198 0-40-25-45 86v142h140v-103c0-42-19-76-55-100z" fill="#ddec78"/><path d="m151 455 34-19 13 204h-29zm178 0-34-19-13 204h29z" fill="#f4f6df" opacity=".85"/><path d="M96 558h288v24H96z" fill="#f4f6df" opacity=".85"/>
+<g transform="rotate(-2 240 310)">
+<ellipse cx="240" cy="267" rx="86" ry="94" fill="#2b292a"/>
+<ellipse cx="162" cy="309" rx="16" ry="24" fill="#bd835d"/><ellipse cx="318" cy="309" rx="16" ry="24" fill="#bd835d"/>
+<ellipse cx="240" cy="303" rx="76" ry="95" fill="#bd835d"/>
+<path d="M172 310c0 53 26 82 67 87-46 2-81-41-81-90z" fill="#79583c" opacity=".10"/>
+<path d="M145 259a95 95 0 0 1 190 0v12H145z" fill="#e89046"/><path d="M240 169v87" stroke="#fff" opacity=".32" stroke-width="13"/><rect x="135" y="254" width="210" height="22" rx="11" fill="#e89046"/><path d="M148 270h185" stroke="#575044" stroke-width="3" opacity=".17"/>
+<g stroke="#2b292a" stroke-linecap="round"><path d="M194 285q14-8 27-1m39 0q13-7 26 1" fill="none" stroke-width="5"/><path d="M207 301v5m66-5v5" stroke-width="8"/></g>
+<path d="m240 305-6 29h12" fill="none" stroke="#9a664e" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<path d="M219 354q21 15 42 0" fill="none" stroke="#875147" stroke-width="4" stroke-linecap="round"/>
+</g>
+<rect x="315" y="24" width="139" height="39" rx="9" fill="#174861"/>
+<text x="384.5" y="50" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="20" font-weight="700">ẢNH MẪU</text>
+<rect x="24" y="548" width="432" height="68" rx="12" fill="#ffffff" opacity=".93"/>
+<text x="41" y="575" fill="#243d50" font-family="Arial,sans-serif" font-size="20" font-weight="700">Phạm Anh Dũng</text>
+<text x="41" y="598" fill="#426579" font-family="Arial,sans-serif" font-size="14" font-weight="700">CHẤM RA · 17:06</text>
+<text x="439" y="598" text-anchor="end" fill="#6e8392" font-family="Arial,sans-serif" font-size="12">DEMO-004</text>
+</svg>

@@ -1,0 +1,2 @@
+import { markAllNotificationsRead } from "@/features/shared-platforms/services/notificationRepository";import { errorResponse } from "@/lib/api/errors";import { successResponse } from "@/lib/api/responses";import { getRequestUser } from "@/services/auth/getRequestUser";import { requireAuthenticatedUser } from "@/services/authorization/requirePermission";
+export async function POST(){try{return successResponse(await markAllNotificationsRead(requireAuthenticatedUser(await getRequestUser())));}catch(error){return errorResponse(error);}}

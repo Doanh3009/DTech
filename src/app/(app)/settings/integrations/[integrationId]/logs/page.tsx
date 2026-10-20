@@ -1,0 +1,1 @@
+import{PageHeader}from"@/components/shared/PageHeader";import{IntegrationDetail}from"@/features/integrations/components/IntegrationConsole";export default async function Page({params}:{params:Promise<{integrationId:string}>}){return <div className="page-stack"><PageHeader title="Nhật ký tích hợp"/><IntegrationDetail id={(await params).integrationId} view="logs"/></div>}

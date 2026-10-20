@@ -1,0 +1,44 @@
+.surface :global(.data-surface__toolbar),
+.surface :global(.contract-list-actions) {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.surface :global(.data-surface__toolbar) > h2 { min-width: 0; overflow-wrap: anywhere; }
+.form {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 20px;
+  scroll-padding-bottom: 100px;
+}
+.form > * { min-width: 0; }
+.fullWidth,
+.form > footer,
+.form > :global(.form-actions),
+.form > :global(.form-error) { grid-column: 1 / -1; }
+.form > footer,
+.form > :global(.form-actions) { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.history:global(.warehouse-simple-list) { margin: 0; padding: 20px; }
+.history > li { min-width: 0; flex-wrap: wrap; align-items: flex-start; }
+.history > li:first-child { border-top: 0; padding-top: 0; }
+.history > li > a { flex: 1 1 240px; min-width: 0; overflow-wrap: anywhere; }
+.history > li > span { flex: 0 1 auto; color: var(--text-secondary); }
+.templateList :global(.contract-template-list) strong { overflow: visible; overflow-wrap: anywhere; white-space: normal; }
+.templateList :global(.contract-template-list) a { flex-shrink: 0; white-space: nowrap; }
+.archiveForm { padding: 20px; }
+.archiveForm > :global(.form-actions) { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+
+@media (max-width: 767px) {
+  .form { grid-template-columns: minmax(0, 1fr); padding: 16px; }
+  .form { scroll-padding-bottom: 176px; }
+  .form > footer,
+  .form > :global(.form-actions) { bottom: -16px; }
+  .form > footer > :global(.button),
+  .form > :global(.form-actions) > :global(.button) { flex: 1 1 120px; }
+  .history:global(.warehouse-simple-list) { padding: 16px; }
+  .history > li { gap: 6px; }
+  .archiveForm { padding: 16px; }
+  .archiveForm > :global(.form-actions) > :global(.button) { flex: 1; min-height: 44px; }
+}

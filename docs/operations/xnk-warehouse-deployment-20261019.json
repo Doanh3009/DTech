@@ -1,0 +1,81 @@
+{
+  "createdAt": "2026-10-19T02:24:50.440Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "7280616447f6f24e14195385886ba44c09c8120a885b86a39f7e444bb16935db",
+  "previousDeployment": "dpl_9T1GWgoSYtzAV4S7dGibhStjNKHm",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_ByjvT3femuCcBBCbWBaGTEvv7oPx",
+  "url": "ct-noi-f0dehw9hk-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-19T02:25:59.624Z",
+  "publishedAt": "2026-10-19T02:26:42.778Z",
+  "productionUnchanged": true,
+  "databaseMigrationRequired": false,
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "build": "passed",
+    "generatedPages": 288,
+    "warehouseReferences": "5 API reads returned HTTP 200",
+    "automatedTests": "not_run",
+    "browserUi": "not_run"
+  },
+  "accessRepair": {
+    "target": "lgmlkagcytfjazulgfbz",
+    "sqlSha256": "847133742677acf80eb465cafdf88d58bdf1c407572219cb8413a11b76dee4b0",
+    "migrationCount": 54,
+    "businessDataUnchanged": true
+  },
+  "referenceReads": [
+    {
+      "route": "/api/v1/warehouses",
+      "status": 200,
+      "ok": true,
+      "records": 1,
+      "warehouseCodes": [
+        "KHO-CHINH"
+      ]
+    },
+    {
+      "route": "/api/v1/items?status=active",
+      "status": 200,
+      "ok": true,
+      "records": 8
+    },
+    {
+      "route": "/api/v1/warehouse/transaction-types?type=receipt",
+      "status": 200,
+      "ok": true,
+      "records": 4
+    },
+    {
+      "route": "/api/v1/warehouse/references",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "route": "/api/v1/import-export/references",
+      "status": 200,
+      "ok": true,
+      "warehouseCodes": [
+        "KHO-CHINH"
+      ]
+    }
+  ],
+  "health": [
+    {
+      "route": "/api/health/live",
+      "status": 200,
+      "health": "alive"
+    },
+    {
+      "route": "/api/health/ready",
+      "status": 200,
+      "health": "ready"
+    }
+  ]
+}

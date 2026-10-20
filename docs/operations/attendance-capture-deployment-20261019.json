@@ -1,0 +1,38 @@
+{
+  "createdAt": "2026-10-19T01:55:14.703Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "c52311785f4512cca5e2fd1c22e2f081146bbc83bb6154ffb185880918dbb662",
+  "previousDeployment": "dpl_4RnUm8dprL3SFqNGVdYcEfUxvKRW",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_CpVq1jW3Wrgdpu2cjTvTZPBtWLHT",
+  "url": "ct-noi-arsj7tf06-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-19T01:56:41.279Z",
+  "publishedAt": "2026-10-19T01:57:27.135Z",
+  "productionUnchanged": true,
+  "databaseMigrationRequired": false,
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "build": "passed",
+    "generatedPages": 288,
+    "phoneGps": "not_performed",
+    "automatedTests": "not_run"
+  },
+  "health": [
+    {
+      "route": "/api/health/live",
+      "status": 200,
+      "health": "alive"
+    },
+    {
+      "route": "/api/health/ready",
+      "status": 200,
+      "health": "ready"
+    }
+  ]
+}

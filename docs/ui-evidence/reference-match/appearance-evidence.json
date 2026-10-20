@@ -1,0 +1,3097 @@
+{
+  "generatedAt": "2026-10-03T08:52:24.459Z",
+  "baseUrl": "http://localhost:3200",
+  "captures": [
+    {
+      "username": "test.supervisor",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "test.supervisor-dashboard-1440.png",
+      "layout": {
+        "width": 1430,
+        "viewportWidth": 1440,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 900,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "supervisor",
+        "cards": [
+          {
+            "label": "Công trường",
+            "value": "Khu QC03",
+            "text": "Khu QC03Công trường",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Đang hoạt động",
+            "value": "1",
+            "text": "1Đang hoạt động",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "2",
+            "text": "2Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Nhân sự dự kiến",
+            "value": "5",
+            "text": "5Nhân sự dự kiến",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiên hôm nay",
+            "value": "0",
+            "text": "0Phiên hôm nay",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "bar",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Công việc theo nhóm"
+          },
+          {
+            "kind": "gauge",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tiến độ công trường"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Thông báo gần đây"
+          }
+        ],
+        "gauges": [
+          {
+            "title": "Tiến độ công trường",
+            "accessibleValue": "Bảo trì hệ thống ray Cảng ABC: 73%"
+          }
+        ]
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1430,
+          "top": 0,
+          "bottom": 56,
+          "width": 1198,
+          "height": 56
+        },
+        "gridColumns": "793.156px 317.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 696.828125,
+            "right": 1056.828125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1080.828125,
+            "right": 1124.828125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1136.828125,
+            "right": 1180.828125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1192.828125,
+            "right": 1398.328125,
+            "top": 10,
+            "bottom": 46,
+            "width": 205.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 709.828125,
+            "right": 726.828125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 734.828125,
+            "right": 987.53125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 995.53125,
+            "right": 1043.828125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/employees",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "test.supervisor-employees-1440.png",
+      "layout": {
+        "width": 1430,
+        "viewportWidth": 1440,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 900,
+          "expanded": "true"
+        }
+      },
+      "dashboard": null,
+      "employeeMaterial": {
+        "backgroundColor": "rgba(250, 250, 252, 0.72)",
+        "referenceColor": "rgba(250, 250, 252, 0.72)",
+        "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+        "borderRadius": "16px",
+        "innerBackgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1430,
+          "top": 0,
+          "bottom": 56,
+          "width": 1198,
+          "height": 56
+        },
+        "gridColumns": "793.156px 317.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 696.828125,
+            "right": 1056.828125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1080.828125,
+            "right": 1124.828125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1136.828125,
+            "right": 1180.828125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1192.828125,
+            "right": 1398.328125,
+            "top": 10,
+            "bottom": 46,
+            "width": 205.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 709.828125,
+            "right": 726.828125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 734.828125,
+            "right": 987.53125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 995.53125,
+            "right": 1043.828125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshot": "test.supervisor-dashboard-1366.png",
+      "layout": {
+        "width": 1356,
+        "viewportWidth": 1366,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 768,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "supervisor",
+        "cards": [
+          {
+            "label": "Công trường",
+            "value": "Khu QC03",
+            "text": "Khu QC03Công trường",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Đang hoạt động",
+            "value": "1",
+            "text": "1Đang hoạt động",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "2",
+            "text": "2Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Nhân sự dự kiến",
+            "value": "5",
+            "text": "5Nhân sự dự kiến",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiên hôm nay",
+            "value": "0",
+            "text": "0Phiên hôm nay",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "bar",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Công việc theo nhóm"
+          },
+          {
+            "kind": "gauge",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tiến độ công trường"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Thông báo gần đây"
+          }
+        ],
+        "gauges": [
+          {
+            "title": "Tiến độ công trường",
+            "accessibleValue": "Bảo trì hệ thống ray Cảng ABC: 73%"
+          }
+        ]
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1356,
+          "top": 0,
+          "bottom": 56,
+          "width": 1124,
+          "height": 56
+        },
+        "gridColumns": "722.406px 317.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 624.453125,
+            "right": 984.453125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1008.453125,
+            "right": 1052.453125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1064.453125,
+            "right": 1108.453125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1120.453125,
+            "right": 1325.953125,
+            "top": 10,
+            "bottom": 46,
+            "width": 205.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 637.453125,
+            "right": 654.453125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 662.453125,
+            "right": 915.15625,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 923.15625,
+            "right": 971.453125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/employees",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshot": "test.supervisor-employees-1366.png",
+      "layout": {
+        "width": 1356,
+        "viewportWidth": 1366,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 768,
+          "expanded": "true"
+        }
+      },
+      "dashboard": null,
+      "employeeMaterial": {
+        "backgroundColor": "rgba(250, 250, 252, 0.72)",
+        "referenceColor": "rgba(250, 250, 252, 0.72)",
+        "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+        "borderRadius": "16px",
+        "innerBackgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1356,
+          "top": 0,
+          "bottom": 56,
+          "width": 1124,
+          "height": 56
+        },
+        "gridColumns": "722.406px 317.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 624.453125,
+            "right": 984.453125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1008.453125,
+            "right": 1052.453125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1064.453125,
+            "right": 1108.453125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1120.453125,
+            "right": 1325.953125,
+            "top": 10,
+            "bottom": 46,
+            "width": 205.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 637.453125,
+            "right": 654.453125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 662.453125,
+            "right": 915.15625,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 923.15625,
+            "right": 971.453125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshot": "test.supervisor-dashboard-1920.png",
+      "layout": {
+        "width": 1910,
+        "viewportWidth": 1920,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1080,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "supervisor",
+        "cards": [
+          {
+            "label": "Công trường",
+            "value": "Khu QC03",
+            "text": "Khu QC03Công trường",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Đang hoạt động",
+            "value": "1",
+            "text": "1Đang hoạt động",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "2",
+            "text": "2Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Nhân sự dự kiến",
+            "value": "5",
+            "text": "5Nhân sự dự kiến",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiên hôm nay",
+            "value": "0",
+            "text": "0Phiên hôm nay",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "bar",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Công việc theo nhóm"
+          },
+          {
+            "kind": "gauge",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tiến độ công trường"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Thông báo gần đây"
+          }
+        ],
+        "gauges": [
+          {
+            "title": "Tiến độ công trường",
+            "accessibleValue": "Bảo trì hệ thống ray Cảng ABC: 73%"
+          }
+        ]
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1910,
+          "top": 0,
+          "bottom": 56,
+          "width": 1678,
+          "height": 56
+        },
+        "gridColumns": "1256.5px 317.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 1168.5,
+            "right": 1528.5,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1552.5,
+            "right": 1596.5,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1608.5,
+            "right": 1652.5,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1664.5,
+            "right": 1870,
+            "top": 10,
+            "bottom": 46,
+            "width": 205.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 1181.5,
+            "right": 1198.5,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 1206.5,
+            "right": 1459.203125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 1467.203125,
+            "right": 1515.5,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/employees",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshot": "test.supervisor-employees-1920.png",
+      "layout": {
+        "width": 1910,
+        "viewportWidth": 1920,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1080,
+          "expanded": "true"
+        }
+      },
+      "dashboard": null,
+      "employeeMaterial": {
+        "backgroundColor": "rgba(250, 250, 252, 0.72)",
+        "referenceColor": "rgba(250, 250, 252, 0.72)",
+        "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+        "borderRadius": "16px",
+        "innerBackgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1910,
+          "top": 0,
+          "bottom": 56,
+          "width": 1678,
+          "height": 56
+        },
+        "gridColumns": "1256.5px 317.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 1168.5,
+            "right": 1528.5,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1552.5,
+            "right": 1596.5,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1608.5,
+            "right": 1652.5,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1664.5,
+            "right": 1870,
+            "top": 10,
+            "bottom": 46,
+            "width": 205.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 1181.5,
+            "right": 1198.5,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 1206.5,
+            "right": 1459.203125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 1467.203125,
+            "right": 1515.5,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screenshot": "test.supervisor-dashboard-768.png",
+      "layout": {
+        "width": 758,
+        "viewportWidth": 768,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1024,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "supervisor",
+        "cards": [
+          {
+            "label": "Công trường",
+            "value": "Khu QC03",
+            "text": "Khu QC03Công trường",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Đang hoạt động",
+            "value": "1",
+            "text": "1Đang hoạt động",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "2",
+            "text": "2Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Nhân sự dự kiến",
+            "value": "5",
+            "text": "5Nhân sự dự kiến",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiên hôm nay",
+            "value": "0",
+            "text": "0Phiên hôm nay",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "bar",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Công việc theo nhóm"
+          },
+          {
+            "kind": "gauge",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tiến độ công trường"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Thông báo gần đây"
+          }
+        ],
+        "gauges": [
+          {
+            "title": "Tiến độ công trường",
+            "accessibleValue": "Bảo trì hệ thống ray Cảng ABC: 73%"
+          }
+        ]
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 758,
+          "top": 0,
+          "bottom": 56,
+          "width": 526,
+          "height": 56
+        },
+        "gridColumns": "304px 158px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 252,
+            "right": 556,
+            "top": 8,
+            "bottom": 48,
+            "width": 304,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 580,
+            "right": 624,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 636,
+            "right": 680,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 692,
+            "right": 738,
+            "top": 10,
+            "bottom": 46,
+            "width": 46,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 265,
+            "right": 282,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 290,
+            "right": 486.703125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 196.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 494.703125,
+            "right": 543,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/employees",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screenshot": "test.supervisor-employees-768.png",
+      "layout": {
+        "width": 758,
+        "viewportWidth": 768,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1024,
+          "expanded": "true"
+        }
+      },
+      "dashboard": null,
+      "employeeMaterial": {
+        "backgroundColor": "rgba(250, 250, 252, 0.72)",
+        "referenceColor": "rgba(250, 250, 252, 0.72)",
+        "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+        "borderRadius": "16px",
+        "innerBackgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 758,
+          "top": 0,
+          "bottom": 56,
+          "width": 526,
+          "height": 56
+        },
+        "gridColumns": "304px 158px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 252,
+            "right": 556,
+            "top": 8,
+            "bottom": 48,
+            "width": 304,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 580,
+            "right": 624,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 636,
+            "right": 680,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 692,
+            "right": 738,
+            "top": 10,
+            "bottom": 46,
+            "width": 46,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 265,
+            "right": 282,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 290,
+            "right": 486.703125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 196.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 494.703125,
+            "right": 543,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "test.supervisor-dashboard-390.png",
+      "layout": {
+        "width": 390,
+        "viewportWidth": 390,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgb(241, 242, 245)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 0,
+          "height": 0,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "supervisor",
+        "cards": [
+          {
+            "label": "Công trường",
+            "value": "Khu QC03",
+            "text": "Khu QC03Công trường",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Đang hoạt động",
+            "value": "1",
+            "text": "1Đang hoạt động",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "2",
+            "text": "2Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Nhân sự dự kiến",
+            "value": "5",
+            "text": "5Nhân sự dự kiến",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiên hôm nay",
+            "value": "0",
+            "text": "0Phiên hôm nay",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "bar",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Công việc theo nhóm"
+          },
+          {
+            "kind": "gauge",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tiến độ công trường"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Thông báo gần đây"
+          }
+        ],
+        "gauges": [
+          {
+            "title": "Tiến độ công trường",
+            "accessibleValue": "Bảo trì hệ thống ray Cảng ABC: 73%"
+          }
+        ]
+      },
+      "employeeMaterial": null,
+      "headerControls": null
+    },
+    {
+      "username": "test.supervisor",
+      "route": "/employees",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "test.supervisor-employees-390.png",
+      "layout": {
+        "width": 390,
+        "viewportWidth": 390,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 0,
+          "height": 0,
+          "expanded": "true"
+        }
+      },
+      "dashboard": null,
+      "employeeMaterial": {
+        "backgroundColor": "rgba(250, 250, 252, 0.72)",
+        "referenceColor": "rgba(250, 250, 252, 0.72)",
+        "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+        "borderRadius": "16px",
+        "innerBackgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      "headerControls": null
+    },
+    {
+      "username": "test.employee",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "test.employee-dashboard-1440.png",
+      "layout": {
+        "width": 1430,
+        "viewportWidth": 1440,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 900,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "employee",
+        "cards": [
+          {
+            "label": "Ca làm",
+            "value": "08:00–17:00",
+            "text": "08:00–17:00Ca làm",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Trạng thái",
+            "value": "Chấm vào",
+            "text": "Chấm vàoTrạng thái",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1430,
+          "top": 0,
+          "bottom": 56,
+          "width": 1198,
+          "height": 56
+        },
+        "gridColumns": "813.156px 297.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 716.828125,
+            "right": 1076.828125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1100.828125,
+            "right": 1144.828125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1156.828125,
+            "right": 1200.828125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1212.828125,
+            "right": 1398.328125,
+            "top": 10,
+            "bottom": 46,
+            "width": 185.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 729.828125,
+            "right": 746.828125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 754.828125,
+            "right": 1007.53125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 1015.53125,
+            "right": 1063.828125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.employee",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshot": "test.employee-dashboard-1366.png",
+      "layout": {
+        "width": 1356,
+        "viewportWidth": 1366,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 768,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "employee",
+        "cards": [
+          {
+            "label": "Ca làm",
+            "value": "08:00–17:00",
+            "text": "08:00–17:00Ca làm",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Trạng thái",
+            "value": "Chấm vào",
+            "text": "Chấm vàoTrạng thái",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1356,
+          "top": 0,
+          "bottom": 56,
+          "width": 1124,
+          "height": 56
+        },
+        "gridColumns": "742.406px 297.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 644.453125,
+            "right": 1004.453125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1028.453125,
+            "right": 1072.453125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1084.453125,
+            "right": 1128.453125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1140.453125,
+            "right": 1325.953125,
+            "top": 10,
+            "bottom": 46,
+            "width": 185.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 657.453125,
+            "right": 674.453125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 682.453125,
+            "right": 935.15625,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 943.15625,
+            "right": 991.453125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.employee",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshot": "test.employee-dashboard-1920.png",
+      "layout": {
+        "width": 1910,
+        "viewportWidth": 1920,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1080,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "employee",
+        "cards": [
+          {
+            "label": "Ca làm",
+            "value": "08:00–17:00",
+            "text": "08:00–17:00Ca làm",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Trạng thái",
+            "value": "Chấm vào",
+            "text": "Chấm vàoTrạng thái",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1910,
+          "top": 0,
+          "bottom": 56,
+          "width": 1678,
+          "height": 56
+        },
+        "gridColumns": "1276.5px 297.5px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 1188.5,
+            "right": 1548.5,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1572.5,
+            "right": 1616.5,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1628.5,
+            "right": 1672.5,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1684.5,
+            "right": 1870,
+            "top": 10,
+            "bottom": 46,
+            "width": 185.5,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 1201.5,
+            "right": 1218.5,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 1226.5,
+            "right": 1479.203125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 1487.203125,
+            "right": 1535.5,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.employee",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screenshot": "test.employee-dashboard-768.png",
+      "layout": {
+        "width": 758,
+        "viewportWidth": 768,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1024,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "employee",
+        "cards": [
+          {
+            "label": "Ca làm",
+            "value": "08:00–17:00",
+            "text": "08:00–17:00Ca làm",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Trạng thái",
+            "value": "Chấm vào",
+            "text": "Chấm vàoTrạng thái",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 758,
+          "top": 0,
+          "bottom": 56,
+          "width": 526,
+          "height": 56
+        },
+        "gridColumns": "304px 158px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 252,
+            "right": 556,
+            "top": 8,
+            "bottom": 48,
+            "width": 304,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 580,
+            "right": 624,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 636,
+            "right": 680,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 692,
+            "right": 738,
+            "top": 10,
+            "bottom": 46,
+            "width": 46,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 265,
+            "right": 282,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 290,
+            "right": 486.703125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 196.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 494.703125,
+            "right": 543,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.employee",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "test.employee-dashboard-390.png",
+      "layout": {
+        "width": 390,
+        "viewportWidth": 390,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgb(241, 242, 245)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 0,
+          "height": 0,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "employee",
+        "cards": [
+          {
+            "label": "Ca làm",
+            "value": "08:00–17:00",
+            "text": "08:00–17:00Ca làm",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Trạng thái",
+            "value": "Chấm vào",
+            "text": "Chấm vàoTrạng thái",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": null
+    },
+    {
+      "username": "test.payroll",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "test.payroll-dashboard-1440.png",
+      "layout": {
+        "width": 1430,
+        "viewportWidth": 1440,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 900,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "accounting",
+        "cards": [
+          {
+            "label": "Kỳ đang xử lý",
+            "value": "3",
+            "text": "3Kỳ đang xử lý",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Kỳ đã khóa",
+            "value": "4",
+            "text": "4Kỳ đã khóa",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiếu lương chưa xem",
+            "value": "8",
+            "text": "8Phiếu lương chưa xem",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "line",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Quỹ lương theo kỳ"
+          },
+          {
+            "kind": "donut",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tình trạng kỳ lương"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1430,
+          "top": 0,
+          "bottom": 56,
+          "width": 1198,
+          "height": 56
+        },
+        "gridColumns": "808.359px 302.297px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 712.03125,
+            "right": 1072.03125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1096.03125,
+            "right": 1140.03125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1152.03125,
+            "right": 1196.03125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1208.03125,
+            "right": 1398.328125,
+            "top": 10,
+            "bottom": 46,
+            "width": 190.296875,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 725.03125,
+            "right": 742.03125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 750.03125,
+            "right": 1002.734375,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 1010.734375,
+            "right": 1059.03125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.payroll",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "screenshot": "test.payroll-dashboard-1366.png",
+      "layout": {
+        "width": 1356,
+        "viewportWidth": 1366,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 768,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "accounting",
+        "cards": [
+          {
+            "label": "Kỳ đang xử lý",
+            "value": "3",
+            "text": "3Kỳ đang xử lý",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Kỳ đã khóa",
+            "value": "4",
+            "text": "4Kỳ đã khóa",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiếu lương chưa xem",
+            "value": "8",
+            "text": "8Phiếu lương chưa xem",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "line",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Quỹ lương theo kỳ"
+          },
+          {
+            "kind": "donut",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tình trạng kỳ lương"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1356,
+          "top": 0,
+          "bottom": 56,
+          "width": 1124,
+          "height": 56
+        },
+        "gridColumns": "737.609px 302.297px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 639.65625,
+            "right": 999.65625,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1023.65625,
+            "right": 1067.65625,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1079.65625,
+            "right": 1123.65625,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1135.65625,
+            "right": 1325.953125,
+            "top": 10,
+            "bottom": 46,
+            "width": 190.296875,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 652.65625,
+            "right": 669.65625,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 677.65625,
+            "right": 930.359375,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 938.359375,
+            "right": 986.65625,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.payroll",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshot": "test.payroll-dashboard-1920.png",
+      "layout": {
+        "width": 1910,
+        "viewportWidth": 1920,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1080,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "accounting",
+        "cards": [
+          {
+            "label": "Kỳ đang xử lý",
+            "value": "3",
+            "text": "3Kỳ đang xử lý",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Kỳ đã khóa",
+            "value": "4",
+            "text": "4Kỳ đã khóa",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiếu lương chưa xem",
+            "value": "8",
+            "text": "8Phiếu lương chưa xem",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "line",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Quỹ lương theo kỳ"
+          },
+          {
+            "kind": "donut",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tình trạng kỳ lương"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 1910,
+          "top": 0,
+          "bottom": 56,
+          "width": 1678,
+          "height": 56
+        },
+        "gridColumns": "1271.7px 302.297px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 1183.703125,
+            "right": 1543.703125,
+            "top": 8,
+            "bottom": 48,
+            "width": 360,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 1567.703125,
+            "right": 1611.703125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 1623.703125,
+            "right": 1667.703125,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 1679.703125,
+            "right": 1870,
+            "top": 10,
+            "bottom": 46,
+            "width": 190.296875,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 1196.703125,
+            "right": 1213.703125,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 1221.703125,
+            "right": 1474.40625,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 252.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 1482.40625,
+            "right": 1530.703125,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.payroll",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screenshot": "test.payroll-dashboard-768.png",
+      "layout": {
+        "width": 758,
+        "viewportWidth": 768,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 232,
+          "height": 1024,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "accounting",
+        "cards": [
+          {
+            "label": "Kỳ đang xử lý",
+            "value": "3",
+            "text": "3Kỳ đang xử lý",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Kỳ đã khóa",
+            "value": "4",
+            "text": "4Kỳ đã khóa",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiếu lương chưa xem",
+            "value": "8",
+            "text": "8Phiếu lương chưa xem",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "line",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Quỹ lương theo kỳ"
+          },
+          {
+            "kind": "donut",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tình trạng kỳ lương"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": {
+        "header": {
+          "left": 232,
+          "right": 758,
+          "top": 0,
+          "bottom": 56,
+          "width": 526,
+          "height": 56
+        },
+        "gridColumns": "304px 158px",
+        "controls": [
+          {
+            "name": "search",
+            "left": 252,
+            "right": 556,
+            "top": 8,
+            "bottom": 48,
+            "width": 304,
+            "height": 40
+          },
+          {
+            "name": "messages",
+            "left": 580,
+            "right": 624,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "notifications",
+            "left": 636,
+            "right": 680,
+            "top": 6,
+            "bottom": 50,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "user",
+            "left": 692,
+            "right": 738,
+            "top": 10,
+            "bottom": 46,
+            "width": 46,
+            "height": 36
+          }
+        ],
+        "searchChildren": [
+          {
+            "name": "svg",
+            "left": 265,
+            "right": 282,
+            "top": 19.5,
+            "bottom": 36.5,
+            "width": 17,
+            "height": 17
+          },
+          {
+            "name": "span",
+            "left": 290,
+            "right": 486.703125,
+            "top": 17.84375,
+            "bottom": 38.140625,
+            "width": 196.703125,
+            "height": 20.296875
+          },
+          {
+            "name": "kbd",
+            "left": 494.703125,
+            "right": 543,
+            "top": 18.03125,
+            "bottom": 37.96875,
+            "width": 48.296875,
+            "height": 19.9375
+          }
+        ]
+      }
+    },
+    {
+      "username": "test.payroll",
+      "route": "/dashboard",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "test.payroll-dashboard-390.png",
+      "layout": {
+        "width": 390,
+        "viewportWidth": 390,
+        "canvas": {
+          "backgroundColor": "rgb(241, 242, 245)",
+          "backgroundImage": "radial-gradient(at 58% 28%, rgba(248, 211, 220, 0.67), rgba(0, 0, 0, 0) 52%), radial-gradient(at 73% 68%, rgba(252, 221, 197, 0.55), rgba(0, 0, 0, 0) 52%), radial-gradient(at 12% 84%, rgba(221, 212, 242, 0.64), rgba(0, 0, 0, 0) 50%), none",
+          "mainBackgroundColor": "rgb(241, 242, 245)"
+        },
+        "tokens": {
+          "--workspace-canvas": "radial-gradient(ellipse at 58% 28%, #f8d3dcab, transparent 52%), radial-gradient(ellipse at 73% 68%, #fcddc58c, transparent 52%), radial-gradient(ellipse at 12% 84%, #ddd4f2a3, transparent 50%), #f1f2f5",
+          "--surface": "#fff",
+          "--surface-border": "#ffffffe6",
+          "--shadow-card": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--shadow-control": "5px 6px 13px #5e537717, -3px -3px 8px #ffffffe6",
+          "--radius-card-large": "16px",
+          "--sidebar-width": "232px",
+          "--topbar-height": "56px",
+          "--reference-surface": "#fafafcb8",
+          "--reference-shadow": "8px 14px 24px #5e53771c, -5px -5px 14px #ffffffd9, inset 0 1px 0 #ffffffe6",
+          "--reference-panel-radius": "14px",
+          "--reference-orange": "#e88c58",
+          "--reference-cyan": "#69bccb",
+          "--reference-violet": "#a475ce"
+        },
+        "header": {
+          "top": 0,
+          "bottom": 56,
+          "height": 56
+        },
+        "rail": {
+          "width": 0,
+          "height": 0,
+          "expanded": "true"
+        }
+      },
+      "dashboard": {
+        "profile": "accounting",
+        "cards": [
+          {
+            "label": "Kỳ đang xử lý",
+            "value": "3",
+            "text": "3Kỳ đang xử lý",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Chưa đọc",
+            "value": "0",
+            "text": "0Chưa đọc",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Kỳ đã khóa",
+            "value": "4",
+            "text": "4Kỳ đã khóa",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          },
+          {
+            "label": "Phiếu lương chưa xem",
+            "value": "8",
+            "text": "8Phiếu lương chưa xem",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "backgroundImage": "none",
+            "borderRadius": "14px"
+          }
+        ],
+        "panels": [
+          {
+            "kind": "line",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Quỹ lương theo kỳ"
+          },
+          {
+            "kind": "donut",
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Tình trạng kỳ lương"
+          },
+          {
+            "kind": null,
+            "boxShadow": "rgba(94, 83, 119, 0.11) 8px 14px 24px 0px, rgba(255, 255, 255, 0.85) -5px -5px 14px 0px, rgba(255, 255, 255, 0.9) 0px 1px 0px 0px inset",
+            "borderRadius": "14px",
+            "title": "Cần xử lý"
+          }
+        ],
+        "gauges": []
+      },
+      "employeeMaterial": null,
+      "headerControls": null
+    }
+  ],
+  "sidebarInteractions": [
+    {
+      "username": "test.supervisor",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "initialWidth": 232,
+      "collapsedWidth": 84,
+      "reopenedWidth": 232,
+      "destinations": [
+        {
+          "href": "/dashboard",
+          "name": "Dashboard"
+        },
+        {
+          "href": "/employees",
+          "name": "Nhân sự"
+        },
+        {
+          "href": "/attendance/me",
+          "name": "Cá nhân"
+        },
+        {
+          "href": "/projects",
+          "name": "Gói / Công trường"
+        },
+        {
+          "href": "/accounting/payslips",
+          "name": "Kế toán"
+        }
+      ],
+      "persistedValues": [
+        "compact",
+        "expanded"
+      ],
+      "mockedPreferenceWrites": 2
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+.layout { grid-template-columns: minmax(0, 1.35fr) minmax(300px, .9fr); gap: 16px; }
+.layout:has(> :only-child) { grid-template-columns: minmax(0, 900px); }
+.layout > .requestCard, .layout > .approvalCard { display: grid; min-width: 0; align-content: start; gap: 18px; }
+.layout > .requestCard, .layout > .approvalCard { border-radius: var(--radius-card); }
+.heading { display: flex; min-width: 0; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.heading h2, .approvalCard h2 { margin: 0; color: var(--text-primary); font-size: 18px; font-weight: 650; line-height: 1.35; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; margin: 0; }
+.facts > div { display: grid; min-width: 0; align-content: start; gap: 5px; border-top: 1px solid var(--border-subtle); padding: 13px 0; }
+.facts dt { color: var(--text-secondary); font-size: 12px; }
+.facts dd { min-width: 0; margin: 0; color: var(--text-primary); font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.facts .period, .facts .reason { grid-column: 1 / -1; }
+.period dd { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; }
+.period dd strong { font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.period dd span { border-radius: 999px; background: var(--primary-soft); padding: 4px 9px; color: var(--primary); font-size: 12px; font-weight: 650; white-space: nowrap; }
+.facts .reason dd { font-weight: 500; line-height: 1.5; }
+.actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
+.requestCard > .actions { border-top: 1px solid var(--border-subtle); padding-top: 16px; }
+.timeline { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.timeline li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 12px; border-top: 1px solid var(--border-subtle); padding: 12px 0; }
+.timeline li strong { min-width: 0; color: var(--text-primary); font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.timeline li :global(.status-badge) { justify-self: end; }
+.stepComment { grid-column: 1 / -1; justify-self: start; color: var(--text-secondary); font-size: 13px; }
+.decision { display: grid; gap: 14px; border-top: 1px solid var(--border-subtle); padding-top: 16px; }
+.decision :global(.textarea) { width: 100%; min-height: 84px; }
+.factSub { display: block; margin-top: 4px; color: var(--text-secondary); font-size: 12px; font-weight: 500; }
+.stepIdentity { display: grid; min-width: 0; gap: 5px; }
+.stepIdentity > span { color: var(--text-secondary); font-size: 12px; }
+.attachments { display: grid; gap: 9px; }
+.attachments h3 { margin: 0; font-size: 14px; }
+.attachments a { min-width: 0; overflow-wrap: anywhere; }
+.confirm { display: grid; gap: 18px; }
+.confirm dl { display: grid; gap: 12px; margin: 0; border-radius: var(--radius-control); background: var(--surface-muted, #f5f7fa); padding: 16px; }
+.confirm dl > div { display: grid; gap: 5px; }
+.confirm dt { color: var(--text-secondary); font-size: 12px; }
+.confirm dd { margin: 0; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  .layout, .layout:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .layout > .requestCard, .layout > .approvalCard { padding: 18px 16px; }
+  .heading h2, .approvalCard h2 { font-size: 20px; }
+  .decision :global(.textarea) { border-radius: var(--radius-control); font-size: 16px; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .actions > * { flex: 1 1 auto; }
+}

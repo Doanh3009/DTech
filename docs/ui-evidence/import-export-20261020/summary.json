@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-20",
+  "database": "dedicated Supabase TEST",
+  "preview": "http://localhost:3301",
+  "unit": {
+    "passed": 1026,
+    "failed": 0,
+    "optInRoutesRunSeparately": 37
+  },
+  "liveGetRoutes": {
+    "passed": 37,
+    "failed": 0,
+    "queryFailures": 0
+  },
+  "readinessFixtures": {
+    "passed": 3,
+    "failed": 0
+  },
+  "fullE2E": {
+    "runId": "202610201aac5d",
+    "passed": 254,
+    "failedBeforeFixes": 2,
+    "blocked": 0,
+    "staticRoutes": 141,
+    "viewportWidths": [
+      1440,
+      390
+    ]
+  },
+  "resolvedFailures": [
+    "Audit log request recovery",
+    "Payroll layout above 400px"
+  ],
+  "finalUiRetest": {
+    "passed": 4,
+    "failed": 0,
+    "payrollTableY": 388.625
+  },
+  "concurrentRoles": 8,
+  "conflictingWriters": 2,
+  "build": "PASS",
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "deployed": false,
+  "limits": [
+    "No large scale load certification",
+    "No operator UAT signoff"
+  ]
+}

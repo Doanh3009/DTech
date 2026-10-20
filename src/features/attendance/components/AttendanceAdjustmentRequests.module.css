@@ -1,0 +1,79 @@
+.card { min-width: 0; overflow: hidden; }
+.header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 22px; border-bottom: 1px solid var(--border-subtle); }
+.heading { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; min-width: 0; }
+.heading h2 { margin: 0; font-size: 18px; font-weight: 650; line-height: 1.4; }
+.headingIcon { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 12px; background: var(--color-primary-soft); color: var(--color-primary-active); }
+.count { display: grid; min-width: 26px; height: 26px; place-items: center; padding: 0 7px; border-radius: 8px; background: var(--surface-2); color: var(--text-secondary); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.form { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 18px 22px 22px; padding: 20px; border: 1px solid var(--border-subtle); border-radius: 17px; background: var(--surface); }
+.form > * { min-width: 0; }
+.form :global(.field__label) { font-size: 13px; }
+.reasonField, .formActions { grid-column: 1 / -1; }
+.formActions, .dialogActions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 10px; }
+.formActions { padding-top: 4px; }
+.list { display: grid; gap: 12px; padding: 18px 22px 22px; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px; min-width: 0; padding: 18px; border: 1px solid var(--border-subtle); border-radius: 16px; background: var(--surface); }
+.item[data-status="pending"] { border-color: color-mix(in srgb, var(--warning) 17%, var(--border-subtle)); }
+.itemMain { display: grid; gap: 10px; min-width: 0; }
+.itemHeading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; min-width: 0; }
+.itemHeading > strong { color: var(--text-primary); font-size: 15px; font-weight: 650; line-height: 1.4; overflow-wrap: anywhere; }
+.itemHeading :global(.status-badge) { font-size: 12px; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; color: var(--text-secondary); font-size: 12px; line-height: 1.5; font-variant-numeric: tabular-nums; }
+.meta > span { display: inline-flex; align-items: center; gap: 6px; }
+.meta strong { color: var(--text-primary); font-weight: 600; }
+.meta svg { flex-shrink: 0; color: var(--text-muted); }
+.requestType { padding: 3px 8px; border-radius: 7px; background: var(--surface-2); color: var(--color-primary-active); font-weight: 500; }
+.employeeCode { color: var(--text-muted); }
+.reason { margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.reviewNote { display: grid; gap: 4px; margin: 0; padding: 10px 12px; border-left: 3px solid var(--border-default); border-radius: 0 9px 9px 0; background: var(--surface-2); color: var(--text-secondary); font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.reviewNote > span { color: var(--text-muted); font-size: 11px; font-weight: 600; }
+.itemActions { display: flex; flex-wrap: wrap; gap: 8px; }
+.itemActions :global(.button) { min-height: 40px; min-width: 0 !important; }
+.error, .success { display: flex; align-items: start; gap: 8px; margin: 16px 22px 0; padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--danger) 20%, transparent); border-radius: 12px; background: var(--danger-soft); color: var(--danger); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.success { border-color: color-mix(in srgb, var(--success) 20%, transparent); background: var(--success-soft); color: var(--success); }
+.success svg { flex-shrink: 0; margin-top: 2px; }
+.state { min-height: 190px; padding: 30px 18px; border: 0; border-radius: 0; background: transparent; }
+.state h2 { font-size: 16px; font-weight: 500; }
+.rejectDialog { width: min(520px, calc(100vw - 32px)); padding: 0; }
+.rejectDialog :global(.overlay__header) { padding: 20px 22px; }
+.rejectForm { display: grid; gap: 18px; padding: 0 22px 22px; }
+.rejectSummary { display: grid; gap: 6px; padding: 14px 16px; border: 1px solid var(--border-subtle); border-radius: 12px; background: var(--surface-2); }
+.rejectSummary strong { font-size: 15px; font-weight: 600; overflow-wrap: anywhere; }
+.rejectSummary > span { color: var(--text-secondary); font-size: 12px; line-height: 1.5; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.dialogActions { padding-top: 2px; }
+.dialogError { margin: 0; color: var(--danger); font-size: 13px; line-height: 1.5; }
+
+@media (max-width: 1023px) {
+  .item { grid-template-columns: minmax(0, 1fr); }
+  .itemActions { justify-content: flex-end; padding-top: 12px; border-top: 1px solid var(--border-subtle); }
+}
+@media (max-width: 767px) {
+  .header { gap: 12px; padding: 16px; }
+  .heading { gap: 8px; }
+  .heading h2 { flex: 1 1 0; font-size: 16px; }
+  .headingIcon { width: 34px; height: 34px; border-radius: 11px; }
+  .header > :global(.button) { min-height: 44px; min-width: 0 !important; font-size: 13px; }
+  .form { grid-template-columns: minmax(0, 1fr); gap: 14px; margin: 14px; padding: 16px; border-radius: 14px; }
+  .form :global(.input), .form :global(.select), .form :global(.textarea), .rejectForm :global(.textarea) { font-size: 16px; }
+  .formActions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 8px; }
+  .formActions :global(.button) { min-width: 0 !important; min-height: 44px; }
+  .list { gap: 10px; padding: 14px; }
+  .item { gap: 12px; padding: 14px; border-radius: 14px; }
+  .itemHeading { align-items: start; gap: 8px; }
+  .itemHeading > strong { flex: 1 1 130px; font-size: 15px; }
+  .meta { gap: 7px 12px; }
+  .reason { font-size: 13px; }
+  .itemActions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .itemActions :global(.button) { min-height: 44px; }
+  .error, .success { margin-inline: 14px; }
+  .rejectDialog { width: calc(100vw - 24px); }
+  .rejectDialog :global(.overlay__header) { padding: 18px 16px; }
+  .rejectDialog :global(.overlay__header) h2 { font-size: 18px; }
+  .rejectForm { gap: 16px; padding: 0 16px 18px; }
+  .dialogActions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr); gap: 8px; }
+  .dialogActions :global(.button) { min-width: 0 !important; min-height: 44px; padding-inline: 10px; font-size: 13px; }
+}
+@media (max-width: 359px) {
+  .heading { width: 100%; }
+  .header > :global(.button) { width: 100%; }
+  .dialogActions { grid-template-columns: minmax(0, 1fr); }
+}

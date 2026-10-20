@@ -1,0 +1,8 @@
+.steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 12px; border: 1px solid #e1eaf6; border-radius: 14px; background: #ffffffa3; list-style: none; }
+.steps li { display: inline-flex; min-width: 0; align-items: center; gap: 7px; padding: 5px 8px; font-size: 12px; color: #7d8da3; }
+.steps li span { display: grid; place-items: center; width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; background: #edf2f8; font-size: 11px; }
+.steps .done { color: #3a8a6a; }
+.steps .done span { background: #e8f8ef; }
+.steps .current { color: #2873ce; font-weight: 600; }
+.steps .current span { color: white; background: #5c9ef4; }
+@media(max-width:767px) { .steps { gap: 4px; padding: 8px; } .steps li { font-size: 11px; gap: 5px; padding: 4px; } }

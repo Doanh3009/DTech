@@ -1,0 +1,273 @@
+{
+  "generatedAt": "2026-10-05T08:10:06.054Z",
+  "environment": "development",
+  "baseUrl": "http://localhost:3000",
+  "reports": [
+    {
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "readyMs": 1878,
+      "metrics": {
+        "width": 1920,
+        "scrollWidth": 1910,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": {
+          "size": "16px",
+          "weight": "600"
+        },
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "dashboard-1920x1080.png"
+    },
+    {
+      "route": "/employees",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "readyMs": 3022,
+      "metrics": {
+        "width": 1920,
+        "scrollWidth": 1910,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": null,
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "employees-1920x1080.png"
+    },
+    {
+      "route": "/ui-preview/timesheets",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "readyMs": 361,
+      "metrics": {
+        "width": 1920,
+        "scrollWidth": 1910,
+        "fontSize": "16px",
+        "cardHeading": null,
+        "launcherLabel": null,
+        "surfaceHeight": 214,
+        "nestedBorderWidth": "0px",
+        "errors": []
+      },
+      "screenshot": "timesheets-1920x1080.png"
+    },
+    {
+      "route": "/dashboard",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "readyMs": 1879,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": {
+          "size": "16px",
+          "weight": "600"
+        },
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "dashboard-1440x900.png"
+    },
+    {
+      "route": "/employees",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "readyMs": 1541,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": null,
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "employees-1440x900.png"
+    },
+    {
+      "route": "/ui-preview/timesheets",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "readyMs": 342,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "fontSize": "16px",
+        "cardHeading": null,
+        "launcherLabel": null,
+        "surfaceHeight": 214,
+        "nestedBorderWidth": "0px",
+        "errors": []
+      },
+      "screenshot": "timesheets-1440x900.png"
+    },
+    {
+      "route": "/dashboard",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "readyMs": 4337,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": {
+          "size": "16px",
+          "weight": "600"
+        },
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "dashboard-768x1024.png"
+    },
+    {
+      "route": "/employees",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "readyMs": 894,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": null,
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "employees-768x1024.png"
+    },
+    {
+      "route": "/ui-preview/timesheets",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "readyMs": 323,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "fontSize": "16px",
+        "cardHeading": null,
+        "launcherLabel": null,
+        "surfaceHeight": 279,
+        "nestedBorderWidth": "0px",
+        "errors": []
+      },
+      "screenshot": "timesheets-768x1024.png"
+    },
+    {
+      "route": "/dashboard",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "readyMs": 7507,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": {
+          "size": "16px",
+          "weight": "600"
+        },
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "dashboard-390x844.png"
+    },
+    {
+      "route": "/employees",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "readyMs": 2993,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "fontSize": "16px",
+        "cardHeading": {
+          "size": "17px",
+          "weight": "600"
+        },
+        "launcherLabel": null,
+        "surfaceHeight": null,
+        "nestedBorderWidth": null,
+        "errors": []
+      },
+      "screenshot": "employees-390x844.png"
+    },
+    {
+      "route": "/ui-preview/timesheets",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "readyMs": 151,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "fontSize": "16px",
+        "cardHeading": null,
+        "launcherLabel": null,
+        "surfaceHeight": 764,
+        "nestedBorderWidth": "0px",
+        "errors": []
+      },
+      "screenshot": "timesheets-390x844.png"
+    }
+  ],
+  "failures": [],
+  "anonymousRedirect": true
+}

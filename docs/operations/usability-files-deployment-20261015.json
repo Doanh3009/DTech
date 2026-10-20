@@ -1,0 +1,285 @@
+{
+  "createdAt": "2026-10-15T06:44:37.307Z",
+  "target": "preview",
+  "channel": "test",
+  "projectId": "prj_eVAMgL2HJS9ncEB13RLeJ8XRURWP",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "sourceSha": "6a96a2fa09c2263b2ebe857519079289369831676192f3c7c3126cfc47312839",
+  "previousDeployment": "dpl_6a9XiRvSRahMgGLh4jUGfFW3zKBD",
+  "productionDeployment": "dpl_Hz1TzXrL9sR9yEzXUeMiFZRBUbDK",
+  "id": "dpl_8gCwv5ALi82pqsRSKBuHUUekBwhk",
+  "url": "ct-noi-npb8d9gkg-chau-tuan.vercel.app",
+  "readyState": "READY",
+  "checkedAt": "2026-10-15T06:46:03.511Z",
+  "publicUrl": "https://ct-noi-bo-test-chau-tuan.vercel.app",
+  "verifiedAt": "2026-10-15T06:48:28.364Z",
+  "public": true,
+  "databaseMigrationCount": 50,
+  "productionAliasUnchanged": true,
+  "checks": [
+    {
+      "route": "/api/health/live",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "alive",
+        "checkedAt": "2026-10-15T06:47:07.532Z"
+      }
+    },
+    {
+      "route": "/api/health/ready",
+      "authorized": false,
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checks": [
+          {
+            "component": "database",
+            "status": "healthy"
+          }
+        ],
+        "checkedAt": "2026-10-15T06:47:07.648Z"
+      }
+    },
+    {
+      "route": "/login",
+      "authorized": false,
+      "status": 200,
+      "travelerCount": 11,
+      "testAccountPicker": true
+    },
+    {
+      "route": "/testing",
+      "authorized": false,
+      "status": 200,
+      "testingPage": true
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": false,
+      "status": 401
+    },
+    {
+      "route": "/ui-preview/attendance-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/ui-preview/leave-design",
+      "authorized": false,
+      "status": 404
+    },
+    {
+      "route": "/api/testing/accounts",
+      "authorized": true,
+      "status": 200,
+      "accountCount": 10,
+      "activeAccountCount": 10
+    },
+    {
+      "route": "/api/v1/leave-policies",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-workflows/approvers",
+      "status": 200,
+      "scope": "managed admin test account",
+      "accountCount": 10,
+      "roleCount": 2
+    },
+    {
+      "route": "/api/v1/leave-workflows",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/insurance",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=2026",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/leave-types",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 9
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 41
+    },
+    {
+      "route": "/api/v1/accounting/payroll",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 13
+    },
+    {
+      "route": "/api/v1/leave-balances/employees",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 182
+    },
+    {
+      "route": "/api/v1/leave-balances?scope=all&year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 1092
+    },
+    {
+      "route": "/api/v1/leave-settlements?year=bad",
+      "status": 400,
+      "scope": "invalid year safely rejected"
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-ledger?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/leave-requests?scope=all&employeeId=41000000-0000-4000-8000-000000000001&startDate=2026-01-01&endDate=2026-12-31",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 0
+    },
+    {
+      "route": "/api/v1/employees/41000000-0000-4000-8000-000000000001/leave-balance?year=2026",
+      "status": 200,
+      "scope": "managed admin test account",
+      "recordCount": 6
+    },
+    {
+      "route": "/api/v1/leave-requests/aa3bbce2-4e34-4e92-94c3-0d7bd4ddaf53",
+      "status": 200,
+      "scope": "managed admin test account"
+    },
+    {
+      "route": "/api/v1/auth/logout",
+      "status": 200,
+      "scope": "verification session revoked"
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Read-only live business checks plus managed account login/logout, PDF/XLSX downloads and public-landmark address cache. No payroll, leave or worker attendance transaction submitted.",
+    "Map coverage and captured GPS accuracy limit address precision; a house number is not guaranteed.",
+    "Selected exported Excel samples opened successfully before and after the fix. The exact failing Excel file was not provided.",
+    "Chromium device viewports and component fixtures were checked; no physical iOS or Android device was used."
+  ],
+  "unitTests": {
+    "total": 904,
+    "passed": 867,
+    "failed": 0,
+    "skippedOptIn": 37
+  },
+  "sqlIntegrityChecks": {
+    "passed": 20,
+    "transaction": "ROLLBACK",
+    "scope": "address cache and provider gate"
+  },
+  "realFiles": {
+    "downloadCount": 9,
+    "excelReader": "Microsoft Excel desktop",
+    "excelOpened": 6,
+    "pdfReader": "MuPDF",
+    "pdfOpened": 3,
+    "allEmbeddedFontsValid": true,
+    "downloadSmoke": {
+      "checkedAt": "2026-10-15T06:47:09.160Z",
+      "deploymentId": "dpl_8gCwv5ALi82pqsRSKBuHUUekBwhk",
+      "databaseProject": "lgmlkagcytfjazulgfbz",
+      "environment": "isolated TEST Preview",
+      "baseUrl": "https://ct-noi-bo-test-chau-tuan.vercel.app",
+      "authentication": [
+        {
+          "action": "login",
+          "account": "admin.test",
+          "status": 200
+        },
+        {
+          "action": "logout",
+          "status": 200
+        }
+      ],
+      "downloads": [
+        {
+          "label": "payroll",
+          "route": "/accounting/payroll/98400000-0000-4000-8000-000000000001",
+          "filename": "Bang_luong_09_2026.xlsx",
+          "savedPath": ".tmp\\export-review\\ui-downloads\\payroll-Bang_luong_09_2026.xlsx",
+          "size": 12243,
+          "signature": "PK0304",
+          "sha256": "5b2873db0bdd156bc2d39985614619abcdb076c9e6701ecc92db19a4f209206f",
+          "browserDownloadSucceeded": true,
+          "correct": true
+        },
+        {
+          "label": "payslip-1",
+          "route": "/accounting/payslips/478ab316-8d50-4310-886c-f98f321bd966",
+          "filename": "phieu-luong-2026-09-v1.pdf",
+          "savedPath": ".tmp\\export-review\\ui-downloads\\payslip-1-phieu-luong-2026-09-v1.pdf",
+          "size": 12520,
+          "signature": "%PDF-",
+          "sha256": "608e135be01397861a300987b586671bf445837788ba038877f4f364fbb6f9a0",
+          "browserDownloadSucceeded": true,
+          "correct": true
+        },
+        {
+          "label": "payslip-2",
+          "route": "/accounting/payslips/04a99ecf-f37f-4784-89fb-065bc4b4a5bb",
+          "filename": "phieu-luong-2026-09-v1.pdf",
+          "savedPath": ".tmp\\export-review\\ui-downloads\\payslip-2-phieu-luong-2026-09-v1.pdf",
+          "size": 13082,
+          "signature": "%PDF-",
+          "sha256": "eab7de139fe304cf9df24bb4ef4e31515dd7b5ac4c02211a27051175bda39f35",
+          "browserDownloadSucceeded": true,
+          "correct": true
+        }
+      ],
+      "runtimeErrors": [],
+      "apiErrors": [],
+      "expectedAvatarFallbacks": [
+        {
+          "path": "/api/v1/workspace/avatar",
+          "status": 404
+        },
+        {
+          "path": "/api/v1/workspace/avatar",
+          "status": 404
+        },
+        {
+          "path": "/api/v1/workspace/avatar",
+          "status": 404
+        }
+      ],
+      "blockedWrites": [],
+      "passed": true,
+      "scope": "Managed test login/logout and GET-only UI/API. Real browser clicks on existing payroll and payslip details. No business POST/PATCH/DELETE.",
+      "finishedAt": "2026-10-15T06:47:17.640Z"
+    }
+  },
+  "addressChecks": {
+    "passed": true,
+    "count": 7,
+    "publicLandmarkOnly": true,
+    "actualEmployeeGpsUsed": false
+  },
+  "liveUi": {
+    "screens": 40,
+    "interactions": 6,
+    "runtimeErrors": 0,
+    "layoutIssues": 0,
+    "blockedBusinessWrites": 0,
+    "report": "../ui-evidence/usability-files-20261015/report-final.json"
+  }
+}

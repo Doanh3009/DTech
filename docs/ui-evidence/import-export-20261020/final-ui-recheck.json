@@ -1,0 +1,27 @@
+[
+  {
+    "kind": "audit",
+    "width": 1440,
+    "status": "PASS",
+    "ms": 1381
+  },
+  {
+    "kind": "audit",
+    "width": 390,
+    "status": "PASS",
+    "ms": 1360
+  },
+  {
+    "kind": "payroll",
+    "width": 1440,
+    "status": "PASS",
+    "ms": 10955,
+    "tableY": 388.625
+  },
+  {
+    "kind": "payroll",
+    "width": 390,
+    "status": "PASS",
+    "ms": 1685
+  }
+]

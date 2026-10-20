@@ -1,0 +1,26 @@
+{
+  "deploymentId": "dpl_6a9XiRvSRahMgGLh4jUGfFW3zKBD",
+  "screens": 40,
+  "runtimeErrors": 0,
+  "automaticLayoutIssues": 0,
+  "blockedBusinessWrites": 0,
+  "addressLookups": 4,
+  "avatarFallback404": 34,
+  "otherApiErrors": [],
+  "manualObservations": [
+    {
+      "kind": "truncated-package-mobile-action-labels",
+      "screen": "admin-test-package-team-390.png",
+      "labels": [
+        "Hôm nay",
+        "Điểm danh công nhân"
+      ]
+    },
+    {
+      "kind": "package-title-single-line",
+      "screen": "admin-test-package-team-390.png",
+      "reason": "Shared mobile heading nowrap wins over the module line clamp."
+    }
+  ],
+  "status": "Follow-up mobile label/title fix authorized by root; first pass retained."
+}

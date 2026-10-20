@@ -1,0 +1,10 @@
+.root { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 0; max-width: 100%; color: var(--text-primary); font-size: 13px; font-weight: 500; line-height: 1.5; text-align: left; vertical-align: top; white-space: normal; }
+.map { display: inline-flex; align-items: flex-start; gap: 6px; min-width: 0; max-width: 100%; color: var(--color-primary); text-decoration: none; }
+.map > svg { flex: 0 0 15px; margin-top: 3px; }
+.content { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.address { overflow-wrap: anywhere; }
+.metadata, .reference { color: var(--text-secondary); font-size: 12px; font-weight: 400; overflow-wrap: anywhere; }
+.reference { padding-left: 21px; }
+.attribution { margin-left: 21px; color: var(--text-secondary); font-size: 10px; font-weight: 400; text-decoration: none; }
+.map:hover .address, .attribution:hover { text-decoration: underline; }
+.map:focus-visible, .attribution:focus-visible { border-radius: 4px; outline: 2px solid var(--color-primary); outline-offset: 3px; }

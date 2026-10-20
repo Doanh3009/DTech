@@ -1,0 +1,964 @@
+{
+  "recordedAt": "2026-10-17T07:15:52.089Z",
+  "deploymentId": "dpl_4RnUm8dprL3SFqNGVdYcEfUxvKRW",
+  "sourceSha": "df6fb71e259751b39dafdf89ae744167a7b2dcb1cb809d400d20cf58219800ed",
+  "guard": {
+    "receiptReady": true,
+    "providerReady": true,
+    "testAliasMatches": true,
+    "productionAliasUnchanged": true,
+    "sourceShaMatches": true
+  },
+  "apiChecks": [
+    {
+      "route": "/api/v1/warehouses",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/inventory",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/references",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/issues?limit=26",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/dashboard",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/stock-counts",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/items?status=active",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/ledger?limit=26",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/issues/db3d9c69-b6fd-4af7-a679-e4cb14cf6d61",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouse/stock-counts/99060000-0000-4000-8000-000000000001",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/warehouses/1fe3cf7c-450e-41c2-87f3-b1cc415ad67f",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/b0000000-0000-4000-8000-000000000001",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/b0000000-0000-4000-8000-000000000001/materials",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/b0000000-0000-4000-8000-000000000001/progress",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/b0000000-0000-4000-8000-000000000001/materials?worksiteId=b1000000-0000-4000-8000-000000000001",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/projects/b0000000-0000-4000-8000-000000000001/materials",
+      "status": 403
+    },
+    {
+      "route": "/api/v1/warehouse/inventory",
+      "status": 403
+    }
+  ],
+  "screens": [
+    {
+      "label": "warehouse-overview",
+      "width": 320,
+      "path": "/warehouse",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-inventory",
+      "width": 320,
+      "path": "/warehouse/inventory",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-issues",
+      "width": 320,
+      "path": "/warehouse/issues",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-receipt-new",
+      "width": 320,
+      "path": "/warehouse/receipts/new",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-new",
+      "width": 320,
+      "path": "/warehouse/stock-counts/new",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-detail",
+      "width": 320,
+      "path": "/warehouse/stock-counts/99060000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-detail",
+      "width": 320,
+      "path": "/warehouse/warehouses/1fe3cf7c-450e-41c2-87f3-b1cc415ad67f",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-overview",
+      "width": 390,
+      "path": "/warehouse",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-inventory",
+      "width": 390,
+      "path": "/warehouse/inventory",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-issues",
+      "width": 390,
+      "path": "/warehouse/issues",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-receipt-new",
+      "width": 390,
+      "path": "/warehouse/receipts/new",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-new",
+      "width": 390,
+      "path": "/warehouse/stock-counts/new",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-detail",
+      "width": 390,
+      "path": "/warehouse/stock-counts/99060000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-detail",
+      "width": 390,
+      "path": "/warehouse/warehouses/1fe3cf7c-450e-41c2-87f3-b1cc415ad67f",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-overview",
+      "width": 768,
+      "path": "/warehouse",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-inventory",
+      "width": 768,
+      "path": "/warehouse/inventory",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-issues",
+      "width": 768,
+      "path": "/warehouse/issues",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-receipt-new",
+      "width": 768,
+      "path": "/warehouse/receipts/new",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-new",
+      "width": 768,
+      "path": "/warehouse/stock-counts/new",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-detail",
+      "width": 768,
+      "path": "/warehouse/stock-counts/99060000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-detail",
+      "width": 768,
+      "path": "/warehouse/warehouses/1fe3cf7c-450e-41c2-87f3-b1cc415ad67f",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-overview",
+      "width": 1440,
+      "path": "/warehouse",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-inventory",
+      "width": 1440,
+      "path": "/warehouse/inventory",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-issues",
+      "width": 1440,
+      "path": "/warehouse/issues",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-receipt-new",
+      "width": 1440,
+      "path": "/warehouse/receipts/new",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-new",
+      "width": 1440,
+      "path": "/warehouse/stock-counts/new",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-count-detail",
+      "width": 1440,
+      "path": "/warehouse/stock-counts/99060000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-detail",
+      "width": 1440,
+      "path": "/warehouse/warehouses/1fe3cf7c-450e-41c2-87f3-b1cc415ad67f",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "warehouse-submitted-posting",
+      "width": 390,
+      "path": "/warehouse/issues/99040000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-today",
+      "width": 320,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/today",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-progress",
+      "width": 320,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/progress",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-materials",
+      "width": 320,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/materials",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-profile",
+      "width": 320,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-worksite-editor",
+      "width": 320,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 296,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-today",
+      "width": 390,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/today",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-progress",
+      "width": 390,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/progress",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-materials",
+      "width": 390,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/materials",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-profile",
+      "width": 390,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-worksite-editor",
+      "width": 390,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 12,
+            "width": 366,
+            "height": 876,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-today",
+      "width": 768,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/today",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-progress",
+      "width": 768,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/progress",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-materials",
+      "width": 768,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/materials",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-profile",
+      "width": 768,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-worksite-editor",
+      "width": 768,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialogs": [
+          {
+            "x": 69,
+            "y": 16,
+            "width": 620,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-today",
+      "width": 1440,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/today",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-progress",
+      "width": 1440,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/progress",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-materials",
+      "width": 1440,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/materials",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-profile",
+      "width": 1440,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-worksite-editor",
+      "width": 1440,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/profile",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialogs": [
+          {
+            "x": 405,
+            "y": 16,
+            "width": 620,
+            "height": 868,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    },
+    {
+      "label": "project-selected-worksite",
+      "width": 390,
+      "path": "/projects/b0000000-0000-4000-8000-000000000001/materials",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "dialogs": [],
+        "clipped": [],
+        "entryTransforms": []
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "apiErrors": [],
+  "expectedAvatarFallbacks": [
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/workspace/avatar",
+      "status": 404
+    }
+  ],
+  "blockedBusinessWrites": [],
+  "authentication": [
+    {
+      "username": "warehouse.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "warehouse.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "admin.test",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "username": "employee.test",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "Managed TEST accounts and existing business data. No warehouse or construction mutation is submitted.",
+    "Positive mutations exercised with isolated browser fixtures and SQL rollback. No physical mobile device or simultaneous multi-session contention."
+  ],
+  "facts": {
+    "warehouses": 12,
+    "inventoryRows": 13,
+    "pendingDocuments": 8,
+    "counts": 6,
+    "projectId": "b0000000-0000-4000-8000-000000000001",
+    "materialWarehouses": 1,
+    "progressNodes": 3
+  },
+  "submittedPostingAction": {
+    "present": true,
+    "type": "issue"
+  },
+  "selectedWorksiteNavigation": {
+    "passed": true,
+    "transitions": 2
+  },
+  "passed": true
+}

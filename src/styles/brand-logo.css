@@ -1,0 +1,96 @@
+/* Use a 439 × 439 viewport at x=4, y=13 on the official 447 × 559 asset.
+   Crop its small English wordmark only where a readable brand label sits beside it. */
+.brand-logo__crop {
+  --brand-logo-size: 36px;
+  position: relative;
+  display: block;
+  width: var(--brand-logo-size);
+  min-width: var(--brand-logo-size);
+  height: var(--brand-logo-size);
+  min-height: var(--brand-logo-size);
+  flex: 0 0 var(--brand-logo-size);
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.brand-logo__crop > img,
+.app-rail__brand .brand-logo__crop > img,
+.login-brand-panel .brand-logo__crop > img,
+.login-card__mobile-brand .brand-logo__crop > img {
+  position: absolute;
+  top: -2.961276%;
+  left: -.911162%;
+  display: block;
+  width: 101.822323%;
+  max-width: none;
+  height: auto;
+  object-fit: initial;
+  filter: none;
+}
+
+.app-logo.app-logo--compact {
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  background: transparent;
+}
+
+.app-logo.app-logo--compact > .app-logo__image {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.app-logo:focus-visible {
+  border-radius: 8px;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.app-rail__brand .app-logo.app-logo--compact {
+  width: 44px;
+  height: 44px;
+}
+
+.app-rail__brand .app-logo__compact-crop.brand-logo__crop {
+  --brand-logo-size: 34px;
+  width: var(--brand-logo-size);
+  height: var(--brand-logo-size);
+}
+
+.login-brand__mark.brand-logo__crop {
+  --brand-logo-size: 152px;
+  z-index: 2;
+}
+
+.login-card__mobile-brand .login-brand__mark.brand-logo__crop {
+  --brand-logo-size: 56px;
+}
+
+@media (max-width: 767px) {
+  .app-shell .app-header__mobile-logo .app-logo.app-logo--compact {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .app-shell .app-header__mobile-logo .brand-logo__crop,
+  .app-shell .app-header__mobile-logo .app-logo__mark,
+  .app-shell .app-header__mobile-logo .app-logo__image.app-logo__--compact {
+    --brand-logo-size: 32px;
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .app-shell .app-header__mobile-logo .brand-logo__crop > img {
+    width: 101.822323%;
+    height: auto;
+  }
+}

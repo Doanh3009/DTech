@@ -1,0 +1,734 @@
+{
+  "recordedAt": "2026-10-16T01:55:12.280Z",
+  "deploymentId": "dpl_A9T58R3ReyHr7iBT41yruSCYhfAn",
+  "alias": "ct-noi-bo-test-chau-tuan.vercel.app",
+  "databaseProject": "lgmlkagcytfjazulgfbz",
+  "kind": "live-read-only-timesheet-user-flow",
+  "temporaryBrowserStyleProbe": false,
+  "account": "hr.test",
+  "periodId": "98300000-0000-4000-8000-000000000001",
+  "screens": [
+    {
+      "label": "list",
+      "width": 320,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "calendarGrids": 0,
+        "employeeRowWidth": 286,
+        "employeeNameWidth": 257.984375,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 254,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 200,
+          "labelScrollWidth": 200
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-page2",
+      "width": 320,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "calendarGrids": 0,
+        "employeeRowWidth": 286,
+        "employeeNameWidth": 257.984375,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 254,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 200,
+          "labelScrollWidth": 200
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-filtered",
+      "width": 320,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "calendarGrids": 0,
+        "employeeRowWidth": 286,
+        "employeeNameWidth": 257.984375,
+        "visibleEmployeeRows": 1,
+        "periodTrigger": {
+          "width": 254,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 200,
+          "labelScrollWidth": 200
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-calendar",
+      "width": 320,
+      "urlPath": "/timesheets/periods/98300000-0000-4000-8000-000000000001/employees/TEST-NV01",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "calendarGrids": 1,
+        "periodActions": [],
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-day",
+      "width": 320,
+      "urlPath": "/timesheets/periods/98300000-0000-4000-8000-000000000001/employees/TEST-NV01",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "calendarGrids": 1,
+        "periodActions": [],
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "clipped": [],
+        "dialogs": [
+          {
+            "x": 12,
+            "y": 162.484375,
+            "width": 296,
+            "height": 575.03125
+          }
+        ],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-return",
+      "width": 320,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "calendarGrids": 0,
+        "employeeRowWidth": 286,
+        "employeeNameWidth": 257.984375,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 254,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 200,
+          "labelScrollWidth": 200
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list",
+      "width": 390,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "calendarGrids": 0,
+        "employeeRowWidth": 356,
+        "employeeNameWidth": 328,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 220,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 166,
+          "labelScrollWidth": 166
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-page2",
+      "width": 390,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "calendarGrids": 0,
+        "employeeRowWidth": 356,
+        "employeeNameWidth": 328,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 220,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 166,
+          "labelScrollWidth": 166
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-filtered",
+      "width": 390,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "calendarGrids": 0,
+        "employeeRowWidth": 356,
+        "employeeNameWidth": 328,
+        "visibleEmployeeRows": 1,
+        "periodTrigger": {
+          "width": 220,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 166,
+          "labelScrollWidth": 166
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-calendar",
+      "width": 390,
+      "urlPath": "/timesheets/periods/98300000-0000-4000-8000-000000000001/employees/TEST-NV01",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "calendarGrids": 1,
+        "periodActions": [],
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-day",
+      "width": 390,
+      "urlPath": "/timesheets/periods/98300000-0000-4000-8000-000000000001/employees/TEST-NV01",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "calendarGrids": 1,
+        "periodActions": [],
+        "calendarRefresh": {
+          "width": 44,
+          "height": 44
+        },
+        "clipped": [],
+        "dialogs": [
+          {
+            "x": 13.265625,
+            "y": 164.28125,
+            "width": 363.453125,
+            "height": 571.4375
+          }
+        ],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-return",
+      "width": 390,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "calendarGrids": 0,
+        "employeeRowWidth": 356,
+        "employeeNameWidth": 328,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 220,
+          "height": 61.1875,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 166,
+          "labelScrollWidth": 166
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list",
+      "width": 1440,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "calendarGrids": 0,
+        "employeeRowWidth": 1132.65625,
+        "employeeNameWidth": 385.09375,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 286,
+          "height": 48,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 223,
+          "labelScrollWidth": 223
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 40
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 40
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-page2",
+      "width": 1440,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "calendarGrids": 0,
+        "employeeRowWidth": 1132.65625,
+        "employeeNameWidth": 385.09375,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 286,
+          "height": 48,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 223,
+          "labelScrollWidth": 223
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 40
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 40
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-filtered",
+      "width": 1440,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "calendarGrids": 0,
+        "employeeRowWidth": 1132.65625,
+        "employeeNameWidth": 385.09375,
+        "visibleEmployeeRows": 1,
+        "periodTrigger": {
+          "width": 286,
+          "height": 48,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 223,
+          "labelScrollWidth": 223
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 40
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 40
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-calendar",
+      "width": 1440,
+      "urlPath": "/timesheets/periods/98300000-0000-4000-8000-000000000001/employees/TEST-NV01",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "calendarGrids": 1,
+        "periodActions": [],
+        "calendarRefresh": {
+          "width": 44,
+          "height": 40
+        },
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    },
+    {
+      "label": "employee-day",
+      "width": 1440,
+      "urlPath": "/timesheets/periods/98300000-0000-4000-8000-000000000001/employees/TEST-NV01",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "calendarGrids": 1,
+        "periodActions": [],
+        "calendarRefresh": {
+          "width": 44,
+          "height": 40
+        },
+        "clipped": [],
+        "dialogs": [
+          {
+            "x": 521.234375,
+            "y": 160.28125,
+            "width": 387.53125,
+            "height": 579.4375
+          }
+        ],
+        "alerts": []
+      }
+    },
+    {
+      "label": "list-return",
+      "width": 1440,
+      "urlPath": "/timesheets/matrix?periodId=98300000-0000-4000-8000-000000000001",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "calendarGrids": 0,
+        "employeeRowWidth": 1132.65625,
+        "employeeNameWidth": 385.09375,
+        "visibleEmployeeRows": 20,
+        "periodTrigger": {
+          "width": 286,
+          "height": 48,
+          "labelWhiteSpace": "normal",
+          "labelClientWidth": 223,
+          "labelScrollWidth": 223
+        },
+        "periodActions": [
+          {
+            "label": "Cập nhật bảng công",
+            "width": 44,
+            "height": 40
+          },
+          {
+            "label": "Quản lý kỳ công",
+            "width": 44,
+            "height": 40
+          }
+        ],
+        "clipped": [],
+        "dialogs": [],
+        "alerts": []
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "default-summary-list",
+      "passed": true,
+      "width": 320,
+      "employees": 52,
+      "visibleRows": 20,
+      "noMiniCalendars": true
+    },
+    {
+      "name": "pagination",
+      "passed": true,
+      "width": 320,
+      "range": "21–40 / 52"
+    },
+    {
+      "name": "saved-late-and-leave-values-after-search",
+      "passed": true,
+      "width": 320,
+      "lateDays": 2,
+      "sourceDailyRows": 0
+    },
+    {
+      "name": "employee-calendar-navigation",
+      "passed": true,
+      "width": 320,
+      "days": 30
+    },
+    {
+      "name": "existing-day-detail",
+      "passed": true,
+      "width": 320,
+      "date": "2026-09-01",
+      "workMinutes": 480
+    },
+    {
+      "name": "back-preserves-period",
+      "passed": true,
+      "width": 320,
+      "periodId": "98300000-0000-4000-8000-000000000001"
+    },
+    {
+      "name": "default-summary-list",
+      "passed": true,
+      "width": 390,
+      "employees": 52,
+      "visibleRows": 20,
+      "noMiniCalendars": true
+    },
+    {
+      "name": "pagination",
+      "passed": true,
+      "width": 390,
+      "range": "21–40 / 52"
+    },
+    {
+      "name": "saved-late-and-leave-values-after-search",
+      "passed": true,
+      "width": 390,
+      "lateDays": 2,
+      "sourceDailyRows": 0
+    },
+    {
+      "name": "employee-calendar-navigation",
+      "passed": true,
+      "width": 390,
+      "days": 30
+    },
+    {
+      "name": "existing-day-detail",
+      "passed": true,
+      "width": 390,
+      "date": "2026-09-01",
+      "workMinutes": 480
+    },
+    {
+      "name": "back-preserves-period",
+      "passed": true,
+      "width": 390,
+      "periodId": "98300000-0000-4000-8000-000000000001"
+    },
+    {
+      "name": "default-summary-list",
+      "passed": true,
+      "width": 1440,
+      "employees": 52,
+      "visibleRows": 20,
+      "noMiniCalendars": true
+    },
+    {
+      "name": "pagination",
+      "passed": true,
+      "width": 1440,
+      "range": "21–40 / 52"
+    },
+    {
+      "name": "saved-late-and-leave-values-after-search",
+      "passed": true,
+      "width": 1440,
+      "lateDays": 2,
+      "sourceDailyRows": 0
+    },
+    {
+      "name": "employee-calendar-navigation",
+      "passed": true,
+      "width": 1440,
+      "days": 30
+    },
+    {
+      "name": "existing-day-detail",
+      "passed": true,
+      "width": 1440,
+      "date": "2026-09-01",
+      "workMinutes": 480
+    },
+    {
+      "name": "back-preserves-period",
+      "passed": true,
+      "width": 1440,
+      "periodId": "98300000-0000-4000-8000-000000000001"
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "apiErrors": [],
+  "expectedApiResponses": [
+    {
+      "label": "list",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "reason": "managed-account-without-uploaded-avatar"
+    },
+    {
+      "label": "list",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "reason": "managed-account-without-uploaded-avatar"
+    },
+    {
+      "label": "list",
+      "path": "/api/v1/workspace/avatar",
+      "status": 404,
+      "reason": "managed-account-without-uploaded-avatar"
+    }
+  ],
+  "blockedBusinessWrites": [],
+  "authentication": [
+    {
+      "action": "login",
+      "status": 200
+    },
+    {
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "businessRecordsChanged": false,
+  "limitations": [
+    "Uses the existing 52-person TEST period and does not create, recompute, adjust, lock, approve, delete or seed any business record.",
+    "Saved summary values are checked against API data; incomplete daily data remains visibly unknown.",
+    "Browser checks cover Chrome at 320, 390 and 1440 CSS pixels; physical hardware is not checked.",
+    "A managed account without an uploaded avatar may return the documented avatar 404; this is recorded separately from timesheet API errors."
+  ],
+  "source": {
+    "employees": 52,
+    "dailyRows": 1,
+    "employeesWithLateDays": 8,
+    "calendarEmployeeCode": "TEST-NV01",
+    "calendarDate": "2026-09-01",
+    "checkedLateEmployeeCode": "TEST-USER-006",
+    "checkedSavedLateDays": 2
+  },
+  "passed": true
+}

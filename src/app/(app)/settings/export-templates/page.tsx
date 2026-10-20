@@ -1,0 +1,2 @@
+import { BackLink } from "@/components/shared/BackLink";import { PageHeader } from "@/components/shared/PageHeader";import { SettingsShell } from "@/features/settings/components/SettingsShell";import { ReportTemplateDesigner } from "@/features/timesheets/components/ReportTemplateDesigner";
+export default function Page(){return <SettingsShell activePath="/settings/export-templates"><div className="page-stack"><BackLink href="/settings"/><PageHeader title="Mẫu xuất dữ liệu"/><ReportTemplateDesigner/></div></SettingsShell>;}

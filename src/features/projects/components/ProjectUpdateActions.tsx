@@ -1,0 +1,16 @@
+"use client";
+import { Archive, Edit3, Pin } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Button } from "@/components/shared/Button";
+import { Input, Select, Textarea } from "@/components/shared/FormControls";
+import type { ProjectUpdate } from "@/features/projects/types/projectTypes";
+
+export function ProjectUpdateActions({ update }: { update: ProjectUpdate }) {
+  const router = useRouter(); const [editing, setEditing] = useState(false); const [message, setMessage] = useState("");
+  async function call(url: string, body: unknown) { const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }); const payload = await response.json() as { error?: { message: string } }; if (!response.ok) throw new Error(payload.error?.message ?? "Không thể cập nhật."); router.refresh(); }
+  async function edit(form: FormData) { try { const response = await fetch(`/api/v1/project-updates/${update.id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ title: form.get("title"), content: form.get("content"), status: form.get("status"), rowVersion: update.version, reason: form.get("reason") || undefined }) }); const payload = await response.json() as { error?: { message: string } }; if (!response.ok) throw new Error(payload.error?.message ?? "Không thể chỉnh sửa."); setEditing(false); router.refresh(); } catch (error) { setMessage(error instanceof Error ? error.message : "Không thể chỉnh sửa."); } }
+  async function archive() { if (!window.confirm("Lưu trữ cập nhật này?")) return; const reason = window.prompt("Lý do lưu trữ"); if (!reason || reason.trim().length < 3) return; try { await call(`/api/v1/project-updates/${update.id}/archive`, { reason }); router.push(`/projects/${update.projectId}/updates`); } catch (error) { setMessage(error instanceof Error ? error.message : "Không thể lưu trữ."); } }
+  if (editing) return <form action={edit} className="project-update-edit"><Input defaultValue={update.title} label="Tiêu đề" name="title" /><Textarea defaultValue={update.content} label="Nội dung" name="content" required rows={6} /><Select defaultValue={update.status} label="Tình trạng" name="status" options={[{ value: "in_progress", label: "Đang thực hiện" }, { value: "waiting", label: "Chờ xử lý" }, { value: "done", label: "Hoàn thành" }]} /><Input label="Lý do chỉnh sửa" name="reason" /><div className="action-row"><Button onClick={() => setEditing(false)}>Hủy</Button><Button type="submit" variant="primary">Lưu thay đổi</Button></div>{message ? <span className="form-error">{message}</span> : null}</form>;
+  return <div><div className="action-row"><Button leftIcon={<Pin size={15} />} onClick={() => void call(`/api/v1/project-updates/${update.id}/pin`, { pinned: !update.pinned }).catch((error) => setMessage(error.message))}>{update.pinned ? "Bỏ ghim" : "Ghim"}</Button><Button leftIcon={<Edit3 size={15} />} onClick={() => setEditing(true)}>Chỉnh sửa</Button><Button leftIcon={<Archive size={15} />} onClick={() => void archive()} variant="ghost">Lưu trữ</Button></div>{message ? <span className="form-error">{message}</span> : null}</div>;
+}

@@ -1,0 +1,432 @@
+{
+  "kind": "isolated-real-components",
+  "recordedAt": "2026-10-16T07:26:45.246Z",
+  "screens": [
+    {
+      "label": "accountant-list",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 20,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "version-history",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialog": [
+          {
+            "x": 12,
+            "y": 32.796875,
+            "width": 286,
+            "height": 834.390625,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 20,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "accountant-detail",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "detail-basis-expanded",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-list",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 1,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-detail",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-confirmed",
+      "width": 320,
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "accountant-list",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 20,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "version-history",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialog": [
+          {
+            "x": 12,
+            "y": 54.546875,
+            "width": 356,
+            "height": 790.90625,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 20,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "accountant-detail",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "detail-basis-expanded",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-list",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 1,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-detail",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-confirmed",
+      "width": 390,
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 380,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "accountant-list",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 20,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "version-history",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialog": [
+          {
+            "x": 105.734375,
+            "y": 75.609375,
+            "width": 546.53125,
+            "height": 748.765625,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 20,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "accountant-detail",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "detail-basis-expanded",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-list",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 1
+      }
+    },
+    {
+      "label": "personal-detail",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-confirmed",
+      "width": 768,
+      "metrics": {
+        "width": 768,
+        "scrollWidth": 758,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "accountant-list",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 20
+      }
+    },
+    {
+      "label": "version-history",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialog": [
+          {
+            "x": 441.734375,
+            "y": 75.609375,
+            "width": 546.53125,
+            "height": 748.765625,
+            "radius": "22px"
+          }
+        ],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 20
+      }
+    },
+    {
+      "label": "accountant-detail",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "detail-basis-expanded",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-list",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 1
+      }
+    },
+    {
+      "label": "personal-detail",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    },
+    {
+      "label": "personal-confirmed",
+      "width": 1440,
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "dialog": [],
+        "clipped": [],
+        "alerts": [],
+        "mobileCards": 0,
+        "tableRows": 0
+      }
+    }
+  ],
+  "issues": [],
+  "runtimeErrors": [],
+  "unexpectedRequests": [],
+  "assertions": [
+    {
+      "width": 320,
+      "noFuturePeriodInDefaultList": true,
+      "oldVersionAccessible": true,
+      "confirmedLocally": true
+    },
+    {
+      "width": 390,
+      "noFuturePeriodInDefaultList": true,
+      "oldVersionAccessible": true,
+      "confirmedLocally": true
+    },
+    {
+      "width": 768,
+      "noFuturePeriodInDefaultList": true,
+      "oldVersionAccessible": true,
+      "confirmedLocally": true
+    },
+    {
+      "width": 1440,
+      "noFuturePeriodInDefaultList": true,
+      "oldVersionAccessible": true,
+      "confirmedLocally": true
+    }
+  ],
+  "passed": true
+}

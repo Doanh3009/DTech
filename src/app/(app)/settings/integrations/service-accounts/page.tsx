@@ -1,0 +1,1 @@
+import{PageHeader}from"@/components/shared/PageHeader";import{ServiceAccountManager}from"@/features/integrations/components/IntegrationConsole";export default function Page(){return <div className="page-stack"><PageHeader title="Tài khoản dịch vụ"/><ServiceAccountManager/></div>}
