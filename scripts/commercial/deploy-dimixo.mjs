@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
-import {readFile,readdir,writeFile,mkdir,unlink} from 'node:fs/promises';
+import {readFile,readdir,writeFile,mkdir,unlink,stat} from 'node:fs/promises';
+import {appendFileSync} from 'node:fs';
 import path from 'node:path';
 import {parseEnv} from 'node:util';
 import {randomUUID} from 'node:crypto';
@@ -19,12 +20,15 @@ for(const entry of await readdir(path.join(process.env.LOCALAPPDATA,'npm-cache',
 candidates.sort((a,b)=>b.version.localeCompare(a.version,undefined,{numeric:true}));assert(candidates.length,'Vercel CLI is required');
 await mkdir('.tmp',{recursive:true});
 function redact(s){for(const v of Object.values(env).filter(v=>v.length>=12))s=s.replaceAll(v,'[redacted]');return s;}
-async function cli(args){
+async function cli(args,{cwd=process.cwd()}={}){
+ const liveFile=args[0]==='deploy'?path.resolve('.tmp/dimixo-vercel-live.private.log'):null;
+ if(liveFile)await writeFile(liveFile,'');
  return new Promise((resolve,reject)=>{
-  const p=spawn(process.execPath,[candidates[0].filename,...args,'--scope',teamId],{cwd:process.cwd(),windowsHide:true,stdio:['ignore','pipe','pipe']});let stdout='',stderr='';
-  p.stdout.on('data',b=>stdout+=b);p.stderr.on('data',b=>stderr+=b);p.on('error',reject);p.on('close',code=>resolve({code,stdout,stderr}));
+  const p=spawn(process.execPath,[candidates[0].filename,...args,'--scope',teamId],{cwd,windowsHide:true,stdio:['ignore','pipe','pipe']});let stdout='',stderr='';
+  p.stdout.on('data',b=>{stdout+=b;if(liveFile)appendFileSync(liveFile,redact(String(b)));});p.stderr.on('data',b=>{stderr+=b;if(liveFile)appendFileSync(liveFile,redact(String(b)));});p.on('error',reject);p.on('close',code=>resolve({code,stdout,stderr}));
  });
 }
+async function local(command,args){return new Promise((resolve,reject)=>{const p=spawn(command,args,{windowsHide:true,stdio:['ignore','pipe','pipe']});let output='';p.stdout.on('data',b=>output+=b);p.stderr.on('data',b=>output+=b);p.on('error',reject);p.on('close',code=>code===0?resolve(output.trim()):reject(Error(redact(output))));});}
 async function api(endpoint,method='GET',body){
  const args=['api',endpoint,'--method',method,'--raw'];let input;
  if(body!==undefined){input=path.join('.tmp',`dimixo-vercel-${randomUUID()}.private.json`);await writeFile(input,JSON.stringify(body),{flag:'wx',mode:0o600});args.push('--input',input,'--header','Content-Type: application/json');}
@@ -64,7 +68,13 @@ if(action==='plan'){
  await writeFile('.tmp/dimixo-vercel-project.private.json',JSON.stringify({...record,releaseSha:sha}));console.log(JSON.stringify({releaseSha:sha}));
 }else if(action==='deploy'){
  const record=JSON.parse(await readFile('.tmp/dimixo-vercel-project.private.json','utf8'));assert(record.projectId===project.id,'Configure the project first');
- const r=await cli(['deploy','--project',project.id,'--prod','--yes','--json','--archive','tgz']);
+ const head=await local('git',['rev-parse','HEAD']);assert(head===record.releaseSha,'Release SHA must match the committed source');
+ const releaseDirectory=path.resolve('.tmp/releases',randomUUID()),archive=releaseDirectory+'.tar';
+ await mkdir(releaseDirectory,{recursive:true});
+ await local('git',['archive','--format=tar',`--output=${archive}`,head]);
+ await local('tar',['-xf',archive,'-C',releaseDirectory]);
+ console.log(JSON.stringify({sourceCommit:head,sourceArchiveBytes:(await stat(archive)).size}));
+ const r=await cli(['deploy',releaseDirectory,'--project',project.id,'--prod','--yes','--json','--archive','tgz'],{cwd:releaseDirectory});
  await writeFile('.tmp/dimixo-vercel-deployment.private.log',redact(r.stdout+'\n'+r.stderr));
  assert(r.code===0,`Vercel deployment failed: ${redact(r.stderr).slice(-1800)}`);
  const output=JSON.parse(r.stdout);await writeFile('.tmp/dimixo-vercel-deployment.private.json',JSON.stringify(output));
