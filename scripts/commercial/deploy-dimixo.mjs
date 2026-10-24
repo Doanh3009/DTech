@@ -44,7 +44,7 @@ assert(primary,'A Vercel domain is required');
 const baseUrl=`https://${primary.name}`;
 const action=process.argv[2]||'plan';
 if(action==='plan'){
- console.log(JSON.stringify({project:projectName,projectId:project.id,teamId,baseUrl,databaseProject:developmentProject,releaseEnvironment:'development',target:'production',testToolsEnabled:false}));
+ console.log(JSON.stringify({project:projectName,projectId:project.id,teamId,baseUrl,framework:project.framework,outputDirectory:project.outputDirectory,databaseProject:developmentProject,releaseEnvironment:'development',target:'production',testToolsEnabled:false}));
 }else if(action==='configure'){
  const sha=process.argv[3];assert(/^[a-f0-9]{40}$/.test(sha||''),'Use the exact committed source SHA');
  // Only two server secrets are required by this ERP release. Provider/worker keys stay local.
@@ -60,6 +60,10 @@ if(action==='plan'){
  }
  await writeFile('.tmp/dimixo-vercel-project.private.json',JSON.stringify({projectName,projectId:project.id,orgId:teamId,baseUrl,releaseSha:sha}));
  console.log(JSON.stringify({configured:true,variables:Object.keys(configuration).length,project:projectName,baseUrl,releaseSha:sha}));
+}else if(action==='configure-project'){
+ const updated=await api(`/v9/projects/${project.id}`,'PATCH',{framework:'nextjs',buildCommand:'npm run build',installCommand:'npm ci',outputDirectory:null,nodeVersion:'24.x'});
+ assert(updated.framework==='nextjs','Next.js framework was not accepted');
+ console.log(JSON.stringify({configuredProject:updated.name,framework:updated.framework,nodeVersion:updated.nodeVersion}));
 }else if(action==='release'){
  const sha=process.argv[3];assert(/^[a-f0-9]{40}$/.test(sha||''),'Use the exact committed source SHA');
  const record=JSON.parse(await readFile('.tmp/dimixo-vercel-project.private.json','utf8'));assert(record.projectId===project.id,'Configure the project first');
@@ -67,6 +71,7 @@ if(action==='plan'){
  assert(!response.failed?.length,'Release SHA was not accepted');
  await writeFile('.tmp/dimixo-vercel-project.private.json',JSON.stringify({...record,releaseSha:sha}));console.log(JSON.stringify({releaseSha:sha}));
 }else if(action==='deploy'){
+ assert(project.framework==='nextjs','Configure the Vercel project as Next.js before deployment');
  const record=JSON.parse(await readFile('.tmp/dimixo-vercel-project.private.json','utf8'));assert(record.projectId===project.id,'Configure the project first');
  const head=await local('git',['rev-parse','HEAD']);assert(head===record.releaseSha,'Release SHA must match the committed source');
  const releaseDirectory=path.resolve('.tmp/releases',randomUUID()),archive=releaseDirectory+'.tar';
@@ -87,4 +92,4 @@ if(action==='plan'){
 }else if(action==='status'){
  const result=await api(`/v6/deployments?projectId=${project.id}&limit=3`);
  console.log(JSON.stringify({project:projectName,baseUrl,deployments:result.deployments.map(d=>({id:d.uid,url:d.url,state:d.state,target:d.target,created:d.created}))}));
-}else throw Error('Use plan, configure <SHA>, release <SHA>, deploy, or status');
+}else throw Error('Use plan, configure <SHA>, configure-project, release <SHA>, deploy, or status');
