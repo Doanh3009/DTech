@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
-import {readFile,readdir,writeFile,mkdir,unlink,stat} from 'node:fs/promises';
+import {readFile,readdir,writeFile,mkdir,unlink,stat,rm} from 'node:fs/promises';
 import {appendFileSync} from 'node:fs';
 import path from 'node:path';
 import {parseEnv} from 'node:util';
@@ -73,8 +73,13 @@ if(action==='plan'){
  await mkdir(releaseDirectory,{recursive:true});
  await local('git',['archive','--format=tar',`--output=${archive}`,head]);
  await local('tar',['-xf',archive,'-C',releaseDirectory]);
+ // Historical screenshots are documentation artifacts, outside the application source.
+ const screenshotDirectory=path.resolve(releaseDirectory,'docs/ui-evidence');
+ const screenshotRelative=path.relative(releaseDirectory,screenshotDirectory);
+ assert(screenshotRelative&&!screenshotRelative.startsWith('..')&&!path.isAbsolute(screenshotRelative),'Refuse cleanup outside the isolated release');
+ await rm(screenshotDirectory,{recursive:true,force:true});
  console.log(JSON.stringify({sourceCommit:head,sourceArchiveBytes:(await stat(archive)).size}));
- const r=await cli(['deploy',releaseDirectory,'--project',project.id,'--prod','--yes','--json','--archive','tgz'],{cwd:releaseDirectory});
+ const r=await cli(['deploy',releaseDirectory,'--project',project.id,'--prod','--yes','--json','--archive','tgz','--regions','sin1'],{cwd:releaseDirectory});
  await writeFile('.tmp/dimixo-vercel-deployment.private.log',redact(r.stdout+'\n'+r.stderr));
  assert(r.code===0,`Vercel deployment failed: ${redact(r.stderr).slice(-1800)}`);
  const output=JSON.parse(r.stdout);await writeFile('.tmp/dimixo-vercel-deployment.private.json',JSON.stringify(output));
