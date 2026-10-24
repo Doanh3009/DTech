@@ -48,9 +48,20 @@ if(action==='plan'){
  const configuration=Object.fromEntries(keys.filter(k=>env[k]).map(k=>[k,env[k]]));
  for(const k of ['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_ANON_KEY','SUPABASE_SERVICE_ROLE_KEY','SESSION_HASH_PEPPER'])assert(configuration[k],`Missing ${k}`);
  Object.assign(configuration,{APP_BASE_URL:baseUrl,APP_ENV:'development',RELEASE_ENVIRONMENT:'development',TEST_TOOLS_ENABLED:'false',RELEASE_SHA:sha});
- await api(`/v10/projects/${project.id}/env?upsert=true`,'POST',Object.entries(configuration).map(([key,value])=>({key,value,type:'encrypted',target:['production','preview']})));
+ let configured=0;
+ for(const[key,value]of Object.entries(configuration)){
+  const response=await api(`/v10/projects/${project.id}/env?upsert=true`,'POST',{key,value,type:'encrypted',target:['production','preview']});
+  assert(!response.failed?.length,`Environment variable ${key} was not accepted`);
+  configured++;if(configured%3===0)console.log(JSON.stringify({configured,total:Object.keys(configuration).length}));
+ }
  await writeFile('.tmp/dimixo-vercel-project.private.json',JSON.stringify({projectName,projectId:project.id,orgId:teamId,baseUrl,releaseSha:sha}));
  console.log(JSON.stringify({configured:true,variables:Object.keys(configuration).length,project:projectName,baseUrl,releaseSha:sha}));
+}else if(action==='release'){
+ const sha=process.argv[3];assert(/^[a-f0-9]{40}$/.test(sha||''),'Use the exact committed source SHA');
+ const record=JSON.parse(await readFile('.tmp/dimixo-vercel-project.private.json','utf8'));assert(record.projectId===project.id,'Configure the project first');
+ const response=await api(`/v10/projects/${project.id}/env?upsert=true`,'POST',{key:'RELEASE_SHA',value:sha,type:'encrypted',target:['production','preview']});
+ assert(!response.failed?.length,'Release SHA was not accepted');
+ await writeFile('.tmp/dimixo-vercel-project.private.json',JSON.stringify({...record,releaseSha:sha}));console.log(JSON.stringify({releaseSha:sha}));
 }else if(action==='deploy'){
  const record=JSON.parse(await readFile('.tmp/dimixo-vercel-project.private.json','utf8'));assert(record.projectId===project.id,'Configure the project first');
  const r=await cli(['deploy','--project',project.id,'--prod','--yes','--json','--archive','tgz']);
@@ -58,4 +69,7 @@ if(action==='plan'){
  assert(r.code===0,`Vercel deployment failed: ${redact(r.stderr).slice(-1800)}`);
  const output=JSON.parse(r.stdout);await writeFile('.tmp/dimixo-vercel-deployment.private.json',JSON.stringify(output));
  console.log(JSON.stringify({deployed:true,baseUrl,releaseSha:record.releaseSha,resultKeys:Object.keys(output)}));
-}else throw Error('Use plan, configure <SHA>, or deploy');
+}else if(action==='status'){
+ const result=await api(`/v6/deployments?projectId=${project.id}&limit=3`);
+ console.log(JSON.stringify({project:projectName,baseUrl,deployments:result.deployments.map(d=>({id:d.uid,url:d.url,state:d.state,target:d.target,created:d.created}))}));
+}else throw Error('Use plan, configure <SHA>, release <SHA>, deploy, or status');
