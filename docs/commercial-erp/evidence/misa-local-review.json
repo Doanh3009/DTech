@@ -24,7 +24,7 @@
     "environment": "development",
     "cloudMigrationsApplied": true,
     "previewSwitched": true,
-    "status": "database_updated_awaiting_vercel_secret_consent_and_github_auth",
+    "status": "database_updated_github_pushed_awaiting_vercel_secret_consent",
     "automaticReviewRejectedAttempt": "202610240005–202610240022",
     "currentRequestedMigrationRange": "202610240005–202610240038",
     "currentRequestedMigrationCount": 34,
@@ -36,6 +36,8 @@
     "githubBranch": "feature/commercial-erp-p0-audit",
     "githubConnectedAccount": "chautuancons2010",
     "githubConnectedPushPermission": false,
+    "githubCliPushSucceeded": true,
+    "githubApplicationCommit": "531748b0494304855d0392679d7dc5315376aa97",
     "userAuthorization": "User explicitly approved development updates, remaining work, GitHub push and Vercel deployment.",
     "postconditions": {
       "accounts": 18,
