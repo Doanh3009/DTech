@@ -43,7 +43,8 @@ if(action==='plan'){
  console.log(JSON.stringify({project:projectName,projectId:project.id,teamId,baseUrl,databaseProject:developmentProject,releaseEnvironment:'development',target:'production',testToolsEnabled:false}));
 }else if(action==='configure'){
  const sha=process.argv[3];assert(/^[a-f0-9]{40}$/.test(sha||''),'Use the exact committed source SHA');
- const keys=['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_ANON_KEY','SUPABASE_SERVICE_ROLE_KEY','SESSION_HASH_PEPPER','API_KEY_PEPPER','INTEGRATION_ENCRYPTION_KEY','INTEGRATION_WORKER_SECRET','OPERATIONS_CRON_SECRET','WEBHOOK_SIGNING_SECRET','APP_TIMEZONE','DTECH_CONTROL_CENTER_ENABLED'];
+ // Only two server secrets are required by this ERP release. Provider/worker keys stay local.
+ const keys=['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_ANON_KEY','SUPABASE_SERVICE_ROLE_KEY','SESSION_HASH_PEPPER','APP_TIMEZONE','DTECH_CONTROL_CENTER_ENABLED'];
  const configuration=Object.fromEntries(keys.filter(k=>env[k]).map(k=>[k,env[k]]));
  for(const k of ['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_ANON_KEY','SUPABASE_SERVICE_ROLE_KEY','SESSION_HASH_PEPPER'])assert(configuration[k],`Missing ${k}`);
  Object.assign(configuration,{APP_BASE_URL:baseUrl,APP_ENV:'development',RELEASE_ENVIRONMENT:'development',TEST_TOOLS_ENABLED:'false',RELEASE_SHA:sha});
