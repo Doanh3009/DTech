@@ -1,0 +1,418 @@
+{
+  "generatedAt": "2026-10-22T02:44:06.065Z",
+  "postgresVersion": "17.10",
+  "scope": "Native PostgreSQL 17 isolated disposable loopback cluster, actual foundation/HR/account migrations and exact relevant later fragments; not a full Supabase stack rehearsal.",
+  "migration": "202610220001_atomic_employee_profile.sql",
+  "migrationSha256": "c608c3e5b95876709cf4cfa6e8f68cd62a7f2597fa32bd2064011c29bd9ab6c3",
+  "testSuiteSha256": "813203d1fcfb7522780d093c3596d2a1ecd8d9362e5f1bcd4181720df86d41e4",
+  "fixtureSha256": "93cf4d66b328b3c844aeca59cba3bf03d47227b2ec3e5a1a6bbfd1c6f46d4350",
+  "baselineMigrations": [
+    {
+      "filename": "202609090001_foundation_system_primitives.sql",
+      "wholeFile": true,
+      "sourceSha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829",
+      "appliedSha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829"
+    },
+    {
+      "filename": "202609090002_employee_rbac_foundation.sql",
+      "wholeFile": true,
+      "sourceSha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a",
+      "appliedSha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a"
+    },
+    {
+      "filename": "202609150001_production_hardening.sql",
+      "wholeFile": false,
+      "sourceSha256": "1ebfebcff538541b742d0b55f62a17cefe5f3a4cd88c205e44d45cfbf034a8d7",
+      "appliedSha256": "941892dcb375da2ae8baaec6969e5aa9188d09e3a8227d0505e325229064a53f"
+    },
+    {
+      "filename": "202609150002_username_auth.sql",
+      "wholeFile": true,
+      "sourceSha256": "5ee9d0db90c7c17e81c7c50668fe65ed76264a2f7a89ebeb975b2723eb65cced",
+      "appliedSha256": "5ee9d0db90c7c17e81c7c50668fe65ed76264a2f7a89ebeb975b2723eb65cced"
+    },
+    {
+      "filename": "202609120004_shared_platforms.sql",
+      "wholeFile": false,
+      "sourceSha256": "9460e5802705320f1471af8a2eb8528c0b2f4145243627a866a7c53ad5e45f81",
+      "appliedSha256": "dbe028f748fe243293cd59f35c66898b29ceafa2374941748291f5aae2498789"
+    },
+    {
+      "filename": "202609160001_functional_completion.sql",
+      "wholeFile": false,
+      "sourceSha256": "9279a61830696cdeb62d92511458c1050ccc45ecc5ced16b9b351591b32bc64a",
+      "appliedSha256": "db702468f2b335b52d25fe92b8a5dd034b68e2970418263aaba37baa5b9b5142"
+    },
+    {
+      "filename": "202609180002_employee_personal_profile.sql",
+      "wholeFile": true,
+      "sourceSha256": "1c9a3f7626447d1b25fcbc13bb325ec74c91ce7d41944763f0b0696bbaf5f2e2",
+      "appliedSha256": "1c9a3f7626447d1b25fcbc13bb325ec74c91ce7d41944763f0b0696bbaf5f2e2"
+    },
+    {
+      "filename": "202609240001_atomic_role_and_account_provisioning.sql",
+      "wholeFile": false,
+      "sourceSha256": "a1986a805e63de8c47f3d9d64bc7b91a52ebd5ccc5f3ffefda259af632fcb16e",
+      "appliedSha256": "529b0e08052385c5830ae31979e194ab0f90dd96b4d0a6b8673628cceeb98463"
+    }
+  ],
+  "passed": 88,
+  "failed": 0,
+  "cloudAccess": false,
+  "productionWrites": false,
+  "tests": [
+    {
+      "name": "actual baseline enforces employee row versions, account uniqueness and audit append-only",
+      "passed": true
+    },
+    {
+      "name": "anonymous and authenticated cannot execute profile, account or provisioning commands",
+      "passed": true
+    },
+    {
+      "name": "private status helper cannot bypass actor checks under broad default grants",
+      "passed": true
+    },
+    {
+      "name": "service role updates profile once with faithful history and audit",
+      "passed": true
+    },
+    {
+      "name": "optional JSON null clears a field without changing omitted fields",
+      "passed": true
+    },
+    {
+      "name": "phone normalization remains atomic with the profile and nullable clear",
+      "passed": true
+    },
+    {
+      "name": "offboarding archives once, disables the linked account and revokes every live session",
+      "passed": true
+    },
+    {
+      "name": "offboard-only permission can disable linked account without standalone account.disable",
+      "passed": true
+    },
+    {
+      "name": "offboarding a profile with no login account still writes one history and audit",
+      "passed": true
+    },
+    {
+      "name": "legacy duplicate account defense disables every linked account and session",
+      "passed": true
+    },
+    {
+      "name": "input boundary: null patch",
+      "passed": true
+    },
+    {
+      "name": "input boundary: array patch",
+      "passed": true
+    },
+    {
+      "name": "input boundary: empty patch",
+      "passed": true
+    },
+    {
+      "name": "input boundary: unknown column",
+      "passed": true
+    },
+    {
+      "name": "input boundary: protected row version",
+      "passed": true
+    },
+    {
+      "name": "input boundary: direct profile status",
+      "passed": true
+    },
+    {
+      "name": "input boundary: wrong scalar type",
+      "passed": true
+    },
+    {
+      "name": "input boundary: blank full name",
+      "passed": true
+    },
+    {
+      "name": "input boundary: null required join date",
+      "passed": true
+    },
+    {
+      "name": "input boundary: invalid calendar date",
+      "passed": true
+    },
+    {
+      "name": "input boundary: invalid gender",
+      "passed": true
+    },
+    {
+      "name": "input boundary: invalid employment status",
+      "passed": true
+    },
+    {
+      "name": "input boundary: missing termination date",
+      "passed": true
+    },
+    {
+      "name": "input boundary: missing termination reason",
+      "passed": true
+    },
+    {
+      "name": "input boundary: short termination reason",
+      "passed": true
+    },
+    {
+      "name": "input boundary: oversize termination reason",
+      "passed": true
+    },
+    {
+      "name": "input boundary: termination before stored join date",
+      "passed": true
+    },
+    {
+      "name": "input boundary: probation before stored start date",
+      "passed": true
+    },
+    {
+      "name": "mandatory CAS rejects version null",
+      "passed": true
+    },
+    {
+      "name": "mandatory CAS rejects version 0",
+      "passed": true
+    },
+    {
+      "name": "mandatory CAS rejects version -1",
+      "passed": true
+    },
+    {
+      "name": "mandatory CAS rejects version 2147483647",
+      "passed": true
+    },
+    {
+      "name": "missing actor, employee ID and event date fail closed without writes",
+      "passed": true
+    },
+    {
+      "name": "merged stored dates are validated when only one boundary changes",
+      "passed": true
+    },
+    {
+      "name": "changed department_id rejects an inactive catalog entry without writes",
+      "passed": true
+    },
+    {
+      "name": "unchanged inactive department_id preserves historical assignment during unrelated edits",
+      "passed": true
+    },
+    {
+      "name": "changed department_id accepts an active catalog entry",
+      "passed": true
+    },
+    {
+      "name": "changed position_id rejects an inactive catalog entry without writes",
+      "passed": true
+    },
+    {
+      "name": "unchanged inactive position_id preserves historical assignment during unrelated edits",
+      "passed": true
+    },
+    {
+      "name": "changed position_id accepts an active catalog entry",
+      "passed": true
+    },
+    {
+      "name": "changed employment_type_id rejects an inactive catalog entry without writes",
+      "passed": true
+    },
+    {
+      "name": "unchanged inactive employment_type_id preserves historical assignment during unrelated edits",
+      "passed": true
+    },
+    {
+      "name": "changed employment_type_id accepts an active catalog entry",
+      "passed": true
+    },
+    {
+      "name": "manager cannot be the employee itself",
+      "passed": true
+    },
+    {
+      "name": "manager assignment rejects a direct reporting cycle",
+      "passed": true
+    },
+    {
+      "name": "manager assignment rejects an indirect reporting cycle",
+      "passed": true
+    },
+    {
+      "name": "manager assignment rejects a preexisting cycle within the proposed manager chain",
+      "passed": true
+    },
+    {
+      "name": "changed manager rejects terminated employment status",
+      "passed": true
+    },
+    {
+      "name": "changed manager rejects on_leave employment status",
+      "passed": true
+    },
+    {
+      "name": "changed manager rejects pending_onboarding employment status",
+      "passed": true
+    },
+    {
+      "name": "changed manager rejects probation employment status",
+      "passed": true
+    },
+    {
+      "name": "changed manager rejects an archived profile even with active employment status",
+      "passed": true
+    },
+    {
+      "name": "active manager assignment succeeds and can be explicitly cleared",
+      "passed": true
+    },
+    {
+      "name": "unchanged historical inactive manager does not block unrelated profile edits",
+      "passed": true
+    },
+    {
+      "name": "missing catalog and manager references reject without profile writes",
+      "passed": true
+    },
+    {
+      "name": "missing employee is distinct from a stale version",
+      "passed": true
+    },
+    {
+      "name": "retry with original version has no duplicate history or account effects",
+      "passed": true
+    },
+    {
+      "name": "actor boundary: unknown actor",
+      "passed": true
+    },
+    {
+      "name": "actor boundary: disabled actor",
+      "passed": true
+    },
+    {
+      "name": "actor boundary: employee without edit",
+      "passed": true
+    },
+    {
+      "name": "actor boundary: edit-only cannot offboard",
+      "passed": true
+    },
+    {
+      "name": "actor boundary: offboard-only cannot edit profile",
+      "passed": true
+    },
+    {
+      "name": "actor boundary: mixed edit requires both permissions",
+      "passed": true
+    },
+    {
+      "name": "actor boundary: termination metadata requires offboard",
+      "passed": true
+    },
+    {
+      "name": "terminated employee cannot return to active through a generic profile patch",
+      "passed": true
+    },
+    {
+      "name": "last active administrator guard rolls back the employee, account, history and sessions",
+      "passed": true
+    },
+    {
+      "name": "forced employees update failure rolls back every offboarding write",
+      "passed": true
+    },
+    {
+      "name": "forced app_accounts update failure rolls back every offboarding write",
+      "passed": true
+    },
+    {
+      "name": "forced app_sessions update failure rolls back every offboarding write",
+      "passed": true
+    },
+    {
+      "name": "forced employee_history_events insert failure rolls back every offboarding write",
+      "passed": true
+    },
+    {
+      "name": "forced audit_logs insert failure rolls back every offboarding write",
+      "passed": true
+    },
+    {
+      "name": "final employee audit failure rolls back account audits, sessions and history already written",
+      "passed": true
+    },
+    {
+      "name": "a failure disabling the second legacy account also restores the first account and sessions",
+      "passed": true
+    },
+    {
+      "name": "standalone account disable enforces permission and revokes sessions atomically",
+      "passed": true
+    },
+    {
+      "name": "role assignment enforces singular account.assign_role permission and last administrator",
+      "passed": true
+    },
+    {
+      "name": "disabled and unknown actors cannot invoke any public account lifecycle writer",
+      "passed": true
+    },
+    {
+      "name": "archived profiles cannot gain a new account or reactivate an existing account",
+      "passed": true
+    },
+    {
+      "name": "public account commands distinguish missing targets and invalid role arrays",
+      "passed": true
+    },
+    {
+      "name": "provisioning history failure restores the employee account and role assignment",
+      "passed": true
+    },
+    {
+      "name": "simultaneous profile commands using the same version have exactly one winner",
+      "passed": true
+    },
+    {
+      "name": "simultaneous opposite manager assignments cannot create a reporting cycle",
+      "passed": true
+    },
+    {
+      "name": "queued enable waits for offboarding then rejects the terminated employee",
+      "passed": true
+    },
+    {
+      "name": "queued provisioning waits for offboarding then rejects the terminated employee",
+      "passed": true
+    },
+    {
+      "name": "provisioning before queued offboarding leaves the new account disabled",
+      "passed": true
+    },
+    {
+      "name": "simultaneous administrator disables preserve one active administrator without deadlock",
+      "passed": true
+    },
+    {
+      "name": "administrator role removal racing another administrator offboard preserves one admin",
+      "passed": true
+    },
+    {
+      "name": "account disable blocks the competing final-admin writer until commit",
+      "passed": true
+    },
+    {
+      "name": "offboarding blocks the competing final-admin writer until commit",
+      "passed": true
+    }
+  ],
+  "clusterStopped": true
+}

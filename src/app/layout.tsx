@@ -24,10 +24,12 @@ import "@/styles/mobile-launcher.css";
 import "@/styles/mobile-motion.css";
 import "@/styles/header-toolbar.css";
 import "@/styles/ui-dna.css";
+import "@/styles/erp-platform.css";
+import "@/styles/erp-workspace.css";
 import { SystemSettingsProvider } from "@/components/providers/SystemSettingsProvider";
 import { GlobalLoadingIndicator } from "@/components/shared/GlobalLoadingIndicator";
 import { deriveBrandColorTokens } from "@/config/systemSettings";
-import { readSystemSettings } from "@/services/system-settings/systemSettingsService";
+import { readPresentationSettings } from "@/services/system-settings/systemSettingsService";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -36,7 +38,7 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await readSystemSettings();
+  const settings = await readPresentationSettings();
   return {
     title: {
       default: settings.branding.systemName,
@@ -50,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  const settings = await readSystemSettings();
+  const settings = await readPresentationSettings();
   const tokens = deriveBrandColorTokens(settings.appearance.primaryColor);
   const themeStyle = {
     "--color-primary": tokens.primary,

@@ -1,0 +1,18 @@
+import { beforeEach,afterEach,it,expect,vi } from "vitest";
+const m=vi.hoisted(()=>({user:vi.fn(),list:vi.fn(),save:vi.fn()}));
+vi.mock("@/services/auth/getRequestUser",()=>({getRequestUser:m.user}));
+vi.mock("@/features/crm/crmService",()=>({listCustomers:m.list,saveCustomer:m.save}));
+import { GET,POST } from "./route";
+import { emptyProfile,emptySetup } from "@/features/crm/crmSchemas";
+const id="10000000-0000-4000-8000-000000000001";
+const body={customerId:id,rowVersion:0,profile:{...emptyProfile(),companyName:"Synthetic customer",contactName:"Synthetic contact",email:"contact@example.invalid",phone:"0901234567"},setup:emptySetup(),stage:"discovery",reason:"Synthetic creation"};
+const request=(input:unknown=body)=>new Request("http://localhost/api/v1/crm/customers",{method:"POST",body:JSON.stringify(input)});
+beforeEach(()=>{vi.clearAllMocks();vi.stubEnv("DTECH_CONTROL_CENTER_ENABLED","true");m.user.mockResolvedValue(null);m.list.mockResolvedValue({customers:[],total:0,page:1,pageSize:25});m.save.mockResolvedValue({customerId:id,rowVersion:1});});
+afterEach(()=>vi.unstubAllEnvs());
+it("disables both API methods on a customer deployment before auth/body reads",async()=>{vi.stubEnv("DTECH_CONTROL_CENTER_ENABLED","false");expect((await GET(new Request("http://localhost"))).status).toBe(404);expect((await POST(request())).status).toBe(404);expect(m.user).not.toHaveBeenCalled();});
+it("requires authentication before reading customer data",async()=>{expect((await GET(new Request("http://localhost"))).status).toBe(401);expect((await POST(request())).status).toBe(401);expect(m.list).not.toHaveBeenCalled();expect(m.save).not.toHaveBeenCalled();});
+it("ERP administrator is not sufficient without an operator CRM grant",async()=>{m.user.mockResolvedValue({id,status:"active",permissions:["system_admin.access"]});expect((await GET(new Request("http://localhost"))).status).toBe(403);});
+it("readers can list but cannot save",async()=>{m.user.mockResolvedValue({id,status:"active",permissions:["crm.view"]});expect((await GET(new Request("http://localhost"))).status).toBe(200);expect((await POST(request())).status).toBe(403);expect(m.save).not.toHaveBeenCalled();});
+it("passes a stable customer ID and server actor to one command",async()=>{m.user.mockResolvedValue({id:"trusted-operator",status:"active",permissions:["crm.view","crm.manage"]});const r=await POST(request());expect(r.status).toBe(200);expect(m.save).toHaveBeenCalledExactlyOnceWith(body,"trusted-operator");expect(r.headers.get("cache-control")).toBe("no-store");});
+it("rejects forged actor and unknown credential fields before calling the service",async()=>{m.user.mockResolvedValue({id,status:"active",permissions:["crm.view","crm.manage"]});expect((await POST(request({...body,actorId:"forged"}))).status).toBe(400);expect((await POST(request({...body,setup:{...body.setup,password:"synthetic"}}))).status).toBe(400);expect(m.save).not.toHaveBeenCalled();});
+it("validates paging and forwards search values without interpolating database expressions",async()=>{m.user.mockResolvedValue({id,status:"active",permissions:["crm.view"]});expect((await GET(new Request("http://localhost?page=-1"))).status).toBe(400);const q="O'Reilly (West), Ltd";expect((await GET(new Request(`http://localhost?page=2&q=${encodeURIComponent(q)}`))).status).toBe(200);expect(m.list).toHaveBeenCalledWith(2,q,"");});

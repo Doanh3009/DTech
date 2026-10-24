@@ -1,0 +1,173 @@
+{
+  "generatedAt": "2026-10-23T02:04:21.124Z",
+  "target": "tcjjhxqtreemccdbvyza",
+  "environment": "development",
+  "migration": "202610220005_operator_customer_crm.sql",
+  "sha256": "483798e2751f20955a8371629624d3063e25ae843a3f52412240af0135e36925",
+  "nativePassed": 27,
+  "before": {
+    "accounts": 1,
+    "authUsers": 1,
+    "customerTableExists": false,
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610220004",
+    "migrationCount": 60,
+    "permissions": 234,
+    "projects": 0,
+    "roles": 5,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "trialCount": 0,
+    "warehouses": 0
+  },
+  "after": {
+    "accounts": 1,
+    "authUsers": 1,
+    "customerTableExists": true,
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610220005",
+    "migrationCount": 61,
+    "permissions": 236,
+    "projects": 0,
+    "roles": 6,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "trialCount": 0,
+    "warehouses": 0
+  },
+  "verification": {
+    "activityCount": 0,
+    "assignedSetupUsers": 0,
+    "commands": [
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "crm_add_activity",
+        "securityDefiner": true,
+        "serviceExecute": true
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "crm_assert_actor",
+        "securityDefiner": true,
+        "serviceExecute": false
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "crm_convert_trial",
+        "securityDefiner": true,
+        "serviceExecute": true
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "crm_review_trial",
+        "securityDefiner": true,
+        "serviceExecute": true
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "crm_save_customer",
+        "securityDefiner": true,
+        "serviceExecute": true
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "crm_validate_documents",
+        "securityDefiner": true,
+        "serviceExecute": false
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "submit_product_trial_request_v2",
+        "securityDefiner": true,
+        "serviceExecute": true
+      }
+    ],
+    "customerCount": 0,
+    "grants": [
+      {
+        "permission": "crm.manage",
+        "role": "admin"
+      },
+      {
+        "permission": "crm.view",
+        "role": "admin"
+      },
+      {
+        "permission": "crm.manage",
+        "role": "deployment_team"
+      },
+      {
+        "permission": "crm.view",
+        "role": "deployment_team"
+      }
+    ],
+    "tables": [
+      {
+        "anonSelect": false,
+        "authenticatedSelect": false,
+        "name": "crm_activities",
+        "rls": true,
+        "serviceSelect": true,
+        "serviceWrite": false
+      },
+      {
+        "anonSelect": false,
+        "authenticatedSelect": false,
+        "name": "crm_customers",
+        "rls": true,
+        "serviceSelect": true,
+        "serviceWrite": false
+      }
+    ]
+  },
+  "syntheticCloudWrites": false,
+  "customerInstancesProvisioned": false
+}

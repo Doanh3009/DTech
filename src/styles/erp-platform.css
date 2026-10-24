@@ -1,0 +1,34 @@
+/* Entry screens use the same tokens as operational workspaces. */
+.app-logo__mark { border: 1px solid var(--color-primary-border); background: var(--color-primary-soft); color: var(--color-primary-active); box-shadow: none; }
+.erp-preview-nav { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6); padding: var(--space-3) var(--space-4); background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); font-size: var(--font-meta); }
+.app-shell--module-hub > .app-content {
+  margin-left: 0;
+  padding-left: 0;
+  width: 100%;
+}
+.app-shell--module-hub { background: var(--app-bg); }
+.app-shell--module-hub > .app-content { background: var(--app-bg); }
+.app-shell--module-hub .page-main { padding-bottom: var(--space-12); }
+.app-shell--module-hub .app-header { padding-inline: max(var(--space-6), calc((100vw - var(--erp-hub-width)) / 2)); }
+.erp-login { background: var(--app-bg); }
+.erp-login__back { display:inline-flex; width:fit-content; align-items:center; gap:var(--space-2); min-height:var(--control-height-md); color:var(--text-secondary); font-size:var(--font-meta); text-decoration:none; }
+.erp-login__trial { color:var(--color-primary-active); font-size:var(--font-meta); text-align:center; text-decoration:underline; text-underline-offset:4px; }
+.erp-login .login-shell { border-radius: var(--ui-radius-overlay); border: 1px solid var(--border-subtle); background: var(--surface); }
+.erp-login .login-brand-panel { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: var(--space-8); padding: var(--space-10); background: linear-gradient(145deg, var(--color-primary-soft), color-mix(in srgb, var(--color-primary-border) 40%, var(--surface))); }
+.erp-login .login-brand-panel::after { position: absolute; bottom: -35%; right: -55%; width: 115%; aspect-ratio: 1; border: 1px solid var(--color-primary-border); border-radius: var(--radius-pill); box-shadow: 0 0 0 var(--space-10) color-mix(in srgb, var(--color-primary-border) 20%, transparent), 0 0 0 calc(var(--space-10) * 2) color-mix(in srgb, var(--color-primary-border) 12%, transparent); content: ""; pointer-events: none; }
+.erp-login .login-brand-panel > * { position: relative; z-index: 1; }
+.erp-login .login-brand-lockup { width: 100%; display: grid; justify-items: start; gap: var(--space-4); }
+.erp-login .login-brand-lockup .login-brand__image { position: static; width: auto; max-width: min(100%, 240px); height: auto; max-height: 190px; object-fit: contain; }
+.erp-login__product { font-size: var(--font-meta); font-weight: var(--font-weight-bold); letter-spacing: .14em; color: var(--text-secondary); }
+.erp-login__company { color: var(--text-primary); font-size: var(--font-section); line-height: var(--line-height-tight); }
+.erp-login__monogram { display: grid; place-items: center; width: 96px; height: 96px; background: var(--surface); color: var(--color-primary-active); border: 1px solid var(--color-primary-border); border-radius: var(--radius-card); font-size: var(--font-page); font-weight: var(--font-weight-bold); }
+.erp-login .login-card { border: 0; box-shadow: none; background: var(--surface); }
+.erp-login .login-card__title h1 { font-size: var(--font-page); line-height: var(--line-height-tight); margin: var(--space-2) 0 0; color: var(--text-primary); }
+@media (max-width: 767px) {
+  .app-shell--module-hub .app-header { padding-inline: var(--space-4); }
+  .erp-login .login-brand-panel { display: flex; padding: var(--space-5); gap: var(--space-4); }
+  .erp-login .login-brand-lockup { display: flex; align-items: center; flex-wrap: wrap; }
+  .erp-login .login-brand-lockup .login-brand__image { max-height: 56px; max-width: 110px; }
+  .erp-login__company { font-size: var(--font-body); }
+  .erp-login__monogram { width: 48px; height: 48px; font-size: var(--font-section); }
+}

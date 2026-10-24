@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "deploymentId": "may-mau-staging",
+  "name": "May Mẫu ERP",
+  "projectRef": "abcdefghijklmnopqrst",
+  "dashboardUrl": "https://supabase.com/dashboard/project/abcdefghijklmnopqrst",
+  "apiUrl": "https://abcdefghijklmnopqrst.supabase.co",
+  "provisioningMode": "existing-project",
+  "organizationId": "abcdefghijklmnopqrst",
+  "region": "ap-southeast-1",
+  "migrationsDirectory": "supabase/migrations",
+  "includeDevelopmentSeed": false,
+  "customer": { "companyName": "Công ty May Mẫu", "shortName": "MAY MAU", "systemName": "May Mẫu ERP" },
+  "industryPreset": "garment",
+  "enabledModules": ["human_resources", "attendance", "warehouse", "import_export", "accounting", "operations", "reports", "messaging"],
+  "localization": { "timezone": "Asia/Ho_Chi_Minh", "locale": "vi-VN" },
+  "application": { "baseUrl": "https://erp.example.invalid", "environment": "staging" },
+  "admin": { "username": "admin", "displayName": "Quản trị May Mẫu", "employeeCode": "SYS-MAY-MAU-ADMIN" },
+  "protectedExistingProjectRefs": []
+}

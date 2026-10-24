@@ -1,0 +1,352 @@
+{
+  "generatedAt": "2026-10-22T07:43:33.904Z",
+  "projectRef": "tcjjhxqtreemccdbvyza",
+  "environment": "development",
+  "applied": true,
+  "migrations": [
+    {
+      "filename": "202610220002_account_lifecycle_recovery.sql",
+      "sha256": "5447095750b61089607a41f82573d0ba62aef362e16070092d1a132cd103af12"
+    },
+    {
+      "filename": "202610220003_atomic_employee_auxiliary.sql",
+      "sha256": "3ddef740e78c94d6ecd9946c52a3b81ed89993b04a4328c382159299db7091b3"
+    }
+  ],
+  "nativePostgres": {
+    "version": "17.10",
+    "passed": 165,
+    "clusterStopped": true
+  },
+  "readonlyAuthProbe": {
+    "generatedAt": "2026-10-22T06:52:35.808Z",
+    "method": "getUserById",
+    "status": 404,
+    "code": "user_not_found",
+    "userPresent": false,
+    "writesAuthData": false
+  },
+  "dryRun": {
+    "pendingMigrations": [
+      "202610220002_account_lifecycle_recovery.sql",
+      "202610220003_atomic_employee_auxiliary.sql"
+    ],
+    "sha256": "531e249300de5d13720a25e540ecf291650a94dfe070b3038198abce66158885"
+  },
+  "applyLogSha256": "48e5fdddb10e5b8a15e73e6728a9ff51d1dd9c34689d6825eb29d216e688334f",
+  "before": {
+    "accounts": 1,
+    "activeAccounts": 1,
+    "authUsers": 1,
+    "deletePermissionExists": false,
+    "deletedAccounts": 0,
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610220001",
+    "legacyRecoveriesPending": 0,
+    "lifecycleTriggers": [],
+    "migrationCount": 57,
+    "operationsTableExists": false,
+    "permissions": 231,
+    "postgresVersion": "17.11",
+    "projects": 0,
+    "roles": 5,
+    "rolesGrantedDelete": 0,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "warehouses": 0
+  },
+  "after": {
+    "accounts": 1,
+    "activeAccounts": 1,
+    "authUsers": 1,
+    "deletePermissionExists": true,
+    "deletedAccounts": 0,
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610220003",
+    "legacyRecoveriesPending": 0,
+    "lifecycleTriggers": [
+      {
+        "enabled": "O",
+        "name": "account_roles_reject_deleted_account",
+        "schema": "public",
+        "table": "account_roles"
+      },
+      {
+        "enabled": "O",
+        "name": "app_sessions_require_active_account",
+        "schema": "public",
+        "table": "app_sessions"
+      },
+      {
+        "enabled": "O",
+        "name": "dtech_linked_auth_deletion",
+        "schema": "auth",
+        "table": "users"
+      },
+      {
+        "enabled": "O",
+        "name": "dtech_reserved_auth_identity",
+        "schema": "auth",
+        "table": "users"
+      }
+    ],
+    "migrationCount": 59,
+    "operationsTableExists": true,
+    "permissions": 232,
+    "postgresVersion": "17.11",
+    "projects": 0,
+    "roles": 5,
+    "rolesGrantedDelete": 1,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "warehouses": 0
+  },
+  "acl": {
+    "anonCanReadOperations": false,
+    "authenticatedCanReadOperations": false,
+    "commands": [
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": false,
+        "securityDefiner": true,
+        "serviceExecute": false,
+        "signature": "public.apply_app_account_status_locked(uuid,text,uuid,text)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.archive_employee_command(uuid,integer,uuid,date,text)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": false,
+        "securityDefiner": true,
+        "serviceExecute": false,
+        "signature": "public.assert_account_lifecycle_actor(uuid,text)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": false,
+        "securityDefiner": true,
+        "serviceExecute": false,
+        "signature": "public.assert_account_provision_actor(uuid,uuid[])"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.cancel_account_provision(uuid,uuid)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.complete_account_deletion(uuid,uuid)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.complete_account_provision_cleanup(uuid,uuid)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.complete_account_provision(uuid,uuid)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.get_account_lifecycle_operation(uuid,uuid)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": false,
+        "securityDefiner": true,
+        "serviceExecute": false,
+        "signature": "public.guard_active_account_session()"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": false,
+        "securityDefiner": true,
+        "serviceExecute": false,
+        "signature": "public.guard_deleted_account_roles()"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": false,
+        "securityDefiner": true,
+        "serviceExecute": false,
+        "signature": "public.guard_linked_auth_deletion()"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": false,
+        "securityDefiner": true,
+        "serviceExecute": false,
+        "signature": "public.guard_reserved_auth_identity()"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.list_account_lifecycle_operations(uuid)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.patch_employee_sensitive_command(uuid,integer,jsonb,uuid,date,text)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.prepare_account_deletion(uuid,uuid,uuid,date)"
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "exposed": true,
+        "securityDefiner": true,
+        "serviceExecute": true,
+        "signature": "public.prepare_account_provision(uuid,uuid,uuid,text,text,text,uuid[],text,text,date)"
+      }
+    ],
+    "legacyProvisionServiceExecute": false,
+    "operationCount": 0,
+    "operationsRls": true,
+    "serviceCanDeleteOperations": false,
+    "serviceCanInsertOperations": false,
+    "serviceCanReadOperations": true,
+    "serviceCanUpdateOperations": false
+  },
+  "recordCountsUnchanged": true,
+  "settingsVersionsUnchanged": true,
+  "intentionalPermissionChange": "Added account.delete and granted only to the admin role; non-employee provisioning also requires account.assign_role.",
+  "boundaries": [
+    "Development database migration only; no production application deployment or migration.",
+    "No live Auth creation/deletion, account offboarding, archive or sensitive-data mutation was performed for acceptance.",
+    "Native Auth table/limited-role tests and mocked HTTP unit tests are not a complete Supabase Auth stack rehearsal.",
+    "Migration installs scoped Auth identity, linked-identity deletion, session registration and tombstone-role guards. Direct operator SQL and future schema changes require review.",
+    "Existing legacy recovery queue was empty at preflight. No legacy identity was automatically deleted or reconciled.",
+    "UAT, dual-instance isolation, retention, restore drill and commercial/IP acceptance remain separate gates."
+  ]
+}

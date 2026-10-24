@@ -1,0 +1,76 @@
+.workspace {
+  position:relative;isolation:isolate;
+  display: grid;
+  width: min(100%, var(--erp-hub-width));
+  min-width: 0;
+  gap: var(--space-8);
+  margin-inline: auto;
+  padding-block: var(--space-6) var(--space-8);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  overflow: hidden;
+  padding: var(--space-10);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.heroContent { display: grid; min-width: 0; gap: var(--space-5); }
+.productLabel { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-primary-active); font-size: var(--font-meta); font-weight: var(--font-weight-semibold); letter-spacing: .06em; }
+.hero h1 { margin: 0; color: var(--text-primary); font-size: clamp(28px, 3.2vw, 40px); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); letter-spacing: -.04em; text-wrap: balance; }
+.identity { display: flex; align-items: center; gap: var(--space-3); color: var(--text-secondary); font-size: var(--font-meta); }
+.avatar { display: grid; width: var(--space-8); height: var(--space-8); place-items: center; border: 1px solid var(--color-primary-border); border-radius: var(--radius-pill); background: var(--surface); color: var(--color-primary-active); font-size: var(--font-meta); font-weight: var(--font-weight-semibold); }
+.company { display: grid; flex: 0 1 280px; justify-items: start; min-width: 0; gap: var(--space-3); padding: var(--space-5) var(--space-6); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); background: var(--surface-2); }
+.companyBrand { display: flex; min-width: 0; align-items: center; gap: var(--space-3); }
+.companyBrand :global(.app-logo) { flex-shrink: 0; }
+.companyBrand strong { min-width: 0; overflow-wrap: anywhere; font-size: var(--font-section); font-weight: var(--font-weight-semibold); }
+.companyBrand :global(.app-logo__mark) { width: var(--control-height-md); height: var(--control-height-md); border-radius: var(--radius-control); }
+.companyName { color: var(--text-secondary); font-size: var(--font-meta); overflow-wrap: anywhere; }
+.section { display: grid; min-width: 0; gap: var(--space-5); }
+.sectionHeading, .sectionTitle { display: flex; align-items: center; gap: var(--space-3); }
+.sectionHeading { justify-content: space-between; flex-wrap: wrap; }
+.sectionHeading h2 { margin: 0; font-size: var(--font-card); font-weight: var(--font-weight-semibold); }
+.sectionMark { width: var(--space-1); height: var(--space-5); border-radius: var(--radius-pill); background: var(--color-primary); }
+.count { color: var(--text-secondary); font-size: var(--font-meta); font-variant-numeric: tabular-nums; }
+.toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); }
+.toolbar > :global(.search-input) { width: min(100%, 300px); background: var(--surface); }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.panel { display: grid; gap: var(--space-5); min-width: 0; padding-top: var(--space-6); border-top: 1px solid var(--border-subtle); }
+.actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.actions a { display: flex; align-items: center; gap: var(--space-3); min-height: calc(var(--control-height-md) + var(--space-6)); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); background: var(--surface); color: var(--text-primary); font-size: var(--font-meta); font-weight: var(--font-weight-medium); text-decoration: none; transition: background var(--motion-fast), border-color var(--motion-fast); }
+.actions a > span:nth-child(2) { flex: 1; }
+.actions a > svg { flex-shrink: 0; color: var(--text-muted); }
+.actions a:hover { background: var(--color-primary-soft); border-color: var(--color-primary-border); }
+.actionIcon { display: grid; flex: 0 0 var(--control-height-md); width: var(--control-height-md); height: var(--control-height-md); place-items: center; border: 1px solid var(--border-subtle); border-radius: var(--radius-control); background: var(--app-bg); color: var(--text-secondary); }
+.actions a:focus-visible { outline: 3px solid var(--color-focus-ring); outline-offset: 3px; }
+
+@media (max-width: 1100px) {
+  .hero { padding: var(--space-8); }
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767px) {
+  .workspace { gap: var(--space-6); padding-block: var(--space-2) var(--space-6); }
+  .hero { align-items: stretch; flex-direction: column; gap: var(--space-6); padding: var(--space-6); }
+  .heroContent { gap: var(--space-4); }
+  .company { flex: auto; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-2) var(--space-3); padding: var(--space-4); }
+  .companyBrand strong { font-size: var(--font-body); }
+  .companyName { grid-column: 1 / -1; grid-row: 2; }
+  .companyBrand :global(.app-logo__mark) { width: var(--space-8); height: var(--space-8); }
+  .toolbar > :global(.search-input) { order: -1; width: 100%; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+  .actions { grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actions a { transition: none; }
+}
+
+.workspace>header,.workspace>section{position:relative;z-index:1}

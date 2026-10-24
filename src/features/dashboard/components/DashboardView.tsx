@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 
 import { Button } from "@/components/shared/Button";
-import { ModuleLauncher } from "@/components/shared/ModuleLauncher";
 import { DashboardPageTemplate } from "@/components/shared/PageLayouts";
 import { LoadingState } from "@/components/shared/States";
 import { PageHeader } from "@/components/shared/PageHeader";
@@ -139,7 +138,6 @@ export function DashboardView({ initialModel }: { initialModel?: DashboardReadMo
   const primaryHref = typeof focusState.primaryHref === "string" ? focusState.primaryHref : undefined;
 
   return <>
-    <div className={styles.launcher} data-dashboard-applications><ModuleLauncher /></div>
     <PageHeader action={<div className={styles.headingActions}>{model?.generatedAt ? <time dateTime={model.generatedAt}>{new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "Asia/Ho_Chi_Minh" }).format(new Date(model.generatedAt))}</time> : null}<Button aria-label="Cập nhật dashboard" busy={refreshing} leftIcon={<RefreshCw aria-hidden="true" size={18} />} onClick={() => void refresh()} size="sm"><span className={styles.refreshLabel}>Cập nhật</span></Button></div>} meta={model?.generatedAt ? <time className={styles.mobileUpdatedAt} dateTime={model.generatedAt}>{new Intl.DateTimeFormat("vi-VN", { weekday: "long", day: "2-digit", month: "2-digit", timeZone: "Asia/Ho_Chi_Minh" }).format(new Date(model.generatedAt))}</time> : undefined} title={`Chào, ${user.displayName.trim() || user.username}`} />
     {error ? <p className={styles.error} role="alert">{error}</p> : null}
     <section aria-label={presentation.pageTitle} className={styles.analytics} data-dashboard-profile={profile}>

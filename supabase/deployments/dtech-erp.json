@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "deploymentId": "dtech-erp",
+  "name": "DIMIXO_ERP",
+  "projectRef": "tcjjhxqtreemccdbvyza",
+  "dashboardUrl": "https://supabase.com/dashboard/project/tcjjhxqtreemccdbvyza",
+  "apiUrl": "https://tcjjhxqtreemccdbvyza.supabase.co",
+  "provisioningMode": "existing-project",
+  "organizationId": "qmbiknoqboocveoivrrw",
+  "region": "ap-southeast-1",
+  "migrationsDirectory": "supabase/migrations",
+  "includeDevelopmentSeed": false,
+  "customer": {
+    "companyName": "DIMIXO",
+    "shortName": "DIMIXO",
+    "systemName": "DIMIXO ERP"
+  },
+  "industryPreset": "general",
+  "enabledModules": [
+    "human_resources",
+    "attendance",
+    "projects",
+    "warehouse",
+    "import_export",
+    "accounting",
+    "operations",
+    "reports",
+    "messaging"
+  ],
+  "localization": {
+    "timezone": "Asia/Ho_Chi_Minh",
+    "locale": "vi-VN"
+  },
+  "application": {
+    "baseUrl": "http://localhost:3000",
+    "environment": "development"
+  },
+  "admin": {
+    "username": "admin",
+    "displayName": "Quản trị DIMIXO",
+    "employeeCode": "SYS-DTECH-ADMIN"
+  },
+  "protectedExistingProjectRefs": [
+    "uioywupuuestcaliawlc",
+    "lgmlkagcytfjazulgfbz"
+  ]
+}

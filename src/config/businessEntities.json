@@ -1,0 +1,5518 @@
+{
+  "items": {
+    "label": "Vật tư & thành phẩm",
+    "feature": "inventory",
+    "mode": "master",
+    "fields": {
+      "unit": {
+        "label": "Đơn vị tính",
+        "type": "text",
+        "required": true,
+        "max": 30
+      },
+      "tracking": {
+        "label": "Theo dõi",
+        "type": "enum",
+        "values": {
+          "none": "Thông thường",
+          "lot": "Theo lô",
+          "serial": "Theo số sê-ri"
+        },
+        "default": "none"
+      },
+      "standard_cost": {
+        "label": "Giá tham chiếu",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    }
+  },
+  "warehouses": {
+    "label": "Kho",
+    "feature": "inventory",
+    "mode": "master",
+    "fields": {
+      "address": {
+        "label": "Địa chỉ",
+        "type": "text",
+        "max": 240
+      }
+    }
+  },
+  "partners": {
+    "label": "Khách hàng & nhà cung cấp",
+    "feature": "crm",
+    "mode": "master",
+    "fields": {
+      "partner_type": {
+        "label": "Loại đối tác",
+        "type": "enum",
+        "values": {
+          "customer": "Khách hàng",
+          "supplier": "Nhà cung cấp",
+          "both": "Cả hai"
+        },
+        "default": "customer"
+      },
+      "phone": {
+        "label": "Điện thoại",
+        "type": "text",
+        "max": 30
+      },
+      "email": {
+        "label": "Email",
+        "type": "email",
+        "max": 254
+      },
+      "tax_code": {
+        "label": "Mã số thuế",
+        "type": "text",
+        "max": 30
+      }
+    }
+  },
+  "molds": {
+    "label": "Khuôn & thông số",
+    "feature": "production",
+    "industries": [
+      "plastics_packaging"
+    ],
+    "mode": "master",
+    "fields": {
+      "item_id": {
+        "label": "Thành phẩm",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "cavities": {
+        "label": "Số lòng khuôn",
+        "type": "number",
+        "min": 1,
+        "integer": true,
+        "default": 1
+      },
+      "cycle_seconds": {
+        "label": "Chu kỳ (giây)",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    }
+  },
+  "boms": {
+    "label": "Định mức sản xuất",
+    "feature": "production",
+    "mode": "master",
+    "fields": {
+      "item_id": {
+        "label": "Thành phẩm",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "output_quantity": {
+        "label": "Sản lượng định mức",
+        "type": "number",
+        "min": 0.0001,
+        "default": 1
+      },
+      "revision": {
+        "label": "Phiên bản",
+        "type": "text",
+        "max": 30
+      }
+    }
+  },
+  "bom_lines": {
+    "label": "Nguyên liệu định mức",
+    "feature": "production",
+    "mode": "master",
+    "fields": {
+      "bom_id": {
+        "label": "Bộ định mức",
+        "type": "ref",
+        "ref": "boms",
+        "required": true
+      },
+      "item_id": {
+        "label": "Nguyên liệu",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "quantity": {
+        "label": "Lượng nguyên liệu",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "waste_percent": {
+        "label": "Hao hụt cho phép (%)",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "default": 0
+      }
+    }
+  },
+  "work_centers": {
+    "label": "Trạm & nguồn lực",
+    "feature": "mes",
+    "mode": "master",
+    "fields": {
+      "labor_rate": {
+        "label": "Chi phí nhân công / giờ",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "machine_rate": {
+        "label": "Chi phí máy / giờ",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    }
+  },
+  "work_orders": {
+    "label": "Lệnh sản xuất",
+    "feature": "production",
+    "mode": "order",
+    "fields": {
+      "item_id": {
+        "label": "Thành phẩm",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "bom_id": {
+        "label": "Định mức",
+        "type": "ref",
+        "ref": "boms"
+      },
+      "mold_id": {
+        "label": "Khuôn",
+        "type": "ref",
+        "ref": "molds"
+      },
+      "quantity": {
+        "label": "Số lượng kế hoạch",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "due_date": {
+        "label": "Hạn hoàn thành",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "operations": {
+    "label": "Công đoạn sản xuất",
+    "feature": "mes",
+    "mode": "master",
+    "fields": {
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "required": true
+      },
+      "work_center_id": {
+        "label": "Trạm sản xuất",
+        "type": "ref",
+        "ref": "work_centers",
+        "required": true
+      },
+      "sequence": {
+        "label": "Thứ tự",
+        "type": "number",
+        "min": 1,
+        "integer": true,
+        "default": 1
+      },
+      "planned_hours": {
+        "label": "Giờ kế hoạch",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    }
+  },
+  "lots": {
+    "label": "Lô & hạn sử dụng",
+    "feature": "inventory",
+    "mode": "master",
+    "fields": {
+      "item_id": {
+        "label": "Vật tư / thành phẩm",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "manufactured_on": {
+        "label": "Ngày sản xuất",
+        "type": "date",
+        "required": true
+      },
+      "expires_on": {
+        "label": "Hạn sử dụng",
+        "type": "date"
+      },
+      "quality_state": {
+        "label": "Chất lượng",
+        "type": "enum",
+        "values": {
+          "quarantine": "Chờ kiểm tra",
+          "released": "Được sử dụng",
+          "rejected": "Không đạt"
+        },
+        "default": "quarantine",
+        "computed": true
+      }
+    }
+  },
+  "lot_links": {
+    "label": "Truy xuất lô linh kiện",
+    "feature": "traceability",
+    "mode": "document",
+    "fields": {
+      "assembly_lot_id": {
+        "label": "Lô thành phẩm",
+        "type": "ref",
+        "ref": "lots",
+        "required": true
+      },
+      "component_lot_id": {
+        "label": "Lô nguyên liệu / linh kiện",
+        "type": "ref",
+        "ref": "lots",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng sử dụng",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      }
+    }
+  },
+  "stock_moves": {
+    "label": "Nhập / xuất kho",
+    "feature": "inventory",
+    "mode": "document",
+    "fields": {
+      "item_id": {
+        "label": "Vật tư / thành phẩm",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "warehouse_id": {
+        "label": "Kho",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "lot_id": {
+        "label": "Lô hàng",
+        "type": "ref",
+        "ref": "lots"
+      },
+      "direction": {
+        "label": "Loại chứng từ",
+        "type": "enum",
+        "values": {
+          "in": "Nhập kho",
+          "out": "Xuất kho"
+        },
+        "default": "in"
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "unit_cost": {
+        "label": "Đơn giá",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "sales_order_id": {
+        "label": "Đơn bán hàng",
+        "type": "ref",
+        "ref": "sales_orders"
+      }
+    }
+  },
+  "material_issues": {
+    "label": "Cấp nguyên liệu",
+    "feature": "production",
+    "mode": "document",
+    "fields": {
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "required": true
+      },
+      "item_id": {
+        "label": "Nguyên liệu",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "warehouse_id": {
+        "label": "Kho",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "lot_id": {
+        "label": "Lô nguyên liệu",
+        "type": "ref",
+        "ref": "lots"
+      },
+      "quantity": {
+        "label": "Số lượng thực tế",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "unit_cost": {
+        "label": "Đơn giá thực tế",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày cấp",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "production_reports": {
+    "label": "Sản lượng & hao hụt",
+    "feature": "production",
+    "mode": "document",
+    "fields": {
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "required": true
+      },
+      "operation_id": {
+        "label": "Công đoạn",
+        "type": "ref",
+        "ref": "operations",
+        "requiresFeature": "mes"
+      },
+      "good_quantity": {
+        "label": "Sản lượng đạt",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "scrap_quantity": {
+        "label": "Phế phẩm",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "labor_hours": {
+        "label": "Giờ nhân công",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "requiresFeature": "mes"
+      },
+      "machine_hours": {
+        "label": "Giờ máy",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "requiresFeature": "mes"
+      },
+      "labor_cost": {
+        "label": "Chi phí nhân công",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true,
+        "requiresFeature": "mes"
+      },
+      "machine_cost": {
+        "label": "Chi phí máy",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true,
+        "requiresFeature": "mes"
+      },
+      "report_date": {
+        "label": "Ngày báo cáo",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "quality_checks": {
+    "label": "Kiểm tra chất lượng",
+    "feature": "quality",
+    "mode": "document",
+    "fields": {
+      "lot_id": {
+        "label": "Lô hàng",
+        "type": "ref",
+        "ref": "lots",
+        "required": true
+      },
+      "checked_quantity": {
+        "label": "Số lượng kiểm tra",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "rejected_quantity": {
+        "label": "Số lượng không đạt",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "result": {
+        "label": "Kết luận",
+        "type": "enum",
+        "values": {
+          "passed": "Đạt",
+          "failed": "Không đạt"
+        },
+        "default": "passed"
+      },
+      "checked_on": {
+        "label": "Ngày kiểm tra",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "sales_orders": {
+    "label": "Đơn bán hàng",
+    "feature": "sales",
+    "mode": "order",
+    "fields": {
+      "partner_id": {
+        "label": "Khách hàng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "order_date": {
+        "label": "Ngày đặt hàng",
+        "type": "date",
+        "required": true
+      },
+      "due_date": {
+        "label": "Hạn thanh toán",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "sales_lines": {
+    "label": "Chi tiết đơn bán",
+    "feature": "sales",
+    "mode": "master",
+    "fields": {
+      "sales_order_id": {
+        "label": "Đơn bán hàng",
+        "type": "ref",
+        "ref": "sales_orders",
+        "required": true
+      },
+      "item_id": {
+        "label": "Hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "unit_price": {
+        "label": "Đơn giá",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    }
+  },
+  "receivables": {
+    "label": "Công nợ khách hàng",
+    "feature": "sales",
+    "mode": "document",
+    "fields": {
+      "partner_id": {
+        "label": "Khách hàng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "sales_order_id": {
+        "label": "Đơn bán hàng",
+        "type": "ref",
+        "ref": "sales_orders"
+      },
+      "amount": {
+        "label": "Số tiền phải thu",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "paid_amount": {
+        "label": "Đã thu",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "due_date": {
+        "label": "Hạn thanh toán",
+        "type": "date",
+        "required": true
+      }
+    },
+    "workspaceFeature": "accounting"
+  },
+  "payments": {
+    "label": "Thu tiền",
+    "feature": "sales",
+    "mode": "document",
+    "fields": {
+      "receivable_id": {
+        "label": "Khoản phải thu",
+        "type": "ref",
+        "ref": "receivables",
+        "required": true
+      },
+      "amount": {
+        "label": "Số tiền thu",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "paid_on": {
+        "label": "Ngày thu",
+        "type": "date",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản nhận tiền",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "requiresFeature": "accounting"
+      }
+    },
+    "workspaceFeature": "accounting"
+  },
+  "projects": {
+    "label": "Công trình & ngân sách",
+    "feature": "projects",
+    "mode": "master",
+    "fields": {
+      "budget": {
+        "label": "Ngân sách",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "starts_on": {
+        "label": "Ngày bắt đầu",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Ngày kết thúc dự kiến",
+        "type": "date"
+      },
+      "operational_state": {
+        "label": "Trạng thái công trình",
+        "type": "enum",
+        "values": {
+          "active": "Đang thi công",
+          "paused": "Tạm dừng",
+          "closed": "Đã khóa"
+        },
+        "required": true,
+        "default": "active",
+        "computed": true
+      }
+    }
+  },
+  "project_costs": {
+    "label": "Chi phí công trình",
+    "feature": "projects",
+    "mode": "document",
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "category": {
+        "label": "Khoản mục",
+        "type": "enum",
+        "values": {
+          "material": "Vật tư",
+          "labor": "Nhân công",
+          "subcontract": "Thầu phụ",
+          "overhead": "Chi phí chung"
+        },
+        "default": "material"
+      },
+      "amount": {
+        "label": "Chi phí",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "occurred_on": {
+        "label": "Ngày phát sinh",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "project_updates": {
+    "label": "Tiến độ công trình",
+    "feature": "projects",
+    "mode": "document",
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "completion_percent": {
+        "label": "Hoàn thành (%)",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "required": true
+      },
+      "reported_on": {
+        "label": "Ngày báo cáo",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "interactions": {
+    "label": "Chăm sóc khách hàng",
+    "feature": "crm",
+    "mode": "master",
+    "fields": {
+      "partner_id": {
+        "label": "Khách hàng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "channel": {
+        "label": "Hình thức",
+        "type": "enum",
+        "values": {
+          "call": "Cuộc gọi",
+          "email": "Email",
+          "meeting": "Cuộc hẹn",
+          "note": "Ghi chú"
+        },
+        "default": "note"
+      },
+      "next_contact_on": {
+        "label": "Hẹn tiếp theo",
+        "type": "date"
+      }
+    }
+  },
+  "production_receipts": {
+    "label": "Nhập kho thành phẩm",
+    "feature": "production",
+    "mode": "document",
+    "fields": {
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "required": true
+      },
+      "warehouse_id": {
+        "label": "Kho",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "lot_id": {
+        "label": "Lô",
+        "type": "ref",
+        "ref": "lots"
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "unit_cost": {
+        "label": "Đơn giá được duyệt",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "project_materials": {
+    "label": "Vật tư công trình",
+    "feature": "projects",
+    "mode": "document",
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "item_id": {
+        "label": "Vật tư",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "warehouse_id": {
+        "label": "Kho",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "lot_id": {
+        "label": "Lô",
+        "type": "ref",
+        "ref": "lots"
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "min": 0.0001,
+        "required": true
+      },
+      "unit_cost": {
+        "label": "Đơn giá được duyệt",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "purchase_line_id": {
+        "label": "Dòng đặt mua cho công trình",
+        "type": "ref",
+        "ref": "purchase_lines",
+        "required": false,
+        "requiresFeature": "purchasing"
+      }
+    }
+  },
+  "gl_accounts": {
+    "label": "Hệ thống tài khoản",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "nature": {
+        "label": "Tính chất",
+        "type": "enum",
+        "values": {
+          "debit": "Dư Nợ",
+          "credit": "Dư Có",
+          "both": "Lưỡng tính"
+        },
+        "default": "debit"
+      },
+      "account_type": {
+        "label": "Loại tài khoản",
+        "type": "enum",
+        "values": {
+          "posting": "Chi tiết",
+          "group": "Tổng hợp"
+        },
+        "default": "posting"
+      }
+    }
+  },
+  "accounting_periods": {
+    "label": "Kỳ kế toán",
+    "feature": "accounting",
+    "mode": "order",
+    "fields": {
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "journal_entries": {
+    "label": "Chứng từ kế toán",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "period_id": {
+        "label": "Kỳ kế toán",
+        "type": "ref",
+        "ref": "accounting_periods",
+        "required": true
+      },
+      "document_type": {
+        "label": "Phần hành",
+        "type": "enum",
+        "values": {
+          "general": "Tổng hợp",
+          "cash": "Tiền mặt",
+          "bank": "Ngân hàng",
+          "purchase": "Mua hàng",
+          "sales": "Bán hàng",
+          "inventory": "Kho",
+          "payroll": "Tiền lương",
+          "costing": "Giá thành",
+          "opening": "Số dư đầu kỳ"
+        },
+        "default": "general"
+      }
+    }
+  },
+  "journal_lines": {
+    "label": "Chi tiết định khoản",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "journal_id": {
+        "label": "Chứng từ",
+        "type": "ref",
+        "ref": "journal_entries",
+        "required": true
+      },
+      "account_id": {
+        "label": "Tài khoản",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "debit": {
+        "label": "Phát sinh Nợ",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "credit": {
+        "label": "Phát sinh Có",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "partner_id": {
+        "label": "Đối tượng",
+        "type": "ref",
+        "ref": "partners"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects"
+      }
+    }
+  },
+  "cash_vouchers": {
+    "label": "Phiếu thu / chi",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "direction": {
+        "label": "Loại phiếu",
+        "type": "enum",
+        "values": {
+          "in": "Thu tiền",
+          "out": "Chi tiền"
+        },
+        "default": "in"
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản tiền",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "counter_account_id": {
+        "label": "Tài khoản đối ứng",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "amount": {
+        "label": "Số tiền",
+        "type": "number",
+        "default": 0,
+        "min": 0.0001
+      },
+      "partner_id": {
+        "label": "Người nộp / nhận",
+        "type": "ref",
+        "ref": "partners"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects"
+      }
+    }
+  },
+  "purchase_orders": {
+    "label": "Đơn mua hàng",
+    "feature": "purchasing",
+    "mode": "order",
+    "fields": {
+      "partner_id": {
+        "label": "Nhà cung cấp",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "order_date": {
+        "label": "Ngày đặt mua",
+        "type": "date",
+        "required": true
+      },
+      "expected_on": {
+        "label": "Ngày dự kiến nhận",
+        "type": "date",
+        "required": true
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": false,
+        "requiresFeature": "projects"
+      },
+      "procurement_award_id": {
+        "label": "Nguồn lựa chọn NCC",
+        "type": "ref",
+        "ref": "procurement_awards",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "purchase_lines": {
+    "label": "Chi tiết đơn mua",
+    "feature": "purchasing",
+    "mode": "master",
+    "fields": {
+      "purchase_order_id": {
+        "label": "Đơn mua",
+        "type": "ref",
+        "ref": "purchase_orders",
+        "required": true
+      },
+      "item_id": {
+        "label": "Vật tư / hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "default": 0,
+        "min": 0.0001
+      },
+      "unit_price": {
+        "label": "Đơn giá",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "award_line_id": {
+        "label": "Dòng lựa chọn NCC",
+        "type": "ref",
+        "ref": "procurement_award_lines",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "purchase_receipts": {
+    "label": "Nhận hàng theo đơn mua",
+    "feature": "purchasing",
+    "mode": "document",
+    "fields": {
+      "purchase_order_id": {
+        "label": "Đơn mua",
+        "type": "ref",
+        "ref": "purchase_orders",
+        "required": true
+      },
+      "item_id": {
+        "label": "Vật tư / hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "warehouse_id": {
+        "label": "Kho nhận",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "lot_id": {
+        "label": "Lô hàng",
+        "type": "ref",
+        "ref": "lots"
+      },
+      "quantity": {
+        "label": "Số lượng nhận",
+        "type": "number",
+        "default": 0,
+        "min": 0.0001
+      },
+      "unit_cost": {
+        "label": "Đơn giá nhập",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "document_date": {
+        "label": "Ngày nhận",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "vendor_invoices": {
+    "label": "Hóa đơn mua hàng",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "partner_id": {
+        "label": "Đối tượng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "invoice_number": {
+        "label": "Số hóa đơn",
+        "type": "text",
+        "required": true,
+        "max": 80
+      },
+      "document_date": {
+        "label": "Ngày hóa đơn",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "due_date": {
+        "label": "Hạn thanh toán",
+        "type": "date",
+        "required": true
+      },
+      "base_amount": {
+        "label": "Tiền trước thuế",
+        "type": "number",
+        "default": 0,
+        "min": 0.0001
+      },
+      "tax_amount": {
+        "label": "Tiền thuế",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "tax_account_id": {
+        "label": "Tài khoản thuế",
+        "type": "ref",
+        "ref": "gl_accounts"
+      },
+      "purchase_order_id": {
+        "label": "Đơn mua",
+        "type": "ref",
+        "ref": "purchase_orders"
+      },
+      "expense_account_id": {
+        "label": "Tài khoản hàng / chi phí",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "payable_account_id": {
+        "label": "Tài khoản phải trả",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      }
+    }
+  },
+  "sales_invoices": {
+    "label": "Hóa đơn bán hàng",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "partner_id": {
+        "label": "Đối tượng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "invoice_number": {
+        "label": "Số hóa đơn",
+        "type": "text",
+        "required": true,
+        "max": 80
+      },
+      "document_date": {
+        "label": "Ngày hóa đơn",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "due_date": {
+        "label": "Hạn thanh toán",
+        "type": "date",
+        "required": true
+      },
+      "base_amount": {
+        "label": "Tiền trước thuế",
+        "type": "number",
+        "default": 0,
+        "min": 0.0001
+      },
+      "tax_amount": {
+        "label": "Tiền thuế",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "tax_account_id": {
+        "label": "Tài khoản thuế",
+        "type": "ref",
+        "ref": "gl_accounts"
+      },
+      "sales_order_id": {
+        "label": "Đơn bán",
+        "type": "ref",
+        "ref": "sales_orders",
+        "required": true
+      },
+      "revenue_account_id": {
+        "label": "Tài khoản doanh thu",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "receivable_account_id": {
+        "label": "Tài khoản phải thu",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      }
+    }
+  },
+  "payables": {
+    "label": "Công nợ nhà cung cấp",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "partner_id": {
+        "label": "Nhà cung cấp",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "vendor_invoice_id": {
+        "label": "Hóa đơn mua",
+        "type": "ref",
+        "ref": "vendor_invoices",
+        "required": true
+      },
+      "amount": {
+        "label": "Phải trả",
+        "type": "number",
+        "default": 0,
+        "min": 0.0001
+      },
+      "paid_amount": {
+        "label": "Đã thanh toán",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "computed": true
+      },
+      "due_date": {
+        "label": "Hạn thanh toán",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "supplier_payments": {
+    "label": "Thanh toán nhà cung cấp",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "payable_id": {
+        "label": "Khoản phải trả",
+        "type": "ref",
+        "ref": "payables",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản tiền",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "amount": {
+        "label": "Số tiền thanh toán",
+        "type": "number",
+        "default": 0,
+        "min": 0.0001
+      },
+      "paid_on": {
+        "label": "Ngày thanh toán",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "staff": {
+    "label": "Nhân sự",
+    "feature": "people",
+    "mode": "master",
+    "fields": {
+      "department": {
+        "label": "Bộ phận",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "position": {
+        "label": "Chức danh",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "joined_on": {
+        "label": "Ngày vào làm",
+        "type": "date",
+        "required": true
+      },
+      "base_salary": {
+        "label": "Lương thỏa thuận",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "phone": {
+        "label": "Điện thoại",
+        "type": "text",
+        "required": false,
+        "max": 30
+      }
+    }
+  },
+  "timecards": {
+    "label": "Bảng công",
+    "feature": "people",
+    "mode": "document",
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "work_date": {
+        "label": "Ngày làm việc",
+        "type": "date",
+        "required": true
+      },
+      "worked_hours": {
+        "label": "Giờ làm",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "max": 24
+      },
+      "overtime_hours": {
+        "label": "Giờ tăng ca",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "max": 16
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects"
+      },
+      "confirmation_id": {
+        "label": "Nguồn xác nhận ca",
+        "type": "ref",
+        "ref": "attendance_confirmations",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "salary_runs": {
+    "label": "Bảng lương",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày hạch toán",
+        "type": "date",
+        "required": true
+      },
+      "standard_days": {
+        "label": "Ngày công chuẩn",
+        "type": "number",
+        "default": 26,
+        "min": 0.0001
+      },
+      "expense_account_id": {
+        "label": "Tài khoản chi phí lương",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "payable_account_id": {
+        "label": "Tài khoản phải trả người lao động",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "deduction_account_id": {
+        "label": "Tài khoản các khoản khấu trừ",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "standard_hours": {
+        "label": "Giờ công chuẩn / ngày",
+        "type": "number",
+        "default": 8,
+        "min": 0.0001,
+        "max": 24
+      }
+    }
+  },
+  "salary_lines": {
+    "label": "Chi tiết bảng lương",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "salary_run_id": {
+        "label": "Bảng lương",
+        "type": "ref",
+        "ref": "salary_runs",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "base_salary": {
+        "label": "Lương thỏa thuận",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "worked_days": {
+        "label": "Ngày công",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "allowances": {
+        "label": "Phụ cấp",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "deductions": {
+        "label": "Khấu trừ",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      "gross_amount": {
+        "label": "Tổng thu nhập",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "computed": true
+      },
+      "net_amount": {
+        "label": "Thực lĩnh",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "computed": true
+      }
+    }
+  },
+  "assets": {
+    "label": "TSCĐ, CCDC & chi phí trả trước",
+    "feature": "assets",
+    "mode": "master",
+    "fields": {
+      "asset_type": {
+        "label": "Loại",
+        "type": "enum",
+        "values": {
+          "fixed": "Tài sản cố định",
+          "tool": "Công cụ dụng cụ",
+          "prepaid": "Chi phí trả trước"
+        },
+        "default": "fixed"
+      },
+      "serial": {
+        "label": "Số sê-ri",
+        "type": "text",
+        "max": 100
+      },
+      "original_cost": {
+        "label": "Nguyên giá",
+        "type": "number",
+        "min": 1,
+        "default": 0
+      },
+      "residual_value": {
+        "label": "Giá trị thu hồi",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "opening_depreciation": {
+        "label": "Hao mòn đầu kỳ",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "acquired_on": {
+        "label": "Ngày ghi tăng",
+        "type": "date",
+        "required": true
+      },
+      "starts_on": {
+        "label": "Bắt đầu phân bổ",
+        "type": "date",
+        "required": true
+      },
+      "useful_months": {
+        "label": "Số tháng sử dụng",
+        "type": "number",
+        "min": 1,
+        "default": 12,
+        "integer": true,
+        "max": 1200
+      },
+      "asset_account_id": {
+        "label": "Tài khoản nguyên giá",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "accumulated_account_id": {
+        "label": "Tài khoản hao mòn / trả trước",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "expense_account_id": {
+        "label": "Tài khoản chi phí",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "recognition_journal_id": {
+        "label": "Chứng từ hình thành",
+        "type": "ref",
+        "ref": "journal_entries",
+        "required": true
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "custodian_id": {
+        "label": "Người giữ",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people"
+      },
+      "department": {
+        "label": "Bộ phận",
+        "type": "text",
+        "max": 100
+      },
+      "service_state": {
+        "label": "Tình trạng",
+        "type": "enum",
+        "values": {
+          "ready": "Sẵn sàng",
+          "in_use": "Đang sử dụng",
+          "maintenance": "Bảo dưỡng",
+          "disposed": "Đã ghi giảm"
+        },
+        "default": "ready",
+        "computed": true
+      }
+    },
+    "misaDomain": true
+  },
+  "asset_events": {
+    "label": "Ghi tăng, điều chuyển & bảo dưỡng",
+    "feature": "assets",
+    "mode": "document",
+    "fields": {
+      "asset_id": {
+        "label": "Tài sản / CCDC",
+        "type": "ref",
+        "ref": "assets",
+        "required": true
+      },
+      "event_type": {
+        "label": "Nghiệp vụ",
+        "type": "enum",
+        "values": {
+          "register": "Ghi tăng",
+          "assign": "Bàn giao",
+          "return": "Thu hồi",
+          "maintenance_start": "Bắt đầu bảo dưỡng",
+          "maintenance_end": "Hoàn tất bảo dưỡng",
+          "dispose": "Ghi giảm"
+        },
+        "default": "register"
+      },
+      "document_date": {
+        "label": "Ngày hiệu lực",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày hạch toán",
+        "type": "date",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Người nhận",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "location": {
+        "label": "Vị trí",
+        "type": "text",
+        "max": 200
+      },
+      "expense_account_id": {
+        "label": "Tài khoản giá trị còn lại",
+        "type": "ref",
+        "ref": "gl_accounts"
+      },
+      "cash_account_id": {
+        "label": "Tài khoản thu thanh lý",
+        "type": "ref",
+        "ref": "gl_accounts"
+      },
+      "income_account_id": {
+        "label": "Tài khoản thu nhập",
+        "type": "ref",
+        "ref": "gl_accounts"
+      },
+      "proceeds": {
+        "label": "Tiền thanh lý",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "maintenance_cost": {
+        "label": "Chi phí bảo dưỡng",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "counter_account_id": {
+        "label": "Tài khoản thanh toán bảo dưỡng",
+        "type": "ref",
+        "ref": "gl_accounts"
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "asset_charge_runs": {
+    "label": "Tính khấu hao & phân bổ",
+    "feature": "assets",
+    "mode": "document",
+    "fields": {
+      "posting_date": {
+        "label": "Tính đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "asset_type": {
+        "label": "Phạm vi",
+        "type": "enum",
+        "values": {
+          "all": "Tất cả",
+          "fixed": "Tài sản cố định",
+          "tool": "Công cụ dụng cụ",
+          "prepaid": "Chi phí trả trước"
+        },
+        "default": "all"
+      },
+      "total_amount": {
+        "label": "Tổng phân bổ",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "asset_charge_lines": {
+    "label": "Chi tiết khấu hao & phân bổ",
+    "feature": "assets",
+    "mode": "master",
+    "fields": {
+      "run_id": {
+        "label": "Bảng tính",
+        "type": "ref",
+        "ref": "asset_charge_runs",
+        "required": true
+      },
+      "asset_id": {
+        "label": "Tài sản / CCDC",
+        "type": "ref",
+        "ref": "assets",
+        "required": true
+      },
+      "amount": {
+        "label": "Chi phí phân bổ",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "accumulated": {
+        "label": "Lũy kế sau phân bổ",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "remaining": {
+        "label": "Giá trị còn lại",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      }
+    },
+    "generatedOnly": true,
+    "misaDomain": true
+  },
+  "bank_statement_lines": {
+    "label": "Sao kê ngân hàng",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "bank_account_id": {
+        "label": "Tài khoản ngân hàng",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "transaction_ref": {
+        "label": "Mã giao dịch ngân hàng",
+        "type": "text",
+        "max": 120,
+        "required": true
+      },
+      "value_date": {
+        "label": "Ngày giá trị",
+        "type": "date",
+        "required": true
+      },
+      "direction": {
+        "label": "Biến động",
+        "type": "enum",
+        "values": {
+          "in": "Tiền vào",
+          "out": "Tiền ra"
+        },
+        "default": "in"
+      },
+      "amount": {
+        "label": "Số tiền",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "counterparty": {
+        "label": "Đối tác giao dịch",
+        "type": "text",
+        "max": 200
+      },
+      "file_hash": {
+        "label": "SHA-256 nguồn nhập",
+        "type": "text",
+        "max": 64
+      }
+    },
+    "misaDomain": true
+  },
+  "bank_matches": {
+    "label": "Đối chiếu sao kê",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "statement_line_id": {
+        "label": "Giao dịch sao kê",
+        "type": "ref",
+        "ref": "bank_statement_lines",
+        "required": true
+      },
+      "journal_line_id": {
+        "label": "Dòng sổ tiền gửi",
+        "type": "ref",
+        "ref": "journal_lines",
+        "required": true
+      },
+      "amount": {
+        "label": "Số tiền khớp",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày đối chiếu",
+        "type": "date",
+        "required": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "advances": {
+    "label": "Đề nghị tạm ứng",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "staff_id": {
+        "label": "Người tạm ứng",
+        "type": "ref",
+        "ref": "staff",
+        "required": true,
+        "requiresFeature": "people"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "amount": {
+        "label": "Tiền tạm ứng",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "due_date": {
+        "label": "Hạn hoàn ứng",
+        "type": "date",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày đề nghị",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày chi",
+        "type": "date",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản tiền",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "advance_account_id": {
+        "label": "Tài khoản tạm ứng",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true,
+    "requiresFeatures": [
+      "people"
+    ]
+  },
+  "advance_settlements": {
+    "label": "Quyết toán & hoàn ứng",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "advance_id": {
+        "label": "Khoản tạm ứng",
+        "type": "ref",
+        "ref": "advances",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày quyết toán",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "expense_amount": {
+        "label": "Chi phí được duyệt",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "returned_amount": {
+        "label": "Tiền hoàn quỹ",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "expense_account_id": {
+        "label": "Tài khoản chi phí",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản nhận hoàn ứng",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "evidence": {
+        "label": "Hồ sơ quyết toán",
+        "type": "text",
+        "max": 500,
+        "required": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "loans": {
+    "label": "Khế ước vay",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "partner_id": {
+        "label": "Bên cho vay",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "principal_limit": {
+        "label": "Hạn mức giải ngân",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "starts_on": {
+        "label": "Ngày hiệu lực",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Ngày đáo hạn",
+        "type": "date",
+        "required": true
+      },
+      "annual_rate": {
+        "label": "Lãi suất năm (%)",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "max": 100
+      },
+      "day_basis": {
+        "label": "Cơ sở ngày",
+        "type": "enum",
+        "values": {
+          "actual365": "Thực tế / 365",
+          "actual360": "Thực tế / 360"
+        },
+        "default": "actual365"
+      },
+      "loan_account_id": {
+        "label": "Tài khoản vay",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "interest_account_id": {
+        "label": "Tài khoản lãi vay",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản tiền",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày khế ước",
+        "type": "date",
+        "required": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "loan_movements": {
+    "label": "Giải ngân & trả nợ",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "loan_id": {
+        "label": "Khế ước",
+        "type": "ref",
+        "ref": "loans",
+        "required": true
+      },
+      "movement_type": {
+        "label": "Nghiệp vụ",
+        "type": "enum",
+        "values": {
+          "draw": "Giải ngân",
+          "repay": "Trả gốc / lãi"
+        },
+        "default": "draw"
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày hạch toán",
+        "type": "date",
+        "required": true
+      },
+      "principal": {
+        "label": "Tiền gốc",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "interest_from": {
+        "label": "Tính lãi từ",
+        "type": "date"
+      },
+      "interest_to": {
+        "label": "Tính lãi đến",
+        "type": "date"
+      },
+      "interest": {
+        "label": "Tiền lãi",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "fee": {
+        "label": "Phí khoản vay",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "fee_account_id": {
+        "label": "Tài khoản phí",
+        "type": "ref",
+        "ref": "gl_accounts"
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "loan_installments": {
+    "label": "Lịch đáo hạn",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "loan_id": {
+        "label": "Khế ước",
+        "type": "ref",
+        "ref": "loans",
+        "required": true
+      },
+      "due_date": {
+        "label": "Ngày đến hạn",
+        "type": "date",
+        "required": true
+      },
+      "principal": {
+        "label": "Gốc dự kiến",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "interest": {
+        "label": "Lãi dự kiến",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    },
+    "misaDomain": true
+  },
+  "costing_runs": {
+    "label": "Tập hợp & kết chuyển giá thành",
+    "feature": "costing",
+    "mode": "document",
+    "fields": {
+      "target_type": {
+        "label": "Đối tượng",
+        "type": "enum",
+        "values": {
+          "production": "Lệnh sản xuất",
+          "project": "Công trình"
+        },
+        "default": "production"
+      },
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "requiresFeature": "production"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày kết chuyển",
+        "type": "date",
+        "required": true
+      },
+      "inventory_account_id": {
+        "label": "Tài khoản thành phẩm",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "wip_account_id": {
+        "label": "Tài khoản dở dang",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "labor_account_id": {
+        "label": "Tài khoản nhân công đối ứng",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "overhead_account_id": {
+        "label": "Tài khoản chi phí chung đối ứng",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "cogs_account_id": {
+        "label": "Tài khoản giá vốn",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "completion_percent": {
+        "label": "Tỷ lệ chi phí hoàn thành (%)",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "max": 100
+      },
+      "total_amount": {
+        "label": "Chi phí tập hợp",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "completed_amount": {
+        "label": "Giá trị kết chuyển",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "material_account_id": {
+        "label": "Tài khoản nguyên vật liệu",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "wip_equivalent_quantity": {
+        "label": "Sản lượng tương đương dở dang được duyệt",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "finished_quantity": {
+        "label": "Sản lượng được tính giá lần này",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "costing_lines": {
+    "label": "Nguồn chi phí giá thành",
+    "feature": "costing",
+    "mode": "master",
+    "fields": {
+      "run_id": {
+        "label": "Kỳ tính giá thành",
+        "type": "ref",
+        "ref": "costing_runs",
+        "required": true
+      },
+      "source_kind": {
+        "label": "Loại nguồn",
+        "type": "text",
+        "max": 50,
+        "required": true
+      },
+      "source_id": {
+        "label": "Nguồn chứng từ",
+        "type": "text",
+        "max": 50,
+        "required": true
+      },
+      "category": {
+        "label": "Khoản mục",
+        "type": "enum",
+        "values": {
+          "material": "Nguyên vật liệu",
+          "labor": "Nhân công",
+          "machine": "Máy",
+          "overhead": "Chi phí chung",
+          "depreciation": "Khấu hao / phân bổ"
+        },
+        "default": "material"
+      },
+      "amount": {
+        "label": "Chi phí nguồn",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "generatedOnly": true,
+    "misaDomain": true
+  },
+  "overhead_pools": {
+    "label": "Chi phí chung cần phân bổ",
+    "feature": "costing",
+    "mode": "document",
+    "fields": {
+      "source_journal_id": {
+        "label": "Chứng từ chi phí gốc",
+        "type": "ref",
+        "ref": "journal_entries",
+        "required": true
+      },
+      "source_account_id": {
+        "label": "Tài khoản nguồn chi phí",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "amount": {
+        "label": "Chi phí chung",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày tập hợp",
+        "type": "date",
+        "required": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "overhead_allocations": {
+    "label": "Phân bổ chi phí chung",
+    "feature": "costing",
+    "mode": "master",
+    "fields": {
+      "pool_id": {
+        "label": "Chi phí chung",
+        "type": "ref",
+        "ref": "overhead_pools",
+        "required": true
+      },
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "requiresFeature": "production"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "basis": {
+        "label": "Tiêu thức phân bổ",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "amount": {
+        "label": "Chi phí được phân bổ",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true
+  },
+  "invoice_adjustments": {
+    "label": "Điều chỉnh giảm hóa đơn",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "side": {
+        "label": "Loại hóa đơn",
+        "type": "enum",
+        "values": {
+          "sale": "Hóa đơn bán",
+          "purchase": "Hóa đơn mua"
+        },
+        "default": "sale"
+      },
+      "sales_invoice_id": {
+        "label": "Hóa đơn bán gốc",
+        "type": "ref",
+        "ref": "sales_invoices"
+      },
+      "vendor_invoice_id": {
+        "label": "Hóa đơn mua gốc",
+        "type": "ref",
+        "ref": "vendor_invoices"
+      },
+      "document_date": {
+        "label": "Ngày điều chỉnh",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "base_amount": {
+        "label": "Giảm trước thuế",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "tax_amount": {
+        "label": "Giảm thuế",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "unpaid_offset": {
+        "label": "Giảm công nợ chưa thanh toán",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "refund_credit": {
+        "label": "Tiền cần hoàn trả",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "invoice_refunds": {
+    "label": "Hoàn tiền điều chỉnh hóa đơn",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "adjustment_id": {
+        "label": "Chứng từ điều chỉnh",
+        "type": "ref",
+        "ref": "invoice_adjustments",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày hoàn tiền",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản tiền",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "amount": {
+        "label": "Tiền hoàn trả",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "closing_runs": {
+    "label": "Kết chuyển cuối kỳ",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày kết chuyển",
+        "type": "date",
+        "required": true
+      },
+      "result_account_id": {
+        "label": "Tài khoản xác định kết quả",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "retained_account_id": {
+        "label": "Tài khoản lợi nhuận chưa phân phối",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "total_amount": {
+        "label": "Tổng kết chuyển",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "financial_report_lines": {
+    "label": "Chỉ tiêu báo cáo tài chính",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "report": {
+        "label": "Báo cáo",
+        "type": "enum",
+        "values": {
+          "balance": "Bảng cân đối kế toán",
+          "income": "Kết quả kinh doanh",
+          "cash": "Lưu chuyển tiền tệ trực tiếp"
+        },
+        "default": "balance"
+      },
+      "line_number": {
+        "label": "Thứ tự",
+        "type": "number",
+        "min": 1,
+        "default": 1,
+        "integer": true,
+        "max": 1000000
+      },
+      "account_prefix": {
+        "label": "Đầu tài khoản",
+        "type": "text",
+        "max": 20,
+        "required": true
+      },
+      "calculation": {
+        "label": "Cách lấy số",
+        "type": "enum",
+        "values": {
+          "debit_balance": "Số dư Nợ",
+          "credit_balance": "Số dư Có",
+          "debit_turnover": "Phát sinh Nợ",
+          "credit_turnover": "Phát sinh Có",
+          "net_debit": "Nợ trừ Có",
+          "net_credit": "Có trừ Nợ"
+        },
+        "default": "debit_balance"
+      },
+      "sign": {
+        "label": "Dấu",
+        "type": "enum",
+        "values": {
+          "plus": "Cộng",
+          "minus": "Trừ"
+        },
+        "default": "plus"
+      },
+      "effective_from": {
+        "label": "Hiệu lực từ",
+        "type": "date",
+        "required": true
+      },
+      "effective_to": {
+        "label": "Hiệu lực đến",
+        "type": "date"
+      }
+    },
+    "misaDomain": true
+  },
+  "tax_policies": {
+    "label": "Chính sách thuế theo hiệu lực",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "tax_type": {
+        "label": "Loại thuế",
+        "type": "enum",
+        "values": {
+          "vat": "GTGT",
+          "cit": "TNDN",
+          "pit": "TNCN",
+          "insurance": "Bảo hiểm"
+        },
+        "default": "vat"
+      },
+      "starts_on": {
+        "label": "Hiệu lực từ",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Hiệu lực đến",
+        "type": "date"
+      },
+      "rate": {
+        "label": "Tỷ lệ (%)",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "max": 100
+      },
+      "employee_rate": {
+        "label": "Tỷ lệ người lao động (%)",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "max": 100
+      },
+      "employer_rate": {
+        "label": "Tỷ lệ doanh nghiệp (%)",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "max": 100
+      },
+      "deductible_amount": {
+        "label": "Giảm trừ được cấu hình",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "legal_reference": {
+        "label": "Căn cứ chính sách",
+        "type": "text",
+        "max": 500,
+        "required": true
+      }
+    },
+    "misaDomain": true
+  },
+  "tax_filings": {
+    "label": "Hồ sơ thuế & nghĩa vụ",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "tax_type": {
+        "label": "Loại hồ sơ",
+        "type": "enum",
+        "values": {
+          "vat": "GTGT",
+          "cit": "TNDN",
+          "pit": "TNCN",
+          "insurance": "Bảo hiểm"
+        },
+        "default": "vat"
+      },
+      "policy_id": {
+        "label": "Chính sách hiệu lực",
+        "type": "ref",
+        "ref": "tax_policies",
+        "required": true
+      },
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "filing_version": {
+        "label": "Lần lập / bổ sung",
+        "type": "number",
+        "min": 1,
+        "default": 1,
+        "integer": true,
+        "max": 1000000
+      },
+      "posting_date": {
+        "label": "Ngày lập",
+        "type": "date",
+        "required": true
+      },
+      "tax_account_id": {
+        "label": "Tài khoản thuế",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "expense_account_id": {
+        "label": "Tài khoản chi phí / khấu trừ",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "base_amount": {
+        "label": "Cơ sở tính",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      },
+      "tax_amount": {
+        "label": "Nghĩa vụ dự kiến",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "adjustment": {
+        "label": "Điều chỉnh",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0
+      },
+      "submission_state": {
+        "label": "Trạng thái nộp",
+        "type": "enum",
+        "values": {
+          "internal": "Hồ sơ nội bộ",
+          "queued": "Chờ gửi",
+          "accepted": "Đã tiếp nhận",
+          "rejected": "Bị từ chối"
+        },
+        "default": "internal",
+        "computed": true
+      },
+      "tax_credit": {
+        "label": "Thuế còn được khấu trừ",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "tax_filing_lines": {
+    "label": "Chỉ tiêu hồ sơ thuế",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "filing_id": {
+        "label": "Hồ sơ thuế",
+        "type": "ref",
+        "ref": "tax_filings",
+        "required": true
+      },
+      "indicator": {
+        "label": "Mã chỉ tiêu",
+        "type": "text",
+        "max": 40,
+        "required": true
+      },
+      "source_kind": {
+        "label": "Nguồn",
+        "type": "text",
+        "max": 50,
+        "required": true
+      },
+      "source_id": {
+        "label": "Chứng từ nguồn",
+        "type": "text",
+        "max": 50
+      },
+      "base_amount": {
+        "label": "Giá trị nguồn",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      },
+      "tax_amount": {
+        "label": "Thuế nguồn",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "generatedOnly": true,
+    "misaDomain": true
+  },
+  "stock_valuation_runs": {
+    "label": "Tính giá xuất kho & giá vốn",
+    "feature": "costing",
+    "mode": "document",
+    "fields": {
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "inventory_account_id": {
+        "label": "Tài khoản hàng tồn kho",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "cogs_account_id": {
+        "label": "Tài khoản giá vốn",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "total_amount": {
+        "label": "Giá vốn hàng giao",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "stock_valuation_lines": {
+    "label": "Chi tiết tính giá xuất kho",
+    "feature": "costing",
+    "mode": "master",
+    "fields": {
+      "run_id": {
+        "label": "Kỳ tính giá xuất kho",
+        "type": "ref",
+        "ref": "stock_valuation_runs",
+        "required": true
+      },
+      "stock_move_id": {
+        "label": "Phiếu kho",
+        "type": "ref",
+        "ref": "stock_moves",
+        "required": true
+      },
+      "item_id": {
+        "label": "Vật tư / thành phẩm",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      },
+      "unit_cost": {
+        "label": "Đơn giá bình quân",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "amount": {
+        "label": "Giá trị",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "generatedOnly": true,
+    "misaDomain": true
+  },
+  "cost_source_links": {
+    "label": "Đối chiếu nguồn chi phí",
+    "feature": "costing",
+    "mode": "document",
+    "fields": {
+      "journal_line_id": {
+        "label": "Dòng chi phí đã ghi sổ",
+        "type": "ref",
+        "ref": "journal_lines",
+        "required": true
+      },
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "requiresFeature": "production"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "category": {
+        "label": "Khoản mục",
+        "type": "enum",
+        "values": {
+          "material": "Nguyên vật liệu",
+          "labor": "Nhân công",
+          "machine": "Máy",
+          "overhead": "Chi phí chung",
+          "depreciation": "Khấu hao / phân bổ"
+        },
+        "default": "material"
+      },
+      "amount": {
+        "label": "Chi phí phân bổ",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "source_kind": {
+        "label": "Nguồn vận hành",
+        "type": "enum",
+        "values": {
+          "journal": "Sổ cái",
+          "material_issues": "Cấp vật tư sản xuất",
+          "project_materials": "Xuất vật tư công trình",
+          "production_reports": "Báo cáo sản xuất",
+          "project_costs": "Chi phí công trình"
+        },
+        "default": "journal"
+      },
+      "source_record_id": {
+        "label": "ID chứng từ vận hành",
+        "type": "text",
+        "max": 50
+      },
+      "document_date": {
+        "label": "Ngày đối chiếu",
+        "type": "date",
+        "required": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "tax_brackets": {
+    "label": "Bậc thuế theo chính sách",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "policy_id": {
+        "label": "Chính sách thuế",
+        "type": "ref",
+        "ref": "tax_policies",
+        "required": true
+      },
+      "lower_bound": {
+        "label": "Thu nhập từ",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "upper_bound": {
+        "label": "Thu nhập đến",
+        "type": "number",
+        "min": 0
+      },
+      "rate": {
+        "label": "Thuế suất (%)",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "max": 100
+      }
+    },
+    "misaDomain": true
+  },
+  "staff_tax_profiles": {
+    "label": "Hồ sơ thuế & bảo hiểm nhân sự",
+    "feature": "people",
+    "mode": "master",
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "starts_on": {
+        "label": "Hiệu lực từ",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Hiệu lực đến",
+        "type": "date"
+      },
+      "pit_policy_id": {
+        "label": "Chính sách TNCN",
+        "type": "ref",
+        "ref": "tax_policies",
+        "required": true
+      },
+      "insurance_policy_id": {
+        "label": "Chính sách bảo hiểm",
+        "type": "ref",
+        "ref": "tax_policies",
+        "required": true
+      },
+      "dependent_count": {
+        "label": "Số người phụ thuộc",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "integer": true,
+        "max": 50
+      },
+      "dependent_deduction": {
+        "label": "Giảm trừ / người phụ thuộc",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "insurance_base": {
+        "label": "Mức đóng bảo hiểm",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "tax_number": {
+        "label": "Mã số thuế",
+        "type": "text",
+        "max": 40
+      },
+      "insurance_number": {
+        "label": "Mã số bảo hiểm",
+        "type": "text",
+        "max": 40
+      }
+    },
+    "requiresFeatures": [
+      "accounting"
+    ],
+    "misaDomain": true
+  },
+  "payroll_tax_runs": {
+    "label": "Tính bảo hiểm & thuế trên lương",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "salary_run_id": {
+        "label": "Bảng lương",
+        "type": "ref",
+        "ref": "salary_runs",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày tính",
+        "type": "date",
+        "required": true
+      },
+      "pit_account_id": {
+        "label": "Tài khoản thuế TNCN",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "insurance_account_id": {
+        "label": "Tài khoản bảo hiểm",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "employer_expense_account_id": {
+        "label": "Tài khoản chi phí bảo hiểm",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "total_amount": {
+        "label": "Tổng thuế & bảo hiểm",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "payroll_statutory_lines": {
+    "label": "Chi tiết thuế & bảo hiểm lương",
+    "feature": "accounting",
+    "mode": "master",
+    "fields": {
+      "run_id": {
+        "label": "Bảng tính thuế / bảo hiểm",
+        "type": "ref",
+        "ref": "payroll_tax_runs",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "gross_amount": {
+        "label": "Thu nhập",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "taxable_amount": {
+        "label": "Thu nhập tính thuế",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "employee_insurance": {
+        "label": "Bảo hiểm người lao động",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "employer_insurance": {
+        "label": "Bảo hiểm doanh nghiệp",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "pit": {
+        "label": "Thuế TNCN",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "manual_deductions": {
+        "label": "Khấu trừ khác",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "generatedOnly": true,
+    "misaDomain": true
+  },
+  "cost_receipt_values": {
+    "label": "Giá thành theo lần nhập thành phẩm",
+    "feature": "costing",
+    "mode": "master",
+    "fields": {
+      "run_id": {
+        "label": "Kỳ tính giá thành",
+        "type": "ref",
+        "ref": "costing_runs",
+        "required": true
+      },
+      "receipt_id": {
+        "label": "Phiếu nhập thành phẩm",
+        "type": "ref",
+        "ref": "production_receipts",
+        "required": true
+      },
+      "quantity": {
+        "label": "Sản lượng tính giá",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "amount": {
+        "label": "Giá thành hoàn thành",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "unit_cost": {
+        "label": "Giá thành đơn vị",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "generatedOnly": true,
+    "misaDomain": true
+  },
+  "payroll_cost_allocations": {
+    "label": "Phân bổ lương theo đối tượng giá thành",
+    "feature": "costing",
+    "mode": "document",
+    "fields": {
+      "salary_line_id": {
+        "label": "Chi tiết lương đã ghi sổ",
+        "type": "ref",
+        "ref": "salary_lines",
+        "required": true
+      },
+      "work_order_id": {
+        "label": "Lệnh sản xuất",
+        "type": "ref",
+        "ref": "work_orders",
+        "requiresFeature": "production"
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "allocation_percent": {
+        "label": "Tỷ lệ phân bổ (%)",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0,
+        "max": 100
+      },
+      "document_date": {
+        "label": "Ngày phân bổ",
+        "type": "date",
+        "required": true
+      },
+      "amount": {
+        "label": "Chi phí nhân công phân bổ",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "requiresFeatures": [
+      "people"
+    ],
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "project_wbs": {
+    "label": "Hạng mục công trình",
+    "feature": "projects",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "parent_id": {
+        "label": "Hạng mục cha",
+        "type": "ref",
+        "ref": "project_wbs",
+        "required": false
+      },
+      "unit": {
+        "label": "Đơn vị tính",
+        "type": "text",
+        "required": true,
+        "max": 240
+      },
+      "contract_quantity": {
+        "label": "Khối lượng hợp đồng",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "contract_unit_price": {
+        "label": "Đơn giá hợp đồng",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "starts_on": {
+        "label": "Bắt đầu",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Hoàn thành dự kiến",
+        "type": "date",
+        "required": true
+      },
+      "cost_code": {
+        "label": "Mã chi phí",
+        "type": "text",
+        "required": true,
+        "max": 240
+      }
+    }
+  },
+  "budget_versions": {
+    "label": "Phiên bản ngân sách",
+    "feature": "projects",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "revision": {
+        "label": "Phiên bản",
+        "type": "number",
+        "min": 1,
+        "default": 1,
+        "integer": true
+      },
+      "previous_id": {
+        "label": "Phiên bản trước",
+        "type": "ref",
+        "ref": "budget_versions",
+        "required": false
+      },
+      "change_reason": {
+        "label": "Lý do lập / điều chỉnh",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "document_date": {
+        "label": "Ngày duyệt ngân sách",
+        "type": "date",
+        "required": true
+      },
+      "total_amount": {
+        "label": "Ngân sách được duyệt",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "lineKind": "budget_lines"
+  },
+  "budget_lines": {
+    "label": "Chi tiết ngân sách",
+    "feature": "projects",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "fields": {
+      "budget_id": {
+        "label": "Phiên bản ngân sách",
+        "type": "ref",
+        "ref": "budget_versions",
+        "required": true
+      },
+      "wbs_id": {
+        "label": "Hạng mục",
+        "type": "ref",
+        "ref": "project_wbs",
+        "required": true
+      },
+      "category": {
+        "label": "Khoản mục",
+        "type": "enum",
+        "values": {
+          "material": "Vật tư",
+          "labor": "Nhân công",
+          "machine": "Máy",
+          "overhead": "Chi phí chung",
+          "subcontract": "Thầu phụ"
+        },
+        "required": true
+      },
+      "amount": {
+        "label": "Hạn mức",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      }
+    },
+    "parentKind": "budget_versions",
+    "parentField": "budget_id"
+  },
+  "budget_exceptions": {
+    "label": "Duyệt chi vượt ngân sách",
+    "feature": "projects",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "budget_id": {
+        "label": "Phiên bản ngân sách",
+        "type": "ref",
+        "ref": "budget_versions",
+        "required": true
+      },
+      "amount": {
+        "label": "Hạn mức bổ sung",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày duyệt",
+        "type": "date",
+        "required": true
+      },
+      "reason": {
+        "label": "Lý do vượt",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "project_acceptances": {
+    "label": "Nghiệm thu khối lượng",
+    "feature": "projects",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "wbs_id": {
+        "label": "Hạng mục",
+        "type": "ref",
+        "ref": "project_wbs",
+        "required": true
+      },
+      "quantity": {
+        "label": "Khối lượng nghiệm thu",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "unit_price": {
+        "label": "Đơn giá nghiệm thu",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày nghiệm thu",
+        "type": "date",
+        "required": true
+      },
+      "customer_approved_on": {
+        "label": "Ngày khách hàng xác nhận",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Số biên bản / hồ sơ",
+        "type": "text",
+        "required": true,
+        "max": 500
+      },
+      "amount": {
+        "label": "Giá trị nghiệm thu",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    }
+  },
+  "acceptance_billings": {
+    "label": "Đối chiếu nghiệm thu & hóa đơn",
+    "feature": "projects",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "requiresFeatures": [
+      "accounting"
+    ],
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "acceptance_id": {
+        "label": "Biên bản nghiệm thu",
+        "type": "ref",
+        "ref": "project_acceptances",
+        "required": true
+      },
+      "sales_invoice_id": {
+        "label": "Hóa đơn đã ghi sổ",
+        "type": "ref",
+        "ref": "sales_invoices",
+        "required": true
+      },
+      "amount": {
+        "label": "Giá trị trước thuế",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày đối chiếu",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "procurement_requests": {
+    "label": "Đề nghị mua sắm",
+    "feature": "purchasing",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": false,
+        "requiresFeature": "projects"
+      },
+      "needed_on": {
+        "label": "Cần hàng ngày",
+        "type": "date",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày đề nghị",
+        "type": "date",
+        "required": true
+      },
+      "requester_id": {
+        "label": "Người đề nghị",
+        "type": "ref",
+        "ref": "staff",
+        "required": false
+      },
+      "total_amount": {
+        "label": "Dự toán đề nghị",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "lineKind": "procurement_request_lines"
+  },
+  "procurement_request_lines": {
+    "label": "Chi tiết đề nghị mua",
+    "feature": "purchasing",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "fields": {
+      "request_id": {
+        "label": "Đề nghị mua",
+        "type": "ref",
+        "ref": "procurement_requests",
+        "required": true
+      },
+      "item_id": {
+        "label": "Vật tư / hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "wbs_id": {
+        "label": "Hạng mục",
+        "type": "ref",
+        "ref": "project_wbs",
+        "required": false,
+        "requiresFeature": "projects"
+      },
+      "quantity": {
+        "label": "Số lượng đề nghị",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "estimated_price": {
+        "label": "Đơn giá dự kiến",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    },
+    "parentKind": "procurement_requests",
+    "parentField": "request_id"
+  },
+  "supplier_quotes": {
+    "label": "Báo giá nhà cung cấp",
+    "feature": "purchasing",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "request_id": {
+        "label": "Đề nghị mua đã duyệt",
+        "type": "ref",
+        "ref": "procurement_requests",
+        "required": true
+      },
+      "partner_id": {
+        "label": "Nhà cung cấp",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "quote_number": {
+        "label": "Số báo giá",
+        "type": "text",
+        "required": true,
+        "max": 240
+      },
+      "document_date": {
+        "label": "Ngày báo giá",
+        "type": "date",
+        "required": true
+      },
+      "valid_until": {
+        "label": "Hiệu lực đến",
+        "type": "date",
+        "required": true
+      },
+      "delivery_on": {
+        "label": "Ngày giao dự kiến",
+        "type": "date",
+        "required": true
+      },
+      "payment_terms": {
+        "label": "Điều kiện thanh toán",
+        "type": "text",
+        "required": true,
+        "max": 240
+      },
+      "total_amount": {
+        "label": "Giá trị báo giá",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "lineKind": "supplier_quote_lines"
+  },
+  "supplier_quote_lines": {
+    "label": "Chi tiết báo giá nhà cung cấp",
+    "feature": "purchasing",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "fields": {
+      "quote_id": {
+        "label": "Báo giá",
+        "type": "ref",
+        "ref": "supplier_quotes",
+        "required": true
+      },
+      "request_line_id": {
+        "label": "Dòng đề nghị",
+        "type": "ref",
+        "ref": "procurement_request_lines",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng chào",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "unit_price": {
+        "label": "Đơn giá chào",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      }
+    },
+    "parentKind": "supplier_quotes",
+    "parentField": "quote_id"
+  },
+  "procurement_awards": {
+    "label": "Chọn nhà cung cấp & đặt mua",
+    "feature": "purchasing",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "quote_id": {
+        "label": "Báo giá đã duyệt",
+        "type": "ref",
+        "ref": "supplier_quotes",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chọn",
+        "type": "date",
+        "required": true
+      },
+      "selection_reason": {
+        "label": "Lý do chọn",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "purchase_order_id": {
+        "label": "Đơn mua phát sinh",
+        "type": "ref",
+        "ref": "purchase_orders",
+        "required": false,
+        "computed": true
+      },
+      "total_amount": {
+        "label": "Giá trị đặt mua",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "lineKind": "procurement_award_lines"
+  },
+  "procurement_award_lines": {
+    "label": "Chi tiết lựa chọn đặt mua",
+    "feature": "purchasing",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "fields": {
+      "award_id": {
+        "label": "Phiếu lựa chọn",
+        "type": "ref",
+        "ref": "procurement_awards",
+        "required": true
+      },
+      "quote_line_id": {
+        "label": "Dòng báo giá",
+        "type": "ref",
+        "ref": "supplier_quote_lines",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng đặt mua",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      }
+    },
+    "parentKind": "procurement_awards",
+    "parentField": "award_id"
+  },
+  "stock_transfers": {
+    "label": "Điều chuyển kho",
+    "feature": "inventory",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "item_id": {
+        "label": "Vật tư / hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "lot_id": {
+        "label": "Lô",
+        "type": "ref",
+        "ref": "lots",
+        "required": false
+      },
+      "from_warehouse_id": {
+        "label": "Kho xuất",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "to_warehouse_id": {
+        "label": "Kho nhận",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày điều chuyển",
+        "type": "date",
+        "required": true
+      },
+      "unit_cost": {
+        "label": "Đơn giá xuất thực tế",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    }
+  },
+  "stock_counts": {
+    "label": "Biên bản kiểm kê kho",
+    "feature": "inventory",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "warehouse_id": {
+        "label": "Kho kiểm kê",
+        "type": "ref",
+        "ref": "warehouses",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày kiểm kê",
+        "type": "date",
+        "required": true
+      },
+      "inventory_account_id": {
+        "label": "Tài khoản tồn kho",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": false,
+        "requiresFeature": "accounting"
+      },
+      "difference_account_id": {
+        "label": "Tài khoản chênh lệch",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": false,
+        "requiresFeature": "accounting"
+      },
+      "total_amount": {
+        "label": "Chênh lệch giá trị",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "lineKind": "stock_count_lines"
+  },
+  "stock_count_lines": {
+    "label": "Chi tiết kiểm kê",
+    "feature": "inventory",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "fields": {
+      "count_id": {
+        "label": "Biên bản kiểm kê",
+        "type": "ref",
+        "ref": "stock_counts",
+        "required": true
+      },
+      "item_id": {
+        "label": "Vật tư / hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "lot_id": {
+        "label": "Lô",
+        "type": "ref",
+        "ref": "lots",
+        "required": false
+      },
+      "counted_quantity": {
+        "label": "Thực đếm",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "gain_unit_cost": {
+        "label": "Đơn giá thừa được duyệt",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "system_quantity": {
+        "label": "Tồn sổ",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "difference_quantity": {
+        "label": "Chênh lệch số lượng",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      },
+      "amount": {
+        "label": "Chênh lệch giá trị",
+        "type": "number",
+        "min": -1000000000000000,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "parentKind": "stock_counts",
+    "parentField": "count_id"
+  },
+  "project_material_returns": {
+    "label": "Hoàn trả vật tư công trình",
+    "feature": "projects",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "material_issue_id": {
+        "label": "Phiếu xuất gốc",
+        "type": "ref",
+        "ref": "project_materials",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng hoàn",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày hoàn trả",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Biên nhận hoàn trả",
+        "type": "text",
+        "required": true,
+        "max": 500
+      },
+      "amount": {
+        "label": "Giá trị hoàn",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    }
+  },
+  "project_variations": {
+    "label": "Điều chỉnh khối lượng hợp đồng",
+    "feature": "projects",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "wbs_id": {
+        "label": "Hạng mục",
+        "type": "ref",
+        "ref": "project_wbs",
+        "required": true
+      },
+      "new_quantity": {
+        "label": "Khối lượng sau điều chỉnh",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "new_unit_price": {
+        "label": "Đơn giá sau điều chỉnh",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày điều chỉnh",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Phụ lục được xác nhận",
+        "type": "text",
+        "required": true,
+        "max": 500
+      }
+    }
+  },
+  "project_lifecycle_events": {
+    "label": "Trạng thái vận hành công trình",
+    "feature": "projects",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "next_state": {
+        "label": "Trạng thái chuyển đến",
+        "type": "enum",
+        "values": {
+          "active": "Đang thi công",
+          "paused": "Tạm dừng",
+          "closed": "Đã khóa"
+        },
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chuyển trạng thái",
+        "type": "date",
+        "required": true
+      },
+      "reason": {
+        "label": "Lý do",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "shifts": {
+    "label": "Ca làm việc",
+    "feature": "people",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "fields": {
+      "starts_time": {
+        "label": "Giờ bắt đầu",
+        "type": "time",
+        "required": true
+      },
+      "ends_time": {
+        "label": "Giờ kết thúc",
+        "type": "time",
+        "required": true
+      },
+      "cross_midnight": {
+        "label": "Qua ngày",
+        "type": "enum",
+        "values": {
+          "no": "Trong ngày",
+          "yes": "Qua ngày tiếp theo"
+        },
+        "required": true
+      },
+      "break_minutes": {
+        "label": "Thời gian nghỉ · phút",
+        "type": "number",
+        "min": 0,
+        "max": 1439,
+        "default": 0,
+        "integer": true
+      },
+      "day_rule": {
+        "label": "Ngày công",
+        "type": "enum",
+        "values": {
+          "start_day": "Ngày bắt đầu ca",
+          "end_day": "Ngày kết thúc ca"
+        },
+        "required": true
+      },
+      "overtime_multiplier": {
+        "label": "Hệ số làm thêm theo thỏa thuận",
+        "type": "number",
+        "min": 0,
+        "max": 10,
+        "default": 1
+      }
+    }
+  },
+  "shift_assignments": {
+    "label": "Phân ca nhân viên",
+    "feature": "people",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "shift_id": {
+        "label": "Ca làm việc",
+        "type": "ref",
+        "ref": "shifts",
+        "required": true
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": false,
+        "requiresFeature": "projects"
+      },
+      "starts_on": {
+        "label": "Ngày bắt đầu ca",
+        "type": "date",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày phân ca",
+        "type": "date",
+        "required": true
+      },
+      "work_date": {
+        "label": "Ngày công",
+        "type": "date",
+        "required": false,
+        "computed": true
+      },
+      "starts_at": {
+        "label": "Ca bắt đầu",
+        "type": "text",
+        "required": false,
+        "max": 50,
+        "computed": true
+      },
+      "ends_at": {
+        "label": "Ca kết thúc",
+        "type": "text",
+        "required": false,
+        "max": 50,
+        "computed": true
+      },
+      "regular_hours": {
+        "label": "Giờ làm theo ca",
+        "type": "number",
+        "min": 0,
+        "max": 24,
+        "default": 0,
+        "computed": true
+      }
+    }
+  },
+  "leave_entitlements": {
+    "label": "Hạn mức nghỉ phép",
+    "feature": "people",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "starts_on": {
+        "label": "Hiệu lực từ",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Hiệu lực đến",
+        "type": "date",
+        "required": true
+      },
+      "allowed_hours": {
+        "label": "Giờ phép được cấp",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "default": 0
+      },
+      "carry_hours": {
+        "label": "Giờ chuyển tiếp",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "default": 0
+      }
+    }
+  },
+  "leave_requests": {
+    "label": "Đơn nghỉ phép",
+    "feature": "people",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "lineKind": "leave_request_lines",
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "leave_type": {
+        "label": "Loại nghỉ",
+        "type": "enum",
+        "values": {
+          "paid": "Nghỉ hưởng lương",
+          "unpaid": "Nghỉ không hưởng lương"
+        },
+        "required": true
+      },
+      "entitlement_id": {
+        "label": "Hạn mức phép",
+        "type": "ref",
+        "ref": "leave_entitlements",
+        "required": false
+      },
+      "document_date": {
+        "label": "Ngày đề nghị",
+        "type": "date",
+        "required": true
+      },
+      "reason": {
+        "label": "Lý do nghỉ",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "total_hours": {
+        "label": "Tổng giờ nghỉ",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "default": 0,
+        "computed": true
+      }
+    }
+  },
+  "leave_request_lines": {
+    "label": "Ngày nghỉ phép",
+    "feature": "people",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "parentKind": "leave_requests",
+    "parentField": "request_id",
+    "fields": {
+      "request_id": {
+        "label": "Đơn nghỉ",
+        "type": "ref",
+        "ref": "leave_requests",
+        "required": true
+      },
+      "work_date": {
+        "label": "Ngày nghỉ",
+        "type": "date",
+        "required": true
+      },
+      "hours": {
+        "label": "Giờ nghỉ",
+        "type": "number",
+        "min": 0.0001,
+        "max": 24,
+        "default": 0
+      }
+    }
+  },
+  "overtime_requests": {
+    "label": "Đề nghị làm thêm",
+    "feature": "people",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "assignment_id": {
+        "label": "Phân ca",
+        "type": "ref",
+        "ref": "shift_assignments",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": false,
+        "requiresFeature": "projects"
+      },
+      "work_date": {
+        "label": "Ngày công",
+        "type": "date",
+        "required": true
+      },
+      "hours": {
+        "label": "Giờ làm thêm đề nghị",
+        "type": "number",
+        "min": 0.0001,
+        "max": 24,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày đề nghị",
+        "type": "date",
+        "required": true
+      },
+      "reason": {
+        "label": "Lý do làm thêm",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "attendance_confirmations": {
+    "label": "Xác nhận giờ công theo ca",
+    "feature": "people",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "assignment_id": {
+        "label": "Phân ca",
+        "type": "ref",
+        "ref": "shift_assignments",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": false,
+        "requiresFeature": "projects"
+      },
+      "check_in_time": {
+        "label": "Giờ vào ca",
+        "type": "time",
+        "required": true
+      },
+      "check_out_time": {
+        "label": "Giờ ra ca",
+        "type": "time",
+        "required": true
+      },
+      "checkout_day_offset": {
+        "label": "Ngày ra ca",
+        "type": "enum",
+        "values": {
+          "0": "Cùng ngày bắt đầu",
+          "1": "Ngày tiếp theo"
+        },
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày xác nhận",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Nhật ký / nguồn xác nhận",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "worked_hours": {
+        "label": "Giờ công thường",
+        "type": "number",
+        "min": 0,
+        "max": 24,
+        "default": 0,
+        "computed": true
+      },
+      "overtime_hours": {
+        "label": "Giờ làm thêm",
+        "type": "number",
+        "min": 0,
+        "max": 24,
+        "default": 0,
+        "computed": true
+      },
+      "timecard_id": {
+        "label": "Phiếu công phát sinh",
+        "type": "ref",
+        "ref": "timecards",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "attendance_locks": {
+    "label": "Khóa kỳ chấm công",
+    "feature": "people",
+    "mode": "document",
+    "operationDomain": true,
+    "misaDomain": true,
+    "attendanceDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "fields": {
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "department": {
+        "label": "Phòng ban",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": false,
+        "requiresFeature": "projects"
+      },
+      "document_date": {
+        "label": "Ngày khóa",
+        "type": "date",
+        "required": true
+      },
+      "reason": {
+        "label": "Lý do khóa",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "salary_payments": {
+    "label": "Chi trả lương nhân viên",
+    "feature": "accounting",
+    "mode": "document",
+    "fields": {
+      "salary_run_id": {
+        "label": "Bảng lương đã ghi sổ",
+        "type": "ref",
+        "ref": "salary_runs",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "cash_account_id": {
+        "label": "Tài khoản chi trả",
+        "type": "ref",
+        "ref": "gl_accounts",
+        "required": true
+      },
+      "amount": {
+        "label": "Số tiền chi",
+        "type": "number",
+        "min": 0.0001,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày chi",
+        "type": "date",
+        "required": true
+      },
+      "posting_date": {
+        "label": "Ngày ghi sổ",
+        "type": "date",
+        "required": true
+      },
+      "net_salary": {
+        "label": "Lương thực lĩnh",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "paid_before": {
+        "label": "Đã chi trước lần này",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      },
+      "remaining_before": {
+        "label": "Còn phải chi trước lần này",
+        "type": "number",
+        "min": 0,
+        "default": 0,
+        "computed": true
+      }
+    },
+    "requiresFeatures": [
+      "people"
+    ],
+    "calculable": true,
+    "misaDomain": true,
+    "requiresApproval": true
+  },
+  "campaigns": {
+    "label": "Chiến dịch marketing",
+    "feature": "crm",
+    "mode": "master",
+    "misaDomain": true,
+    "crmDomain": true,
+    "fields": {
+      "channel": {
+        "label": "Kênh",
+        "type": "text",
+        "required": true,
+        "max": 240
+      },
+      "starts_on": {
+        "label": "Từ ngày",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Đến ngày",
+        "type": "date",
+        "required": true
+      },
+      "budget": {
+        "label": "Ngân sách",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "actual_spend": {
+        "label": "Chi phí thực tế",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0
+      }
+    }
+  },
+  "leads": {
+    "label": "Khách hàng tiềm năng",
+    "feature": "crm",
+    "mode": "master",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresFeatures": [
+      "people"
+    ],
+    "fields": {
+      "campaign_id": {
+        "label": "Chiến dịch",
+        "type": "ref",
+        "ref": "campaigns",
+        "required": false
+      },
+      "source": {
+        "label": "Nguồn tiếp nhận",
+        "type": "text",
+        "required": true,
+        "max": 240
+      },
+      "contact_name": {
+        "label": "Người liên hệ",
+        "type": "text",
+        "required": true,
+        "max": 100
+      },
+      "phone": {
+        "label": "Điện thoại",
+        "type": "text",
+        "required": false,
+        "max": 30
+      },
+      "email": {
+        "label": "Email",
+        "type": "email",
+        "max": 254
+      },
+      "marketing_consent": {
+        "label": "Đồng ý nhận tiếp thị",
+        "type": "enum",
+        "values": {
+          "no": "Chưa đồng ý",
+          "yes": "Đã đồng ý"
+        },
+        "default": "no"
+      },
+      "owner_staff_id": {
+        "label": "Nhân viên phụ trách",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "next_contact_on": {
+        "label": "Ngày chăm sóc tiếp theo",
+        "type": "date",
+        "required": false
+      },
+      "stage": {
+        "label": "Giai đoạn",
+        "type": "enum",
+        "values": {
+          "new": "Mới",
+          "working": "Đang chăm sóc",
+          "qualified": "Đủ điều kiện",
+          "rejected": "Không phù hợp",
+          "converted": "Đã chuyển đổi"
+        },
+        "default": "new",
+        "computed": true
+      },
+      "partner_id": {
+        "label": "Khách hàng đã chuyển đổi",
+        "type": "ref",
+        "ref": "partners",
+        "required": false,
+        "computed": true
+      },
+      "opportunity_id": {
+        "label": "Cơ hội đã chuyển đổi",
+        "type": "ref",
+        "ref": "opportunities",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "lead_events": {
+    "label": "Chăm sóc & đánh giá lead",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "requiresFeatures": [
+      "people"
+    ],
+    "fields": {
+      "lead_id": {
+        "label": "Khách tiềm năng",
+        "type": "ref",
+        "ref": "leads",
+        "required": true
+      },
+      "next_stage": {
+        "label": "Kết quả",
+        "type": "enum",
+        "values": {
+          "working": "Đang chăm sóc",
+          "qualified": "Đủ điều kiện",
+          "rejected": "Không phù hợp"
+        },
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chăm sóc",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Nội dung trao đổi / lý do",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "lead_conversions": {
+    "label": "Chuyển đổi khách tiềm năng",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "requiresFeatures": [
+      "people"
+    ],
+    "fields": {
+      "lead_id": {
+        "label": "Khách tiềm năng",
+        "type": "ref",
+        "ref": "leads",
+        "required": true
+      },
+      "existing_partner_id": {
+        "label": "Khách hàng đã có",
+        "type": "ref",
+        "ref": "partners",
+        "required": false
+      },
+      "owner_staff_id": {
+        "label": "Nhân viên phụ trách cơ hội",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "expected_amount": {
+        "label": "Giá trị cơ hội dự kiến",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "probability": {
+        "label": "Xác suất dự kiến · %",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "default": 0
+      },
+      "expected_close_on": {
+        "label": "Dự kiến chốt",
+        "type": "date",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chuyển đổi",
+        "type": "date",
+        "required": true
+      },
+      "partner_id": {
+        "label": "Khách hàng phát sinh",
+        "type": "ref",
+        "ref": "partners",
+        "required": false,
+        "computed": true
+      },
+      "opportunity_id": {
+        "label": "Cơ hội phát sinh",
+        "type": "ref",
+        "ref": "opportunities",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "opportunities": {
+    "label": "Cơ hội bán hàng",
+    "feature": "crm",
+    "mode": "master",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresFeatures": [
+      "people"
+    ],
+    "fields": {
+      "partner_id": {
+        "label": "Khách hàng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "owner_staff_id": {
+        "label": "Nhân viên phụ trách",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "expected_amount": {
+        "label": "Giá trị dự kiến trước thuế",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "probability": {
+        "label": "Xác suất dự kiến · %",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "default": 0
+      },
+      "expected_close_on": {
+        "label": "Ngày dự kiến chốt",
+        "type": "date",
+        "required": true
+      },
+      "next_contact_on": {
+        "label": "Ngày chăm sóc tiếp theo",
+        "type": "date",
+        "required": false
+      },
+      "stage": {
+        "label": "Giai đoạn",
+        "type": "enum",
+        "values": {
+          "new": "Mới",
+          "qualified": "Đủ điều kiện",
+          "proposal": "Báo giá",
+          "negotiation": "Đàm phán",
+          "won": "Thắng",
+          "lost": "Thua"
+        },
+        "default": "new",
+        "computed": true
+      }
+    }
+  },
+  "opportunity_events": {
+    "label": "Diễn biến cơ hội",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "requiresFeatures": [
+      "people"
+    ],
+    "fields": {
+      "opportunity_id": {
+        "label": "Cơ hội",
+        "type": "ref",
+        "ref": "opportunities",
+        "required": true
+      },
+      "next_stage": {
+        "label": "Giai đoạn tiếp theo",
+        "type": "enum",
+        "values": {
+          "qualified": "Đủ điều kiện",
+          "proposal": "Báo giá",
+          "negotiation": "Đàm phán",
+          "won": "Thắng",
+          "lost": "Thua"
+        },
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày ghi nhận",
+        "type": "date",
+        "required": true
+      },
+      "reason": {
+        "label": "Kết quả / lý do",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "customer_quotes": {
+    "label": "Báo giá khách hàng",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "lineKind": "customer_quote_lines",
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "opportunity_id": {
+        "label": "Cơ hội",
+        "type": "ref",
+        "ref": "opportunities",
+        "required": true
+      },
+      "partner_id": {
+        "label": "Khách hàng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "revision": {
+        "label": "Phiên bản",
+        "type": "number",
+        "min": 1,
+        "max": 100000,
+        "default": 1,
+        "integer": true
+      },
+      "previous_id": {
+        "label": "Báo giá trước",
+        "type": "ref",
+        "ref": "customer_quotes",
+        "required": false
+      },
+      "document_date": {
+        "label": "Ngày báo giá",
+        "type": "date",
+        "required": true
+      },
+      "valid_until": {
+        "label": "Hiệu lực đến",
+        "type": "date",
+        "required": true
+      },
+      "payment_terms": {
+        "label": "Điều kiện thanh toán",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "total_amount": {
+        "label": "Giá trị trước thuế",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0,
+        "computed": true
+      },
+      "commercial_state": {
+        "label": "Phản hồi khách hàng",
+        "type": "enum",
+        "values": {
+          "prepared": "Chờ phản hồi",
+          "accepted": "Chấp nhận",
+          "rejected": "Từ chối"
+        },
+        "default": "prepared",
+        "computed": true
+      },
+      "accepted_on": {
+        "label": "Ngày khách chấp nhận",
+        "type": "date",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "customer_quote_lines": {
+    "label": "Chi tiết báo giá khách hàng",
+    "feature": "crm",
+    "mode": "master",
+    "misaDomain": true,
+    "crmDomain": true,
+    "parentKind": "customer_quotes",
+    "parentField": "quote_id",
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "quote_id": {
+        "label": "Báo giá",
+        "type": "ref",
+        "ref": "customer_quotes",
+        "required": true
+      },
+      "item_id": {
+        "label": "Hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "unit_price": {
+        "label": "Đơn giá trước thuế",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "discount_percent": {
+        "label": "Chiết khấu · %",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "default": 0
+      }
+    }
+  },
+  "quote_decisions": {
+    "label": "Phản hồi báo giá",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "quote_id": {
+        "label": "Báo giá",
+        "type": "ref",
+        "ref": "customer_quotes",
+        "required": true
+      },
+      "decision": {
+        "label": "Phản hồi",
+        "type": "enum",
+        "values": {
+          "accepted": "Chấp nhận",
+          "rejected": "Từ chối"
+        },
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày phản hồi",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Xác nhận khách hàng",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "sales_contracts": {
+    "label": "Hợp đồng bán hàng",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "lineKind": "sales_contract_lines",
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "quote_id": {
+        "label": "Báo giá được chấp nhận",
+        "type": "ref",
+        "ref": "customer_quotes",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày lập",
+        "type": "date",
+        "required": true
+      },
+      "signed_on": {
+        "label": "Ngày ký",
+        "type": "date",
+        "required": true
+      },
+      "starts_on": {
+        "label": "Hiệu lực từ",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Hiệu lực đến",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Xác nhận hợp đồng",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "total_amount": {
+        "label": "Giá trị trước thuế",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0,
+        "computed": true
+      },
+      "partner_id": {
+        "label": "Khách hàng",
+        "type": "ref",
+        "ref": "partners",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "sales_contract_lines": {
+    "label": "Hạng mục hợp đồng",
+    "feature": "crm",
+    "mode": "master",
+    "misaDomain": true,
+    "crmDomain": true,
+    "generatedOnly": true,
+    "parentKind": "sales_contracts",
+    "parentField": "contract_id",
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "contract_id": {
+        "label": "Hợp đồng",
+        "type": "ref",
+        "ref": "sales_contracts",
+        "required": true
+      },
+      "quote_line_id": {
+        "label": "Dòng báo giá",
+        "type": "ref",
+        "ref": "customer_quote_lines",
+        "required": true
+      },
+      "item_id": {
+        "label": "Hàng hóa",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "quantity": {
+        "label": "Khối lượng hợp đồng",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "unit_price": {
+        "label": "Đơn giá trước thuế",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0
+      }
+    }
+  },
+  "contract_amendments": {
+    "label": "Phụ lục hợp đồng",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "contract_line_id": {
+        "label": "Hạng mục hợp đồng",
+        "type": "ref",
+        "ref": "sales_contract_lines",
+        "required": true
+      },
+      "new_quantity": {
+        "label": "Khối lượng sau điều chỉnh",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "new_unit_price": {
+        "label": "Đơn giá sau điều chỉnh",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0
+      },
+      "document_date": {
+        "label": "Ngày phụ lục",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Phụ lục đã ký / lý do",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  },
+  "contract_order_releases": {
+    "label": "Đơn hàng từ hợp đồng",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "lineKind": "contract_order_lines",
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "contract_id": {
+        "label": "Hợp đồng",
+        "type": "ref",
+        "ref": "sales_contracts",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày đặt hàng",
+        "type": "date",
+        "required": true
+      },
+      "due_date": {
+        "label": "Hạn thanh toán",
+        "type": "date",
+        "required": true
+      },
+      "total_amount": {
+        "label": "Giá trị trước thuế",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "default": 0,
+        "computed": true
+      },
+      "sales_order_id": {
+        "label": "Đơn bán hàng phát sinh",
+        "type": "ref",
+        "ref": "sales_orders",
+        "required": false,
+        "computed": true
+      }
+    }
+  },
+  "contract_order_lines": {
+    "label": "Chi tiết đặt hàng hợp đồng",
+    "feature": "crm",
+    "mode": "master",
+    "misaDomain": true,
+    "crmDomain": true,
+    "parentKind": "contract_order_releases",
+    "parentField": "release_id",
+    "requiresFeatures": [
+      "people",
+      "sales"
+    ],
+    "fields": {
+      "release_id": {
+        "label": "Đợt đặt hàng",
+        "type": "ref",
+        "ref": "contract_order_releases",
+        "required": true
+      },
+      "contract_line_id": {
+        "label": "Hạng mục hợp đồng",
+        "type": "ref",
+        "ref": "sales_contract_lines",
+        "required": true
+      },
+      "quantity": {
+        "label": "Số lượng đặt đợt này",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "default": 0
+      }
+    }
+  },
+  "support_tickets": {
+    "label": "Yêu cầu hỗ trợ khách hàng",
+    "feature": "crm",
+    "mode": "master",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresFeatures": [
+      "people"
+    ],
+    "fields": {
+      "partner_id": {
+        "label": "Khách hàng",
+        "type": "ref",
+        "ref": "partners",
+        "required": true
+      },
+      "owner_staff_id": {
+        "label": "Nhân viên phụ trách",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "opened_on": {
+        "label": "Ngày tiếp nhận",
+        "type": "date",
+        "required": true
+      },
+      "response_due_on": {
+        "label": "Hạn phản hồi",
+        "type": "date",
+        "required": true
+      },
+      "resolve_due_on": {
+        "label": "Hạn xử lý",
+        "type": "date",
+        "required": true
+      },
+      "priority": {
+        "label": "Ưu tiên",
+        "type": "enum",
+        "values": {
+          "normal": "Thông thường",
+          "high": "Cao",
+          "urgent": "Khẩn"
+        },
+        "default": "normal"
+      },
+      "subject": {
+        "label": "Nội dung yêu cầu",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "stage": {
+        "label": "Tiến độ",
+        "type": "enum",
+        "values": {
+          "new": "Mới",
+          "assigned": "Đã phân công",
+          "working": "Đang xử lý",
+          "resolved": "Đã giải quyết",
+          "closed": "Đã đóng"
+        },
+        "default": "new",
+        "computed": true
+      },
+      "first_response_on": {
+        "label": "Phản hồi lần đầu",
+        "type": "date",
+        "required": false,
+        "computed": true
+      },
+      "resolved_on": {
+        "label": "Ngày giải quyết",
+        "type": "date",
+        "required": false,
+        "computed": true
+      },
+      "closed_on": {
+        "label": "Ngày đóng",
+        "type": "date",
+        "required": false,
+        "computed": true
+      },
+      "escalated": {
+        "label": "Chuyển cấp xử lý",
+        "type": "enum",
+        "values": {
+          "no": "Chưa chuyển cấp",
+          "yes": "Đã chuyển cấp"
+        },
+        "default": "no",
+        "computed": true
+      }
+    }
+  },
+  "ticket_events": {
+    "label": "Xử lý & phản hồi ticket",
+    "feature": "crm",
+    "mode": "document",
+    "misaDomain": true,
+    "crmDomain": true,
+    "requiresApproval": true,
+    "calculable": true,
+    "requiresFeatures": [
+      "people"
+    ],
+    "fields": {
+      "ticket_id": {
+        "label": "Yêu cầu hỗ trợ",
+        "type": "ref",
+        "ref": "support_tickets",
+        "required": true
+      },
+      "event_type": {
+        "label": "Xử lý",
+        "type": "enum",
+        "values": {
+          "assign": "Phân công",
+          "respond": "Phản hồi khách hàng",
+          "start": "Bắt đầu xử lý",
+          "resolve": "Giải quyết",
+          "close": "Đóng yêu cầu",
+          "reopen": "Mở lại",
+          "escalate": "Chuyển cấp xử lý"
+        },
+        "required": true
+      },
+      "responder_id": {
+        "label": "Nhân viên xử lý",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày xử lý",
+        "type": "date",
+        "required": true
+      },
+      "evidence": {
+        "label": "Nội dung / xác nhận khách hàng",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      }
+    }
+  }
+}

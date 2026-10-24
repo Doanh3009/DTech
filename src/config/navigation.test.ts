@@ -21,7 +21,7 @@ describe("permission-aware navigation", () => {
     const groups = filterGroupsByPermissions(desktopNavigation, permissions);
     const labels = groups.flatMap((group) => group.items.map((item) => item.label));
 
-    expect(labels).toContain("Dashboard");
+    expect(labels).not.toContain("Dashboard");
     expect(labels).toContain("Nhân viên");
     expect(labels).not.toContain("Thông quan");
     expect(labels).not.toContain("Hàng hóa");

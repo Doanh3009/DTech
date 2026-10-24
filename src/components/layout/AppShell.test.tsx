@@ -6,8 +6,10 @@ import { AppShell } from "@/components/layout/AppShell";
 import { defaultSystemSettings } from "@/config/systemSettings";
 import type { AuthenticatedUser } from "@/lib/auth/permissions";
 
+const route = vi.hoisted(() => ({ pathname: "/accounting/payroll" }));
+
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/accounting/payroll",
+  usePathname: () => route.pathname,
   useRouter: () => ({ replace: vi.fn(), refresh: vi.fn() })
 }));
 vi.mock("next/dynamic", () => ({ default: () => () => null }));
@@ -41,6 +43,13 @@ const user: AuthenticatedUser = {
 };
 
 describe("AppShell keyboard navigation", () => {
+  it("opens the module gateway without a business sidebar", () => {
+    route.pathname = "/applications";
+    render(<AppShell user={user}><h1>Không gian làm việc</h1></AppShell>);
+    expect(screen.queryByRole("complementary")).not.toBeInTheDocument();
+    expect(screen.getByRole("main")).toHaveTextContent("Không gian làm việc");
+    route.pathname = "/accounting/payroll";
+  });
   it("offers a direct route to the existing main content before the navigation", async () => {
     render(<AppShell user={user}><h1>Bảng lương</h1><input aria-label="Tìm nhân viên" defaultValue="Đơn đang soạn" /></AppShell>);
     const skip = screen.getByRole("link", { name: "Đến nội dung chính" });

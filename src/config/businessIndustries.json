@@ -1,0 +1,106 @@
+{
+  "metalworking": {
+    "label": "Cơ khí & gia công",
+    "solution": "ERP + MES",
+    "focus": "Tiến độ và giá thành sản xuất",
+    "features": [
+      "inventory",
+      "production",
+      "mes",
+      "quality",
+      "crm",
+      "purchasing",
+      "accounting",
+      "people",
+      "sales",
+      "assets",
+      "costing"
+    ]
+  },
+  "plastics_packaging": {
+    "label": "Nhựa & bao bì",
+    "solution": "ERP + Quản lý sản xuất",
+    "focus": "Định mức và hao hụt nguyên liệu",
+    "features": [
+      "inventory",
+      "production",
+      "mes",
+      "quality",
+      "crm",
+      "purchasing",
+      "accounting",
+      "people",
+      "sales",
+      "assets",
+      "costing"
+    ]
+  },
+  "electronics": {
+    "label": "Điện tử & linh kiện",
+    "solution": "ERP + MES + Truy xuất",
+    "focus": "Linh kiện, lô và truy xuất sản xuất",
+    "features": [
+      "inventory",
+      "production",
+      "mes",
+      "traceability",
+      "quality",
+      "crm",
+      "purchasing",
+      "accounting",
+      "people",
+      "sales",
+      "assets",
+      "costing"
+    ]
+  },
+  "food_beverage": {
+    "label": "Thực phẩm & đồ uống",
+    "solution": "ERP + Quản lý chất lượng",
+    "focus": "Lô hàng, hạn dùng và kiểm soát chất lượng",
+    "features": [
+      "inventory",
+      "production",
+      "traceability",
+      "quality",
+      "crm",
+      "purchasing",
+      "accounting",
+      "people",
+      "sales",
+      "assets",
+      "costing"
+    ]
+  },
+  "trading": {
+    "label": "Thương mại & phân phối",
+    "solution": "ERP + CRM + WMS",
+    "focus": "Bán hàng, kho và công nợ",
+    "features": [
+      "inventory",
+      "sales",
+      "crm",
+      "purchasing",
+      "accounting",
+      "people",
+      "assets",
+      "costing"
+    ]
+  },
+  "construction": {
+    "label": "Xây dựng & thi công",
+    "solution": "ERP + Quản lý dự án",
+    "focus": "Ngân sách và chi phí công trình",
+    "features": [
+      "inventory",
+      "projects",
+      "crm",
+      "purchasing",
+      "accounting",
+      "people",
+      "sales",
+      "assets",
+      "costing"
+    ]
+  }
+}

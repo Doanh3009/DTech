@@ -1,7 +1,6 @@
 import { desktopNavigation, filterGroupsByAccess, type NavigationIcon, type NavigationItem } from "@/config/navigation";
 import { applicationForPath, visibleApplications, type ApplicationDefinition } from "@/config/moduleRegistry";
 import type { SystemSettingsDocument } from "@/config/systemSettings";
-import { defaultDashboardSettings, resolveDashboardProfile } from "@/features/dashboard/registry";
 import type { AuthenticatedUser } from "@/lib/auth/permissions";
 import { can } from "@/lib/auth/permissions";
 import { canSubmitPersonalAttendance } from "@/lib/auth/applicationAccess";
@@ -59,6 +58,7 @@ export function activeMobileDestination(pathname: string, model: MobileNavigatio
   if (matching) return matching;
   const applicationMatch = model.direct.find((item) => item.routePrefixes?.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)));
   if (applicationMatch) return applicationMatch;
+  if (pathname.startsWith("/profile/")) return model.direct.find((item) => item.href === "/profile");
   if (pathname.startsWith("/worker-attendance/")) return model.direct.find((item) => item.href.startsWith("/worker-attendance"));
   if (pathname.startsWith("/attendance/")) return model.direct.find((item) => item.href === "/attendance/history") ?? model.direct.find((item) => item.href === "/personal");
   if (["/leave", "/personal", "/profile", "/accounting/payslips", "/notifications"].some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`))) return model.direct.find((item) => item.href === "/personal");
@@ -67,13 +67,8 @@ export function activeMobileDestination(pathname: string, model: MobileNavigatio
 
 type MobileNavigationSettings = Partial<Pick<SystemSettingsDocument, "modules" | "navigation" | "dashboard">>;
 
-const applicationLabels: Partial<Record<ApplicationDefinition["id"], string>> = {
-  overview: "Tổng quan", "human-resources": "Nhân sự", projects: "Công trường",
-  "import-export": "XNK", operations: "Điều hành", system: "Quản trị"
-};
-
 function destination(item: NavigationItem): MobileNavDestination {
-  return { href: item.href, label: item.mobileLabel ?? item.label, icon: item.icon };
+  return { href: item.href, label: item.mobileLabel ?? item.label, icon: item.icon, exact: item.exact };
 }
 
 export function mobileApplicationDestination(application: ApplicationDefinition, user: AuthenticatedUser): string | undefined {
@@ -85,56 +80,42 @@ export function mobileApplicationDestination(application: ApplicationDefinition,
 }
 
 export function resolveMobileNavigation(pathname: string, user: AuthenticatedUser, settings: MobileNavigationSettings = {}): MobileNavigationModel {
-  const supervisor = canUseWorkerAttendance(user);
-  const applications = visibleApplications(user, settings.modules).filter((application) => mobileApplicationDestination(application, user) !== undefined);
-  const accessibleItems = filterGroupsByAccess(desktopNavigation, user.permissions, settings.modules, settings.navigation).flatMap((group) => group.items);
-  const businessApplications = applications.filter((application) => application.id !== "attendance" && application.id !== "overview");
-  const currentApplication = applicationForPath(pathname);
-  const profile = resolveDashboardProfile(user, settings.dashboard ?? defaultDashboardSettings);
-  const roleApplications: Record<string, ApplicationDefinition["id"]> = {
-    management: "overview", supervisor: "projects", hr: "human-resources",
-    warehouse: "warehouse", accounting: "accounting", import_export: "import-export"
+  if (pathname === "/applications") return {
+    mode: "work",
+    label: "Không gian làm việc",
+    direct: [{ href: "/applications", label: "Module", icon: "Grid2X2", exact: true, slot: 1 }],
+    secondary: []
   };
-  const contextualApplication = !isMobilePersonalRoute(pathname, user)
-    ? applications.find((application) => application.id === currentApplication.id)
-    : undefined;
-  const workApplication = contextualApplication && contextualApplication.id !== "attendance" && contextualApplication.id !== "overview"
-    ? contextualApplication
-    : applications.find((application) => application.id === roleApplications[profile] && (profile !== "employee"))
-      ?? businessApplications[0];
-  const workItems = workApplication ? accessibleItems
-    .filter((item) => applicationForPath(item.href).id === workApplication.id)
+
+  const application = applicationForPath(pathname);
+  const accessibleApplication = visibleApplications(user, settings.modules).find((item) => item.id === application.id);
+  const workItems = filterGroupsByAccess(desktopNavigation, user.permissions, settings.modules, settings.navigation)
+    .flatMap((group) => group.items)
+    .filter((item) => applicationForPath(item.href).id === application.id)
     .filter((item) => !item.href.startsWith("/worker-attendance") || can(user.permissions, "worker_attendance.view"))
-    .sort((first, second) => (first.mobilePriority ?? 99) - (second.mobilePriority ?? 99)) : [];
-  const direct: MobileNavDestination[] = [{ href: "/personal", label: "Cá nhân", icon: "UserRound" }];
-  const workHref = workApplication ? mobileApplicationDestination(workApplication, user) : undefined;
-  if (workApplication && workHref) {
-    direct.push({ href: workHref, label: workHref === "/worker-attendance/today" ? "Điểm danh" : applicationLabels[workApplication.id] ?? workApplication.label, icon: workHref === "/worker-attendance/today" ? "UsersRound" : workApplication.icon, routePrefixes: workApplication.routePrefixes.filter((prefix) => !["/notifications", "/profile"].includes(prefix)) });
-    const workerItem = supervisor && can(user.permissions, "worker_attendance.view") && settings.modules?.projects !== false
-      ? { href: "/worker-attendance/today", label: "Điểm danh", icon: "UsersRound" as const, routePrefixes: ["/worker-attendance"] }
-      : undefined;
-    const nextWorkItem = workApplication.id === "overview"
-      ? accessibleItems.find((item) => item.href === "/approvals") ?? accessibleItems.find((item) => item.href === "/project-monitoring")
-      : workItems.find((item) => item.href !== workHref);
-    const next = workerItem && workApplication.id === "projects" && workerItem.href !== workHref ? workerItem
-      : nextWorkItem ? destination(nextWorkItem)
-        : canSubmitPersonalAttendance(user.permissions) && settings.modules?.attendance !== false
-          ? { href: "/attendance/quick", label: "Chấm công", icon: "Camera" as const, quick: true }
-          : undefined;
-    if (next) direct.push(next);
-  } else {
-    const history = accessibleItems.find((item) => item.href === "/attendance/history");
-    if (history) direct.push({ ...destination(history), label: "Lịch công" });
-    if (canSubmitPersonalAttendance(user.permissions) && settings.modules?.attendance !== false) direct.push({ href: "/attendance/quick", label: "Chấm công", icon: "Camera", quick: true });
+    .sort((first, second) => (first.mobilePriority ?? 99) - (second.mobilePriority ?? 99));
+  const destinations = workItems.map(destination);
+  if ((pathname === "/profile" || pathname.startsWith("/profile/")) && can(user.permissions, "profile.view") && !destinations.some((item) => item.href === "/profile")) {
+    destinations.unshift({ href: "/profile", label: "Tài khoản", icon: "UserRound" });
   }
-  if (can(user.permissions, "chat.access")) direct.push({ href: "/messages", label: "Tin nhắn", icon: "MessageCircle" });
-  else if (can(user.permissions, "notification.view") || can(user.permissions, "notification.self.view")) direct.push({ href: "/notifications", label: "Thông báo", icon: "Bell" });
-  if (direct.length < 3) direct.push({ href: "/profile", label: "Tài khoản", icon: "UserRound" });
-  const primary = direct.slice(0, 4);
-  primary.push({ href: "/applications", label: "Ứng dụng", icon: "Grid2X2", action: "applications" });
+  if (application.id === "attendance" && canSubmitPersonalAttendance(user.permissions) && settings.modules?.attendance !== false) {
+    const attendanceIndex = destinations.findIndex((item) => item.href === "/attendance/me");
+    const quick: MobileNavDestination = { href: "/attendance/quick", label: "Chấm công", icon: "Camera", quick: true };
+    if (attendanceIndex >= 0) destinations[attendanceIndex] = quick;
+    else destinations.unshift(quick);
+  }
+  if (!destinations.length && accessibleApplication) {
+    const href = mobileApplicationDestination(accessibleApplication, user);
+    if (href) destinations.push({ href, label: application.label, icon: application.icon });
+  }
+
+  const primary = destinations.slice(0, 4);
+  const active = destinations.find((item) => isMobileDestinationActive(pathname, item, destinations));
+  if (active && !primary.includes(active)) primary[primary.length - 1] = active;
+  primary.push({ href: "/applications", label: "Nghiệp vụ", icon: "Grid2X2", action: "applications" });
   return {
-    mode: workApplication ? supervisor && workApplication.id === "projects" ? "supervisor" : "work" : "personal",
-    label: workApplication ? "Điều hướng công việc" : "Điều hướng cá nhân",
+    mode: application.id === "attendance" ? "personal" : application.id === "projects" && canUseWorkerAttendance(user) ? "supervisor" : "work",
+    label: `Điều hướng ${application.label}`,
     direct: primary.map((item, index) => ({ ...item, slot: index + 1 })),
     secondary: workItems.filter((item) => !primary.some((entry) => entry.href === item.href)).map(destination)
   };

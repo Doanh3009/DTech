@@ -1,0 +1,525 @@
+{
+  "capturedAt": "2026-10-22T01:37:20.443Z",
+  "unit": {
+    "passed": 1438,
+    "skipped": 37,
+    "total": 1475
+  },
+  "supplementaryChecks": [
+    {
+      "anonymousSetupDenied": true,
+      "snapshotMatchesStoredCompany": true,
+      "browserDraftSurvivesReloadAndDiscards": true,
+      "allFourStepsResponsive": true,
+      "unmigratedPublishBlocked": true
+    },
+    {
+      "loginWithoutModuleList": true,
+      "anonymousOpenApiDenied": true,
+      "hubWithoutCategoryFilterOrDashboard": true,
+      "configurationApiConsistent": true,
+      "openApiMatchesCustomerBranding": true,
+      "warehouseNavigationFocused": true,
+      "productionToolsHidden": true,
+      "anonymousConfigurationDenied": true
+    },
+    {
+      "anonymousSetupDenied": true,
+      "snapshotMatchesStoredCompany": true,
+      "browserDraftSurvivesReloadAndDiscards": true,
+      "allFourStepsResponsive": true,
+      "uiPublishesAtomically": true,
+      "retryDoesNotIncrementVersions": true,
+      "changedRequestAndStaleVersionsRejected": true,
+      "semanticConfigurationPreserved": true
+    }
+  ],
+  "browserScopes": [
+    {
+      "checkedAt": "2026-10-22T01:31:40.411Z",
+      "publishesConfiguration": false
+    },
+    {
+      "checkedAt": "2026-10-22T01:33:03.070Z",
+      "publishesConfiguration": false
+    },
+    {
+      "checkedAt": "2026-10-22T01:34:20.507Z",
+      "publishesConfiguration": false
+    },
+    {
+      "checkedAt": "2026-10-22T01:32:50.574Z",
+      "publishesConfiguration": true
+    }
+  ],
+  "browser": {
+    "checkedStaticRoutes": 20,
+    "passed": 20,
+    "routes": [
+      {
+        "route": "/system-admin/setup",
+        "destination": "/system-admin/setup",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false,
+            "step": 1
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false,
+            "step": 1
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false,
+            "step": 2
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false,
+            "step": 2
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false,
+            "step": 3
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false,
+            "step": 3
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false,
+            "step": 4
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false,
+            "step": 4
+          }
+        ],
+        "checkedAt": "2026-10-22T01:32:50.574Z"
+      },
+      {
+        "route": "/system-admin",
+        "destination": "/system-admin/modules",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/appearance",
+        "destination": "/system-admin/appearance",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/attendance-checklist",
+        "destination": "/system-admin/attendance-checklist",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/audit",
+        "destination": "/system-admin/audit",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/branding",
+        "destination": "/system-admin/branding",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/config-history",
+        "destination": "/system-admin/config-history",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/dashboard",
+        "destination": "/system-admin/navigation",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/design-dna",
+        "destination": "/system-admin/design-dna",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:34:20.507Z"
+      },
+      {
+        "route": "/system-admin/localization",
+        "destination": "/system-admin/localization",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/modules",
+        "destination": "/system-admin/modules",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:34:20.507Z"
+      },
+      {
+        "route": "/system-admin/navigation",
+        "destination": "/system-admin/navigation",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/notices",
+        "destination": "/system-admin/notices",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/operations",
+        "destination": "/system-admin/operations",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/organization",
+        "destination": "/system-admin/organization",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/payslip-template",
+        "destination": "/system-admin/payslip-template",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/system-admin/security",
+        "destination": "/system-admin/security",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:33:03.070Z"
+      },
+      {
+        "route": "/applications",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:34:20.507Z"
+      },
+      {
+        "route": "/employees",
+        "destination": "/employees",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:34:20.507Z"
+      },
+      {
+        "route": "/warehouse/inventory",
+        "destination": "/warehouse/inventory",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T01:34:20.507Z"
+      }
+    ]
+  },
+  "boundaries": [
+    "No production deployment or production migration was executed; development migration evidence is recorded separately when applicable.",
+    "No operational documents were created by browser audit; explicit configuration publishing is recorded in browserScopes.",
+    "Dynamic business details, adversarial cross-role flows, business document concurrency, UAT and restore drill remain separate acceptance gates.",
+    "Screenshots and raw logs remain local; this artifact omits account names, cookies, tokens and record bodies."
+  ]
+}

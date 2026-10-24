@@ -1,5 +1,6 @@
 "use client";
 
+import { DimixoLogo, DIMIXO_LOGO } from "@/components/shared/DimixoLogo";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,14 +18,14 @@ export function BrandLogoMark({ alt = "", className = "", onError }: { alt?: str
   );
 }
 
-export function AppLogo({ compact = false, href = "/dashboard", label = "Về Dashboard" }: { compact?: boolean; href?: string; label?: string }) {
+export function AppLogo({ compact = false, href = "/applications", label = "Không gian làm việc" }: { compact?: boolean; href?: string; label?: string }) {
   const branding = useBranding();
   const organization = useOrganizationSettings();
   const [failedUrls, setFailedUrls] = useState<string[]>([]);
-  const candidates = compact ? [branding.logoCompactUrl?.trim(), branding.logoMainUrl?.trim(), OFFICIAL_APP_LOGO] : [branding.logoMainUrl?.trim(), OFFICIAL_APP_LOGO];
+  const candidates = compact ? [branding.logoCompactUrl?.trim(), branding.logoMainUrl?.trim()] : [branding.logoMainUrl?.trim()];
   const imageUrl = candidates.find((url): url is string => Boolean(url && !failedUrls.includes(url))) ?? null;
   const officialLogo = imageUrl === OFFICIAL_APP_LOGO;
-  const initials = organization.shortName.trim().split(/\s+/).slice(0, 2).map((word) => word[0]).join("").toLocaleUpperCase("vi") || "CT";
+  const initials = organization.shortName.trim().split(/\s+/).slice(0, 2).map((word) => word[0]).join("").toLocaleUpperCase("vi") || "DT";
   const handleImageError = () => {
     if (imageUrl) setFailedUrls((urls) => urls.includes(imageUrl) ? urls : [...urls, imageUrl]);
   };
@@ -32,7 +33,7 @@ export function AppLogo({ compact = false, href = "/dashboard", label = "Về Da
   return (
     <Link aria-label={`${organization.shortName}, ${label}`} className={`app-logo ${compact ? "app-logo--compact" : "app-logo--full"}`} href={href}>
       {imageUrl ? (
-        officialLogo ? <BrandLogoMark className="app-logo__compact-crop" onError={handleImageError} /> : <Image
+        imageUrl===DIMIXO_LOGO ? <DimixoLogo compact/> : officialLogo ? <BrandLogoMark className="app-logo__compact-crop" onError={handleImageError} /> : <Image
           alt=""
           aria-hidden="true"
           className={compact ? "app-logo__image app-logo__--compact" : "app-logo__image"}

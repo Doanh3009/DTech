@@ -1,0 +1,14 @@
+import { Factory, Warehouse, ChartGantt, ShoppingBag } from "lucide-react";
+import styles from "./FeatureIllustration.module.css";
+export type FeatureArtKind="production"|"inventory"|"project"|"sales";
+const icons={production:Factory,inventory:Warehouse,project:ChartGantt,sales:ShoppingBag};
+export function FeatureIllustration({kind}:{kind:FeatureArtKind}){
+ const Icon=icons[kind];
+ return <div className={styles.art} data-kind={kind} aria-hidden="true"><div className={styles.halo}/>
+  {kind==="production"?<div className={styles.production}><div className={styles.bom}><span>ĐỊNH MỨC</span><svg viewBox="0 0 180 120" fill="none"><path d="M90 35V60M35 83V60H145V83M90 60V83" stroke="#6d9d87" strokeWidth="2"/>{[[90,24],[35,94],[90,94],[145,94]].map(([x,y],i)=><g key={i}><rect x={x-17} y={y-13} width="34" height="26" rx="7" fill={i===0?"#268361":"#e3f2e8"} stroke="#b2d3c0"/><path d={`M${x-6} ${y}h12M${x} ${y-6}v12`} stroke={i===0?"#fff":"#43856c"}/></g>)}</svg></div><div className={styles.gear}><Factory size={35} strokeWidth={1.3}/><span>86%</span></div></div>:null}
+  {kind==="inventory"?<div className={styles.inventory}><div className={styles.stockCard}><span>TỒN KHO</span><strong>1.280<small>sản phẩm</small></strong><div><i/><i/><i/><i/><i/></div></div><div className={styles.boxes}>{[0,1,2].map(i=><div key={i}><span/><i/></div>)}</div><div className={styles.stockPill}>+ 240 nhập kho</div></div>:null}
+  {kind==="project"?<div className={styles.project}><div className={styles.gantt}><span>KẾ HOẠCH DỰ ÁN</span><div><i/><i/><i/></div><svg viewBox="0 0 200 100" fill="none"><path d="M40 10V95M80 10V95M120 10V95M160 10V95" stroke="#e5e4f3" strokeDasharray="3 4"/><rect x="12" y="15" width="90" height="12" rx="4" fill="#8a7fc5"/><rect x="66" y="43" width="95" height="12" rx="4" fill="#b4abdc"/><rect x="120" y="71" width="65" height="12" rx="4" fill="#d2a463"/><path d="M102 22h10v27h-40M161 49h12v28" stroke="#a99dc8" strokeWidth="1.5"/></svg></div><div className={styles.ring}><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="27" fill="none" stroke="#e6e1f2" strokeWidth="7"/><circle cx="35" cy="35" r="27" fill="none" stroke="#8172b5" strokeWidth="7" strokeDasharray="119 170" transform="rotate(-90 35 35)" strokeLinecap="round"/></svg><b>70%</b><span>Tiến độ</span></div></div>:null}
+  {kind==="sales"?<div className={styles.sales}><div className={styles.invoice}><span>ĐƠN BÁN HÀNG</span><div><i/><b>Đã giao</b></div><strong>128,4<small>triệu đồng</small></strong><svg viewBox="0 0 160 48" fill="none"><path d="M2 42L35 29L65 32L96 17L125 20L156 5" stroke="#317f9d" strokeWidth="3" strokeLinecap="round"/><path d="M146 5h10v10" stroke="#317f9d" strokeWidth="3" strokeLinecap="round"/></svg></div><div className={styles.payment}><span>ĐÃ THU</span><strong>96,3 tr</strong><div><i/></div></div></div>:null}
+  <span className={styles.icon}><Icon size={21} strokeWidth={1.5}/></span>
+ </div>;
+}

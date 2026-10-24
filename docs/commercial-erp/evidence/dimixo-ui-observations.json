@@ -1,0 +1,723 @@
+{
+  "capturedAt": "2026-10-24T01:20:31.585Z",
+  "environment": "development",
+  "browser": "Edge",
+  "mode": "optimized-production-build",
+  "pages": [
+    {
+      "path": "/",
+      "documentWidth": 1430,
+      "viewport": 1440,
+      "elapsedMs": 3268
+    },
+    {
+      "path": "/login",
+      "documentWidth": 1430,
+      "viewport": 1440,
+      "elapsedMs": 604
+    },
+    {
+      "path": "/trai-nghiem",
+      "documentWidth": 1430,
+      "viewport": 1440,
+      "elapsedMs": 636
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/inventory",
+      "elapsedMs": 1034,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/production",
+      "elapsedMs": 874,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/mes",
+      "elapsedMs": 879,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/quality",
+      "elapsedMs": 898,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/crm",
+      "elapsedMs": 926,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/purchasing",
+      "elapsedMs": 924,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/accounting",
+      "clientNavigationMs": 602
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/accounting",
+      "elapsedMs": 1529,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/people",
+      "elapsedMs": 878,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/sales",
+      "elapsedMs": 871,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat",
+      "viewport": 768,
+      "documentWidth": 758
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/accounting",
+      "viewport": 768,
+      "documentWidth": 758
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat",
+      "viewport": 390,
+      "documentWidth": 380
+    },
+    {
+      "path": "/erp/co-khi-thanh-phat/module/accounting",
+      "viewport": 390,
+      "documentWidth": 380
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/inventory",
+      "elapsedMs": 878,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/production",
+      "elapsedMs": 891,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/mes",
+      "elapsedMs": 852,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/quality",
+      "elapsedMs": 873,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/crm",
+      "elapsedMs": 869,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/purchasing",
+      "elapsedMs": 894,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/accounting",
+      "clientNavigationMs": 562
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/accounting",
+      "elapsedMs": 1440,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/people",
+      "elapsedMs": 906,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/bao-bi-an-phu/module/sales",
+      "elapsedMs": 892,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/inventory",
+      "elapsedMs": 857,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/production",
+      "elapsedMs": 873,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/mes",
+      "elapsedMs": 1023,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/traceability",
+      "elapsedMs": 1088,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/quality",
+      "elapsedMs": 864,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/crm",
+      "elapsedMs": 838,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/purchasing",
+      "elapsedMs": 850,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/accounting",
+      "clientNavigationMs": 587
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/accounting",
+      "elapsedMs": 1470,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/people",
+      "elapsedMs": 852,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/dien-tu-minh-tin/module/sales",
+      "elapsedMs": 852,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/inventory",
+      "elapsedMs": 864,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/production",
+      "elapsedMs": 1135,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/traceability",
+      "elapsedMs": 1077,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/quality",
+      "elapsedMs": 862,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/crm",
+      "elapsedMs": 870,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/purchasing",
+      "elapsedMs": 872,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/accounting",
+      "clientNavigationMs": 573
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/accounting",
+      "elapsedMs": 1527,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/people",
+      "elapsedMs": 1121,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/thuc-pham-an-nhien/module/sales",
+      "elapsedMs": 865,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/phan-phoi-hung-thinh/module/inventory",
+      "elapsedMs": 837,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/phan-phoi-hung-thinh/module/sales",
+      "elapsedMs": 863,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/phan-phoi-hung-thinh/module/crm",
+      "elapsedMs": 876,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/phan-phoi-hung-thinh/module/purchasing",
+      "elapsedMs": 866,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/phan-phoi-hung-thinh/module/accounting",
+      "clientNavigationMs": 535
+    },
+    {
+      "path": "/erp/phan-phoi-hung-thinh/module/accounting",
+      "elapsedMs": 1431,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/phan-phoi-hung-thinh/module/people",
+      "elapsedMs": 851,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/inventory",
+      "elapsedMs": 860,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/projects",
+      "elapsedMs": 844,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/crm",
+      "elapsedMs": 836,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/purchasing",
+      "elapsedMs": 861,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/accounting",
+      "clientNavigationMs": 568
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/accounting",
+      "elapsedMs": 1442,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/people",
+      "elapsedMs": 959,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/erp/xay-dung-chau-tuan/module/sales",
+      "elapsedMs": 880,
+      "documentWidth": 1430,
+      "viewport": 1440
+    },
+    {
+      "path": "/login",
+      "viewport": 390,
+      "documentWidth": 380
+    }
+  ],
+  "errors": [],
+  "api": [
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/login",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/records/journal_entries",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/journals/2332d7b4-8798-4f2b-a3d6-85ee10df3a98",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/co-khi-thanh-phat/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/login",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/records/journal_entries",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/bao-bi-an-phu/journals/01736ec9-1277-4274-bad6-9c8c3dcc96a2",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/login",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/options/lots",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/records/journal_entries",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/dien-tu-minh-tin/journals/02305b99-eabf-41c9-98be-66777a0133a8",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/login",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/options/lots",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/records/journal_entries",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/thuc-pham-an-nhien/journals/053aba0f-89d3-4a1d-a29c-e565f43cfb6d",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/login",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/records/journal_entries",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/phan-phoi-hung-thinh/journals/193cc596-3734-4328-aba6-b520b01f2a6d",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/login",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/finance",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/operations",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/journal_entries",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/business/xay-dung-chau-tuan/journals/010dafed-0689-4693-8a6f-e077aa089c3b",
+      "status": 200
+    }
+  ],
+  "testSuiteRun": false
+}

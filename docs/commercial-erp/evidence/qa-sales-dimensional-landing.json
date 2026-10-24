@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-10-23T06:46:40.402Z",
+  "scope": [
+    "tenant sales fulfillment and session serialization",
+    "original landing layout with dimensional ERP interface artwork"
+  ],
+  "implementation": {
+    "deliveryBatch": true,
+    "partialDelivery": true,
+    "ledgerGuards": true,
+    "atomicRollback": true,
+    "retryReceipt": true,
+    "completedOrderReopening": true,
+    "sessionRevocationRace": true,
+    "passwordConcurrency": true,
+    "codeNativeProductArtwork": true,
+    "generatedRasterAssetsUsed": false
+  },
+  "validation": {
+    "unit": {
+      "passed": 1936,
+      "skipped": 37,
+      "filesPassed": 220,
+      "filesSkipped": 1,
+      "command": "npx vitest run --maxWorkers=4"
+    },
+    "postgres": {
+      "passed": 46,
+      "failed": 0,
+      "clusterStopped": true,
+      "cloudAccess": false,
+      "evidence": "business-platform-integration.json"
+    },
+    "browser": {
+      "viewports": [
+        {
+          "width": 1440,
+          "status": 200,
+          "dimensionalPreviewLoaded": true,
+          "horizontalOverflow": false
+        },
+        {
+          "width": 768,
+          "status": 200,
+          "dimensionalPreviewLoaded": true,
+          "horizontalOverflow": false
+        },
+        {
+          "width": 390,
+          "status": 200,
+          "dimensionalPreviewLoaded": true,
+          "horizontalOverflow": false
+        },
+        {
+          "width": 320,
+          "status": 200,
+          "dimensionalPreviewLoaded": true,
+          "horizontalOverflow": false
+        }
+      ],
+      "checks": {
+        "keyboardRangeInputs": true,
+        "zeroBaseline": true,
+        "reset": true,
+        "motionToggle": true,
+        "reducedMotion": true,
+        "dataTable": true,
+        "sixIndustryCases": true,
+        "anchorTargets": true,
+        "motionEnabled": true,
+        "dimensionalPreviewMotionToggle": true,
+        "dimensionalPreviewKeyboardAndPointer": true
+      },
+      "errors": [],
+      "writes": 0
+    },
+    "lint": "passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrationsValidated": 67
+  },
+  "deployment": {
+    "cloudMigrationsApplied": false,
+    "productionDeployed": false
+  },
+  "limits": [
+    "Native PostgreSQL uses synthetic data and an internal Auth stub; no real customer or Supabase Auth lifecycle was exercised.",
+    "New business migrations require a separate cloud rollout before live customer use.",
+    "The impact chart contains editable illustrative inputs, not measured customer results.",
+    "The initial full unit run under concurrent tooling timed out in one setup-wizard test; its isolated run and the final complete run with four workers passed."
+  ],
+  "logs": {
+    "unit": ".tmp/erp-final-unit.log",
+    "lint": ".tmp/erp-final-lint.log",
+    "typecheck": ".tmp/erp-final-typecheck.log",
+    "build": ".tmp/erp-final-build.log",
+    "browser": ".tmp/erp-marketing-3d/report.json"
+  }
+}

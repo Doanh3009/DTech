@@ -12,6 +12,7 @@ import {
   getEmployeeDocuments,
   getEmployeeHistory,
   listEmployees,
+  listAccounts,
   offboardEmployee,
   provisionAccountForEmployee,
   updateAccountRoles,
@@ -125,6 +126,7 @@ describe("employee domain service", () => {
     const provisioned = provisionAccountForEmployee(
       employee!,
       {
+        requestId: "10000000-0000-4000-8000-000000000001",
         username: "cn018",
         password: "12345678",
         roleIds: ["role-employee"]
@@ -174,11 +176,29 @@ describe("employee domain service", () => {
     };
 
     expect(() =>
-      updateEmployeeProfile(first, { employeeCode: second.employeeCode }, "demo-admin", dataSet)
+      updateEmployeeProfile(first, { rowVersion: first.rowVersion, employeeCode: second.employeeCode }, "demo-admin", dataSet)
     ).toThrow(AppError);
     expect(() =>
-      updateEmployeeProfile(first, { managerEmployeeId: second.id }, "demo-admin", dataSet)
+      updateEmployeeProfile(first, { rowVersion: first.rowVersion, managerEmployeeId: second.id }, "demo-admin", dataSet)
     ).toThrow(AppError);
+  });
+
+  it("omits deleted login tombstones from the user worklist while preserving the data set", () => {
+    const account = defaultEmployeeDataSet.accounts[0];
+    const dataSet = { ...defaultEmployeeDataSet, accounts: [{ ...account, deletedAt: "2026-10-22T00:00:00Z" }] };
+    expect(listAccounts(dataSet)).toEqual([]);
+    expect(dataSet.accounts).toHaveLength(1);
+  });
+
+  it("clears explicit nullable profile fields while preserving omitted values in local previews", () => {
+    const current = { ...defaultEmployeeDataSet.employees[0], personalEmail: "old@example.com", personalPhone: "0901234567", normalizedPhone: "84901234567", dateOfBirth: "1990-01-01", permanentAddress: "Địa chỉ cũ" };
+    const result = updateEmployeeProfile(current, { rowVersion: current.rowVersion, personalEmail: null, personalPhone: null, dateOfBirth: null }, "demo-admin");
+    expect(result.employee.personalEmail).toBeUndefined();
+    expect(result.employee.personalPhone).toBe("");
+    expect(result.employee.normalizedPhone).toBe("");
+    expect(result.employee.dateOfBirth).toBeUndefined();
+    expect(result.employee.permanentAddress).toBe("Địa chỉ cũ");
+    expect(result.employee.rowVersion).toBe(current.rowVersion + 1);
   });
 
   it("rejects a CCCD already linked to another employee", () => {
@@ -189,7 +209,7 @@ describe("employee domain service", () => {
       updateEmployeeSensitiveProfile(
         employee,
         undefined,
-        { nationalIdNumber: existingNumber, reason: "Đối chiếu hồ sơ" },
+        { rowVersion: employee.rowVersion, nationalIdNumber: existingNumber, reason: "Đối chiếu hồ sơ" },
         "demo-admin"
       )
     ).toThrow(AppError);

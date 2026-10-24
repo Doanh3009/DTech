@@ -1,0 +1,73 @@
+import assert from "node:assert/strict";
+import { spawn } from "node:child_process";
+import { createHash,randomUUID } from "node:crypto";
+import { mkdir,readFile,writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
+import { createServer } from "node:net";
+import path from "node:path";
+import { pathToFileURL } from "node:url";
+
+const workspace=process.cwd();
+const pgRequire=createRequire(path.join(workspace,".tmp/erp-postgres/package.json"));
+const {Client}=pgRequire("pg");
+const binaryRoot=process.env.ERP_TEST_PG_BIN;
+if(!binaryRoot&&process.platform!=="win32")throw new Error("Set ERP_TEST_PG_BIN to PostgreSQL 17 binaries.");
+const binaries=binaryRoot?{initdb:path.join(binaryRoot,process.platform==="win32"?"initdb.exe":"initdb"),pg_ctl:path.join(binaryRoot,process.platform==="win32"?"pg_ctl.exe":"pg_ctl")}:await import(pathToFileURL(pgRequire.resolve("@embedded-postgres/windows-x64")).href);
+const directory=path.join(workspace,".tmp/erp-trial-db",randomUUID());
+const dataDirectory=path.join(directory,"data");
+const migration="202610220004_product_trial_requests.sql";
+const migrations=[];const checks=[];const connections=[];
+const actor="10000000-0000-4000-8000-000000000001";
+const other="10000000-0000-4000-8000-000000000002";
+const role="20000000-0000-4000-8000-000000000001";
+const digest=value=>createHash("sha256").update(value).digest("hex");
+const payload={companyName:"Synthetic construction",contactName:"Synthetic contact",email:"native@example.invalid",phone:"0901234567",industry:"construction",companySize:"20_100",needs:"Synthetic intake, never cloud",consent:true};
+let started=false;let evidence;let config;
+function binary(command,args){return new Promise((resolve,reject)=>{const child=spawn(command,args,{cwd:workspace,shell:false,windowsHide:true,stdio:["ignore","pipe","pipe"]});let output="";child.stdout.on("data",chunk=>output+=chunk);child.stderr.on("data",chunk=>output+=chunk);child.on("error",reject);child.on("exit",code=>{if(code===0)resolve();else reject(new Error(`PostgreSQL process failed: ${output}`));});});}
+async function connect(){const client=new Client({...config,statement_timeout:10_000});await client.connect();connections.push(client);return client;}
+async function test(db,name,fn){await db.query("begin");try{await fn();checks.push({name,passed:true});}finally{await db.query("rollback");}}
+async function fails(db,fn,code){await db.query("savepoint expected_error");try{await assert.rejects(fn,code);}finally{await db.query("rollback to savepoint expected_error; release savepoint expected_error");}}
+const receiptId=()=>randomUUID();
+const submit=(db,id=receiptId(),body=payload,requester=digest("network"),contact=digest("contact"),hash=digest(JSON.stringify(body)))=>db.query("select public.submit_product_trial_request($1,$2::jsonb,$3,$4,$5) as receipt",[id,body,hash,requester,contact]);
+const review=(db,id,version=1,status="contacted",who=actor,reason="Synthetic review")=>db.query("select public.review_product_trial_request($1,$2,$3,$4,$5) as receipt",[id,version,status,reason,who]);
+try{
+ await mkdir(directory,{recursive:true});const password=randomUUID();const passwordFile=path.join(directory,"password");await writeFile(passwordFile,password,{mode:0o600});
+ await binary(binaries.initdb,["-D",dataDirectory,"-U","postgres","--auth=scram-sha-256","--pwfile",passwordFile,"--encoding=UTF8","--locale=C"]);
+ const socket=createServer();await new Promise((resolve,reject)=>{socket.once("error",reject);socket.listen(0,"127.0.0.1",resolve);});const port=socket.address().port;await new Promise(resolve=>socket.close(resolve));
+ await binary(binaries.pg_ctl,["-D",dataDirectory,"-l",path.join(directory,"postgres.log"),"-o",`-h 127.0.0.1 -p ${port}`,"-w","start"]);started=true;
+ config={host:"127.0.0.1",port,user:"postgres",password,database:"postgres"};const db=await connect();const parallel=await connect();
+ await db.query("create role anon nologin; create role authenticated nologin; create role service_role nologin bypassrls; create schema auth; create function auth.uid() returns uuid language sql stable as 'select null::uuid'; alter default privileges in schema public grant all on tables to anon,authenticated,service_role;");
+ for(const filename of ["202609090001_foundation_system_primitives.sql","202609090002_employee_rbac_foundation.sql"]){const source=await readFile(path.join(workspace,"supabase/migrations",filename));await db.query(source.toString());migrations.push({filename,sha256:digest(source)});}
+ await db.query("insert into public.app_accounts(id,display_name,status) values($1,'Synthetic admin','active'),($2,'Synthetic other','active')",[actor,other]);
+ await db.query("insert into public.roles(id,code,name) values($1,'native_trial','Synthetic reviewer')",[role]);
+ const source=await readFile(path.join(workspace,"supabase/migrations",migration));await db.query(source.toString());migrations.push({filename:migration,sha256:digest(source)});
+ await db.query("insert into public.account_roles(account_id,role_id) values($1,$2);",[actor,role]);
+ await db.query("insert into public.permissions(key,module,description) values('system_admin.access','system','Synthetic admin') on conflict do nothing");
+ await db.query("insert into public.role_permissions(role_id,permission_key) select $1,key from public.permissions where key in ('system_admin.access','trial_request.view','trial_request.manage') on conflict do nothing",[role]);
+ await test(db,"accepts one request and returns no contact data",async()=>{const id=receiptId();assert.deepEqual((await submit(db,id)).rows[0].receipt,{requestId:id,received:true});const r=(await db.query("select * from public.product_trial_requests where request_id=$1",[id])).rows[0];assert.equal(r.status,"new");assert.equal(r.row_version,1);assert(r.consent_at);assert.equal(r.consent_version,"2026-10-22.v1");});
+ await test(db,"same UUID replays once even from another network",async()=>{const id=receiptId();await submit(db,id);await submit(db,id,payload,digest("second network"));assert.equal(Number((await db.query("select count(*) from public.product_trial_requests where request_id=$1",[id])).rows[0].count),1);});
+ await test(db,"changed request UUID body is rejected without overwriting",async()=>{const id=receiptId();await submit(db,id);await fails(db,()=>submit(db,id,{...payload,companyName:"Different company"}),/TRIAL_REQUEST_CONFLICT/);assert.equal((await db.query("select company_name from public.product_trial_requests where request_id=$1",[id])).rows[0].company_name,payload.companyName);});
+ for(const [field,value]of [["consent",false],["consent",null],["companyName",1],["companyName","x"],["companyName","x".repeat(181)],["contactName",null],["email","invalid"],["phone","000"],["phone","abcdefghij"],["industry","unknown"],["companySize","unknown"],["needs","x".repeat(1501)]])await test(db,`rejects invalid ${field} ${typeof value}`,()=>fails(db,()=>submit(db,receiptId(),{...payload,[field]:value}),/TRIAL_INVALID_INPUT/));
+ await test(db,"rejects unknown keys",()=>fails(db,()=>submit(db,receiptId(),{...payload,actorId:actor}),/TRIAL_INVALID_INPUT/));
+ await test(db,"rejects missing keys",()=>{const body={...payload};delete body.needs;return fails(db,()=>submit(db,receiptId(),body),/TRIAL_INVALID_INPUT/);});
+ await test(db,"rejects malformed hashes",()=>fails(db,()=>submit(db,receiptId(),payload,"invalid"),/TRIAL_INVALID_INPUT/));
+ await test(db,"contact quota allows two requests and replay then rejects third",async()=>{const id=receiptId();await submit(db,id);await submit(db);await submit(db,id);await fails(db,()=>submit(db),/TRIAL_RATE_LIMITED/);});
+ await test(db,"network quota rejects sixth request across contacts",async()=>{for(let n=0;n<5;n++)await submit(db,receiptId(),payload,digest("network"),digest(`contact${n}`));await fails(db,()=>submit(db,receiptId(),payload,digest("network"),digest("sixth")),/TRIAL_RATE_LIMITED/);});
+ await test(db,"global quota applies to spoofed/different networks",async()=>{await db.query("insert into public.product_trial_requests select gen_random_uuid(),created_at,company_name,contact_name,email,phone,industry,company_size,needs,consent_version,consent_at,payload_hash,requester_hash,contact_hash,status,row_version,review_note,reviewed_by,reviewed_at from (select * from public.product_trial_requests limit 0) r");await submit(db);await db.query("insert into public.product_trial_requests(request_id,company_name,contact_name,email,phone,industry,company_size,payload_hash,requester_hash,contact_hash) select gen_random_uuid(),'Synthetic company','Synthetic contact','global@example.invalid','0901234567','construction','20_100',repeat('a',64),repeat('b',64),repeat('c',64) from generate_series(1,99)");await fails(db,()=>submit(db,receiptId(),payload,digest("new network"),digest("new contact")),/TRIAL_RATE_LIMITED/);});
+ await test(db,"review changes status and audit in one transaction",async()=>{const id=receiptId();await submit(db,id);assert.deepEqual((await review(db,id)).rows[0].receipt,{requestId:id,rowVersion:2,status:"contacted"});const audit=(await db.query("select before_data,after_data from public.audit_logs where entity_id=$1",[id])).rows[0];assert.deepEqual(audit.before_data,{status:"new",rowVersion:1});assert.deepEqual(audit.after_data,{status:"contacted",rowVersion:2});assert(!JSON.stringify(audit).includes(payload.email));});
+ await test(db,"review CAS prevents duplicate audit",async()=>{const id=receiptId();await submit(db,id);await review(db,id);await fails(db,()=>review(db,id),/TRIAL_VERSION_CONFLICT/);assert.equal(Number((await db.query("select count(*) from public.audit_logs where entity_id=$1",[id])).rows[0].count),1);});
+ await test(db,"requires active actor and both permissions",async()=>{const id=receiptId();await submit(db,id);await fails(db,()=>review(db,id,1,"contacted",other),/TRIAL_ACTOR_FORBIDDEN/);await db.query("delete from public.role_permissions where role_id=$1 and permission_key='system_admin.access'",[role]);await fails(db,()=>review(db,id),/TRIAL_ACTOR_FORBIDDEN/);});
+ await test(db,"view-only cannot review",async()=>{const id=receiptId();await submit(db,id);await db.query("delete from public.role_permissions where role_id=$1 and permission_key='trial_request.manage'",[role]);await fails(db,()=>review(db,id),/TRIAL_ACTOR_FORBIDDEN/);});
+ await test(db,"disabled reviewer is rejected",async()=>{const id=receiptId();await submit(db,id);await db.query("update public.app_accounts set status='disabled' where id=$1",[actor]);await fails(db,()=>review(db,id),/TRIAL_ACTOR_FORBIDDEN/);});
+ await test(db,"rejects state skipping and closed edits",async()=>{const id=receiptId();await submit(db,id);await fails(db,()=>review(db,id,1,"qualified"),/TRIAL_INVALID_TRANSITION/);await review(db,id,1,"closed");await fails(db,()=>review(db,id,2,"contacted"),/TRIAL_INVALID_TRANSITION/);});
+ await test(db,"supports contacted to qualified to closed",async()=>{const id=receiptId();await submit(db,id);await review(db,id);await review(db,id,2,"qualified");await review(db,id,3,"closed");assert.equal((await db.query("select row_version from public.product_trial_requests where request_id=$1",[id])).rows[0].row_version,4);await submit(db,id);assert.equal((await db.query("select status from public.product_trial_requests where request_id=$1",[id])).rows[0].status,"closed");});
+ await test(db,"audit failure rolls back review",async()=>{const id=receiptId();await submit(db,id);await db.query("create function public.fail_trial_audit() returns trigger language plpgsql as $$begin raise exception 'synthetic audit failure'; end$$; create trigger fail_trial_audit before insert on public.audit_logs for each row execute function public.fail_trial_audit()");await fails(db,()=>review(db,id),/synthetic audit failure/);assert.equal((await db.query("select row_version from public.product_trial_requests where request_id=$1",[id])).rows[0].row_version,1);});
+ await test(db,"service has SELECT only while commands are private to service",async()=>{const r=(await db.query("select has_table_privilege('service_role','public.product_trial_requests','SELECT') as r,has_table_privilege('service_role','public.product_trial_requests','INSERT,UPDATE,DELETE') as w,has_table_privilege('anon','public.product_trial_requests','SELECT') as a,has_table_privilege('authenticated','public.product_trial_requests','SELECT') as u,relrowsecurity as rls from pg_class where oid='public.product_trial_requests'::regclass")).rows[0];assert.deepEqual(r,{r:true,w:false,a:false,u:false,rls:true});for(const signature of ["submit_product_trial_request(uuid,jsonb,text,text,text)","review_product_trial_request(uuid,integer,text,text,uuid)"]){const q=(await db.query("select has_function_privilege('service_role',$1,'execute') as s,has_function_privilege('anon',$1,'execute') as a,has_function_privilege('authenticated',$1,'execute') as u,prosecdef as d,proconfig as config from pg_proc where oid=$1::regprocedure",[`public.${signature}`])).rows[0];assert.deepEqual(q,{s:true,a:false,u:false,d:true,config:['search_path=""']});}});
+ // These committed races use fresh identities, contacts and networks.
+ const shared=receiptId();const identical=await Promise.all([submit(db,shared),submit(parallel,shared)]);assert(identical.every(r=>r.rows[0].receipt.received));assert.equal(Number((await db.query("select count(*) from public.product_trial_requests where request_id=$1",[shared])).rows[0].count),1);checks.push({name:"concurrent identical submit creates one record",passed:true});
+ const competing=await Promise.allSettled([review(db,shared),review(parallel,shared,1,"closed")]);assert.equal(competing.filter(r=>r.status==="fulfilled").length,1);assert(competing.some(r=>r.status==="rejected"&&/TRIAL_VERSION_CONFLICT/.test(r.reason.message)));checks.push({name:"concurrent CAS review has one winner",passed:true});
+ evidence={generatedAt:new Date().toISOString(),postgresVersion:(await db.query("show server_version")).rows[0].server_version,passed:checks.length,failed:0,checks,migrations,cloudAccess:false,syntheticDataOnly:true,authExercised:false};
+}finally{
+ await Promise.allSettled(connections.map(client=>client.end()));if(started)await binary(binaries.pg_ctl,["-D",dataDirectory,"-m","fast","-w","stop"]);
+ if(evidence){evidence.clusterStopped=true;const ownSource=await readFile(new URL(import.meta.url));evidence.runnerSha256=digest(ownSource);await writeFile(path.join(workspace,"docs/commercial-erp/evidence/trial-requests-integration.json"),JSON.stringify(evidence,null,2));console.log(JSON.stringify({passed:evidence.passed,failed:0,clusterStopped:true,cloudAccess:false}));}
+}

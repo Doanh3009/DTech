@@ -1,0 +1,20 @@
+[
+  "project_wbs",
+  "budget_versions",
+  "budget_lines",
+  "budget_exceptions",
+  "project_acceptances",
+  "project_variations",
+  "project_lifecycle_events",
+  "acceptance_billings",
+  "procurement_requests",
+  "procurement_request_lines",
+  "supplier_quotes",
+  "supplier_quote_lines",
+  "procurement_awards",
+  "procurement_award_lines",
+  "stock_transfers",
+  "stock_counts",
+  "stock_count_lines",
+  "project_material_returns"
+]

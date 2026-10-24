@@ -59,6 +59,15 @@
 .form > :global(.sticky-action-bar),
 .editForm > :global(.sticky-action-bar) { position: static; }
 
+.editFields {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  gap: var(--space-6);
+}
+
 @media (max-width: 1080px) {
   .form {
     grid-template-columns: minmax(0, 1fr);

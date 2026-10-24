@@ -8,7 +8,8 @@ import { getBackHref, getRouteMeta } from "@/config/routeRegistry";
 import type { AuthenticatedUser } from "@/lib/auth/permissions";
 import { UserMenu } from "@/components/shared/UserMenu";
 import { MobileAppLauncher } from "@/components/layout/MobileAppLauncher";
-import { useBranding, useOrganizationSettings } from "@/components/providers/SystemSettingsProvider";
+import { useBranding, useOrganizationSettings, useSystemSettings } from "@/components/providers/SystemSettingsProvider";
+import { applicationForPath, visibleApplications } from "@/config/moduleRegistry";
 import { NotificationBell } from "@/features/shared-platforms/components/NotificationBell";
 import { MessageBell } from "@/features/messaging/MessageBell";
 import { CommandPalette } from "@/features/search/components/CommandPalette";
@@ -41,18 +42,22 @@ const connectionLabels: Record<RealtimeConnectionState, string> = {
 };
 
 export function isMobileHeaderRootScreen(pathname: string) {
-  return ["/dashboard", "/home", "/personal", "/applications", "/messages", "/notifications", "/profile"].includes(pathname);
+  return pathname === "/applications";
 }
 
-export function AppHeader({ pathname, user, connectionState, backHrefOverride, pageTitleOverride, documentTitleOverride, homeHref = "/personal", sidebarCollapsed = false, onSidebarToggle, testEnvironment }: AppHeaderProps) {
+export function AppHeader({ pathname, user, connectionState, backHrefOverride, pageTitleOverride, documentTitleOverride, homeHref = "/applications", sidebarCollapsed = false, onSidebarToggle, testEnvironment }: AppHeaderProps) {
   const branding = useBranding();
   const organization = useOrganizationSettings();
+  const { settings } = useSystemSettings();
+  const isModuleHub = pathname === "/applications";
+  const application = applicationForPath(pathname);
+  const moduleHome = visibleApplications(user, settings.modules).find((item) => item.id === application.id)?.defaultRoute ?? application.defaultRoute;
   const routeMeta = getRouteMeta(pathname);
   const meta = /^\/projects\/[^/]+\/(?:today|progress|team|profile|documents)$/.test(pathname)
     ? { ...routeMeta, title: routeMeta.title.split(" · ").at(-1) ?? routeMeta.title }
     : routeMeta;
   const isRootScreen = isMobileHeaderRootScreen(pathname);
-  const backHref = isRootScreen ? null : backHrefOverride ?? getBackHref(pathname) ?? "/applications";
+  const backHref = isModuleHub ? null : backHrefOverride ?? getBackHref(pathname) ?? "/applications";
   const parentTitle = getRouteMeta(pathname.slice(0, pathname.lastIndexOf("/"))).title;
   const routeTitle = meta.title === "Không tìm thấy" ? parentTitle === "Không tìm thấy" ? "Ứng dụng" : parentTitle : meta.title;
   const mobileTitle = pageTitleOverride ?? routeTitle;
@@ -73,13 +78,12 @@ export function AppHeader({ pathname, user, connectionState, backHrefOverride, p
           {sidebarCollapsed ? <PanelLeftOpen aria-hidden="true" size={18} /> : <PanelLeftClose aria-hidden="true" size={18} />}
         </IconButton> : null}
         <nav aria-label="Vị trí hiện tại" className="app-header__context">
-          {pathname === homeHref ? <span aria-current="page">Trang chủ</span> : <><Link href={homeHref}>Trang chủ</Link><ChevronRight aria-hidden="true" size={13} /><span aria-current="page" title={mobileTitle}>{mobileTitle}</span></>}
+          {isModuleHub ? <span aria-current="page">Không gian làm việc</span> : mobileTitle === application.label ? <span aria-current="page">{application.label}</span> : <><Link href={moduleHome}>{application.label}</Link><ChevronRight aria-hidden="true" size={13} /><span aria-current="page" title={mobileTitle}>{mobileTitle}</span></>}
         </nav>
       </div>
       <div className="app-header__mobile-leading">
-        {isRootScreen ? <>
-          <MobileAppLauncher key={pathname} user={user} variant="brand" />
-          <span className="app-header__mobile-logo"><AppLogo compact href="/personal" label="Về Cá nhân" /></span>
+        {isModuleHub ? <>
+          <span className="app-header__mobile-logo"><AppLogo compact href={homeHref} label="Không gian làm việc" /></span>
           <span className="app-header__mobile-brand">{organization.shortName}</span>
         </> : <>
           {backHref ? (
@@ -87,7 +91,7 @@ export function AppHeader({ pathname, user, connectionState, backHrefOverride, p
               className="app-header__mobile-back"
               href={backHref}
               iconOnly
-              label="Quay lại"
+              label={backHref === "/applications" ? "Tất cả module" : "Quay lại"}
             />
           ) : null}
           <div className="app-header__mobile-page-copy">
@@ -98,13 +102,13 @@ export function AppHeader({ pathname, user, connectionState, backHrefOverride, p
       <div className="app-header__search"><CommandPalette key={pathname} user={user} /></div>
       <div className="app-header__actions">
         {testEnvironment ? <HeaderTestControl currentUsername={user.username} environment={testEnvironment} key={pathname} /> : null}
-        {!isRootScreen ? <div className="app-header__mobile-menu"><MobileAppLauncher key={pathname} user={user} variant="more" /></div> : null}
+        {!isModuleHub ? <div className="app-header__mobile-menu"><MobileAppLauncher key={pathname} user={user} variant="more" /></div> : null}
         {connectionLabels[connectionState] ? (
           <span aria-label={connectionLabels[connectionState]} className={`connection-status is-${connectionState}`} title={connectionLabels[connectionState]}>
             <i aria-hidden="true" /><span>{connectionLabels[connectionState]}</span>
           </span>
         ) : null}
-        {can(user.permissions, "chat.access") ? <MessageBell /> : null}
+        {settings.modules.messaging !== false && can(user.permissions, "chat.access") ? <MessageBell /> : null}
         <NotificationBell accountId={user.id} />
         <UserMenu user={user} />
       </div>

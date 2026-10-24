@@ -1,6 +1,6 @@
-import { ModuleLauncher } from "@/components/shared/ModuleLauncher";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ModuleHub } from "@/features/workspace/ModuleHub";
+import { controlCenterEnabled } from "@/features/crm/controlCenterAccess";
 
 export default function ApplicationsPage() {
-  return <div className="applications-page page-stack"><PageHeader title="Ứng dụng" /><ModuleLauncher excludePersonal showHeading={false} /></div>;
+  return <ModuleHub controlCenter={controlCenterEnabled()} />;
 }

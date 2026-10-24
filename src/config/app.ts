@@ -1,7 +1,7 @@
 export const appConfig = {
-  name: "Hệ thống nội bộ Châu Tuấn",
-  shortName: "CHÂU TUẤN",
-  companyName: "Châu Tuấn",
+  name: "DIMIXO ERP",
+  shortName: "DIMIXO",
+  companyName: "Doanh nghiệp",
   timezone: process.env.APP_TIMEZONE ?? "Asia/Ho_Chi_Minh",
   locale: "vi-VN"
 } as const;

@@ -1,0 +1,23 @@
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
+.steps button { display: flex; align-items: center; gap: var(--space-3); width: 100%; min-height: var(--control-height-md); padding: var(--space-3); color: var(--text-secondary); background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); font: inherit; font-size: var(--font-meta); text-align: left; cursor: pointer; }
+.steps button[aria-current="step"] { color: var(--color-primary); background: var(--color-primary-soft); border-color: var(--color-primary-border); font-weight: var(--font-weight-semibold); }
+.steps button:disabled { cursor: default; opacity: .55; }
+.steps button:focus-visible, .confirmation input:focus-visible { outline: 3px solid var(--color-focus-ring); outline-offset: 3px; }
+.stepNumber { display: inline-flex; align-items: center; justify-content: center; width: var(--space-7); height: var(--space-7); flex: 0 0 auto; border: 1px solid currentColor; border-radius: var(--radius-pill); }
+.stepTitle { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-5); }
+.stepTitle h2 { margin: 0; color: var(--text-primary); font-size: var(--font-section); }
+.fields { display: grid; min-width: 0; gap: var(--space-6); border: 0; padding: 0; margin: 0; }
+.dataList { display: grid; grid-column: 1 / -1; gap: var(--space-3); width: 100%; min-width: 0; margin: 0; }
+.dataList > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-2) var(--space-4); padding-block: var(--space-2); border-bottom: 1px solid var(--border-subtle); }
+.dataList dt { color: var(--text-secondary); font-size: var(--font-meta); }
+.dataList dd { display: flex; flex-wrap: wrap; gap: var(--space-3); min-width: 0; margin: 0; color: var(--text-primary); overflow-wrap: anywhere; }
+.moduleSummary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.moduleSummary > div { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); min-width: 0; padding: var(--space-3); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); font-size: var(--font-meta); }
+.confirmation { display: flex; align-items: center; gap: var(--space-3); min-height: var(--control-height-md); margin-top: var(--space-5); color: var(--text-primary); }
+.confirmation input { width: var(--space-5); height: var(--space-5); accent-color: var(--color-primary); }
+.feedback { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); color: var(--danger); padding: var(--space-4); background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); overflow-wrap: anywhere; }
+.draftBar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4); background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); }
+.draftBar > div { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); min-width: 0; }
+.draftBar strong, .draftBar time { font-size: var(--font-meta); }
+.draftBar time { color: var(--text-secondary); }
+@media (max-width: 767px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); } .steps button { padding: var(--space-3); } .moduleSummary { grid-template-columns: minmax(0, 1fr); } }

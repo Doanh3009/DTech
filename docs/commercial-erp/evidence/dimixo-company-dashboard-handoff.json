@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-10-24T02:23:17.824Z",
+  "environment": "development",
+  "projectRef": "tcjjhxqtreemccdbvyza",
+  "preview": "http://localhost:3000",
+  "buildId": "2RWLW00xct2_H6wY3mlGg",
+  "optimizedBuildPassed": true,
+  "typeScriptPassed": true,
+  "eslintPassed": true,
+  "nativeSchemaCompiled": true,
+  "testSuiteRun": false,
+  "migrations": [
+    {
+      "name": "202610240002_business_company_dashboard.sql",
+      "sha256": "425826dd365eac2f40602f406b9a95355d8796acf276547261625489911e6f83"
+    },
+    {
+      "name": "202610240003_business_procurement_matching.sql",
+      "sha256": "f6d021cd525c6b78c38e0b6f34a30065d28521e2316813dd49981e9c7f64482f"
+    },
+    {
+      "name": "202610240004_business_dashboard_work_priority.sql",
+      "sha256": "1a538f340104874912133a89e71a156865aecdb967c82c7520d40bff570458dc"
+    }
+  ],
+  "postflight": {
+    "dashboardServiceOnly": true,
+    "demoTenants": 6,
+    "invoiceValueGuard": true,
+    "latestMigration": "202610240004",
+    "legacyAccounts": 1,
+    "legacyEmployees": 1,
+    "negativeStock": 0,
+    "procurementServiceOnly": true,
+    "unbalancedJournals": 0
+  },
+  "observed": {
+    "companies": 6,
+    "pages": 16,
+    "javaScriptErrors": [],
+    "apiErrors": [],
+    "industryGeometry": [
+      {
+        "page": "industry",
+        "industry": "metalworking",
+        "selectorTop": 87.890625,
+        "selectorBottom": 147.890625,
+        "cardBottom": 690.140625,
+        "viewport": 900,
+        "documentWidth": 1430
+      },
+      {
+        "page": "industry",
+        "industry": "plastics_packaging",
+        "selectorTop": 87.890625,
+        "selectorBottom": 147.890625,
+        "cardBottom": 690.140625,
+        "viewport": 900,
+        "documentWidth": 1430
+      },
+      {
+        "page": "industry",
+        "industry": "electronics",
+        "selectorTop": 87.890625,
+        "selectorBottom": 147.890625,
+        "cardBottom": 690.140625,
+        "viewport": 900,
+        "documentWidth": 1430
+      },
+      {
+        "page": "industry",
+        "industry": "food_beverage",
+        "selectorTop": 87.890625,
+        "selectorBottom": 147.890625,
+        "cardBottom": 690.140625,
+        "viewport": 900,
+        "documentWidth": 1430
+      },
+      {
+        "page": "industry",
+        "industry": "trading",
+        "selectorTop": 87.890625,
+        "selectorBottom": 147.890625,
+        "cardBottom": 656.5625,
+        "viewport": 900,
+        "documentWidth": 1430
+      },
+      {
+        "page": "industry",
+        "industry": "construction",
+        "selectorTop": 87.890625,
+        "selectorBottom": 147.890625,
+        "cardBottom": 667.03125,
+        "viewport": 900,
+        "documentWidth": 1430
+      }
+    ],
+    "responsive": [
+      {
+        "page": "public",
+        "viewport": 768,
+        "documentWidth": 758
+      },
+      {
+        "page": "public",
+        "viewport": 390,
+        "documentWidth": 390
+      },
+      {
+        "page": "erp",
+        "viewport": 768,
+        "documentWidth": 758
+      },
+      {
+        "page": "erp",
+        "viewport": 390,
+        "documentWidth": 390
+      }
+    ]
+  },
+  "publicPreview": {
+    "sameDashboardComponent": true,
+    "source": "temporary-local-demo-database",
+    "liveTenantApi": false,
+    "fixture": "src/config/businessDashboardPreviews.json"
+  },
+  "limitations": [
+    "No automatic statutory tax filings or electronic invoice integration.",
+    "No automated asset depreciation or manufacturing COGS posting.",
+    "Procurement matching compares aggregate values; invoice-line allocation and configurable price tolerances remain outside this change."
+  ]
+}

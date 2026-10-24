@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-10-22T09:05:16.959Z",
+  "environment": "development",
+  "projectRef": "tcjjhxqtreemccdbvyza",
+  "applied": true,
+  "migration": {
+    "filename": "202610220004_product_trial_requests.sql",
+    "sha256": "182869df25042c132323abd36050e794a28878415e3bd55a5f81127e720ba535"
+  },
+  "nativePostgres": {
+    "version": "17.10",
+    "passed": 32,
+    "clusterStopped": true,
+    "cloudAccess": false
+  },
+  "applicationSecretConfigurationPresent": true,
+  "dryRunSha256": "22b0c21d25017a2d75563800de2a3bcc95c4b09cdd63739843a2603902a7f80e",
+  "applyLogSha256": "cf2d59da00b305fdc3631ec5749ba00abe81c0cca0bea498303e63071fd79476",
+  "before": {
+    "accounts": 1,
+    "activeAccounts": 1,
+    "authUsers": 1,
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610220003",
+    "migrationCount": 59,
+    "permissions": 232,
+    "projects": 0,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "trialTableExists": false,
+    "warehouses": 0
+  },
+  "after": {
+    "accounts": 1,
+    "activeAccounts": 1,
+    "authUsers": 1,
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610220004",
+    "migrationCount": 60,
+    "permissions": 234,
+    "projects": 0,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "trialTableExists": true,
+    "warehouses": 0
+  },
+  "acl": {
+    "anonSelect": false,
+    "authenticatedSelect": false,
+    "commands": [
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "review_product_trial_request",
+        "securityDefiner": true,
+        "serviceExecute": true
+      },
+      {
+        "anonExecute": false,
+        "authenticatedExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "name": "submit_product_trial_request",
+        "securityDefiner": true,
+        "serviceExecute": true
+      }
+    ],
+    "grantedRoles": [
+      {
+        "permission": "trial_request.manage",
+        "role": "admin"
+      },
+      {
+        "permission": "trial_request.view",
+        "role": "admin"
+      }
+    ],
+    "rls": true,
+    "serviceSelect": true,
+    "serviceWrite": false,
+    "trialCount": 0
+  },
+  "existingRecordCountsUnchanged": true,
+  "settingsVersionsUnchanged": true,
+  "boundaries": [
+    "No production deployment, customer instance provisioning or production migration.",
+    "No live trial lead or Auth account was created/deleted or provisioned for acceptance. Audit sign-in/out updates its own authentication/session metadata; synthetic lead commands are intercepted.",
+    "Manual qualification and account/environment provisioning remain operator work; no email automation is enabled.",
+    "Contact retention/purge, ingress abuse protection and customer case-study approval remain operational publication requirements."
+  ]
+}

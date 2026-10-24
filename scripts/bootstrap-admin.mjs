@@ -28,7 +28,7 @@ if (!displayName || !/^[a-z][a-z0-9._-]{2,31}$/.test(username)) {
 }
 
 let authUserId = existing?.auth_user_id;
-const internalEmail = existing?.primary_email || `${username}@accounts.chautuan.local`;
+const internalEmail = existing?.primary_email || `${username}@accounts.dtech.local`;
 if (authUserId) {
   const { error } = await client.auth.admin.updateUserById(authUserId, {
     password,

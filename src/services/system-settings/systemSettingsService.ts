@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { cache } from "react";
 
+import { erpModuleKeys } from "@/config/erpModules";
 import {
   defaultSystemSettings,
   isSystemSettingsGroup,
@@ -15,6 +16,7 @@ import { AppError } from "@/lib/api/errors";
 import { logger } from "@/lib/logger";
 import { getSupabaseServiceClient } from "@/lib/supabase/server";
 import { recordAuditLog } from "@/services/audit/auditLog";
+import { executeSettingsCommand, SETTINGS_VERSION_MAX } from "./systemSettingsCommands";
 
 export interface SettingsVersion {
   id: string;
@@ -41,8 +43,10 @@ const localVersions: SettingsVersion[] = [];
 let lastSettingsReadFailureLog = 0;
 const SETTINGS_CACHE_MS = 30_000;
 const SETTINGS_READ_TIMEOUT_MS = 2_000;
+const SETTINGS_RETRY_MS = 1_000;
 let settingsSnapshot: { value: SystemSettingsDocument; expiresAt: number } | undefined;
 let settingsRead: Promise<SystemSettingsDocument> | undefined;
+let settingsReadFailure: { error: AppError; retryAt: number } | undefined;
 let settingsGeneration = 0;
 
 function safeDefault<TGroup extends SystemSettingsGroup>(group: TGroup): SystemSettingsDocument[TGroup] {
@@ -75,15 +79,22 @@ async function loadSystemSettings(): Promise<SystemSettingsDocument> {
       clearTimeout(timeout);
     }
     if (!error && data) {
+      let modulesVerified = false;
       for (const row of data) {
         if (!isSystemSettingsGroup(row.group_key)) continue;
         const storedValue = normalizeStoredSettings(row.group_key, row.value);
         const parsed = systemSettingsSchemas[row.group_key].safeParse(storedValue);
         if (parsed.success) {
           result[row.group_key] = parsed.data as never;
+          if (row.group_key === "modules") modulesVerified = true;
         } else {
           logger.error("system_settings.invalid_stored_value", { metadata: { group: row.group_key } });
         }
+      }
+      // Activation must come from a valid stored group, never the all-enabled defaults.
+      if (!modulesVerified) {
+        logger.error("system_settings.modules_unverified");
+        throw new AppError("NETWORK_ERROR", "Chưa thể xác minh cấu hình module. Vui lòng thử lại.");
       }
       return result;
     }
@@ -91,6 +102,12 @@ async function loadSystemSettings(): Promise<SystemSettingsDocument> {
       logger.error("system_settings.read_failed");
       lastSettingsReadFailureLog = Date.now();
     }
+    throw new AppError("NETWORK_ERROR", "Chưa thể tải cấu hình hệ thống. Vui lòng thử lại.");
+  }
+
+  // In-memory settings support development/tests only, never a deployed fallback.
+  if (process.env.NODE_ENV === "production") {
+    throw new AppError("NETWORK_ERROR", "Dịch vụ cấu hình hệ thống chưa sẵn sàng.");
   }
 
   for (const group of groups) {
@@ -104,10 +121,22 @@ async function loadSystemSettings(): Promise<SystemSettingsDocument> {
 
 function refreshSettings(): Promise<SystemSettingsDocument> {
   if (!settingsRead) {
+    if (settingsReadFailure && settingsReadFailure.retryAt > Date.now()) {
+      return Promise.reject(settingsReadFailure.error);
+    }
     const generation = settingsGeneration;
     const pending = loadSystemSettings().then((value) => {
-      if (generation === settingsGeneration) settingsSnapshot = { value, expiresAt: Date.now() + SETTINGS_CACHE_MS };
+      if (generation === settingsGeneration) {
+        settingsSnapshot = { value, expiresAt: Date.now() + SETTINGS_CACHE_MS };
+        settingsReadFailure = undefined;
+      }
       return value;
+    }).catch((error: unknown) => {
+      const failure = error instanceof AppError
+        ? error
+        : new AppError("NETWORK_ERROR", "Chưa thể tải cấu hình hệ thống. Vui lòng thử lại.");
+      if (generation === settingsGeneration) settingsReadFailure = { error: failure, retryAt: Date.now() + SETTINGS_RETRY_MS };
+      throw failure;
     });
     settingsRead = pending;
     void pending.finally(() => { if (settingsRead === pending) settingsRead = undefined; }).catch(() => undefined);
@@ -116,11 +145,28 @@ function refreshSettings(): Promise<SystemSettingsDocument> {
 }
 
 export const readSystemSettings = cache(async (): Promise<SystemSettingsDocument> => {
-  if (settingsSnapshot) {
-    if (settingsSnapshot.expiresAt <= Date.now()) void refreshSettings().catch(() => undefined);
-    return structuredClone(settingsSnapshot.value);
+  for (;;) {
+    if (settingsSnapshot && settingsSnapshot.expiresAt > Date.now()) return structuredClone(settingsSnapshot.value);
+    const generation = settingsGeneration;
+    try {
+      const value = await refreshSettings();
+      // A publish during this read takes precedence over the earlier database response.
+      if (generation === settingsGeneration) return structuredClone(value);
+    } catch (error) {
+      if (generation === settingsGeneration) throw error;
+    }
   }
-  return structuredClone(await refreshSettings());
+});
+
+/** Rendering only. Authorization and business services must use the strict readers. */
+export const readPresentationSettings = cache(async (): Promise<SystemSettingsDocument> => {
+  try {
+    return await readSystemSettings();
+  } catch {
+    const value = structuredClone(settingsSnapshot?.value ?? defaultSystemSettings);
+    for (const key of erpModuleKeys) value.modules[key] = false;
+    return value;
+  }
 });
 
 export async function readSettingsGroup<TGroup extends SystemSettingsGroup>(
@@ -128,6 +174,13 @@ export async function readSettingsGroup<TGroup extends SystemSettingsGroup>(
 ): Promise<SystemSettingsDocument[TGroup]> {
   const settings = await readSystemSettings();
   return settings[group];
+}
+
+export function invalidateSystemSettingsCache(): void {
+  settingsGeneration += 1;
+  if (settingsSnapshot) settingsSnapshot.expiresAt = 0;
+  settingsRead = undefined;
+  settingsReadFailure = undefined;
 }
 
 export async function publishSettingsGroup<TGroup extends SystemSettingsGroup>(input: {
@@ -143,42 +196,68 @@ export async function publishSettingsGroup<TGroup extends SystemSettingsGroup>(i
   const now = new Date().toISOString();
   const versionId = globalThis.crypto.randomUUID();
   const client = getSupabaseServiceClient();
+  let persistedAtomically = false;
+  if (!client && process.env.NODE_ENV === "production") {
+    throw new AppError("NETWORK_ERROR", "Dịch vụ cấu hình hệ thống chưa sẵn sàng.");
+  }
 
   if (client) {
-    const { data: current } = await client
+    const { data: current, error: currentError } = await client
       .from("system_settings")
       .select("version")
       .eq("group_key", input.group)
       .maybeSingle();
-    version = (typeof current?.version === "number" ? current.version : 0) + 1;
+    if (currentError) throw new AppError("NETWORK_ERROR", "Chưa thể đọc phiên bản cấu hình. Vui lòng thử lại.");
+    if (current && !z.number().int().min(1).max(SETTINGS_VERSION_MAX).safeParse(current.version).success) {
+      throw new AppError("CONFLICT", "Phiên bản cấu hình không thể cập nhật. Cần kiểm tra dữ liệu đã lưu.");
+    }
+    version = (current?.version ?? 0) + 1;
 
-    const { error } = await client.from("system_settings").upsert({
-      group_key: input.group,
-      value,
-      version,
-      updated_by: z.string().uuid().safeParse(input.actorId).success ? input.actorId : null,
-      updated_at: now
-    });
-    if (error) throw new AppError("SERVER_ERROR", "Không thể lưu cấu hình.");
+    try {
+      const receipt = await executeSettingsCommand(client, {
+        actorId: input.actorId,
+        requestId: versionId,
+        groups: { [input.group]: value },
+        expectedVersions: { [input.group]: version - 1 },
+        changeType: input.changeType ?? "publish"
+      }, true);
+      persistedAtomically = receipt !== null;
+    } catch (error) {
+      invalidateSystemSettingsCache();
+      throw error;
+    }
 
-    const { error: versionError } = await client.from("settings_versions").insert({
-      id: versionId,
-      group_key: input.group,
-      version,
-      snapshot: value,
-      change_type: input.changeType ?? "publish",
-      created_by: z.string().uuid().safeParse(input.actorId).success ? input.actorId : null,
-      created_at: now
-    });
-    if (versionError) logger.error("system_settings.version_write_failed", { metadata: { group: input.group } });
+    if (!persistedAtomically) {
+      const { error } = await client.from("system_settings").upsert({
+        group_key: input.group,
+        value,
+        version,
+        updated_by: z.string().uuid().safeParse(input.actorId).success ? input.actorId : null,
+        updated_at: now
+      });
+      if (error) throw new AppError("SERVER_ERROR", "Không thể lưu cấu hình.");
+
+      const { error: versionError } = await client.from("settings_versions").insert({
+        id: versionId,
+        group_key: input.group,
+        version,
+        snapshot: value,
+        change_type: input.changeType ?? "publish",
+        created_by: z.string().uuid().safeParse(input.actorId).success ? input.actorId : null,
+        created_at: now
+      });
+      if (versionError) logger.error("system_settings.version_write_failed", { metadata: { group: input.group } });
+    }
   }
 
   localSettings.set(input.group, { value: structuredClone(value), version });
   settingsGeneration += 1;
+  settingsReadFailure = undefined;
   if (settingsSnapshot) {
     settingsSnapshot = {
       value: { ...settingsSnapshot.value, [input.group]: structuredClone(value) },
-      expiresAt: Date.now() + SETTINGS_CACHE_MS
+      // Publishing a cosmetic group must not extend an older module verification.
+      expiresAt: settingsSnapshot.expiresAt
     };
   }
   localVersions.unshift({
@@ -191,7 +270,7 @@ export async function publishSettingsGroup<TGroup extends SystemSettingsGroup>(i
     createdBy: input.actorId
   });
 
-  await recordAuditLog({
+  if (!persistedAtomically) await recordAuditLog({
     actorId: input.actorId,
     action: input.changeType === "restore" ? "system_settings.restore" : "system_settings.publish",
     entityType: "system_settings",
@@ -229,7 +308,9 @@ export async function listSettingsVersions(): Promise<SettingsVersion[]> {
         return [entry];
       });
     }
+    throw new AppError("NETWORK_ERROR", "Chưa thể đọc lịch sử cấu hình. Vui lòng thử lại.");
   }
+  if (process.env.NODE_ENV === "production") throw new AppError("NETWORK_ERROR", "Dịch vụ cấu hình hệ thống chưa sẵn sàng.");
   return [...localVersions];
 }
 
@@ -251,6 +332,8 @@ export function resetLocalSystemSettingsForTests(): void {
   settingsGeneration += 1;
   settingsSnapshot = undefined;
   settingsRead = undefined;
+  settingsReadFailure = undefined;
+  lastSettingsReadFailureLog = 0;
   localVersions.splice(0, localVersions.length);
   for (const group of Object.keys(defaultSystemSettings) as SystemSettingsGroup[]) {
     localSettings.set(group, { value: structuredClone(defaultSystemSettings[group]), version: 1 });

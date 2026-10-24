@@ -6,10 +6,10 @@ import { ACCOUNT_PASSWORD_HTML_PATTERN, ACCOUNT_PASSWORD_MIN_LENGTH } from "@/li
 import { usernameHtmlPattern } from "@/lib/auth/username";
 
 export function postLoginDestination(data: { redirectTo?: string; mobileRedirectTo?: string } | undefined, mobile: boolean): string {
-  return mobile ? data?.mobileRedirectTo || "/personal" : data?.redirectTo || "/dashboard";
+  return (mobile ? data?.mobileRedirectTo : data?.redirectTo) || "/applications";
 }
 
-export function LoginForm() {
+export function LoginForm({ destination }: { destination?: "/control-center" } = {}) {
   const [error, setError] = useState(""); const [submitting, setSubmitting] = useState(false);
   const errorRef = useRef<HTMLParagraphElement>(null);
   useEffect(() => { if (error) errorRef.current?.focus(); }, [error]);
@@ -24,7 +24,7 @@ export function LoginForm() {
       if (!body) throw new Error("Đăng nhập tạm thời gián đoạn. Vui lòng thử lại.");
       if (!response.ok) throw new Error(body.error?.message || "Không thể đăng nhập.");
       const mobile = window.matchMedia("(max-width: 767px)").matches;
-      window.location.assign(postLoginDestination(body.data, mobile));
+      window.location.assign(destination || postLoginDestination(body.data, mobile));
     } catch (cause) {
       setError(controller.signal.aborted ? "Kết nối quá lâu. Vui lòng thử lại." : cause instanceof TypeError ? "Không thể kết nối. Vui lòng kiểm tra mạng và thử lại." : cause instanceof Error ? cause.message : "Không thể đăng nhập.");
       setSubmitting(false);

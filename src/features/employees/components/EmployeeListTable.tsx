@@ -83,7 +83,7 @@ function EmployeeRowActions({ employee, permissions }: { employee: EmployeeSumma
   );
 
   return can(permissions, "employee.archive")
-    ? <ArchiveEmployeeButton employeeId={employee.id} renderTrigger={renderMenu} />
+    ? <ArchiveEmployeeButton key={`${employee.id}:${employee.rowVersion}`} employeeId={employee.id} rowVersion={employee.rowVersion} renderTrigger={renderMenu} />
     : renderMenu();
 }
 

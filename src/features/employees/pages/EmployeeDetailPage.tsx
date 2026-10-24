@@ -14,6 +14,7 @@ import { Tabs } from "@/components/shared/Tabs";
 import { can, type AccountStatus, type Permission } from "@/lib/auth/permissions";
 import { buildInternalFileUrl } from "@/services/storage/storageService";
 import { EmployeeAccountActions } from "@/features/employees/components/EmployeeAccountActions";
+import { AccountRecoveryPanel } from "@/features/settings/components/AccountRecoveryPanel";
 import { EmployeeSensitiveEdit } from "@/features/employees/components/EmployeeSensitiveEdit";
 import { IdentityDocumentPanel } from "@/features/employees/components/IdentityDocumentPanel";
 import { EmployeeContractManager } from "@/features/employees/components/EmployeeContractManager";
@@ -151,7 +152,7 @@ function EmployeeProfileTab({ detail, permissions, identityFiles }: { detail: Em
             {sensitive.allowed ? "Có quyền" : "Bị giới hạn"}
           </StatusBadge>
           {sensitive.allowed && can(permissions, "employee.edit_sensitive") ? (
-            <EmployeeSensitiveEdit employeeId={detail.profile.id} profile={sensitive} />
+            <EmployeeSensitiveEdit key={`${detail.profile.id}:${detail.profile.rowVersion}`} employeeId={detail.profile.id} rowVersion={detail.profile.rowVersion} profile={sensitive} />
           ) : null}
         </header>
         {sensitive.allowed ? (
@@ -409,8 +410,13 @@ function EmployeeAccountTab({
     return <PermissionDeniedState />;
   }
 
+  const recovery = can(permissions, "account.create") || can(permissions, "account.delete")
+    ? <AccountRecoveryPanel canCreate={can(permissions, "account.create")} canDelete={can(permissions, "account.delete")} employeeId={detail.profile.id} hideWhenEmpty />
+    : null;
+
   if (!detail.account) {
     return (
+      <div className="page-stack">
       <Card>
         <EmptyState
           action={
@@ -425,6 +431,8 @@ function EmployeeAccountTab({
           title="Nhân sự chưa có tài khoản"
         />
       </Card>
+      {recovery}
+      </div>
     );
   }
 
@@ -434,6 +442,7 @@ function EmployeeAccountTab({
   ));
 
   return (
+    <div className="page-stack">
     <div className="content-grid content-grid--two">
       <Card>
         <header className="panel-header">
@@ -463,6 +472,7 @@ function EmployeeAccountTab({
           ))}
         </div>
         <EmployeeAccountActions
+          key={`${detail.account.id}:${detail.account.status}:${detail.account.roleIds.join(",")}`}
           account={detail.account}
           employeeId={detail.profile.id}
           employeeLabel={detail.profile.fullName}
@@ -471,6 +481,8 @@ function EmployeeAccountTab({
           usernameSuggestion={detail.profile.employeeCode}
         />
       </Card>
+    </div>
+    {recovery}
     </div>
   );
 }

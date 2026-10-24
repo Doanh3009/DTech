@@ -1,0 +1,13 @@
+"use client";
+import { useState, type FormEvent } from "react";
+import { Button } from "@/components/shared/Button";
+import { Select } from "@/components/shared/FormControls";
+import { DataTable } from "@/components/shared/DataTable";
+import { BusinessReference } from "./BusinessReference";
+import styles from "./Business.module.css";
+interface TraceEdge {id:string;assembly_lot:string;assembly_name:string;component_lot:string;component_name:string;quantity:number;unit:string}
+export function TraceabilityExplorer({slug}:{slug:string}){
+ const [lot,setLot]=useState<string|null>(null);const [direction,setDirection]=useState("inputs");const [edges,setEdges]=useState<TraceEdge[]>([]);const [root,setRoot]=useState("");const [busy,setBusy]=useState(false);const [error,setError]=useState("");const [truncated,setTruncated]=useState(false);
+ async function search(e:FormEvent){e.preventDefault();if(!lot||busy)return;setBusy(true);setError("");try{const r=await fetch(`/api/v1/business/${slug}/trace?lotId=${lot}&direction=${direction}`,{cache:"no-store",signal:AbortSignal.timeout(15000)});const b=await r.json();if(!r.ok||!b.ok)throw new Error(b.error?.message||"Không thể truy xuất lô.");setRoot(b.data.root);setEdges(b.data.edges.slice(0,500));setTruncated(b.data.truncated);}catch(e){setError(e instanceof Error?e.message:"Không thể truy xuất lô.");}finally{setBusy(false);}}
+ return <section className={styles.stack}><h2>Truy xuất nhiều cấp</h2><form className={styles.toolbar} onSubmit={search}><BusinessReference slug={slug} kind="lots" label="Lô cần tra cứu" value={lot} required disabled={busy} onChange={setLot}/><Select label="Chiều truy xuất" value={direction} disabled={busy} onChange={e=>setDirection(e.target.value)} options={[{value:"inputs",label:"Thành phẩm → nguồn nguyên liệu"},{value:"outputs",label:"Nguyên liệu → thành phẩm sử dụng"}]}/><Button type="submit" disabled={!lot||busy} busy={busy}>Truy xuất</Button></form>{root?<strong>Lô {root}{truncated?" · 500 liên kết đầu tiên":""}</strong>:null}<DataTable<TraceEdge> ariaLabel="Kết quả truy xuất nhiều cấp" data={edges} loading={busy} error={error} emptyTitle={root?"Lô chưa có liên kết":"Chọn lô để truy xuất"} getRowId={r=>r.id} columns={[{id:"assembly_lot",header:"Lô thành phẩm",accessor:"assembly_lot",priority:"primary"},{id:"component_lot",header:"Lô nguyên liệu",accessor:"component_lot"},{id:"component_name",header:"Tên lô nguyên liệu",accessor:"component_name",hiddenOnMobile:true},{id:"quantity",header:"Lượng phân bổ",cell:r=>Number(r.quantity).toLocaleString("vi-VN",{maximumFractionDigits:4})},{id:"unit",header:"ĐVT",accessor:"unit",hiddenOnMobile:true}]}/></section>;
+}

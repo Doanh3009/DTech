@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { normalizeUsername, usernameHtmlPattern, usernamePattern } from "@/lib/auth/username";
+import { internalAuthEmail, normalizeUsername, usernameHtmlPattern, usernamePattern } from "@/lib/auth/username";
 
 const browserUsernamePattern = new RegExp(`^(?:${usernameHtmlPattern})$`, "v");
 
@@ -20,5 +20,8 @@ describe("username validation", () => {
 
   it("normalizes login input before authentication", () => {
     expect(normalizeUsername("  Test.Supervisor ")).toBe("test.supervisor");
+  });
+  it("uses the product namespace only for newly provisioned internal identities", () => {
+    expect(internalAuthEmail("  Admin.New  ")).toBe("admin.new@accounts.dtech.local");
   });
 });

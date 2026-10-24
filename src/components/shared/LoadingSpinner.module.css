@@ -50,3 +50,23 @@
 @media (prefers-reduced-motion: reduce) {
   .position, .icon { animation: none; will-change: auto; }
 }
+.routeProgress {
+  position: fixed;
+  z-index: 2000;
+  inset: 0 0 auto;
+  height: 3px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  animation: route-reveal 0s 200ms forwards;
+}
+.routeProgress > span:first-child {
+  display: block;
+  width: 40%;
+  height: 100%;
+  background: var(--color-primary);
+  animation: route-progress 1.4s ease-in-out infinite;
+}
+@keyframes route-progress { from { transform: translateX(-100%); } to { transform: translateX(350%); } }
+@keyframes route-reveal { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .routeProgress { animation: none; opacity: 1; } .routeProgress > span:first-child { width: 100%; animation: none; } }

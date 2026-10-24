@@ -9,6 +9,7 @@ import styles from "./LoadingSpinner.module.css";
 export function GlobalLoadingIndicator() {
   const pending = useSyncExternalStore(subscribeToLoading, getLoadingSnapshot, getServerLoadingSnapshot);
   if (!pending.page && !pending.action) return null;
+  if (pending.page) return createPortal(<div aria-label="Đang mở trang" className={styles.routeProgress} role="status"><span /><span className="sr-only">Đang mở trang</span></div>, document.body);
   return createPortal(
     <div aria-label="Đang xử lý" aria-live="polite" className={styles.position} data-loading-mode={pending.page ? "page" : "action"} data-ui="loading-spinner" role="status">
       <div className={styles.surface}><LoaderCircle aria-hidden="true" className={styles.icon} size={28} strokeWidth={2.5} /></div>

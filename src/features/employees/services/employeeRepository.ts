@@ -122,7 +122,7 @@ export function patchEmployeeInRepository(
       employee,
       account,
       terminationDate: input.terminationDate,
-      reason: input.reason ?? input.terminationReason,
+      reason: input.reason ?? input.terminationReason ?? undefined,
       actorAccountId
     });
 

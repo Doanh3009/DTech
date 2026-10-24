@@ -23,6 +23,7 @@ export type Permission =
   | "account.view"
   | "account.create"
   | "account.disable"
+  | "account.delete"
   | "account.enable"
   | "account.assign_role"
   | "account.revoke_sessions"
@@ -194,6 +195,10 @@ export type Permission =
   | "permission.view"
   | "settings.view"
   | "system_admin.access"
+  | "trial_request.view"
+  | "crm.view"
+  | "crm.manage"
+  | "trial_request.manage"
   | "branding.view"
   | "branding.manage"
   | "appearance.view"
@@ -269,6 +274,7 @@ export const allFoundationPermissions: Permission[] = [
   "account.view",
   "account.create",
   "account.disable",
+  "account.delete",
   "account.enable",
   "account.assign_role",
   "account.revoke_sessions",
@@ -440,6 +446,10 @@ export const allFoundationPermissions: Permission[] = [
   "permission.view",
   "settings.view",
   "system_admin.access",
+  "trial_request.view",
+  "crm.view",
+  "crm.manage",
+  "trial_request.manage",
   "branding.view",
   "branding.manage",
   "appearance.view",

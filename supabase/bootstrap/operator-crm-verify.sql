@@ -1,0 +1,7 @@
+select jsonb_build_object(
+ 'customerCount',(select count(*) from public.crm_customers),'activityCount',(select count(*) from public.crm_activities),
+ 'tables',(select jsonb_agg(jsonb_build_object('name',c.relname,'rls',c.relrowsecurity,'serviceSelect',has_table_privilege('service_role',c.oid,'SELECT'),'serviceWrite',has_table_privilege('service_role',c.oid,'INSERT,UPDATE,DELETE'),'anonSelect',has_table_privilege('anon',c.oid,'SELECT'),'authenticatedSelect',has_table_privilege('authenticated',c.oid,'SELECT'))) from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relname in ('crm_customers','crm_activities')),
+ 'commands',(select jsonb_agg(jsonb_build_object('name',p.proname,'securityDefiner',p.prosecdef,'config',p.proconfig,'serviceExecute',has_function_privilege('service_role',p.oid,'EXECUTE'),'anonExecute',has_function_privilege('anon',p.oid,'EXECUTE'),'authenticatedExecute',has_function_privilege('authenticated',p.oid,'EXECUTE')) order by p.proname) from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and (p.proname like 'crm_%' or p.proname='submit_product_trial_request_v2')),
+ 'grants',(select jsonb_agg(jsonb_build_object('role',r.code,'permission',rp.permission_key) order by r.code,rp.permission_key) from public.role_permissions rp join public.roles r on r.id=rp.role_id where rp.permission_key in ('crm.view','crm.manage')),
+ 'assignedSetupUsers',(select count(*) from public.account_roles ar join public.roles r on r.id=ar.role_id where r.code='deployment_team')
+) as evidence;

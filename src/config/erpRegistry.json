@@ -1,0 +1,256 @@
+{
+  "modules": {
+    "human_resources": {
+      "label": "Nhân sự",
+      "applicationId": "human-resources",
+      "permissionPrefixes": [
+        "employee",
+        "contract",
+        "insurance",
+        "department",
+        "position"
+      ]
+    },
+    "attendance": {
+      "label": "Chấm công & Nghỉ phép",
+      "applicationId": "attendance",
+      "permissionPrefixes": [
+        "attendance",
+        "timesheet",
+        "shift",
+        "leave",
+        "export_template"
+      ]
+    },
+    "projects": {
+      "label": "Dự án & Công trường",
+      "applicationId": "projects",
+      "permissionPrefixes": [
+        "project",
+        "project_update",
+        "project_health",
+        "project_issue",
+        "project_monitoring",
+        "worker_attendance",
+        "worksite"
+      ]
+    },
+    "warehouse": {
+      "label": "Kho & Vật tư",
+      "applicationId": "warehouse",
+      "permissionPrefixes": [
+        "warehouse"
+      ]
+    },
+    "import_export": {
+      "label": "Xuất nhập khẩu",
+      "applicationId": "import-export",
+      "permissionPrefixes": [
+        "import_export",
+        "import_contract",
+        "shipment",
+        "shipment_document",
+        "shipment_receiving",
+        "customs",
+        "partner"
+      ]
+    },
+    "accounting": {
+      "label": "Kế toán",
+      "applicationId": "accounting",
+      "permissionPrefixes": [
+        "accounting",
+        "salary",
+        "payroll",
+        "payslip"
+      ]
+    },
+    "operations": {
+      "label": "Phê duyệt & Tài liệu",
+      "applicationId": "operations",
+      "permissionPrefixes": [
+        "approval",
+        "document"
+      ]
+    },
+    "reports": {
+      "label": "Báo cáo",
+      "applicationId": "operations",
+      "permissionPrefixes": [
+        "report"
+      ]
+    },
+    "messaging": {
+      "label": "Tin nhắn",
+      "applicationId": "messaging",
+      "permissionPrefixes": [
+        "chat"
+      ]
+    }
+  },
+  "industries": {
+    "general": {
+      "label": "Đa ngành",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "projects",
+        "warehouse",
+        "import_export",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Bán hàng & CRM",
+        "Mua hàng",
+        "Kế toán tổng hợp"
+      ]
+    },
+    "garment": {
+      "label": "May mặc",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "warehouse",
+        "import_export",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Đơn hàng may",
+        "Định mức nguyên phụ liệu",
+        "Kế hoạch & Lệnh sản xuất",
+        "Chuyền may & Sản lượng",
+        "Quản lý chất lượng",
+        "Kế toán giá thành"
+      ]
+    },
+    "construction": {
+      "label": "Xây dựng",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "projects",
+        "warehouse",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Dự toán & Hợp đồng",
+        "Mua hàng",
+        "Nghiệm thu & Thanh toán",
+        "Kế toán công trình"
+      ]
+    },
+    "trading": {
+      "label": "Thương mại",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "warehouse",
+        "import_export",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Bán hàng & CRM",
+        "Mua hàng",
+        "Công nợ",
+        "Kế toán tổng hợp"
+      ]
+    },
+    "services": {
+      "label": "Dịch vụ",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "projects",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Khách hàng & Hợp đồng",
+        "Lịch dịch vụ",
+        "Hóa đơn & Công nợ"
+      ]
+    },
+    "metalworking": {
+      "label": "Cơ khí & gia công",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "warehouse",
+        "import_export",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Mua h?ng",
+        "K? to?n t?ng h?p"
+      ]
+    },
+    "plastics_packaging": {
+      "label": "Nhựa & bao bì",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "warehouse",
+        "import_export",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Mua h?ng",
+        "K? to?n t?ng h?p"
+      ]
+    },
+    "electronics": {
+      "label": "Điện tử & linh kiện",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "warehouse",
+        "import_export",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Mua h?ng",
+        "K? to?n t?ng h?p"
+      ]
+    },
+    "food_beverage": {
+      "label": "Thực phẩm & đồ uống",
+      "modules": [
+        "human_resources",
+        "attendance",
+        "warehouse",
+        "import_export",
+        "accounting",
+        "operations",
+        "reports",
+        "messaging"
+      ],
+      "plannedModules": [
+        "Mua h?ng",
+        "K? to?n t?ng h?p"
+      ]
+    }
+  }
+}

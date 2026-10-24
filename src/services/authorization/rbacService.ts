@@ -55,6 +55,10 @@ const adminGuardPermissions: Permission[] = [
 ];
 
 export const permissionCatalog: PermissionDefinition[] = [
+  { key: "crm.view", module: "system", group: "Hệ thống", label: "Xem CRM triển khai", description: "Hồ sơ khách hàng của team setup.", sensitive: true },
+  { key: "crm.manage", module: "system", group: "Hệ thống", label: "Quản lý CRM triển khai", description: "Khảo sát và thiết lập môi trường khách hàng.", sensitive: true },
+  { key: "trial_request.view", module: "system", group: "Hệ thống", label: "Xem yêu cầu dùng thử", description: "Xem thông tin doanh nghiệp và liên hệ đăng ký dùng thử.", sensitive: true },
+  { key: "trial_request.manage", module: "system", group: "Hệ thống", label: "Xử lý yêu cầu dùng thử", description: "Cập nhật trạng thái và ghi nhận việc xử lý yêu cầu dùng thử.", sensitive: true },
   {
     key: "dashboard.view",
     module: "foundation",
@@ -148,6 +152,14 @@ export const permissionCatalog: PermissionDefinition[] = [
     group: "Tài khoản",
     label: "Vô hiệu hóa tài khoản",
     description: "Khóa tài khoản mà không xóa hồ sơ nhân sự."
+  },
+  {
+    key: "account.delete",
+    module: "accounts",
+    group: "Tài khoản",
+    label: "Xóa tài khoản",
+    description: "Thu hồi tài khoản và hoàn tất xóa danh tính đăng nhập.",
+    sensitive: true
   },
   {
     key: "account.enable",

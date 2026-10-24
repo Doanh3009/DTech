@@ -12,9 +12,16 @@ export interface BreadcrumbItem {
 }
 
 export const routeMetaByPath: Record<string, RouteMeta> = {
+  "/system-admin/trial-requests": { title: "Yêu cầu dùng thử", description: "", module: "Trung tâm triển khai" },
+  "/control-center": { title: "Trung tâm triển khai", description: "", module: "Team setup" },
+  "/control-center/customers": { title: "Khách hàng & triển khai", description: "", module: "Team setup" },
+  "/control-center/customers/new": { title: "Tạo hồ sơ khách hàng", description: "", module: "Team setup" },
+  "/control-center/trials": { title: "Đăng ký dùng thử", description: "", module: "Team setup" },
+  "/control-center/industries": { title: "Gói ngành & quy trình", description: "", module: "Team setup" },
   "/personal": { title: "Cá nhân", description: "", module: "Cá nhân" },
   "/personal/payslips": { title: "Phiếu lương của tôi", description: "", module: "Cá nhân" },
-  "/applications": { title: "Ứng dụng", description: "", module: "Cá nhân" },
+  "/applications": { title: "Không gian làm việc", description: "", module: "Nền tảng" },
+  "/system-admin/design-dna": { title: "Design DNA", description: "", module: "Hệ thống" },
   "/workspace": { title: "Không gian làm việc", description: "", module: "Tổng quan" },
   "/settings": { title: "Cấu hình nghiệp vụ", description: "", module: "Hệ thống" },
   "/approvals/pending": { title: "Cần tôi duyệt", description: "", module: "Phê duyệt" },
@@ -258,7 +265,8 @@ export const routeMetaByPath: Record<string, RouteMeta> = {
   "/system-admin/appearance": { title: "Giao diện", description: "", module: "Trung tâm quản trị" },
   "/system-admin/navigation": { title: "Điều hướng", description: "", module: "Trung tâm quản trị" },
   "/system-admin/dashboard": { title: "Bố cục bản tin", description: "", module: "Trung tâm quản trị" },
-  "/system-admin/modules": { title: "Phân hệ", description: "", module: "Trung tâm quản trị" },
+  "/system-admin/setup": { title: "Thiết lập ERP", description: "", module: "Trung tâm quản trị" },
+  "/system-admin/modules": { title: "Module", description: "", module: "Trung tâm quản trị" },
   "/system-admin/organization": { title: "Tổ chức", description: "", module: "Trung tâm quản trị" },
   "/system-admin/payslip-template": { title: "Mẫu phiếu lương", description: "", module: "Trung tâm quản trị" },
   "/system-admin/localization": { title: "Định dạng & thời gian", description: "", module: "Trung tâm quản trị" },

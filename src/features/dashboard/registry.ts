@@ -26,13 +26,13 @@ interface DashboardWidgetDefinition {
 }
 
 export const dashboardProfiles: DashboardProfileDefinition[] = [
-  { key: "management", label: "Quản lý", requiredAny: ["project_monitoring.view_all"], defaultLandingPage: "/dashboard" },
-  { key: "supervisor", label: "Giám sát", requiredAny: ["worker_attendance.create", "worker_attendance.self_scope"], defaultLandingPage: "/dashboard" },
-  { key: "import_export", label: "Xuất nhập khẩu", requiredAny: ["import_export.view", "shipment.view"], defaultLandingPage: "/dashboard" },
-  { key: "warehouse", label: "Kho", requiredAny: ["warehouse.view"], defaultLandingPage: "/dashboard" },
-  { key: "accounting", label: "Kế toán", requiredAny: ["accounting.access", "salary.view", "payroll.view"], defaultLandingPage: "/dashboard" },
-  { key: "hr", label: "Nhân sự", requiredAny: ["employee.view", "timesheet.view_all", "leave.view_all"], defaultLandingPage: "/dashboard" },
-  { key: "employee", label: "Nhân viên", requiredAny: ["attendance.self.view", "leave.self.view", "profile.view", "dashboard.view"], defaultLandingPage: "/dashboard" }
+  { key: "management", label: "Quản lý", requiredAny: ["project_monitoring.view_all"], defaultLandingPage: "/applications" },
+  { key: "supervisor", label: "Giám sát", requiredAny: ["worker_attendance.create", "worker_attendance.self_scope"], defaultLandingPage: "/applications" },
+  { key: "import_export", label: "Xuất nhập khẩu", requiredAny: ["import_export.view", "shipment.view"], defaultLandingPage: "/applications" },
+  { key: "warehouse", label: "Kho", requiredAny: ["warehouse.view"], defaultLandingPage: "/applications" },
+  { key: "accounting", label: "Kế toán", requiredAny: ["accounting.access", "salary.view", "payroll.view"], defaultLandingPage: "/applications" },
+  { key: "hr", label: "Nhân sự", requiredAny: ["employee.view", "timesheet.view_all", "leave.view_all"], defaultLandingPage: "/applications" },
+  { key: "employee", label: "Nhân viên", requiredAny: ["attendance.self.view", "leave.self.view", "profile.view", "dashboard.view"], defaultLandingPage: "/applications" }
 ];
 
 export const dashboardWidgetRegistry: DashboardWidgetDefinition[] = [
@@ -98,7 +98,7 @@ export function resolveLandingPage(user: AuthenticatedUser, settings: DashboardS
 export function resolveRoleLandingPage(user: AuthenticatedUser, settings: DashboardSettings): string {
   const profile = resolveDashboardProfile(user, settings);
   const configured = settings.presets.find((item) => item.profile === profile)?.landingPage;
-  const legacyDashboardRoutes = new Set(["/home", "/dashboard/hr", "/dashboard/warehouse", "/dashboard/import-export", "/dashboard/management", "/attendance"]);
+  const legacyDashboardRoutes = new Set(["/dashboard", "/home", "/dashboard/hr", "/dashboard/warehouse", "/dashboard/import-export", "/dashboard/management", "/attendance"]);
   const candidate = configured && !legacyDashboardRoutes.has(configured)
     ? configured
     : dashboardProfiles.find((item) => item.key === profile)?.defaultLandingPage ?? firstAccessibleRoute(user);
@@ -106,7 +106,7 @@ export function resolveRoleLandingPage(user: AuthenticatedUser, settings: Dashbo
 }
 
 const landingRoutes: ReadonlyArray<{ route: string; requiredAny: readonly Permission[] }> = [
-  { route: "/dashboard", requiredAny: ["dashboard.view", "salary.view", "payroll.view", "payslip.self.view"] },
+  { route: "/applications", requiredAny: [] },
   { route: "/attendance/me", requiredAny: ["attendance.self", "attendance.self.view", "attendance.self.create"] },
   { route: "/attendance/history", requiredAny: ["attendance.self.view", "attendance.self_history"] },
   { route: "/attendance/requests", requiredAny: ["attendance.self", "attendance.self_request"] },

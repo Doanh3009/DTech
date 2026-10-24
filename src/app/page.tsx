@@ -1,12 +1,12 @@
+import type { Metadata } from "next";
+import { LandingPage } from "@/features/marketing/LandingPage";
 import { redirect } from "next/navigation";
+import { controlCenterEnabled } from "@/features/crm/controlCenterAccess";
+export const dynamic = "force-dynamic";
 
-import { resolveLandingPage } from "@/features/dashboard/registry";
-import { getRequestUser } from "@/services/auth/getRequestUser";
-import { readSettingsGroup } from "@/services/system-settings/systemSettingsService";
+export const metadata: Metadata = {
+  title: { absolute: "DIMIXO ERP — Quản trị doanh nghiệp theo cách của bạn" },
+  description: "Kết nối con người, quy trình và dữ liệu. Khám phá DIMIXO ERP, mô phỏng hiệu quả chuyển đổi số và các tình huống triển khai theo ngành."
+};
 
-export default async function HomePage() {
-  const user = await getRequestUser();
-  if (!user) redirect("/login");
-  const settings = await readSettingsGroup("dashboard");
-  redirect(resolveLandingPage(user, settings));
-}
+export default function HomePage() { if(!controlCenterEnabled())redirect("/login");return <LandingPage />; }

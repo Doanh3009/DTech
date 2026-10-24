@@ -1,0 +1,13 @@
+import { beforeEach,it,expect,vi } from "vitest";
+const m=vi.hoisted(()=>({get:vi.fn(),rpc:vi.fn(),abort:vi.fn()}));
+vi.mock("@/lib/supabase/server",()=>({getSupabaseServiceClient:m.get}));
+import { saveCustomer,addCustomerActivity } from "./crmService";
+import { emptyProfile,emptySetup } from "./crmSchemas";
+const id="10000000-0000-4000-8000-000000000001";
+const input={customerId:id,rowVersion:1,profile:{...emptyProfile(),companyName:"Synthetic customer",contactName:"Synthetic contact",email:"contact@example.invalid",phone:"0901234567"},setup:emptySetup(),stage:"discovery",reason:"Synthetic edit"};
+beforeEach(()=>{vi.clearAllMocks();m.get.mockReturnValue({rpc:m.rpc});m.rpc.mockReturnValue({abortSignal:m.abort});m.abort.mockResolvedValue({data:{customerId:id,rowVersion:2},error:null});});
+it("uses server actor and one transactional RPC without post-commit reads",async()=>{await expect(saveCustomer(input,"trusted-actor")).resolves.toEqual({customerId:id,rowVersion:2});expect(m.rpc).toHaveBeenCalledExactlyOnceWith("crm_save_customer",expect.objectContaining({p_actor_id:"trusted-actor",p_expected_version:1,p_id:id}));});
+it("rejects forged actors and secrets before RPC",async()=>{await expect(saveCustomer({...input,actorId:"forged"},"trusted")).rejects.toMatchObject({status:400});await expect(saveCustomer({...input,setup:{...input.setup,password:"synthetic"}},"trusted")).rejects.toMatchObject({status:400});expect(m.rpc).not.toHaveBeenCalled();});
+for(const [code,status]of [["CRM_FORBIDDEN",403],["CRM_VERSION_CONFLICT",409],["CRM_SETUP_INCOMPLETE",409],["CRM_DUPLICATE_TARGET",409],["CRM_INVALID_INPUT",400],["Unrecognized diagnostic with private data",503]] as const)it(`maps ${code} safely`,async()=>{m.abort.mockResolvedValue({data:null,error:{message:code}});await expect(saveCustomer(input,"actor")).rejects.toMatchObject({status});});
+it("does not accept stale or unrelated receipts",async()=>{m.abort.mockResolvedValue({data:{customerId:id,rowVersion:1},error:null});await expect(saveCustomer(input,"actor")).rejects.toMatchObject({status:503});});
+it("activity uses stable caller identity and expected version",async()=>{await addCustomerActivity(id,{activityId:id,rowVersion:1,kind:"call",note:"Synthetic call"},"trusted");expect(m.rpc).toHaveBeenCalledWith("crm_add_activity",expect.objectContaining({p_activity_id:id,p_expected_version:1,p_actor_id:"trusted"}));});

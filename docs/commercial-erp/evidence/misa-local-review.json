@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-24",
+  "scope": "Development implementation, native schema/data compilation, and authorized cloud rollout",
+  "entityCount": 115,
+  "featureCount": 13,
+  "requirementSections": 82,
+  "fullMisaComplete": false,
+  "checks": {
+    "typecheck": "passed",
+    "targetedLint": "passed",
+    "optimizedBuild": "passed",
+    "temporarySchemaCompilation": "passed",
+    "compiledMigrationCount": 58,
+    "syntheticDatasetPopulation": "passed",
+    "syntheticDatasetReplay": "passed",
+    "industryCount": 6,
+    "testSuiteRun": false,
+    "browserAcceptanceRun": false,
+    "buildId": "Rki2J5fK71v6oqihVpFmA",
+    "crmViewsPopulated": 4
+  },
+  "deployment": {
+    "projectRef": "tcjjhxqtreemccdbvyza",
+    "environment": "development",
+    "cloudMigrationsApplied": true,
+    "previewSwitched": false,
+    "status": "database_updated_vercel_preparing",
+    "automaticReviewRejectedAttempt": "202610240005–202610240022",
+    "currentRequestedMigrationRange": "202610240005–202610240038",
+    "currentRequestedMigrationCount": 34,
+    "vercelProject": "dimixo-erp",
+    "vercelDomain": "https://dimixo-erp.vercel.app",
+    "userAuthorization": "User explicitly approved development updates, remaining work, GitHub push and Vercel deployment.",
+    "postconditions": {
+      "accounts": 18,
+      "crm_contracts": 6,
+      "crm_order_releases": 12,
+      "development_project": "tcjjhxqtreemccdbvyza",
+      "internal_accounts": 1,
+      "internal_employees": 1,
+      "last_migration": "202610240038",
+      "open_tickets": 6,
+      "posted_journals": 247,
+      "staff": 48,
+      "tenants": 6,
+      "unbalanced_journals": 0
+    }
+  },
+  "progressDocument": "docs/erp/misa-implementation-progress.md",
+  "schemaEvidence": "docs/commercial-erp/evidence/industry-schema-build.json",
+  "compiler": "scripts/commercial/compile-business-schema.mjs",
+  "remaining": [
+    "Organization/position history, email invitations, ownership transfer and effective delegations",
+    "Versioned multistep workflows and configurable forms",
+    "Document storage/versioning, signatures, notifications and collaboration",
+    "External lead channels/marketing messages, collaboration/calendar, full warranty/service/payment-term cases",
+    "Project task management, cost-code/WBS limits, retention/warranty and settlement",
+    "Receipt-to-invoice line matching, GRNI and late price differences",
+    "Recruitment, employment contracts/movements, complex payroll and KPI/OKR",
+    "HSE/CAPA and remaining manufacturing/asset variants",
+    "Statutory report templates, exports, complete acceptance and real provider integrations"
+  ]
+}

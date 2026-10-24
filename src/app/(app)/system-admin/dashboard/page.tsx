@@ -1,7 +1,7 @@
-import { DashboardSettingsPage } from "@/features/system-admin/pages/DashboardSettingsPage";
+import { redirect } from "next/navigation";
 import { authorizeSystemAdminPage } from "@/features/system-admin/authorizeSystemAdminPage";
 
 export default async function Page() {
   await authorizeSystemAdminPage("navigation.manage");
-  return <DashboardSettingsPage />;
+  redirect("/system-admin/navigation");
 }

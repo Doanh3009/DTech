@@ -3,6 +3,7 @@
 
 .accessForm,
 .credentialResult { display: grid; min-width: 0; gap: var(--space-4); overflow-y: auto; padding: var(--space-4); }
+.formFields { display: grid; min-width: 0; gap: var(--space-4); margin: 0; padding: 0; border: 0; }
 .formSection { display: grid; min-width: 0; gap: var(--space-3); }
 .formSection + .formSection { border-top: 1px solid var(--border-subtle); padding-top: var(--space-4); }
 .formSection h3 { display: flex; align-items: center; gap: var(--space-2); margin: 0; color: var(--text-primary); font-size: 15px; font-weight: var(--font-weight-semibold); }

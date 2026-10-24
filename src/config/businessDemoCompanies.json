@@ -1,0 +1,8 @@
+[
+ {"slug":"co-khi-thanh-phat","name":"Cơ khí Thành Phát","industry":"metalworking","person":"Nguyễn Hoàng Nam","username":"hoangnam","location":"Bình Dương"},
+ {"slug":"bao-bi-an-phu","name":"Bao bì An Phú","industry":"plastics_packaging","person":"Trần Ngọc Anh","username":"ngocanh","location":"Đồng Nai"},
+ {"slug":"dien-tu-minh-tin","name":"Điện tử Minh Tín","industry":"electronics","person":"Lê Minh Khang","username":"minhkhang","location":"TP. Hồ Chí Minh"},
+ {"slug":"thuc-pham-an-nhien","name":"Thực phẩm An Nhiên","industry":"food_beverage","person":"Phạm Thu Hà","username":"thuha","location":"Long An"},
+ {"slug":"phan-phoi-hung-thinh","name":"Phân phối Hưng Thịnh","industry":"trading","person":"Võ Thanh Tùng","username":"thanhtung","location":"Đà Nẵng"},
+ {"slug":"xay-dung-chau-tuan","name":"Xây dựng Châu Tuấn","industry":"construction","person":"Đặng Quốc Huy","username":"quochuy","location":"TP. Hồ Chí Minh"}
+]

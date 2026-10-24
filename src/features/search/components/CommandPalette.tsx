@@ -1,12 +1,17 @@
 "use client";
 
 import { ArrowRight, Command, CornerDownLeft, Search, X } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { IconButton } from "@/components/shared/Button";
+import { useSystemSettings } from "@/components/providers/SystemSettingsProvider";
+import { enabledModulePermissions } from "@/config/erpModules";
+import { applicationForPath } from "@/config/moduleRegistry";
+import { isPathEnabled } from "@/config/systemSettings";
 import { commandsForUser, type AppCommand } from "@/features/search/commandRegistry";
+import { internalSearchPath, searchTypesForApplication } from "@/features/search/moduleSearchScope";
 import { recordRecentResult, SearchResultList } from "@/features/search/components/SearchResultList";
 import type { GlobalSearchResponse, RecentEntity, SearchResult } from "@/features/search/types";
 import type { AuthenticatedUser } from "@/lib/auth/permissions";
@@ -18,6 +23,18 @@ type Selectable = { kind: "command"; item: AppCommand } | { kind: "result"; item
 
 export function CommandPalette({ user }: { user: AuthenticatedUser }) {
   const router = useRouter();
+  const pathname = usePathname();
+  const { settings } = useSystemSettings();
+  const application = applicationForPath(pathname);
+  const applicationId = pathname === "/applications" ? undefined : application.id;
+  const searchLabel = applicationId ? `Tìm trong ${application.label}` : "Tìm kiếm toàn hệ thống";
+  const searchTypes = useMemo(() => applicationId ? searchTypesForApplication(applicationId) : undefined, [applicationId]);
+  const effectiveUser = useMemo(() => ({ ...user, permissions: enabledModulePermissions(user.permissions, settings.modules) }), [settings.modules, user]);
+  const matchesScope = useCallback((href: string) => {
+    const path = internalSearchPath(href);
+    return Boolean(path && isPathEnabled(path, settings.modules)
+      && (!applicationId || applicationForPath(path).id === applicationId));
+  }, [applicationId, settings.modules]);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -27,10 +44,15 @@ export function CommandPalette({ user }: { user: AuthenticatedUser }) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const searchSequence = useRef(0);
-  const allCommands = useMemo(() => commandsForUser(user, query), [query, user]);
-  const navigationCommands = useMemo(() => commandsForUser(user).filter((item) => item.type !== "CREATE_ROUTE").slice(0, 5), [user]);
-  const actionCommands = useMemo(() => commandsForUser(user).filter((item) => item.type === "CREATE_ROUTE").slice(0, 4), [user]);
-  const recentResults: SearchResult[] = useMemo(() => recent.slice(0, 4).map((item) => ({ ...item, reference: undefined, status: undefined, icon: "file", score: 0 })), [recent]);
+  const availableCommands = useMemo(() => commandsForUser(effectiveUser)
+    .filter((item) => matchesScope(item.href) && (!applicationId || item.type !== "OPEN_SEARCH")), [applicationId, effectiveUser, matchesScope]);
+  const allCommands = useMemo(() => {
+    const normalized = query.trim().toLocaleLowerCase("vi");
+    return availableCommands.filter((item) => !normalized || `${item.label} ${item.keywords.join(" ")}`.toLocaleLowerCase("vi").includes(normalized));
+  }, [availableCommands, query]);
+  const navigationCommands = useMemo(() => availableCommands.filter((item) => item.type !== "CREATE_ROUTE").slice(0, 5), [availableCommands]);
+  const actionCommands = useMemo(() => availableCommands.filter((item) => item.type === "CREATE_ROUTE").slice(0, 4), [availableCommands]);
+  const recentResults: SearchResult[] = useMemo(() => recent.filter((item) => matchesScope(item.deepLink)).slice(0, 4).map((item) => ({ ...item, reference: undefined, status: undefined, icon: "file", score: 0 })), [matchesScope, recent]);
   const isSearching = query.trim().length > 0;
   const selectable = useMemo<Selectable[]>(() => isSearching
     ? [...allCommands.slice(0, 6).map((item) => ({ kind: "command" as const, item })), ...(query.trim().length >= 2 ? results : []).map((item) => ({ kind: "result" as const, item }))]
@@ -75,24 +97,26 @@ export function CommandPalette({ user }: { user: AuthenticatedUser }) {
 
   useEffect(() => {
     const requestId = ++searchSequence.current;
-    if (!open || query.trim().length < 2) return;
+    if (!open || query.trim().length < 2 || searchTypes?.length === 0) return;
     const controller = new AbortController();
     const timer = window.setTimeout(() => {
       setLoading(true);
-      void fetch(`/api/v1/search?q=${encodeURIComponent(query)}&limit=8`, { cache: "no-store", signal: controller.signal })
+      const params = new URLSearchParams({ q: query, limit: "8" });
+      if (searchTypes) params.set("types", searchTypes.join(","));
+      void fetch(`/api/v1/search?${params}`, { cache: "no-store", signal: controller.signal })
         .then((response) => response.json() as Promise<SearchBody>)
-        .then((body) => { if (requestId === searchSequence.current) { setResults(body.data?.results ?? []); setActive(0); } })
+        .then((body) => { if (requestId === searchSequence.current) { setResults((body.data?.results ?? []).filter((item) => matchesScope(item.deepLink))); setActive(0); } })
         .catch((reason: unknown) => { if (requestId === searchSequence.current && !(reason instanceof DOMException && reason.name === "AbortError")) setResults([]); })
         .finally(() => { if (requestId === searchSequence.current) setLoading(false); });
     }, 250);
     return () => { window.clearTimeout(timer); controller.abort(); };
-  }, [open, query]);
+  }, [matchesScope, open, query, searchTypes]);
 
   function selectCommand(command: AppCommand) { close(); router.push(command.href); }
   function selectActive() {
     const selected = selectable[active];
     if (!selected) {
-      if (query.trim().length >= 2) { close(); router.push(`/search?q=${encodeURIComponent(query.trim())}`); }
+      if (!applicationId && query.trim().length >= 2) { close(); router.push(`/search?q=${encodeURIComponent(query.trim())}`); }
       return;
     }
     if (selected.kind === "command") selectCommand(selected.item);
@@ -122,8 +146,8 @@ export function CommandPalette({ user }: { user: AuthenticatedUser }) {
 
   const overlay = open ? (
     <div className="command-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
-      <div aria-label="Tìm kiếm và lệnh" aria-modal="true" className="command-palette" onKeyDown={handleDialogKey} ref={dialogRef} role="dialog">
-        <div className="command-input-row"><Search aria-hidden="true" size={19} /><input aria-activedescendant={selectable.length ? `command-option-${active}` : undefined} aria-autocomplete="list" aria-controls="command-results" aria-expanded="true" aria-label="Tìm kiếm toàn hệ thống" onChange={(event) => { setQuery(event.target.value); setActive(0); }} placeholder="Tìm kiếm hoặc nhập lệnh" ref={inputRef} role="combobox" value={query} /><IconButton label="Đóng" onClick={close}><X aria-hidden="true" size={18} /></IconButton></div>
+      <div aria-label={searchLabel} aria-modal="true" className="command-palette" onKeyDown={handleDialogKey} ref={dialogRef} role="dialog">
+        <div className="command-input-row"><Search aria-hidden="true" size={19} /><input aria-activedescendant={selectable.length ? `command-option-${active}` : undefined} aria-autocomplete="list" aria-controls="command-results" aria-expanded="true" aria-label={searchLabel} onChange={(event) => { setQuery(event.target.value); setResults([]); setActive(0); }} placeholder={applicationId ? searchLabel : "Tìm kiếm hoặc nhập lệnh"} ref={inputRef} role="combobox" value={query} /><IconButton label="Đóng" onClick={close}><X aria-hidden="true" size={18} /></IconButton></div>
         <div className="command-content" id="command-results">
           {!isSearching ? <>
             {recentResults.length ? <section><h2>Gần đây</h2><SearchResultList activeIndex={active} idPrefix="command-option" indexOffset={0} onSelect={close} results={recentResults} /></section> : null}
@@ -139,5 +163,5 @@ export function CommandPalette({ user }: { user: AuthenticatedUser }) {
     </div>
   ) : null;
 
-  return <><button aria-haspopup="dialog" className="header-search" onClick={() => setOpen(true)} type="button"><Search aria-hidden="true" size={17} /><span>Tìm kiếm</span><kbd>Ctrl K</kbd></button><IconButton className="header-search-mobile" label="Tìm kiếm" onClick={() => setOpen(true)}><Search aria-hidden="true" size={19} /></IconButton>{typeof document !== "undefined" && overlay ? createPortal(overlay, document.body) : null}</>;
+  return <><button aria-haspopup="dialog" aria-label={searchLabel} className="header-search" onClick={() => setOpen(true)} type="button"><Search aria-hidden="true" size={17} /><span>{applicationId ? "Tìm nghiệp vụ" : "Tìm kiếm"}</span><kbd>Ctrl K</kbd></button><IconButton className="header-search-mobile" label={searchLabel} onClick={() => setOpen(true)}><Search aria-hidden="true" size={19} /></IconButton>{typeof document !== "undefined" && overlay ? createPortal(overlay, document.body) : null}</>;
 }

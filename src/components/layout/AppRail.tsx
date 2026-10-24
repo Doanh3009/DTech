@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { Grid2X2, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { useEffect, useRef, type CSSProperties } from "react";
 
 import { AppLogo } from "@/components/layout/AppLogo";
@@ -9,11 +9,12 @@ import { navigationIconMap, navigationIconSizes } from "@/components/layout/icon
 import { useSystemSettings } from "@/components/providers/SystemSettingsProvider";
 import { IconButton } from "@/components/shared/Button";
 import { Tooltip } from "@/components/shared/Primitives";
-import { LinkLoadingIndicator } from "@/components/shared/LinkLoadingIndicator";
 import { isNavigationItemActive } from "@/config/navigation";
-import { applicationForPath, contextualNavigationGroups, visibleApplications } from "@/config/moduleRegistry";
+import { applicationForPath, contextualNavigationGroups } from "@/config/moduleRegistry";
 import type { AuthenticatedUser } from "@/lib/auth/permissions";
 import { cn } from "@/lib/utils/cn";
+
+import styles from "./ModuleNavigation.module.css";
 
 interface AppRailProps {
   pathname: string;
@@ -26,7 +27,6 @@ export function AppRail({ pathname, user, collapsed, onCollapsedChange }: AppRai
   const { settings } = useSystemSettings();
   const application = applicationForPath(pathname);
   const groups = contextualNavigationGroups(pathname, user, settings.modules, settings.navigation);
-  const applications = visibleApplications(user, settings.modules).filter((item) => item.id !== "overview" && item.id !== application.id);
   const navigationRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export function AppRail({ pathname, user, collapsed, onCollapsedChange }: AppRai
       aria-label={`Điều hướng ${application.label}`}
       style={{ "--current-app-accent": application.accentColor } as CSSProperties}
     >
-      <div className="app-rail__brand"><AppLogo compact />{!collapsed ? <strong className="app-rail__brand-name">{settings.organization.shortName}</strong> : null}</div>
+      <div className="app-rail__brand"><AppLogo compact />{!collapsed ? <strong className="app-rail__brand-name">{settings.organization.shortName}</strong> : null}<Link aria-label="Tất cả module" className={styles.switcher} href="/applications" title="Tất cả module"><Grid2X2 aria-hidden="true" size={20} /></Link></div>
       <nav className="app-rail__nav" id="desktop-navigation" ref={navigationRef}>
         {groups.map((group) => (
           <ul key={group.label}>
@@ -58,21 +58,12 @@ export function AppRail({ pathname, user, collapsed, onCollapsedChange }: AppRai
                 >
                   <Icon aria-hidden="true" size={navigationIconSizes.rail} />
                   {!collapsed ? <span>{item.label}</span> : null}
-                  <LinkLoadingIndicator />
                 </Link>
               );
               return <li key={item.href}>{collapsed ? <Tooltip className="app-rail__tooltip" content={item.label} placement="right" portal>{link}</Tooltip> : link}</li>;
             })}
           </ul>
         ))}
-        {applications.length ? <ul className="app-rail__applications">
-          <li className="app-rail__section-label">{collapsed ? null : "Ứng dụng"}</li>
-          {applications.map((item) => {
-            const Icon = navigationIconMap[item.icon];
-            const link = <Link aria-label={collapsed ? item.label : undefined} className="app-rail__link" href={item.defaultRoute}><Icon aria-hidden="true" size={navigationIconSizes.rail} />{!collapsed ? <span>{item.label}</span> : null}<LinkLoadingIndicator /></Link>;
-            return <li key={item.id}>{collapsed ? <Tooltip content={item.label} placement="right" portal>{link}</Tooltip> : link}</li>;
-          })}
-        </ul> : null}
       </nav>
       <div className="app-rail__footer">
         <IconButton

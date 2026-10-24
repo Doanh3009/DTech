@@ -1,0 +1,305 @@
+{
+  "capturedAt": "2026-10-22T07:42:57.448Z",
+  "unit": {
+    "passed": 1798,
+    "skipped": 37,
+    "total": 1835
+  },
+  "supplementaryChecks": [
+    {
+      "loginWithoutModuleList": true,
+      "anonymousOpenApiDenied": true,
+      "hubWithoutCategoryFilterOrDashboard": true,
+      "configurationApiConsistent": true,
+      "openApiMatchesCustomerBranding": true,
+      "warehouseNavigationFocused": true,
+      "productionToolsHidden": true,
+      "anonymousConfigurationDenied": true
+    },
+    {
+      "emptySubmissionDoesNotSendCommand": true,
+      "profileFieldsAndOffboardChoicePresent": true,
+      "conflictKeepsDraftAndRequiresReload": true,
+      "ambiguousFailureKeepsDraftAndRequiresReload": true,
+      "changedFieldsOnly": true,
+      "allEmployeeWritesIntercepted": true,
+      "operationalRecordsUnchanged": true,
+      "auditSessionRevoked": true
+    },
+    {
+      "realPendingOperationsEmpty": true,
+      "currentAdministratorCannotBeDeletedFromTable": true,
+      "sensitiveUnchangedFieldsDoNotSubmit": true,
+      "sensitive409PreservesDraftAndRequiresReload": true,
+      "sensitiveChangedFieldsOnlyWithCas": true,
+      "sensitiveNullClearCoverage": "Stored bank value is empty; explicit null clearing is covered by unit and native database tests.",
+      "sensitive503PreservesDraftAndRequiresReload": true,
+      "archive409PreservesReasonAndRequiresReload": true,
+      "archive503PreservesReasonAndRequiresReload": true,
+      "recoveryActionLabelsFit": true,
+      "recoveryRetriesKeepImmutableRequestAndPasswordInMemory": true,
+      "temporaryPasswordClearedWhenClosed": true,
+      "cancellationDoesNotRequirePassword": true,
+      "deletionCleanupAcceptsCompletedReceipt": true,
+      "allOperationalMutationsIntercepted": true,
+      "syntheticRecoveryQueueOnly": true,
+      "interceptedEmployeeWrites": 4,
+      "interceptedRecoveryWrites": 18,
+      "auditSessionRevoked": true
+    }
+  ],
+  "browserScopes": [
+    {
+      "checkedAt": "2026-10-22T07:42:09.789Z",
+      "publishesConfiguration": false
+    },
+    {
+      "checkedAt": "2026-10-22T07:42:29.627Z",
+      "publishesConfiguration": false
+    },
+    {
+      "checkedAt": "2026-10-22T07:41:03.147Z",
+      "publishesConfiguration": false
+    }
+  ],
+  "browser": {
+    "checkedStaticRoutes": 6,
+    "checkedDynamicTemplates": 3,
+    "passed": 9,
+    "routes": [
+      {
+        "route": "/applications",
+        "destination": "/applications",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 1,
+        "checkedAt": "2026-10-22T07:42:09.789Z"
+      },
+      {
+        "route": "/employees",
+        "destination": "/employees",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 768,
+            "documentWidth": 758,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1440,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 4,
+        "checkedAt": "2026-10-22T07:41:03.147Z"
+      },
+      {
+        "route": "/warehouse/inventory",
+        "destination": "/warehouse/inventory",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 1,
+        "checkedAt": "2026-10-22T07:42:09.789Z"
+      },
+      {
+        "route": "/system-admin/modules",
+        "destination": "/system-admin/modules",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 1,
+        "checkedAt": "2026-10-22T07:42:09.789Z"
+      },
+      {
+        "route": "/system-admin/design-dna",
+        "destination": "/system-admin/design-dna",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 1,
+        "checkedAt": "2026-10-22T07:42:09.789Z"
+      },
+      {
+        "route": "/employees/[id]/profile",
+        "destination": "/employees/[id]/profile",
+        "status": 200,
+        "routeKind": "dynamic",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 768,
+            "documentWidth": 758,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1440,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 4,
+        "checkedAt": "2026-10-22T07:41:03.147Z"
+      },
+      {
+        "route": "/employees/[id]/edit",
+        "destination": "/employees/[id]/edit",
+        "status": 200,
+        "routeKind": "dynamic",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 1,
+        "checkedAt": "2026-10-22T07:42:29.627Z"
+      },
+      {
+        "route": "/settings/users",
+        "destination": "/settings/users",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 768,
+            "documentWidth": 758,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 4,
+        "checkedAt": "2026-10-22T07:41:03.147Z"
+      },
+      {
+        "route": "/employees/[id]/account",
+        "destination": "/employees/[id]/account",
+        "status": 200,
+        "routeKind": "dynamic",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 768,
+            "documentWidth": 758,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          }
+        ],
+        "visits": 1,
+        "checkedAt": "2026-10-22T07:41:03.147Z"
+      }
+    ]
+  },
+  "boundaries": [
+    "No production deployment or production migration was executed; development migration evidence is recorded separately when applicable.",
+    "No operational documents were created by browser audit; explicit configuration publishing is recorded in browserScopes.",
+    "Only listed dynamic templates are visually checked; business mutations, adversarial cross-role flows, business document concurrency, UAT and restore drill remain separate acceptance gates.",
+    "Screenshots and raw logs remain local; this artifact omits account names, cookies, tokens and record bodies."
+  ]
+}

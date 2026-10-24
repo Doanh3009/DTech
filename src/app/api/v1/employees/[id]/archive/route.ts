@@ -1,12 +1,12 @@
 import { errorResponse } from "@/lib/api/errors";
 import { successResponse } from "@/lib/api/responses";
-import { parseWithSchema } from "@/lib/api/validation";
+import { parseJsonBody, parseWithSchema } from "@/lib/api/validation";
+import { z } from "zod";
 import { logger } from "@/lib/logger";
 import { archiveEmployeeSchema } from "@/features/employees/schemas/employeeSchemas";
 import { archiveEmployee } from "@/features/employees/services/employeeMutationService";
 import { getRequestUser } from "@/services/auth/getRequestUser";
 import { requirePermission } from "@/services/authorization/requirePermission";
-import { recordAuditLog } from "@/services/audit/auditLog";
 
 export async function POST(
   request: Request,
@@ -15,19 +15,10 @@ export async function POST(
   try {
     const user = requirePermission(await getRequestUser(), "employee.archive");
     const { id } = await params;
-    const input = parseWithSchema(archiveEmployeeSchema, await request.json());
-    await archiveEmployee(id, user.id, input.reason);
-
-    await recordAuditLog({
-      actorId: user.id,
-      action: "employee.archived",
-      entityType: "employee",
-      entityId: id,
-      after: { profileStatus: "archived" },
-      reason: input.reason
-    });
-
-    return successResponse({ employeeId: id, profileStatus: "archived" });
+    parseWithSchema(z.string().uuid("Mã hồ sơ nhân sự không hợp lệ."), id);
+    const input = await parseJsonBody(request, archiveEmployeeSchema);
+    const rowVersion = await archiveEmployee(id, input, user.id);
+    return successResponse({ employeeId: id, profileStatus: "archived", rowVersion }, { headers: { "cache-control": "no-store" } });
   } catch (error) {
     logger.error("api.employees.archive_failed");
     return errorResponse(error);

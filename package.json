@@ -1,8 +1,8 @@
 {
-  "name": "chau-tuan-internal-system",
+  "name": "dtech-erp",
   "version": "0.1.0",
   "private": true,
-  "description": "Hệ thống nội bộ Châu Tuấn - enterprise internal web foundation.",
+  "description": "DIMIXO ERP - configurable business management platform.",
   "scripts": {
     "dev": "next dev --webpack",
     "dev:turbo": "next dev",
@@ -36,8 +36,20 @@
     "test:reset": "node scripts/testing/cli.mjs reset",
     "smoke:production": "node scripts/testing/production-check.mjs",
     "test:client-secrets": "node scripts/testing/client-secret-check.mjs",
+    "test:settings:integration": "node supabase/tests/atomic-settings.integration.mjs",
+    "test:employee:integration": "node supabase/tests/atomic-employee.integration.mjs",
+    "test:lifecycle:integration": "node supabase/tests/atomic-lifecycle.integration.mjs",
+    "test:trial:integration": "node supabase/tests/trial-requests.integration.mjs",
     "validate:migrations": "node scripts/validate-migrations.mjs",
+    "deployment:plan": "node scripts/database/plan.mjs",
+    "deployment:validate": "node scripts/database/plan.mjs --validate-only",
+    "deployment:activation": "node scripts/database/activation.mjs",
     "smoke": "node scripts/smoke-test.mjs",
+    "smoke:foundation": "node scripts/commercial/foundation-smoke.mjs",
+    "smoke:setup": "node scripts/commercial/setup-smoke.mjs",
+    "smoke:employee": "node scripts/commercial/employee-smoke.mjs",
+    "smoke:lifecycle": "node scripts/commercial/lifecycle-smoke.mjs",
+    "smoke:marketing": "node scripts/commercial/marketing-smoke.mjs",
     "smoke:authenticated": "node scripts/authenticated-smoke.mjs",
     "audit:data-health": "node scripts/data-health-audit.mjs",
     "ui:audit": "node scripts/ui-route-audit.mjs",
@@ -61,7 +73,9 @@
     "seed:test-users": "node scripts/seed-test-users.mjs",
     "seed:test-users:reset": "node scripts/seed-test-users.mjs --reset",
     "seed:dev": "node scripts/testing/local.mjs reset",
-    "seed:reset": "node scripts/testing/local.mjs reset"
+    "seed:reset": "node scripts/testing/local.mjs reset",
+    "test:crm:integration": "node supabase/tests/operator-crm.integration.mjs",
+    "smoke:crm": "node scripts/commercial/crm-smoke.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.3.0",

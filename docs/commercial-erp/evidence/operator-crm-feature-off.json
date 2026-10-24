@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-10-23T01:55:13.318Z",
+  "passed": true,
+  "checks": [
+    {
+      "path": "/",
+      "status": 307
+    },
+    {
+      "path": "/control-center/login",
+      "status": 404
+    },
+    {
+      "path": "/control-center/customers",
+      "status": 404
+    },
+    {
+      "path": "/control-center/trials",
+      "status": 404
+    },
+    {
+      "path": "/dang-ky-dung-thu",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/crm/customers",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/trial-requests",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/trial-requests",
+      "method": "POST",
+      "status": 404
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "noOperatorIntakeLink": true
+    }
+  ],
+  "createsCustomerInstance": false,
+  "readOnly": true,
+  "scope": "Local operator-feature flag only; not a two-database customer isolation rehearsal."
+}

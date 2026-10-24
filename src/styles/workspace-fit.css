@@ -78,8 +78,8 @@
 .app-shell .page-main .data-table col { width: auto; }
 .app-shell .page-main .data-table col[data-priority="primary"] { width: 26%; }
 .app-shell .page-main .data-table col[data-column="selection"] { width: 64px; }
-.app-shell .page-main .data-table col[data-column="actions"] { width: 104px; }
-.app-shell .page-main .data-table :is(th, td).data-table__actions { width: 104px; min-width: 0; padding-inline: 12px; white-space: nowrap; overflow-wrap: normal; text-align: center; }
+.app-shell .page-main .data-table col[data-column="actions"] { width: var(--table-action-column-width, 104px); }
+.app-shell .page-main .data-table :is(th, td).data-table__actions { width: var(--table-action-column-width, 104px); min-width: 0; padding-inline: 12px; white-space: nowrap; overflow-wrap: normal; text-align: center; }
 .app-shell .page-main .data-table__select { padding-inline: 8px; }
 .app-shell .page-main .data-table :is(.status-badge, .badge) { max-width: 100%; white-space: normal; overflow-wrap: anywhere; line-height: 1.4; text-align: left; }
 .app-shell .page-main .data-table :is(th, td) > * { min-width: 0; max-width: 100%; }

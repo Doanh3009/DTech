@@ -81,19 +81,6 @@ export interface NavigationGroup {
 
 export const desktopNavigation: NavigationGroup[] = [
   {
-    label: "Tổng quan",
-    items: [
-      {
-        label: "Dashboard",
-        href: "/dashboard",
-        icon: "LayoutDashboard",
-        requiredPermission: "dashboard.view",
-        alternativePermissions: ["salary.view", "payroll.view", "payslip.self.view"],
-        exact: true
-      }
-    ]
-  },
-  {
     label: "Nhân sự",
     items: [
       {
@@ -475,14 +462,6 @@ export const desktopNavigation: NavigationGroup[] = [
 ];
 
 export const mobileNavigation: NavigationItem[] = [
-  {
-    label: "Dashboard",
-    href: "/dashboard",
-    icon: "LayoutDashboard",
-    requiredPermission: "dashboard.view",
-    alternativePermissions: ["salary.view", "payroll.view", "payslip.self.view"],
-    exact: true
-  },
   {
     label: "Chấm công",
     href: "/attendance",

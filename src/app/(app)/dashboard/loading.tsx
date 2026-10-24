@@ -3,7 +3,7 @@ import { LoadingSpinner } from "@/components/shared/LoadingSpinner";
 
 export default function Loading() {
   return (
-    <div aria-label="Đang tải Dashboard" className="dashboard-route-skeleton" role="status">
+    <div aria-label="Đang mở không gian làm việc" className="dashboard-route-skeleton" role="status">
       <LoadingSpinner />
       <header>
         <span><Skeleton /><Skeleton /></span>

@@ -10,12 +10,12 @@ import {
   Compass,
   History,
   Languages,
-  LayoutDashboard,
   Paintbrush,
   Palette,
   ReceiptText,
   ScrollText,
   ShieldCheck,
+  SlidersHorizontal,
   type LucideIcon
 } from "lucide-react";
 import type { MouseEvent, ReactNode } from "react";
@@ -27,15 +27,17 @@ interface AdminRoute {
   href: string;
   label: string;
   permission: Permission;
+  requiredPermissions?: readonly Permission[];
   icon: LucideIcon;
 }
 
 const adminRoutes: readonly AdminRoute[] = [
+  { href: "/system-admin/setup", label: "Thiết lập ERP", permission: "module.manage", requiredPermissions: ["system_admin.access", "branding.manage", "organization_settings.manage", "localization.manage"], icon: SlidersHorizontal },
   { href: "/system-admin/branding", label: "Thương hiệu", permission: "branding.view", icon: Paintbrush },
   { href: "/system-admin/appearance", label: "Giao diện", permission: "appearance.view", icon: Palette },
+  { href: "/system-admin/design-dna", label: "Design DNA", permission: "appearance.view", icon: Palette },
   { href: "/system-admin/navigation", label: "Điều hướng", permission: "navigation.manage", icon: Compass },
-  { href: "/system-admin/dashboard", label: "Bố cục Dashboard", permission: "navigation.manage", icon: LayoutDashboard },
-  { href: "/system-admin/modules", label: "Phân hệ", permission: "module.manage", icon: Boxes },
+  { href: "/system-admin/modules", label: "Module", permission: "module.manage", icon: Boxes },
   { href: "/system-admin/organization", label: "Tổ chức", permission: "organization_settings.view", icon: Building2 },
   { href: "/system-admin/payslip-template", label: "Mẫu phiếu lương", permission: "module.manage", icon: ReceiptText },
   { href: "/system-admin/attendance-checklist", label: "Checklist điểm danh", permission: "system_admin.access", icon: ClipboardCheck },
@@ -59,7 +61,7 @@ export function SystemAdminShell({ children, permissions }: { children: ReactNod
       <aside className="system-admin-subnav" aria-label="Trung tâm quản trị">
         <div className="system-admin-subnav__title">TRUNG TÂM QUẢN TRỊ</div>
         <nav>
-          {adminRoutes.filter((route) => can(permissions, route.permission)).map((route) => {
+          {adminRoutes.filter((route) => can(permissions, route.permission) && (route.requiredPermissions?.every((permission) => can(permissions, permission)) ?? true)).map((route) => {
             const Icon = route.icon;
             return (
               <Link

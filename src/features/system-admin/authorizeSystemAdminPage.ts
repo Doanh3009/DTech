@@ -5,12 +5,11 @@ import { getRequestUser } from "@/services/auth/getRequestUser";
 
 export async function authorizeSystemAdminPage(permission: Permission): Promise<void> {
   const user = await getRequestUser();
+  if (!user || !isAccountEnabled(user)) redirect("/login");
   if (
-    !user ||
-    !isAccountEnabled(user) ||
     !can(user.permissions, "system_admin.access") ||
     !can(user.permissions, permission)
   ) {
-    redirect("/dashboard");
+    redirect("/applications");
   }
 }

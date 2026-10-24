@@ -5,14 +5,9 @@ import { ArrowUpRight, CalendarOff, CalendarRange, ChevronRight, UserRound, Wall
 
 import { useCurrentUser } from "@/components/providers/CurrentUserProvider";
 import { useSystemSettings } from "@/components/providers/SystemSettingsProvider";
-import { ModuleLauncher } from "@/components/shared/ModuleLauncher";
-import { visibleApplications } from "@/config/moduleRegistry";
 import { PersonalToday } from "@/features/attendance/components/PersonalToday";
-import { WorkerAttendanceToday } from "@/features/worker-attendance/components/WorkerAttendanceHome";
-import { canUseWorkerAttendance } from "@/config/mobileNavigationResolver";
 import { canOpenPersonalAttendance } from "@/lib/auth/applicationAccess";
 import { can } from "@/lib/auth/permissions";
-import { useMobileViewport } from "@/lib/ui/useMobileViewport";
 import { LogoutButton } from "@/features/auth/components/LogoutButton";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { getBusinessDateKey } from "@/lib/time/timezone";
@@ -21,9 +16,6 @@ export default function PersonalPage() {
   const user = useCurrentUser();
   const { settings } = useSystemSettings();
   const canViewAttendance = settings.modules.attendance && canOpenPersonalAttendance(user.permissions);
-  const canReviewWorkers = canUseWorkerAttendance(user);
-  const hasOtherApplications = visibleApplications(user, settings.modules).some((application) => application.id !== "overview" && application.id !== "attendance");
-  const mobile = useMobileViewport();
   const today = new Date();
   const initials = user.displayName.trim().split(/\s+/).slice(-2).map((part) => part[0]).join("");
   const profileAllowed = can(user.permissions, "profile.view");
@@ -38,7 +30,6 @@ export default function PersonalPage() {
         {profileAllowed ? <Link aria-label={`Hồ sơ của ${user.displayName}`} className="personal-home__person" href="/profile">{identity}</Link> : <div className="personal-home__person">{identity}</div>}
         <time dateTime={getBusinessDateKey(today)} suppressHydrationWarning>{new Intl.DateTimeFormat("vi-VN", { timeZone: "Asia/Ho_Chi_Minh", weekday: "long", day: "2-digit", month: "2-digit" }).format(today)}</time>
       </header>
-      {hasOtherApplications ? <div className="personal-home__desktop-launcher"><ModuleLauncher excludePersonal /></div> : null}
       {canViewAttendance ? (
         <PersonalToday />
       ) : can(user.permissions, "profile.view") ? (
@@ -52,7 +43,6 @@ export default function PersonalPage() {
         {canUseLeave ? <Link href="/leave"><CalendarOff aria-hidden="true" size={20} /><span><span className="personal-home__label-desktop">Nghỉ phép của tôi</span><span className="personal-home__label-mobile">Nghỉ phép</span></span><ChevronRight aria-hidden="true" size={18} /></Link> : null}
       </nav>
       </section> : null}
-      {mobile && canReviewWorkers ? <section className="personal-home__mobile-only personal-supervisor-work" aria-label="Điểm danh công nhân"><h2>Điểm danh công nhân</h2><WorkerAttendanceToday /></section> : null}
       <div className="personal-home__mobile-only personal-home__logout"><LogoutButton /></div>
     </div>
   );

@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-10-22T08:19:15.115Z",
+  "postgresVersion": "17.10",
+  "passed": 32,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "accepts one request and returns no contact data",
+      "passed": true
+    },
+    {
+      "name": "same UUID replays once even from another network",
+      "passed": true
+    },
+    {
+      "name": "changed request UUID body is rejected without overwriting",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid consent boolean",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid consent object",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid companyName number",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid companyName string",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid companyName string",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid contactName object",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid email string",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid phone string",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid phone string",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid industry string",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid companySize string",
+      "passed": true
+    },
+    {
+      "name": "rejects invalid needs string",
+      "passed": true
+    },
+    {
+      "name": "rejects unknown keys",
+      "passed": true
+    },
+    {
+      "name": "rejects missing keys",
+      "passed": true
+    },
+    {
+      "name": "rejects malformed hashes",
+      "passed": true
+    },
+    {
+      "name": "contact quota allows two requests and replay then rejects third",
+      "passed": true
+    },
+    {
+      "name": "network quota rejects sixth request across contacts",
+      "passed": true
+    },
+    {
+      "name": "global quota applies to spoofed/different networks",
+      "passed": true
+    },
+    {
+      "name": "review changes status and audit in one transaction",
+      "passed": true
+    },
+    {
+      "name": "review CAS prevents duplicate audit",
+      "passed": true
+    },
+    {
+      "name": "requires active actor and both permissions",
+      "passed": true
+    },
+    {
+      "name": "view-only cannot review",
+      "passed": true
+    },
+    {
+      "name": "disabled reviewer is rejected",
+      "passed": true
+    },
+    {
+      "name": "rejects state skipping and closed edits",
+      "passed": true
+    },
+    {
+      "name": "supports contacted to qualified to closed",
+      "passed": true
+    },
+    {
+      "name": "audit failure rolls back review",
+      "passed": true
+    },
+    {
+      "name": "service has SELECT only while commands are private to service",
+      "passed": true
+    },
+    {
+      "name": "concurrent identical submit creates one record",
+      "passed": true
+    },
+    {
+      "name": "concurrent CAS review has one winner",
+      "passed": true
+    }
+  ],
+  "migrations": [
+    {
+      "filename": "202609090001_foundation_system_primitives.sql",
+      "sha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829"
+    },
+    {
+      "filename": "202609090002_employee_rbac_foundation.sql",
+      "sha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a"
+    },
+    {
+      "filename": "202610220004_product_trial_requests.sql",
+      "sha256": "182869df25042c132323abd36050e794a28878415e3bd55a5f81127e720ba535"
+    }
+  ],
+  "cloudAccess": false,
+  "syntheticDataOnly": true,
+  "authExercised": false,
+  "clusterStopped": true,
+  "runnerSha256": "fbea2cebde7afe1b2d1c115734babc5a39abc8533b98ebe54efb2d7b167dc3e7"
+}

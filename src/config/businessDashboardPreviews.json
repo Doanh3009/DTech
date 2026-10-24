@@ -1,0 +1,820 @@
+{
+  "metalworking": {
+    "to": "2026-10-24",
+    "asOf": "2026-10-24",
+    "from": "2026-10-01",
+    "work": [
+      {
+        "id": "b8565a35-a154-43d7-a9f2-87ce847e5863",
+        "code": "LSX-1026-3",
+        "cost": 9239000,
+        "kind": "work_orders",
+        "name": "Tấm đế gá CNC · Đợt 3",
+        "unit": "cái",
+        "scrap": 0,
+        "actual": 60,
+        "status": "released",
+        "target": 140,
+        "due_date": "2026-10-26",
+        "mold_code": null,
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 0
+      },
+      {
+        "id": "0f60633e-1a33-466d-a4a8-bb2c7331f1a3",
+        "code": "LSX-1026-1",
+        "cost": 7655000,
+        "kind": "work_orders",
+        "name": "Tấm đế gá CNC · Đợt 1",
+        "unit": "cái",
+        "scrap": 0,
+        "actual": 100,
+        "status": "completed",
+        "target": 100,
+        "due_date": "2026-10-24",
+        "mold_code": null,
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 0
+      },
+      {
+        "id": "bcec0a98-0321-457a-a23c-6981abffd641",
+        "code": "LSX-1026-2",
+        "cost": 8447000,
+        "kind": "work_orders",
+        "name": "Tấm đế gá CNC · Đợt 2",
+        "unit": "cái",
+        "scrap": 0,
+        "actual": 120,
+        "status": "completed",
+        "target": 120,
+        "due_date": "2026-10-25",
+        "mold_code": null,
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 0
+      }
+    ],
+    "stock": {
+      "lots": 10,
+      "blocked": 0,
+      "expired": 0,
+      "expiring": 0
+    },
+    "trend": [
+      {
+        "cash_in": 60000000,
+        "ends_on": "2026-10-07",
+        "revenue": 0,
+        "cash_out": 41000000,
+        "starts_on": "2026-10-01"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-14",
+        "revenue": 0,
+        "cash_out": 3000000,
+        "starts_on": "2026-10-08"
+      },
+      {
+        "cash_in": 12241250,
+        "ends_on": "2026-10-21",
+        "revenue": 44381250,
+        "cash_out": 79890124.73,
+        "starts_on": "2026-10-15"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-24",
+        "revenue": -1228500,
+        "cash_out": 15234208.25,
+        "starts_on": "2026-10-22"
+      }
+    ],
+    "alerts": {
+      "items": [
+        {
+          "code": "CN2610-000004",
+          "date": "2026-10-20",
+          "kind": "receivables",
+          "name": "Bán Tấm đế gá CNC",
+          "tone": "danger",
+          "state": "Quá hạn thanh toán",
+          "amount": 2497500
+        },
+        {
+          "code": "CN2610-000001",
+          "date": "2026-10-20",
+          "kind": "payables",
+          "name": "Mua Thép tấm SS400",
+          "tone": "warning",
+          "state": "Đến hạn trả nhà cung cấp",
+          "amount": 1200000
+        }
+      ],
+      "total": 2
+    },
+    "queues": [
+      {
+        "kind": "purchase_orders",
+        "total": 1,
+        "review": 0
+      },
+      {
+        "kind": "work_orders",
+        "total": 1,
+        "review": 0
+      }
+    ],
+    "finance": {
+      "cashIn": 72241250,
+      "cashOut": 139124332.98,
+      "overdue": 2497500,
+      "revenue": 43152750,
+      "payables": 7920000,
+      "cashBalance": 1913116917.02,
+      "receivables": 31711500
+    },
+    "generatedAt": "2026-10-24T14:40:39.260309+07:00"
+  },
+  "plastics_packaging": {
+    "to": "2026-10-24",
+    "asOf": "2026-10-24",
+    "from": "2026-10-01",
+    "work": [
+      {
+        "id": "1ea47d5c-fc60-451a-a292-55259388f621",
+        "code": "LSX-1026-3",
+        "cost": 9659000,
+        "kind": "work_orders",
+        "name": "Hộp nhựa thực phẩm 750ml · Đợt 3",
+        "unit": "cái",
+        "scrap": 0,
+        "actual": 60,
+        "status": "released",
+        "target": 140,
+        "due_date": "2026-10-26",
+        "mold_code": "KHUON-750",
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 0
+      },
+      {
+        "id": "ef0c159d-0578-4a69-ae31-9c7d8ef2fd63",
+        "code": "LSX-1026-1",
+        "cost": 7955000,
+        "kind": "work_orders",
+        "name": "Hộp nhựa thực phẩm 750ml · Đợt 1",
+        "unit": "cái",
+        "scrap": 0,
+        "actual": 100,
+        "status": "completed",
+        "target": 100,
+        "due_date": "2026-10-24",
+        "mold_code": "KHUON-750",
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 0
+      },
+      {
+        "id": "0ffa9014-5b58-4f2f-a67f-705b0bf8fc19",
+        "code": "LSX-1026-2",
+        "cost": 8807000,
+        "kind": "work_orders",
+        "name": "Hộp nhựa thực phẩm 750ml · Đợt 2",
+        "unit": "cái",
+        "scrap": 0,
+        "actual": 120,
+        "status": "completed",
+        "target": 120,
+        "due_date": "2026-10-25",
+        "mold_code": "KHUON-750",
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 0
+      }
+    ],
+    "stock": {
+      "lots": 10,
+      "blocked": 0,
+      "expired": 0,
+      "expiring": 0
+    },
+    "trend": [
+      {
+        "cash_in": 60000000,
+        "ends_on": "2026-10-07",
+        "revenue": 0,
+        "cash_out": 41000000,
+        "starts_on": "2026-10-01"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-14",
+        "revenue": 0,
+        "cash_out": 3000000,
+        "starts_on": "2026-10-08"
+      },
+      {
+        "cash_in": 917450,
+        "ends_on": "2026-10-21",
+        "revenue": 570375,
+        "cash_out": 77640124.73,
+        "starts_on": "2026-10-15"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-24",
+        "revenue": -15356.25,
+        "cash_out": 15234208.25,
+        "starts_on": "2026-10-22"
+      }
+    ],
+    "alerts": {
+      "items": [
+        {
+          "code": "CN2610-000004",
+          "date": "2026-10-20",
+          "kind": "receivables",
+          "name": "Bán Hộp nhựa thực phẩm 750ml",
+          "tone": "danger",
+          "state": "Quá hạn thanh toán",
+          "amount": 56700
+        },
+        {
+          "code": "CN2610-000001",
+          "date": "2026-10-20",
+          "kind": "payables",
+          "name": "Mua Hạt nhựa PP nguyên sinh",
+          "tone": "warning",
+          "state": "Đến hạn trả nhà cung cấp",
+          "amount": 1550000
+        }
+      ],
+      "total": 2
+    },
+    "queues": [
+      {
+        "kind": "purchase_orders",
+        "total": 1,
+        "review": 0
+      },
+      {
+        "kind": "work_orders",
+        "total": 1,
+        "review": 0
+      }
+    ],
+    "finance": {
+      "cashIn": 60917450,
+      "cashOut": 136874332.98,
+      "overdue": 56700,
+      "revenue": 555018.75,
+      "payables": 6030000,
+      "cashBalance": 2004043117.02,
+      "receivables": 437568.75
+    },
+    "generatedAt": "2026-10-24T14:40:39.296789+07:00"
+  },
+  "electronics": {
+    "to": "2026-10-24",
+    "asOf": "2026-10-24",
+    "from": "2026-10-01",
+    "work": [
+      {
+        "id": "7c08cda2-e610-4ee7-aa6e-e7c74a9b4773",
+        "code": "LSX-1026-3",
+        "cost": 15599200,
+        "kind": "work_orders",
+        "name": "Bộ điều khiển đèn thông minh · Đợt 3",
+        "unit": "bộ",
+        "scrap": 0,
+        "actual": 60,
+        "status": "released",
+        "target": 140,
+        "due_date": "2026-10-26",
+        "mold_code": null,
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 2
+      },
+      {
+        "id": "db3aa03d-0fe7-48a8-a6ac-ed2bb05de08d",
+        "code": "LSX-1026-1",
+        "cost": 12198000,
+        "kind": "work_orders",
+        "name": "Bộ điều khiển đèn thông minh · Đợt 1",
+        "unit": "bộ",
+        "scrap": 0,
+        "actual": 100,
+        "status": "completed",
+        "target": 100,
+        "due_date": "2026-10-24",
+        "mold_code": null,
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 2
+      },
+      {
+        "id": "559f662b-f81b-4e98-a9d0-42e454c19238",
+        "code": "LSX-1026-2",
+        "cost": 13898600,
+        "kind": "work_orders",
+        "name": "Bộ điều khiển đèn thông minh · Đợt 2",
+        "unit": "bộ",
+        "scrap": 0,
+        "actual": 120,
+        "status": "completed",
+        "target": 120,
+        "due_date": "2026-10-25",
+        "mold_code": null,
+        "expires_on": null,
+        "labor_hours": 21,
+        "trace_count": 2
+      }
+    ],
+    "stock": {
+      "lots": 10,
+      "blocked": 0,
+      "expired": 0,
+      "expiring": 0
+    },
+    "trend": [
+      {
+        "cash_in": 60000000,
+        "ends_on": "2026-10-07",
+        "revenue": 0,
+        "cash_out": 41000000,
+        "starts_on": "2026-10-01"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-14",
+        "revenue": 0,
+        "cash_out": 3000000,
+        "starts_on": "2026-10-08"
+      },
+      {
+        "cash_in": 9541250,
+        "ends_on": "2026-10-21",
+        "revenue": 20634750,
+        "cash_out": 72819624.73,
+        "starts_on": "2026-10-15"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-24",
+        "revenue": -384750,
+        "cash_out": 15234208.25,
+        "starts_on": "2026-10-22"
+      }
+    ],
+    "alerts": {
+      "items": [
+        {
+          "code": "CN2610-000004",
+          "date": "2026-10-20",
+          "kind": "receivables",
+          "name": "Bán Bộ điều khiển đèn thông minh",
+          "tone": "danger",
+          "state": "Quá hạn thanh toán",
+          "amount": 3462750
+        },
+        {
+          "code": "CN2610-000001",
+          "date": "2026-10-20",
+          "kind": "payables",
+          "name": "Mua Bo mạch PCB điều khiển",
+          "tone": "warning",
+          "state": "Đến hạn trả nhà cung cấp",
+          "amount": 4250000
+        }
+      ],
+      "total": 2
+    },
+    "queues": [
+      {
+        "kind": "purchase_orders",
+        "total": 1,
+        "review": 0
+      },
+      {
+        "kind": "work_orders",
+        "total": 1,
+        "review": 0
+      }
+    ],
+    "finance": {
+      "cashIn": 69541250,
+      "cashOut": 132053832.98,
+      "overdue": 3462750,
+      "revenue": 20250000,
+      "payables": 4442000,
+      "cashBalance": 2117487417.02,
+      "receivables": 11508750
+    },
+    "generatedAt": "2026-10-24T14:40:39.316026+07:00"
+  },
+  "food_beverage": {
+    "to": "2026-10-24",
+    "asOf": "2026-10-24",
+    "from": "2026-10-01",
+    "work": [
+      {
+        "id": "d56b325f-85c7-4024-a224-44b33521d9f7",
+        "code": "LSX-1026-3",
+        "cost": 6496000,
+        "kind": "work_orders",
+        "name": "Sữa yến mạch 250ml · Đợt 3",
+        "unit": "chai",
+        "scrap": 0,
+        "actual": 60,
+        "status": "released",
+        "target": 140,
+        "due_date": "2026-10-26",
+        "mold_code": null,
+        "expires_on": "2026-12-31",
+        "labor_hours": 0,
+        "trace_count": 2
+      },
+      {
+        "id": "aa11060f-260a-4545-a7c2-6f1f3aab347f",
+        "code": "LSX-1026-1",
+        "cost": 4640000,
+        "kind": "work_orders",
+        "name": "Sữa yến mạch 250ml · Đợt 1",
+        "unit": "chai",
+        "scrap": 0,
+        "actual": 100,
+        "status": "completed",
+        "target": 100,
+        "due_date": "2026-10-24",
+        "mold_code": null,
+        "expires_on": "2026-12-31",
+        "labor_hours": 0,
+        "trace_count": 2
+      },
+      {
+        "id": "efd6c17f-6955-4d8f-ae32-c83d73ddeef3",
+        "code": "LSX-1026-2",
+        "cost": 5568000,
+        "kind": "work_orders",
+        "name": "Sữa yến mạch 250ml · Đợt 2",
+        "unit": "chai",
+        "scrap": 0,
+        "actual": 120,
+        "status": "completed",
+        "target": 120,
+        "due_date": "2026-10-25",
+        "mold_code": null,
+        "expires_on": "2026-12-31",
+        "labor_hours": 0,
+        "trace_count": 2
+      }
+    ],
+    "stock": {
+      "lots": 10,
+      "blocked": 0,
+      "expired": 0,
+      "expiring": 0
+    },
+    "trend": [
+      {
+        "cash_in": 60000000,
+        "ends_on": "2026-10-07",
+        "revenue": 0,
+        "cash_out": 41000000,
+        "starts_on": "2026-10-01"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-14",
+        "revenue": 0,
+        "cash_out": 3000000,
+        "starts_on": "2026-10-08"
+      },
+      {
+        "cash_in": 3344750,
+        "ends_on": "2026-10-21",
+        "revenue": 4401000,
+        "cash_out": 73510124.73,
+        "starts_on": "2026-10-15"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-24",
+        "revenue": -114750,
+        "cash_out": 15348958.25,
+        "starts_on": "2026-10-22"
+      }
+    ],
+    "alerts": {
+      "items": [
+        {
+          "code": "CN2610-000004",
+          "date": "2026-10-20",
+          "kind": "receivables",
+          "name": "Bán Sữa yến mạch 250ml",
+          "tone": "danger",
+          "state": "Quá hạn thanh toán",
+          "amount": 249750
+        },
+        {
+          "code": "CN2610-000001",
+          "date": "2026-10-20",
+          "kind": "payables",
+          "name": "Mua Yến mạch nguyên hạt",
+          "tone": "warning",
+          "state": "Đến hạn trả nhà cung cấp",
+          "amount": 2100000
+        }
+      ],
+      "total": 2
+    },
+    "queues": [
+      {
+        "kind": "purchase_orders",
+        "total": 1,
+        "review": 0
+      },
+      {
+        "kind": "work_orders",
+        "total": 1,
+        "review": 0
+      }
+    ],
+    "finance": {
+      "cashIn": 63344750,
+      "cashOut": 132859082.98,
+      "overdue": 249750,
+      "revenue": 4286250,
+      "payables": 6580000,
+      "cashBalance": 2210485667.02,
+      "receivables": 1856250
+    },
+    "generatedAt": "2026-10-24T14:40:39.336271+07:00"
+  },
+  "trading": {
+    "to": "2026-10-24",
+    "asOf": "2026-10-24",
+    "from": "2026-10-01",
+    "work": [
+      {
+        "id": "430d1490-fadd-4019-aa29-efa23b7ebc6b",
+        "code": "DBH-1026-1",
+        "kind": "sales_orders",
+        "name": "Giao Bộ dao nhà bếp 5 món cho Hòa Bình",
+        "unit": "đ",
+        "actual": 6075000,
+        "status": "completed",
+        "target": 6075000
+      },
+      {
+        "id": "3daa39ae-7444-4947-a37f-f6dfad3f17c2",
+        "code": "DBH-1026-2",
+        "kind": "sales_orders",
+        "name": "Giao Máy xay sinh tố 1.5 lít cho Minh Long",
+        "unit": "đ",
+        "actual": 14175000,
+        "status": "completed",
+        "target": 14175000
+      },
+      {
+        "id": "1785ae3e-fe77-4f29-a3f9-14b0c2743552",
+        "code": "DBH-1026-3",
+        "kind": "sales_orders",
+        "name": "Giao Kệ bếp hai tầng cho Bảo Minh",
+        "unit": "đ",
+        "actual": 3746250,
+        "status": "released",
+        "target": 7492500
+      },
+      {
+        "id": "dabd7e0e-e761-449a-a9fa-a00258096cf8",
+        "code": "DBH-1026-4",
+        "kind": "sales_orders",
+        "name": "Giao Cân điện tử nhà bếp cho Hải Đăng",
+        "unit": "đ",
+        "actual": 4488750,
+        "status": "completed",
+        "target": 4488750
+      },
+      {
+        "id": "1efc24fa-590c-496e-8610-abb9886e8895",
+        "code": "DH-59f9ade4-3df7-4abe-953b-80d6a5255348",
+        "kind": "sales_orders",
+        "name": "Đặt hàng theo hợp đồng đợt 1",
+        "unit": "đ",
+        "actual": 0,
+        "status": "released",
+        "target": 3910200
+      },
+      {
+        "id": "7aa45e8b-2bdd-4d6a-90b7-c43a10c20c43",
+        "code": "DH-d234b6bd-77a1-4b4a-8207-6b31faef671e",
+        "kind": "sales_orders",
+        "name": "Đặt hàng theo hợp đồng đợt 2",
+        "unit": "đ",
+        "actual": 0,
+        "status": "released",
+        "target": 2606800
+      }
+    ],
+    "stock": {
+      "lots": 0,
+      "blocked": 0,
+      "expired": 0,
+      "expiring": 0
+    },
+    "trend": [
+      {
+        "cash_in": 60000000,
+        "ends_on": "2026-10-07",
+        "revenue": 0,
+        "cash_out": 41000000,
+        "starts_on": "2026-10-01"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-14",
+        "revenue": 0,
+        "cash_out": 3000000,
+        "starts_on": "2026-10-08"
+      },
+      {
+        "cash_in": 18012500,
+        "ends_on": "2026-10-21",
+        "revenue": 32231250,
+        "cash_out": 98350124.73,
+        "starts_on": "2026-10-15"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-24",
+        "revenue": -708750,
+        "cash_out": 14692958.25,
+        "starts_on": "2026-10-22"
+      }
+    ],
+    "alerts": {
+      "items": [
+        {
+          "code": "CN2610-000004",
+          "date": "2026-10-20",
+          "kind": "receivables",
+          "name": "Bán Bộ dao nhà bếp 5 món",
+          "tone": "danger",
+          "state": "Quá hạn thanh toán",
+          "amount": 3037500
+        },
+        {
+          "code": "CN2610-000001",
+          "date": "2026-10-20",
+          "kind": "payables",
+          "name": "Mua Nồi inox 3 đáy 24cm",
+          "tone": "warning",
+          "state": "Đến hạn trả nhà cung cấp",
+          "amount": 12250000
+        }
+      ],
+      "total": 2
+    },
+    "queues": [
+      {
+        "kind": "purchase_orders",
+        "total": 1,
+        "review": 0
+      }
+    ],
+    "finance": {
+      "cashIn": 78012500,
+      "cashOut": 157043082.98,
+      "overdue": 3037500,
+      "revenue": 31522500,
+      "payables": 25850000,
+      "cashBalance": 2300969417.02,
+      "receivables": 15018750
+    },
+    "generatedAt": "2026-10-24T14:40:39.352741+07:00"
+  },
+  "construction": {
+    "to": "2026-10-24",
+    "asOf": "2026-10-24",
+    "from": "2026-10-01",
+    "work": [
+      {
+        "id": "1108d74a-1f28-4654-ac9d-486ede75e2ae",
+        "code": "CT-1",
+        "kind": "projects",
+        "name": "Nhà phố An Khánh",
+        "unit": "đ",
+        "actual": 53200000,
+        "status": "active",
+        "target": 1205000000,
+        "ends_on": "2027-03-31",
+        "progress": 25
+      },
+      {
+        "id": "a5563059-537e-4615-addf-e86d8b2c3232",
+        "code": "CT-2",
+        "kind": "projects",
+        "name": "Văn phòng Phú Mỹ",
+        "unit": "đ",
+        "actual": 54896000,
+        "status": "active",
+        "target": 1650000000,
+        "ends_on": "2027-03-31",
+        "progress": 40
+      },
+      {
+        "id": "15a7321b-7385-4884-a29e-bf3bbd806cb6",
+        "code": "CT-3",
+        "kind": "projects",
+        "name": "Cải tạo biệt thự Thảo Điền",
+        "unit": "đ",
+        "actual": 61175000,
+        "status": "active",
+        "target": 2100000000,
+        "ends_on": "2027-03-31",
+        "progress": 55
+      }
+    ],
+    "stock": {
+      "lots": 0,
+      "blocked": 0,
+      "expired": 0,
+      "expiring": 0
+    },
+    "trend": [
+      {
+        "cash_in": 60000000,
+        "ends_on": "2026-10-07",
+        "revenue": 0,
+        "cash_out": 41000000,
+        "starts_on": "2026-10-01"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-14",
+        "revenue": 0,
+        "cash_out": 3000000,
+        "starts_on": "2026-10-08"
+      },
+      {
+        "cash_in": 2133125,
+        "ends_on": "2026-10-21",
+        "revenue": 74806875,
+        "cash_out": 74704124.73,
+        "starts_on": "2026-10-15"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-24",
+        "revenue": -2531250,
+        "cash_out": 174234208.25,
+        "starts_on": "2026-10-22"
+      }
+    ],
+    "alerts": {
+      "items": [
+        {
+          "code": "CN2610-000004",
+          "date": "2026-10-20",
+          "kind": "receivables",
+          "name": "Bán Ống nước PVC D90",
+          "tone": "danger",
+          "state": "Quá hạn thanh toán",
+          "amount": 877500
+        },
+        {
+          "code": "CN2610-000001",
+          "date": "2026-10-20",
+          "kind": "payables",
+          "name": "Mua Xi măng PCB40",
+          "tone": "warning",
+          "state": "Đến hạn trả nhà cung cấp",
+          "amount": 4100000
+        }
+      ],
+      "total": 2
+    },
+    "queues": [
+      {
+        "kind": "purchase_orders",
+        "total": 1,
+        "review": 0
+      }
+    ],
+    "finance": {
+      "cashIn": 62133125,
+      "cashOut": 292938332.98,
+      "overdue": 877500,
+      "revenue": 72275625,
+      "payables": 4300000,
+      "cashBalance": 2249194792.02,
+      "receivables": 70942500
+    },
+    "generatedAt": "2026-10-24T14:40:39.367548+07:00"
+  }
+}

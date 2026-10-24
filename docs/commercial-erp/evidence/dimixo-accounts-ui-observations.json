@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-10-24T01:36:59.886Z",
+  "testSuiteRun": false,
+  "errors": [],
+  "apiFailures": [],
+  "screens": [
+    {
+      "scope": "operator-accounts",
+      "viewport": 1440,
+      "documentWidth": 1430,
+      "accountRows": 3
+    },
+    {
+      "scope": "operator-accounts",
+      "viewport": 390,
+      "documentWidth": 380,
+      "accountRows": 3
+    },
+    {
+      "scope": "viewer-accounting",
+      "viewport": 390,
+      "documentWidth": 380,
+      "createActionCount": 0
+    },
+    {
+      "scope": "viewer-journals",
+      "createButtonCount": 0
+    }
+  ]
+}

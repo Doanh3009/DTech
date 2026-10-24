@@ -1,0 +1,24 @@
+import {z} from "zod";
+import {businessIndustryKeys,featureKeys,entityKeys} from "./businessCatalog";
+export const businessSlug=z.string().trim().toLowerCase().regex(/^[a-z][a-z0-9-]{2,39}$/);
+export const businessUsername=z.string().trim().toLowerCase().regex(/^[a-z][a-z0-9._-]{2,31}$/);
+export const businessPassword=z.string().min(12).max(128).refine(v=>/[a-z]/.test(v)&&/[A-Z]/.test(v)&&/[0-9]/.test(v)&&/[^a-zA-Z0-9]/.test(v),"Dùng ít nhất 12 ký tự, chữ hoa/thường, số và ký hiệu.");
+export const businessProvisionSchema=z.object({requestId:z.string().uuid(),customerVersion:z.number().int().positive(),slug:businessSlug,industry:z.enum(businessIndustryKeys),features:z.array(z.enum(featureKeys)).min(1).max(featureKeys.length).refine(v=>new Set(v).size===v.length),systemName:z.string().trim().min(2).max(100),username:businessUsername,displayName:z.string().trim().min(2).max(100),trialDays:z.number().int().min(1).max(90)}).strict();
+export const businessLoginSchema=z.object({slug:businessSlug,username:businessUsername,password:z.string().min(1).max(128)}).strict();
+export const businessRecordCommand=z.object({requestId:z.string().uuid(),recordId:z.string().uuid(),rowVersion:z.number().int().nonnegative(),data:z.record(z.unknown())}).strict();
+export const businessRecordAction=z.object({requestId:z.string().uuid(),rowVersion:z.number().int().positive(),action:z.enum(["post","release","complete","cancel","reverse","approve","calculate","deactivate","activate"]),reason:z.string().trim().min(3).max(500)}).strict();
+export const businessListSchema=z.object({page:z.coerce.number().int().min(1).max(100000).default(1),q:z.string().trim().max(100).default("")}).strict();
+export const businessKind=z.enum(entityKeys);
+export const businessWorkspaceStatus=z.object({requestId:z.string().uuid(),rowVersion:z.number().int().positive(),status:z.enum(["trial","active","suspended"]),trialDays:z.number().int().min(1).max(90)}).strict();
+export const businessConfigurationSchema=z.object({requestId:z.string().uuid(),customerVersion:z.number().int().positive(),rowVersion:z.number().int().positive(),industry:z.enum(businessIndustryKeys),features:z.array(z.enum(featureKeys)).min(1).max(featureKeys.length).refine(v=>new Set(v).size===v.length),systemName:z.string().trim().min(2).max(100)}).strict();
+const operatorAccountBase={requestId:z.string().uuid(),accountId:z.string().uuid(),rowVersion:z.number().int().positive()};
+export const businessOperatorAccountSchema=z.discriminatedUnion("operation",[
+ z.object({...operatorAccountBase,operation:z.literal("create"),username:businessUsername,displayName:z.string().trim().min(2).max(100),role:z.enum(["editor","viewer"])}).strict(),
+ z.object({...operatorAccountBase,operation:z.enum(["reset","disable","enable"])}).strict()
+]);
+export const businessAccessActions=["read","report","create","update","calculate","approve","post","release","complete","cancel","reverse"] as const;
+export const businessAccessGrant=z.object({kind:businessKind,actions:z.array(z.enum(businessAccessActions)).max(11).refine(v=>new Set(v).size===v.length),scope:z.enum(["tenant","own","projects","department"]),project_ids:z.array(z.string().uuid()).max(100),department:z.string().trim().max(100)}).strict().refine(v=>(v.scope!=="projects"||v.project_ids.length>0)&&(v.scope!=="department"||!!v.department));
+export const businessAccessCommand=z.object({requestId:z.string().uuid(),accountId:z.string().uuid(),rowVersion:z.number().int().nonnegative(),customAccess:z.boolean(),expiresAt:z.string().datetime().nullable(),reason:z.string().trim().min(3).max(500),grants:z.array(businessAccessGrant).max(300).refine(v=>new Set(v.map(g=>g.kind)).size===v.length)}).strict();
+export const businessMemberCommand=z.object({requestId:z.string().uuid(),accountId:z.string().uuid(),rowVersion:z.number().int().nonnegative(),operation:z.enum(["create","update","reset","disable","enable"]),reason:z.string().trim().min(3).max(500),username:businessUsername.optional(),displayName:z.string().trim().min(2).max(100).optional(),role:z.enum(["editor","viewer"]).optional(),staffId:z.string().uuid().nullable().optional(),expiresAt:z.string().datetime().nullable().optional()}).strict().superRefine((v,c)=>{if(["create","update"].includes(v.operation)&&(!v.username||!v.displayName||!v.role))c.addIssue({code:z.ZodIssueCode.custom,message:"Nhập đủ tài khoản, họ tên và vai trò."});});
+export type BusinessAccessGrant=z.infer<typeof businessAccessGrant>;
+export interface BusinessWorkspace {isDemo?:boolean;tenantId:string;slug:string;name:string;systemName:string;industry:typeof businessIndustryKeys[number];features:typeof featureKeys[number][];status:"trial"|"active"|"suspended";trialEndsAt:string;accountId:string;displayName:string;username:string;role:"owner"|"editor"|"viewer";mustChangePassword:boolean;customAccess?:boolean;accessExpiresAt?:string|null;grants?:BusinessAccessGrant[]}

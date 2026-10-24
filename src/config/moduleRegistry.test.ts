@@ -32,17 +32,28 @@ describe("application registry", () => {
     expect(applications.map((item) => item.id)).toEqual(["warehouse"]);
   });
 
-  it("keeps chat global instead of presenting it as a business module", () => {
-    expect(visibleApplications(user(["chat.access"]), defaultSystemSettings.modules).some((item) => item.id === "messaging")).toBe(false);
+  it("offers messaging as a configurable application with its own permission", () => {
+    expect(visibleApplications(user(["chat.access"]), defaultSystemSettings.modules).some((item) => item.id === "messaging")).toBe(true);
+    expect(visibleApplications(user(["chat.access"]), { ...defaultSystemSettings.modules, messaging: false })).toEqual([]);
     expect(contextualNavigationGroups("/messages", user(["chat.access"]), defaultSystemSettings.modules, defaultSystemSettings.navigation).flatMap((group) => group.items)).toEqual([]);
   });
 
-  it("keeps only the global dashboard in the application switcher and sidebar", () => {
+  it("keeps reports reachable when approvals and documents are disabled", () => {
+    const applications = visibleApplications(user(["document.view", "report.view"]), { ...defaultSystemSettings.modules, operations: false });
+    expect(applications.find((item) => item.id === "operations")?.defaultRoute).toBe("/reports");
+  });
+
+  it("keeps attendance management reachable without the employee records capability", () => {
+    const applications = visibleApplications(user(["employee.view", "attendance.view_all"]), { ...defaultSystemSettings.modules, human_resources: false });
+    expect(applications.find((item) => item.id === "human-resources")?.defaultRoute).toBe("/attendance/today");
+  });
+
+  it("omits Dashboard from the launcher and from business module sidebars", () => {
     const currentUser = user(["dashboard.view", "warehouse.view"]);
-    expect(applicationsForLauncher(currentUser, defaultSystemSettings.modules).some((item) => item.id === "overview")).toBe(true);
+    expect(applicationsForLauncher(currentUser, defaultSystemSettings.modules).some((item) => item.id === "overview")).toBe(false);
     expect(contextualNavigationGroups("/warehouse/inventory", currentUser, defaultSystemSettings.modules, defaultSystemSettings.navigation)
       .flatMap((group) => group.items)
-      .filter((item) => item.href === "/dashboard")).toHaveLength(1);
+      .filter((item) => item.href === "/dashboard")).toHaveLength(0);
   });
 
   it("does not treat attendance management permission as access to the personal app", () => {
@@ -65,7 +76,7 @@ describe("application registry", () => {
     expect(visibleApplications(employee, defaultSystemSettings.modules).map((item) => item.id)).not.toContain("human-resources");
     expect(applicationsForLauncher(employee, defaultSystemSettings.modules).find((item) => item.id === "human-resources")?.accessible).toBe(false);
     expect(contextualNavigationGroups("/attendance/today", employee, defaultSystemSettings.modules, defaultSystemSettings.navigation)
-      .flatMap((group) => group.items.map((item) => item.href))).toEqual(["/dashboard"]);
+      .flatMap((group) => group.items.map((item) => item.href))).toEqual([]);
     expect(visibleApplications(employee, defaultSystemSettings.modules).map((item) => item.id)).toContain("attendance");
   });
 

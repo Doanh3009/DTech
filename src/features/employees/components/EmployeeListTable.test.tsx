@@ -8,6 +8,7 @@ vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn() }) }));
 
 const employee: EmployeeSummary = {
   id: "employee/id with spaces",
+  rowVersion: 3,
   employeeCode: "NV001",
   fullName: "Nguyễn Thị Thúy Hằng",
   displayName: "Thúy Hằng",

@@ -22,3 +22,19 @@ Sau khi chạy migrations: đặt mật khẩu mạnh trong biến tiến trình
 ## File/malware
 
 Repo mới có type/signature validation, chưa có malware scanner. Nếu hạ tầng có scanner, upload phải đi qua quarantine → scan → available. Cho đến khi tích hợp, đây là known risk cần business/IT chấp thuận.
+
+## Cấu hình module không sẵn sàng
+
+- `system_settings.read_failed` hoặc `system_settings.modules_unverified` báo cấu hình không đọc/xác minh được. Sau khi cache hợp lệ 30 giây hết hạn, nghiệp vụ trả 503; không bật lại module từ default.
+- Kiểm tra kết nối/credentials của đúng deployment và group `modules` trong `public.system_settings`. Dùng manifest đã kiểm tra của khách hàng; không chép cấu hình hoặc keys từ deployment khác.
+- Group module cần đáp ứng `moduleSettingsSchema`; với cài mới, ghi đủ chín flag theo registry. Giữ lựa chọn module đã được doanh nghiệp phê duyệt, không reset về tất cả bật để vượt lỗi.
+- Sửa kết nối hoặc phục hồi cấu hình từ version/backup đã được xác minh theo quy trình thay đổi. Lượt đọc tự thử lại sau 1 giây; không cần đổi secret/xóa dữ liệu để làm mới cache.
+- Login ẩn danh còn hiển thị với thương hiệu gần nhất/default, nhưng giao diện này không cấp quyền thao tác. Nếu cấu hình hỏng khiến quản trị không vào được, operator sửa qua kênh quản trị database được cấp quyền; không có bypass HTTP.
+
+## Xuất bản cấu hình không chắc chắn
+
+- Giữ nguyên request ID/body hoặc activation plan khi lỗi mạng/timeout; không xóa receipt để thử lại.
+- Conflict phiên bản: tải lại cấu hình sau xác nhận, review thay đổi rồi tạo yêu cầu mới. Không tự tăng expected versions để ép ghi.
+- Receipt table tồn tại nhưng RPC không có/quyền sai: kiểm tra rollout/schema cache; service không chuyển sang upsert tách rời.
+- Khóa tạm thao tác cấu hình trong cửa sổ migration và cập nhật toàn bộ worker trước khi dùng wizard. SQL/operator cũ ghi trực tiếp không tự tham gia CAS/idempotency.
+- Bản nháp trình duyệt chứa cấu hình chưa công bố; trên thiết bị dùng chung xóa bằng Bỏ bản nháp sau bàn giao. Không lưu password/API key trong wizard hoặc plan.

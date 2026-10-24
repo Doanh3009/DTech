@@ -279,6 +279,7 @@ export function buildEmployeeSummary(
 
   return {
     id: employee.id,
+    rowVersion: employee.rowVersion,
     avatarAssetId: employee.avatarAssetId,
     employeeCode: employee.employeeCode,
     fullName: employee.fullName,
@@ -622,7 +623,7 @@ function createHistoryEvent({
   before,
   after,
   reason
-}: Omit<EmployeeHistoryEvent, "id" | "createdAt">): EmployeeHistoryEvent {
+}: Omit<EmployeeHistoryEvent, "id" | "createdAt" | "reason"> & { reason?: string | null }): EmployeeHistoryEvent {
   return {
     id: globalThis.crypto.randomUUID(),
     employeeId,
@@ -631,7 +632,7 @@ function createHistoryEvent({
     actorAccountId,
     before,
     after,
-    reason,
+    reason: reason ?? undefined,
     createdAt: getNow()
   };
 }
@@ -781,7 +782,7 @@ function historyForChangedField({
   actorAccountId: string;
   beforeValue: unknown;
   afterValue: unknown;
-  reason?: string;
+  reason?: string | null;
 }): EmployeeHistoryEvent | undefined {
   if (beforeValue === afterValue) {
     return undefined;
@@ -804,7 +805,7 @@ export function updateEmployeeProfile(
   actorAccountId: string,
   dataSet: EmployeeDataSet = defaultEmployeeDataSet
 ): EmployeeMutationResult {
-  if (input.rowVersion && input.rowVersion !== employee.rowVersion) {
+  if (input.rowVersion !== employee.rowVersion) {
     throw new AppError(
       "CONFLICT",
       "Dữ liệu vừa được cập nhật bởi người khác. Vui lòng tải lại trước khi lưu."
@@ -851,40 +852,44 @@ export function updateEmployeeProfile(
   }
 
   const nextJoinDate = input.joinDate ?? employee.joinDate;
-  const nextProbationStartDate = input.probationStartDate ?? employee.probationStartDate;
-  const nextProbationEndDate = input.probationEndDate ?? employee.probationEndDate;
+  const nextProbationStartDate = input.probationStartDate === undefined ? employee.probationStartDate : input.probationStartDate;
+  const nextProbationEndDate = input.probationEndDate === undefined ? employee.probationEndDate : input.probationEndDate;
   if (nextProbationStartDate && nextProbationEndDate && nextProbationEndDate < nextProbationStartDate) {
     throw new AppError("VALIDATION_ERROR", "Ngày kết thúc thử việc không được trước ngày bắt đầu.");
   }
-  const nextOfficialDate = input.officialDate ?? employee.officialDate;
+  const nextOfficialDate = input.officialDate === undefined ? employee.officialDate : input.officialDate;
   if (nextOfficialDate && nextOfficialDate < nextJoinDate) {
     throw new AppError("VALIDATION_ERROR", "Ngày chính thức không được trước ngày vào làm.");
   }
 
+  const optionalPatch = <T>(next: T | null | undefined, current: T | undefined): T | undefined => next === undefined ? current : next ?? undefined;
   const updatedEmployee: EmployeeRecord = {
     ...employee,
     employeeCode: input.employeeCode ?? employee.employeeCode,
     fullName: input.fullName ?? employee.fullName,
-    displayName: input.displayName ?? employee.displayName,
-    personalPhone: input.personalPhone ?? employee.personalPhone,
-    normalizedPhone: input.personalPhone ? normalizePhone(input.personalPhone) : employee.normalizedPhone,
-    personalEmail: input.personalEmail ?? employee.personalEmail,
-    companyEmail: input.companyEmail ?? employee.companyEmail,
-    currentAddress: input.currentAddress ?? employee.currentAddress,
-    province: input.province ?? employee.province,
+    displayName: optionalPatch(input.displayName, employee.displayName),
+    dateOfBirth: optionalPatch(input.dateOfBirth, employee.dateOfBirth),
+    gender: optionalPatch(input.gender, employee.gender),
+    personalPhone: optionalPatch(input.personalPhone, employee.personalPhone) ?? "",
+    normalizedPhone: input.personalPhone === undefined ? employee.normalizedPhone : input.personalPhone ? normalizePhone(input.personalPhone) : "",
+    personalEmail: optionalPatch(input.personalEmail, employee.personalEmail),
+    companyEmail: optionalPatch(input.companyEmail, employee.companyEmail),
+    currentAddress: optionalPatch(input.currentAddress, employee.currentAddress),
+    permanentAddress: optionalPatch(input.permanentAddress, employee.permanentAddress),
+    province: optionalPatch(input.province, employee.province),
     departmentId: input.departmentId ?? employee.departmentId,
     positionId: input.positionId ?? employee.positionId,
     employmentTypeId: input.employmentTypeId ?? employee.employmentTypeId,
-    managerEmployeeId: input.managerEmployeeId ?? employee.managerEmployeeId,
-    contractorName: input.contractorName ?? employee.contractorName,
+    managerEmployeeId: optionalPatch(input.managerEmployeeId, employee.managerEmployeeId),
+    contractorName: optionalPatch(input.contractorName, employee.contractorName),
     joinDate: input.joinDate ?? employee.joinDate,
-    probationStartDate: input.probationStartDate ?? employee.probationStartDate,
-    probationEndDate: input.probationEndDate ?? employee.probationEndDate,
-    officialDate: input.officialDate ?? employee.officialDate,
-    terminationDate: input.terminationDate ?? employee.terminationDate,
-    terminationReason: input.terminationReason ?? employee.terminationReason,
+    probationStartDate: optionalPatch(input.probationStartDate, employee.probationStartDate),
+    probationEndDate: optionalPatch(input.probationEndDate, employee.probationEndDate),
+    officialDate: optionalPatch(input.officialDate, employee.officialDate),
+    terminationDate: optionalPatch(input.terminationDate, employee.terminationDate),
+    terminationReason: optionalPatch(input.terminationReason, employee.terminationReason),
     employmentStatus: input.employmentStatus ?? employee.employmentStatus,
-    note: input.note ?? employee.note,
+    note: optionalPatch(input.note, employee.note),
     updatedAt: getNow(),
     rowVersion: employee.rowVersion + 1
   };
@@ -1216,7 +1221,7 @@ export function listAccounts(
   dataSet: EmployeeDataSet = defaultEmployeeDataSet,
   roles: readonly RoleDefinition[] = roleCatalog
 ): Array<EmployeeAccountView & { employeeName?: string; effectivePermissions: Permission[] }> {
-  return dataSet.accounts.map((account) => {
+  return dataSet.accounts.filter((account) => !account.deletedAt).map((account) => {
     const employee = account.employeeId ? findEmployee(account.employeeId, dataSet) : undefined;
 
     return {

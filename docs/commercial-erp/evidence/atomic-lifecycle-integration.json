@@ -1,0 +1,757 @@
+{
+  "generatedAt": "2026-10-22T06:53:11.782Z",
+  "postgresVersion": "17.10",
+  "scope": "Native PostgreSQL 17 isolated disposable loopback cluster; actual foundation/HR/account migrations and exact later fragments plus deployed employee command. Auth UID is a null stub; no external Auth creation/deletion, GoTrue, Storage or Realtime and not a full Supabase stack rehearsal.",
+  "migrations": [
+    {
+      "filename": "202610220002_account_lifecycle_recovery.sql",
+      "sha256": "5447095750b61089607a41f82573d0ba62aef362e16070092d1a132cd103af12"
+    },
+    {
+      "filename": "202610220003_atomic_employee_auxiliary.sql",
+      "sha256": "3ddef740e78c94d6ecd9946c52a3b81ed89993b04a4328c382159299db7091b3"
+    }
+  ],
+  "sources": [
+    {
+      "filename": "supabase/tests/atomic-lifecycle.integration.mjs",
+      "sha256": "effb7b0f7a20ca966146a342c41cffb802278fceb2482d4a6307a1c8fbbe44e0"
+    },
+    {
+      "filename": "supabase/tests/atomic-lifecycle.cases.mjs",
+      "sha256": "d59b3219ce0d3dc8b07c7802295ff47ff65d69c6765ebc3963e15e4b1ea40d65"
+    },
+    {
+      "filename": "supabase/tests/atomic-lifecycle.fixture.sql",
+      "sha256": "3fb30080ff9b74ac1612b192e81fd4538222040b60b6aadcc44bf765b249f586"
+    },
+    {
+      "filename": "supabase/tests/atomic-employee.fixture.sql",
+      "sha256": "93cf4d66b328b3c844aeca59cba3bf03d47227b2ec3e5a1a6bbfd1c6f46d4350"
+    }
+  ],
+  "baselineMigrations": [
+    {
+      "filename": "202609090001_foundation_system_primitives.sql",
+      "wholeFile": true,
+      "sourceSha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829",
+      "appliedSha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829"
+    },
+    {
+      "filename": "202609090002_employee_rbac_foundation.sql",
+      "wholeFile": true,
+      "sourceSha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a",
+      "appliedSha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a"
+    },
+    {
+      "filename": "202609150001_production_hardening.sql",
+      "wholeFile": false,
+      "sourceSha256": "1ebfebcff538541b742d0b55f62a17cefe5f3a4cd88c205e44d45cfbf034a8d7",
+      "appliedSha256": "941892dcb375da2ae8baaec6969e5aa9188d09e3a8227d0505e325229064a53f"
+    },
+    {
+      "filename": "202609150002_username_auth.sql",
+      "wholeFile": true,
+      "sourceSha256": "5ee9d0db90c7c17e81c7c50668fe65ed76264a2f7a89ebeb975b2723eb65cced",
+      "appliedSha256": "5ee9d0db90c7c17e81c7c50668fe65ed76264a2f7a89ebeb975b2723eb65cced"
+    },
+    {
+      "filename": "202609120004_shared_platforms.sql",
+      "wholeFile": false,
+      "sourceSha256": "9460e5802705320f1471af8a2eb8528c0b2f4145243627a866a7c53ad5e45f81",
+      "appliedSha256": "dbe028f748fe243293cd59f35c66898b29ceafa2374941748291f5aae2498789"
+    },
+    {
+      "filename": "202609160001_functional_completion.sql",
+      "wholeFile": false,
+      "sourceSha256": "9279a61830696cdeb62d92511458c1050ccc45ecc5ced16b9b351591b32bc64a",
+      "appliedSha256": "db702468f2b335b52d25fe92b8a5dd034b68e2970418263aaba37baa5b9b5142"
+    },
+    {
+      "filename": "202609180002_employee_personal_profile.sql",
+      "wholeFile": true,
+      "sourceSha256": "1c9a3f7626447d1b25fcbc13bb325ec74c91ce7d41944763f0b0696bbaf5f2e2",
+      "appliedSha256": "1c9a3f7626447d1b25fcbc13bb325ec74c91ce7d41944763f0b0696bbaf5f2e2"
+    },
+    {
+      "filename": "202609240001_atomic_role_and_account_provisioning.sql",
+      "wholeFile": false,
+      "sourceSha256": "a1986a805e63de8c47f3d9d64bc7b91a52ebd5ccc5f3ffefda259af632fcb16e",
+      "appliedSha256": "529b0e08052385c5830ae31979e194ab0f90dd96b4d0a6b8673628cceeb98463"
+    },
+    {
+      "filename": "202610220001_atomic_employee_profile.sql",
+      "wholeFile": true,
+      "sourceSha256": "c608c3e5b95876709cf4cfa6e8f68cd62a7f2597fa32bd2064011c29bd9ab6c3",
+      "appliedSha256": "c608c3e5b95876709cf4cfa6e8f68cd62a7f2597fa32bd2064011c29bd9ab6c3"
+    }
+  ],
+  "passed": 165,
+  "failed": 0,
+  "cloudAccess": false,
+  "productionWrites": false,
+  "externalAuthExercised": false,
+  "tests": [
+    {
+      "name": "service role can update sensitive fields with one shared employee CAS increment",
+      "passed": true
+    },
+    {
+      "name": "sensitive history and audit record field names and versions without PII values",
+      "passed": true
+    },
+    {
+      "name": "sensitive explicit null clears only the provided field and omission preserves stored data",
+      "passed": true
+    },
+    {
+      "name": "sensitive first write creates the missing profile using real table defaults",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects empty object without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects null patch without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects array patch without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects unknown field without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects control field without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects numeric text without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects blank text without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects whitespace-only text without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects overlong text without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects bad identity number without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects invalid calendar date without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects invalid date spelling without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects expiry before stored issue without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects issue after stored expiry without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects null version without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects zero version without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects null target without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects missing reason without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects short reason without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects whitespace-only reason without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects overlong reason without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive rejects missing event date without partial writes",
+      "passed": true
+    },
+    {
+      "name": "sensitive accepts the 200 character boundary and clears a date for valid merged chronology",
+      "passed": true
+    },
+    {
+      "name": "sensitive identity uniqueness failure rolls back version history and audit",
+      "passed": true
+    },
+    {
+      "name": "sensitive denies ordinary editor",
+      "passed": true
+    },
+    {
+      "name": "sensitive denies disabled administrator",
+      "passed": true
+    },
+    {
+      "name": "sensitive denies unknown actor",
+      "passed": true
+    },
+    {
+      "name": "sensitive denies null actor",
+      "passed": true
+    },
+    {
+      "name": "sensitive missing target and stale version are distinct",
+      "passed": true
+    },
+    {
+      "name": "sensitive employee_sensitive_profiles failure restores the entire command",
+      "passed": true
+    },
+    {
+      "name": "sensitive employees failure restores the entire command",
+      "passed": true
+    },
+    {
+      "name": "sensitive employee_history_events failure restores the entire command",
+      "passed": true
+    },
+    {
+      "name": "sensitive audit_logs failure restores the entire command",
+      "passed": true
+    },
+    {
+      "name": "archive preserves employment status while revoking account access in one version",
+      "passed": true
+    },
+    {
+      "name": "archive does not require a linked account",
+      "passed": true
+    },
+    {
+      "name": "authorized sensitive correction of an archived employee preserves disabled access",
+      "passed": true
+    },
+    {
+      "name": "archive last administrator guard restores profile and access",
+      "passed": true
+    },
+    {
+      "name": "archive denies ordinary editor without changes",
+      "passed": true
+    },
+    {
+      "name": "archive denies disabled actor without changes",
+      "passed": true
+    },
+    {
+      "name": "archive denies unknown actor without changes",
+      "passed": true
+    },
+    {
+      "name": "archive denies unknown employee without changes",
+      "passed": true
+    },
+    {
+      "name": "archive denies null expected version without changes",
+      "passed": true
+    },
+    {
+      "name": "archive denies missing reason without changes",
+      "passed": true
+    },
+    {
+      "name": "archive denies stale version without changes",
+      "passed": true
+    },
+    {
+      "name": "archive employees failure restores profile account sessions history and audit",
+      "passed": true
+    },
+    {
+      "name": "archive app_accounts failure restores profile account sessions history and audit",
+      "passed": true
+    },
+    {
+      "name": "archive app_sessions failure restores profile account sessions history and audit",
+      "passed": true
+    },
+    {
+      "name": "archive employee_history_events failure restores profile account sessions history and audit",
+      "passed": true
+    },
+    {
+      "name": "archive audit_logs failure restores profile account sessions history and audit",
+      "passed": true
+    },
+    {
+      "name": "anonymous and authenticated cannot call archive or sensitive commands",
+      "passed": true
+    },
+    {
+      "name": "session guard rejects insertion for disabled account",
+      "passed": true
+    },
+    {
+      "name": "session guard rejects insertion for locked account",
+      "passed": true
+    },
+    {
+      "name": "session guard rejects insertion for invited account",
+      "passed": true
+    },
+    {
+      "name": "session guard rejects insertion for pending_activation account",
+      "passed": true
+    },
+    {
+      "name": "session guard rejects an active account carrying a deletion tombstone",
+      "passed": true
+    },
+    {
+      "name": "session guard rejects an unknown account before inserting a session",
+      "passed": true
+    },
+    {
+      "name": "service role may register a session only for an active account and cannot call its private guard",
+      "passed": true
+    },
+    {
+      "name": "provision preparation durably reserves identity without creating account roles or history",
+      "passed": true
+    },
+    {
+      "name": "same provision request returns the identical reserved identity and retains first event date",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed actor",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed employee",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed username",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed email",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed phone",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed role",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed credential fingerprint",
+      "passed": true
+    },
+    {
+      "name": "provision immutable request rejects changed credential mode",
+      "passed": true
+    },
+    {
+      "name": "pending provision blocks another reservation for employee",
+      "passed": true
+    },
+    {
+      "name": "pending provision blocks another reservation for case insensitive username",
+      "passed": true
+    },
+    {
+      "name": "pending provision blocks another reservation for case insensitive email",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects null request with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects null employee with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects short username with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects digit first username with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects overlong username with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects invalid email with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects invalid fingerprint with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects invalid credential mode with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects missing event date with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects empty roles with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects null role with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects unknown role with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects missing employee with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects existing account with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision preparation rejects existing username with no reservation",
+      "passed": true
+    },
+    {
+      "name": "provision completion requires the reserved Auth identity",
+      "passed": true
+    },
+    {
+      "name": "account creator without role assignment permission may provision the basic employee role",
+      "passed": true
+    },
+    {
+      "name": "account creator cannot reserve elevated admin role without account.assign_role",
+      "passed": true
+    },
+    {
+      "name": "account creator cannot reserve elevated hr role without account.assign_role",
+      "passed": true
+    },
+    {
+      "name": "account creator cannot reserve elevated supervisor role without account.assign_role",
+      "passed": true
+    },
+    {
+      "name": "account creator cannot reserve elevated integration_editor role without account.assign_role",
+      "passed": true
+    },
+    {
+      "name": "account creator cannot finalize another authorized actor's elevated reservation",
+      "passed": true
+    },
+    {
+      "name": "account creator cannot read elevated reservation details and sees only basic requests in the pending list",
+      "passed": true
+    },
+    {
+      "name": "revoked role assignment permission blocks finalizing an elevated reservation",
+      "passed": true
+    },
+    {
+      "name": "32 character username boundary can complete under the real account constraint",
+      "passed": true
+    },
+    {
+      "name": "provision completion rejects a controlled corrupt legacy Auth email",
+      "passed": true
+    },
+    {
+      "name": "provision completion rejects a controlled corrupt legacy Auth operation metadata",
+      "passed": true
+    },
+    {
+      "name": "provision completion creates account roles history audit and receipt exactly once",
+      "passed": true
+    },
+    {
+      "name": "currently authorized replacement operator can recover a provision after preparer is disabled",
+      "passed": true
+    },
+    {
+      "name": "account lifecycle denies ordinary editor",
+      "passed": true
+    },
+    {
+      "name": "account lifecycle denies disabled administrator",
+      "passed": true
+    },
+    {
+      "name": "account lifecycle denies unknown actor",
+      "passed": true
+    },
+    {
+      "name": "account lifecycle denies null actor",
+      "passed": true
+    },
+    {
+      "name": "authorized missing operation lookups are distinct from forbidden callers",
+      "passed": true
+    },
+    {
+      "name": "provision completion app_accounts failure preserves prepared recovery state",
+      "passed": true
+    },
+    {
+      "name": "provision completion account_roles failure preserves prepared recovery state",
+      "passed": true
+    },
+    {
+      "name": "provision completion employee_history_events failure preserves prepared recovery state",
+      "passed": true
+    },
+    {
+      "name": "provision completion audit_logs failure preserves prepared recovery state",
+      "passed": true
+    },
+    {
+      "name": "provision completion account_lifecycle_operations failure preserves prepared recovery state",
+      "passed": true
+    },
+    {
+      "name": "provision cancellation keeps identity reserved until Auth absence is verified",
+      "passed": true
+    },
+    {
+      "name": "late Auth identity creation after persisted cancellation cannot reopen an operation",
+      "passed": true
+    },
+    {
+      "name": "completed provisioning cannot be cancelled or finalized as a deletion",
+      "passed": true
+    },
+    {
+      "name": "Auth insert guard rejects another identity trying to claim an existing operation",
+      "passed": true
+    },
+    {
+      "name": "linked Auth identity cannot be removed before durable account deletion preparation",
+      "passed": true
+    },
+    {
+      "name": "limited Auth administrator executes identity guards without public table privileges",
+      "passed": true
+    },
+    {
+      "name": "deletion preparation durably tombstones access before external Auth cleanup",
+      "passed": true
+    },
+    {
+      "name": "same delete request preserves receipt without duplicate history or audit",
+      "passed": true
+    },
+    {
+      "name": "pending deletion reserves prior employee username and email until Auth cleanup completes",
+      "passed": true
+    },
+    {
+      "name": "pending and completed tombstones reject activation and role assignment",
+      "passed": true
+    },
+    {
+      "name": "authorized recovery operator can finish deletion after preparer loses permission",
+      "passed": true
+    },
+    {
+      "name": "deletion rejects self deletion without partial access changes",
+      "passed": true
+    },
+    {
+      "name": "deletion rejects missing target without partial access changes",
+      "passed": true
+    },
+    {
+      "name": "deletion rejects null target without partial access changes",
+      "passed": true
+    },
+    {
+      "name": "deletion rejects null request without partial access changes",
+      "passed": true
+    },
+    {
+      "name": "deletion rejects null date without partial access changes",
+      "passed": true
+    },
+    {
+      "name": "deletion rejects the final active administrator atomically",
+      "passed": true
+    },
+    {
+      "name": "a preexisting username colliding with a tombstone causes a complete safe rollback",
+      "passed": true
+    },
+    {
+      "name": "deletion preparation app_sessions failure restores account roles sessions and history",
+      "passed": true
+    },
+    {
+      "name": "deletion preparation account_roles failure restores account roles sessions and history",
+      "passed": true
+    },
+    {
+      "name": "deletion preparation app_accounts failure restores account roles sessions and history",
+      "passed": true
+    },
+    {
+      "name": "deletion preparation employee_history_events failure restores account roles sessions and history",
+      "passed": true
+    },
+    {
+      "name": "deletion preparation audit_logs failure restores account roles sessions and history",
+      "passed": true
+    },
+    {
+      "name": "deletion preparation account_lifecycle_operations failure restores account roles sessions and history",
+      "passed": true
+    },
+    {
+      "name": "deletion final audit failure retains durable cleanup operation for retry",
+      "passed": true
+    },
+    {
+      "name": "pending operation list excludes completed and cancelled requests",
+      "passed": true
+    },
+    {
+      "name": "command tables and RPCs enforce service-only access under broad default grants",
+      "passed": true
+    },
+    {
+      "name": "simultaneous same reservation request returns one stable identity",
+      "passed": true
+    },
+    {
+      "name": "late session registration before queued disable cannot survive reactivation",
+      "passed": true
+    },
+    {
+      "name": "late session registration after queued disable cannot survive reactivation",
+      "passed": true
+    },
+    {
+      "name": "simultaneous different reservations for one employee have exactly one winner",
+      "passed": true
+    },
+    {
+      "name": "provision finalization queued behind archival rejects the archived employee without creating an account",
+      "passed": true
+    },
+    {
+      "name": "Auth deletion queued behind provision completion cannot orphan a linked account",
+      "passed": true
+    },
+    {
+      "name": "Auth deletion before queued provision completion cannot orphan a linked account",
+      "passed": true
+    },
+    {
+      "name": "archival queued behind provision completion disables the newly linked account",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion before queued disable preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion after queued disable preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion before queued role removal preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion after queued role removal preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion before queued offboard preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion after queued offboard preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion before queued archive preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion after queued archive preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion before queued delete preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "administrator deletion after queued delete preserves the final administrator",
+      "passed": true
+    },
+    {
+      "name": "sensitive and ordinary profile edits sharing a version have one winner",
+      "passed": true
+    },
+    {
+      "name": "archive and sensitive edits sharing a version have one winner",
+      "passed": true
+    },
+    {
+      "name": "activation queued behind archive waits then rejects archived profile",
+      "passed": true
+    },
+    {
+      "name": "administrator archive racing disable preserves an active administrator without deadlock",
+      "passed": true
+    },
+    {
+      "name": "administrator archive racing role removal preserves an active administrator without deadlock",
+      "passed": true
+    },
+    {
+      "name": "administrator archive racing offboard preserves an active administrator without deadlock",
+      "passed": true
+    },
+    {
+      "name": "administrator archive racing archive preserves an active administrator without deadlock",
+      "passed": true
+    }
+  ],
+  "clusterStopped": true
+}

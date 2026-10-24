@@ -1,4 +1,5 @@
 import ExcelJS from "exceljs";
+import { appConfig } from "@/config/app";
 import type { Permission } from "@/lib/auth/permissions";
 import { allowedFields, reportSheetPermission, type ReportField } from "./reportFieldRegistry";
 import { addTimesheetMatrix } from "./timesheetMatrixExcel";
@@ -98,7 +99,7 @@ export async function generateReportWorkbook(input: {
   period?: { startDate: string; endDate: string };
 }) {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = "Châu Tuấn";
+  workbook.creator = appConfig.name;
   workbook.created = input.generatedAt ?? new Date();
   workbook.modified = input.generatedAt ?? new Date();
 

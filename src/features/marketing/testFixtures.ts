@@ -1,0 +1,1 @@
+export const validTrial={requestId:"10000000-0000-4000-8000-000000000001",companyName:"Doanh nghiệp minh họa",contactName:"Người liên hệ",email:"contact@example.invalid",phone:"0901234567",industry:"construction",companySize:"20_100",needs:"Chấm công và vật tư",consent:true} as const;

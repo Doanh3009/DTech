@@ -1,0 +1,60 @@
+import assert from 'node:assert/strict';
+import {spawn} from 'node:child_process';
+import {readFile,readdir,writeFile,mkdir,unlink} from 'node:fs/promises';
+import path from 'node:path';
+import {parseEnv} from 'node:util';
+import {randomUUID} from 'node:crypto';
+
+// A separate development deployment. The existing internal Vercel project is not changed.
+const projectName='dimixo-erp',teamId='team_P6ZUPEQGflrU8soIrX7UPUVD',developmentProject='tcjjhxqtreemccdbvyza';
+const env=parseEnv(await readFile('.env.local','utf8'));
+assert(new URL(env.NEXT_PUBLIC_SUPABASE_URL).hostname===`${developmentProject}.supabase.co`,'Unexpected database destination');
+const candidates=[];
+for(const entry of await readdir(path.join(process.env.LOCALAPPDATA,'npm-cache','_npx'),{withFileTypes:true})){
+ if(!entry.isDirectory())continue;
+ const dir=path.join(process.env.LOCALAPPDATA,'npm-cache','_npx',entry.name,'node_modules','vercel');
+ const pkg=await readFile(path.join(dir,'package.json'),'utf8').then(JSON.parse).catch(()=>null);
+ if(pkg)candidates.push({version:pkg.version,filename:path.join(dir,'dist','index.js')});
+}
+candidates.sort((a,b)=>b.version.localeCompare(a.version,undefined,{numeric:true}));assert(candidates.length,'Vercel CLI is required');
+await mkdir('.tmp',{recursive:true});
+function redact(s){for(const v of Object.values(env).filter(v=>v.length>=12))s=s.replaceAll(v,'[redacted]');return s;}
+async function cli(args){
+ return new Promise((resolve,reject)=>{
+  const p=spawn(process.execPath,[candidates[0].filename,...args,'--scope',teamId],{cwd:process.cwd(),windowsHide:true,stdio:['ignore','pipe','pipe']});let stdout='',stderr='';
+  p.stdout.on('data',b=>stdout+=b);p.stderr.on('data',b=>stderr+=b);p.on('error',reject);p.on('close',code=>resolve({code,stdout,stderr}));
+ });
+}
+async function api(endpoint,method='GET',body){
+ const args=['api',endpoint,'--method',method,'--raw'];let input;
+ if(body!==undefined){input=path.join('.tmp',`dimixo-vercel-${randomUUID()}.private.json`);await writeFile(input,JSON.stringify(body),{flag:'wx',mode:0o600});args.push('--input',input,'--header','Content-Type: application/json');}
+ let r;try{r=await cli(args);}finally{if(input)await unlink(input);}
+ if(r.code!==0)throw Error(`Vercel API ${method} failed: ${redact(r.stderr).slice(-1200)}`);
+ return JSON.parse(r.stdout);
+}
+const project=await api(`/v9/projects/${projectName}`);
+assert(project.name===projectName&&project.accountId===teamId,'Unexpected Vercel project');
+const domains=await api(`/v9/projects/${project.id}/domains`);
+const primary=(domains.domains||[]).find(d=>d.name===`${projectName}.vercel.app`)||(domains.domains||[]).find(d=>d.name.endsWith('.vercel.app')&&!d.redirect);
+assert(primary,'A Vercel domain is required');
+const baseUrl=`https://${primary.name}`;
+const action=process.argv[2]||'plan';
+if(action==='plan'){
+ console.log(JSON.stringify({project:projectName,projectId:project.id,teamId,baseUrl,databaseProject:developmentProject,releaseEnvironment:'development',target:'production',testToolsEnabled:false}));
+}else if(action==='configure'){
+ const sha=process.argv[3];assert(/^[a-f0-9]{40}$/.test(sha||''),'Use the exact committed source SHA');
+ const keys=['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_ANON_KEY','SUPABASE_SERVICE_ROLE_KEY','SESSION_HASH_PEPPER','API_KEY_PEPPER','INTEGRATION_ENCRYPTION_KEY','INTEGRATION_WORKER_SECRET','OPERATIONS_CRON_SECRET','WEBHOOK_SIGNING_SECRET','APP_TIMEZONE','DTECH_CONTROL_CENTER_ENABLED'];
+ const configuration=Object.fromEntries(keys.filter(k=>env[k]).map(k=>[k,env[k]]));
+ for(const k of ['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_ANON_KEY','SUPABASE_SERVICE_ROLE_KEY','SESSION_HASH_PEPPER'])assert(configuration[k],`Missing ${k}`);
+ Object.assign(configuration,{APP_BASE_URL:baseUrl,APP_ENV:'development',RELEASE_ENVIRONMENT:'development',TEST_TOOLS_ENABLED:'false',RELEASE_SHA:sha});
+ await api(`/v10/projects/${project.id}/env?upsert=true`,'POST',Object.entries(configuration).map(([key,value])=>({key,value,type:'encrypted',target:['production','preview']})));
+ await writeFile('.tmp/dimixo-vercel-project.private.json',JSON.stringify({projectName,projectId:project.id,orgId:teamId,baseUrl,releaseSha:sha}));
+ console.log(JSON.stringify({configured:true,variables:Object.keys(configuration).length,project:projectName,baseUrl,releaseSha:sha}));
+}else if(action==='deploy'){
+ const record=JSON.parse(await readFile('.tmp/dimixo-vercel-project.private.json','utf8'));assert(record.projectId===project.id,'Configure the project first');
+ const r=await cli(['deploy','--project',project.id,'--prod','--yes','--json','--archive','tgz']);
+ await writeFile('.tmp/dimixo-vercel-deployment.private.log',redact(r.stdout+'\n'+r.stderr));
+ assert(r.code===0,`Vercel deployment failed: ${redact(r.stderr).slice(-1800)}`);
+ const output=JSON.parse(r.stdout);await writeFile('.tmp/dimixo-vercel-deployment.private.json',JSON.stringify(output));
+ console.log(JSON.stringify({deployed:true,baseUrl,releaseSha:record.releaseSha,resultKeys:Object.keys(output)}));
+}else throw Error('Use plan, configure <SHA>, or deploy');

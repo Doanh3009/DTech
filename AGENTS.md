@@ -11,3 +11,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Bắt buộc về UI
 
 - Không ghi nội dung mô tả dưới mỗi chức năng, action, permission hoặc mục điều hướng. UI chỉ hiển thị nhãn, trạng thái và dữ liệu cần thao tác; mô tả nghiệp vụ chi tiết đưa vào tài liệu/dev note khi cần.
+
+## DTech ERP và module mới
+
+- Trước khi thêm hoặc sửa UI module, đọc `design-system/dtech-erp/MASTER.md` và `docs/erp/module-contract.md`.
+- Dùng component/token chung, lấy thương hiệu từ cấu hình; đăng ký module/quyền/route trong registry dùng chung.
+- Theo yêu cầu 23/10/2026: khách hàng dùng chung project Supabase, dữ liệu và tài khoản tách theo doanh nghiệp (`tenant_id`). Gói ngành dùng cấu hình chung; không hardcode giao diện khách hàng. ERP nội bộ cũ giữ dữ liệu hiện tại; không cấp tài khoản khách vào luồng truy vấn toàn cục chưa có tenant scope.

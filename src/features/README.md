@@ -14,4 +14,4 @@ types/
 utils/
 ```
 
-Prompt 1 chỉ tạo foundation và placeholder route. Business logic sẽ được thêm theo từng prompt sau.
+Đọc [Design DNA](../../design-system/dtech-erp/MASTER.md), [hợp đồng module](../../docs/erp/module-contract.md) và [kiến trúc ERP](../../docs/erp/platform.md) trước khi bổ sung module. Catalog/gói ngành nằm trong `src/config/erpModules.ts`; tính năng dự kiến không đăng ký thành module đang hoạt động.

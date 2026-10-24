@@ -8,11 +8,13 @@ import { FormSection, StickyActionBar } from "@/components/shared/FormLayout";
 import { defaultSystemSettings, deriveBrandColorTokens } from "@/config/systemSettings";
 import { AdminPage } from "@/features/system-admin/components/AdminPage";
 import { useSettingsEditor } from "@/features/system-admin/components/editorUtils";
+import { useOrganizationSettings } from "@/components/providers/SystemSettingsProvider";
 
 const colorPresets = ["#19A94A", "#2563EB", "#7C3AED", "#F59E0B", "#DC2625"];
 
 export function AppearancePage() {
   const editor = useSettingsEditor("appearance");
+  const organization = useOrganizationSettings();
   const tokens = deriveBrandColorTokens(editor.draft.primaryColor);
   const restoreDefaults = () => {
     if (window.confirm("Khôi phục cấu hình giao diện mặc định?")) {
@@ -44,7 +46,7 @@ export function AppearancePage() {
         </FormSection>
         <FormSection columns={1} title="Xem trước">
           <div className={`appearance-preview density-${editor.draft.density}`} style={{ "--preview-primary": tokens.primary, "--preview-primary-hover": tokens.primaryHover, "--preview-primary-soft": tokens.primarySubtle, "--preview-foreground": tokens.primaryForeground } as React.CSSProperties}>
-            <aside><strong>CHÂU TUẤN</strong><span className="is-active">Nhân viên</span><span>Dự án</span></aside>
+            <aside><strong>{organization.shortName}</strong><span className="is-active">Nhân viên</span><span>Dự án</span></aside>
             <div className="appearance-preview__body"><div><button type="button">Thao tác chính</button><a>Liên kết</a><span className="preview-badge">Đang hoạt động</span></div><div className="preview-table"><span>NV-001</span><span>Nguyễn Văn An</span><span>Đang làm việc</span></div></div>
           </div>
         </FormSection>

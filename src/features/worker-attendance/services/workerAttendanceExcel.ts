@@ -2,6 +2,7 @@ import ExcelJS from "exceljs";
 
 import type { WorkerAttendanceSession } from "@/features/worker-attendance/types/workerAttendanceTypes";
 import { sanitizeSpreadsheetCell } from "@/lib/security/filePolicy";
+import { appConfig } from "@/config/app";
 
 const statusLabels: Record<string, string> = {
   present: "Có mặt",
@@ -14,7 +15,7 @@ const statusLabels: Record<string, string> = {
 
 export async function generateWorkerAttendanceExcel(sessions: WorkerAttendanceSession[], month: string): Promise<Buffer> {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = "Châu Tuấn ERP";
+  workbook.creator = appConfig.name;
   workbook.created = new Date();
   const sheet = workbook.addWorksheet("Chấm công công trường", { views: [{ state: "frozen", ySplit: 3 }] });
   sheet.mergeCells("A1:J1");

@@ -13,6 +13,13 @@ describe("route area access", () => {
     expect(hasAreaAccess(["profile.view"], "warehouse")).toBe(false);
     expect(hasAreaAccess(["dashboard.view"], "settings")).toBe(false);
   });
+  it("admits dedicated business permissions without granting unrelated areas", () => {
+    expect(hasAreaAccess(["warehouse.stock_count.view"], "warehouse")).toBe(true);
+    expect(hasAreaAccess(["warehouse.adjustment.view"], "warehouse")).toBe(true);
+    expect(hasAreaAccess(["payroll.create"], "accounting")).toBe(true);
+    expect(hasAreaAccess(["attendance.config.manage"], "settings")).toBe(true);
+    expect(hasAreaAccess(["payroll.create"], "warehouse")).toBe(false);
+  });
 });
 
 describe("HR route authorization", () => {

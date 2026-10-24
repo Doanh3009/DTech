@@ -1,0 +1,207 @@
+{
+  "capturedAt": "2026-10-22T02:48:16.867Z",
+  "unit": {
+    "passed": 1549,
+    "skipped": 37,
+    "total": 1586
+  },
+  "supplementaryChecks": [
+    {
+      "loginWithoutModuleList": true,
+      "anonymousOpenApiDenied": true,
+      "hubWithoutCategoryFilterOrDashboard": true,
+      "configurationApiConsistent": true,
+      "openApiMatchesCustomerBranding": true,
+      "warehouseNavigationFocused": true,
+      "productionToolsHidden": true,
+      "anonymousConfigurationDenied": true
+    },
+    {
+      "emptySubmissionDoesNotSendCommand": true,
+      "profileFieldsAndOffboardChoicePresent": true,
+      "conflictKeepsDraftAndRequiresReload": true,
+      "ambiguousFailureKeepsDraftAndRequiresReload": true,
+      "changedFieldsOnly": true,
+      "allEmployeeWritesIntercepted": true,
+      "operationalRecordsUnchanged": true,
+      "auditSessionRevoked": true
+    }
+  ],
+  "browserScopes": [
+    {
+      "checkedAt": "2026-10-22T02:45:59.078Z",
+      "publishesConfiguration": false
+    },
+    {
+      "checkedAt": "2026-10-22T02:46:49.584Z",
+      "publishesConfiguration": false
+    }
+  ],
+  "browser": {
+    "checkedStaticRoutes": 5,
+    "checkedDynamicTemplates": 2,
+    "passed": 7,
+    "routes": [
+      {
+        "route": "/applications",
+        "destination": "/applications",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T02:45:59.078Z"
+      },
+      {
+        "route": "/employees",
+        "destination": "/employees",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T02:45:59.078Z"
+      },
+      {
+        "route": "/warehouse/inventory",
+        "destination": "/warehouse/inventory",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T02:45:59.078Z"
+      },
+      {
+        "route": "/system-admin/modules",
+        "destination": "/system-admin/modules",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T02:45:59.078Z"
+      },
+      {
+        "route": "/system-admin/design-dna",
+        "destination": "/system-admin/design-dna",
+        "status": 200,
+        "routeKind": "static",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T02:45:59.078Z"
+      },
+      {
+        "route": "/employees/[id]/profile",
+        "destination": "/employees/[id]/profile",
+        "status": 200,
+        "routeKind": "dynamic",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T02:46:49.584Z"
+      },
+      {
+        "route": "/employees/[id]/edit",
+        "destination": "/employees/[id]/edit",
+        "status": 200,
+        "routeKind": "dynamic",
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-22T02:46:49.584Z"
+      }
+    ]
+  },
+  "boundaries": [
+    "No production deployment or production migration was executed; development migration evidence is recorded separately when applicable.",
+    "No operational documents were created by browser audit; explicit configuration publishing is recorded in browserScopes.",
+    "Only listed dynamic templates are visually checked; business mutations, adversarial cross-role flows, business document concurrency, UAT and restore drill remain separate acceptance gates.",
+    "Screenshots and raw logs remain local; this artifact omits account names, cookies, tokens and record bodies."
+  ]
+}

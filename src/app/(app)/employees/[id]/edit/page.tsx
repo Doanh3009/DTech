@@ -6,7 +6,7 @@ import { PermissionDeniedState } from "@/components/shared/States";
 import { EmployeeEditForm } from "@/features/employees/components/EmployeeEditForm";
 import {
   findEmployee,
-  getEmployeeFilterOptions,
+  buildEmployeeSummary,
   getEmployeePickerOptions
 } from "@/features/employees/services/employeeService";
 import { getEmployeeDataSetAsync } from "@/features/employees/services/employeeRepository";
@@ -23,18 +23,23 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const dataSet = await getEmployeeDataSetAsync();
   const employee = findEmployee(id, dataSet);
   if (!employee) notFound();
-  const options = getEmployeeFilterOptions(dataSet);
+  const managers = getEmployeePickerOptions(dataSet, { activeOnly: true }).filter((item) => item.id !== id);
+  const currentManager = employee.managerEmployeeId ? findEmployee(employee.managerEmployeeId, dataSet) : undefined;
+  if (currentManager && !managers.some((item) => item.id === currentManager.id)) {
+    managers.push(buildEmployeeSummary(currentManager, dataSet));
+  }
 
   return (
     <div className="page-stack">
       <BackLink href={`/employees/${id}`} />
       <PageHeader title={`Chỉnh sửa ${employee.fullName}`} />
       <EmployeeEditForm
-        departments={options.departments}
+        canOffboard={can(user.permissions, "employee.offboard")}
+        departments={dataSet.departments.filter((item) => item.active || item.id === employee.departmentId)}
         employee={employee}
-        employmentTypes={options.employmentTypes}
-        managers={getEmployeePickerOptions(dataSet, { activeOnly: true }).filter((item) => item.id !== id)}
-        positions={options.positions}
+        employmentTypes={dataSet.employmentTypes.filter((item) => item.active || item.id === employee.employmentTypeId)}
+        managers={managers}
+        positions={dataSet.positions.filter((item) => item.active || item.id === employee.positionId)}
       />
     </div>
   );

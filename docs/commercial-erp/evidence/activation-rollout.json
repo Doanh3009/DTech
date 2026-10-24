@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-10-22T01:41:34.787Z",
+  "environment": "development",
+  "projectRef": "tcjjhxqtreemccdbvyza",
+  "migration": {
+    "version": "202610210002",
+    "sha256": "5fdd84b6bac6cef8043f85d94ea8ab4f20d31f1cc33a0dd99851fb32374a7826",
+    "beforeCount": 55,
+    "afterCount": 56
+  },
+  "databaseVersion": "17.11",
+  "integration": {
+    "postgresVersion": "17.10",
+    "passed": 56,
+    "clusterStopped": true
+  },
+  "writes": {
+    "schemaMigration": true,
+    "configurationCommands": 1,
+    "operationalDocuments": false
+  },
+  "configuration": {
+    "semanticValuesPreserved": true,
+    "versionsBefore": {
+      "appearance": 2,
+      "branding": 2,
+      "dashboard": 1,
+      "localization": 1,
+      "modules": 2,
+      "navigation": 1,
+      "organization": 2,
+      "payslip": 2
+    },
+    "versionsAfter": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    }
+  },
+  "security": {
+    "receiptRls": true,
+    "serviceReadsReceipt": true,
+    "serviceExecutesCommand": true,
+    "serviceDirectReceiptWrites": false,
+    "anonymousExecution": false,
+    "authenticatedExecution": false
+  },
+  "checks": {
+    "anonymousSetupDenied": true,
+    "snapshotMatchesStoredCompany": true,
+    "browserDraftSurvivesReloadAndDiscards": true,
+    "allFourStepsResponsive": true,
+    "uiPublishesAtomically": true,
+    "retryDoesNotIncrementVersions": true,
+    "changedRequestAndStaleVersionsRejected": true,
+    "semanticConfigurationPreserved": true
+  },
+  "scope": "Selected DTech development Supabase project. Four-group UI publish preserved semantic values and advanced versions once; identical retry, changed request and stale version checks completed. No production deployment or operational documents."
+}

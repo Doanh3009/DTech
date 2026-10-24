@@ -1,4 +1,12 @@
 import { z } from "zod";
+import { erpModuleKeys } from "@/config/erpModules";
+import {
+  brandingSettingsSchema,
+  organizationSettingsSchema,
+  localizationSettingsSchema,
+  moduleSettingsSchema
+} from "./customerSettingsSchemas.mjs";
+export { brandingSettingsSchema, organizationSettingsSchema, localizationSettingsSchema, moduleSettingsSchema };
 
 import {
   dashboardProfileKeys,
@@ -8,7 +16,6 @@ import {
 import { dashboardLandingPages } from "@/features/dashboard/types";
 
 export const configurableNavigationPaths = [
-  "/dashboard",
   "/employees",
   "/employees/departments",
   "/employees/positions",
@@ -48,32 +55,11 @@ export const configurableNavigationPaths = [
   "/reports"
 ] as const;
 
-export const moduleKeys = [
-  "human_resources",
-  "attendance",
-  "projects",
-  "warehouse",
-  "import_export",
-  "reports"
-] as const;
+export const moduleKeys = erpModuleKeys;
 
 export type ModuleKey = (typeof moduleKeys)[number];
 
-const localAssetPath = z.string().regex(/^\/[A-Za-z0-9/_-]+\.(png|jpe?g|webp|ico)$/i, "Đường dẫn tài sản không hợp lệ.");
-const nullableAssetUrl = z.union([z.string().url().max(2_000), localAssetPath]).nullable();
 const hexColorSchema = z.string().regex(/^#[0-9A-Fa-f]{6}$/, "Mã màu phải có dạng #RRGGBB.");
-
-export const brandingSettingsSchema = z
-  .object({
-    systemName: z.string().trim().min(2).max(100),
-    loginSubtitle: z.string().trim().max(140),
-    logoMainUrl: nullableAssetUrl,
-    logoCompactUrl: nullableAssetUrl,
-    logoDarkUrl: nullableAssetUrl,
-    faviconUrl: nullableAssetUrl,
-    assetVersion: z.number().int().nonnegative()
-  })
-  .strict();
 
 export const appearanceSettingsSchema = z
   .object({
@@ -86,27 +72,6 @@ export const appearanceSettingsSchema = z
   })
   .strict();
 
-export const organizationSettingsSchema = z
-  .object({
-    companyName: z.string().trim().min(2).max(120),
-    shortName: z.string().trim().min(2).max(30),
-    address: z.string().trim().max(240),
-    phone: z.string().trim().max(30),
-    email: z.union([z.literal(""), z.string().email()]),
-    taxCode: z.string().trim().max(30),
-    representativeName: z.string().trim().max(100)
-  })
-  .strict();
-
-export const localizationSettingsSchema = z
-  .object({
-    timezone: z.enum(["Asia/Ho_Chi_Minh"]),
-    dateFormat: z.enum(["DD/MM/YYYY", "YYYY-MM-DD"]),
-    timeFormat: z.literal("HH:mm"),
-    weekStartsOn: z.literal("monday"),
-    locale: z.literal("vi-VN")
-  })
-  .strict();
 
 const navigationPathSchema = z.enum(configurableNavigationPaths);
 
@@ -114,7 +79,7 @@ export const navigationSettingsSchema = z
   .object({
     hiddenItems: z.array(navigationPathSchema).max(configurableNavigationPaths.length),
     itemOrder: z.array(navigationPathSchema).length(configurableNavigationPaths.length),
-    defaultLandingPage: z.enum(["/dashboard", "/attendance", "/projects"]),
+    defaultLandingPage: z.enum(["/applications", "/attendance", "/projects"]),
     groupsExpanded: z.boolean()
   })
   .strict()
@@ -149,9 +114,9 @@ export function normalizeStoredNavigationSettings(value: unknown): unknown {
         typeof path === "string" && knownPaths.has(path)
     ))],
     itemOrder,
-    defaultLandingPage: ["/dashboard", "/attendance", "/projects"].includes(String(stored.defaultLandingPage))
+    defaultLandingPage: ["/applications", "/attendance", "/projects"].includes(String(stored.defaultLandingPage))
       ? stored.defaultLandingPage
-      : "/dashboard",
+      : "/applications",
     groupsExpanded: typeof stored.groupsExpanded === "boolean" ? stored.groupsExpanded : true
   };
 }
@@ -233,17 +198,6 @@ export function normalizeStoredDashboardSettings(value: unknown): unknown {
   return { presetOrder, presets };
 }
 
-export const moduleSettingsSchema = z
-  .object({
-    human_resources: z.boolean(),
-    attendance: z.boolean(),
-    projects: z.boolean(),
-    warehouse: z.boolean(),
-    import_export: z.boolean(),
-    reports: z.boolean()
-  })
-  .strict();
-
 export const payslipSettingsSchema = z.object({
   companyName: z.string().trim().min(2).max(120),
   title: z.string().trim().min(2).max(120),
@@ -301,11 +255,11 @@ export interface SystemSettingsDocument {
 
 export const defaultSystemSettings: SystemSettingsDocument = {
   branding: {
-    systemName: "Hệ thống nội bộ Châu Tuấn",
-    loginSubtitle: "Quản lý nhân sự, công trường và vận hành",
-    logoMainUrl: "/brand/chau-tuan-logo.png",
-    logoCompactUrl: null,
-    logoDarkUrl: null,
+    systemName: "DIMIXO ERP",
+    loginSubtitle: "Quản trị doanh nghiệp",
+    logoMainUrl: "/brand/dimixo-original.png",
+    logoCompactUrl: "/brand/dimixo-original.png",
+    logoDarkUrl: "/brand/dimixo-original.png",
     faviconUrl: null,
     assetVersion: 0
   },
@@ -318,8 +272,8 @@ export const defaultSystemSettings: SystemSettingsDocument = {
     appearanceMode: "light"
   },
   organization: {
-    companyName: "Công ty Châu Tuấn",
-    shortName: "CHÂU TUẤN",
+    companyName: "Doanh nghiệp của bạn",
+    shortName: "DIMIXO",
     address: "",
     phone: "",
     email: "",
@@ -336,7 +290,7 @@ export const defaultSystemSettings: SystemSettingsDocument = {
   navigation: {
     hiddenItems: [],
     itemOrder: [...configurableNavigationPaths],
-    defaultLandingPage: "/dashboard",
+    defaultLandingPage: "/applications",
     groupsExpanded: true
   },
   dashboard: structuredClone(defaultDashboardSettings),
@@ -346,10 +300,14 @@ export const defaultSystemSettings: SystemSettingsDocument = {
     projects: true,
     warehouse: true,
     import_export: true,
-    reports: true
+    reports: true,
+    accounting: true,
+    operations: true,
+    messaging: true,
+    industryPreset: "general"
   },
   payslip: {
-    companyName: "CÔNG TY CHÂU TUẤN",
+    companyName: "DOANH NGHIỆP",
     title: "PHIẾU LƯƠNG THÁNG {month}",
     footer: "Tài liệu nội bộ · Dữ liệu lương riêng tư",
     primaryColor: "#2E9B67",
@@ -445,16 +403,20 @@ export function deriveBrandColorTokens(primaryColor: string): BrandColorTokens {
 }
 
 export function moduleForPath(pathname: string): ModuleKey | null {
-  if (pathname.startsWith("/employees")) return "human_resources";
-  if (pathname.startsWith("/attendance") || pathname.startsWith("/timesheets") || pathname.startsWith("/leave") || pathname.startsWith("/shifts")) return "attendance";
-  if (pathname.startsWith("/projects") || pathname.startsWith("/worker-attendance")) return "projects";
-  if (pathname.startsWith("/warehouse") || pathname.startsWith("/settings/warehouse")) return "warehouse";
-  if (pathname.startsWith("/import-export") || pathname.startsWith("/settings/import-export")) return "import_export";
-  if (pathname.startsWith("/reports")) return "reports";
+  const matches = (...prefixes: string[]) => prefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+  if (matches("/employees", "/dashboard/hr")) return "human_resources";
+  if (matches("/attendance", "/timesheets", "/leave", "/shifts", "/settings/attendance", "/settings/leave", "/settings/export-templates")) return "attendance";
+  if (matches("/projects", "/project-monitoring", "/worker-attendance")) return "projects";
+  if (matches("/warehouse", "/settings/warehouse", "/dashboard/warehouse")) return "warehouse";
+  if (matches("/import-export", "/settings/import-export", "/dashboard/import-export")) return "import_export";
+  if (matches("/accounting", "/personal/payslips")) return "accounting";
+  if (matches("/approvals", "/documents", "/dashboard/management")) return "operations";
+  if (matches("/messages")) return "messaging";
+  if (matches("/reports")) return "reports";
   return null;
 }
 
 export function isPathEnabled(pathname: string, modules: ModuleSettings): boolean {
   const moduleKey = moduleForPath(pathname);
-  return moduleKey ? modules[moduleKey] : true;
+  return moduleKey ? modules[moduleKey] !== false : true;
 }

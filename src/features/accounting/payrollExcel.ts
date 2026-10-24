@@ -1,12 +1,13 @@
 import ExcelJS from "exceljs";
 import { sanitizeSpreadsheetCell } from "@/lib/security/filePolicy";
 import type { PayrollDetail } from "./types";
+import { appConfig } from "@/config/app";
 
 const statusLabels = { draft: "Chờ cập nhật lương", calculated: "Chờ duyệt lương", reviewed: "Chờ duyệt lương", locked: "Đã duyệt lương", published: "Đã duyệt phiếu lương" };
 
 export async function generatePayrollExcel(payroll: PayrollDetail): Promise<Buffer> {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = "Châu Tuấn ERP";
+  workbook.creator = appConfig.name;
   workbook.created = new Date();
   const sheet = workbook.addWorksheet("Bảng lương", {
     views: [{ state: "frozen", ySplit: 3, xSplit: 2 }],

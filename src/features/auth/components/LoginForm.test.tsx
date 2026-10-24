@@ -12,10 +12,12 @@ describe("LoginForm", () => {
     expect(screen.getByRole("button", { name: "Đăng nhập" }).closest("form")).toHaveAttribute("method", "post");
   });
 
-  it("opens personal home on phones and preserves role landing on desktop", () => {
-    const result = { redirectTo: "/dashboard", mobileRedirectTo: "/personal" };
-    expect(postLoginDestination(result, true)).toBe("/personal");
-    expect(postLoginDestination(result, false)).toBe("/dashboard");
+  it("opens the module gateway on both desktop and phones", () => {
+    const result = { redirectTo: "/applications", mobileRedirectTo: "/applications" };
+    expect(postLoginDestination(result, true)).toBe("/applications");
+    expect(postLoginDestination(result, false)).toBe("/applications");
+    expect(postLoginDestination(undefined, true)).toBe("/applications");
+    expect(postLoginDestination(undefined, false)).toBe("/applications");
   });
 
   it("keeps credentials and focuses a readable error when the server returns HTML", async () => {

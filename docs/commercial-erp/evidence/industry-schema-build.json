@@ -1,0 +1,243 @@
+{
+  "generatedAt": "2026-10-24T07:40:39.385Z",
+  "schemaCompiled": true,
+  "entityCount": 115,
+  "migrations": [
+    {
+      "filename": "202609090001_foundation_system_primitives.sql",
+      "sha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829"
+    },
+    {
+      "filename": "202609090002_employee_rbac_foundation.sql",
+      "sha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a"
+    },
+    {
+      "filename": "202610220004_product_trial_requests.sql",
+      "sha256": "182869df25042c132323abd36050e794a28878415e3bd55a5f81127e720ba535"
+    },
+    {
+      "filename": "202610220005_operator_customer_crm.sql",
+      "sha256": "483798e2751f20955a8371629624d3063e25ae843a3f52412240af0135e36925"
+    },
+    {
+      "filename": "202610230001_shared_business_platform.sql",
+      "sha256": "804ae4a514fc54778efda4c166b9b6cdb5ce36ad9455f54c81918921eb4de09a"
+    },
+    {
+      "filename": "202610230002_business_industry_entities.sql",
+      "sha256": "f4bf6d529235ec9ca7ea6cfa4598fa836f446fd0d1d873a8a3f0b79a200e3828"
+    },
+    {
+      "filename": "202610230003_business_record_commands.sql",
+      "sha256": "eb05e1fe49f66d735720505f894f793ebe129c21eb0264dd143eef6e9bcee6cc"
+    },
+    {
+      "filename": "202610230004_business_crm_lifecycle.sql",
+      "sha256": "04854f5a87b498339064fc30e0140f47dbe64e93232b6752add3adb9afd98034"
+    },
+    {
+      "filename": "202610230010_business_sales_fulfillment.sql",
+      "sha256": "c8a44b0358bb8ab2544e1c115ce3fb4546e7aac9f82b523c9080b0113185e21a"
+    },
+    {
+      "filename": "202610230011_business_session_serialization.sql",
+      "sha256": "7294e52fa14563a6ef21732d099395bfe62e698b387bc166a49c45119eb21f80"
+    },
+    {
+      "filename": "202610230012_business_industry_execution.sql",
+      "sha256": "eb2b99412c45b519a9fbd3be8c5a2432dfc0c2b4f009c7c2247304647fd1f6f5"
+    },
+    {
+      "filename": "202610230013_business_industry_readmodels.sql",
+      "sha256": "fb9b106bc4b0241e8cd51cb621f07fdbaf2941dc50d3dfd604bcb30f0479cce7"
+    },
+    {
+      "filename": "202610230014_business_setup_configuration.sql",
+      "sha256": "615d09eff103dc4a277f1c80e28d15cf6cdb1c2f4cf827ee66989e869dbb8cc3"
+    },
+    {
+      "filename": "202610230015_business_misa_finance.sql",
+      "sha256": "aa2fb519bb53d41481d013109daef84f14d7304641dc8b003f002daaf03fbbf4"
+    },
+    {
+      "filename": "202610230016_business_finance_commands.sql",
+      "sha256": "fc3d896460dd550b5bbae03f8dc184cbbcc9a7f75500c86403ea14f48d83c589"
+    },
+    {
+      "filename": "202610230017_business_finance_readmodels.sql",
+      "sha256": "facb119f6c6c92032b229bffc284265f5d6a62f96a09ec34b353f3c6806e4975"
+    },
+    {
+      "filename": "202610230018_business_journal_detail.sql",
+      "sha256": "51b157370a78aa6c290464cf0bf54ee4383961306c8d07e1d9177c005cdd8a9b"
+    },
+    {
+      "filename": "202610230019_business_finance_integrity.sql",
+      "sha256": "664ba5399fe657f753eacbabd05a7d38d16527d1fc7e7d7fc692ee0ac3781538"
+    },
+    {
+      "filename": "202610230020_business_finance_navigation.sql",
+      "sha256": "36abf62e7e59108bd4fd368845b755ff63866e9037eb758f2163f01d4f3ba3f8"
+    },
+    {
+      "filename": "202610230021_business_receivable_source_guard.sql",
+      "sha256": "8de7a72b08a6bda76a3013f9e64b6ce07efcc8c2638c8b428d4718632010fc86"
+    },
+    {
+      "filename": "202610240001_business_operator_accounts.sql",
+      "sha256": "12d7c775f6267e888924875f3a9c5f8d1f98b26116632d4bd2144fe760536355"
+    },
+    {
+      "filename": "202610240002_business_company_dashboard.sql",
+      "sha256": "425826dd365eac2f40602f406b9a95355d8796acf276547261625489911e6f83"
+    },
+    {
+      "filename": "202610240003_business_procurement_matching.sql",
+      "sha256": "f6d021cd525c6b78c38e0b6f34a30065d28521e2316813dd49981e9c7f64482f"
+    },
+    {
+      "filename": "202610240004_business_dashboard_work_priority.sql",
+      "sha256": "1a538f340104874912133a89e71a156865aecdb967c82c7520d40bff570458dc"
+    },
+    {
+      "filename": "202610240005_business_misa_finance_entities.sql",
+      "sha256": "853516970cb7d5692d6d1f534322e5c42ac53082bac80702664865e46fb6ef44"
+    },
+    {
+      "filename": "202610240006_business_misa_command_foundation.sql",
+      "sha256": "a898ee6d42a95326ceb707c376ae359e0bf5a4a600bb4a115ecac7bac175bbd7"
+    },
+    {
+      "filename": "202610240007_business_asset_domain.sql",
+      "sha256": "27d301d44f51a4ee30ed27b0e699630aaff2c813f03862d92cd8c27c14220bda"
+    },
+    {
+      "filename": "202610240008_business_treasury_domain.sql",
+      "sha256": "00c87e0a7c5fde635e3253b146ee1556dc1c71d8566041961a1834e52fc4d354"
+    },
+    {
+      "filename": "202610240009_business_misa_validation.sql",
+      "sha256": "52cdab4f34985eacfa43e1990295c006c97badf29d1cef851518b8fd9ef33fc9"
+    },
+    {
+      "filename": "202610240010_business_invoice_adjustments.sql",
+      "sha256": "abdbe6e4631714c1ced51d816838cda2530d80ec0028c731ee073563728d7948"
+    },
+    {
+      "filename": "202610240011_business_costing_domain.sql",
+      "sha256": "050cf210c5469927e33b4d00cb023355e72fa6ddf1f0ea058149f9fb74b5f2c4"
+    },
+    {
+      "filename": "202610240012_business_stock_valuation.sql",
+      "sha256": "b57ae725af422ee72f0d3ca1f72ecf450cd5c26627c8779c28e7bf66fe60d5c3"
+    },
+    {
+      "filename": "202610240013_business_payroll_statutory.sql",
+      "sha256": "92817197d6b60c4aa4e3963f596a7e42d48c4553504bd919762b48d918f6ee02"
+    },
+    {
+      "filename": "202610240014_business_closing_tax_domain.sql",
+      "sha256": "700b3fef975d08c66d60258ed52d63650363973de105abe35d14fcc70077df60"
+    },
+    {
+      "filename": "202610240015_business_misa_dispatch.sql",
+      "sha256": "bcd524a7224962d5fe2918920b7e2ebd8dcbcf5132a9d59aa0101fe0d6d834f8"
+    },
+    {
+      "filename": "202610240016_business_misa_readmodels.sql",
+      "sha256": "f22e80fd18f19ab9ee961ea820222040eadbd25c00e9b5eacc5aa1fe9bae8eb6"
+    },
+    {
+      "filename": "202610240017_business_misa_source_guards.sql",
+      "sha256": "8ca8a75acd33c626463b202f16acc6bb35ca6e672272e7e5433a25d966be36b7"
+    },
+    {
+      "filename": "202610240018_business_record_detail.sql",
+      "sha256": "05da1d4fc9b0d461ebbe079f2894e08c0ef299e29097adbcc6122455abb64c5b"
+    },
+    {
+      "filename": "202610240019_business_cash_flow_classification.sql",
+      "sha256": "26adc04f9053ad35d2e7ac9ed2200cebba9de557b332fb395661f3b3c7491935"
+    },
+    {
+      "filename": "202610240020_business_material_valuation.sql",
+      "sha256": "3bbae7050925b6f1ec900f17ef9f03c2bb9dce803432a87eadcb7870104d2588"
+    },
+    {
+      "filename": "202610240021_business_payroll_cost_allocation.sql",
+      "sha256": "011942ff34203ad8eaa195c4e3417a6daad3a9dfd16a93eb2a1208257b8507a9"
+    },
+    {
+      "filename": "202610240022_business_access_control.sql",
+      "sha256": "7362f8fd43007be59298e3a4c7fbfc3a921f50a4025e230f18799b700a322952"
+    },
+    {
+      "filename": "202610240023_business_operational_entities.sql",
+      "sha256": "31b7a9c8fdc86cec0dce661603e268b0af1276211cae94d077f7b1d94a0bb6ac"
+    },
+    {
+      "filename": "202610240024_business_operational_calculations.sql",
+      "sha256": "f44eaed30bdb1ed5000267ea28b5f0f55f7425ea341bf32b00aa24eacd0bf7c3"
+    },
+    {
+      "filename": "202610240025_business_operational_commands.sql",
+      "sha256": "f1747d0d0997fadb6bc4372cbfcb29a996a07340946cc2d366255470d6a6fa0f"
+    },
+    {
+      "filename": "202610240026_business_operational_guards.sql",
+      "sha256": "060cf1b6d45232675738c2e6c56bc300ff1379fee45d5c9033453a329d6e134c"
+    },
+    {
+      "filename": "202610240027_business_document_lines.sql",
+      "sha256": "1de4933010262f16dbd547d6c51b5ab5e123e08da6080d91b1824febf6c3fcb1"
+    },
+    {
+      "filename": "202610240028_business_workflow_readmodels.sql",
+      "sha256": "3ba97cbb0c7d8b961c628862fdb836230e26694276006ddbe49843b0e93a4439"
+    },
+    {
+      "filename": "202610240029_business_attendance_entities.sql",
+      "sha256": "303069de1da654c2f10ec7ee5b12a7c63284cb71016e7e46bbd3c6ff3a5a264e"
+    },
+    {
+      "filename": "202610240030_business_attendance_calculations.sql",
+      "sha256": "ba94e8c8c943de7acab81ce82c415a72bbc1d4b3aac767e739edc66d05915eda"
+    },
+    {
+      "filename": "202610240031_business_attendance_commands.sql",
+      "sha256": "759f656ce24fe9056f933fe73bfb2672a642576cf57c3c9bb3c8ceb26e155c75"
+    },
+    {
+      "filename": "202610240032_business_attendance_readmodel.sql",
+      "sha256": "1eb025b763defc494acc1508775a2cabb5adad34c984f52a0401d8f7e16ee03d"
+    },
+    {
+      "filename": "202610240033_business_cost_source_freeze.sql",
+      "sha256": "dd8604056ab6f1d768c4ef01b600dd73e278fd682903a096daecf287a7808f57"
+    },
+    {
+      "filename": "202610240034_business_salary_payments.sql",
+      "sha256": "902ea865f26647ad577cf23dc11796a03fc5665b15f9a4f7a92ebcfcc76a6cc0"
+    },
+    {
+      "filename": "202610240035_business_members_and_audit.sql",
+      "sha256": "4fda5b859d896f7f6297df87c59953e773ef44cbd7036765f0faa9767d7d512e"
+    },
+    {
+      "filename": "202610240036_business_crm_entities.sql",
+      "sha256": "bb985ad42d457d62df5517ebe8f66f38053af95c3d59f6755b4402488459ac93"
+    },
+    {
+      "filename": "202610240037_business_crm_workflows.sql",
+      "sha256": "efd28cc3d22b4ebbc9cc81fcdc7f9e2b8e171a91cb7ff77c2383c288072b92a8"
+    },
+    {
+      "filename": "202610240038_business_crm_workspace.sql",
+      "sha256": "5455dbb61e5baf6b200a92d0472d756f88a25574cddf57086ef9374111a77eeb"
+    }
+  ],
+  "cloudAccess": false,
+  "realCustomerRecordsCreated": false,
+  "syntheticDataPopulated": true,
+  "testSuiteRun": false
+}

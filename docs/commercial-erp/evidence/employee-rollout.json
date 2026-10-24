@@ -1,0 +1,204 @@
+{
+  "generatedAt": "2026-10-22T02:48:16.917Z",
+  "projectRef": "tcjjhxqtreemccdbvyza",
+  "environment": "development",
+  "migration": "202610220001_atomic_employee_profile.sql",
+  "migrationSha256": "c608c3e5b95876709cf4cfa6e8f68cd62a7f2597fa32bd2064011c29bd9ab6c3",
+  "nativePostgres": {
+    "version": "17.10",
+    "passed": 88,
+    "clusterStopped": true
+  },
+  "dryRun": {
+    "pendingMigrations": [
+      "202610220001_atomic_employee_profile.sql"
+    ],
+    "sha256": "c1b62c0677aa367c1c224c0def88729f6d7b936c896bd08294eaddaeb026f212"
+  },
+  "applied": true,
+  "applyLogSha256": "6bbd6def0888250624e93ac10bf9d1fa0aeaa11c0d27561d0d9d0a6ecb3c0d78",
+  "before": {
+    "accounts": 1,
+    "activeAccounts": 1,
+    "commands": [
+      {
+        "anonCanExecute": null,
+        "authenticatedCanExecute": null,
+        "config": null,
+        "exists": false,
+        "hasLifecycleLock": null,
+        "privateHelper": true,
+        "securityDefiner": null,
+        "serviceCanExecute": null,
+        "signature": "public.apply_app_account_status_locked(uuid,text,uuid,text)"
+      },
+      {
+        "anonCanExecute": null,
+        "authenticatedCanExecute": null,
+        "config": null,
+        "exists": false,
+        "hasLifecycleLock": null,
+        "privateHelper": false,
+        "securityDefiner": null,
+        "serviceCanExecute": null,
+        "signature": "public.patch_employee_profile_command(uuid,integer,jsonb,uuid,date,text)"
+      },
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=public"
+        ],
+        "exists": true,
+        "hasLifecycleLock": false,
+        "privateHelper": false,
+        "securityDefiner": true,
+        "serviceCanExecute": true,
+        "signature": "public.provision_app_account(uuid,uuid,text,text,text,text,uuid[],uuid,date)"
+      },
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=public"
+        ],
+        "exists": true,
+        "hasLifecycleLock": false,
+        "privateHelper": false,
+        "securityDefiner": true,
+        "serviceCanExecute": true,
+        "signature": "public.replace_app_account_roles(uuid,uuid[],uuid)"
+      },
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=public"
+        ],
+        "exists": true,
+        "hasLifecycleLock": false,
+        "privateHelper": false,
+        "securityDefiner": true,
+        "serviceCanExecute": true,
+        "signature": "public.set_app_account_status(uuid,text,uuid,text)"
+      }
+    ],
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610210002",
+    "migrationCount": 56,
+    "postgresVersion": "17.11",
+    "projects": 0,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "terminatedEmployees": 0,
+    "warehouses": 0
+  },
+  "after": {
+    "accounts": 1,
+    "activeAccounts": 1,
+    "commands": [
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "hasLifecycleLock": false,
+        "privateHelper": true,
+        "securityDefiner": true,
+        "serviceCanExecute": false,
+        "signature": "public.apply_app_account_status_locked(uuid,text,uuid,text)"
+      },
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "hasLifecycleLock": true,
+        "privateHelper": false,
+        "securityDefiner": true,
+        "serviceCanExecute": true,
+        "signature": "public.patch_employee_profile_command(uuid,integer,jsonb,uuid,date,text)"
+      },
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "hasLifecycleLock": true,
+        "privateHelper": false,
+        "securityDefiner": true,
+        "serviceCanExecute": true,
+        "signature": "public.provision_app_account(uuid,uuid,text,text,text,text,uuid[],uuid,date)"
+      },
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "hasLifecycleLock": true,
+        "privateHelper": false,
+        "securityDefiner": true,
+        "serviceCanExecute": true,
+        "signature": "public.replace_app_account_roles(uuid,uuid[],uuid)"
+      },
+      {
+        "anonCanExecute": false,
+        "authenticatedCanExecute": false,
+        "config": [
+          "search_path=\"\""
+        ],
+        "exists": true,
+        "hasLifecycleLock": true,
+        "privateHelper": false,
+        "securityDefiner": true,
+        "serviceCanExecute": true,
+        "signature": "public.set_app_account_status(uuid,text,uuid,text)"
+      }
+    ],
+    "employeeHistoryEvents": 0,
+    "employees": 1,
+    "inventoryItems": 0,
+    "latestMigration": "202610220001",
+    "migrationCount": 57,
+    "postgresVersion": "17.11",
+    "projects": 0,
+    "settingsVersions": {
+      "appearance": 2,
+      "branding": 3,
+      "dashboard": 1,
+      "localization": 2,
+      "modules": 3,
+      "navigation": 1,
+      "organization": 3,
+      "payslip": 2
+    },
+    "terminatedEmployees": 0,
+    "warehouses": 0
+  },
+  "recordCountsUnchanged": true,
+  "settingsVersionsUnchanged": true,
+  "boundaries": [
+    "Additive function migration on the explicitly selected DTech development project; no production deployment.",
+    "No live employee profile edits, offboarding, account deletion or Auth provisioning were executed for acceptance.",
+    "Counts and function ACLs were verified remotely. Business rollback and concurrency tests ran only on isolated native PostgreSQL.",
+    "Auth compensation, account deletion, sensitive/archive commands, external writers and full Supabase/UAT remain separate release work."
+  ]
+}

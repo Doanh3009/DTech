@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-10-23T07:31:53.729Z",
+  "scope": "Six industry operational workflows, operator configuration synchronization and public industry previews",
+  "lintExitCode": 0,
+  "typecheckExitCode": 0,
+  "webpackBuildExitCode": 0,
+  "schemaEvidence": "industry-schema-build.json",
+  "schemaEntityCount": 25,
+  "browserObservations": [
+    {
+      "width": 1440,
+      "documentWidth": 1430,
+      "viewport": 1440,
+      "ranges": 0
+    },
+    {
+      "width": 768,
+      "documentWidth": 758,
+      "viewport": 768,
+      "ranges": 0
+    },
+    {
+      "width": 390,
+      "documentWidth": 380,
+      "viewport": 390,
+      "ranges": 0
+    },
+    {
+      "trialIndustry": "electronics"
+    }
+  ],
+  "browserCaptures": ".tmp/industry-ui",
+  "testSuiteRun": false,
+  "cloudMigrationsApplied": false,
+  "customerAccountsCreated": false,
+  "cloudBusinessRecordsWritten": false,
+  "source": [
+    {
+      "filename": "src/config/businessIndustries.json",
+      "sha256": "b60033657358c15e8568bc4e6886a2f1df656967d7b74210bf4987a6b0d6f11f"
+    },
+    {
+      "filename": "src/config/businessEntities.json",
+      "sha256": "cb044cf769e1a5d429e73980a41b4d57f83ac1255e00db0ac0d8ca4d519d2567"
+    },
+    {
+      "filename": "src/config/businessWorkflows.json",
+      "sha256": "bab23dbb2c6a87cddf33b41a4c9f0bb1cd610a77a0fe0419b1280a3cfd16d8d0"
+    },
+    {
+      "filename": "src/features/business/businessCatalog.ts",
+      "sha256": "1567700365d34d173413f5a774c80a1382cbb1f687a3220737daed4cde96f6f4"
+    },
+    {
+      "filename": "src/features/business/businessWorkflows.ts",
+      "sha256": "09f97368862302fdeebc48e990e81f7deffbd4391001d1bd267e15f26e6d661b"
+    },
+    {
+      "filename": "src/features/business/BusinessModuleWorkspace.tsx",
+      "sha256": "866bf6fdd778371190fc42c64ec867b4073f3ae94c20592a218d53124bf6eaac"
+    },
+    {
+      "filename": "src/features/business/BusinessRecords.tsx",
+      "sha256": "98a51b55651e92ee74d77286df9b87477b9d8d13696200f47547c4d28503d25d"
+    },
+    {
+      "filename": "src/features/business/BusinessProvisionPanel.tsx",
+      "sha256": "d5b4693e75a7c92f34784d0e0442f7552ce6323df18396d0c5e670a7f444fcda"
+    },
+    {
+      "filename": "src/features/business/BusinessIndustryCatalog.tsx",
+      "sha256": "357a84c692ca3e2a745d6ca59bee8d3def1efa8f062dc6c6630725b06e060469"
+    },
+    {
+      "filename": "src/features/business/IndustryScreenPreview.tsx",
+      "sha256": "282116a093ed4e14c054e36f23738e8046cbdc3dc032da935e66b9397022df5b"
+    },
+    {
+      "filename": "src/features/business/TraceabilityExplorer.tsx",
+      "sha256": "c7052590ec135e760d88d1e1cda1c14bf46b16eec5381df1d45a39ac6ec2b6eb"
+    },
+    {
+      "filename": "src/features/marketing/ImpactExplorer.tsx",
+      "sha256": "3fd924f6d95536d0dcaa57ec5baaaf0709a2fb1b44949da23c09d71fca4a2307"
+    },
+    {
+      "filename": "src/features/marketing/IndustryCases.tsx",
+      "sha256": "6d790f88cfbf5d2115a4495c9aea94b7b11c409bc2c92b7b969e54b5da5e88ad"
+    },
+    {
+      "filename": "src/features/marketing/ModernLandingPage.tsx",
+      "sha256": "09a3020a5bd0de2ff4abeceade80736f8bf5f1fae1e4f6c9866f2c819a13c2b9"
+    }
+  ],
+  "limitations": [
+    "Schema compilation is not workflow acceptance testing.",
+    "Previous unit/native check counts do not certify the new migrations.",
+    "MES device integration, financial general ledger, purchasing and automatic FEFO allocation are outside this change."
+  ]
+}

@@ -31,12 +31,7 @@ export const dashboardWidgetKeys = [
 export type DashboardWidgetKey = (typeof dashboardWidgetKeys)[number];
 
 export const dashboardLandingPages = [
-  "/home",
-  "/dashboard",
-  "/dashboard/hr",
-  "/dashboard/warehouse",
-  "/dashboard/import-export",
-  "/dashboard/management",
+  "/applications",
   "/attendance",
   "/attendance/me",
   "/attendance/history",

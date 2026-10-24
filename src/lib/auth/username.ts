@@ -6,5 +6,5 @@ export function normalizeUsername(value: string): string {
 }
 
 export function internalAuthEmail(username: string): string {
-  return `${normalizeUsername(username)}@accounts.chautuan.local`;
+  return `${normalizeUsername(username)}@accounts.dtech.local`;
 }

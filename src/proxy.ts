@@ -64,6 +64,8 @@ export async function proxy(request: NextRequest) {
 
   const headers = new Headers(request.headers);
   headers.set("x-request-id", requestId);
+  // Overwrite caller input; authorization must use the actual matched route.
+  headers.set("x-dtech-pathname", request.nextUrl.pathname);
   const response = NextResponse.next({ request: { headers } });
   response.headers.set("x-request-id", requestId);
   if (refreshed) {

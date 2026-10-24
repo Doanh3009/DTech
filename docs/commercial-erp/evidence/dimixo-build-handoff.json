@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-10-24T01:40:00.326Z",
+  "buildId": "hnVrKoo_C3oX3lbVSKweR",
+  "optimizedBuild": true,
+  "typecheck": true,
+  "lint": true,
+  "testSuiteRun": false,
+  "observedBusinessScreens": 64,
+  "browserErrors": 0,
+  "failedBusinessApi": 0,
+  "failedOperatorApi": 0,
+  "accountingNavigationMs": [
+    602,
+    562,
+    587,
+    573,
+    535,
+    568
+  ],
+  "url": "http://localhost:3000/trai-nghiem",
+  "credentialsFile": ".tmp/DIMIXO-tai-khoan-trai-nghiem.md"
+}

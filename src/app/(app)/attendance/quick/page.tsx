@@ -6,5 +6,5 @@ import { getRequestUser } from "@/services/auth/getRequestUser";
 export default async function QuickAttendancePage() {
   const user = await getRequestUser();
   if (!user || !canSubmitPersonalAttendance(user.permissions)) return <PermissionDeniedState />;
-  return <AttendanceCameraExperience initialCapture returnHref="/personal" />;
+  return <><h1 className="sr-only">Chấm công nhanh</h1><AttendanceCameraExperience initialCapture returnHref="/personal" /></>;
 }

@@ -36,7 +36,7 @@ describe("dashboard greeting and panels", () => {
     expect(screen.queryByText("Hoạt động gần đây")).not.toBeInTheDocument();
     expect(screen.queryByText("Hoạt động cũ")).not.toBeInTheDocument();
   });
-  it.each([false, true])("places applications before the greeting and business overview (mobile: %s)", (mobile) => {
+  it.each([false, true])("keeps analytics focused without repeating the application strip (mobile: %s)", (mobile) => {
     viewport.mobile = mobile;
     const model: DashboardReadModel = {
       profile: "hr", profileLabel: "Nhân sự", generatedAt: "2026-10-12T01:00:00Z", attention: [],
@@ -47,10 +47,9 @@ describe("dashboard greeting and panels", () => {
     const greeting = screen.getByRole("heading", { name: "Chào, Nguyễn Thị Mai", level: 1 });
     const overview = screen.getByRole("heading", { name: "Quy mô đội ngũ" });
 
-    expect(container.firstElementChild).toBe(launcher);
-    expect(launcher!.compareDocumentPosition(greeting) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(launcher!.compareDocumentPosition(overview) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(screen.getAllByRole("heading", { name: "Ứng dụng của tôi" })).toHaveLength(1);
+    expect(launcher).toBeNull();
+    expect(greeting.compareDocumentPosition(overview) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(screen.queryByRole("heading", { name: "Ứng dụng của tôi" })).not.toBeInTheDocument();
     expect(screen.getByText("Tổng nhân viên")).toBeInTheDocument();
   });
 });

@@ -1,0 +1,3012 @@
+{
+  "capturedAt": "2026-10-21T07:01:43.686Z",
+  "unit": {
+    "passed": 1067,
+    "skipped": 37,
+    "total": 1104
+  },
+  "supplementaryChecks": [
+    {
+      "loginWithoutModuleList": true,
+      "hubWithoutCategoryFilterOrDashboard": true,
+      "productionPreviewHidden": true,
+      "productionTestingHidden": true,
+      "anonymousConfigurationDenied": true,
+      "runtimeErrors": 0
+    }
+  ],
+  "browser": {
+    "checkedStaticRoutes": 142,
+    "passed": 142,
+    "routes": [
+      {
+        "route": "/accounting",
+        "destination": "/accounting/payroll",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/accounting/payroll",
+        "destination": "/accounting/payroll",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/accounting/payslips",
+        "destination": "/accounting/payslips",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/accounting/salaries",
+        "destination": "/accounting/salaries",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/accounting/salary-history",
+        "destination": "/accounting/salary-history",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/applications",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/approvals",
+        "destination": "/approvals/pending",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/approvals/completed",
+        "destination": "/approvals/completed",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/approvals/delegated",
+        "destination": "/approvals/delegated",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/approvals/leave",
+        "destination": "/approvals/leave",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/approvals/pending",
+        "destination": "/approvals/pending",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance",
+        "destination": "/attendance/me",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance/history",
+        "destination": "/attendance/history",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance/logs",
+        "destination": "/attendance/logs",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance/me",
+        "destination": "/attendance/me",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance/notifications",
+        "destination": "/attendance/notifications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance/quick",
+        "destination": "/attendance/quick",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:59:56.343Z"
+      },
+      {
+        "route": "/attendance/records",
+        "destination": "/attendance/records",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance/requests",
+        "destination": "/attendance/requests",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/attendance/today",
+        "destination": "/attendance/today",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/command",
+        "destination": "/search",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/dashboard",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/dashboard/hr",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/dashboard/import-export",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/dashboard/management",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/dashboard/warehouse",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/documents",
+        "destination": "/documents",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/documents/recent",
+        "destination": "/documents/recent",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/documents/shared",
+        "destination": "/documents/shared",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/employees",
+        "destination": "/employees",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/employees/contracts",
+        "destination": "/employees/contracts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/employees/departments",
+        "destination": "/employees/departments",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/employees/insurance",
+        "destination": "/employees/insurance",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/employees/new",
+        "destination": "/employees/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/employees/positions",
+        "destination": "/employees/positions",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/home",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export",
+        "destination": "/import-export/shipments",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/contracts",
+        "destination": "/import-export/contracts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/contracts/new",
+        "destination": "/import-export/contracts/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/customs",
+        "destination": "/import-export/customs",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/documents",
+        "destination": "/import-export/documents",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/partners",
+        "destination": "/import-export/partners",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/shipments",
+        "destination": "/import-export/shipments",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/shipments/new",
+        "destination": "/import-export/shipments/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/import-export/transport",
+        "destination": "/import-export/transport",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave",
+        "destination": "/leave",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/adjustments",
+        "destination": "/leave/adjustments",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/balance",
+        "destination": "/leave/balance",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/balances",
+        "destination": "/leave/balances",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/manage",
+        "destination": "/leave/manage",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/manage/adjustments",
+        "destination": "/leave/manage/adjustments",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/manage/balances",
+        "destination": "/leave/manage/balances",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/my-requests",
+        "destination": "/leave/my-requests",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/new",
+        "destination": "/leave/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/leave/settlements",
+        "destination": "/leave/settlements",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/messages",
+        "destination": "/messages",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/notifications",
+        "destination": "/notifications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/notifications/unread",
+        "destination": "/notifications/unread",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/personal",
+        "destination": "/personal",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/personal/payslips",
+        "destination": "/personal/payslips",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/profile",
+        "destination": "/profile",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/project-monitoring",
+        "destination": "/project-monitoring",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/project-monitoring/issues",
+        "destination": "/project-monitoring/issues",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/project-monitoring/recent",
+        "destination": "/project-monitoring/recent",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/projects",
+        "destination": "/projects",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/projects/new",
+        "destination": "/projects/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/projects/updates",
+        "destination": "/projects/updates",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/reports",
+        "destination": "/reports",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/search",
+        "destination": "/search",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/search/results",
+        "destination": "/search/results",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings",
+        "destination": "/settings",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/approval-delegations",
+        "destination": "/settings/approval-delegations",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/approval-workflows",
+        "destination": "/settings/approval-workflows",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/attendance",
+        "destination": "/settings/attendance",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/attendance/calendar",
+        "destination": "/settings/attendance/calendar",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/attendance/locations",
+        "destination": "/settings/attendance/locations",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/attendance/policies",
+        "destination": "/settings/attendance/policies",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/attendance/shifts",
+        "destination": "/settings/attendance/shifts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/audit-log",
+        "destination": "/system-admin/audit",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/export-templates",
+        "destination": "/settings/export-templates",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/import-export",
+        "destination": "/settings/import-export",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:59:56.343Z"
+      },
+      {
+        "route": "/settings/integrations",
+        "destination": "/settings/integrations",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/api-docs",
+        "destination": "/settings/integrations/api-docs",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/api-keys",
+        "destination": "/settings/integrations/api-keys",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/attendance-devices",
+        "destination": "/settings/integrations/attendance-devices",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/conflicts",
+        "destination": "/settings/integrations/conflicts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/imports",
+        "destination": "/settings/integrations/imports",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/service-accounts",
+        "destination": "/settings/integrations/service-accounts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/webhook-deliveries",
+        "destination": "/settings/integrations/webhook-deliveries",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/integrations/webhooks",
+        "destination": "/settings/integrations/webhooks",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/leave",
+        "destination": "/settings/leave",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/leave/policies",
+        "destination": "/settings/leave/policies",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/leave/types",
+        "destination": "/settings/leave/types",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/leave/workflows",
+        "destination": "/settings/leave/workflows",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/notifications",
+        "destination": "/settings/notifications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/organization",
+        "destination": "/system-admin/organization",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/permissions",
+        "destination": "/settings/roles",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/roles",
+        "destination": "/settings/roles",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/users",
+        "destination": "/settings/users",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/settings/warehouse",
+        "destination": "/settings/warehouse",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/shifts",
+        "destination": "/shifts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/shifts/calendar",
+        "destination": "/shifts/calendar",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin",
+        "destination": "/system-admin/modules",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/appearance",
+        "destination": "/system-admin/appearance",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/attendance-checklist",
+        "destination": "/system-admin/attendance-checklist",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/audit",
+        "destination": "/system-admin/audit",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/branding",
+        "destination": "/system-admin/branding",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/config-history",
+        "destination": "/system-admin/config-history",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/dashboard",
+        "destination": "/system-admin/navigation",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/design-dna",
+        "destination": "/system-admin/design-dna",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/localization",
+        "destination": "/system-admin/localization",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/modules",
+        "destination": "/system-admin/modules",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/navigation",
+        "destination": "/system-admin/navigation",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/notices",
+        "destination": "/system-admin/notices",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/operations",
+        "destination": "/system-admin/operations",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/organization",
+        "destination": "/system-admin/organization",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/payslip-template",
+        "destination": "/system-admin/payslip-template",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/system-admin/security",
+        "destination": "/system-admin/security",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/timesheets",
+        "destination": "/timesheets",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/timesheets/adjustments",
+        "destination": "/timesheets/adjustments",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/timesheets/exceptions",
+        "destination": "/timesheets/exceptions",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/timesheets/matrix",
+        "destination": "/timesheets/matrix",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse",
+        "destination": "/warehouse",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/adjustments",
+        "destination": "/warehouse/adjustments",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/adjustments/new",
+        "destination": "/warehouse/adjustments/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/inventory",
+        "destination": "/warehouse/inventory",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/issues",
+        "destination": "/warehouse/issues",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/issues/new",
+        "destination": "/warehouse/issues/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/items",
+        "destination": "/warehouse/items",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/items/new",
+        "destination": "/warehouse/items/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/ledger",
+        "destination": "/warehouse/ledger",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/receipts",
+        "destination": "/warehouse/receipts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/receipts/new",
+        "destination": "/warehouse/receipts/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/stock-counts",
+        "destination": "/warehouse/stock-counts",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/stock-counts/new",
+        "destination": "/warehouse/stock-counts/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/transfers",
+        "destination": "/warehouse/transfers",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/transfers/new",
+        "destination": "/warehouse/transfers/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/warehouses",
+        "destination": "/warehouse/warehouses",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/warehouse/warehouses/new",
+        "destination": "/warehouse/warehouses/new",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/worker-attendance",
+        "destination": "/worker-attendance",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/worker-attendance/today",
+        "destination": "/worker-attendance/today",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      },
+      {
+        "route": "/workspace",
+        "destination": "/applications",
+        "status": 200,
+        "passed": true,
+        "runtimeErrors": 0,
+        "apiFailures": [],
+        "viewports": [
+          {
+            "width": 1440,
+            "documentWidth": 1430,
+            "horizontalOverflow": false
+          },
+          {
+            "width": 390,
+            "documentWidth": 380,
+            "horizontalOverflow": false
+          }
+        ],
+        "checkedAt": "2026-10-21T06:44:52.970Z"
+      }
+    ]
+  },
+  "boundaries": [
+    "No production deployment or migration was executed.",
+    "No operational documents were created by browser audit.",
+    "Dynamic business details, adversarial cross-role flows, concurrency, UAT and restore drill remain separate acceptance gates.",
+    "Screenshots and raw logs remain local; this artifact omits account names, cookies, tokens and record bodies."
+  ]
+}

@@ -207,6 +207,7 @@ export interface EmployeeAccountView {
 
 export interface EmployeeSummary {
   id: string;
+  rowVersion: number;
   avatarAssetId?: string;
   employeeCode: string;
   fullName: string;
@@ -292,6 +293,7 @@ export interface EmployeeSnapshot {
 
 export interface AppAccountRecord {
   id: string;
+  deletedAt?: string;
   employeeId?: string;
   displayName: string;
   username?: string;

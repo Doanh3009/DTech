@@ -1,9 +1,7 @@
 "use client";
 
-import type {} from "react/canary";
-import { ViewTransition, useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
 
 import type { AuthenticatedUser } from "@/lib/auth/permissions";
 import { AppHeader, isMobileHeaderRootScreen } from "@/components/layout/AppHeader";
@@ -16,26 +14,16 @@ import { SystemNoticeBanner } from "@/features/shared-platforms/components/Syste
 import { resolveLandingPage } from "@/features/dashboard/registry";
 import { getBackHref } from "@/config/routeRegistry";
 import { RealtimeProvider, useRealtimeConnectionState } from "@/components/providers/RealtimeProvider";
-import { can } from "@/lib/auth/permissions";
 import { CurrentUserProvider } from "@/components/providers/CurrentUserProvider";
 import { visibleApplications } from "@/config/moduleRegistry";
 import { installBackHistory } from "@/lib/navigation/backHistory";
 import { readWorkspacePreferences, type WorkspacePreferences } from "@/lib/ui/workspacePreferencesRequest";
-import { animatePageEntry, supportsPageViewTransitions } from "@/lib/ui/pageEntryMotion";
 
 const INACTIVITY_TIMEOUT_MS = 12 * 60 * 60 * 1000;
-const ChatDockLauncher = dynamic(() => import("@/features/messaging/ChatDockLauncher").then((module) => module.ChatDockLauncher), { ssr: false });
-
-/** This boundary adds no DOM and never keys or remounts the current page. */
-function WorkspacePageMotion({ children, instant = false }: { children: ReactNode; instant?: boolean }) {
-  // Next's App Router supplies React canary. Keep plain React consumers usable.
-  if (!ViewTransition) return children;
-  return <ViewTransition default="none" name="workspace-content" update={instant ? "none" : "workspace-page-motion"}>{children}</ViewTransition>;
-}
 
 function AppShellContent({ children, user, testEnvironment }: { children: ReactNode; user: AuthenticatedUser; testEnvironment?: string }) {
   const pathname = usePathname();
-  const isShipmentWorkspace = /^\/import-export\/shipments\/[^/]+\/(overview|lines|containers|documents|customs|receiving|history)$/.test(pathname);
+  const isModuleHub = pathname === "/applications";
   const router = useRouter();
   useLayoutEffect(() => installBackHistory(user.id), [user.id]);
   const { settings } = useSystemSettings();
@@ -45,17 +33,6 @@ function AppShellContent({ children, user, testEnvironment }: { children: ReactN
   const [pageTitles, setPageTitles] = useState<{ pathname: string; pageTitle?: string; documentTitle?: string }>();
   const shellRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
-  useLayoutEffect(() => {
-    const main = mainRef.current;
-    // Native snapshots animate both screens after React commits navigation;
-    // running an entry animation too would produce two competing movements.
-    if (!main || isShipmentWorkspace || supportsPageViewTransitions()) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const animation = animatePageEntry(main, reduced.matches);
-    const stop = () => { if (reduced.matches) animation?.cancel(); };
-    reduced.addEventListener("change", stop);
-    return () => { animation?.cancel(); reduced.removeEventListener("change", stop); };
-  }, [pathname, isShipmentWorkspace]);
   const preferencesRef = useRef<WorkspacePreferences | undefined>(undefined);
   const connectionState = useRealtimeConnectionState();
   const isPackageRoute = /^\/projects\/[^/]+\/(?:today|progress|team|profile|documents|updates)$/.test(pathname);
@@ -63,11 +40,9 @@ function AppShellContent({ children, user, testEnvironment }: { children: ReactN
   // BackLink (for a wizard or a record with a specific parent) wins, so users
   // never see two competing return actions.
   const backHref = isPackageRoute ? "/projects" : getBackHref(pathname);
-  const hasChatAccess = can(user.permissions, "chat.access");
   const isDashboardRoute = pathname === "/dashboard" || pathname.startsWith("/dashboard/");
   const contentClassName = [
     "app-content",
-    hasChatAccess && "app-content--chat",
     isDashboardRoute && "app-content--dashboard",
     isPackageRoute && "app-content--package",
     /^\/messages\/[^/]+/.test(pathname) && "app-content--conversation",
@@ -231,22 +206,21 @@ function AppShellContent({ children, user, testEnvironment }: { children: ReactN
   }, [pathname]);
 
   return (
-    <div className="app-shell" ref={shellRef}>
+    <div className={`app-shell${isModuleHub ? " app-shell--module-hub" : ""}`} ref={shellRef}>
       <a className="app-shell__skip-link" href="#main-content">Đến nội dung chính</a>
-      <AppRail
+      {!isModuleHub ? <AppRail
         collapsed={collapsed}
         onCollapsedChange={changeSidebarState}
         pathname={pathname}
         user={user}
-      />
+      /> : null}
       <div className={contentClassName} data-mobile-title-in-bar={Boolean(pageTitles?.pathname === pathname && pageTitles.pageTitle && !isMobileHeaderRootScreen(pathname))}>
-        <AppHeader backHrefOverride={localBackHref} connectionState={connectionState} documentTitleOverride={pageTitles?.pathname === pathname ? pageTitles.documentTitle : undefined} homeHref={resolveLandingPage(user, settings.dashboard)} onSidebarToggle={() => changeSidebarState(!collapsed)} pageTitleOverride={pageTitles?.pathname === pathname ? pageTitles.pageTitle : undefined} pathname={pathname} sidebarCollapsed={collapsed} testEnvironment={testEnvironment} user={user} />
+        <AppHeader backHrefOverride={localBackHref} connectionState={connectionState} documentTitleOverride={pageTitles?.pathname === pathname ? pageTitles.documentTitle : undefined} homeHref="/applications" onSidebarToggle={isModuleHub ? undefined : () => changeSidebarState(!collapsed)} pageTitleOverride={pageTitles?.pathname === pathname ? pageTitles.pageTitle : undefined} pathname={pathname} sidebarCollapsed={collapsed} testEnvironment={testEnvironment} user={user} />
         <SystemNoticeBanner />
-        <WorkspacePageMotion instant={isShipmentWorkspace}><main className="page-main" id="main-content" ref={mainRef} tabIndex={-1}>
+        <main className="page-main" id="main-content" ref={mainRef} tabIndex={-1}>
           {backHref && !localBackHref ? <nav aria-label="Điều hướng quay lại" className="page-context-navigation"><BackLink href={backHref} label={backHref === "/projects" ? "Danh sách gói" : "Trở lại"} /></nav> : null}
           {children}
-        </main></WorkspacePageMotion>
-        {hasChatAccess ? <ChatDockLauncher /> : null}
+        </main>
       </div>
     </div>
   );

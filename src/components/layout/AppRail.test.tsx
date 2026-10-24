@@ -23,6 +23,12 @@ const user: AuthenticatedUser = {
 };
 
 describe("AppRail", () => {
+  it("keeps the gateway in the brand area without repeating the module heading", () => {
+    render(<AppRail collapsed={false} onCollapsedChange={vi.fn()} pathname="/employees" user={user} />);
+    expect(screen.getByRole("link", { name: "Tất cả module" }).closest(".app-rail__brand")).not.toBeNull();
+    expect(screen.queryByText("Nhân sự")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Tất cả module" }).textContent).toBe("");
+  });
   it("contains only the current module navigation in the sidebar", () => {
     const onCollapsedChange = vi.fn();
     render(<AppRail collapsed={false} onCollapsedChange={onCollapsedChange} pathname="/employees" user={user} />);

@@ -32,11 +32,11 @@ describe("permission-driven dashboard registry", () => {
 
   it("falls back to an accessible landing page", () => {
     const settings = structuredClone(defaultDashboardSettings);
-    settings.presets.find((preset) => preset.profile === "employee")!.landingPage = "/dashboard/management";
-    expect(resolveLandingPage(user(["dashboard.view"]), settings)).toBe("/dashboard");
-    expect(resolveLandingPage(user(["dashboard.view", "employee.view", "warehouse.view"]), settings)).toBe("/dashboard");
-    expect(resolveLandingPage(user(["timesheet.view_all"]), settings)).toBe("/timesheets/matrix");
-    expect(resolveLandingPage(user(["salary.history.view"]), settings)).toBe("/accounting/salary-history");
+    settings.presets.find((preset) => preset.profile === "employee")!.landingPage = "/warehouse/inventory";
+    expect(resolveLandingPage(user(["dashboard.view"]), settings)).toBe("/applications");
+    expect(resolveLandingPage(user(["dashboard.view", "employee.view", "warehouse.view"]), settings)).toBe("/applications");
+    expect(resolveLandingPage(user(["timesheet.view_all"]), settings)).toBe("/applications");
+    expect(resolveLandingPage(user(["salary.history.view"]), settings)).toBe("/applications");
   });
 
   it("contains no destructive command types", () => {

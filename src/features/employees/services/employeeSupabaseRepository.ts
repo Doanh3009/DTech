@@ -217,6 +217,7 @@ function mapHistoryEvent(row: Row): EmployeeHistoryEvent {
 }
 
 function mapAccount(row: Row, roleIds: string[]): AppAccountRecord {
+  const metadata = row.metadata && typeof row.metadata === "object" && !Array.isArray(row.metadata) ? row.metadata as Row : {};
   return {
     id: requiredText(row, "id"),
     employeeId: text(row, "employee_id"),
@@ -225,6 +226,7 @@ function mapAccount(row: Row, roleIds: string[]): AppAccountRecord {
     loginEmail: text(row, "primary_email"),
     loginPhone: text(row, "phone"),
     employeeCodeIdentifier: text(row, "employee_code_identifier"),
+    deletedAt: text(metadata, "deleted_at"),
     status: requiredText(row, "status") as AppAccountRecord["status"],
     roleIds,
     activatedAt: text(row, "activated_at"),

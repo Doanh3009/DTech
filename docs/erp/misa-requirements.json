@@ -1,0 +1,1543 @@
+{
+  "sourceVersion": "2.0 / 23-10-2026",
+  "companion": "De_cuong_dac_ta_nghiep_vu_ERP_tham_chieu_MISA_Chau_Tuan.docx",
+  "scope": "28 groups, 20 finance areas, 12 cross-domain workflows, 22 forms",
+  "completionRule": "Schema, CRUD, screenshots or seeded data alone do not establish completion. Each requirement needs its workflow, invariants, authorization, evidence and known external dependencies.",
+  "requirements": [
+    {
+      "id": "2.01",
+      "title": "C01 – Cơ cấu tổ chức, người dùng và đăng nhập  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 182,
+      "requirements": [
+        "Mục đích: Quản trị doanh nghiệp/chi nhánh/phòng ban, người dùng, vai trò, chính sách truy cập.",
+        "Vai trò chính: Quản trị hệ thống; trưởng bộ phận; kiểm toán",
+        "Màn hình cần xây: Đơn vị, phòng ban, vị trí, hồ sơ tài khoản, phiên đăng nhập, ủy quyền",
+        "Chức năng/Thao tác: Thiết lập công ty, chi nhánh, phòng ban, chức danh; mời tài khoản; khóa/mở; ủy quyền; SSO/MFA [ĐX].",
+        "Thông tin tối thiểu: Mã đơn vị; mã nhân viên; email/login; trạng thái; vai trò; hiệu lực từ/đến; phòng ban; quản lý trực tiếp",
+        "Thực thể dữ liệu: Organization, OrgUnit, Position, Employee, User, UserSession, Delegation",
+        "Luồng trạng thái: Mời → Hoạt động → Tạm khóa/Ngừng",
+        "Business rule cốt lõi: Mỗi tài khoản gắn với nhân viên/đối tượng rõ ràng; tự động thu hồi quyền khi nghỉ việc; không dùng chung tài khoản.",
+        "Ngoại lệ và tình huống khó: Cấm chuyển đơn vị khi có phân quyền công trình đang hiệu lực mà chưa đánh giá tác động; khóa tài khoản không xóa audit.",
+        "Đề xuất test nghiệm thu: Nhân sự nghỉ việc: khóa user nhưng các chứng từ đã tạo vẫn xem được bởi người có quyền.",
+        "Báo cáo/đầu ra: Danh sách user/quyền; đăng nhập bất thường; quyền được cấp.",
+        "Phân hệ liên thông: H02, C03, mọi phân hệ",
+        "[CaptionSmall] Nguồn liên quan: S01  |  Phạm vi: [TH]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.02",
+      "title": "C02 – Danh mục và mã dùng chung (MDM)  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 196,
+      "requirements": [
+        "Mục đích: Chuẩn hóa danh mục không trùng mã: đối tượng, công trình, kho, vật tư, đơn vị tính, chi phí.",
+        "Vai trò chính: Quản trị hệ thống; trưởng bộ phận; kiểm toán",
+        "Màn hình cần xây: Danh mục vật tư, kho, mã công trình, nhà cung cấp, đơn vị tính, phân loại chi phí",
+        "Chức năng/Thao tác: Quy định mã/đơn vị; nhập Excel có xác thực; alias và gộp trùng; lịch sử hiệu lực; đồng bộ tham chiếu.",
+        "Thông tin tối thiểu: Mã duy nhất; tên; nhóm; ĐVT cơ sở; ĐVT quy đổi; ngày hiệu lực; chủ sở hữu dữ liệu; trạng thái",
+        "Thực thể dữ liệu: Customer, Supplier, Material, UOM, Warehouse, Project, CostCode, TaxCode",
+        "Luồng trạng thái: Nháp → Hoạt động → Ngưng dùng",
+        "Business rule cốt lõi: Không xóa khi đã có chứng từ; thay đổi đơn vị tính phải có quy đổi; không cho mã trùng trong công ty.",
+        "Ngoại lệ và tình huống khó: Cấm xóa danh mục có chứng từ; nhập trùng mã phải hiển thị xung đột; thay đổi quy đổi cần lịch sử.",
+        "Đề xuất test nghiệm thu: Nhập Excel có vật tư trùng mã và tên gần giống phải được báo và xử lý từng dòng.",
+        "Báo cáo/đầu ra: Trùng lặp mã; danh mục lỗi; vật tư không có đơn vị.",
+        "Phân hệ liên thông: Mọi phân hệ",
+        "[CaptionSmall] Nguồn liên quan: S02  |  Phạm vi: [ĐX]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.03",
+      "title": "C03 – Phân quyền, phạm vi dữ liệu và audit  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 210,
+      "requirements": [
+        "Mục đích: Gán quyền hành động theo doanh nghiệp, phòng ban, dự án, công việc và vai trò.",
+        "Vai trò chính: Quản trị hệ thống; trưởng bộ phận; kiểm toán",
+        "Màn hình cần xây: Vai trò, quyền chức năng, quyền dữ liệu, quyền ngoại lệ, lịch sử cấp quyền",
+        "Chức năng/Thao tác: Role-based permission; scope theo đơn vị/công trình; người tạo, người giao, người xem; lịch sử quyền và thay đổi.",
+        "Thông tin tối thiểu: Mã vai trò; resource; action; scope; người được cấp; người duyệt; ngày hết hiệu lực; lý do",
+        "Thực thể dữ liệu: Role, Permission, RoleGrant, RecordACL, AuditLog",
+        "Luồng trạng thái: Đang áp dụng → Thu hồi",
+        "Business rule cốt lõi: Quyền báo cáo tách quyền chứng từ; dữ liệu lương, tài chính, hồ sơ sức khỏe được bảo vệ đặc biệt.",
+        "Ngoại lệ và tình huống khó: Kiểm soát 4 mắt; quyền nhạy cảm hết hạn; chặn truy vấn trực tiếp API ngoài phạm vi, không chỉ ẩn UI.",
+        "Đề xuất test nghiệm thu: Nhân viên công trình A không xem được lương và phiếu chi công trình B bằng URL/API.",
+        "Báo cáo/đầu ra: Báo cáo quyền theo user/role; nhật ký sửa chứng từ.",
+        "Phân hệ liên thông: C01, O02, H04, F02",
+        "[CaptionSmall] Nguồn liên quan: S03  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.04",
+      "title": "C04 – Workflow và biểu mẫu điện tử  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 224,
+      "requirements": [
+        "Mục đích: Cho phép mô hình hóa đề nghị, phê duyệt tuần tự/song song, điều kiện, chuyển bước, phiên bản.",
+        "Vai trò chính: Quản trị hệ thống; trưởng bộ phận; kiểm toán",
+        "Màn hình cần xây: Thư viện mẫu, thiết kế form, thiết kế luồng, hộp thư duyệt, lịch sử",
+        "Chức năng/Thao tác: Thiết kế form; schema field; bước xử lý; người duyệt theo vị trí/quản lý; SLA; uỷ quyền; trả về/từ chối; mẫu in.",
+        "Thông tin tối thiểu: Mã biểu mẫu; phiên bản; loại trường; biểu thức điều kiện; thứ tự duyệt; approver; SLA; escalation",
+        "Thực thể dữ liệu: WorkflowDefinition, WorkflowVersion, FormSchema, Run, Step, Decision",
+        "Luồng trạng thái: Bản nháp → Ban hành; lượt chạy: Nháp → Chờ duyệt → Đã duyệt/Từ chối/Đã hủy",
+        "Business rule cốt lõi: Luồng đã chạy giữ version cũ; không sửa chứng từ đã duyệt âm thầm; có lý do từ chối và xử lý quá hạn.",
+        "Ngoại lệ và tình huống khó: Không thay đổi phiên bản quy trình đang chạy; người duyệt có thể vắng mặt/ủy quyền nhưng lưu cả 2 danh tính.",
+        "Đề xuất test nghiệm thu: Luồng mua hàng trả về bổ sung phải trở về đúng người, lưu lý do và chạy lại nhánh theo thiết lập.",
+        "Báo cáo/đầu ra: SLA duyệt; tồn đọng; số lần trả về; thời gian xử lý.",
+        "Phân hệ liên thông: S03, O03, O06, H03, F01",
+        "[CaptionSmall] Nguồn liên quan: S04  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.05",
+      "title": "C05 – Tài liệu, văn thư và quản lý phiên bản  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 238,
+      "requirements": [
+        "Mục đích: Lưu văn bản đến/đi, tài liệu công trình, hồ sơ mẫu, cấp phát quyền và tìm kiếm.",
+        "Vai trò chính: Quản trị hệ thống; trưởng bộ phận; kiểm toán",
+        "Màn hình cần xây: Hộp thư đến/đi, thư mục công trình, phiên bản file, phát hành, tìm kiếm",
+        "Chức năng/Thao tác: Cấp số văn bản; hồ sơ vụ việc; upload; phân loại; metadata; version; xem/duyệt/ban hành; link chứng từ.",
+        "Thông tin tối thiểu: Loại tài liệu; số hiệu; trích yếu; công trình; mã văn bản; ngày hiệu lực; file hash; mật độ truy cập",
+        "Thực thể dữ liệu: Document, DocumentVersion, Folder, Correspondence, RetentionPolicy",
+        "Luồng trạng thái: Soạn → Chờ duyệt → Ban hành → Lưu trữ",
+        "Business rule cốt lõi: Tài liệu ký không sửa file gốc; cấu hình thời hạn lưu giữ; cho phép kiểm tra hash.",
+        "Ngoại lệ và tình huống khó: Không xóa tài liệu đã phát hành; xem file phải kiểm tra quyền; thay file đã ký = phiên bản mới.",
+        "Đề xuất test nghiệm thu: Thay bản vẽ Rev A bằng Rev B vẫn tìm thấy bản cũ cùng nhật ký phát hành.",
+        "Báo cáo/đầu ra: Văn bản chờ xử lý; tài liệu quá hạn; hồ sơ công trình thiếu file.",
+        "Phân hệ liên thông: C04, O01, F04",
+        "[CaptionSmall] Nguồn liên quan: S05  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.06",
+      "title": "C06 – Thông báo, lịch họp và cộng tác  [P2]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 252,
+      "requirements": [
+        "Mục đích: Nhắc việc, lịch họp, cuộc trao đổi nội bộ, thông báo theo quy trình.",
+        "Vai trò chính: Quản trị hệ thống; trưởng bộ phận; kiểm toán",
+        "Màn hình cần xây: Thông báo, lịch họp, đặt phòng, bài viết, danh sách người nhận",
+        "Chức năng/Thao tác: Lịch/phòng họp, người tham gia; tin nội bộ; email/notification; nhắc hạn; xác nhận đã đọc.",
+        "Thông tin tối thiểu: Chủ đề; start/end; timezone; tài nguyên; người tổ chức; người tham gia; trạng thái",
+        "Thực thể dữ liệu: Notification, Meeting, Room, Post, Comment, Subscription",
+        "Luồng trạng thái: Lên lịch → Xác nhận/Chờ duyệt → Hoàn tất/Hủy",
+        "Business rule cốt lõi: Không cho đặt trùng tài nguyên; thông báo có deep-link đến bản ghi có quyền xem.",
+        "Ngoại lệ và tình huống khó: Cảnh báo đặt trùng phòng; không gửi thông báo chứa lộ dữ liệu nhạy cảm; chế độ nhắc lại idempotent.",
+        "Đề xuất test nghiệm thu: Hai cuộc họp chồng thời gian cùng phòng phải có cảnh báo và phương án chọn phòng khác.",
+        "Báo cáo/đầu ra: Lịch phòng; thông báo chưa đọc; số việc trễ hạn.",
+        "Phân hệ liên thông: C01, C04, O02",
+        "[CaptionSmall] Nguồn liên quan: S06  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.07",
+      "title": "C07 – BI, dashboard, báo cáo và tìm kiếm  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 266,
+      "requirements": [
+        "Mục đích: Báo cáo có bộ lọc, phân tích đa chiều, liên kết về chứng từ gốc.",
+        "Vai trò chính: Quản trị hệ thống; trưởng bộ phận; kiểm toán",
+        "Màn hình cần xây: Danh sách dashboard, cấu hình widget, bộ lọc, truy vấn số liệu, lịch sử xuất",
+        "Chức năng/Thao tác: Dashboard role-based; biểu đồ; pivot; xuất Excel/PDF; lưu bộ lọc; lịch gửi báo cáo [ĐX].",
+        "Thông tin tối thiểu: Metric id; tên KPI; định nghĩa; đơn vị; nguồn; chu kỳ cập nhật; owner; quyền xem",
+        "Thực thể dữ liệu: MetricDefinition, DataMart, Dashboard, Widget, ReportRun",
+        "Luồng trạng thái: Đang soạn → Công bố → Lưu trữ",
+        "Business rule cốt lõi: Số tổng hợp phải drill-down tới giao dịch; timestamp làm mới dữ liệu; áp dụng quyền truy cập theo dòng.",
+        "Ngoại lệ và tình huống khó: Tính tổng phải đối chiếu số dòng nguồn; báo cáo export áp dụng quyền cùng UI; ghi độ trễ dữ liệu.",
+        "Đề xuất test nghiệm thu: Trưởng công trình chỉ thấy số liệu công trình được giao; drill-down ra đúng chứng từ gốc.",
+        "Báo cáo/đầu ra: Tổng quan điều hành; cảnh báo chi phí/lương/kho.",
+        "Phân hệ liên thông: Mọi phân hệ",
+        "[CaptionSmall] Nguồn liên quan: S07  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.08",
+      "title": "S01 – Marketing & khách hàng tiềm năng  [P2]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 280,
+      "requirements": [
+        "Mục đích: Thu lead từ form website/kênh marketing, phân nguồn, bàn giao sales.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Chiến dịch, form lead, hộp lead, phân công, nguồn và tỷ lệ chuyển đổi",
+        "Chức năng/Thao tác: Quản lý chiến dịch; UTM/nguồn; lead; chống trùng; scoring [ĐX]; phân công; chuyển thành khách hàng/cơ hội.",
+        "Thông tin tối thiểu: Nguồn/UTM; họ tên; doanh nghiệp; email; điện thoại; sản phẩm; consent; owner; stage",
+        "Thực thể dữ liệu: Campaign, Lead, LeadSource, FormSubmission",
+        "Luồng trạng thái: Mới → Đang chăm sóc → Đủ điều kiện/Không phù hợp",
+        "Business rule cốt lõi: Số điện thoại/email chống trùng theo quy tắc; consent marketing; lưu nguồn thực tế.",
+        "Ngoại lệ và tình huống khó: Lead trùng phải gợi ý hợp nhất; không tự bật consent; liên hệ chưa có quyền nhận thông tin không gửi quảng cáo.",
+        "Đề xuất test nghiệm thu: Lead từ form website trùng email tạo thông báo trùng, không ghi đè lịch sử xử lý.",
+        "Báo cáo/đầu ra: Lead theo kênh; chuyển đổi; chi phí/lead.",
+        "Phân hệ liên thông: S02, C07",
+        "[CaptionSmall] Nguồn liên quan: S08  |  Phạm vi: [TH]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.09",
+      "title": "S02 – CRM, khách hàng và cơ hội bán hàng  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 294,
+      "requirements": [
+        "Mục đích: Theo dõi khách hàng, liên hệ, cơ hội, công việc chăm sóc, pipeline.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Khách hàng, người liên hệ, cơ hội, phễu, lịch chăm sóc, đối thủ",
+        "Chức năng/Thao tác: Lead/contact/account; nhóm khách; ghi lịch sử gọi/meeting; cơ hội, xác suất, stage; nhắc chăm sóc.",
+        "Thông tin tối thiểu: Mã khách; MST; địa chỉ; PIC; giá trị cơ hội; xác suất; ngày dự kiến; giai đoạn; owner",
+        "Thực thể dữ liệu: Account, Contact, Opportunity, Activity, PipelineStage",
+        "Luồng trạng thái: Lead → Cơ hội → Thắng/Thua",
+        "Business rule cốt lõi: Mọi cơ hội phải có owner; mất cơ hội có lý do; quyền khách hàng theo bộ phận.",
+        "Ngoại lệ và tình huống khó: Không chuyển thắng khi thiếu khách hàng và phê duyệt giá; lưu reason khi đóng thua; lịch sử stage.",
+        "Đề xuất test nghiệm thu: Sales chuyển cơ hội thành thắng và tạo hồ sơ báo giá/hợp đồng nhưng không tạo trùng công ty.",
+        "Báo cáo/đầu ra: Pipeline; doanh số dự kiến; tỷ lệ thắng; hoạt động sales.",
+        "Phân hệ liên thông: S01, S03, O01",
+        "[CaptionSmall] Nguồn liên quan: S08  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.10",
+      "title": "S03 – Báo giá, hợp đồng và đơn hàng  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 308,
+      "requirements": [
+        "Mục đích: Từ yêu cầu chào giá tới báo giá có phiên bản, hợp đồng và đơn hàng.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Báo giá BOQ, phiên bản, hợp đồng, phụ lục, đơn hàng, tiến độ thanh toán",
+        "Chức năng/Thao tác: Lập BOQ/hạng mục; duyệt giá; gửi báo giá; hiệu lực; tạo HĐ/PO khách; phụ lục; điều chỉnh tiến độ thanh toán.",
+        "Thông tin tối thiểu: Mã báo giá; phiên bản; hạng mục; khối lượng; ĐVT; đơn giá; chiết khấu; VAT cấu hình; hiệu lực",
+        "Thực thể dữ liệu: Quotation, QuoteLine, Contract, ContractAmendment, SalesOrder",
+        "Luồng trạng thái: Báo giá: Nháp → Duyệt → Gửi → Chấp nhận/Thất bại/Hết hạn",
+        "Business rule cốt lõi: Chốt giá dựa trên phiên bản được chấp nhận; hợp đồng link quote/opportunity; thay đổi phải làm phụ lục.",
+        "Ngoại lệ và tình huống khó: Bản chốt bất biến; thay đổi hợp đồng qua phụ lục; số lượng nghiệm thu lũy kế theo version.",
+        "Đề xuất test nghiệm thu: Duyệt báo giá V2, khách xác nhận: hợp đồng phải tham chiếu đúng V2, không V1.",
+        "Báo cáo/đầu ra: Giá trị ký mới; hợp đồng hiệu lực; doanh thu kế hoạch.",
+        "Phân hệ liên thông: S02, O01, F02, F04",
+        "[CaptionSmall] Nguồn liên quan: S08  |  Phạm vi: [TH]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.11",
+      "title": "S04 – Chăm sóc khách hàng và ticket  [P2]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 322,
+      "requirements": [
+        "Mục đích: Xử lý yêu cầu sau bán, bảo hành và khiếu nại từ khách hàng.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Ticket, SLA, nhật ký trao đổi, người xử lý, tài sản bảo hành",
+        "Chức năng/Thao tác: Tiếp nhận ticket/email; phân công; SLA; phân loại lỗi; lịch sử xử lý; khảo sát hài lòng.",
+        "Thông tin tối thiểu: Khách; công trình; loại yêu cầu; ưu tiên; SLA; người xử lý; bằng chứng; thời gian phản hồi",
+        "Thực thể dữ liệu: SupportTicket, TicketMessage, SLA, WarrantyItem",
+        "Luồng trạng thái: Mới → Phân công → Đang xử lý → Đã giải quyết/Đóng",
+        "Business rule cốt lõi: Ticket trễ hạn phải escalated; tài liệu liên quan bảo vệ quyền.",
+        "Ngoại lệ và tình huống khó: Trễ SLA tự cảnh báo; chỉ đóng khi ghi kết quả; phân biệt ticket bên ngoài và lỗi nội bộ.",
+        "Đề xuất test nghiệm thu: Ticket quá hạn và chuyển nhân sự phải giữ mốc SLA gốc và lịch sử.",
+        "Báo cáo/đầu ra: Ticket tồn; thời gian phản hồi; tỷ lệ xử lý đúng hạn.",
+        "Phân hệ liên thông: S02, O02, O06",
+        "[CaptionSmall] Nguồn liên quan: S08  |  Phạm vi: [TH]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.12",
+      "title": "O01 – Công trình, hạng mục và ngân sách  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 336,
+      "requirements": [
+        "Mục đích: Trục liên kết tiến độ – nhân công – vật tư – tài sản – chi phí – nghiệm thu theo công trình.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Danh sách công trình, WBS, dự toán phiên bản, milestone, hồ sơ nghiệm thu",
+        "Chức năng/Thao tác: Tạo mã công trình/địa điểm/chủ đầu tư; WBS; hợp đồng liên kết; dự toán theo mã chi phí; milestone; hồ sơ nghiệm thu.",
+        "Thông tin tối thiểu: Mã công trình; hợp đồng; chủ đầu tư; địa điểm; người phụ trách; WBS; cost code; baseline budget",
+        "Thực thể dữ liệu: Project, ProjectPhase, WBSNode, CostBudget, ContractLink, Milestone, Acceptance",
+        "Luồng trạng thái: Chuẩn bị → Thi công → Tạm dừng → Nghiệm thu → Quyết toán → Đóng",
+        "Business rule cốt lõi: Không xuất chi phí vào dự án đã khóa; mọi thay đổi ngân sách có phiên bản/lý do; nghiệm thu theo hạng mục.",
+        "Ngoại lệ và tình huống khó: Khóa ngân sách được duyệt; chi phí treo phải có mã công trình/hạng mục; điều chỉnh qua request riêng.",
+        "Đề xuất test nghiệm thu: Đổi baseline ngân sách không được thay đổi báo cáo đối chiếu phiên bản cũ.",
+        "Báo cáo/đầu ra: Tiến độ; dự toán/chi phí; công trình rủi ro; lãi lỗ.",
+        "Phân hệ liên thông: O02, O03, O04, H03, H04, F03",
+        "[CaptionSmall] Nguồn liên quan: S09  |  Phạm vi: [TH]+[ĐX]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.13",
+      "title": "O02 – Công việc, đội nhóm và tiến độ  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 350,
+      "requirements": [
+        "Mục đích: Giao việc theo dự án, deadline, checklist, tài liệu, dạng bảng/danh sách/lịch/Gantt.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Danh sách nhiệm vụ, Kanban, Gantt, checklist, nhật ký ngày, ảnh hiện trường",
+        "Chức năng/Thao tác: Task/subtask; dependencies; assignee; comments; file; Kanban; cập nhật tiến độ; approval trong task; biểu mẫu nhật ký [ĐX].",
+        "Thông tin tối thiểu: Project id; WBS; owner; assignee; deadline; priority; phần trăm; công việc trước; file",
+        "Thực thể dữ liệu: Task, TaskDependency, Checklist, TaskUpdate, Issue",
+        "Luồng trạng thái: Chờ → Đang làm → Chờ nghiệm thu → Hoàn thành/Hủy",
+        "Business rule cốt lõi: Task có owner rõ, hạn; không cho hoàn thành khi checklist bắt buộc chưa xong [ĐX].",
+        "Ngoại lệ và tình huống khó: Không cho hoàn thành khi checklist bắt buộc thiếu; phụ thuộc công việc phải không tạo chu trình; nhật ký ngày theo ca.",
+        "Đề xuất test nghiệm thu: Việc A phụ thuộc B: không thể đóng A nếu B chưa nghiệm thu khi luật bắt buộc bật.",
+        "Báo cáo/đầu ra: Việc trễ; người quá tải; % hoàn thành; critical path [ĐX].",
+        "Phân hệ liên thông: O01, C04, C05, H03",
+        "[CaptionSmall] Nguồn liên quan: S10  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.14",
+      "title": "O03 – Yêu cầu mua sắm và mua hàng  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 364,
+      "requirements": [
+        "Mục đích: Quy trình yêu cầu → duyệt → báo giá NCC → chọn NCC → PO → nhận hàng → thanh toán.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Yêu cầu mua, đề nghị mua, RFQ, bảng so sánh, PO, tiến độ giao hàng",
+        "Chức năng/Thao tác: PurchaseRequisition; hợp nhất nhu cầu; RFQ; so sánh báo giá; phê duyệt; PO; nhận một phần; trả hàng; đối soát.",
+        "Thông tin tối thiểu: PR id; project; vật tư; ĐVT; số lượng; hạn cần; NCC; giá dự kiến; báo giá; PO; nhận",
+        "Thực thể dữ liệu: PurchaseRequest, RFQ, VendorQuote, VendorComparison, PurchaseOrder, ReceiptLink",
+        "Luồng trạng thái: Yêu cầu: Nháp → Duyệt → Đang mua → Hoàn tất; PO: Nháp → Đã gửi → Nhận một phần/Đủ → Đóng",
+        "Business rule cốt lõi: Không đặt vượt ngân sách/hạn mức mà không có ngoại lệ được duyệt; nguồn từ yêu cầu được giữ traceability.",
+        "Ngoại lệ và tình huống khó: Một dòng PR được gom vào nhiều PO phải tracking remaining; không tạo PO từ báo giá chưa duyệt (nếu bật); xử lý partial.",
+        "Đề xuất test nghiệm thu: PR 100m ray tạo PO 60m + 40m; hệ thống theo dõi đủ, không cho đặt 120m nếu vượt trừ khi được duyệt.",
+        "Báo cáo/đầu ra: Tiến độ mua; tiết kiệm giá; PO giao trễ; công nợ NCC.",
+        "Phân hệ liên thông: C04, O04, F02, O01",
+        "[CaptionSmall] Nguồn liên quan: S11  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.15",
+      "title": "O04 – Kho, tồn kho và vật tư công trình  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 378,
+      "requirements": [
+        "Mục đích: Quản lý tồn khả dụng, nhập – xuất – điều chuyển – kiểm kê, theo kho và công trình.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Phiếu nhập, xuất, chuyển kho, giữ hàng, hoàn trả, kiểm kê, sổ kho",
+        "Chức năng/Thao tác: Warehouse bin; nhập mua; xuất công trình; điều chuyển; hoàn trả; kiểm kê; lô/serial [ĐX]; cảnh báo min/max.",
+        "Thông tin tối thiểu: Kho; vị trí; vật tư; ĐVT; lượng; lot/serial nếu có; công trình; cost code; nguồn chứng từ",
+        "Thực thể dữ liệu: Warehouse, StockItem, StockLedger, Receipt, Issue, Transfer, StockCount",
+        "Luồng trạng thái: Phiếu: Nháp → Duyệt → Đã thực hiện/Đảo chứng từ",
+        "Business rule cốt lõi: Tồn = nhập - xuất theo ledger; không âm tồn nếu không được phép; quản lý đơn vị tính/quy đổi.",
+        "Ngoại lệ và tình huống khó: Không âm tồn (trừ chính sách rõ); ledger không sửa giao dịch; kiểm kê phải xử lý chênh và khóa đúng phạm vi.",
+        "Đề xuất test nghiệm thu: Lập 2 phiếu xuất đồng thời lượng vượt tồn phải chỉ một phiếu ghi sổ thành công.",
+        "Báo cáo/đầu ra: NXT; tồn dưới định mức; xuất theo dự án; chênh kiểm kê.",
+        "Phân hệ liên thông: O03, O01, F03, O05",
+        "[CaptionSmall] Nguồn liên quan: S12  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.16",
+      "title": "O05 – Sản xuất, gia công và BOM  [P2]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 392,
+      "requirements": [
+        "Mục đích: Quản lý định mức, công đoạn, lệnh sản xuất, xuất NVL, nhập thành phẩm và chất lượng.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: BOM version, lệnh sản xuất, công đoạn, tiêu hao, QC, nhập thành phẩm",
+        "Chức năng/Thao tác: BOM version; routing/work center; kế hoạch; work order; issue material; output; QC; gia công ngoài.",
+        "Thông tin tối thiểu: Mã sản phẩm; mã BOM; nhà máy; phiên bản; work order; định mức; số lượng; chất lượng",
+        "Thực thể dữ liệu: BOM, BOMLine, Routing, ProductionOrder, Operation, QCInspection",
+        "Luồng trạng thái: Kế hoạch → Phê duyệt → Sản xuất → Kiểm tra → Hoàn thành",
+        "Business rule cốt lõi: BOM đang sử dụng không xóa; chi phí tiêu hao ghi theo lệnh; hao hụt có ngưỡng cảnh báo.",
+        "Ngoại lệ và tình huống khó: BOM hiệu lực theo ngày và nhà máy; không xóa lệnh có xuất vật tư; sai khác NVL cần duyệt.",
+        "Đề xuất test nghiệm thu: Tại thời điểm lập lệnh phải snapshot BOM áp dụng và không thay đổi khi chỉnh BOM mới.",
+        "Báo cáo/đầu ra: Kế hoạch/thực tế NVL; tiến độ; phế phẩm; hiệu suất.",
+        "Phân hệ liên thông: O04, O03, F03",
+        "[CaptionSmall] Nguồn liên quan: S13  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.17",
+      "title": "O06 – Tài sản, thiết bị và bảo dưỡng  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 406,
+      "requirements": [
+        "Mục đích: Lịch sử tài sản từ ghi tăng, bàn giao, cấp phát, sửa chữa, bảo trì, kiểm kê tới thanh lý.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Hồ sơ tài sản, bàn giao, cấp phát, điều chuyển, lịch bảo trì, sự cố",
+        "Chức năng/Thao tác: Mã/QR; thuộc phòng ban/công trình; cấp phát/thu hồi; điều chuyển; kế hoạch bảo trì; chi phí sửa.",
+        "Thông tin tối thiểu: Asset id; serial; người giữ; vị trí; ngày bàn giao; kỳ bảo dưỡng; hạng mục/chi phí sửa",
+        "Thực thể dữ liệu: Asset, AssetAssignment, MaintenancePlan, WorkOrder, AssetMovement",
+        "Luồng trạng thái: Sẵn sàng → Đang dùng → Bảo dưỡng/Hỏng → Thu hồi/Thanh lý",
+        "Business rule cốt lõi: Không cấp phát tài sản đang bảo dưỡng; mọi di chuyển cần biên bản; ngày hiệu lực không đè lịch sử.",
+        "Ngoại lệ và tình huống khó: Không cấp phát khi trạng thái hỏng/bảo trì; di chuyển phải có người giao nhận; thời gian bàn giao không trùng.",
+        "Đề xuất test nghiệm thu: Một thiết bị không thể đang bàn giao cho hai công trình cùng thời gian nếu không cho thuê chung.",
+        "Báo cáo/đầu ra: Thiết bị sắp bảo trì; lịch sử chi phí; tài sản thiếu.",
+        "Phân hệ liên thông: C04, O01, F02",
+        "[CaptionSmall] Nguồn liên quan: S14  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.18",
+      "title": "O07 – An toàn lao động, chất lượng và hiện trường  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 420,
+      "requirements": [
+        "Mục đích: Quản lý hồ sơ ATLĐ, huấn luyện, giấy phép công việc, kiểm tra hiện trường, sự cố, biện pháp.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Hồ sơ ATLĐ, giấy phép làm việc, họp đầu ca, biên bản kiểm tra, sự cố, CAPA",
+        "Chức năng/Thao tác: Hồ sơ HSE; thẻ huấn luyện/hiệu lực; toolbox talk; checklist PTW/JSA; ảnh trước-sau; incident/NCR/CAPA.",
+        "Thông tin tối thiểu: Project; hazard; mức độ; ảnh; chủ nhiệm; hạn xử lý; bằng cấp; ngày hiệu lực; thẻ",
+        "Thực thể dữ liệu: SafetyCertificate, PermitToWork, SiteInspection, Incident, CorrectiveAction",
+        "Luồng trạng thái: PTW: Nháp → Duyệt → Hiệu lực → Đóng; NCR: Mới → Khắc phục → Xác minh",
+        "Business rule cốt lõi: Chặn phân công công việc rủi ro khi thiếu chứng chỉ/giấy phép bắt buộc; quy tắc do bộ phận HSE xác nhận.",
+        "Ngoại lệ và tình huống khó: Người thiếu điều kiện chứng chỉ cảnh báo/chặn với hạng mục có rủi ro theo chính sách HSE; quy tắc do HSE phê duyệt.",
+        "Đề xuất test nghiệm thu: Giấy phép hết hạn phải không cho phân công vào hạng mục cấu hình bắt buộc chứng nhận.",
+        "Báo cáo/đầu ra: Giấy tờ sắp hết hạn; sự cố; hành động khắc phục trễ.",
+        "Phân hệ liên thông: H02, O01, O02, C05",
+        "[CaptionSmall] Nguồn liên quan: S15  |  Phạm vi: [ĐX]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.19",
+      "title": "H01 – Tuyển dụng và tiếp nhận  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 434,
+      "requirements": [
+        "Mục đích: Quản lý nhu cầu tuyển, nguồn ứng viên, vòng tuyển dụng, offer và chuyển hồ sơ nhân viên.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Kế hoạch tuyển, tin tuyển, ứng viên, vòng đánh giá, offer, tiếp nhận",
+        "Chức năng/Thao tác: Đề nghị tuyển; tin; pipeline nhiều vòng theo vị trí; lịch phỏng vấn; scorecard; offer; onboarding.",
+        "Thông tin tối thiểu: Vị trí; số lượng; kênh; người phỏng vấn; trạng thái; CV; quyết định; ngày nhận việc",
+        "Thực thể dữ liệu: HiringRequest, JobPost, Candidate, Interview, Offer",
+        "Luồng trạng thái: Ứng tuyển → Sàng lọc → Phỏng vấn → Đề nghị → Trúng tuyển/Loại",
+        "Business rule cốt lõi: Ứng viên chuyển nhân viên phải chống trùng; lưu consent hồ sơ; quyền ứng viên giới hạn HR/QL.",
+        "Ngoại lệ và tình huống khó: Không có offer hoàn tất không chuyển employee chính thức; bảo vệ thông tin ứng viên; chống hồ sơ trùng.",
+        "Đề xuất test nghiệm thu: Ứng viên đậu vòng cuối tạo mã hồ sơ nhân viên 1 lần, không tạo 2 nhân viên nếu retry.",
+        "Báo cáo/đầu ra: Time-to-hire; số tuyển; chi phí tuyển theo nguồn.",
+        "Phân hệ liên thông: H02, C04",
+        "[CaptionSmall] Nguồn liên quan: S16  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.20",
+      "title": "H02 – Hồ sơ nhân viên và hợp đồng lao động  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 448,
+      "requirements": [
+        "Mục đích: Quản lý hồ sơ tập trung, hợp đồng, điều động công trình, giấy tờ và lịch sử nhân sự.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Hồ sơ nhân sự, quan hệ lao động, hợp đồng, lịch sử vị trí, nghỉ việc",
+        "Chức năng/Thao tác: Hồ sơ; giấy tờ; hợp đồng/phụ lục; quá trình; bổ nhiệm; điều chuyển; thôi việc; nhắc hiệu lực.",
+        "Thông tin tối thiểu: Employee id; mã số BHXH; bộ phận; vị trí; người quản lý; hợp đồng; lương hiệu lực",
+        "Thực thể dữ liệu: Employee, LaborContract, Assignment, EmployeeDocument, PositionHistory",
+        "Luồng trạng thái: Thử việc → Chính thức → Tạm nghỉ/Đã nghỉ",
+        "Business rule cốt lõi: Gắn mã nhân viên bất biến; lịch sử thay đổi chức vụ không ghi đè; hạn chế trường nhạy cảm.",
+        "Ngoại lệ và tình huống khó: Hợp đồng hiệu lực không ghi đè bản cũ; hạn chế truy cập dữ liệu nhạy cảm; offboarding revoke quyền.",
+        "Đề xuất test nghiệm thu: Thay vị trí từ ngày 1/11 giữ bản lương và công phát sinh trước ngày đó đúng vị trí cũ.",
+        "Báo cáo/đầu ra: Biến động nhân sự; giấy tờ hết hạn; hợp đồng sắp hết.",
+        "Phân hệ liên thông: H01, H03, H04, O01",
+        "[CaptionSmall] Nguồn liên quan: S17  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.21",
+      "title": "H03 – Ca làm, chấm công và nhật ký công trình  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 462,
+      "requirements": [
+        "Mục đích: Ghi nhận giờ công theo người, ngày, ca, địa điểm/công trình; xử lý đơn và xác nhận bảng công.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Danh sách ca, phân công, check-in/out, nghỉ, OT, bảng công, đối soát",
+        "Chức năng/Thao tác: Ca ngày/đêm; phân ca; chấm app/QR/thiết bị [ĐX]; đơn nghỉ/OT; giải trình quên công; trưởng ca chốt tổ; HR khóa công.",
+        "Thông tin tối thiểu: Employee; project; work_date; shift; giờ bắt đầu/kết thúc; hình ảnh; OT; approver",
+        "Thực thể dữ liệu: Shift, ShiftAssignment, TimePunch, Timesheet, LeaveRequest, OTRequest, SiteAttendance",
+        "Luồng trạng thái: Ghi nhận → Chờ xác nhận → Đối soát → Chốt/Khóa",
+        "Business rule cốt lõi: Không trùng ca xung đột; OT yêu cầu duyệt; một người nhiều công trình trong ngày phải chia giờ hợp lệ.",
+        "Ngoại lệ và tình huống khó: Ca đêm ngày nghiệp vụ xác định rõ; không tính trùng ca cùng thời gian; khóa công theo kỳ; bằng chứng chỉnh sửa.",
+        "Đề xuất test nghiệm thu: Ca 20:00–05:00 được tính theo quy tắc ngày công ca đêm, không tự sinh 2 công trùng.",
+        "Báo cáo/đầu ra: Bảng công theo công trình; làm thêm; thiếu công; sai giờ.",
+        "Phân hệ liên thông: H02, H04, O01, O07",
+        "[CaptionSmall] Nguồn liên quan: S18  |  Phạm vi: [XC]+[ĐX]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.22",
+      "title": "H04 – Tiền lương, tạm ứng và phân bổ chi phí  [P0]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 476,
+      "requirements": [
+        "Mục đích: Tổng hợp bảng công, phụ cấp, khấu trừ, tạm ứng và tính lương; phân bổ chi phí nhân công.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Chính sách lương, template, bảng lương, tạm ứng, khấu trừ, phân bổ",
+        "Chức năng/Thao tác: Chính sách/mẫu lương version; dữ liệu chấm công; bảng lương; duyệt, phiếu lương, chi trả, phân bổ theo công trình.",
+        "Thông tin tối thiểu: Employee; kỳ; công; lương HĐ; phụ cấp; OT; khấu trừ; tạm ứng; thực lĩnh; cost center",
+        "Thực thể dữ liệu: SalaryPolicy, PayrollPeriod, Payroll, PayrollLine, Advance, PayrollAllocation",
+        "Luồng trạng thái: Tập hợp → Tính thử → Kiểm tra → Duyệt → Khóa → Chi trả",
+        "Business rule cốt lõi: Tính lại tạo phiên bản; không lộ lương ra ngoài HR/TC; phân bổ theo giờ/công đã duyệt.",
+        "Ngoại lệ và tình huống khó: Template công thức có version; chỉ HR/payroll xem chi tiết; cân bằng chi phí phân bổ và tổng tính lương.",
+        "Đề xuất test nghiệm thu: Khi bảng lương khóa, thay đổi công cần phát sinh phiếu điều chỉnh và bảng chạy lại có version.",
+        "Báo cáo/đầu ra: Lương theo công trình; chi phí OT; lương thực trả; đối soát công.",
+        "Phân hệ liên thông: H03, F02, F03",
+        "[CaptionSmall] Nguồn liên quan: S19  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.23",
+      "title": "H05 – BHXH, thuế TNCN và hồ sơ tuân thủ  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 490,
+      "requirements": [
+        "Mục đích: Quản lý hồ sơ tăng/giảm, kỳ tham gia, nghĩa vụ bảo hiểm và thuế TNCN.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Hồ sơ BHXH, biến động, đối soát, thông báo phản hồi, hồ sơ thuế TNCN",
+        "Chức năng/Thao tác: Tự lập checklist hồ sơ, trạng thái gửi/nhận; file điện tử; tính cơ sở đóng theo cấu hình pháp lý.",
+        "Thông tin tối thiểu: Employee; loại hồ sơ; ngày hiệu lực; kỳ; trạng thái gửi; phản hồi; file số",
+        "Thực thể dữ liệu: InsuranceCase, ParticipationPeriod, PersonalTaxProfile",
+        "Luồng trạng thái: Chuẩn bị → Kiểm tra → Gửi → Nhận kết quả/Trả lại",
+        "Business rule cốt lõi: Không tự xây logic nộp BHXH/thuế nếu chưa đủ giấy phép/API; dữ liệu cá nhân nhạy cảm hạn chế.",
+        "Ngoại lệ và tình huống khó: Không hard-code tỷ lệ/hạn mức/biểu mẫu; cần chính sách hiệu lực; lưu phản hồi và mã giao dịch từ dịch vụ.",
+        "Đề xuất test nghiệm thu: Gửi hồ sơ hai lần cùng mã giao dịch do retry không được tạo hồ sơ trùng.",
+        "Báo cáo/đầu ra: Hồ sơ thiếu; báo tăng/giảm; kỳ phải kê khai.",
+        "Phân hệ liên thông: H02, H04, F04",
+        "[CaptionSmall] Nguồn liên quan: S20  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.24",
+      "title": "H06 – Mục tiêu, KPI, OKR và đánh giá nhân sự  [P2]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 504,
+      "requirements": [
+        "Mục đích: Giao mục tiêu theo kỳ/cấp, đánh giá năng lực/kết quả và theo dõi cải thiện.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Bộ mục tiêu, chu kỳ, chỉ tiêu, check-in, đánh giá, phản hồi",
+        "Chức năng/Thao tác: KPI/OKR/BSC; mục tiêu cha/con; kỳ; cập nhật giá trị; biểu mẫu đánh giá; 360° [ĐX].",
+        "Thông tin tối thiểu: Chỉ tiêu; owner; đơn vị; target; actual; trọng số; kỳ; nhận xét; phê duyệt",
+        "Thực thể dữ liệu: Goal, GoalMetric, ReviewCycle, ReviewForm, ReviewResult",
+        "Luồng trạng thái: Giao → Thực hiện → Tự đánh giá → Quản lý duyệt → Chốt",
+        "Business rule cốt lõi: Thay đổi target giữa kỳ có lịch sử; quy tắc tính rõ, kiểm chứng dữ liệu nguồn.",
+        "Ngoại lệ và tình huống khó: Trọng số theo chính sách phải đủ 100%; snapshot chỉ tiêu kỳ đã đóng; quyền phản hồi rõ.",
+        "Đề xuất test nghiệm thu: Thay mục tiêu sau khi chốt kỳ không làm đổi kết quả kỳ cũ.",
+        "Báo cáo/đầu ra: Hoàn thành KPI; hiệu quả phòng ban; đánh giá theo kỳ.",
+        "Phân hệ liên thông: H02, O02, C07",
+        "[CaptionSmall] Nguồn liên quan: S21  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.25",
+      "title": "F01 – Quỹ, ngân hàng, đề nghị thanh toán  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 518,
+      "requirements": [
+        "Mục đích: Dự trù và thực hiện thu chi, tạm ứng, thanh toán, đối chiếu ngân hàng.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Phiếu thu, chi, đề nghị thanh toán, ngân hàng, tạm ứng/hoàn ứng",
+        "Chức năng/Thao tác: Phiếu thu/chi; đề nghị tạm ứng; hoàn ứng; lệnh thanh toán; đối soát sao kê; dòng tiền.",
+        "Thông tin tối thiểu: Chứng từ; ngày; người nhận; đối tượng; tài khoản; tiền tệ; dự án; nguồn; hạn",
+        "Thực thể dữ liệu: CashVoucher, PaymentRequest, BankTransaction, BankReconciliation",
+        "Luồng trạng thái: Đề nghị → Duyệt → Thanh toán → Đối soát → Hạch toán",
+        "Business rule cốt lõi: Phê duyệt tách người chi; thanh toán phải có nguồn/bên nhận; trả trùng hóa đơn cảnh báo.",
+        "Ngoại lệ và tình huống khó: Đề nghị duyệt khác lệnh chuyển tiền; đối soát ngân hàng trước ghi nhận đã thanh toán; khóa kỳ.",
+        "Đề xuất test nghiệm thu: Thanh toán chuyển khoản thất bại không tự cập nhật đã trả và phải giữ trạng thái chờ đối soát.",
+        "Báo cáo/đầu ra: Dòng tiền; tạm ứng tồn; đối soát ngân hàng.",
+        "Phân hệ liên thông: O03, H04, F02",
+        "[CaptionSmall] Nguồn liên quan: S22  |  Phạm vi: [TH]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.26",
+      "title": "F02 – Kế toán tổng hợp, công nợ, thuế và tài sản cố định  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 532,
+      "requirements": [
+        "Mục đích: Sổ cái, bút toán kép, chứng từ, AR/AP, thuế, kỳ đóng sổ, tài sản và báo cáo tài chính.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Sổ cái, định khoản, AR/AP, hóa đơn, thuế, khóa kỳ, đối chiếu",
+        "Chức năng/Thao tác: Chart of accounts; journal/posting; đối tượng/công trình; định khoản; AR/AP aging; TSCĐ/CCDC; kiểm tra đối chiếu.",
+        "Thông tin tối thiểu: Account; doc no; date; period; debit; credit; partner; project; bill; allocation",
+        "Thực thể dữ liệu: GLAccount, JournalEntry, JournalLine, Invoice, ARAP, FiscalPeriod, FixedAsset",
+        "Luồng trạng thái: Nháp → Kiểm tra → Ghi sổ → Điều chỉnh/Đảo → Khóa kỳ",
+        "Business rule cốt lõi: Tổng nợ = tổng có; không sửa chứng từ ở kỳ đã khóa; báo cáo BCTC phải theo chế độ kế toán hiệu lực.",
+        "Ngoại lệ và tình huống khó: Nợ = Có; kỳ khóa chặn ghi; kiểm trùng hóa đơn; phân biệt ghi nhận kế toán và luồng duyệt quản trị.",
+        "Đề xuất test nghiệm thu: Post giao dịch bút toán lệch Nợ/Có phải thất bại toàn bộ, không phát sinh nửa dòng.",
+        "Báo cáo/đầu ra: Cân đối phát sinh; công nợ; thuế; BCTC; nhật ký chung.",
+        "Phân hệ liên thông: F01, O03, O04, H04, F03",
+        "[CaptionSmall] Nguồn liên quan: S23  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.27",
+      "title": "F03 – Giá thành xây lắp và kiểm soát ngân sách  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 546,
+      "requirements": [
+        "Mục đích: Tập hợp NVL, nhân công, máy thi công, chi phí chung; so dự toán, nghiệm thu và lãi lỗ công trình.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Bảng tập hợp chi phí theo công trình, phân bổ, WIP, giá thành, lãi/lỗ",
+        "Chức năng/Thao tác: Cost ledger theo công trình/hạng mục; budget baseline; allocation; WIP; kỳ giá thành; nghiệm thu; phân tích lãi lỗ.",
+        "Thông tin tối thiểu: Cost code; WBS; kỳ; nguồn chi; chi phí thực tế; cam kết; phân bổ; nghiệm thu",
+        "Thực thể dữ liệu: CostCode, ProjectCost, CostAllocation, WIPBalance, CostPeriod, RevenueRecognition",
+        "Luồng trạng thái: Kỳ mở → Tập hợp → Đối chiếu → Phân bổ → Chốt → Báo cáo",
+        "Business rule cốt lõi: Mỗi chi phí phát sinh gắn ít nhất một công trình hoặc cost center; tiêu thức phân bổ có thời kỳ, giải trình.",
+        "Ngoại lệ và tình huống khó: Không cộng cam kết và thực tế thành cùng một chi phí; nguồn chứng từ duy nhất; giá thành theo chính sách kế toán.",
+        "Đề xuất test nghiệm thu: Một vật tư xuất kho đã lên giá thành không được đếm thêm lần nữa khi thanh toán hóa đơn mua.",
+        "Báo cáo/đầu ra: Chi phí thực tế/dự toán; NVL/NCTT/MTC/SXC; giá thành; lãi lỗ dự án.",
+        "Phân hệ liên thông: O01, O03, O04, H04, F02",
+        "[CaptionSmall] Nguồn liên quan: S24  |  Phạm vi: [XC]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "2.28",
+      "title": "F04 – Hóa đơn điện tử, chữ ký số, văn bản pháp lý  [P1]",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 560,
+      "requirements": [
+        "Mục đích: Luồng chuẩn bị – duyệt – ký – phát hành/nhận hóa đơn và chứng từ điện tử.",
+        "Vai trò chính: Nhân viên nghiệp vụ; quản lý trực tiếp; người duyệt; bộ phận kiểm soát",
+        "Màn hình cần xây: Hóa đơn, ký điện tử, hồ sơ phát hành, trạng thái thuế, lưu vết file ký",
+        "Chức năng/Thao tác: Quản lý metadata hóa đơn; tích hợp nhà cung cấp hóa đơn; ký luồng nhiều người; lưu bản chứng thư/kết quả.",
+        "Thông tin tối thiểu: Invoice no; ký hiệu; đối tượng; ngày lập/ký; số tiền; trạng thái; phản hồi; chứng thư",
+        "Thực thể dữ liệu: EInvoiceRef, SignatureEnvelope, Signer, SigningAudit, TaxSubmission",
+        "Luồng trạng thái: Nháp → Chờ ký → Đã ký/Phát hành → Điều chỉnh/Hủy (theo quy định)",
+        "Business rule cốt lõi: Không giả định hệ thống tự có tư cách cung cấp DV hóa đơn/chữ ký số; tích hợp nhà cung cấp được phép.",
+        "Ngoại lệ và tình huống khó: Không coi đã gửi=đã cấp mã; chỉ ghi nhận trạng thái theo phản hồi thực tế; phiên bản ký bất biến.",
+        "Đề xuất test nghiệm thu: Hóa đơn gửi thành công nhưng chưa có xác nhận dịch vụ không được hiển thị là đã phát hành hợp lệ.",
+        "Báo cáo/đầu ra: Hóa đơn chờ ký; hóa đơn sai; tài liệu chờ phê duyệt.",
+        "Phân hệ liên thông: S03, F02, C05",
+        "[CaptionSmall] Nguồn liên quan: S25  |  Phạm vi: [TH]. Những trường dữ liệu, API và test chi tiết là đề xuất độc lập."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.01",
+      "title": "Quỹ",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 576,
+      "requirements": [
+        "Nghiệp vụ cần có: Lập phiếu thu/chi, tạm ứng, hoàn ứng, kiểm kê quỹ; sổ quỹ và sổ kế toán tiền mặt",
+        "Hồ sơ/chứng từ đầu vào: Phiếu thu/chi: đối tượng, lý do, ngày CT, tiền tệ, số tiền, dự án, tài khoản, file",
+        "Lớp dữ liệu: CashVoucher, Cashbox, Advance",
+        "Kiểm tra & đối soát: Kiểm tra số dư quỹ, khóa sổ, phiếu hủy, chứng từ đã ghi sổ; phân biệt ngày CT và ngày ghi sổ",
+        "Báo cáo cần xuất: Sổ quỹ theo thủ quỹ; sổ quỹ theo kế toán; đối chiếu chênh lệch",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.02",
+      "title": "Ngân hàng",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 583,
+      "requirements": [
+        "Nghiệp vụ cần có: Thu/chi qua ngân hàng, ủy nhiệm chi, đối chiếu sao kê, chuyển khoản, phí và lãi",
+        "Hồ sơ/chứng từ đầu vào: Số tài khoản; ngân hàng; beneficiary; ref giao dịch; số tiền; ngày giá trị",
+        "Lớp dữ liệu: BankAccount, BankTxn, BankReconciliation",
+        "Kiểm tra & đối soát: Chống import sao kê trùng; giao dịch treo; khoản thanh toán thất bại; tỷ giá nếu có",
+        "Báo cáo cần xuất: Sổ tiền gửi; đối chiếu ngân hàng; báo cáo giao dịch chưa khớp",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.03",
+      "title": "Mua hàng",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 590,
+      "requirements": [
+        "Nghiệp vụ cần có: Mua trong nước/nhập khẩu, chi phí mua, mua dịch vụ, giảm giá và trả lại",
+        "Hồ sơ/chứng từ đầu vào: Nhà cung cấp; đơn mua; hàng/dịch vụ; số lượng; đơn giá; VAT; dự án; kho",
+        "Lớp dữ liệu: PurchaseDocument, APInvoice, GRN",
+        "Kiểm tra & đối soát: Kiểm trùng hóa đơn NCC; theo dõi nhận trước hóa đơn và hóa đơn trước nhận; xử lý chênh giá",
+        "Báo cáo cần xuất: Mua theo NCC, hàng chưa về, công nợ theo hóa đơn",
+        "Điểm liên thông: O03/O04/PO và chứng từ hóa đơn NCC"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.04",
+      "title": "Bán hàng",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 597,
+      "requirements": [
+        "Nghiệp vụ cần có: Đơn bán, xuất hàng, doanh thu, phải thu, chiết khấu, giảm giá/trả hàng",
+        "Hồ sơ/chứng từ đầu vào: Khách; hợp đồng; điều khoản; sản phẩm/dịch vụ; giá; thuế; thời hạn thanh toán",
+        "Lớp dữ liệu: SalesInvoice, SalesDelivery, Receivable",
+        "Kiểm tra & đối soát: Doanh thu và thu tiền tách biệt; giảm doanh thu có chứng từ điều chỉnh; một nghiệp vụ không lập 2 hóa đơn",
+        "Báo cáo cần xuất: Doanh số; công nợ KH; tuổi nợ",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.05",
+      "title": "Hóa đơn điện tử",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 604,
+      "requirements": [
+        "Nghiệp vụ cần có: Phát hành, ký, điều chỉnh/thay thế, kiểm tra tình trạng hóa đơn",
+        "Hồ sơ/chứng từ đầu vào: Ký hiệu; số; mã cơ quan thuế khi có; hồ sơ người mua; dòng hàng; thuế",
+        "Lớp dữ liệu: EInvoice, TaxReceipt",
+        "Kiểm tra & đối soát: Không hạch toán status chỉ dựa vào yêu cầu gửi; đảm bảo trạng thái phản hồi, hồ sơ bất biến",
+        "Báo cáo cần xuất: Hóa đơn phát hành, thất bại, bị thay thế/điều chỉnh",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.06",
+      "title": "Kho",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 611,
+      "requirements": [
+        "Nghiệp vụ cần có: Tồn đầu kỳ, nhập/xuất/điều chuyển, kiểm kê, hàng gửi đi, định giá",
+        "Hồ sơ/chứng từ đầu vào: Kho; vật tư; số lượng; đơn giá; loại giao dịch; nguồn chứng từ; dự án",
+        "Lớp dữ liệu: StockLedger, StockBalance, Warehouse",
+        "Kiểm tra & đối soát: Phân biệt tồn vật lý và khả dụng; kỳ đóng; lô/serial/định mức nếu cần",
+        "Báo cáo cần xuất: Nhập-xuất-tồn; thẻ kho; tồn âm; chênh kiểm kê",
+        "Điểm liên thông: O04/StockLedger và công trình"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.07",
+      "title": "CCDC",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 618,
+      "requirements": [
+        "Nghiệp vụ cần có: Ghi tăng, cấp phát, phân bổ chi phí công cụ dụng cụ nhiều kỳ",
+        "Hồ sơ/chứng từ đầu vào: Mã CCDC; đối tượng sử dụng; giá trị; số kỳ; cost center/công trình",
+        "Lớp dữ liệu: Tool, ToolAllocation",
+        "Kiểm tra & đối soát: Không ghi trùng chi phí ghi tăng và phân bổ; đổi nơi sử dụng cần chia kỳ",
+        "Báo cáo cần xuất: Sổ CCDC; bảng phân bổ; kiểm kê CCDC",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.08",
+      "title": "TSCĐ",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 625,
+      "requirements": [
+        "Nghiệp vụ cần có: Ghi tăng/giảm, điều chuyển, tính khấu hao và thanh lý tài sản cố định",
+        "Hồ sơ/chứng từ đầu vào: Mã tài sản; ngày bắt đầu khấu hao; nguyên giá; thời gian; bộ phận; loại tài sản",
+        "Lớp dữ liệu: FixedAsset, DepreciationRun",
+        "Kiểm tra & đối soát: Thay đổi phương pháp/thời gian cần lưu lịch sử; số khấu hao phải đối soát",
+        "Báo cáo cần xuất: Danh sách TSCĐ; khấu hao theo tháng; đối chiếu sổ",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.09",
+      "title": "Quản lý hóa đơn",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 632,
+      "requirements": [
+        "Nghiệp vụ cần có: Nhận hóa đơn đầu vào, kiểm tra hóa đơn, đối soát với chứng từ mua",
+        "Hồ sơ/chứng từ đầu vào: NCC; MST; số hóa đơn; ký hiệu; ngày; file XML/PDF; số tiền; tình trạng",
+        "Lớp dữ liệu: InboundInvoice, InvoiceMatch",
+        "Kiểm tra & đối soát: Chống trùng theo NCC-số-ký hiệu; hóa đơn không hợp lệ phải giữ lý do",
+        "Báo cáo cần xuất: Hóa đơn đầu vào chưa hạch toán/chưa khớp",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.10",
+      "title": "Thuế",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 639,
+      "requirements": [
+        "Nghiệp vụ cần có: Tờ khai, khấu trừ, thuế GTGT/TNDN/TNCN và theo dõi nghĩa vụ",
+        "Hồ sơ/chứng từ đầu vào: Kỳ; loại thuế; chỉ tiêu; nguồn; số điều chỉnh; bản đã nộp; phản hồi",
+        "Lớp dữ liệu: TaxFiling, TaxLine",
+        "Kiểm tra & đối soát: Chỉ số thuế/biểu mẫu theo cấu hình hiệu lực; đóng băng tờ khai đã ký nộp",
+        "Báo cáo cần xuất: Bảng đối chiếu, tờ khai, trạng thái nghĩa vụ",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.11",
+      "title": "Tổng hợp",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 646,
+      "requirements": [
+        "Nghiệp vụ cần có: Bút toán tổng hợp, kết chuyển, đánh giá chênh lệch tỷ giá, khóa sổ",
+        "Hồ sơ/chứng từ đầu vào: Ngày ghi sổ; kỳ; tài khoản Nợ/Có; số tiền; đối tượng; nguồn chứng từ",
+        "Lớp dữ liệu: JournalEntry, JournalLine, PeriodLock",
+        "Kiểm tra & đối soát: Nợ=Có; không ghi trùng; đã khóa kỳ không sửa; đảo bút toán khi cần",
+        "Báo cáo cần xuất: Sổ cái, bảng cân đối phát sinh, kết chuyển",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.12",
+      "title": "Giá thành",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 653,
+      "requirements": [
+        "Nghiệp vụ cần có: Tập hợp NVL, nhân công, máy thi công, chi phí chung; phân bổ, kết chuyển, WIP",
+        "Hồ sơ/chứng từ đầu vào: Công trình/hạng mục; kỳ; yếu tố chi phí; nguồn; tiêu thức phân bổ",
+        "Lớp dữ liệu: CostLedger, CostAllocation, ProjectWIP",
+        "Kiểm tra & đối soát: Phân biệt phát sinh-cam kết-thanh toán; công trình nhiều năm; tài khoản dở dang",
+        "Báo cáo cần xuất: Báo cáo giá thành; so sánh dự toán; doanh thu/chi phí/lãi lỗ",
+        "Điểm liên thông: O01/O04/H04/O06 và hợp đồng nghiệm thu"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.13",
+      "title": "Tiền lương",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 660,
+      "requirements": [
+        "Nghiệp vụ cần có: Nhập công, tính lương, khấu trừ, BH/thuế cấu hình, hạch toán lương",
+        "Hồ sơ/chứng từ đầu vào: Nhân viên; kỳ; công; hệ số; lương; phụ cấp; các khoản trừ; thực lĩnh",
+        "Lớp dữ liệu: PayrollPeriod, Payslip, Allocation",
+        "Kiểm tra & đối soát: Lưu version chính sách; dữ liệu nhạy cảm; kỳ chốt; lương phân bổ công trình",
+        "Báo cáo cần xuất: Quỹ lương; bảng lương; chi phí nhân công theo công trình",
+        "Điểm liên thông: H03/H04 và dự án"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.14",
+      "title": "Khế ước vay",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 667,
+      "requirements": [
+        "Nghiệp vụ cần có: Lập khế ước, giải ngân, trả nợ gốc/lãi, lịch đáo hạn",
+        "Hồ sơ/chứng từ đầu vào: Đối tác tín dụng; khoản vay; ngày; lãi suất; gốc; lịch trả; tài khoản",
+        "Lớp dữ liệu: LoanAgreement, LoanSchedule",
+        "Kiểm tra & đối soát: Tách gốc/lãi/phí; tính theo điều khoản khoản vay; cảnh báo hạn",
+        "Báo cáo cần xuất: Công nợ vay; lịch trả; chi phí lãi",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.15",
+      "title": "Hợp đồng",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 674,
+      "requirements": [
+        "Nghiệp vụ cần có: Theo dõi hợp đồng mua/bán, hạn thanh toán, thực hiện và công nợ",
+        "Hồ sơ/chứng từ đầu vào: Đối tượng; số HĐ; giá trị; hiệu lực; điều khoản; phụ lục; đợt thu/chi",
+        "Lớp dữ liệu: Contract, ContractMilestone",
+        "Kiểm tra & đối soát: Một milestone không sinh trùng phải thu; phụ lục thay đổi số tiền từ ngày hiệu lực",
+        "Báo cáo cần xuất: Hợp đồng tới hạn; giá trị thực hiện, còn lại",
+        "Điểm liên thông: S03/O01 và công nợ"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.16",
+      "title": "Ngân sách",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 681,
+      "requirements": [
+        "Nghiệp vụ cần có: Lập dự toán và kiểm soát chi theo đơn vị, tài khoản và công trình",
+        "Hồ sơ/chứng từ đầu vào: Cost center; project; cost code; kỳ; định mức; ngân sách gốc/điều chỉnh",
+        "Lớp dữ liệu: BudgetVersion, BudgetLine, Commitment",
+        "Kiểm tra & đối soát: Giữ baseline; cam kết không đồng nghĩa phát sinh; vượt hạn mức phải có duyệt ngoại lệ",
+        "Báo cáo cần xuất: Kế hoạch/ thực tế / cam kết; chênh theo kỳ",
+        "Điểm liên thông: O01/Commitment/CostLedger"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.17",
+      "title": "Thủ kho",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 688,
+      "requirements": [
+        "Nghiệp vụ cần có: Thủ kho xác nhận thực nhập/thực xuất, thẻ kho, kiểm kê",
+        "Hồ sơ/chứng từ đầu vào: Phiếu nguồn; người nhận; thực nhận/thực xuất; chênh; thời điểm",
+        "Lớp dữ liệu: WarehouseConfirmation, StockCard",
+        "Kiểm tra & đối soát: Phân quyền thủ kho khác người yêu cầu; số lượng thực tế có thể khác đề nghị",
+        "Báo cáo cần xuất: Thẻ kho; phiếu chờ kho; tồn thực tế",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.18",
+      "title": "Thủ quỹ",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 695,
+      "requirements": [
+        "Nghiệp vụ cần có: Thủ quỹ nhận phiếu thu/chi, quản lý tồn tiền vật lý, đối chiếu",
+        "Hồ sơ/chứng từ đầu vào: Sổ quỹ; ngày nhận; số phiếu; số tiền; người nộp/nhận; chữ ký",
+        "Lớp dữ liệu: CashierReceipt, Cashbook",
+        "Kiểm tra & đối soát: Thủ quỹ không tự chỉnh bút toán kế toán; tách khâu ghi sổ kế toán và xuất quỹ",
+        "Báo cáo cần xuất: Quỹ thực tế; phiếu chưa thu/chi",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.19",
+      "title": "Phân tích tài chính",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 702,
+      "requirements": [
+        "Nghiệp vụ cần có: Tỷ số, tăng trưởng, cơ cấu nguồn vốn/chi phí, cảnh báo biến động",
+        "Hồ sơ/chứng từ đầu vào: Kỳ; chuẩn so sánh; công thức; đơn vị; nguồn dữ liệu",
+        "Lớp dữ liệu: MetricDefinition, FinancialDashboard",
+        "Kiểm tra & đối soát: Chỉ số giải thích được; cùng dữ liệu kế toán chốt kỳ; quyền theo phạm vi",
+        "Báo cáo cần xuất: Lãi lỗ; doanh thu; dòng tiền; tỷ lệ nợ; biên lợi nhuận",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "3.20",
+      "title": "Báo cáo",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 709,
+      "requirements": [
+        "Nghiệp vụ cần có: Danh mục báo cáo chuẩn/tùy biến, bộ lọc, xuất Excel/PDF",
+        "Hồ sơ/chứng từ đầu vào: Tên báo cáo; nguồn; kỳ; cột; bộ lọc; quyền; thời gian làm mới",
+        "Lớp dữ liệu: ReportDefinition, ReportExecution",
+        "Kiểm tra & đối soát: Drill-down đến chứng từ; số liệu đồng nhất; xuất file theo quyền",
+        "Báo cáo cần xuất: BCTC, báo cáo quản trị, công nợ, hàng tồn",
+        "Điểm liên thông: Tài chính – kế toán – phân quyền – báo cáo – dữ liệu đối tượng chung"
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.01",
+      "title": "E2E-01 – Từ khách hàng đến công trình",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 724,
+      "requirements": [
+        "Chuỗi xử lý: Lead → CRM cơ hội → Khảo sát/Yêu cầu báo giá → Báo giá (version, duyệt) → Khách xác nhận → Hợp đồng → Tạo công trình/WBS → Lập ngân sách → Giao việc → Thi công → Nghiệm thu → Công nợ/thu tiền.",
+        "Phân hệ tham gia: S01/S02/S03 → O01/O02 → F02/F03",
+        "Điểm chặn/đối soát: Hợp đồng chốt phải gắn mã dự án; không tạo doanh thu hai lần từ một mốc nghiệm thu; sửa BOQ qua phụ lục.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.02",
+      "title": "E2E-02 – Đề xuất mua vật tư đến nhập kho",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 730,
+      "requirements": [
+        "Chuỗi xử lý: Tổ/KS công trình tạo nhu cầu (công trình, mã vật tư, số lượng, ngày cần) → Chỉ huy duyệt → Phòng mua hợp nhất → RFQ/so sánh NCC → Duyệt PO → NCC giao → Kho kiểm đếm/QC → Phiếu nhập → AP/Hóa đơn → Thanh toán.",
+        "Phân hệ tham gia: O01/O03/O04 → F02/F01",
+        "Điểm chặn/đối soát: So sánh 3 mốc: yêu cầu, đặt mua, thực nhận; nhận thiếu không tự động đóng PO; chống nhận vượt dư PO.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.03",
+      "title": "E2E-03 – Cấp phát vật tư thi công và hoàn trả",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 736,
+      "requirements": [
+        "Chuỗi xử lý: Tổ trưởng lập yêu cầu xuất → Duyệt → Kho kiểm tồn/đơn vị → Xuất theo đội/công trình/hạng mục → Người nhận xác nhận → Công trình sử dụng → Hoàn trả/hao hụt → Giá thành.",
+        "Phân hệ tham gia: O04/O01 → F03",
+        "Điểm chặn/đối soát: Không ghi trùng chi phí giữa mua xuất thẳng và nhập rồi xuất; định giá xuất kho theo chính sách kế toán đã chốt.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.04",
+      "title": "E2E-04 – Chấm công ca ngày/đêm tại công trình",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 742,
+      "requirements": [
+        "Chuỗi xử lý: Lập danh sách phân ca theo công trình → Check-in/out hoặc đội trưởng báo quân số → Đối chiếu ảnh/nhật ký → Giải trình thiếu công → Duyệt OT, nghỉ → Chỉ huy xác nhận → HR chốt → Bảng công khóa → Lương.",
+        "Phân hệ tham gia: H02/H03 → H04",
+        "Điểm chặn/đối soát: Ca qua ngày cần gắn business date; tách giờ thường/OT; log điều chỉnh sau chốt; tránh tính trùng nhân sự 2 công trình.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.05",
+      "title": "E2E-05 – Lương đến phân bổ chi phí dự án",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 748,
+      "requirements": [
+        "Chuỗi xử lý: Bảng công đã duyệt + chính sách lương + phụ cấp/khấu trừ + tạm ứng → Tính thử → Đối soát → Duyệt bảng lương → Xuất phiếu → Chi trả → Phân bổ theo giờ/công trình → Kế toán nhận bút toán.",
+        "Phân hệ tham gia: H03/H04 → F01/F02/F03",
+        "Điểm chặn/đối soát: Khác biệt lương trả và chi phí giá thành phải giải thích (quy tắc phân bổ phụ cấp/BHXH); chỉ kế toán ghi sổ.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.06",
+      "title": "E2E-06 – Tiến độ, nghiệm thu, thanh toán chủ đầu tư",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 754,
+      "requirements": [
+        "Chuỗi xử lý: WBS/mốc hợp đồng → Giao việc, nhật ký → KCS nghiệm thu nội bộ → Biên bản khối lượng → Duyệt khách hàng → Xuất hóa đơn → Theo dõi phải thu, bảo hành, quyết toán.",
+        "Phân hệ tham gia: O01/O02/C05 → F04/F02",
+        "Điểm chặn/đối soát: Nghiệm thu là chứng cứ trạng thái; khối lượng nghiệm thu không vượt khối lượng hợp đồng đã điều chỉnh nếu không được phê duyệt.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.07",
+      "title": "E2E-07 – Kiểm soát vượt ngân sách công trình",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 760,
+      "requirements": [
+        "Chuỗi xử lý: Dự toán duyệt → Mua/chi/tạm ứng xuất hiện cam kết chi phí → Chi phí thực tế phát sinh → So sánh theo cost code → Cảnh báo vượt → Đề nghị điều chỉnh → Duyệt ngân sách mới có phiên bản.",
+        "Phân hệ tham gia: O01/O03/F01/F03 → C04",
+        "Điểm chặn/đối soát: Phân biệt cam kết và đã chi; vượt ngưỡng cần quyền ngoại lệ; không xóa số liệu lịch sử.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.08",
+      "title": "E2E-08 – Tài sản, cấp phát thiết bị và bảo trì",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 766,
+      "requirements": [
+        "Chuỗi xử lý: Tạo tài sản → Bàn giao cho đội/công trình → Theo dõi giờ máy [ĐX] → Nhắc kỳ bảo trì → Ghi nhận dịch vụ, linh kiện, chi phí → Phục hồi hoạt động → Thu hồi/điều chuyển.",
+        "Phân hệ tham gia: O06/O01/O04 → F02/F03",
+        "Điểm chặn/đối soát: Thiết bị đang hỏng không được giao; lịch sử bảo trì gắn đúng serial và vị trí.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.09",
+      "title": "E2E-09 – Tuyển dụng đến tiếp nhận công trường",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 772,
+      "requirements": [
+        "Chuỗi xử lý: Đề nghị tuyển → Duyệt → Tin tuyển → Phỏng vấn → Offer → Nhân sự tạo hồ sơ → Hợp đồng → Giấy tờ/HSE → Phân công công trình → Chấm công.",
+        "Phân hệ tham gia: H01/H02/O07 → H03",
+        "Điểm chặn/đối soát: Không được điều phối người thiếu hồ sơ/chứng chỉ bắt buộc với vị trí rủi ro.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.10",
+      "title": "E2E-10 – Sản xuất/gia công kết cấu thép",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 778,
+      "requirements": [
+        "Chuỗi xử lý: Đơn đặt hàng/khối lượng → BOM/định mức → Kế hoạch → Lệnh sản xuất → Xuất NVL → Giao công đoạn → Kiểm tra QC → Nhập kho/đưa thẳng công trình → Tính giá thành.",
+        "Phân hệ tham gia: S03/O05/O04 → F03",
+        "Điểm chặn/đối soát: BOM version dùng tại thời điểm cấp lệnh; chênh lệch tiêu hao được ghi nhận.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.11",
+      "title": "E2E-11 – Luồng văn bản / ký số",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 784,
+      "requirements": [
+        "Chuỗi xử lý: Tạo tài liệu mẫu → Điền dữ liệu từ hợp đồng/nhân sự → Soạn văn bản → Duyệt → Gửi ký → Nhận trạng thái ký → Khóa phiên bản → Lưu hồ sơ → Liên kết công trình/hợp đồng.",
+        "Phân hệ tham gia: C05/C04/F04",
+        "Điểm chặn/đối soát: Tài liệu đã ký giữ file và audit; cấp lại ký tạo phiên bản/lượt ký mới.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "4.12",
+      "title": "E2E-12 – Sự cố hiện trường và khắc phục",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 790,
+      "requirements": [
+        "Chuỗi xử lý: Nhân viên ghi nhận sự cố/hình ảnh → Phân loại rủi ro → Giao người xử lý → Kiểm soát biện pháp → Khắc phục → Kiểm tra xác nhận → Đóng → Báo cáo xu hướng.",
+        "Phân hệ tham gia: O07/O02 → C04/C07",
+        "Điểm chặn/đối soát: Sự cố nghiêm trọng có cơ chế báo ngay; không cho người tự báo tự xác nhận hoàn tất khi cần độc lập.",
+        "Biên giới transaction: Chỉ cập nhật chứng từ nguồn trong một giao dịch; nếu bên nhận xử lý chậm, ghi outbox và retry với idempotency_key, lưu kết quả xử lý và mã lỗi.",
+        "Kết quả có thể kiểm thử: Mỗi bước có người thực hiện, thời điểm, chứng từ đính kèm, status, lý do trả về/từ chối và link tới bước nguồn; người không có quyền không thực hiện được."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.01",
+      "title": "FORM-MD01 – Danh mục vật tư",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 798,
+      "requirements": [
+        "Dữ liệu/Trường: mã vật tư; tên; nhóm; loại vật tư; ĐVT cơ sở; quy đổi; định mức tồn; mã kế toán; ảnh",
+        "Validation: trùng mã trong tenant; quy đổi > 0; ngưng hoạt động thay xóa",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.02",
+      "title": "FORM-PJ01 – Khởi tạo công trình",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 803,
+      "requirements": [
+        "Dữ liệu/Trường: mã; tên; khách; địa điểm; ngày; chỉ huy; trạng thái; hợp đồng; WBS; cost code",
+        "Validation: project code unique; phân quyền chỉ huy; WBS không vòng lặp",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.03",
+      "title": "FORM-BUD – Dự toán công trình",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 808,
+      "requirements": [
+        "Dữ liệu/Trường: dự án; phiên bản; WBS; loại chi phí; NVL; nhân công; máy; thầu phụ; dự phòng",
+        "Validation: khóa baseline; tổng dòng khớp tổng; sửa phải duyệt",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.04",
+      "title": "FORM-RFQ – Đề nghị báo giá NCC",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 813,
+      "requirements": [
+        "Dữ liệu/Trường: PR; NCC; vật tư; số lượng; yêu cầu kỹ thuật; deadline; tệp đính kèm",
+        "Validation: chỉ NCC được lựa chọn nhận; bắt buộc PR hoặc yêu cầu ngoài quy trình có lý do",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.05",
+      "title": "FORM-BID – So sánh báo giá nhà cung cấp",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 818,
+      "requirements": [
+        "Dữ liệu/Trường: RFQ; NCC; giá; thuế; vận chuyển; lead time; bảo hành; điểm; kết luận",
+        "Validation: lưu bảng báo giá gốc; công thức so sánh cấu hình; lý do chọn không thấp nhất",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.06",
+      "title": "FORM-PO – Đơn mua hàng",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 823,
+      "requirements": [
+        "Dữ liệu/Trường: mã; NCC; PR; dự án; địa điểm giao; dòng vật tư; qty; giá; tiền; ngày giao",
+        "Validation: không vượt qty còn cần trừ khi ngoại lệ duyệt; không sửa PO đã gửi trực tiếp",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.07",
+      "title": "FORM-GRN – Phiếu nhập kho",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 828,
+      "requirements": [
+        "Dữ liệu/Trường: PO; kho; vật tư; qty đặt; qty nhận; số lô; thực trạng; file giao hàng",
+        "Validation: không nhận vượt ngưỡng; số đã nhận cập nhật transaction; nhận thiếu được giữ mở",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.08",
+      "title": "FORM-ISSUE – Phiếu xuất kho",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 833,
+      "requirements": [
+        "Dữ liệu/Trường: đề nghị; kho; dự án; hạng mục; mã vật tư; qty; người nhận; ngày",
+        "Validation: check tồn đồng thời; không hạch toán 2 lần; loại phiếu rõ",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.09",
+      "title": "FORM-COUNT – Biên bản kiểm kê",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 838,
+      "requirements": [
+        "Dữ liệu/Trường: kho; ngày chốt; người đếm; vật tư; sổ; thực tế; chênh; nguyên nhân",
+        "Validation: khóa tác động giao dịch thời điểm kiểm; duyệt chênh; tạo phiếu điều chỉnh",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.10",
+      "title": "FORM-ATT – Bảng chấm công công trình",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 843,
+      "requirements": [
+        "Dữ liệu/Trường: dự án; nhân viên; ca; ngày công; checkin/out; OT; nghỉ; ảnh; ghi chú",
+        "Validation: ca đêm; trùng giờ; bảo mật; ký xác nhận; khóa kỳ",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.11",
+      "title": "FORM-LEAVE – Đơn nghỉ phép",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 848,
+      "requirements": [
+        "Dữ liệu/Trường: nhân viên; từ ngày; đến ngày; số giờ/ngày; loại phép; lý do",
+        "Validation: không vượt hạn mức theo chính sách; trùng lịch nghỉ phải báo",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.12",
+      "title": "FORM-OT – Phiếu xác nhận tăng ca",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 853,
+      "requirements": [
+        "Dữ liệu/Trường: nhân viên; dự án; ngày; khoảng giờ; lý do; người xác nhận",
+        "Validation: không trùng giờ; đơn duyệt trước/sau theo chính sách; nguồn công",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.13",
+      "title": "FORM-PAY – Bảng lương",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 858,
+      "requirements": [
+        "Dữ liệu/Trường: kỳ; nhân viên; hợp đồng; công; OT; phụ cấp; khấu trừ; tạm ứng; thực lĩnh",
+        "Validation: công thức phiên bản; kiểm tra tổng; quyền xem; chốt kỳ",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.14",
+      "title": "FORM-ALLOC – Phân bổ lương theo dự án",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 863,
+      "requirements": [
+        "Dữ liệu/Trường: kỳ; người; tổng chi phí; tỷ trọng giờ/công; mã dự án; amount",
+        "Validation: tổng allocated = allocatable; khoản không phân bổ cần tài khoản riêng",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.15",
+      "title": "FORM-ACC – Nghiệm thu khối lượng",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 868,
+      "requirements": [
+        "Dữ liệu/Trường: dự án; hạng mục; lũy kế trước; kỳ; tổng; biên bản; chữ ký",
+        "Validation: lũy kế không vượt hợp đồng hiệu lực; có file chứng cứ",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.16",
+      "title": "FORM-PMT – Đề nghị thanh toán",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 873,
+      "requirements": [
+        "Dữ liệu/Trường: đối tượng; dự án; hóa đơn; ngày; số tiền; ngân hàng; chứng cứ",
+        "Validation: đính kèm hóa đơn/HĐ/biên bản tùy quy trình; hạn mức và quyền duyệt",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.17",
+      "title": "FORM-ASSET – Bàn giao tài sản",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 878,
+      "requirements": [
+        "Dữ liệu/Trường: mã tài sản; từ người/vị trí; đến; ngày; tình trạng; biên bản",
+        "Validation: tài sản không đồng thời giao 2 người; lưu lịch sử thay đổi",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.18",
+      "title": "FORM-MNT – Phiếu bảo dưỡng",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 883,
+      "requirements": [
+        "Dữ liệu/Trường: tài sản; nguyên nhân; lịch; bên thực hiện; vật tư; phí; downtime; kết quả",
+        "Validation: đóng khi nghiệm thu; chi phí liên kết cost code; cập nhật trạng thái",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.19",
+      "title": "FORM-HSE – Báo cáo sự cố/không phù hợp",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 888,
+      "requirements": [
+        "Dữ liệu/Trường: công trình; loại; mức độ; thời điểm; ảnh; người báo; người xử lý; hạn; biện pháp",
+        "Validation: sự cố nghiêm trọng kích hoạt cảnh báo; người đóng được ủy quyền",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.20",
+      "title": "FORM-CONTRACT – Hợp đồng/Phụ lục",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 893,
+      "requirements": [
+        "Dữ liệu/Trường: bên A/B; mã; giá trị; tiến độ; bảo hành; công trình; điều khoản; tệp ký",
+        "Validation: hiệu lực, tiền tệ; bản ký bất biến; phụ lục giữ bản gốc",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.21",
+      "title": "FORM-LOAN – Khế ước vay",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 898,
+      "requirements": [
+        "Dữ liệu/Trường: đối tác; lãi; gốc; ngày giải ngân; hạn; lịch trả; chứng từ",
+        "Validation: công thức lãi có phiên bản theo hợp đồng; kỳ thanh toán rõ",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    },
+    {
+      "id": "5.22",
+      "title": "FORM-TAX – Hồ sơ thuế/BHXH",
+      "source": "Tong_hop_nghiep_vu_MISA_BRD_SRS_ERP_Chau_Tuan_ban_mo_rong.docx",
+      "sourceParagraph": 903,
+      "requirements": [
+        "Dữ liệu/Trường: nhân viên/đơn vị; kỳ; mã loại; file; người ký; trạng thái; phản hồi",
+        "Validation: mã mẫu theo hiệu lực; chống nộp trùng; lưu lịch sử đối soát",
+        "Thao tác giao diện chuẩn: Tạo nháp → lưu → gửi duyệt (nếu áp dụng) → duyệt/trả về/từ chối → phát hành/thực hiện → xem lịch sử → xuất mẫu in; chỉ cho sửa khi trạng thái cho phép.",
+        "Metadata chung: id; code; org_id; project_id (nếu có); creator/created_at; modifier/updated_at; effective_date; status; revision; attachments; approved_by/approved_at; external_ref.",
+        "Quy tắc form engine cần thống nhất: mỗi field có mã, nhãn, kiểu, required/conditional-required, default, bộ từ điển, pattern, precision, masking, visibility, editable state, mapping API và quyền đọc/ghi. Mọi biểu mẫu phải kiểm tra ở cả frontend và backend."
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "acceptanceComplete": false
+    }
+  ]
+}

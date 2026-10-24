@@ -1,0 +1,29 @@
+/* Shared operational surfaces. Public marketing has its own product palette. */
+html:has(.app-shell) { --workspace-canvas: var(--erp-workspace-bg); background: var(--erp-workspace-bg); }
+body:has(.app-shell), .app-shell, .app-shell > .app-content { background: var(--erp-workspace-bg); }
+.app-shell > .app-content { transition: none; }
+.app-shell .app-header.app-header--compact { border-bottom: 1px solid var(--border-subtle); background: var(--surface); box-shadow: none; }
+.app-shell .app-rail { top: 0; height: 100svh; margin: 0; border: 0; border-right: 1px solid var(--border-subtle); border-radius: 0; background: var(--surface); box-shadow: none; transition: none; }
+.app-shell .app-rail__brand { height: var(--topbar-height); min-height: var(--topbar-height); gap: var(--space-2); padding-inline: var(--space-3); border-bottom: 1px solid var(--border-subtle); }
+.app-shell .app-rail__brand-name { font-size: var(--font-body); }
+.app-shell .app-rail__nav { gap: var(--space-5); padding: var(--space-4) var(--space-3); }
+.app-shell .app-rail__nav ul { gap: var(--space-1); }
+.app-shell .app-rail__link { border-radius: var(--radius-control); color: var(--text-secondary); box-shadow: none; }
+.app-shell .app-rail__link svg { color: var(--text-secondary); filter: none; }
+.app-shell .app-rail__link:hover { background: var(--surface-2); }
+.app-shell .app-rail__link.is-active { background: var(--color-primary-soft); color: var(--color-primary-active); box-shadow: none; }
+.app-shell .app-rail__link.is-active svg { color: var(--color-primary-active); }
+.app-shell .app-rail__link.is-active::before { display: none; }
+.app-shell .app-rail__footer { border-top: 1px solid var(--border-subtle); }
+.app-shell .app-rail.is-collapsed .app-rail__brand { height: auto; min-height: calc(var(--topbar-height) + var(--control-height-md)); flex-direction: column; padding-block: var(--space-2); }
+.app-shell .app-rail.is-collapsed .app-rail__link.is-active { background: var(--color-primary-soft); box-shadow: none; }
+.app-shell .page-main :is(.card,.data-surface,.data-table-shell,.data-management-workspace,.work-canvas,.operational-workspace,.detail-panel,.form-section) { background: var(--surface); box-shadow: var(--erp-surface-shadow); }
+.app-shell .page-main .page-header h1 { letter-spacing: -.5px; }
+.app-shell .page-main .data-table thead { background: var(--surface-2); }
+.app-shell .app-header__search .header-search { background: var(--surface-2); box-shadow: none; }
+.app-shell .app-header__actions > :is(.notification-bell,.message-bell) { border-color: transparent; background: transparent; box-shadow: none; }
+.app-shell--module-hub .app-header { border-bottom: 1px solid var(--border-subtle); }
+@media (max-width: 767px) {
+  .app-shell .app-content { background: var(--erp-workspace-bg); }
+  .app-shell .app-header.app-header--compact { background: var(--surface); }
+}

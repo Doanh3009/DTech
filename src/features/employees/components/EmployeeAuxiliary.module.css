@@ -1,0 +1,8 @@
+.fields {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  gap: var(--space-4);
+}

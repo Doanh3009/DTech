@@ -1,26 +1,32 @@
+import { BusinessLoginEntry } from "@/features/business/BusinessLoginEntry";
 import { redirect } from "next/navigation";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { LoginForm } from "@/features/auth/components/LoginForm";
 import { LoginBrand } from "@/features/system-admin/components/LoginBrand";
-import { LoginBackdrop } from "@/features/system-admin/components/LoginBackdrop";
-import { resolveLandingPage } from "@/features/dashboard/registry";
 import { getRequestUser } from "@/services/auth/getRequestUser";
-import { readSettingsGroup, readSystemSettings } from "@/services/system-settings/systemSettingsService";
+import { readPresentationSettings } from "@/services/system-settings/systemSettingsService";
 import { testToolsAvailable } from "@/lib/testing/policy.mjs";
 import { TestAccountPicker } from "@/features/testing/TestAccountPicker";
+import { controlCenterEnabled } from "@/features/crm/controlCenterAccess";
 
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
+  if(controlCenterEnabled())return <BusinessLoginEntry/>;
   const { reason } = await searchParams;
-  const [settings, dashboard, user] = await Promise.all([readSystemSettings(), readSettingsGroup("dashboard"), getRequestUser()]);
-  if (user) redirect(resolveLandingPage(user, dashboard));
+  const [settings, user] = await Promise.all([readPresentationSettings(), getRequestUser()]);
+  if (user) redirect("/applications");
   const testEnvironment = testToolsAvailable();
-  return <main className="login-page"><LoginBackdrop /><section className="login-shell">
+  return <main className="login-page erp-login"><section className="login-shell">
     <aside className="login-brand-panel">
-      <div className="login-brand-lockup"><LoginBrand shortName={settings.organization.shortName} /></div>
+      <span className="erp-login__product">{settings.branding.systemName}</span>
+      <div className="login-brand-lockup"><LoginBrand logoUrl={settings.branding.logoMainUrl} shortName={settings.organization.shortName} /><strong className="erp-login__company">{settings.organization.companyName}</strong></div>
     </aside>
     <section className="login-card">
-      <div className="login-card__title"><span>ĐĂNG NHẬP HỆ THỐNG</span><h2>{settings.branding.systemName}</h2></div>
+      {controlCenterEnabled()?<Link className="erp-login__back" href="/"><ArrowLeft aria-hidden="true" size={17}/>Giới thiệu DIMIXO ERP</Link>:null}
+      <div className="login-card__title"><span>{settings.branding.systemName}</span><h1>Đăng nhập</h1></div>
       {reason === "session-expired" ? <p className="form-alert form-alert--warning" role="status">Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.</p> : null}
       <LoginForm />
+      {controlCenterEnabled()?<Link className="erp-login__trial" href="/dang-ky-dung-thu">Đăng ký dùng thử cho doanh nghiệp</Link>:null}
       {testEnvironment ? <TestAccountPicker environment={testEnvironment.environment} /> : null}
       <small>{settings.organization.companyName}</small>
     </section>

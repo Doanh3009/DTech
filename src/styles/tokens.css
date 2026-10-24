@@ -6,6 +6,16 @@
  * in app/layout.tsx may override the --color-primary family only.
  */
 :root {
+  /* DTech ERP component layer: inherit the existing semantic design system. */
+  --erp-workspace-bg: #f4f6f8;
+  --erp-surface-shadow: 0 1px 2px rgb(24 44 57 / 3%);
+  --erp-hub-width: 1240px;
+  --erp-module-card-height: 160px;
+  --erp-module-card-padding: var(--space-6);
+  --erp-module-card-radius: var(--radius-card);
+  --erp-module-card-bg: var(--surface);
+  --erp-module-card-border: var(--border-subtle);
+  --erp-module-icon-size: 56px;
   /* Typography */
   --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;

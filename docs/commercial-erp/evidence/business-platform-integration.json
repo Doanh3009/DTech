@@ -1,0 +1,241 @@
+{
+  "generatedAt": "2026-10-23T06:37:01.289Z",
+  "postgresVersion": "17.10",
+  "passed": 46,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "canonical six industry packs and 23 physical entity definitions",
+      "passed": true
+    },
+    {
+      "name": "provision and open metalworking without external project",
+      "passed": true
+    },
+    {
+      "name": "provision and open plastics_packaging without external project",
+      "passed": true
+    },
+    {
+      "name": "provision and open electronics without external project",
+      "passed": true
+    },
+    {
+      "name": "provision and open food_beverage without external project",
+      "passed": true
+    },
+    {
+      "name": "provision and open trading without external project",
+      "passed": true
+    },
+    {
+      "name": "provision and open construction without external project",
+      "passed": true
+    },
+    {
+      "name": "provision receipt replays and changed request conflicts",
+      "passed": true
+    },
+    {
+      "name": "operator permissions required",
+      "passed": true
+    },
+    {
+      "name": "direct table access and private helper execution denied",
+      "passed": true
+    },
+    {
+      "name": "company isolation: same codes allowed, foreign IDs hidden and references refused",
+      "passed": true
+    },
+    {
+      "name": "unavailable industry feature refused even with direct API/RPC",
+      "passed": true
+    },
+    {
+      "name": "session expiration, first password change, disabled account and viewer write",
+      "passed": true
+    },
+    {
+      "name": "stale version and forged system/computed fields refused",
+      "passed": true
+    },
+    {
+      "name": "CRM profile remains editable after automatic provision",
+      "passed": true
+    },
+    {
+      "name": "owner reset idempotent and revokes old sessions",
+      "passed": true
+    },
+    {
+      "name": "suspend idempotent, customer stage sync and session revocation",
+      "passed": true
+    },
+    {
+      "name": "CRM close revokes customer access atomically",
+      "passed": true
+    },
+    {
+      "name": "stock ledger rejects negative quantity, locks posted records and reverses atomically",
+      "passed": true
+    },
+    {
+      "name": "food lot needs expiry and quality release before consumption",
+      "passed": true
+    },
+    {
+      "name": "serial quantities and duplicate stock serial refused",
+      "passed": true
+    },
+    {
+      "name": "traceability graph refuses self and transitive cycles",
+      "passed": true
+    },
+    {
+      "name": "sales release freezes lines, creates receivable and prevents overpayment",
+      "passed": true
+    },
+    {
+      "name": "manufacturing snapshots BOM and labor/machine rates on posting",
+      "passed": true
+    },
+    {
+      "name": "project summary uses posted actual costs and same-company records only",
+      "passed": true
+    },
+    {
+      "name": "audit failure rolls business write back",
+      "passed": true
+    },
+    {
+      "name": "all 23 entity forms persist typed records with company-scoped display references",
+      "passed": true
+    },
+    {
+      "name": "record UUID replay is idempotent and changed payload is rejected",
+      "passed": true
+    },
+    {
+      "name": "password change preserves current session and revokes other sessions",
+      "passed": true
+    },
+    {
+      "name": "login rate limits apply before password derivation for unknown accounts",
+      "passed": true
+    },
+    {
+      "name": "trial expiry and account disable invalidate active customer sessions",
+      "passed": true
+    },
+    {
+      "name": "two real connections cannot overdraw stock",
+      "passed": true
+    },
+    {
+      "name": "partial delivery advances order version, reduces inventory and exposes remaining quantity",
+      "passed": true
+    },
+    {
+      "name": "delivery retry after completion returns original receipt and never posts twice",
+      "passed": true
+    },
+    {
+      "name": "a multi-line delivery rolls the whole command back if one line exceeds the order",
+      "passed": true
+    },
+    {
+      "name": "manual stock posting cannot bypass order quantity or unrelated-item validation",
+      "passed": true
+    },
+    {
+      "name": "reversing completed delivery restores stock and reopens the order",
+      "passed": true
+    },
+    {
+      "name": "a manual return cannot exceed the net delivered quantity",
+      "passed": true
+    },
+    {
+      "name": "delivery validates version, dates, decimal precision and exact input shape",
+      "passed": true
+    },
+    {
+      "name": "same-company and inventory checks apply to every batch line",
+      "passed": true
+    },
+    {
+      "name": "viewers can inspect delivery progress but cannot post a batch",
+      "passed": true
+    },
+    {
+      "name": "delivery command remains service-only and ledger guard is private",
+      "passed": true
+    },
+    {
+      "name": "audit failure after delivery rolls ledger, order version and receipt back together",
+      "passed": true
+    },
+    {
+      "name": "two delivery connections cannot overfulfill the remaining order",
+      "passed": true
+    },
+    {
+      "name": "logout committed during session resolution prevents the pending command",
+      "passed": true
+    },
+    {
+      "name": "simultaneous password changes from two sessions resolve without deadlock",
+      "passed": true
+    }
+  ],
+  "migrations": [
+    {
+      "filename": "202609090001_foundation_system_primitives.sql",
+      "sha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829"
+    },
+    {
+      "filename": "202609090002_employee_rbac_foundation.sql",
+      "sha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a"
+    },
+    {
+      "filename": "202610220004_product_trial_requests.sql",
+      "sha256": "182869df25042c132323abd36050e794a28878415e3bd55a5f81127e720ba535"
+    },
+    {
+      "filename": "202610220005_operator_customer_crm.sql",
+      "sha256": "483798e2751f20955a8371629624d3063e25ae843a3f52412240af0135e36925"
+    },
+    {
+      "filename": "202610230001_shared_business_platform.sql",
+      "sha256": "804ae4a514fc54778efda4c166b9b6cdb5ce36ad9455f54c81918921eb4de09a"
+    },
+    {
+      "filename": "202610230002_business_industry_entities.sql",
+      "sha256": "680a7b05a20b17771f55d7dc6c6a94af1b855a6a56923da2f48067e549c6807f"
+    },
+    {
+      "filename": "202610230003_business_record_commands.sql",
+      "sha256": "8c5e8062b4e56fc88340f71d211562240acb678ae616d5d4a505ca5ce0a66d42"
+    },
+    {
+      "filename": "202610230004_business_crm_lifecycle.sql",
+      "sha256": "04854f5a87b498339064fc30e0140f47dbe64e93232b6752add3adb9afd98034"
+    },
+    {
+      "filename": "202610230010_business_sales_fulfillment.sql",
+      "sha256": "c8a44b0358bb8ab2544e1c115ce3fb4546e7aac9f82b523c9080b0113185e21a"
+    },
+    {
+      "filename": "202610230011_business_session_serialization.sql",
+      "sha256": "7294e52fa14563a6ef21732d099395bfe62e698b387bc166a49c45119eb21f80"
+    }
+  ],
+  "cloudAccess": false,
+  "syntheticDataOnly": true,
+  "authExercised": false,
+  "salesCasesSha256": "bc51ede415a5775f826782a44c0e00519c1d47fc50dc4863c598041bac7a1d94",
+  "clusterStopped": true,
+  "runnerSha256": "5c3c19a1c8662a32bc73c7757bd479b3fcd05b894a5cab40d429bd31a6d25c50",
+  "casesSha256": "16784959ff3cd823696f2617d0fc25cea38195272b0cf8739af5db95538da29f"
+}

@@ -1,5 +1,7 @@
 ﻿# Châu Tuấn ERP — Master Design System
 
+Customer profile. Product-wide rules and new modules follow [DTech ERP Design DNA](../dtech-erp/MASTER.md).
+
 Revised 2026-10-03 using the supplied dashboard references and the existing ERP. Detailed component ownership lives in [UI design system](../../docs/ui-design-system.md).
 
 ## Direction

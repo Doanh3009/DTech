@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-10-23T01:31:07.490Z",
+  "postgresVersion": "17.10",
+  "passed": 27,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "operator role has no ERP administrator permission",
+      "passed": true
+    },
+    {
+      "name": "create stores customer and activity with audit atomically",
+      "passed": true
+    },
+    {
+      "name": "missing actor permission and inactive actor are refused",
+      "passed": true
+    },
+    {
+      "name": "stale edits cannot overwrite customer",
+      "passed": true
+    },
+    {
+      "name": "protected target tcjjhxqtreemccdbvyza",
+      "passed": true
+    },
+    {
+      "name": "protected target uioywupuuestcaliawlc",
+      "passed": true
+    },
+    {
+      "name": "protected target lgmlkagcytfjazulgfbz",
+      "passed": true
+    },
+    {
+      "name": "invalid setup checks",
+      "passed": true
+    },
+    {
+      "name": "invalid setup enabledModules",
+      "passed": true
+    },
+    {
+      "name": "invalid setup enabledModules",
+      "passed": true
+    },
+    {
+      "name": "invalid setup trialEndsOn",
+      "passed": true
+    },
+    {
+      "name": "invalid setup baseUrl",
+      "passed": true
+    },
+    {
+      "name": "invalid setup baseUrl",
+      "passed": true
+    },
+    {
+      "name": "unknown credential fields rejected",
+      "passed": true
+    },
+    {
+      "name": "duplicate deployment reference or origin blocked",
+      "passed": true
+    },
+    {
+      "name": "cannot skip from discovery to trial",
+      "passed": true
+    },
+    {
+      "name": "trial requires completed operator attestations",
+      "passed": true
+    },
+    {
+      "name": "changed infrastructure invalidates previous confirmations",
+      "passed": true
+    },
+    {
+      "name": "structured intake and exact replay preserve qualification",
+      "passed": true
+    },
+    {
+      "name": "bad qualification is rejected before intake",
+      "passed": true
+    },
+    {
+      "name": "qualified lead converts once and retains source and contact",
+      "passed": true
+    },
+    {
+      "name": "unqualified or stale lead cannot convert",
+      "passed": true
+    },
+    {
+      "name": "activity retry is idempotent and CAS protected",
+      "passed": true
+    },
+    {
+      "name": "audit failure rolls back all CRM writes",
+      "passed": true
+    },
+    {
+      "name": "tables and helper functions remain private",
+      "passed": true
+    },
+    {
+      "name": "concurrent customer CAS has one winner",
+      "passed": true
+    },
+    {
+      "name": "concurrent conversion creates one linked customer",
+      "passed": true
+    }
+  ],
+  "migrations": [
+    {
+      "filename": "202609090001_foundation_system_primitives.sql",
+      "sha256": "e086b881a079faf73ab60f9c7bbd785cab38ee1f3e1765eaca5b097a2fb65829"
+    },
+    {
+      "filename": "202609090002_employee_rbac_foundation.sql",
+      "sha256": "4037dcc67200728d0b1b80f14e51b215fe397ad6e5c9525455f80742422c0f7a"
+    },
+    {
+      "filename": "202610220004_product_trial_requests.sql",
+      "sha256": "182869df25042c132323abd36050e794a28878415e3bd55a5f81127e720ba535"
+    },
+    {
+      "filename": "202610220005_operator_customer_crm.sql",
+      "sha256": "483798e2751f20955a8371629624d3063e25ae843a3f52412240af0135e36925"
+    }
+  ],
+  "cloudAccess": false,
+  "syntheticDataOnly": true,
+  "authExercised": false,
+  "clusterStopped": true,
+  "runnerSha256": "cbe75177bcfc2f1bc1b4dc71d5bb83201f0e157ef8478540d6ad0c8e829703f9",
+  "casesSha256": "0468fce2b0150475a0ad03f6c7eae7c9e1c036b8d3498c64478e48df42cfbcc3"
+}

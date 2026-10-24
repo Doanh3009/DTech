@@ -1,0 +1,88 @@
+{
+  "capturedAt": "2026-10-24T01:29:27.362Z",
+  "target": "tcjjhxqtreemccdbvyza",
+  "environment": "development",
+  "brand": "DIMIXO ERP",
+  "companies": [
+    {
+      "accounts": 3,
+      "industry": "plastics_packaging",
+      "orders": 5,
+      "postedJournals": 16,
+      "productionOrders": 4,
+      "projects": 0,
+      "purchases": 4,
+      "slug": "bao-bi-an-phu",
+      "staff": 8,
+      "timecards": 96
+    },
+    {
+      "accounts": 3,
+      "industry": "metalworking",
+      "orders": 5,
+      "postedJournals": 16,
+      "productionOrders": 4,
+      "projects": 0,
+      "purchases": 4,
+      "slug": "co-khi-thanh-phat",
+      "staff": 8,
+      "timecards": 96
+    },
+    {
+      "accounts": 3,
+      "industry": "electronics",
+      "orders": 5,
+      "postedJournals": 16,
+      "productionOrders": 4,
+      "projects": 0,
+      "purchases": 4,
+      "slug": "dien-tu-minh-tin",
+      "staff": 8,
+      "timecards": 96
+    },
+    {
+      "accounts": 3,
+      "industry": "trading",
+      "orders": 5,
+      "postedJournals": 16,
+      "productionOrders": 0,
+      "projects": 0,
+      "purchases": 4,
+      "slug": "phan-phoi-hung-thinh",
+      "staff": 8,
+      "timecards": 96
+    },
+    {
+      "accounts": 3,
+      "industry": "food_beverage",
+      "orders": 5,
+      "postedJournals": 16,
+      "productionOrders": 4,
+      "projects": 0,
+      "purchases": 4,
+      "slug": "thuc-pham-an-nhien",
+      "staff": 8,
+      "timecards": 96
+    },
+    {
+      "accounts": 3,
+      "industry": "construction",
+      "orders": 5,
+      "postedJournals": 16,
+      "productionOrders": 0,
+      "projects": 3,
+      "purchases": 4,
+      "slug": "xay-dung-chau-tuan",
+      "staff": 8,
+      "timecards": 96
+    }
+  ],
+  "entities": 41,
+  "latestMigration": "202610240001",
+  "legacyAccounts": 1,
+  "legacyEmployees": 1,
+  "legacyPartners": 0,
+  "negativeStock": 0,
+  "unbalancedJournals": 0,
+  "testSuiteRun": false
+}

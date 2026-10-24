@@ -1,0 +1,50 @@
+{
+  "metalworking": {
+    "title": "Điều hành gia công",
+    "headline": "Từ định mức đến thành phẩm nhập kho.",
+    "scenario": "Một lệnh gia công nối định mức vật tư, từng công đoạn và chi phí thực tế.",
+    "steps": [{"kind":"boms","label":"Định mức"},{"kind":"work_orders","label":"Lệnh gia công"},{"kind":"operations","label":"Công đoạn"},{"kind":"material_issues","label":"Cấp vật tư"},{"kind":"production_reports","label":"Sản lượng"},{"kind":"production_receipts","label":"Nhập thành phẩm"},{"kind":"quality_checks","label":"Kiểm tra"}],
+    "primaryFeature":"production",
+    "preview":{"view":"production","title":"Lệnh gia công","columns":["Lệnh / Thành phẩm","Kế hoạch","Đạt cuối","Nhập kho"],"rows":[["GC-024 · Trục truyền động","1.000","860","800"],["GC-025 · Bích thép M24","600","600","600"],["GC-026 · Vỏ nhôm CNC","400","240","200"]],"statLabel":"Lệnh đang thực hiện","statValue":"03","accentLabel":"Công đoạn cuối","accentValue":"CNC → Mài → Hoàn thiện"}
+  },
+  "plastics_packaging": {
+    "title":"Điều hành nhựa & bao bì",
+    "headline":"Từng khuôn máy. Từng lượng hao hụt.",
+    "scenario":"Định mức hạt nhựa và khuôn được gắn với lệnh; lượng cấp, sản lượng và phế phẩm được đối chiếu trên cùng màn hình.",
+    "steps":[{"kind":"molds","label":"Khuôn"},{"kind":"boms","label":"Định mức"},{"kind":"work_orders","label":"Lệnh sản xuất"},{"kind":"material_issues","label":"Cấp nguyên liệu"},{"kind":"production_reports","label":"Sản lượng & phế phẩm"},{"kind":"production_receipts","label":"Nhập thành phẩm"},{"kind":"quality_checks","label":"Chất lượng"}],
+    "primaryFeature":"production",
+    "preview":{"view":"production","title":"Sản xuất nhựa & bao bì","columns":["Lệnh / Khuôn","Đạt cuối","Phế phẩm","Tỷ lệ phế"],"rows":[["SX-108 · Khuôn nắp 8 lòng","12.000","240","1,96%"],["SX-109 · Khuôn hộp 4 lòng","8.500","170","1,96%"],["SX-110 · Túi PE 40×60","6.000","90","1,48%"]],"statLabel":"Hạt nhựa đã cấp","statValue":"1.240 kg","accentLabel":"Định mức / thực tế","accentValue":"1.200 / 1.240 kg"}
+  },
+  "electronics": {
+    "title":"Lắp ráp & truy xuất linh kiện",
+    "headline":"Mỗi lô thành phẩm có nguồn gốc.",
+    "scenario":"Lô linh kiện đã cấp được liên kết với lô thành phẩm khi nhập kho. Kết quả kiểm thử quyết định quyền sử dụng lô.",
+    "steps":[{"kind":"lots","label":"Lô linh kiện"},{"kind":"quality_checks","label":"Kiểm tra đầu vào"},{"kind":"work_orders","label":"Lệnh lắp ráp"},{"kind":"material_issues","label":"Cấp linh kiện"},{"kind":"production_reports","label":"Lắp ráp & kiểm thử"},{"kind":"production_receipts","label":"Nhập thành phẩm"},{"kind":"lot_links","label":"Truy xuất"}],
+    "primaryFeature":"production",
+    "preview":{"view":"traceability","title":"Truy xuất linh kiện","columns":["Lô thành phẩm","Lô linh kiện","Số lượng","Trạng thái"],"rows":[["PCB-2610-A","IC-2610-08","500","Đã liên kết"],["PCB-2610-A","R-2610-12","2.000","Đã liên kết"],["PCB-2610-B","IC-2610-09","320","Đã liên kết"]],"statLabel":"Lô thành phẩm","statValue":"PCB-2610-A","accentLabel":"Kiểm thử","accentValue":"Đạt · 500 bo mạch"}
+  },
+  "food_beverage": {
+    "title":"Sản xuất theo lô & hạn dùng",
+    "headline":"Kiểm soát chất lượng từ đầu vào đến đầu ra.",
+    "scenario":"Nguyên liệu và thành phẩm theo lô có hạn dùng. Lô chờ kiểm tra, không đạt hoặc hết hạn bị chặn xuất.",
+    "steps":[{"kind":"lots","label":"Lô & hạn dùng"},{"kind":"quality_checks","label":"Kiểm tra đầu vào"},{"kind":"boms","label":"Công thức"},{"kind":"work_orders","label":"Lệnh sản xuất"},{"kind":"material_issues","label":"Cấp nguyên liệu"},{"kind":"production_receipts","label":"Nhập thành phẩm"},{"kind":"quality_checks","label":"Kiểm tra đầu ra"},{"kind":"stock_moves","label":"Xuất lô đạt"}],
+    "primaryFeature":"production",
+    "preview":{"view":"quality","title":"Lô hàng & hạn sử dụng","columns":["Mã lô","Thành phẩm","Hạn dùng","Chất lượng"],"rows":[["TP-2610-01","Nước ép cam 250 ml","23/11/2026","Được sử dụng"],["TP-2610-02","Nước ép táo 250 ml","24/11/2026","Chờ kiểm tra"],["NL-2610-08","Dịch quả cô đặc","05/11/2026","Được sử dụng"]],"statLabel":"Lô chờ kiểm tra","statValue":"01","accentLabel":"Ưu tiên theo hạn dùng","accentValue":"NL-2610-08 · 05/11"}
+  },
+  "trading": {
+    "title":"Bán hàng & phân phối",
+    "headline":"Một đơn hàng. Kho và công nợ cùng cập nhật.",
+    "scenario":"Giao nhiều đợt theo phần còn lại của đơn, đối chiếu tồn theo kho và lô, thu tiền theo khoản phải thu.",
+    "steps":[{"kind":"partners","label":"Khách hàng"},{"kind":"sales_orders","label":"Đơn bán"},{"kind":"sales_lines","label":"Chi tiết hàng"},{"kind":"stock_moves","label":"Giao hàng / trả hàng"},{"kind":"receivables","label":"Phải thu"},{"kind":"payments","label":"Thu tiền"}],
+    "primaryFeature":"sales",
+    "preview":{"view":"sales","title":"Đơn hàng & công nợ","columns":["Đơn hàng","Giá trị","Đã giao","Còn phải thu"],"rows":[["DH-2610-041","128.000.000 ₫","80 / 100","48.000.000 ₫"],["DH-2610-042","64.500.000 ₫","50 / 50","0 ₫"],["DH-2610-043","92.000.000 ₫","0 / 80","92.000.000 ₫"]],"statLabel":"Đơn đang giao","statValue":"02","accentLabel":"Giao nhiều đợt","accentValue":"DH-041 · Còn 20 sản phẩm"}
+  },
+  "construction": {
+    "title":"Công trình & chi phí",
+    "headline":"Biết tiến độ. Nắm chi phí từng công trình.",
+    "scenario":"Xuất vật tư ghi giảm kho và tập hợp chi phí công trình trong một giao dịch; chi phí nhân công, thầu phụ và tiến độ được đối chiếu với ngân sách.",
+    "steps":[{"kind":"projects","label":"Ngân sách"},{"kind":"project_materials","label":"Cấp vật tư"},{"kind":"project_costs","label":"Nhân công & thầu phụ"},{"kind":"project_updates","label":"Tiến độ"}],
+    "primaryFeature":"projects",
+    "preview":{"view":"projects","title":"Ngân sách công trình","columns":["Công trình","Ngân sách","Thực chi","Tiến độ"],"rows":[["CT-021 · Khu văn phòng","2,40 tỷ","1,68 tỷ","70%"],["CT-022 · Cải tạo tầng 3","850 triệu","620 triệu","80%"],["CT-023 · Hạ tầng kỹ thuật","1,20 tỷ","360 triệu","25%"]],"statLabel":"Công trình đang theo dõi","statValue":"03","accentLabel":"CT-021 · Ngân sách còn lại","accentValue":"720.000.000 ₫"}
+  }
+}

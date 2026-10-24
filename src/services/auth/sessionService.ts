@@ -147,6 +147,7 @@ export async function signInWithPassword(input: { username: string; password: st
     user_agent: fingerprint.userAgent,
     expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString()
   });
+  if (sessionError?.message === "ACCOUNT_SESSION_FORBIDDEN") throw new AppError("ACCOUNT_DISABLED");
   if (sessionError) throw new AppError("SERVER_ERROR", "Không thể tạo phiên đăng nhập.");
   await recordLoginResult(username, input.ip, true);
   return { user: account, session: data.session, sessionId };
@@ -225,7 +226,7 @@ async function resolveSessionUser(accessToken: string, sessionId: string): Promi
     }
     // PostgREST queries are lazy thenables: consuming the query starts the
     // activity write without making the page wait for another round trip.
-    void Promise.resolve(client.from("app_sessions").update({ last_seen_at: new Date().toISOString() }).eq("id", sessionId))
+    if(Date.now()-Date.parse(String(session.last_seen_at))>=60_000) void Promise.resolve(client.from("app_sessions").update({ last_seen_at: new Date().toISOString() }).eq("id", sessionId))
       .then(({ error: updateError }) => {
         if (updateError) logger.warn("auth.session_activity_update_failed", { metadata: { code: updateError.code } });
       })

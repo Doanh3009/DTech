@@ -27,7 +27,7 @@ const optionalText = z.preprocess(
 const dateText = z
   .string()
   .trim()
-  .regex(/^\d{4}-\d{2}-\d{2}$/, "Ngày phải có định dạng YYYY-MM-DD.");
+  .date("Ngày phải là ngày hợp lệ theo định dạng YYYY-MM-DD.");
 
 const optionalDateText = z.preprocess(
   (value) => (value === "" || value === null ? undefined : value),
@@ -115,15 +115,50 @@ export const createEmployeeSchema = createEmployeeBaseSchema
     }
   });
 
+const nullablePatchValue = <T extends z.ZodTypeAny>(schema: T) => z.preprocess(
+  (value) => typeof value === "string" && value.trim() === "" ? null : value,
+  schema.nullable().optional()
+);
+const patchText = nullablePatchValue(z.string().trim().min(1));
+const patchDate = nullablePatchValue(dateText);
+
+export const employeeLifecyclePatchKeys = ["employmentStatus", "terminationDate", "terminationReason"] as const;
+
 export const patchEmployeeSchema = createEmployeeBaseSchema
+  .pick({ employeeCode: true, fullName: true, departmentId: true, positionId: true, employmentTypeId: true, joinDate: true, employmentStatus: true })
   .partial()
   .extend({
-    rowVersion: z.coerce.number().int().positive().optional(),
-    terminationDate: optionalDateText,
-    terminationReason: optionalText,
-    reason: optionalText
+    rowVersion: z.number().int().min(1).max(2147483646),
+    displayName: patchText,
+    personalPhone: nullablePatchValue(z.string().trim().min(8, "Số điện thoại chưa hợp lệ.")),
+    personalEmail: nullablePatchValue(z.string().trim().email("Email chưa hợp lệ.")),
+    companyEmail: nullablePatchValue(z.string().trim().email("Email chưa hợp lệ.")),
+    dateOfBirth: patchDate,
+    gender: nullablePatchValue(z.enum(["male", "female", "other", "undisclosed"])),
+    managerEmployeeId: nullablePatchValue(z.string().uuid("Quản lý trực tiếp không hợp lệ.")),
+    joinDate: dateText.optional(),
+    probationStartDate: patchDate,
+    probationEndDate: patchDate,
+    officialDate: patchDate,
+    currentAddress: patchText,
+    permanentAddress: patchText,
+    province: patchText,
+    contractorName: patchText,
+    maritalStatus: patchText,
+    note: patchText,
+    terminationDate: patchDate,
+    terminationReason: nullablePatchValue(z.string().trim().min(3, "Lý do nghỉ việc cần ít nhất 3 ký tự.").max(500)),
+    reason: nullablePatchValue(z.string().trim().min(3, "Lý do thay đổi cần ít nhất 3 ký tự.").max(500))
   })
+  .strict()
   .superRefine((value, context) => {
+    if (!Object.entries(value).some(([key, field]) => key !== "rowVersion" && key !== "reason" && field !== undefined)) {
+      context.addIssue({ code: z.ZodIssueCode.custom, message: "Cần có ít nhất một thông tin thay đổi." });
+    }
+    if (value.employmentStatus === "terminated") {
+      if (!value.terminationDate) context.addIssue({ code: z.ZodIssueCode.custom, path: ["terminationDate"], message: "Cần nhập ngày nghỉ việc." });
+      if (!value.terminationReason) context.addIssue({ code: z.ZodIssueCode.custom, path: ["terminationReason"], message: "Cần nhập lý do nghỉ việc." });
+    }
     if (value.terminationDate && value.joinDate && value.terminationDate < value.joinDate) {
       context.addIssue({
         code: z.ZodIssueCode.custom,
@@ -134,17 +169,33 @@ export const patchEmployeeSchema = createEmployeeBaseSchema
     if (value.probationStartDate && value.probationEndDate && value.probationEndDate < value.probationStartDate) {
       context.addIssue({ code: z.ZodIssueCode.custom, path: ["probationEndDate"], message: "Ngày kết thúc thử việc không được trước ngày bắt đầu." });
     }
+    if (value.officialDate && value.joinDate && value.officialDate < value.joinDate) {
+      context.addIssue({ code: z.ZodIssueCode.custom, path: ["officialDate"], message: "Ngày chính thức không được trước ngày vào làm." });
+    }
   });
 
 export const provisionAccountSchema = z.object({
+  requestId: z.string().uuid("Mã yêu cầu cấp tài khoản không hợp lệ."),
   username: z.string().trim().toLowerCase().regex(usernamePattern, "Tên tài khoản không hợp lệ."),
   password: z.preprocess(
     (value) => (value === "" || value === null ? undefined : value),
-    z.string().regex(ACCOUNT_PASSWORD_PATTERN, ACCOUNT_PASSWORD_MESSAGE).optional()
+    z.string().max(256).regex(ACCOUNT_PASSWORD_PATTERN, ACCOUNT_PASSWORD_MESSAGE).optional()
   ),
   loginEmail: optionalEmail,
   loginPhone: optionalText,
   roleIds: z.array(z.string().uuid("Vai trò không hợp lệ.")).min(1, "Cần chọn ít nhất một vai trò.")
+}).strict();
+
+export const accountDeletionSchema = z.object({
+  requestId: z.string().uuid("Mã yêu cầu xóa tài khoản không hợp lệ.")
+}).strict();
+
+export const accountRecoverySchema = z.object({
+  action: z.enum(["resume", "cancel"]),
+  password: z.preprocess(
+    (value) => value === "" || value === null ? undefined : value,
+    z.string().max(256).regex(ACCOUNT_PASSWORD_PATTERN, ACCOUNT_PASSWORD_MESSAGE).optional()
+  )
 }).strict();
 
 export const accountStatusPatchSchema = z
@@ -167,36 +218,37 @@ export const accountRolesPatchSchema = z.object({
 });
 
 export const archiveEmployeeSchema = z.object({
+  rowVersion: z.number().int().min(1).max(2147483646),
   reason: z.string().trim().min(3, "Cần nhập lý do lưu trữ.").max(500)
-});
+}).strict();
+
+const sensitivePatchText = nullablePatchValue(z.string().trim().min(1).max(200));
 
 export const sensitiveProfilePatchSchema = z
   .object({
-    nationalIdNumber: optionalText,
-    nationalIdIssuedDate: optionalDateText,
-    nationalIdIssuedPlace: optionalText,
-    nationalIdExpiryDate: optionalDateText,
-    bankName: optionalText,
-    bankAccountNumber: optionalText,
-    bankAccountHolder: optionalText,
-    bankBranch: optionalText,
-    personalTaxCode: optionalText,
-    socialInsuranceCode: optionalText,
-    reason: optionalText
+    rowVersion: z.number().int().min(1).max(2147483646),
+    nationalIdNumber: sensitivePatchText,
+    nationalIdIssuedDate: patchDate,
+    nationalIdIssuedPlace: sensitivePatchText,
+    nationalIdExpiryDate: patchDate,
+    bankName: sensitivePatchText,
+    bankAccountNumber: sensitivePatchText,
+    bankAccountHolder: sensitivePatchText,
+    bankBranch: sensitivePatchText,
+    personalTaxCode: sensitivePatchText,
+    socialInsuranceCode: sensitivePatchText,
+    reason: z.string().trim().min(3, "Cần nhập lý do thay đổi từ 3 ký tự.").max(500)
   })
+  .strict()
   .superRefine((value, context) => {
+    if (!Object.entries(value).some(([key, field]) => key !== "rowVersion" && key !== "reason" && field !== undefined)) {
+      context.addIssue({ code: z.ZodIssueCode.custom, message: "Cần có ít nhất một thông tin thay đổi." });
+    }
     if (value.nationalIdNumber && !/^\d{9,12}$/.test(value.nationalIdNumber)) {
       context.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["nationalIdNumber"],
         message: "Số CCCD/CMND chưa hợp lệ."
-      });
-    }
-    if (value.nationalIdNumber && !value.reason) {
-      context.addIssue({
-        code: z.ZodIssueCode.custom,
-        path: ["reason"],
-        message: "Cần nhập lý do khi cập nhật CCCD."
       });
     }
     if (
@@ -258,3 +310,4 @@ export type ProvisionAccountInput = z.infer<typeof provisionAccountSchema>;
 export type AccountStatusPatchInput = z.infer<typeof accountStatusPatchSchema>;
 export type AccountRolesPatchInput = z.infer<typeof accountRolesPatchSchema>;
 export type SensitiveProfilePatchInput = z.infer<typeof sensitiveProfilePatchSchema>;
+export type ArchiveEmployeeInput = z.infer<typeof archiveEmployeeSchema>;

@@ -38,7 +38,8 @@ describe("typed system settings", () => {
       groupsExpanded: false
     }));
 
-    expect(upgraded.itemOrder.slice(0, 2)).toEqual(["/projects", "/dashboard"]);
+    expect(upgraded.itemOrder[0]).toBe("/projects");
+    expect(upgraded.itemOrder).not.toContain("/dashboard");
     expect(upgraded.itemOrder).toHaveLength(defaultSystemSettings.navigation.itemOrder.length);
     expect(upgraded.hiddenItems).toEqual(["/employees"]);
     expect(upgraded.groupsExpanded).toBe(false);

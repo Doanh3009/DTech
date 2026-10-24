@@ -1,0 +1,68 @@
+﻿{
+  "valid": true,
+  "schemaVersion": 1,
+  "manifestFile": "supabase/deployments/customer.example.json",
+  "legacyManifest": false,
+  "deploymentId": "may-mau-staging",
+  "projectRef": "abcdefghijklmnopqrst",
+  "manifestSha256": "435ca303406c588ae129876e131d22825c18ed2a859ef3de712a12ae8793c75b",
+  "dryRun": true,
+  "networkAccess": false,
+  "appliesChanges": false,
+  "createsProject": false,
+  "includesDevelopmentSeed": false,
+  "environment": "staging",
+  "apiUrl": "https://abcdefghijklmnopqrst.supabase.co",
+  "applicationUrl": "https://erp.example.invalid",
+  "envFile": ".env.customer.local",
+  "migrations": {
+    "directory": "supabase/migrations",
+    "count": 56,
+    "latest": "202610210002_atomic_system_settings.sql",
+    "sha256": "bbe251d82aa7dacfb5fa32272c995308ff91d5b0d936892cb16793a7a81bb8fe"
+  },
+  "settingsPreview": {
+    "branding": {
+      "systemName": "May Mẫu ERP"
+    },
+    "organization": {
+      "companyName": "Công ty May Mẫu",
+      "shortName": "MAY MAU"
+    },
+    "localization": {
+      "timezone": "Asia/Ho_Chi_Minh",
+      "locale": "vi-VN"
+    },
+    "modules": {
+      "human_resources": true,
+      "attendance": true,
+      "projects": false,
+      "warehouse": true,
+      "import_export": true,
+      "accounting": true,
+      "operations": true,
+      "reports": true,
+      "messaging": true,
+      "industryPreset": "garment"
+    }
+  },
+  "admin": {
+    "username": "admin",
+    "displayName": "Quản trị May Mẫu",
+    "employeeCode": "SYS-MAY-MAU-ADMIN",
+    "passwordSource": "secret store, environment or stdin"
+  },
+  "requiredReviews": [
+    "Quyền sở hữu và target database",
+    "Backup và rehearsal migration",
+    "Cấu hình khách hàng và module",
+    "Secrets riêng cho bản triển khai",
+    "Nghiệm thu nghiệp vụ và phê duyệt phát hành"
+  ],
+  "pendingActions": [
+    "Migration staging",
+    "Áp dụng customer settings qua luồng version/audit",
+    "Bootstrap admin có thông tin xác thực riêng",
+    "Health, smoke và UAT"
+  ]
+}

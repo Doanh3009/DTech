@@ -1,7 +1,7 @@
 import { PDFDocument, rgb } from "pdf-lib";
 import { embedVietnamesePdfFonts, wrapPdfText } from "@/lib/documents/pdfFonts";
 
-import type { PayslipSettings } from "@/config/systemSettings";
+import { defaultSystemSettings, type PayslipSettings } from "@/config/systemSettings";
 
 type PayslipPdfInput = {
   employeeCode: string;
@@ -25,17 +25,7 @@ export async function generatePayslipPdf(input: PayslipPdfInput): Promise<Uint8A
   let page = document.addPage([595.28, 841.89]);
   const dark = rgb(0.14, 0.19, 0.24);
   const muted = rgb(0.4, 0.45, 0.51);
-  const template = input.template ?? {
-    companyName: "CÔNG TY CHÂU TUẤN",
-    title: "PHIẾU LƯƠNG THÁNG {month}",
-    footer: "Tài liệu nội bộ · Dữ liệu lương riêng tư",
-    primaryColor: "#2E9B67",
-    showWorkDays: true,
-    showBaseSalary: true,
-    showAllowance: true,
-    showBonus: true,
-    showDeduction: true
-  };
+  const template = input.template ?? defaultSystemSettings.payslip;
   const green = pdfColor(template.primaryColor);
   const left = 52;
   let y = 782;

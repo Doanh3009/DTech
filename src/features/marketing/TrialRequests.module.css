@@ -1,0 +1,12 @@
+.filters { display:flex; flex-wrap:wrap; align-items:end; gap:var(--space-4); }
+.filters > :global(.search-input) { flex:1 1 260px; }
+.filters > :global(.field) { width:200px; }
+.filters > span { color:var(--text-secondary); font-size:var(--font-meta); padding-bottom:var(--space-3); }
+.list { --table-action-column-width:100px; }
+.contact { min-width:0; display:grid; gap:var(--space-1); }
+.contact > a { display:block; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.details { display:grid; gap:var(--space-4); margin:0; }
+.details > div { display:grid; gap:var(--space-1); border-bottom:1px solid var(--border-subtle); padding-bottom:var(--space-3); }
+.details dt { color:var(--text-secondary); font-size:var(--font-meta); }
+.details dd { margin:0; color:var(--text-primary); font-size:var(--font-body); white-space:pre-wrap; overflow-wrap:anywhere; }
+@media(max-width:767px) { .filters > :global(.field) { width:100%; } }

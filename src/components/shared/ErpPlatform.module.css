@@ -1,0 +1,95 @@
+.workspace {
+  width: min(100%, var(--erp-hub-width));
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-8);
+  padding-block: var(--space-6);
+}
+.identity, .sectionHeading, .toolbar, .actions, .companyName, .moduleCardTop, .moduleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.identity { justify-content: space-between; flex-wrap: wrap; }
+.companyName { min-width: 0; }
+.companyName > div { display: grid; gap: var(--space-1); }
+.companyName strong { font-size: var(--font-card); color: var(--text-primary); }
+.productLabel { font-size: var(--font-meta); font-weight: var(--font-weight-semibold); letter-spacing: .12em; color: var(--text-secondary); }
+.identityMeta { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; color: var(--text-secondary); font-size: var(--font-meta); }
+.heading { display: grid; gap: var(--space-3); }
+.heading h1 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: var(--line-height-tight); letter-spacing: -.035em; color: var(--text-primary); }
+.toolbar { justify-content: space-between; flex-wrap: wrap; }
+.toolbar > :global(.search-input) { width: min(100%, 340px); background: var(--surface); }
+.filters { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.filter {
+  min-height: var(--control-height-md); padding: var(--space-2) var(--space-4); border: 1px solid transparent;
+  border-radius: var(--radius-pill); color: var(--text-secondary); background: transparent; cursor: pointer; font: inherit; font-size: var(--font-meta);
+}
+.filter:hover { background: var(--surface); }
+.filter[aria-pressed="true"] { background: var(--surface); border-color: var(--border-subtle); color: var(--text-primary); font-weight: var(--font-weight-semibold); box-shadow: var(--shadow-sm); }
+.filter:focus-visible, .moduleCard:focus-visible, .preset:has(input:focus-visible) { outline: 3px solid var(--color-focus-ring); outline-offset: 3px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.moduleCard {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; align-content: space-between; gap: var(--space-6); min-height: var(--erp-module-card-height);
+  padding: var(--erp-module-card-padding); border: 1px solid color-mix(in srgb, var(--module-accent) 15%, var(--erp-module-card-border)); border-radius: var(--erp-module-card-radius);
+  background: var(--erp-module-card-bg); color: var(--text-primary); text-decoration: none; box-shadow: var(--erp-surface-shadow);
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-fast);
+}
+.moduleCard:hover { border-color: color-mix(in srgb, var(--module-accent) 65%, var(--erp-module-card-border)); box-shadow: var(--shadow-md); }
+.moduleCard strong { position: relative; z-index: 1; max-width: 85%; font-size: var(--font-card); line-height: var(--line-height-normal); font-weight: var(--font-weight-semibold); text-wrap: balance; }
+.moduleCardTop { position: relative; z-index: 1; justify-content: space-between; }
+.moduleIcon { display: grid; place-items: center; width: var(--erp-module-icon-size); height: var(--erp-module-icon-size); border: 1px solid color-mix(in srgb, var(--module-accent) 12%, var(--surface)); border-radius: var(--ui-radius-card); color: var(--module-accent); background: var(--module-surface); flex: 0 0 auto; }
+.sectionHeading { justify-content: space-between; flex-wrap: wrap; }
+.sectionHeading h2 { margin: 0; font-size: var(--font-card); }
+.count { font-size: var(--font-meta); color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.section { display: grid; gap: var(--space-4); min-width: 0; }
+.panel { display: grid; gap: var(--space-5); min-width: 0; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: var(--space-6); background: var(--surface); }
+.actions { flex-wrap: wrap; }
+.actions a { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--control-height-md); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); padding: var(--space-2) var(--space-4); background: var(--surface); color: var(--text-primary); font-size: var(--font-meta); text-decoration: none; }
+.actions a:hover { border-color: var(--color-primary-border); background: var(--color-primary-soft); }
+.presetGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-3); }
+.preset { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); cursor: pointer; color: var(--text-secondary); }
+.preset:has(input:checked) { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--text-primary); }
+.preset input { accent-color: var(--color-primary); width: 18px; height: 18px; }
+.preset span { font-size: var(--font-meta); font-weight: var(--font-weight-medium); }
+.moduleList { display: grid; }
+.moduleRow { justify-content: space-between; min-height: 78px; padding-block: var(--space-4); border-bottom: 1px solid var(--border-subtle); }
+.moduleRow:last-child { border-bottom: 0; }
+.moduleRow :global(.switch-field) { flex: 1; min-width: 0; }
+.moduleRow :global(.switch-field__label) { font-weight: var(--font-weight-medium); color: var(--text-primary); }
+.plannedList { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+.plannedItem { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); border: 1px solid var(--border-subtle); border-radius: var(--radius-control); padding: var(--space-3); font-size: var(--font-meta); }
+.twoColumns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: var(--space-3); }
+.swatch { display: grid; gap: var(--space-2); font-size: var(--font-meta); color: var(--text-secondary); }
+.swatch > span { height: 60px; border: 1px solid var(--border-subtle); border-radius: var(--radius-control); background: var(--swatch-color); }
+.typeSamples { display: grid; gap: var(--space-4); }
+.typeSamples > div { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: baseline; justify-content: space-between; }
+.typeSamples small { font-size: var(--font-meta); color: var(--text-secondary); }
+.typeSamples strong { font-weight: var(--font-weight-semibold); }
+.sampleTable { width: 100%; border-collapse: collapse; font-size: var(--font-meta); }
+.sampleTable th, .sampleTable td { padding: var(--space-3); text-align: left; border-bottom: 1px solid var(--border-subtle); }
+.sampleTable th { color: var(--text-secondary); font-weight: var(--font-weight-medium); }
+.sampleTable th:last-child, .sampleTable td:last-child { text-align: right; }
+.sampleTable[data-density="compact"] th, .sampleTable[data-density="compact"] td { padding-block: var(--space-2); }
+.spacing { display: flex; gap: var(--space-4); align-items: flex-end; flex-wrap: wrap; }
+.spacing > div { display: grid; justify-items: center; gap: var(--space-2); font-size: var(--font-meta); color: var(--text-secondary); }
+.spacing i { display: block; width: var(--sample-size); height: var(--sample-size); background: var(--color-primary-soft); border: 1px solid var(--color-primary-border); border-radius: var(--space-1); }
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 767px) {
+  .workspace { gap: var(--space-6); padding-block: var(--space-2); }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+  .moduleCard { min-height: 148px; padding: var(--space-4); }
+  .moduleCard strong { font-size: 14px; }
+  .moduleIcon { width: 46px; height: 46px; }
+  .twoColumns { grid-template-columns: minmax(0, 1fr); }
+  .panel { padding: var(--space-4); }
+  .toolbar > :global(.search-input) { width: 100%; }
+  .filters { width: 100%; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-1); }
+  .filter { padding-inline: var(--space-2); }
+  .identityMeta { width: 100%; }
+  .actions a { flex: 1 1 auto; }
+  .plannedItem { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .moduleCard { transition: none; } }

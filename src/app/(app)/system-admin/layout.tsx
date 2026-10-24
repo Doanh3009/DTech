@@ -7,6 +7,7 @@ import { can, isAccountEnabled } from "@/lib/auth/permissions";
 
 export default async function SystemAdminLayout({ children }: { children: ReactNode }) {
   const user = await getRequestUser();
-  if (!user || !isAccountEnabled(user) || !can(user.permissions, "system_admin.access")) redirect("/dashboard");
+  if (!user || !isAccountEnabled(user)) redirect("/login");
+  if (!can(user.permissions, "system_admin.access")) redirect("/applications");
   return <SystemAdminShell permissions={user.permissions}>{children}</SystemAdminShell>;
 }

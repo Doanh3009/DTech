@@ -3,16 +3,18 @@ import { describe, expect, it, vi } from "vitest";
 
 import { AppHeader } from "@/components/layout/AppHeader";
 import type { AuthenticatedUser } from "@/lib/auth/permissions";
+import { defaultSystemSettings } from "@/config/systemSettings";
 
 vi.mock("@/components/providers/SystemSettingsProvider", () => ({
   useBranding: () => ({ systemName: "Hệ thống nội bộ Châu Tuấn" }),
-  useOrganizationSettings: () => ({ shortName: "Châu Tuấn" })
+  useOrganizationSettings: () => ({ shortName: "Châu Tuấn" }),
+  useSystemSettings: () => ({ settings: defaultSystemSettings })
 }));
 vi.mock("@/components/layout/AppLogo", () => ({
   AppLogo: () => <span aria-label="Châu Tuấn" />
 }));
 vi.mock("@/components/layout/MobileAppLauncher", () => ({
-  MobileAppLauncher: () => <button aria-label="Mở Ứng dụng của tôi" />
+  MobileAppLauncher: () => <button aria-label="Mở nghiệp vụ" />
 }));
 vi.mock("@/features/search/components/CommandPalette", () => ({
   CommandPalette: () => <button>Tìm kiếm</button>
@@ -27,18 +29,18 @@ vi.mock("@/components/shared/UserMenu", () => ({
 const user: AuthenticatedUser = { id: "account-1", displayName: "Nguyễn Thị Thúy Hằng", username: "thuyhang", email: "hang@example.com", status: "active", permissions: [] };
 
 describe("AppHeader", () => {
-  it("renders the brand and launcher on a mobile root screen", () => {
-    render(<AppHeader connectionState="connected" pathname="/dashboard" user={user} />);
+  it("renders the brand without a repeated launcher on the module hub", () => {
+    render(<AppHeader connectionState="connected" pathname="/applications" user={user} />);
     expect(screen.getByText("Châu Tuấn")).toBeInTheDocument();
     expect(screen.queryByText("Đồng bộ tức thời")).not.toBeInTheDocument();
     expect(screen.getByText("Tìm kiếm")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Mở Ứng dụng của tôi" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Mở nghiệp vụ" })).not.toBeInTheDocument();
   });
 
-  it("keeps the module launcher on non-dashboard screens", () => {
+  it("keeps a business menu inside a module", () => {
     render(<AppHeader connectionState="connected" pathname="/employees" user={user} />);
     expect(screen.getByRole("navigation", { name: "Vị trí hiện tại" })).toHaveTextContent("Nhân viên");
-    expect(screen.getByRole("button", { name: "Mở Ứng dụng của tôi" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Mở nghiệp vụ" })).toBeInTheDocument();
   });
 
   it("uses a local return target when a screen provides one", () => {
