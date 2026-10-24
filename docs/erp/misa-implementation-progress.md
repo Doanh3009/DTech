@@ -8,6 +8,7 @@ Ngày cập nhật: 24/10/2026. Hai DOCX là nguồn yêu cầu tham khảo. B�
 - Migration `202610240005`–`202610240038` đã áp dụng trên Supabase phát triển `tcjjhxqtreemccdbvyza` sau khi người dùng xác nhận quyền cập nhật.
 - Đã nạp dữ liệu bổ sung tài chính, vận hành, chấm công và CRM bằng các command nghiệp vụ. Không nạp lại seed tạo tenant.
 - Đích Vercel: project riêng `dimixo-erp`, dùng database phát triển; tình trạng phát hành ghi tại bằng chứng triển khai. Project ERP nội bộ hiện tại không được đổi database.
+- Bản hiện tại đã phát hành tại [DIMIXO ERP](https://dimixo-erp.vercel.app), dùng Next.js và vùng xử lý Singapore. Trang giới thiệu, đăng nhập, chọn doanh nghiệp và readiness database đã đối chiếu qua HTTP; đây không phải nghiệm thu toàn bộ nghiệp vụ MISA.
 - Dữ liệu ERP nội bộ và hai project được bảo vệ không thuộc phạm vi cập nhật.
 
 ## Phần đã triển khai local

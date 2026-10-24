@@ -17,27 +17,28 @@
     "testSuiteRun": false,
     "browserAcceptanceRun": false,
     "buildId": "Rki2J5fK71v6oqihVpFmA",
-    "crmViewsPopulated": 4
+    "crmViewsPopulated": 4,
+    "liveRoutingAndDatabaseReadiness": "passed"
   },
   "deployment": {
     "projectRef": "tcjjhxqtreemccdbvyza",
     "environment": "development",
     "cloudMigrationsApplied": true,
     "previewSwitched": true,
-    "status": "database_updated_github_pushed_vercel_configured",
+    "status": "development_live_github_pushed",
     "automaticReviewRejectedAttempt": "202610240005–202610240022",
     "currentRequestedMigrationRange": "202610240005–202610240038",
     "currentRequestedMigrationCount": 34,
     "vercelProject": "dimixo-erp",
     "vercelDomain": "https://dimixo-erp.vercel.app",
-    "vercelDeploymentReady": false,
+    "vercelDeploymentReady": true,
     "vercelSecretConsent": "User explicitly approved sending SUPABASE_SERVICE_ROLE_KEY and SESSION_HASH_PEPPER to the encrypted environment of Vercel project dimixo-erp. Configuration completed with these two server secrets and public/runtime settings; integration, webhook and worker keys were excluded.",
     "githubRepository": "Doanh3009/DTech",
     "githubBranch": "feature/commercial-erp-p0-audit",
     "githubConnectedAccount": "chautuancons2010",
     "githubConnectedPushPermission": false,
     "githubCliPushSucceeded": true,
-    "githubApplicationCommit": "531748b0494304855d0392679d7dc5315376aa97",
+    "githubApplicationCommit": "35e2072e18553fb6ad3778cf1ebb9e3c733ecf2b",
     "userAuthorization": "User explicitly approved development updates, remaining work, GitHub push and Vercel deployment.",
     "postconditions": {
       "accounts": 18,
@@ -52,6 +53,42 @@
       "staff": 48,
       "tenants": 6,
       "unbalanced_journals": 0
+    },
+    "vercelDeploymentId": "dpl_DK2hCRxvN9o6LXfUUch63Rmj7ZNW",
+    "vercelSourceCommit": "35e2072e18553fb6ad3778cf1ebb9e3c733ecf2b",
+    "vercelFramework": "nextjs",
+    "vercelRegions": [
+      "sin1"
+    ],
+    "vercelPublishedAt": "2026-10-24T08:19:53.517Z",
+    "publicRouteChecks": [
+      {
+        "path": "/",
+        "status": 200
+      },
+      {
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "path": "/erp/co-khi-thanh-phat/login",
+        "status": 200
+      },
+      {
+        "path": "/trai-nghiem",
+        "status": 200
+      }
+    ],
+    "databaseReadiness": {
+      "httpStatus": 200,
+      "status": "ready",
+      "checks": [
+        {
+          "component": "database",
+          "status": "healthy"
+        }
+      ],
+      "checkedAt": "2026-10-24T08:19:53.315Z"
     }
   },
   "progressDocument": "docs/erp/misa-implementation-progress.md",
