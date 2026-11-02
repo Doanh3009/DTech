@@ -40,7 +40,8 @@
     "Patched Next.js, matching ESLint/SWC packages, Zod and compatible brace-expansion/source-map-js dependencies.",
     "Migrated records to explicit string keys and CRM schema access to the Zod 4 API.",
     "Preserved PATCH semantics: omitted employment status stays omitted; empty patches remain invalid.",
-    "Vercel upload records its exact source commit in deployment metadata."
+    "Vercel upload records its exact source commit in deployment metadata.",
+    "Pinned Node.js 24.x to match the local validation runtime and the intended Vercel project setting."
   ],
   "validation": {
     "build": true,
@@ -62,11 +63,11 @@
   "sourceHashes": [
     {
       "file": "package-lock.json",
-      "sha256LfNormalized": "e1d8b02aec707d67e62e8228b815c05913c3f23c1415460c441dedd5c9468262"
+      "sha256LfNormalized": "b372df4a827d15ec947d5ee8d2a4d0e21533430c27f7e59fb4224a9fbaaa5a31"
     },
     {
       "file": "package.json",
-      "sha256LfNormalized": "d8d323824cbe4e59625d170a73ecb51bed48c9c98f49944d4131ac909d99f60a"
+      "sha256LfNormalized": "4efd28158ec3d5be384fd5068123b03a88591118111c80e19897e7bc93fa624b"
     },
     {
       "file": "scripts/commercial/deploy-dimixo.mjs",
@@ -123,5 +124,10 @@
     "Nine moderate runtime findings remain in the ExcelJS archive/glob/UUID dependency chain; the suggested ExcelJS downgrade is a breaking change and was not applied. Excel import/export dependency remediation remains open.",
     "The UI/read checks and security patch do not complete acceptance of the 82 MISA requirements."
   ],
-  "credentialsIncluded": false
+  "credentialsIncluded": false,
+  "runtime": {
+    "engine": "24.x",
+    "validatedLocallyOn": "v24.19.0",
+    "reason": "Keep Vercel on the tested Node major instead of automatically selecting newer majors."
+  }
 }
