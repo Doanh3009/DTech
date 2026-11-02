@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T04:11:21.300Z",
+  "generatedAt": "2026-11-02T07:06:44.264Z",
   "schemaCompiled": true,
   "entityCount": 142,
   "migrations": [
@@ -374,6 +374,10 @@
     {
       "filename": "202611020013_business_session_rpc_volatility.sql",
       "sha256": "2a3099a4091e586c34f4db25ce9c5c5eb34972d3ba20c1b32edb901581e7f74b"
+    },
+    {
+      "filename": "202611020014_business_catalog_import.sql",
+      "sha256": "46d89485d8f6e6b843f643578fc7d3be8d6a46500d281b08f1165f45a5e59e57"
     }
   ],
   "cloudAccess": false,
@@ -1007,6 +1011,31 @@
       "module_disabled",
       "no_direct_table_access"
     ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "catalogImportVerification": {
+    "passed": true,
+    "checks": [
+      "create_update_three_catalogs",
+      "per_row_cas_conflict",
+      "partial_result_preserves_failed_row",
+      "exact_retry_no_duplicates",
+      "request_payload_conflict",
+      "case_insensitive_code_matching",
+      "duplicate_file_codes_rejected",
+      "manual_save_invariants_preserved",
+      "tenant_isolation",
+      "read_scope_required",
+      "create_permission_required",
+      "viewer_denied",
+      "module_disabled",
+      "import_history",
+      "rls_and_no_direct_access",
+      "bounded_200_row_batch"
+    ],
+    "batchRows": 200,
+    "batchDurationMs": 685,
     "data": "synthetic only",
     "cloudAccess": false
   }

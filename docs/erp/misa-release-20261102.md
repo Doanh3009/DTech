@@ -40,3 +40,7 @@ Build, TypeScript, lint phạm vi sửa và 1.680 test đã qua; 37 test live t�
 Kiểm tra sau deploy: health/live, health/ready, trang chủ và đăng nhập HTTP 200; 12 API đọc HTTP 200; 33 màn hình trên 390/768/1440px không lỗi JavaScript/API, không tràn ngang; năm tương tác đã qua; cả 18 tài khoản của sáu tenant đăng nhập, đọc đúng vai trò và đăng xuất thành công. Kiểm tra trình duyệt dùng dữ liệu mẫu và không lưu chứng từ nghiệp vụ. [Biên bản phát hành](../commercial-erp/evidence/misa-vercel-release-20261102.json) ghi chi tiết.
 
 Tài khoản/mật khẩu ở tệp riêng `.tmp/DIMIXO-ban-giao-tai-khoan.md`, không có trong GitHub. Đây là bản chạy trên môi trường phát triển với doanh nghiệp mô phỏng; phạm vi còn mở ở trên vẫn áp dụng trước khi nghiệm thu vận hành thật.
+
+## Nhập danh mục CSV/XLSX
+
+Bổ sung nhập vật tư, đối tác và kho với mẫu XLSX, xem trước từng dòng, chọn tạo/cập nhật/bỏ qua, hiển thị giá trị cũ → mới, CSV lỗi, receipt thử lại và lịch sử nhập theo tenant. Migration `202611020014` đã áp dụng trên môi trường phát triển, tổng 151 migration; dữ liệu cũ và 18 tài khoản giữ nguyên. [Hướng dẫn và giới hạn](catalog-import.md), [bằng chứng kiểm chứng](../commercial-erp/evidence/misa-catalog-import-release.json). Phạm vi này chưa hoàn tất toàn bộ 2.02 hay ma trận 82 yêu cầu.

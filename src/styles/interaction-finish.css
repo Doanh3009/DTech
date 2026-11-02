@@ -293,6 +293,15 @@ body:has(.app-shell),
   overflow-y: auto;
   overscroll-behavior: contain;
 }
+.overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer[data-size="wide"] {
+  width: min(var(--overlay-wide-width), calc(100vw - var(--space-8)));
+  max-width: var(--overlay-wide-width);
+}
+@media(max-width:767px) {
+  .overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer[data-size="wide"] {
+    width: calc(100vw - var(--space-6));
+  }
+}
 
 @media (min-width: 768px) {
   .contract-workspace-grid { gap: 24px; }

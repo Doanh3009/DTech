@@ -1,0 +1,16 @@
+// @vitest-environment node
+import {beforeEach,describe,expect,it,vi} from "vitest";
+import type {BusinessWorkspace} from "./businessSchemas";
+const mocks=vi.hoisted(()=>({workspace:vi.fn(),rpc:vi.fn(),file:vi.fn()}));
+vi.mock("./businessService",()=>({readBusinessWorkspace:mocks.workspace,businessRpc:mocks.rpc,businessSessionArgs:vi.fn().mockResolvedValue({p_hash:"session",p_slug:"acme"})}));
+vi.mock("./businessCredentials",()=>({businessHash:vi.fn(()=>"a".repeat(64))}));
+vi.mock("./businessImportFile",()=>({readBusinessImportFile:mocks.file,businessImportTemplate:vi.fn()}));
+import {commitBusinessImport,previewBusinessImport,readImportUpload} from "./businessImportService";
+const workspace={slug:"acme",role:"owner",industry:"construction",features:["inventory","crm"]} as BusinessWorkspace;
+beforeEach(()=>{vi.clearAllMocks();mocks.workspace.mockResolvedValue(workspace);mocks.rpc.mockResolvedValue([]);mocks.file.mockResolvedValue([{rowNumber:2,values:{code:"A1",name:"Mặt hàng",unit:"kg"},errors:[]}]);});
+describe("catalog import service boundaries",()=>{
+ it("rejects viewers and disabled modules before parsing a file",async()=>{const file=new File(["data"],"input.csv");mocks.workspace.mockResolvedValue({...workspace,role:"viewer"});await expect(previewBusinessImport("acme","items",file)).rejects.toMatchObject({code:"PERMISSION_DENIED"});mocks.workspace.mockResolvedValue({...workspace,features:["crm"]});await expect(previewBusinessImport("acme","items",file)).rejects.toMatchObject({code:"PERMISSION_DENIED"});expect(mocks.file).not.toHaveBeenCalled();});
+ it("rejects update-only accounts trying to create, even with forged preview data",async()=>{mocks.workspace.mockResolvedValue({...workspace,role:"editor",customAccess:true,grants:[{kind:"items",scope:"tenant",actions:["read","update"],project_ids:[],department:""}]});await expect(commitBusinessImport("acme","items",{requestId:crypto.randomUUID(),fileName:"input.csv",fileHash:"a".repeat(64),rows:[{rowNumber:2,action:"create",recordId:crypto.randomUUID(),rowVersion:0,data:{code:"A1",name:"Mặt hàng",notes:"",unit:"kg",tracking:"none",standard_cost:0}}]})).rejects.toMatchObject({code:"PERMISSION_DENIED"});expect(mocks.rpc).not.toHaveBeenCalled();});
+ it("rejects forged protected fields before a commit RPC",async()=>{await expect(commitBusinessImport("acme","items",{requestId:crypto.randomUUID(),fileName:"input.csv",fileHash:"a".repeat(64),rows:[{rowNumber:2,action:"create",recordId:crypto.randomUUID(),rowVersion:0,data:{code:"A1",name:"Mặt hàng",notes:"",unit:"kg",tracking:"none",standard_cost:0,tenant_id:"other"}}]})).rejects.toMatchObject({code:"VALIDATION_ERROR"});expect(mocks.rpc).not.toHaveBeenCalled();});
+ it("reads a single multipart file and rejects unbounded bodies or extra fields",async()=>{const form=new FormData();form.set("file",new File(["Mã,Tên"],"input.csv"));const file=await readImportUpload(new Request("https://erp.invalid/api",{method:"POST",body:form}));expect(file.name).toBe("input.csv");form.set("tenant_id","other");await expect(readImportUpload(new Request("https://erp.invalid/api",{method:"POST",body:form}))).rejects.toMatchObject({code:"VALIDATION_ERROR"});await expect(readImportUpload(new Request("https://erp.invalid/api",{method:"POST",body:new Uint8Array(2*1024*1024)}))).rejects.toMatchObject({code:"VALIDATION_ERROR"});});
+});

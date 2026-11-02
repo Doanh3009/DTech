@@ -1,0 +1,5 @@
+{
+  "items": { "maxRows": 200 },
+  "partners": { "maxRows": 200 },
+  "warehouses": { "maxRows": 200 }
+}

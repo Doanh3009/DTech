@@ -184,6 +184,26 @@
           "limitations": [
             "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
           ]
+        },
+        {
+          "kind": "catalog-import-implementation",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-catalog-import-release.json",
+            "docs/erp/catalog-import.md",
+            "docs/commercial-erp/evidence/misa-catalog-import-rollout.json",
+            "supabase/migrations/202611020014_business_catalog_import.sql",
+            "src/features/business/BusinessCatalogImport.tsx",
+            "src/features/business/businessImportService.ts",
+            "scripts/commercial/verify-business-catalog-import.mjs"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Implemented CSV/XLSX templates, bounded file parsing and per-row preview/duplicate choices for items, partners and warehouses. Native PostgreSQL acceptance passed create/update, CAS conflicts, idempotent retry, partial results, manual-save invariants, tenant isolation, scope/role/module denial, RLS and a 200-row batch. The full suite passed 1,715 tests with 37 optional live tests skipped. Nine local browser screens at 390/768/1440px passed template downloads and preview without saving business records. Migration 202611020014 was applied to the development project with existing data preserved.",
+          "limitations": [
+            "Only the three registered master catalogs support this import. Arbitrary column mapping, fuzzy duplicates, alias/merge history and multi-line document imports remain open.",
+            "Live browser validation covers download/preview/selection, not a committed customer-data import. Commit acceptance uses synthetic native PostgreSQL data.",
+            "The 82-item MISA acceptance scope is not complete."
+          ]
         }
       ]
     },
@@ -2412,7 +2432,7 @@
     "githubPushAuthorized": true,
     "vercelDeployAuthorized": true,
     "remainingLocalMigrationsApplied": true,
-    "currentChangesPublished": true,
+    "currentChangesPublished": false,
     "codeCommit": "c847c8b8b901f2a54b6897db2063fce0e5cffdbf",
     "deploymentArtifact": "docs/commercial-erp/evidence/misa-vercel-release-20261102.json"
   },
@@ -2792,5 +2812,16 @@
     "apiFailures": 0,
     "logoutStatus": 200,
     "privateScreenshotsDirectory": ".tmp/misa-release-ui-vercel"
+  },
+  "catalogImportVerification": {
+    "artifact": "docs/commercial-erp/evidence/misa-catalog-import-release.json",
+    "catalogs": [
+      "items",
+      "partners",
+      "warehouses"
+    ],
+    "native": true,
+    "localScreens": 9,
+    "liveCommit": false
   }
 }

@@ -1,0 +1,280 @@
+{
+  "generatedAt": "2026-11-02T07:22:27.185Z",
+  "phase": "validated-locally",
+  "target": "https://dimixo-erp.vercel.app",
+  "catalogs": [
+    "items",
+    "partners",
+    "warehouses"
+  ],
+  "build": {
+    "passed": true,
+    "buildId": "xPPRvpKupnGHqVfmwMfV4",
+    "typecheck": true,
+    "lint": true
+  },
+  "tests": {
+    "passed": 1715,
+    "failed": 0,
+    "skipped": 37,
+    "total": 1752,
+    "newTests": 35
+  },
+  "native": {
+    "passed": true,
+    "checks": [
+      "create_update_three_catalogs",
+      "per_row_cas_conflict",
+      "partial_result_preserves_failed_row",
+      "exact_retry_no_duplicates",
+      "request_payload_conflict",
+      "case_insensitive_code_matching",
+      "duplicate_file_codes_rejected",
+      "manual_save_invariants_preserved",
+      "tenant_isolation",
+      "read_scope_required",
+      "create_permission_required",
+      "viewer_denied",
+      "module_disabled",
+      "import_history",
+      "rls_and_no_direct_access",
+      "bounded_200_row_batch"
+    ],
+    "batchRows": 200,
+    "batchDurationMs": 685,
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "rolloutArtifact": "docs/commercial-erp/evidence/misa-catalog-import-rollout.json",
+  "localBrowser": {
+    "generatedAt": "2026-11-02T07:21:11.108Z",
+    "origin": "http://localhost:3100",
+    "scope": "Template downloads and file preview only; no catalog commit",
+    "screens": [
+      {
+        "kind": "items",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "items",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "items",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      }
+    ],
+    "actions": [
+      {
+        "kind": "items",
+        "templateDownloaded": true,
+        "fileType": "xlsx",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      },
+      {
+        "kind": "partners",
+        "templateDownloaded": true,
+        "fileType": "csv",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      },
+      {
+        "kind": "warehouses",
+        "templateDownloaded": true,
+        "fileType": "csv",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      }
+    ],
+    "errors": [],
+    "apiFailures": [],
+    "businessRecordsCreated": false,
+    "credentialsIncluded": false,
+    "logoutStatus": 200,
+    "passed": true
+  },
+  "secretScan": {
+    "passed": true,
+    "sourceFiles": 26,
+    "clientArtifacts": 159,
+    "secretMatches": 0
+  },
+  "sourceHashes": [
+    {
+      "file": "docs/commercial-erp/evidence/misa-catalog-import-rollout.json",
+      "sha256LfNormalized": "82facc1e5f6ac38dca0fbe7f9244a2bbc0e1ead36a29b2f861b0b681a41c1301"
+    },
+    {
+      "file": "docs/erp/catalog-import.md",
+      "sha256LfNormalized": "36cd61b6cfa3f63047c01b0fa69f0417453d350657f65c688e16e10ff68e0532"
+    },
+    {
+      "file": "scripts/commercial/verify-business-catalog-import.mjs",
+      "sha256LfNormalized": "b2be7ee28c89f5f0573cf12c842dc487d697b2e397c559fbab3b1b5dc4927e8a"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/imports/[kind]/route.test.ts",
+      "sha256LfNormalized": "7cf7638e01b51da21c3617ae4949bb9b9e9e307e1eb6bc218aae7bc1c584fbbb"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/imports/[kind]/route.ts",
+      "sha256LfNormalized": "48a99259f99798aa1b879779049856c5a90d812c596f0ceada415838342d265e"
+    },
+    {
+      "file": "src/config/businessImportCatalogs.json",
+      "sha256LfNormalized": "af2ef669998cf6ac5dadc92ce53249138d32f9d2de41e3bf23331b7c0f109fd8"
+    },
+    {
+      "file": "src/features/business/BusinessCatalogImport.test.tsx",
+      "sha256LfNormalized": "fab4bc9d7b366c0e5946bb54bbb209050c1c3e2ec8bdf9591b2b114268b3792a"
+    },
+    {
+      "file": "src/features/business/BusinessCatalogImport.tsx",
+      "sha256LfNormalized": "7c44b98be785194cf0f44f694d08a9add9ca57786aba0268f1245ceb6467312e"
+    },
+    {
+      "file": "src/features/business/businessImport.test.ts",
+      "sha256LfNormalized": "49e9945a4516a3d4745bbe84cffc0feb7cd941fab53ed386a59441ef8f91a4e8"
+    },
+    {
+      "file": "src/features/business/businessImport.ts",
+      "sha256LfNormalized": "1b0eebb4eafbcb91a152d2aeeb8152a685153ffa7dd1ccefaa2d8fd35554007b"
+    },
+    {
+      "file": "src/features/business/businessImportFile.test.ts",
+      "sha256LfNormalized": "8d636352610fb7751982e02f12d9fd8c443cdbe3508a712e2ed4e64f2329140b"
+    },
+    {
+      "file": "src/features/business/businessImportFile.ts",
+      "sha256LfNormalized": "0cc68ec84e7e9e58a3343761d1689b67641086f7c7a687d49d77747e57968b00"
+    },
+    {
+      "file": "src/features/business/businessImportService.test.ts",
+      "sha256LfNormalized": "69b9bd4f2abfc1c7fd373d658d6c858a3812dd7a43327f0384e61c6cd34d5da3"
+    },
+    {
+      "file": "src/features/business/businessImportService.ts",
+      "sha256LfNormalized": "279211c7a87b1d831543cc54c2670f61bed5ac4e07c45d8dbe0cd74dbf079645"
+    },
+    {
+      "file": "supabase/migrations/202611020014_business_catalog_import.sql",
+      "sha256LfNormalized": "46d89485d8f6e6b843f643578fc7d3be8d6a46500d281b08f1165f45a5e59e57"
+    },
+    {
+      "file": "docs/commercial-erp/evidence/industry-schema-build.json",
+      "sha256LfNormalized": "31333fad73f338dbf1bb193fdf36789c7994cc4027135e1a1b9068ee21be933c"
+    },
+    {
+      "file": "docs/commercial-erp/evidence/misa-current-review.json",
+      "sha256LfNormalized": "5e6edcd15a85bd11b329478eb38f8dd36fb1eada2dea35b89c82d2f9104a44ec"
+    },
+    {
+      "file": "docs/erp/misa-release-20261102.md",
+      "sha256LfNormalized": "c683ab214347b80d7ac5503d0472fd1fd99a35b7578ae24025e50b2791c3a7d3"
+    },
+    {
+      "file": "docs/erp/misa-requirements.json",
+      "sha256LfNormalized": "fb5443e63a3345a773cda62f01e9db6a4d1c6e7ce2cbe996b82f509c90b3c1f2"
+    },
+    {
+      "file": "scripts/commercial/compile-business-schema.mjs",
+      "sha256LfNormalized": "ba3ca9fb06d477d96b8e7f5318b74d6723c4bd4b2fcdc22859768158dcac7a60"
+    },
+    {
+      "file": "src/components/shared/Overlays.tsx",
+      "sha256LfNormalized": "b7b14f53a31e3c0ca678378cd4d80c4c9f6b1791952da6bdbdb187111af6916e"
+    },
+    {
+      "file": "src/features/business/Business.module.css",
+      "sha256LfNormalized": "523f9ac57d312fe81075c07fa539406e15960fe6dfe7bf9592476794e2d104f5"
+    },
+    {
+      "file": "src/features/business/BusinessRecords.tsx",
+      "sha256LfNormalized": "d1fcf11218b94a821063b2a000f7cb96942e0f735a4bda584be85fe7e6d0e34e"
+    },
+    {
+      "file": "src/features/business/businessService.ts",
+      "sha256LfNormalized": "3c11a2ce2a22d22d7175460975532eef3be889ac411b6a33bd78aaa30673f930"
+    },
+    {
+      "file": "src/styles/interaction-finish.css",
+      "sha256LfNormalized": "c5daafd6fef26cc477df0f180273e7a40c67999ec0ac2da8c3e28a7ff8069521"
+    },
+    {
+      "file": "src/styles/tokens.css",
+      "sha256LfNormalized": "36bbb5788ae65a1864c04c314a469e7f5d4354912bd814cf8b067db8c19ddf91"
+    }
+  ],
+  "fullMisaAcceptanceComplete": false,
+  "liveCatalogCommitTested": false,
+  "credentialsIncluded": false,
+  "focusedAfterLayoutRefinement": {
+    "passed": 42,
+    "failed": 0,
+    "skipped": 0
+  }
+}

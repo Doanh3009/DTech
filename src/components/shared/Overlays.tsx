@@ -158,7 +158,7 @@ export function Modal({ open, title, children, onClose, className }: OverlayProp
 /** Dialog is the semantic public name; Modal remains for backwards compatibility. */
 export const Dialog = Modal;
 
-export function Drawer({ open, title, children, onClose, className, keepMounted }: OverlayProps) {
+export function Drawer({ open, title, children, onClose, className, keepMounted, size = "default" }: OverlayProps & { size?: "default" | "wide" }) {
   const portalReady = usePortalReady();
   const { present, state, finishExit } = useOverlayPresence(open, portalReady);
   const drawerRef = useOverlay(present && portalReady, () => { if (open) onClose(); });
@@ -170,7 +170,7 @@ export function Drawer({ open, title, children, onClose, className, keepMounted 
 
   return createPortal(
     <div className="overlay overlay--drawer" data-state={state} hidden={!present} onClickCapture={(event) => { if (!open) { event.preventDefault(); event.stopPropagation(); } }} onKeyDownCapture={(event) => { if (!open) { event.preventDefault(); event.stopPropagation(); } }} onPointerDown={(event) => { if (open && event.target === event.currentTarget) onClose(); }} role="presentation">
-      <aside aria-labelledby={titleId} aria-modal="true" className={cn("drawer", className)} onAnimationEnd={(event) => { if (!open && event.target === event.currentTarget) finishExit(); }} onKeyDown={keepFocusInside} ref={drawerRef} role="dialog" tabIndex={-1}>
+      <aside aria-labelledby={titleId} aria-modal="true" className={cn("drawer", className)} data-size={size === "wide" ? "wide" : undefined} onAnimationEnd={(event) => { if (!open && event.target === event.currentTarget) finishExit(); }} onKeyDown={keepFocusInside} ref={drawerRef} role="dialog" tabIndex={-1}>
         <header className="overlay__header">
           <h2 id={titleId}>{title}</h2>
           <IconButton label="Đóng" onClick={onClose}>
