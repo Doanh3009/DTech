@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-10-26",
+  "environment": "development",
+  "projectRef": "tcjjhxqtreemccdbvyza",
+  "applied": true,
+  "migrations": [
+    {
+      "filename": "202610260001_business_approval_policies.sql",
+      "sha256": "bc9078f7aef0052e830ecc2df61235964fc85dceca1ce68e2e9999292f502f7c"
+    },
+    {
+      "filename": "202610260002_business_eforms.sql",
+      "sha256": "09477eb9c6212e5768654d4bc70ef3a991c46a9816f27fe30d51dbe6086c68e4"
+    },
+    {
+      "filename": "202610260003_business_approval_engine.sql",
+      "sha256": "5663f06c8163ff6efb99591898650e8657b9a64eb9a7a2ac08f5852e7bef835c"
+    }
+  ],
+  "preflight": {
+    "nativeSchemaCompiled": true,
+    "cloudAccessDuringNativeCompile": false,
+    "dryRunMigrations": [
+      "202610260001_business_approval_policies.sql",
+      "202610260002_business_eforms.sql",
+      "202610260003_business_approval_engine.sql"
+    ],
+    "dryRunSeeds": [],
+    "dryRunRoles": []
+  },
+  "before": {
+    "migrationCount": 115,
+    "latestMigration": "202610240038",
+    "tenantCount": 6,
+    "accountCount": 18,
+    "sessionCount": 93,
+    "commandCount": 5358,
+    "approvalTablesExist": false,
+    "formTablesExist": false
+  },
+  "after": {
+    "migrationCount": 118,
+    "latestMigration": "202610260003",
+    "tenantCount": 6,
+    "accountCount": 18,
+    "sessionCount": 93,
+    "commandCount": 5358,
+    "newPolicyRows": 0,
+    "newDelegationRows": 0,
+    "newApprovalRunRows": 0,
+    "newDecisionRows": 0,
+    "newFormVersionRows": 0,
+    "newFormRecordRows": 0
+  },
+  "accessControl": {
+    "newTables": [
+      "business_approval_policies",
+      "business_approval_delegations",
+      "business_approval_runs",
+      "business_approval_decisions",
+      "business_form_versions",
+      "business_form_records"
+    ],
+    "rlsEnabledOnAll": true,
+    "directTableGrantsToAnonAuthenticatedOrServiceRole": false,
+    "newRpcExecution": "service_role only; anon and authenticated denied"
+  },
+  "preservedExistingCounts": true,
+  "developmentSeedApplied": false,
+  "productionMigrationApplied": false,
+  "applicationDeployment": false
+}

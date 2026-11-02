@@ -1,0 +1,783 @@
+{
+  "generatedAt": "2026-11-02T04:18:48.133Z",
+  "target": {
+    "application": "dimixo-erp",
+    "url": "https://dimixo-erp.vercel.app",
+    "databaseProject": "tcjjhxqtreemccdbvyza",
+    "databaseEnvironment": "development"
+  },
+  "build": {
+    "passed": true,
+    "buildId": "BxkA8MZjj4q8zgOfbCqSy",
+    "typecheck": true,
+    "lintBusinessScope": true
+  },
+  "tests": {
+    "command": "npx vitest run --exclude 'scripts/**' --exclude 'supabase/**' --maxWorkers=3",
+    "passed": 1680,
+    "skipped": 37,
+    "failed": 0,
+    "unhandledErrors": 0,
+    "skippedScope": "37 optional internal live-read tests require a separate live test setup."
+  },
+  "native": {
+    "passed": true,
+    "migrations": 93,
+    "entities": 142,
+    "supabaseDefaultGrantsModeled": true,
+    "sessionRpcVolatilityChecked": true
+  },
+  "rollout": {
+    "artifact": "docs/commercial-erp/evidence/misa-feature-rollout.json",
+    "migrationsApplied": 32,
+    "totalMigrations": 150,
+    "existingDataPreserved": true,
+    "newTablesRls": 33
+  },
+  "browser": {
+    "origin": "http://localhost:3100",
+    "screenCaptureAt": "2026-11-02T04:14:51.192Z",
+    "screens": [
+      {
+        "route": "/",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/item_unit_conversions",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Quy đổi đơn vị vật tư"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/item_unit_conversions",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Quy đổi đơn vị vật tư"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/item_unit_conversions",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Quy đổi đơn vị vật tư"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      }
+    ],
+    "screenshotsDirectory": ".tmp/misa-release-ui-after",
+    "javascriptErrors": [],
+    "apiFailures": [],
+    "actions": {
+      "applicationFilter": true,
+      "mobileNavigation": true,
+      "quantityPreview": true,
+      "paymentPartnerField": true,
+      "csvDownload": true
+    },
+    "logoutStatus": 200
+  },
+  "apiSmoke": {
+    "generatedAt": "2026-11-02T04:12:05.824Z",
+    "origin": "http://localhost:3100",
+    "scope": "Read-only release API smoke using an existing demo owner account",
+    "checks": [
+      {
+        "route": "session",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/inbox",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/report",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/settings",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "quality/dashboard",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "calendar",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "notifications",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "members/owner-targets",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "search",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "records/item_unit_conversions",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "project-tasks",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "misa",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "credentialsIncluded": false,
+    "logoutStatus": 200,
+    "passed": true
+  },
+  "secretScan": {
+    "passed": true,
+    "files": 96,
+    "privateCredentialFilesExcluded": true
+  },
+  "sourceHashes": [
+    {
+      "file": "scripts/commercial/compile-business-schema.mjs",
+      "sha256LfNormalized": "f30838bdf3b3b0da23a7985dccfabfc734eae1572ebb151d2f6a8b5d42eea866"
+    },
+    {
+      "file": "scripts/commercial/populate-business-attendance.mjs",
+      "sha256LfNormalized": "88bf992b3f496b5b652bf3d74a199947ff1d6df3a6709970a1facc4e8a1f8744"
+    },
+    {
+      "file": "scripts/commercial/populate-business-crm.mjs",
+      "sha256LfNormalized": "cc501dbd9feff4315e7600f6a8e0501dacf69c8c8efc9b382723d6348c72e456"
+    },
+    {
+      "file": "scripts/commercial/populate-business-operations.mjs",
+      "sha256LfNormalized": "4b0527e4a0bdfcf27c8e3679aa82599ceeaac7860b2b40c9d1a7cb8f78ecbe04"
+    },
+    {
+      "file": "scripts/commercial/prepare-dimixo-experience.mjs",
+      "sha256LfNormalized": "3b34150617bb498cc83cd649afe2c45d09cab4fb13471af9b6d203b6c6d5b43c"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/[...path]/route.ts",
+      "sha256LfNormalized": "7073a199b8a033f44cf5483c3e5926e82c28a449b169856fe361df2094d74482"
+    },
+    {
+      "file": "src/app/erp/[slug]/(workspace)/[kind]/page.tsx",
+      "sha256LfNormalized": "3fa8b8173d32c2245802ebdde8cbc962ed61a5708e852db7b264ab2e980393b9"
+    },
+    {
+      "file": "src/app/erp/[slug]/(workspace)/module/[feature]/page.tsx",
+      "sha256LfNormalized": "1ac875a58bbfc2f8050d951ea6a6f30a146b8b4ea4a4521c9a5add9d64c35f52"
+    },
+    {
+      "file": "src/app/erp/[slug]/(workspace)/page.tsx",
+      "sha256LfNormalized": "7b2b9514e8250f0ae2fa87cf0e66cfbf60ae8f0927e94b6fc06ffaf16e86fc6f"
+    },
+    {
+      "file": "src/app/login/page.test.tsx",
+      "sha256LfNormalized": "4bde8b288257e75c9d85481a032321e9198c1b99336705b82b6a4fd71836ae77"
+    },
+    {
+      "file": "src/config/businessDashboardPreviews.json",
+      "sha256LfNormalized": "41a1e52f5ba1b75f1f6e8c94cb9f1fd066e3bfdb4f0da32d1cb995686ba6917b"
+    },
+    {
+      "file": "src/config/businessEntities.json",
+      "sha256LfNormalized": "0c065a3976135935af0897b37dbb4b2e5c40bea7a3421ef6c43126305f622b6a"
+    },
+    {
+      "file": "src/config/businessIndustries.json",
+      "sha256LfNormalized": "d002ea9c05b841734e252090780d507a2c4378cab4acc8e6f28968010bb891c3"
+    },
+    {
+      "file": "src/features/business/Business.module.css",
+      "sha256LfNormalized": "3c449f2f61b38e14c691fb03bd38456f8c9f8a9435e9149d98665e6cd34a7e73"
+    },
+    {
+      "file": "src/features/business/BusinessGovernanceWorkspace.tsx",
+      "sha256LfNormalized": "99abfe5f58b70128429c3fee99a37796cef4870efd538f02b4e2bf5dcaf50b45"
+    },
+    {
+      "file": "src/features/business/BusinessMisaWorkspace.tsx",
+      "sha256LfNormalized": "de79d1f987ad17b2d5270628a2d20709c79e9cd71dc82f0fb878cb7353f6402d"
+    },
+    {
+      "file": "src/features/business/BusinessOverview.tsx",
+      "sha256LfNormalized": "358180734c2132b0b4541ab66991c50ea462c9d5667034a253b89b04d768ab64"
+    },
+    {
+      "file": "src/features/business/BusinessPeopleWorkspace.tsx",
+      "sha256LfNormalized": "124a67f9d8c13127d48ddfb4bba99369e07e38783ef52713fdbf0e385bd8586a"
+    },
+    {
+      "file": "src/features/business/BusinessRecords.tsx",
+      "sha256LfNormalized": "7c90ba6808d4d86e59c5058e43b6314740a943689af83f03ae2f0634e38218b3"
+    },
+    {
+      "file": "src/features/business/BusinessShell.tsx",
+      "sha256LfNormalized": "a4bd8bd665f04058524a1a3c2151a841a0271bcd75432ac022b39e925e6be6ad"
+    },
+    {
+      "file": "src/features/business/BusinessWorkflowWorkspace.tsx",
+      "sha256LfNormalized": "0fe258dbef24a3d388f7a4240a0c854317a73c6d300674729ce44cd9f246eda0"
+    },
+    {
+      "file": "src/features/business/businessCatalog.test.ts",
+      "sha256LfNormalized": "5a45b82a4e5f093e98bf576791c63e0c6d6df6703a06c0e3ae5ba5343828835e"
+    },
+    {
+      "file": "src/features/business/businessCatalog.ts",
+      "sha256LfNormalized": "3306aacdc62702151fd010ba86604ea775bbf516940c5b8182c0ddc7c423ee8e"
+    },
+    {
+      "file": "src/features/business/businessMisaViews.ts",
+      "sha256LfNormalized": "f985597694cfc9bcf30fb634220efa20feb890db222b6c160575185874a1dece"
+    },
+    {
+      "file": "src/features/business/businessSchemas.ts",
+      "sha256LfNormalized": "78fdda070990198ea90c0dcbae5e8eb2cf216e862030de0be3d1ba243d2e4bee"
+    },
+    {
+      "file": "src/features/business/businessService.ts",
+      "sha256LfNormalized": "39492f9b2a58caa0bf735339a3be9fe6e180cb99144091d5ddb873e95fc2ed57"
+    },
+    {
+      "file": "src/features/business/businessWorkflows.ts",
+      "sha256LfNormalized": "acc51f1f19657378da454e1718e67f2485b5592bb112b76bae585f80a8507baa"
+    },
+    {
+      "file": "src/features/marketing/ImpactExplorer.test.tsx",
+      "sha256LfNormalized": "629ddb6b7a777ab29aa0defa8eadd8018feead0cda37f4d9f1dadb373dab9624"
+    },
+    {
+      "file": "src/features/marketing/ImpactExplorer.tsx",
+      "sha256LfNormalized": "963cd6764c83ed76e525a57bdbd9f7ecd9c4998d3d7e7b32b0ddaade748a5a57"
+    },
+    {
+      "file": "src/features/marketing/LandingPage.test.tsx",
+      "sha256LfNormalized": "d9822812007ec3b9df068d60cf5f108cd954863c0552367192e066bded5d6546"
+    },
+    {
+      "file": "src/features/marketing/TrialRequestForm.test.tsx",
+      "sha256LfNormalized": "62ef7900d2a09b5a480737ac4f2acdb53af2ae1869974e2df0a65029a84e19bd"
+    },
+    {
+      "file": "src/features/workspace/ModuleHub.tsx",
+      "sha256LfNormalized": "e545d9dc49e58826a0e8e9f9e28eae92db85376b5a3519ef2f02d6924dc512d0"
+    },
+    {
+      "file": "src/services/auth/sessionResolution.test.ts",
+      "sha256LfNormalized": "8a1f59cb3b597a26c7466e8460d0edc2e1387a52eec1f8fe3bb2df92deb3fe76"
+    },
+    {
+      "file": "scripts/commercial/verify-business-master-data.mjs",
+      "sha256LfNormalized": "08a303f1701f64874cf25bc27083beb9869837841661952b789bcfd0ad603741"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts",
+      "sha256LfNormalized": "89e3fda0d1b97838366ec10c7ae8ea117b0b0562b52629601e2938241c9e9c1d"
+    },
+    {
+      "file": "src/features/business/BusinessApplicationHub.tsx",
+      "sha256LfNormalized": "d8f32c7639f8cfa29f623e9b8f1a5c70ebd277ece7019e97367b3986517244f2"
+    },
+    {
+      "file": "src/features/business/BusinessApprovalInbox.tsx",
+      "sha256LfNormalized": "cc65c92b02f8acf0802d2da01487d15d7ed5bd130fc9bf8279553327f3fdf884"
+    },
+    {
+      "file": "src/features/business/BusinessApprovalPanel.tsx",
+      "sha256LfNormalized": "aa1484fb56404b47a152c2c283bd34475133d27b3b45775e955d39865706db7d"
+    },
+    {
+      "file": "src/features/business/BusinessApprovalSettings.tsx",
+      "sha256LfNormalized": "c5e31dd720d2b2dabd4706b109739f9a9c0be1075505a224baa9c853936a9420"
+    },
+    {
+      "file": "src/features/business/BusinessAttachments.tsx",
+      "sha256LfNormalized": "422ee0262ed828a5c7e5493d583503c517c3a99befb7d3dfa3eb8ebbe2320091"
+    },
+    {
+      "file": "src/features/business/BusinessCollaborationWorkspace.tsx",
+      "sha256LfNormalized": "8ff7ef201a9d2f43e1eb52c268752ee9e866d281e680f1da5c09ad59ffa21aec"
+    },
+    {
+      "file": "src/features/business/BusinessExtraForm.tsx",
+      "sha256LfNormalized": "6184f5685074a74cab7cbda378c99adae1378f4065799b48c2a0cc8373627b42"
+    },
+    {
+      "file": "src/features/business/BusinessGlobalSearch.test.tsx",
+      "sha256LfNormalized": "fd9482182844be02c677312573d9ae2e451f6542d5e9e3af367bf150b9838e9c"
+    },
+    {
+      "file": "src/features/business/BusinessGlobalSearch.tsx",
+      "sha256LfNormalized": "39722b298b4ccd7cd33bce3512e45106f03704ef3a02b681d9af0cd4c026ad86"
+    },
+    {
+      "file": "src/features/business/BusinessItemQuantityConverter.tsx",
+      "sha256LfNormalized": "7adf1a5e7e06376e9c781a0ae1ea2b4bd7bf6e4e0c11f07c93457168a965f0c7"
+    },
+    {
+      "file": "src/features/business/BusinessMisaWorkspace.test.tsx",
+      "sha256LfNormalized": "10495c003a28763b926d1402edf5cf5f171b455299a32d10724c9242ce532b57"
+    },
+    {
+      "file": "src/features/business/BusinessProjectTasks.tsx",
+      "sha256LfNormalized": "cfc9669d06c12625c90c5e964a8a30c3b3d10f22be4144ae1e9f6eebaa21ee4f"
+    },
+    {
+      "file": "src/features/business/BusinessQualityWorkspace.tsx",
+      "sha256LfNormalized": "7aadd8e1a263d1b8d76159a5a9ed83e8cf0f5508aa068962a990785b8ff6eb4c"
+    },
+    {
+      "file": "src/features/business/businessApprovalSchemas.ts",
+      "sha256LfNormalized": "bab06943071ea6f1f711604ff6bb3045c69955b4a82f7b79c6b65ed7ff52d473"
+    },
+    {
+      "file": "src/features/business/businessAttachmentService.ts",
+      "sha256LfNormalized": "bfd5262a733327289d8c1671389739e47f3ce42f0a264245cf313c3f32144a61"
+    },
+    {
+      "file": "src/features/business/businessMisaExport.test.ts",
+      "sha256LfNormalized": "e833e7f1fdff2e676dbf0ee5f440e0d31206dcb6ff316d1388a81a6317a7478b"
+    },
+    {
+      "file": "src/features/business/businessMisaExport.ts",
+      "sha256LfNormalized": "512d6fefbfc349e9edcdfda24f345f7e0ad5a4e46ffdcd45150618f7a92594d1"
+    },
+    {
+      "file": "supabase/migrations/202610260001_business_approval_policies.sql",
+      "sha256LfNormalized": "bc9078f7aef0052e830ecc2df61235964fc85dceca1ce68e2e9999292f502f7c"
+    },
+    {
+      "file": "supabase/migrations/202610260002_business_eforms.sql",
+      "sha256LfNormalized": "09477eb9c6212e5768654d4bc70ef3a991c46a9816f27fe30d51dbe6086c68e4"
+    },
+    {
+      "file": "supabase/migrations/202610260003_business_approval_engine.sql",
+      "sha256LfNormalized": "5663f06c8163ff6efb99591898650e8657b9a64eb9a7a2ac08f5852e7bef835c"
+    },
+    {
+      "file": "supabase/migrations/202610260004_business_approval_inbox.sql",
+      "sha256LfNormalized": "e41a0c0983c94424c4ba8c57a48bfd9be6991e289fedb0973f76e0ece3c5045a"
+    },
+    {
+      "file": "supabase/migrations/202610260005_business_approval_escalations.sql",
+      "sha256LfNormalized": "1ce723e4cc409b6abffba9fbdbbd89bc6826811239c2899061dce01fe3f1a737"
+    },
+    {
+      "file": "supabase/migrations/202610260006_business_eform_conditions.sql",
+      "sha256LfNormalized": "103f1ab8d84ee9fac7bffa89d39be3ad2204a84c111ecb5757e8cdf0f9abb58b"
+    },
+    {
+      "file": "supabase/migrations/202610260007_business_eform_field_access.sql",
+      "sha256LfNormalized": "cfe676f58ec26bd85797fbb0c96530be2a00dbf4fc542ab58af1b0ac588f0a7f"
+    },
+    {
+      "file": "supabase/migrations/202610260008_business_approval_report.sql",
+      "sha256LfNormalized": "ab2c55e7880c17b32c3c0d3add600335c1413de4e3a1fa59ef65cd30bef8be5f"
+    },
+    {
+      "file": "supabase/migrations/202610260009_business_attachments.sql",
+      "sha256LfNormalized": "d412eb06aa5e784a4806208e0bcef86736bfc047ff9a85c50238121358f8bbe7"
+    },
+    {
+      "file": "supabase/migrations/202610260010_business_owner_transfer.sql",
+      "sha256LfNormalized": "08fee0afea84de1ce5f2e89e1a84734bb59c0a73255116c9ba9484c4347647fb"
+    },
+    {
+      "file": "supabase/migrations/202610260011_business_project_tasks.sql",
+      "sha256LfNormalized": "d7e2d8c6732f9350bcb2bc1582a8296367a82037fa39ac240477c361b98d1594"
+    },
+    {
+      "file": "supabase/migrations/202610260012_business_project_task_updates.sql",
+      "sha256LfNormalized": "17fed043477c235e1414f622e1d59c4277d094da633b5e26b5ca58e8b32c1369"
+    },
+    {
+      "file": "supabase/migrations/202610260013_business_project_task_hierarchy.sql",
+      "sha256LfNormalized": "10ce7ffcc7c05708fd66375a1c9805d8d266cb218eeb9eb926e8f06060f3008d"
+    },
+    {
+      "file": "supabase/migrations/202610260014_business_project_task_acceptance.sql",
+      "sha256LfNormalized": "2933abd88d2b9385d5df0505dea4f30295e3c4827be3e682108cf394ce3af45f"
+    },
+    {
+      "file": "supabase/migrations/202610260015_business_employment_records.sql",
+      "sha256LfNormalized": "d865aac4a4d36d5a617cda28bbe9100aed1224bcb1436f14ebb914796b04847d"
+    },
+    {
+      "file": "supabase/migrations/202610260016_business_employment_offboarding.sql",
+      "sha256LfNormalized": "fe4a72122f63925c72155797edc9b4081b637ed918c5b9cf6d65d207aaf6c441"
+    },
+    {
+      "file": "supabase/migrations/202610260017_business_project_sales_contract_link.sql",
+      "sha256LfNormalized": "f1a3fc4dee5922d3fc24af71f6ed404fe510aaa877f0e08ee645c72fac76751f"
+    },
+    {
+      "file": "supabase/migrations/202610260018_business_employee_documents.sql",
+      "sha256LfNormalized": "5ad5e44d37503fd1dce2478bffc4f2728a73a1d12d614053cc6a789cf1a60fa0"
+    },
+    {
+      "file": "supabase/migrations/202610260019_business_payment_requests.sql",
+      "sha256LfNormalized": "5e4dddbf3db8b310b9991b4e226f2495c8731105470bccd132de62197650ca12"
+    },
+    {
+      "file": "supabase/migrations/202610260020_business_safety_quality_actions.sql",
+      "sha256LfNormalized": "55075ac242f8a6014c3e17c40f0817cfedb15862473b7a8c5b720a91c6f053df"
+    },
+    {
+      "file": "supabase/migrations/202610260021_business_recruitment_workflow.sql",
+      "sha256LfNormalized": "e7fda1c500508f0a9f71260ff1087b1dbcfe6249b2c8db714ec790c6b08b0de7"
+    },
+    {
+      "file": "supabase/migrations/202610260022_business_performance_cycles.sql",
+      "sha256LfNormalized": "430f8ce4bb750a680aa901952b22a574de7dcc299c92faa2d5d10c1284296eab"
+    },
+    {
+      "file": "supabase/migrations/202611020001_business_document_signing_outbox.sql",
+      "sha256LfNormalized": "7460bafd4be07d646dc1338ddb7e4c862cce57845e8d6c13f53cda2366030365"
+    },
+    {
+      "file": "supabase/migrations/202611020002_business_document_repository_versions.sql",
+      "sha256LfNormalized": "60359386c766c2e61e2621c373a9f60a01adcd073dce47279b35735dece286c4"
+    },
+    {
+      "file": "supabase/migrations/202611020003_business_document_classification_access.sql",
+      "sha256LfNormalized": "e39685e4130a01e029cf774d83f236168c0dd2b870ce1c34e30656feaf5bf909"
+    },
+    {
+      "file": "supabase/migrations/202611020004_business_meetings_notifications.sql",
+      "sha256LfNormalized": "8cf1588c381ac424c265a9cc2e47665a2b7e02dfeeffd13d2ee4002e098c7125"
+    },
+    {
+      "file": "supabase/migrations/202611020005_business_global_search.sql",
+      "sha256LfNormalized": "bfeae38be64ac654d9b373edcf329d9dc97cf64599b1e966689b67468cf79e2c"
+    },
+    {
+      "file": "supabase/migrations/202611020006_business_approval_non_misa_routing.sql",
+      "sha256LfNormalized": "178d045758f69512792e3026a91b089052022ba7cd291574b63f7ffde6a0bec6"
+    },
+    {
+      "file": "supabase/migrations/202611020007_business_quality_dashboard.sql",
+      "sha256LfNormalized": "501c5481c6e3d01fa8e9e3ae6c28f66416aee6ddbfbed286e7d1b67218586c07"
+    },
+    {
+      "file": "supabase/migrations/202611020008_business_meeting_calendar.sql",
+      "sha256LfNormalized": "c85c71aa5e56a87deefa43d00d41ce85495e5a8509c396575b36fc28e41ce845"
+    },
+    {
+      "file": "supabase/migrations/202611020009_business_quality_trends.sql",
+      "sha256LfNormalized": "1d7f677121e0ce670a39e7a98fa835ce9df65135823bcee8a9bc94f9bf206c1c"
+    },
+    {
+      "file": "supabase/migrations/202611020010_business_item_unit_conversions.sql",
+      "sha256LfNormalized": "2ac0416b31b82cbe09e24465bdae2fd52a1e761b2f59082e75ee592759353d53"
+    },
+    {
+      "file": "supabase/migrations/202611020011_business_release_privileges.sql",
+      "sha256LfNormalized": "f0cc22e029a9df73f47a191193ef60e07c3f363b18ee1f8cb9000982f31187e4"
+    },
+    {
+      "file": "supabase/migrations/202611020012_business_payment_request_partner_reference.sql",
+      "sha256LfNormalized": "fe666b4408333177b3c3f1668ab394c87cbbae3376efc9fe38656fa77ace0325"
+    },
+    {
+      "file": "supabase/migrations/202611020013_business_session_rpc_volatility.sql",
+      "sha256LfNormalized": "2a3099a4091e586c34f4db25ce9c5c5eb34972d3ba20c1b32edb901581e7f74b"
+    }
+  ],
+  "fullMisaAcceptanceComplete": false,
+  "outstanding": [
+    "Excel imports and row conflict/alias merge workflows are incomplete.",
+    "Alternate-unit snapshots are not yet automatically applied to all transaction lines.",
+    "Provider-specific bank, electronic invoice, digital-signature and government/BHXH submissions are not connected.",
+    "This release does not prove every acceptance case in the 82-requirement matrix."
+  ]
+}

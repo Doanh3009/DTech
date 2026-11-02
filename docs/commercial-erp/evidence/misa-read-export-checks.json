@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-11-02T04:18:48.133Z",
+  "command": "npx vitest run src/features/business/businessMisaExport.test.ts src/features/business/BusinessMisaWorkspace.test.tsx 'src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts' --reporter=json --outputFile=.tmp/misa-read-exports-tests.json",
+  "passed": true,
+  "totalTests": 35,
+  "passedTests": 35,
+  "failedTests": 0,
+  "groups": {
+    "MISA CSV export": {
+      "passed": 15,
+      "failed": 0
+    },
+    "MISA report download": {
+      "passed": 4,
+      "failed": 0
+    },
+    "business MISA export API": {
+      "passed": 10,
+      "failed": 0
+    },
+    "item quantity conversion API": {
+      "passed": 6,
+      "failed": 0
+    }
+  },
+  "suites": [
+    {
+      "file": "src/features/business/businessMisaExport.test.ts",
+      "passed": true,
+      "tests": 15
+    },
+    {
+      "file": "src/features/business/BusinessMisaWorkspace.test.tsx",
+      "passed": true,
+      "tests": 4
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts",
+      "passed": true,
+      "tests": 16
+    }
+  ],
+  "boundaries": [
+    "CSV serialization and pagination use in-memory fixtures.",
+    "API route tests mock the business session and RPC adapter; database authorization is separately exercised by the PostgreSQL verifier.",
+    "Component tests use jsdom and mock fetch; they cover busy/error/retry, cancellation, non-CSV rejection and download URL cleanup, not a real-account browser session."
+  ],
+  "artifacts": [
+    {
+      "file": "src/features/business/businessMisaExport.ts",
+      "sha256": "512d6fefbfc349e9edcdfda24f345f7e0ad5a4e46ffdcd45150618f7a92594d1"
+    },
+    {
+      "file": "src/features/business/businessMisaExport.test.ts",
+      "sha256": "e833e7f1fdff2e676dbf0ee5f440e0d31206dcb6ff316d1388a81a6317a7478b"
+    },
+    {
+      "file": "src/features/business/BusinessMisaWorkspace.tsx",
+      "sha256": "de79d1f987ad17b2d5270628a2d20709c79e9cd71dc82f0fb878cb7353f6402d"
+    },
+    {
+      "file": "src/features/business/BusinessMisaWorkspace.test.tsx",
+      "sha256": "10495c003a28763b926d1402edf5cf5f171b455299a32d10724c9242ce532b57"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/[...path]/route.ts",
+      "sha256": "44a80d8a740fbf7affd8fb3d5954e4ae04c2de10c665259d7afad13e76d7aee4"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts",
+      "sha256": "89e3fda0d1b97838366ec10c7ae8ea117b0b0562b52629601e2938241c9e9c1d"
+    }
+  ],
+  "cloudAccess": false,
+  "realCustomerRecordsCreated": false,
+  "verifiedByFullSuite": "docs/commercial-erp/evidence/misa-release-readiness.json"
+}

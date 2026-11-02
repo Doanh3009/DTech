@@ -14,5 +14,5 @@ export function BusinessOverview({workspace:w,children,initialMonth}:{workspace:
  return <div className={styles.stack}><div className={styles.dashboardToolbar}><h2>Tổng quan doanh nghiệp</h2><div><label>Kỳ theo dõi<select aria-label="Kỳ theo dõi" value={month} disabled={loading} onChange={e=>{setMonth(e.target.value);setData(null);setLoading(true);setError("");}}>{months.map(m=><option key={m} value={m}>Tháng {m.slice(5)}/{m.slice(0,4)}</option>)}</select></label><Button busy={loading} leftIcon={<RefreshCw size={15} aria-hidden="true"/>} onClick={()=>{setData(null);setLoading(true);setError("");setReload(v=>v+1);}}>Cập nhật</Button></div></div>
  {error?<div role="alert" className={styles.error}>{error}</div>:null}
  {loading?<div role="status" className={styles.dashboardLoading}>Đang tổng hợp dữ liệu doanh nghiệp…</div>:data?<CompanyDashboard data={data} industry={w.industry} baseHref={`/erp/${w.slug}`} features={w.features}/>:null}
- <section className={styles.stack} aria-label="Ứng dụng doanh nghiệp"><h2>Ứng dụng doanh nghiệp</h2>{children}</section></div>;
+ {children?<section className={styles.stack} aria-label="Ứng dụng doanh nghiệp"><h2>Ứng dụng doanh nghiệp</h2>{children}</section>:null}</div>;
 }

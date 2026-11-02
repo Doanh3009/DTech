@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-24T07:40:39.385Z",
+  "generatedAt": "2026-11-02T04:11:21.300Z",
   "schemaCompiled": true,
-  "entityCount": 115,
+  "entityCount": 142,
   "migrations": [
     {
       "filename": "202609090001_foundation_system_primitives.sql",
@@ -234,10 +234,780 @@
     {
       "filename": "202610240038_business_crm_workspace.sql",
       "sha256": "5455dbb61e5baf6b200a92d0472d756f88a25574cddf57086ef9374111a77eeb"
+    },
+    {
+      "filename": "202610260001_business_approval_policies.sql",
+      "sha256": "bc9078f7aef0052e830ecc2df61235964fc85dceca1ce68e2e9999292f502f7c"
+    },
+    {
+      "filename": "202610260002_business_eforms.sql",
+      "sha256": "09477eb9c6212e5768654d4bc70ef3a991c46a9816f27fe30d51dbe6086c68e4"
+    },
+    {
+      "filename": "202610260003_business_approval_engine.sql",
+      "sha256": "5663f06c8163ff6efb99591898650e8657b9a64eb9a7a2ac08f5852e7bef835c"
+    },
+    {
+      "filename": "202610260004_business_approval_inbox.sql",
+      "sha256": "e41a0c0983c94424c4ba8c57a48bfd9be6991e289fedb0973f76e0ece3c5045a"
+    },
+    {
+      "filename": "202610260005_business_approval_escalations.sql",
+      "sha256": "1ce723e4cc409b6abffba9fbdbbd89bc6826811239c2899061dce01fe3f1a737"
+    },
+    {
+      "filename": "202610260006_business_eform_conditions.sql",
+      "sha256": "103f1ab8d84ee9fac7bffa89d39be3ad2204a84c111ecb5757e8cdf0f9abb58b"
+    },
+    {
+      "filename": "202610260007_business_eform_field_access.sql",
+      "sha256": "cfe676f58ec26bd85797fbb0c96530be2a00dbf4fc542ab58af1b0ac588f0a7f"
+    },
+    {
+      "filename": "202610260008_business_approval_report.sql",
+      "sha256": "ab2c55e7880c17b32c3c0d3add600335c1413de4e3a1fa59ef65cd30bef8be5f"
+    },
+    {
+      "filename": "202610260009_business_attachments.sql",
+      "sha256": "d412eb06aa5e784a4806208e0bcef86736bfc047ff9a85c50238121358f8bbe7"
+    },
+    {
+      "filename": "202610260010_business_owner_transfer.sql",
+      "sha256": "08fee0afea84de1ce5f2e89e1a84734bb59c0a73255116c9ba9484c4347647fb"
+    },
+    {
+      "filename": "202610260011_business_project_tasks.sql",
+      "sha256": "d7e2d8c6732f9350bcb2bc1582a8296367a82037fa39ac240477c361b98d1594"
+    },
+    {
+      "filename": "202610260012_business_project_task_updates.sql",
+      "sha256": "17fed043477c235e1414f622e1d59c4277d094da633b5e26b5ca58e8b32c1369"
+    },
+    {
+      "filename": "202610260013_business_project_task_hierarchy.sql",
+      "sha256": "10ce7ffcc7c05708fd66375a1c9805d8d266cb218eeb9eb926e8f06060f3008d"
+    },
+    {
+      "filename": "202610260014_business_project_task_acceptance.sql",
+      "sha256": "2933abd88d2b9385d5df0505dea4f30295e3c4827be3e682108cf394ce3af45f"
+    },
+    {
+      "filename": "202610260015_business_employment_records.sql",
+      "sha256": "d865aac4a4d36d5a617cda28bbe9100aed1224bcb1436f14ebb914796b04847d"
+    },
+    {
+      "filename": "202610260016_business_employment_offboarding.sql",
+      "sha256": "fe4a72122f63925c72155797edc9b4081b637ed918c5b9cf6d65d207aaf6c441"
+    },
+    {
+      "filename": "202610260017_business_project_sales_contract_link.sql",
+      "sha256": "f1a3fc4dee5922d3fc24af71f6ed404fe510aaa877f0e08ee645c72fac76751f"
+    },
+    {
+      "filename": "202610260018_business_employee_documents.sql",
+      "sha256": "5ad5e44d37503fd1dce2478bffc4f2728a73a1d12d614053cc6a789cf1a60fa0"
+    },
+    {
+      "filename": "202610260019_business_payment_requests.sql",
+      "sha256": "5e4dddbf3db8b310b9991b4e226f2495c8731105470bccd132de62197650ca12"
+    },
+    {
+      "filename": "202610260020_business_safety_quality_actions.sql",
+      "sha256": "55075ac242f8a6014c3e17c40f0817cfedb15862473b7a8c5b720a91c6f053df"
+    },
+    {
+      "filename": "202610260021_business_recruitment_workflow.sql",
+      "sha256": "e7fda1c500508f0a9f71260ff1087b1dbcfe6249b2c8db714ec790c6b08b0de7"
+    },
+    {
+      "filename": "202610260022_business_performance_cycles.sql",
+      "sha256": "430f8ce4bb750a680aa901952b22a574de7dcc299c92faa2d5d10c1284296eab"
+    },
+    {
+      "filename": "202611020001_business_document_signing_outbox.sql",
+      "sha256": "7460bafd4be07d646dc1338ddb7e4c862cce57845e8d6c13f53cda2366030365"
+    },
+    {
+      "filename": "202611020002_business_document_repository_versions.sql",
+      "sha256": "60359386c766c2e61e2621c373a9f60a01adcd073dce47279b35735dece286c4"
+    },
+    {
+      "filename": "202611020003_business_document_classification_access.sql",
+      "sha256": "e39685e4130a01e029cf774d83f236168c0dd2b870ce1c34e30656feaf5bf909"
+    },
+    {
+      "filename": "202611020004_business_meetings_notifications.sql",
+      "sha256": "c9b8d3d4f47a6828667d6923b2567d723bbee3668622367c05fc9854e160700f"
+    },
+    {
+      "filename": "202611020005_business_global_search.sql",
+      "sha256": "f056993c9c54f24f0d7c4340b68e09dfcf438a8cd20a44a4d846c9e01f6b2358"
+    },
+    {
+      "filename": "202611020006_business_approval_non_misa_routing.sql",
+      "sha256": "178d045758f69512792e3026a91b089052022ba7cd291574b63f7ffde6a0bec6"
+    },
+    {
+      "filename": "202611020007_business_quality_dashboard.sql",
+      "sha256": "501c5481c6e3d01fa8e9e3ae6c28f66416aee6ddbfbed286e7d1b67218586c07"
+    },
+    {
+      "filename": "202611020008_business_meeting_calendar.sql",
+      "sha256": "c85c71aa5e56a87deefa43d00d41ce85495e5a8509c396575b36fc28e41ce845"
+    },
+    {
+      "filename": "202611020009_business_quality_trends.sql",
+      "sha256": "1d7f677121e0ce670a39e7a98fa835ce9df65135823bcee8a9bc94f9bf206c1c"
+    },
+    {
+      "filename": "202611020010_business_item_unit_conversions.sql",
+      "sha256": "2ac0416b31b82cbe09e24465bdae2fd52a1e761b2f59082e75ee592759353d53"
+    },
+    {
+      "filename": "202611020011_business_release_privileges.sql",
+      "sha256": "f0cc22e029a9df73f47a191193ef60e07c3f363b18ee1f8cb9000982f31187e4"
+    },
+    {
+      "filename": "202611020012_business_payment_request_partner_reference.sql",
+      "sha256": "fe666b4408333177b3c3f1668ab394c87cbbae3376efc9fe38656fa77ace0325"
+    },
+    {
+      "filename": "202611020013_business_session_rpc_volatility.sql",
+      "sha256": "2a3099a4091e586c34f4db25ce9c5c5eb34972d3ba20c1b32edb901581e7f74b"
     }
   ],
   "cloudAccess": false,
   "realCustomerRecordsCreated": false,
   "syntheticDataPopulated": true,
-  "testSuiteRun": false
+  "testSuiteRun": false,
+  "operationsVerification": {
+    "passed": true,
+    "companies": [
+      {
+        "industry": "metalworking",
+        "transfer": true,
+        "count": true,
+        "request": true,
+        "quotes": 2,
+        "splitAwards": 2,
+        "partialReceipt": true,
+        "overageRejected": true,
+        "project": null
+      },
+      {
+        "industry": "plastics_packaging",
+        "transfer": true,
+        "count": true,
+        "request": true,
+        "quotes": 2,
+        "splitAwards": 2,
+        "partialReceipt": true,
+        "overageRejected": true,
+        "project": null
+      },
+      {
+        "industry": "electronics",
+        "transfer": true,
+        "count": true,
+        "request": true,
+        "quotes": 2,
+        "splitAwards": 2,
+        "partialReceipt": true,
+        "overageRejected": true,
+        "project": null
+      },
+      {
+        "industry": "food_beverage",
+        "transfer": true,
+        "count": true,
+        "request": true,
+        "quotes": 2,
+        "splitAwards": 2,
+        "partialReceipt": true,
+        "overageRejected": true,
+        "project": null
+      },
+      {
+        "industry": "trading",
+        "transfer": true,
+        "count": true,
+        "request": true,
+        "quotes": 2,
+        "splitAwards": 2,
+        "partialReceipt": true,
+        "overageRejected": true,
+        "project": null
+      },
+      {
+        "industry": "construction",
+        "transfer": true,
+        "count": true,
+        "request": true,
+        "quotes": 2,
+        "splitAwards": 2,
+        "partialReceipt": true,
+        "overageRejected": true,
+        "project": {
+          "passed": true,
+          "baselineRevision": 1,
+          "currentRevision": 2,
+          "baselineSnapshotPreserved": true,
+          "currentBudget": 1205000000
+        }
+      }
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "attendanceVerification": {
+    "passed": true,
+    "companies": [
+      {
+        "industry": "metalworking",
+        "nightCard": {
+          "work_date": "2026-10-18",
+          "worked_hours": "8.0000",
+          "overtime_hours": "0.0000"
+        },
+        "paidLeaveHours": 8,
+        "attendanceLocked": true,
+        "overtimeApprovalRequired": true
+      },
+      {
+        "industry": "plastics_packaging",
+        "nightCard": {
+          "work_date": "2026-10-18",
+          "worked_hours": "8.0000",
+          "overtime_hours": "0.0000"
+        },
+        "paidLeaveHours": 8,
+        "attendanceLocked": true,
+        "overtimeApprovalRequired": true
+      },
+      {
+        "industry": "electronics",
+        "nightCard": {
+          "work_date": "2026-10-18",
+          "worked_hours": "8.0000",
+          "overtime_hours": "0.0000"
+        },
+        "paidLeaveHours": 8,
+        "attendanceLocked": true,
+        "overtimeApprovalRequired": true
+      },
+      {
+        "industry": "food_beverage",
+        "nightCard": {
+          "work_date": "2026-10-18",
+          "worked_hours": "8.0000",
+          "overtime_hours": "0.0000"
+        },
+        "paidLeaveHours": 8,
+        "attendanceLocked": true,
+        "overtimeApprovalRequired": true
+      },
+      {
+        "industry": "trading",
+        "nightCard": {
+          "work_date": "2026-10-18",
+          "worked_hours": "8.0000",
+          "overtime_hours": "0.0000"
+        },
+        "paidLeaveHours": 8,
+        "attendanceLocked": true,
+        "overtimeApprovalRequired": true
+      },
+      {
+        "industry": "construction",
+        "nightCard": {
+          "work_date": "2026-10-18",
+          "worked_hours": "8.0000",
+          "overtime_hours": "0.0000"
+        },
+        "paidLeaveHours": 8,
+        "attendanceLocked": true,
+        "overtimeApprovalRequired": true
+      }
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "payrollVerification": {
+    "passed": true,
+    "companies": [
+      {
+        "industry": "metalworking",
+        "lineCount": 8,
+        "gross": 25823076,
+        "net": 15737114.5,
+        "deductions": 10085961.5,
+        "paid": 13850614.5,
+        "journalBalanced": true,
+        "allocationsBalanced": true
+      },
+      {
+        "industry": "plastics_packaging",
+        "lineCount": 8,
+        "gross": 25823076,
+        "net": 15737114.5,
+        "deductions": 10085961.5,
+        "paid": 13850614.5,
+        "journalBalanced": true,
+        "allocationsBalanced": true
+      },
+      {
+        "industry": "electronics",
+        "lineCount": 8,
+        "gross": 25823076,
+        "net": 15737114.5,
+        "deductions": 10085961.5,
+        "paid": 13850614.5,
+        "journalBalanced": true,
+        "allocationsBalanced": true
+      },
+      {
+        "industry": "food_beverage",
+        "lineCount": 8,
+        "gross": 25823076,
+        "net": 15737114.5,
+        "deductions": 10085961.5,
+        "paid": 13850614.5,
+        "journalBalanced": true,
+        "allocationsBalanced": true
+      },
+      {
+        "industry": "trading",
+        "lineCount": 8,
+        "gross": 25823076,
+        "net": 15737114.5,
+        "deductions": 10085961.5,
+        "paid": 13850614.5,
+        "journalBalanced": true,
+        "allocationsBalanced": true
+      },
+      {
+        "industry": "construction",
+        "lineCount": 8,
+        "gross": 25823076,
+        "net": 15737114.5,
+        "deductions": 10085961.5,
+        "paid": 13850614.5,
+        "journalBalanced": true,
+        "allocationsBalanced": true
+      }
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "employmentVerification": {
+    "passed": true,
+    "tenant": "synthetic construction tenant",
+    "checks": [
+      "two_person_contract_approval",
+      "effective_terms_update_employee",
+      "position_history_snapshot",
+      "overlapping_contract_rejected",
+      "posted_history_immutable",
+      "salary_field_redaction_list_and_detail",
+      "employee_code_immutable",
+      "direct_profile_change_requires_history",
+      "termination_disables_linked_account",
+      "termination_revokes_sessions",
+      "employee_document_two_person_approval",
+      "document_number_field_redaction",
+      "expired_and_due_soon_contract_approval",
+      "expired_and_due_soon_report",
+      "salary_and_document_number_excluded_from_expiry_report",
+      "employee_document_and_contract_expiry_tenant_scope"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "recruitmentVerification": {
+    "passed": true,
+    "tenant": "synthetic construction tenant",
+    "checks": [
+      "requisition_two_person_approval",
+      "job_post_two_person_approval",
+      "candidate_two_person_approval",
+      "candidate_consent_validated",
+      "candidate_email_field_redaction",
+      "posted_candidate_pii_immutable",
+      "duplicate_candidate_rejected",
+      "screening_stage_advance",
+      "interview_stage_advance",
+      "offer_range_and_approval",
+      "offer_updates_candidate_stage",
+      "new_staff_record_created",
+      "hire_handoff_two_person_approval",
+      "duplicate_hire_rejected",
+      "candidate_linked_to_active_staff",
+      "tenant_scope",
+      "cloud_access_false"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "performanceVerification": {
+    "passed": true,
+    "tenant": "synthetic construction tenant",
+    "checks": [
+      "open_cycle_state_transition",
+      "goal_hierarchy_and_two_person_assignment",
+      "approved_target_change_history_with_approver",
+      "latest_checkins_used",
+      "weights_must_equal_100_before_review",
+      "99_percent_weight_rejected",
+      "manager_is_distinct_and_approves",
+      "weighted_goal_score_snapshot_94",
+      "calibration_final_score_snapshot_94",
+      "employee_ack_requires_linked_staff_account",
+      "cycle_close_requires_review_and_ack",
+      "closed_cycle_goal_immutable",
+      "cloud_access_false"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "signingVerification": {
+    "passed": true,
+    "tenant": "synthetic construction tenant",
+    "checks": [
+      "signing_request_two_person_approval",
+      "source_document_version_and_attachment_pinned",
+      "idempotency_key_rejects_duplicate",
+      "request_enqueued_in_tenant_outbox",
+      "service_role_claim_and_dispatch",
+      "unsigned_callback_rejected",
+      "signed_attachment_private_hash_persisted",
+      "provider_callback_idempotency",
+      "source_attachment_hash_preserved",
+      "cloud_access_false"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "documentRepositoryVerification": {
+    "passed": true,
+    "tenant": "synthetic construction tenant",
+    "checks": [
+      "two_person_document_approval",
+      "private_version_attachment_and_hash",
+      "rev_a_immutable_after_publication",
+      "rev_b_becomes_current",
+      "rev_a_history_preserved",
+      "signing_request_pins_published_version_and_hash",
+      "version_gap_rejected",
+      "cross_tenant_list_isolated",
+      "confidential_hidden_from_viewer",
+      "confidential_available_to_editor",
+      "restricted_owner_only",
+      "restricted_deep_link_denied",
+      "restricted_signing_denied",
+      "cloud_access_false"
+    ],
+    "revisions": 2,
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "paymentRequestVerification": {
+    "passed": true,
+    "checks": [
+      "two_person_approval",
+      "source_link_preserved",
+      "duplicate_source_rejected",
+      "posted_record_immutable",
+      "request_post_does_not_create_cash_journal"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "crmVerification": {
+    "passed": true,
+    "companies": [
+      {
+        "industry": "metalworking",
+        "leadConvertedToExistingCustomer": true,
+        "opportunityWon": true,
+        "acceptedQuoteLinkedToContract": true,
+        "projectLinkedToContract": false,
+        "projectSourceImmutable": null,
+        "contractCannotBeCancelledWhileProjectLinked": null,
+        "amendedQuantity": 120,
+        "orderedQuantity": 50,
+        "remainingQuantity": 70,
+        "overOrderRejected": true,
+        "ticketClosed": true,
+        "overdueTicketEscalated": true
+      },
+      {
+        "industry": "plastics_packaging",
+        "leadConvertedToExistingCustomer": true,
+        "opportunityWon": true,
+        "acceptedQuoteLinkedToContract": true,
+        "projectLinkedToContract": false,
+        "projectSourceImmutable": null,
+        "contractCannotBeCancelledWhileProjectLinked": null,
+        "amendedQuantity": 120,
+        "orderedQuantity": 50,
+        "remainingQuantity": 70,
+        "overOrderRejected": true,
+        "ticketClosed": true,
+        "overdueTicketEscalated": true
+      },
+      {
+        "industry": "electronics",
+        "leadConvertedToExistingCustomer": true,
+        "opportunityWon": true,
+        "acceptedQuoteLinkedToContract": true,
+        "projectLinkedToContract": false,
+        "projectSourceImmutable": null,
+        "contractCannotBeCancelledWhileProjectLinked": null,
+        "amendedQuantity": 120,
+        "orderedQuantity": 50,
+        "remainingQuantity": 70,
+        "overOrderRejected": true,
+        "ticketClosed": true,
+        "overdueTicketEscalated": true
+      },
+      {
+        "industry": "food_beverage",
+        "leadConvertedToExistingCustomer": true,
+        "opportunityWon": true,
+        "acceptedQuoteLinkedToContract": true,
+        "projectLinkedToContract": false,
+        "projectSourceImmutable": null,
+        "contractCannotBeCancelledWhileProjectLinked": null,
+        "amendedQuantity": 120,
+        "orderedQuantity": 50,
+        "remainingQuantity": 70,
+        "overOrderRejected": true,
+        "ticketClosed": true,
+        "overdueTicketEscalated": true
+      },
+      {
+        "industry": "trading",
+        "leadConvertedToExistingCustomer": true,
+        "opportunityWon": true,
+        "acceptedQuoteLinkedToContract": true,
+        "projectLinkedToContract": false,
+        "projectSourceImmutable": null,
+        "contractCannotBeCancelledWhileProjectLinked": null,
+        "amendedQuantity": 120,
+        "orderedQuantity": 50,
+        "remainingQuantity": 70,
+        "overOrderRejected": true,
+        "ticketClosed": true,
+        "overdueTicketEscalated": true
+      },
+      {
+        "industry": "construction",
+        "leadConvertedToExistingCustomer": true,
+        "opportunityWon": true,
+        "acceptedQuoteLinkedToContract": true,
+        "projectLinkedToContract": true,
+        "projectSourceImmutable": true,
+        "contractCannotBeCancelledWhileProjectLinked": true,
+        "amendedQuantity": 120,
+        "orderedQuantity": 50,
+        "remainingQuantity": 70,
+        "overOrderRejected": true,
+        "ticketClosed": true,
+        "overdueTicketEscalated": true
+      }
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "misaReadModelVerification": {
+    "passed": true,
+    "period": {
+      "from": "2026-10-01",
+      "to": "2026-10-24"
+    },
+    "views": [
+      "assets",
+      "bank",
+      "advances",
+      "loans",
+      "costing",
+      "tax",
+      "payroll",
+      "reports"
+    ],
+    "companies": [
+      {
+        "industry": "metalworking",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "plastics_packaging",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "electronics",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "food_beverage",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "trading",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 0,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "construction",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      }
+    ]
+  },
+  "projectTaskVerification": {
+    "passed": true,
+    "checks": [
+      "required_checklist",
+      "required_predecessor",
+      "dependency_cycle",
+      "task_hierarchy_cycle",
+      "task_acceptance",
+      "stale_version",
+      "tenant_workspace",
+      "tenant_isolation",
+      "task_update_idempotency",
+      "daily_shift_log"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "stockConcurrencyVerification": {
+    "passed": true,
+    "check": "two_concurrent_issues_only_one_posts",
+    "quantityEach": 627,
+    "startingBalance": 1045,
+    "rejectedWith": "BUSINESS_INSUFFICIENT_STOCK",
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "globalSearchVerification": {
+    "passed": true,
+    "checks": [
+      "tenant_isolation",
+      "custom_scope_filter",
+      "minimal_search_result",
+      "enabled_feature_search",
+      "cloud_access_false"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "collaborationVerification": {
+    "passed": true,
+    "checks": [
+      "room_overlap_rejected",
+      "month_calendar",
+      "week_calendar",
+      "row_scope_filter",
+      "bounded_calendar_range",
+      "invitation_notification_created",
+      "recipient_only_inbox",
+      "minimal_notification_payload",
+      "mark_read",
+      "cross_account_isolation",
+      "cloud_access_false"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "safetyQualityVerification": {
+    "passed": true,
+    "checks": [
+      "critical_incident_recorded",
+      "two_person_incident_approval",
+      "unposted_source_capa_rejected",
+      "capa_source_linked",
+      "independent_effectiveness_verification",
+      "two_person_capa_approval",
+      "tenant_scoped_quality_dashboard",
+      "severity_analytics",
+      "twelve_month_trend",
+      "minimal_dashboard_payload",
+      "cloud_access_false"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "masterDataVerification": {
+    "passed": true,
+    "checks": [
+      "nonblank_base_unit",
+      "unused_base_unit_edit",
+      "referenced_base_unit_locked",
+      "effective_date_lookup",
+      "historical_factor_immutable",
+      "future_version_preserves_history",
+      "overlap_rejected",
+      "positive_factor",
+      "serial_integrality",
+      "tenant_isolation",
+      "row_scope",
+      "module_disabled",
+      "no_direct_table_access"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  }
 }

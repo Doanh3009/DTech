@@ -1,7 +1,7 @@
 {
   "metalworking": {
-    "to": "2026-10-24",
-    "asOf": "2026-10-24",
+    "to": "2026-10-31",
+    "asOf": "2026-11-02",
     "from": "2026-10-01",
     "work": [
       {
@@ -86,10 +86,17 @@
       },
       {
         "cash_in": 0,
-        "ends_on": "2026-10-24",
+        "ends_on": "2026-10-28",
         "revenue": -1228500,
-        "cash_out": 15234208.25,
+        "cash_out": 15100614.5,
         "starts_on": "2026-10-22"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-31",
+        "revenue": 0,
+        "cash_out": 0,
+        "starts_on": "2026-10-29"
       }
     ],
     "alerts": {
@@ -111,9 +118,18 @@
           "tone": "warning",
           "state": "Đến hạn trả nhà cung cấp",
           "amount": 1200000
+        },
+        {
+          "code": "LSX-1026-3",
+          "date": "2026-10-26",
+          "kind": "work_orders",
+          "name": "Tấm đế gá CNC · Đợt 3",
+          "tone": "warning",
+          "state": "Lệnh trễ hạn",
+          "amount": null
         }
       ],
-      "total": 2
+      "total": 3
     },
     "queues": [
       {
@@ -129,18 +145,18 @@
     ],
     "finance": {
       "cashIn": 72241250,
-      "cashOut": 139124332.98,
+      "cashOut": 138990739.23,
       "overdue": 2497500,
       "revenue": 43152750,
       "payables": 7920000,
-      "cashBalance": 1913116917.02,
+      "cashBalance": 1913250510.77,
       "receivables": 31711500
     },
-    "generatedAt": "2026-10-24T14:40:39.260309+07:00"
+    "generatedAt": "2026-11-02T11:11:20.338264+07:00"
   },
   "plastics_packaging": {
-    "to": "2026-10-24",
-    "asOf": "2026-10-24",
+    "to": "2026-10-31",
+    "asOf": "2026-11-02",
     "from": "2026-10-01",
     "work": [
       {
@@ -225,10 +241,17 @@
       },
       {
         "cash_in": 0,
-        "ends_on": "2026-10-24",
+        "ends_on": "2026-10-28",
         "revenue": -15356.25,
-        "cash_out": 15234208.25,
+        "cash_out": 15100614.5,
         "starts_on": "2026-10-22"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-31",
+        "revenue": 0,
+        "cash_out": 0,
+        "starts_on": "2026-10-29"
       }
     ],
     "alerts": {
@@ -250,9 +273,18 @@
           "tone": "warning",
           "state": "Đến hạn trả nhà cung cấp",
           "amount": 1550000
+        },
+        {
+          "code": "LSX-1026-3",
+          "date": "2026-10-26",
+          "kind": "work_orders",
+          "name": "Hộp nhựa thực phẩm 750ml · Đợt 3",
+          "tone": "warning",
+          "state": "Lệnh trễ hạn",
+          "amount": null
         }
       ],
-      "total": 2
+      "total": 3
     },
     "queues": [
       {
@@ -268,18 +300,18 @@
     ],
     "finance": {
       "cashIn": 60917450,
-      "cashOut": 136874332.98,
+      "cashOut": 136740739.23,
       "overdue": 56700,
       "revenue": 555018.75,
       "payables": 6030000,
-      "cashBalance": 2004043117.02,
+      "cashBalance": 2004176710.77,
       "receivables": 437568.75
     },
-    "generatedAt": "2026-10-24T14:40:39.296789+07:00"
+    "generatedAt": "2026-11-02T11:11:20.395443+07:00"
   },
   "electronics": {
-    "to": "2026-10-24",
-    "asOf": "2026-10-24",
+    "to": "2026-10-31",
+    "asOf": "2026-11-02",
     "from": "2026-10-01",
     "work": [
       {
@@ -364,10 +396,17 @@
       },
       {
         "cash_in": 0,
-        "ends_on": "2026-10-24",
+        "ends_on": "2026-10-28",
         "revenue": -384750,
-        "cash_out": 15234208.25,
+        "cash_out": 15100614.5,
         "starts_on": "2026-10-22"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-31",
+        "revenue": 0,
+        "cash_out": 0,
+        "starts_on": "2026-10-29"
       }
     ],
     "alerts": {
@@ -389,9 +428,18 @@
           "tone": "warning",
           "state": "Đến hạn trả nhà cung cấp",
           "amount": 4250000
+        },
+        {
+          "code": "LSX-1026-3",
+          "date": "2026-10-26",
+          "kind": "work_orders",
+          "name": "Bộ điều khiển đèn thông minh · Đợt 3",
+          "tone": "warning",
+          "state": "Lệnh trễ hạn",
+          "amount": null
         }
       ],
-      "total": 2
+      "total": 3
     },
     "queues": [
       {
@@ -407,18 +455,18 @@
     ],
     "finance": {
       "cashIn": 69541250,
-      "cashOut": 132053832.98,
+      "cashOut": 131920239.23,
       "overdue": 3462750,
       "revenue": 20250000,
       "payables": 4442000,
-      "cashBalance": 2117487417.02,
+      "cashBalance": 2117621010.77,
       "receivables": 11508750
     },
-    "generatedAt": "2026-10-24T14:40:39.316026+07:00"
+    "generatedAt": "2026-11-02T11:11:20.441515+07:00"
   },
   "food_beverage": {
-    "to": "2026-10-24",
-    "asOf": "2026-10-24",
+    "to": "2026-10-31",
+    "asOf": "2026-11-02",
     "from": "2026-10-01",
     "work": [
       {
@@ -503,10 +551,17 @@
       },
       {
         "cash_in": 0,
-        "ends_on": "2026-10-24",
+        "ends_on": "2026-10-28",
         "revenue": -114750,
-        "cash_out": 15348958.25,
+        "cash_out": 15215364.5,
         "starts_on": "2026-10-22"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-31",
+        "revenue": 0,
+        "cash_out": 0,
+        "starts_on": "2026-10-29"
       }
     ],
     "alerts": {
@@ -528,9 +583,18 @@
           "tone": "warning",
           "state": "Đến hạn trả nhà cung cấp",
           "amount": 2100000
+        },
+        {
+          "code": "LSX-1026-3",
+          "date": "2026-10-26",
+          "kind": "work_orders",
+          "name": "Sữa yến mạch 250ml · Đợt 3",
+          "tone": "warning",
+          "state": "Lệnh trễ hạn",
+          "amount": null
         }
       ],
-      "total": 2
+      "total": 3
     },
     "queues": [
       {
@@ -546,18 +610,18 @@
     ],
     "finance": {
       "cashIn": 63344750,
-      "cashOut": 132859082.98,
+      "cashOut": 132725489.23,
       "overdue": 249750,
       "revenue": 4286250,
       "payables": 6580000,
-      "cashBalance": 2210485667.02,
+      "cashBalance": 2210619260.77,
       "receivables": 1856250
     },
-    "generatedAt": "2026-10-24T14:40:39.336271+07:00"
+    "generatedAt": "2026-11-02T11:11:20.488255+07:00"
   },
   "trading": {
-    "to": "2026-10-24",
-    "asOf": "2026-10-24",
+    "to": "2026-10-31",
+    "asOf": "2026-11-02",
     "from": "2026-10-01",
     "work": [
       {
@@ -601,8 +665,8 @@
         "target": 4488750
       },
       {
-        "id": "1efc24fa-590c-496e-8610-abb9886e8895",
-        "code": "DH-59f9ade4-3df7-4abe-953b-80d6a5255348",
+        "id": "1151a8b6-5aa1-4ee0-872c-0c9b4e7fdb83",
+        "code": "DH-29e60a0b-dd72-4a44-ad3b-b5aae5bd54fd",
         "kind": "sales_orders",
         "name": "Đặt hàng theo hợp đồng đợt 1",
         "unit": "đ",
@@ -611,8 +675,8 @@
         "target": 3910200
       },
       {
-        "id": "7aa45e8b-2bdd-4d6a-90b7-c43a10c20c43",
-        "code": "DH-d234b6bd-77a1-4b4a-8207-6b31faef671e",
+        "id": "09fc4554-a1a0-46ab-9e9d-32ada7b38cd1",
+        "code": "DH-3454e082-181a-4121-8cbd-f8e8081d58d8",
         "kind": "sales_orders",
         "name": "Đặt hàng theo hợp đồng đợt 2",
         "unit": "đ",
@@ -622,7 +686,7 @@
       }
     ],
     "stock": {
-      "lots": 0,
+      "lots": 10,
       "blocked": 0,
       "expired": 0,
       "expiring": 0
@@ -651,10 +715,17 @@
       },
       {
         "cash_in": 0,
-        "ends_on": "2026-10-24",
+        "ends_on": "2026-10-28",
         "revenue": -708750,
-        "cash_out": 14692958.25,
+        "cash_out": 14559364.5,
         "starts_on": "2026-10-22"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-31",
+        "revenue": 0,
+        "cash_out": 0,
+        "starts_on": "2026-10-29"
       }
     ],
     "alerts": {
@@ -689,20 +760,32 @@
     ],
     "finance": {
       "cashIn": 78012500,
-      "cashOut": 157043082.98,
+      "cashOut": 156909489.23,
       "overdue": 3037500,
       "revenue": 31522500,
       "payables": 25850000,
-      "cashBalance": 2300969417.02,
+      "cashBalance": 2301103010.77,
       "receivables": 15018750
     },
-    "generatedAt": "2026-10-24T14:40:39.352741+07:00"
+    "generatedAt": "2026-11-02T11:11:20.535792+07:00"
   },
   "construction": {
-    "to": "2026-10-24",
-    "asOf": "2026-10-24",
+    "to": "2026-10-31",
+    "asOf": "2026-11-02",
     "from": "2026-10-01",
     "work": [
+      {
+        "id": "336d1bfe-d839-40c1-a542-e5e08bac89b1",
+        "code": "KD-2610-0009",
+        "kind": "projects",
+        "name": "Công trình từ hợp đồng quý IV",
+        "unit": "đ",
+        "actual": 0,
+        "status": "active",
+        "target": 76557600,
+        "ends_on": "2026-12-31",
+        "progress": null
+      },
       {
         "id": "1108d74a-1f28-4654-ac9d-486ede75e2ae",
         "code": "CT-1",
@@ -741,7 +824,7 @@
       }
     ],
     "stock": {
-      "lots": 0,
+      "lots": 10,
       "blocked": 0,
       "expired": 0,
       "expiring": 0
@@ -770,10 +853,17 @@
       },
       {
         "cash_in": 0,
-        "ends_on": "2026-10-24",
+        "ends_on": "2026-10-28",
         "revenue": -2531250,
-        "cash_out": 174234208.25,
+        "cash_out": 174100614.5,
         "starts_on": "2026-10-22"
+      },
+      {
+        "cash_in": 0,
+        "ends_on": "2026-10-31",
+        "revenue": 0,
+        "cash_out": 0,
+        "starts_on": "2026-10-29"
       }
     ],
     "alerts": {
@@ -808,13 +898,13 @@
     ],
     "finance": {
       "cashIn": 62133125,
-      "cashOut": 292938332.98,
+      "cashOut": 292804739.23,
       "overdue": 877500,
       "revenue": 72275625,
       "payables": 4300000,
-      "cashBalance": 2249194792.02,
+      "cashBalance": 2249328385.77,
       "receivables": 70942500
     },
-    "generatedAt": "2026-10-24T14:40:39.367548+07:00"
+    "generatedAt": "2026-11-02T11:11:20.574439+07:00"
   }
 }

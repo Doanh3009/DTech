@@ -1,9 +1,9 @@
 import {readFile} from 'node:fs/promises';
 import {randomUUID,randomBytes,createHash} from 'node:crypto';
 export async function populateBusinessOperations(connection,{capture}={}){
- const db={connectionParameters:connection.connectionParameters,async query(sql,values){const result=await connection.query(sql,values);if(/^(select public\.business_(save_record|record_action|access_update)|insert into public\.business_sessions|update public\.business_sessions)/.test(sql))capture?.query(sql,values);return result;}};
+ let captureEnabled=true;const db={connectionParameters:connection.connectionParameters,async query(sql,values){const result=await connection.query(sql,values);if(captureEnabled&&/^(select public\.business_(save_record|record_action|access_update)|insert into public\.business_sessions|update public\.business_sessions)/.test(sql))capture?.query(sql,values);return result;}};
  if(db.connectionParameters.host!=='127.0.0.1')throw Error('Operations population requires the temporary local database');
- const entities=JSON.parse(await readFile('src/config/businessEntities.json','utf8')),companies=JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8'));
+ const entities=JSON.parse(await readFile('src/config/businessEntities.json','utf8')),companies=JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8')),results=[];
  const digest=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
  for(const company of companies){
   const t=(await db.query('select * from public.business_tenants where slug=$1 and is_demo',[company.slug])).rows[0];if(!t)continue;
@@ -16,13 +16,13 @@ export async function populateBusinessOperations(connection,{capture}={}){
    async function rec(kind,name,values){const id=randomUUID(),data={code:`VH-2610-${String(++sequence).padStart(4,'0')}`,name,notes:''};for(const[k,f]of Object.entries(entities[kind].fields))if(!f.computed)data[k]=values[k]??f.default??null;try{await db.query('select public.business_save_record($1,$2,$3,$4,0,$5,$6,$7)',[hash,company.slug,kind,id,data,randomUUID(),digest(data)]);}catch(e){e.message=`${company.slug} / ${kind} / save: ${e.message}`;throw e;}return id;}
    async function act(kind,id,action){const version=(await db.query(`select row_version from public.business_${kind} where tenant_id=$1 and id=$2`,[t.id,id])).rows[0].row_version;try{await db.query('select public.business_record_action($1,$2,$3,$4,$5,$6,$7,$8,$9)',[action==='approve'?reviewHash:hash,company.slug,kind,id,version,action,'Xác nhận hồ sơ vận hành',randomUUID(),digest({id,version,action})]);}catch(e){e.message=`${company.slug} / ${kind} / ${action}: ${e.message}`;throw e;}}
    async function post(kind,id){if(entities[kind].calculable)await act(kind,id,'calculate');if(entities[kind].requiresApproval)await act(kind,id,'approve');await act(kind,id,'post');return id;}
-   const project=(await db.query('select * from public.business_projects where tenant_id=$1 order by code limit 1',[t.id])).rows[0];let wbs=null;
+   const project=(await db.query('select * from public.business_projects where tenant_id=$1 order by code limit 1',[t.id])).rows[0];let wbs=null;let projectVerification=null;
    if(project){
     wbs=await rec('project_wbs','Hạng mục kết cấu & hoàn thiện',{project_id:project.id,parent_id:null,unit:'m²',contract_quantity:100,contract_unit_price:1000000,starts_on:project.starts_on.toISOString?.().slice(0,10)??project.starts_on,ends_on:project.ends_on.toISOString?.().slice(0,10)??project.ends_on,cost_code:'KET-CAU'});
     const baseline=await rec('budget_versions','Ngân sách triển khai lần đầu',{project_id:project.id,revision:1,previous_id:null,change_reason:'Chốt dự toán theo phạm vi thi công ban đầu',document_date:'2026-10-20'});
-    await rec('budget_lines','Dự toán hạng mục kết cấu',{budget_id:baseline,wbs_id:wbs,category:'material',amount:Number(project.budget)});await post('budget_versions',baseline);
+    await rec('budget_lines','Dự toán hạng mục kết cấu',{budget_id:baseline,wbs_id:wbs,category:'material',amount:Number(project.budget)});await post('budget_versions',baseline);const baselineSnapshot=(await db.query('select calculation_snapshot from public.business_budget_versions where tenant_id=$1 and id=$2',[t.id,baseline])).rows[0].calculation_snapshot;
     const revised=await rec('budget_versions','Bổ sung dự toán hạng mục kết cấu',{project_id:project.id,revision:2,previous_id:baseline,change_reason:'Bổ sung phạm vi thi công đã được thống nhất',document_date:'2026-10-21'});
-    await rec('budget_lines','Dự toán kết cấu sau bổ sung',{budget_id:revised,wbs_id:wbs,category:'material',amount:Number(project.budget)+5000000});await post('budget_versions',revised);
+    await rec('budget_lines','Dự toán kết cấu sau bổ sung',{budget_id:revised,wbs_id:wbs,category:'material',amount:Number(project.budget)+5000000});await post('budget_versions',revised);const baselineAfter=(await db.query('select calculation_snapshot from public.business_budget_versions where tenant_id=$1 and id=$2',[t.id,baseline])).rows[0].calculation_snapshot;const currentBudget=(await db.query('select public.business_project_budget($1,$2) data',[t.id,project.id])).rows[0].data;if(JSON.stringify(baselineSnapshot)!==JSON.stringify(baselineAfter)||Number(currentBudget.limit)!==Number(project.budget)+5000000)throw Error(`Project budget version snapshot changed for ${company.slug}`);projectVerification={passed:true,baselineRevision:1,currentRevision:2,baselineSnapshotPreserved:true,currentBudget:Number(currentBudget.limit)};
     await post('budget_exceptions',await rec('budget_exceptions','Hạn mức dự phòng điều kiện hiện trường',{project_id:project.id,budget_id:revised,amount:1000000,document_date:'2026-10-21',reason:'Dự phòng phát sinh vận chuyển trong điều kiện mặt bằng hạn chế'}));
     await post('project_variations',await rec('project_variations','Phụ lục bổ sung khối lượng kết cấu',{project_id:project.id,wbs_id:wbs,new_quantity:120,new_unit_price:1000000,document_date:'2026-10-21',evidence:'Phụ lục khối lượng được chủ đầu tư xác nhận'}));
     const acceptance=await post('project_acceptances',await rec('project_acceptances','Nghiệm thu khối lượng hoàn thành đợt một',{project_id:project.id,wbs_id:wbs,quantity:25,unit_price:1000000,document_date:'2026-10-22',customer_approved_on:'2026-10-22',evidence:'Biên bản khối lượng đợt một có xác nhận hai bên'}));
@@ -50,12 +50,16 @@ export async function populateBusinessOperations(connection,{capture}={}){
     const award=await rec('procurement_awards',`Đặt mua vật tư đợt ${index+1}`,{quote_id:selectedQuote,document_date:`2026-10-${23+index}`,selection_reason:'Đáp ứng thời hạn giao hàng, điều kiện thanh toán và đơn giá phù hợp'});
     await rec('procurement_award_lines',`Đặt ${quantity} ${raw.unit} ${raw.name}`,{award_id:award,quote_line_id:selectedLine,quantity});await post('procurement_awards',award);awards.push(award);
    }
+   await db.query('savepoint procurement_overage_probe');captureEnabled=false;let overageRejected=false;
+   try{const overage=await rec('procurement_awards','Kiểm tra chặn đặt vượt số lượng',{quote_id:selectedQuote,document_date:'2026-10-25',selection_reason:'Kiểm tra tổng lượng đặt vượt đề nghị'});await rec('procurement_award_lines','Số lượng vượt đề nghị',{award_id:overage,quote_line_id:selectedLine,quantity:20});await post('procurement_awards',overage);}catch(error){if(String(error.message).includes('BUSINESS_PROCUREMENT_EXCEEDED'))overageRejected=true;else throw error;}finally{await db.query('rollback to savepoint procurement_overage_probe');await db.query('release savepoint procurement_overage_probe');captureEnabled=true;}
+   if(!overageRejected)throw Error(`Procurement quantity limit did not reject over-order for ${company.slug}`);
    const po=(await db.query('select purchase_order_id from public.business_procurement_awards where tenant_id=$1 and id=$2',[t.id,awards[0]])).rows[0].purchase_order_id;
    capture?.reference(po,`(select purchase_order_id from public.business_procurement_awards where tenant_id='${t.id}'::uuid and id='${awards[0]}'::uuid)`);
    const line=(await db.query('select unit_price from public.business_purchase_lines where tenant_id=$1 and purchase_order_id=$2',[t.id,po])).rows[0];
    await post('purchase_receipts',await rec('purchase_receipts',`Nhận một phần ${raw.name} đợt một`,{purchase_order_id:po,item_id:raw.id,warehouse_id:raw.warehouse_id,lot_id:raw.lot_id,quantity:30,unit_cost:Number(line.unit_price),document_date:'2026-10-24'}));
    await db.query('update public.business_sessions set revoked_at=now() where token_hash=any($1::text[])',[[hash,reviewHash]]);await db.query('commit');
-   console.log(JSON.stringify({operationsExperience:company.industry,transfer:true,count:true,request:true,quotes:suppliers.length,orders:awards.length,partialReceipt:true,project:!!project}));
+   const result={industry:company.industry,transfer:true,count:true,request:true,quotes:suppliers.length,splitAwards:awards.length,partialReceipt:true,overageRejected:true,project:projectVerification};results.push(result);console.log(JSON.stringify({operationsExperience:company.industry,...result}));
   }catch(e){await db.query('rollback');throw e;}
  }
+ return results;
 }

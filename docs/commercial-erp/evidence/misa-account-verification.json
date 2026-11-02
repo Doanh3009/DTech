@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-11-02T03:39:41.138Z",
+  "origin": "https://dimixo-erp.vercel.app",
+  "scope": "Existing business account login, session metadata and immediate logout; no business records or migrations changed.",
+  "knownAccounts": 18,
+  "verifiedAccounts": 18,
+  "fullSetVerified": true,
+  "checks": [
+    {
+      "tenant": "co-khi-thanh-phat",
+      "expectedRole": "owner",
+      "actualRole": "owner",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "co-khi-thanh-phat",
+      "expectedRole": "editor",
+      "actualRole": "editor",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "co-khi-thanh-phat",
+      "expectedRole": "viewer",
+      "actualRole": "viewer",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "bao-bi-an-phu",
+      "expectedRole": "owner",
+      "actualRole": "owner",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "bao-bi-an-phu",
+      "expectedRole": "editor",
+      "actualRole": "editor",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "bao-bi-an-phu",
+      "expectedRole": "viewer",
+      "actualRole": "viewer",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "dien-tu-minh-tin",
+      "expectedRole": "owner",
+      "actualRole": "owner",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "dien-tu-minh-tin",
+      "expectedRole": "editor",
+      "actualRole": "editor",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "dien-tu-minh-tin",
+      "expectedRole": "viewer",
+      "actualRole": "viewer",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "thuc-pham-an-nhien",
+      "expectedRole": "owner",
+      "actualRole": "owner",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "thuc-pham-an-nhien",
+      "expectedRole": "editor",
+      "actualRole": "editor",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "thuc-pham-an-nhien",
+      "expectedRole": "viewer",
+      "actualRole": "viewer",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "phan-phoi-hung-thinh",
+      "expectedRole": "owner",
+      "actualRole": "owner",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "phan-phoi-hung-thinh",
+      "expectedRole": "editor",
+      "actualRole": "editor",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "phan-phoi-hung-thinh",
+      "expectedRole": "viewer",
+      "actualRole": "viewer",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "xay-dung-chau-tuan",
+      "expectedRole": "owner",
+      "actualRole": "owner",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "xay-dung-chau-tuan",
+      "expectedRole": "editor",
+      "actualRole": "editor",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    },
+    {
+      "tenant": "xay-dung-chau-tuan",
+      "expectedRole": "viewer",
+      "actualRole": "viewer",
+      "loginStatus": 200,
+      "sessionStatus": 200,
+      "logoutStatus": 200
+    }
+  ],
+  "credentialsIncluded": false,
+  "passwordsChanged": false,
+  "businessRecordsChanged": false,
+  "migrationsApplied": false,
+  "deploymentPerformed": false,
+  "cloudAccess": true,
+  "privateHandoff": ".tmp/DIMIXO-ban-giao-tai-khoan.md"
+}

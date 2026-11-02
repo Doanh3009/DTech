@@ -1,0 +1,2757 @@
+{
+  "date": "2026-11-02",
+  "scope": "Current local evidence update for requirements 2.01-2.07, 2.08-2.28, 3.01-3.20, 4.01-4.12 and 5.01-5.22",
+  "requirementCount": 82,
+  "fullMisaComplete": false,
+  "changedRequirements": [
+    "2.01",
+    "2.02",
+    "2.03",
+    "2.04",
+    "2.05",
+    "2.06",
+    "2.07",
+    "2.08",
+    "2.09",
+    "2.10",
+    "2.11",
+    "2.12",
+    "2.13",
+    "2.14",
+    "2.15",
+    "2.16",
+    "2.17",
+    "2.18",
+    "2.19",
+    "2.20",
+    "2.21",
+    "2.22",
+    "2.23",
+    "2.24",
+    "2.25",
+    "2.26",
+    "2.27",
+    "2.28",
+    "3.01",
+    "3.02",
+    "3.03",
+    "3.04",
+    "3.05",
+    "3.06",
+    "3.07",
+    "3.08",
+    "3.09",
+    "3.10",
+    "3.11",
+    "3.12",
+    "3.13",
+    "3.14",
+    "3.15",
+    "3.16",
+    "3.17",
+    "3.18",
+    "3.19",
+    "3.20",
+    "4.01",
+    "4.02",
+    "4.03",
+    "4.04",
+    "4.05",
+    "4.06",
+    "4.07",
+    "4.08",
+    "4.09",
+    "4.10",
+    "4.11",
+    "4.12",
+    "5.01",
+    "5.02",
+    "5.03",
+    "5.04",
+    "5.05",
+    "5.06",
+    "5.07",
+    "5.08",
+    "5.09",
+    "5.10",
+    "5.11",
+    "5.12",
+    "5.13",
+    "5.14",
+    "5.15",
+    "5.16",
+    "5.17",
+    "5.18",
+    "5.19",
+    "5.20",
+    "5.21",
+    "5.22"
+  ],
+  "schemaCompilation": {
+    "command": "node scripts/commercial/compile-business-schema.mjs --populate-experience --populate-operations --populate-attendance --populate-misa --populate-crm --verify-payroll --verify-employment --verify-project-tasks --verify-stock-concurrency --verify-collaboration --verify-safety-quality --verify-master-data",
+    "passed": true,
+    "migrations": 93,
+    "entities": 142,
+    "cloudAccess": false,
+    "testSuiteRun": false,
+    "realCustomerRecordsCreated": false
+  },
+  "requirements": {
+    "2.01": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610260010_business_owner_transfer.sql",
+            "src/features/business/BusinessGovernanceWorkspace.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Native PostgreSQL schema compilation succeeded with 81 migrations and 136 entities.",
+          "limitations": [
+            "The referenced migrations were applied to the development project on 2026-11-02; full business acceptance remains outstanding.",
+            "Owner-transfer authorization/concurrency acceptance and full business browser acceptance remain open; all 18 known demo account login/session/logout checks were verified separately.",
+            "Organization catalogs/history, email invitations and time-bounded delegation remain incomplete."
+          ]
+        },
+        {
+          "kind": "deployed-authentication-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-account-verification.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "All 18 existing demo accounts across six tenants successfully logged in to dimixo-erp.vercel.app, returned the matching tenant and expected owner/editor/viewer role, and logged out immediately. Every login, session and logout returned HTTP 200. The private credential handoff was updated; no passwords, business records, migrations or deployments were changed.",
+          "limitations": [
+            "This verifies existing demo authentication and role metadata only. Business workflow, real-customer and full browser acceptance remain open."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.02": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230002_business_industry_entities.sql",
+            "supabase/migrations/202610230003_business_record_commands.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020010_business_item_unit_conversions.sql",
+            "src/features/business/BusinessItemQuantityConverter.tsx",
+            "src/features/business/BusinessRecords.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "scripts/commercial/verify-business-master-data.mjs",
+            "docs/erp/item-unit-conversions.md",
+            "docs/commercial-erp/evidence/misa-read-export-checks.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Added a registered item-unit conversion catalog and quantity preview by effective date. The base unit is nonblank and cannot change after any reference exists. Synthetic PostgreSQL acceptance passed historical/current/future factor lookup, period overlap rejection, immutable effective history, serial integrality, tenant isolation, row scope, module-off denial and no direct table grants. Full compilation passed with 90 migrations and 142 entities; cloudAccess=false. Mocked API checks passed validation and parameter forwarding.",
+          "limitations": [
+            "Bulk Excel import with row-level conflict resolution, alias/merge history and fuzzy duplicate handling remain incomplete.",
+            "Alternate units and conversion snapshots are not yet wired into purchase, stock and production document lines; the new tool is a quantity preview. Real-account and responsive browser acceptance remain open."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.03": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610230001_shared_business_platform.sql",
+            "supabase/migrations/202610230003_business_record_commands.sql",
+            "supabase/migrations/202610260007_business_eform_field_access.sql",
+            "supabase/migrations/202610260014_business_project_task_acceptance.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020003_business_document_classification_access.sql"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "The existing row-scoped permission checks now also enforce document confidentiality in lists, details, version attachments and signing requests. Synthetic PostgreSQL E2E verified viewer/editor/owner visibility, restricted deep-link rejection, assigned-approver access only while approval is active, and cross-tenant isolation.",
+          "limitations": [
+            "Document classification currently has fixed owner/editor/viewer rules; per-document grant administration, a comprehensive entity/action/scope matrix and audit export remain incomplete. Real-account browser acceptance was not run."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.04": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610260004_business_approval_inbox.sql",
+            "supabase/migrations/202610260005_business_approval_escalations.sql",
+            "supabase/migrations/202610260006_business_eform_conditions.sql",
+            "supabase/migrations/202610260007_business_eform_field_access.sql",
+            "supabase/migrations/202610260008_business_approval_report.sql",
+            "supabase/migrations/202610260009_business_attachments.sql",
+            "docs/commercial-erp/evidence/misa-approval-rollout.json",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Core approval migrations 202610260001-003 have a development rollout record; the complete current local migration set compiled successfully.",
+          "limitations": [
+            "The referenced migrations were applied to the development project on 2026-11-02; full business acceptance remains outstanding.",
+            "Digital signature, API mapping, form-version data migration, antivirus/scale acceptance and full workflow browser acceptance remain incomplete."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.05": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/features/business/BusinessAttachments.tsx",
+            "supabase/migrations/202610260009_business_attachments.sql",
+            "supabase/migrations/202610260003_business_approval_engine.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020001_business_document_signing_outbox.sql",
+            "src/config/businessEntities.json",
+            "supabase/migrations/202611020002_business_document_repository_versions.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "supabase/migrations/202611020003_business_document_classification_access.sql"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Synthetic PostgreSQL E2E passed two-person approval for documents and each version, private attachment metadata/hash pinning, immutable Rev A, Rev B becoming current, signing a specific published version, version-gap rejection and cross-tenant isolation. Role tests passed: viewer cannot read confidential/restricted, editor can read confidential, restricted is owner-only after publication, and only an assigned approver can read/approve during an active review. Restricted deep-link and signing attempts were denied. Local schema build passed with 83 business migrations and 138 entities; object bytes were not verified.",
+          "limitations": [
+            "Folder hierarchy, incoming/outgoing correspondence routing, full-text search, controlled distribution beyond the fixed role/workflow policy and retention enforcement/hold/purge are incomplete. Restricted content is available only to owners and currently assigned approvers; no per-document grant administration screen exists.",
+            "No real object bytes, malware scanning, storage-scale behavior or legal archive acceptance was tested. Digital-signature provider verification and signed-file archive lineage remain external/incomplete."
+          ]
+        }
+      ]
+    },
+    "2.06": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessIndustries.json",
+            "src/features/business/BusinessCollaborationWorkspace.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "supabase/migrations/202611020004_business_meetings_notifications.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020008_business_meeting_calendar.sql"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Added a month/week meeting calendar with a six-week maximum range. Synthetic PostgreSQL E2E passed room-overlap rejection, month/week lookup, row-scope filtering, bounded-range validation, invitation notification creation, recipient-only inbox, minimal payload, mark-read, and cross-account isolation. Cloud access was false.",
+          "limitations": [
+            "Reminder worker, email/push, posts/comments/subscriptions, approval-pending state, and deep-link opening remain incomplete.",
+            "No browser acceptance; notification recipient accounts require an active staff link."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.07": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610240002_business_company_dashboard.sql",
+            "supabase/migrations/202610230017_business_finance_readmodels.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020005_business_global_search.sql",
+            "src/features/business/BusinessGlobalSearch.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "scripts/commercial/compile-business-schema.mjs",
+            "src/features/business/BusinessMisaWorkspace.tsx",
+            "src/features/business/businessMisaViews.ts",
+            "src/features/business/businessMisaExport.ts",
+            "src/features/business/businessMisaExport.test.ts",
+            "src/features/business/BusinessMisaWorkspace.test.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts",
+            "docs/commercial-erp/evidence/misa-read-export-checks.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Tenant-scoped code/name global search passed PostgreSQL row-scope checks. CSV export uses registered columns, spreadsheet-formula escaping, a 5,000-row cap and pagination guards against changed totals, missing rows and duplicated IDs. Focused checks passed 15 CSV/pagination tests, 10 export API tests with session/RPC mocks and 4 component download tests in jsdom. UI preserves the report on error, supports retry, cancels on unmount and releases download URLs. Full PostgreSQL compilation passed with 90 migrations and 142 entities.",
+          "limitations": [
+            "Real-account browser and deployed API acceptance remain open; route/component checks mock external boundaries.",
+            "Custom report/pivot definitions, XLSX/PDF, export history, report drill-down parity, full-text search and the complete report/export permission administration remain incomplete."
+          ]
+        },
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/features/business/BusinessGlobalSearch.tsx",
+            "src/features/business/BusinessShell.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "supabase/migrations/202611020005_business_global_search.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Added tenant-scoped global search over record code/name. Results are limited to enabled industry features, filtered by row-level business_access_allowed, capped to 50, and contain no extra sensitive fields. Synthetic PostgreSQL verification passed tenant isolation and custom-scope filtering; schema compilation and TypeScript checking passed.",
+          "limitations": [
+            "No per-role dashboard widgets, custom/pivot report definitions, scheduled reports, report export to Excel/PDF, or report run history.",
+            "Browser acceptance remains outstanding."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.08": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-crm.mjs",
+            "supabase/migrations/202610240036_business_crm_entities.sql",
+            "supabase/migrations/202610240037_business_crm_workflows.sql",
+            "supabase/migrations/202610240038_business_crm_workspace.sql",
+            "supabase/migrations/202610260017_business_project_sales_contract_link.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic CRM workflow ran in six industry tenants; source, consent, campaign spend, lead qualification and conversion to an existing customer were persisted and checked.",
+          "limitations": [
+            "Duplicate warning/merge history and inbound web-form or channel integration are not complete.",
+            "No browser acceptance or real customer data.",
+            "The full combined synthetic PostgreSQL workflow passed with 76 migrations and 119 entities."
+          ]
+        }
+      ]
+    },
+    "2.09": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-crm.mjs",
+            "supabase/migrations/202610240036_business_crm_entities.sql",
+            "supabase/migrations/202610240037_business_crm_workflows.sql",
+            "supabase/migrations/202610240038_business_crm_workspace.sql",
+            "supabase/migrations/202610260017_business_project_sales_contract_link.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic workflow converted a qualified lead into an owned opportunity linked to the existing customer, recorded stage history and moved the opportunity to won; pipeline workspace returned the expected records.",
+          "limitations": [
+            "Activities/calendar integrations, team territory model and complete lost-reason analytics remain incomplete.",
+            "No browser acceptance or real account validation.",
+            "The full combined synthetic PostgreSQL workflow passed with 76 migrations and 119 entities."
+          ]
+        }
+      ]
+    },
+    "2.10": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-crm.mjs",
+            "supabase/migrations/202610240036_business_crm_entities.sql",
+            "supabase/migrations/202610240037_business_crm_workflows.sql",
+            "supabase/migrations/202610240038_business_crm_workspace.sql",
+            "supabase/migrations/202610260017_business_project_sales_contract_link.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic workflow accepted a posted quote, created a contract linked to that quote, posted a quantity amendment from 100 to 120, issued two orders totaling 50 with 70 remaining, and rejected an additional 71 as BUSINESS_CONTRACT_EXCEEDED. Where the tenant enables projects and sales, the project is linked immutably to its posted contract.",
+          "limitations": [
+            "Multiple quote revision selection, VAT/payment schedules, customer-side signature and invoice/receivable reconciliation are incomplete.",
+            "No browser acceptance or real customer transaction.",
+            "The full combined synthetic PostgreSQL workflow passed with 76 migrations and 119 entities."
+          ]
+        }
+      ]
+    },
+    "2.11": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-crm.mjs",
+            "supabase/migrations/202610240036_business_crm_entities.sql",
+            "supabase/migrations/202610240037_business_crm_workflows.sql",
+            "supabase/migrations/202610240038_business_crm_workspace.sql",
+            "supabase/migrations/202610260017_business_project_sales_contract_link.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic support workflow recorded first response, resolution and closure before SLA; a second overdue ticket was escalated while preserving original SLA dates.",
+          "limitations": [
+            "External email intake, reassignment history, warranty asset linkage, attachment access and customer satisfaction survey are incomplete.",
+            "No real support channel or browser acceptance.",
+            "The full combined synthetic PostgreSQL workflow passed with 76 migrations and 119 entities."
+          ]
+        }
+      ]
+    },
+    "2.12": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610240023_business_operational_entities.sql",
+            "supabase/migrations/202610240024_business_operational_calculations.sql",
+            "supabase/migrations/202610240026_business_operational_guards.sql",
+            "scripts/commercial/populate-business-operations.mjs",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Native PostgreSQL synthetic construction workflow passed: WBS, budget baseline revision 1, revised budget revision 2, variation, acceptance, lifecycle pause/resume. The baseline calculation snapshot stayed unchanged after posting revision 2; current project budget reflected the revised limit.",
+          "limitations": [
+            "Synthetic construction tenant only; no real-account browser acceptance.",
+            "Milestone and contract-link acceptance, project close settlement and complete project profitability review remain unverified.",
+            "No cloud migration or application deployment was performed."
+          ]
+        }
+      ]
+    },
+    "2.13": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610260011_business_project_tasks.sql",
+            "src/features/business/BusinessProjectTasks.tsx",
+            "src/features/business/businessSchemas.ts",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "src/app/erp/[slug]/(workspace)/[kind]/page.tsx",
+            "src/features/business/BusinessWorkflowWorkspace.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202610260012_business_project_task_updates.sql",
+            "src/features/business/BusinessAttachments.tsx",
+            "src/features/business/businessAttachmentService.ts",
+            "supabase/migrations/202610260013_business_project_task_hierarchy.sql",
+            "supabase/migrations/202610260014_business_project_task_acceptance.sql",
+            "scripts/commercial/compile-business-schema.mjs"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Native PostgreSQL schema compilation passed with 72 migrations and 116 entities. Targeted synthetic runtime verification passed for required checklist, required predecessor, dependency and hierarchy cycle prevention, task acceptance, stale row version, tenant scope/isolation, update idempotency and daily shift logs; npm run typecheck passed.",
+          "limitations": [
+            "The referenced migrations were applied to the development project on 2026-11-02; full business acceptance remains outstanding.",
+            "Attachment storage was not exercised against the configured storage service.",
+            "No real-account browser acceptance or full MISA workflow acceptance was run."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.14": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610240023_business_operational_entities.sql",
+            "supabase/migrations/202610240024_business_operational_calculations.sql",
+            "supabase/migrations/202610230003_business_record_commands.sql",
+            "scripts/commercial/populate-business-operations.mjs",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Native PostgreSQL synthetic operations population passed for all six industry demo tenants: request quantity 100 split into two awards (60+40), partial receipt of 30, and a rollback-isolated 120-unit over-order rejection. Calculation guards also enforce the project budget limit.",
+          "limitations": [
+            "Synthetic tenant data only; no real-account browser acceptance.",
+            "Development migrations are now applied; see the release evidence for the exact UI/API verification scope.",
+            "Supplier payment and bank reconciliation still require account/provider acceptance."
+          ]
+        }
+      ]
+    },
+    "2.15": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610230002_business_industry_entities.sql",
+            "supabase/migrations/202610230003_business_record_commands.sql",
+            "supabase/migrations/202610240023_business_operational_entities.sql",
+            "supabase/migrations/202610240024_business_operational_calculations.sql",
+            "supabase/migrations/202610240026_business_operational_guards.sql",
+            "supabase/migrations/202610240025_business_operational_commands.sql",
+            "scripts/commercial/populate-business-operations.mjs",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Native PostgreSQL compilation passed with 72 migrations/116 entities. Across six synthetic industry tenants, stock transfer and count populations passed. A two-connection concurrency check issued 627 units twice against balance 1045; one posted and the other was rejected with BUSINESS_INSUFFICIENT_STOCK.",
+          "limitations": [
+            "Synthetic data only; no real-account browser acceptance.",
+            "Lot/serial quality cases and stock-count freeze acceptance remain unverified.",
+            "No cloud migration or application deployment was performed."
+          ]
+        }
+      ]
+    },
+    "2.16": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "scripts/commercial/prepare-dimixo-experience.mjs",
+            "supabase/migrations/202610230012_business_industry_execution.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Tenant schema includes BOMs, BOM lines, work orders, operations, production reports and production receipts; six synthetic industry datasets compile.",
+          "limitations": [
+            "No dedicated MRP/BOM-version/production-yield acceptance was recorded; subcontracting, scrap, quality release and actual-vs-standard cost cases remain open."
+          ]
+        }
+      ]
+    },
+    "2.17": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610240007_business_asset_domain.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Asset/CCDC/prepaid schema and assignment/return/maintenance/disposal event commands are present; synthetic asset read models returned three rows per tenant.",
+          "limitations": [
+            "Full count, upgrade/revaluation, maintenance work-order and disposal acceptance remains incomplete."
+          ]
+        }
+      ]
+    },
+    "2.18": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610260020_business_safety_quality_actions.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020006_business_approval_non_misa_routing.sql",
+            "supabase/migrations/202611020007_business_quality_dashboard.sql",
+            "src/features/business/BusinessQualityWorkspace.tsx",
+            "supabase/migrations/202611020009_business_quality_trends.sql",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Tenant-scoped safety/quality dashboard includes counts, severity distribution, overdue CAPA, recent records, and a monthly series for the latest 12 months. Synthetic PostgreSQL E2E passed critical incident capture, two-person approval, source-linked CAPA, independent effectiveness verification, tenant-scoped dashboard, severity analytics and bounded trend output. Full schema compilation passed with 89 business migrations and 141 entities; cloudAccess=false.",
+          "limitations": [
+            "Legal compliance reports and retention/archival rules remain incomplete.",
+            "Browser acceptance and customer-account validation were not run; no cloud data was accessed."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "2.19": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610260021_business_recruitment_workflow.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic PostgreSQL E2E passed approved requisition and job post, consented candidate intake, screening and technical interview transitions, salary-bounded offer, approved hire handoff to a new employee record, HR-only email visibility, duplicate applicant rejection and duplicate hire rejection. Evidence is in the 79-migration/129-entity local schema build.",
+          "limitations": [
+            "External job-board publication, interview calendar integration, resume attachment and retention purge, source/time-to-hire reporting, actual account provisioning and full contract/HSE onboarding remain incomplete."
+          ]
+        }
+      ]
+    },
+    "2.20": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610260015_business_employment_records.sql",
+            "supabase/migrations/202610260016_business_employment_offboarding.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202610260018_business_employee_documents.sql",
+            "src/features/business/BusinessPeopleWorkspace.tsx"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Local synthetic PostgreSQL passed two-person approval for contracts, effective terms and position history; rejects overlapping contracts and direct profile edits; locks posted history and employee code; redacts salary and document numbers by role; approved termination disables the linked account and revokes sessions; tenant-scoped reports count expired and due-soon employee documents and contracts without exposing sensitive fields. Combined run passed 81 migrations and 136 entities.",
+          "limitations": [
+            "Future-effective changes and historical-period payroll recalculation are not supported; employee snapshot changes when an event is posted.",
+            "Expiry reports are read-only; automated reminders, rehire and full termination settlement workflows remain incomplete.",
+            "Sensitive-field authorization across all reports/read models and real-account browser acceptance remain outstanding.",
+            "No cloud migration or application deployment was performed."
+          ]
+        }
+      ]
+    },
+    "2.21": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610240023_business_operational_entities.sql",
+            "supabase/migrations/202610240024_business_operational_calculations.sql",
+            "supabase/migrations/202610240026_business_operational_guards.sql",
+            "scripts/commercial/populate-business-attendance.mjs",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Native PostgreSQL synthetic attendance verification passed across six industry tenants: a 20:00-05:00 overnight shift generated exactly one 8-hour workday card with zero duplicate hours; paid leave posted for 8 hours; unapproved overtime was rejected; a new confirmation after attendance lock was rejected.",
+          "limitations": [
+            "Synthetic data only; no real-account browser acceptance.",
+            "QR/device punches, multi-project hour splits, forgotten-punch corrections and full payroll integration remain unverified.",
+            "No cloud migration or application deployment was performed."
+          ]
+        }
+      ]
+    },
+    "2.22": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610230015_business_misa_finance.sql",
+            "supabase/migrations/202610230016_business_finance_commands.sql",
+            "supabase/migrations/202610240005_business_misa_finance_entities.sql",
+            "scripts/commercial/populate-misa-finance.mjs",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic payroll posted across six industry tenants. Verification confirmed line totals reconcile gross = net + deductions, generated payroll journals balance, posted salary payments do not exceed net payable, and posted project cost allocation rows total 100% per allocated salary line.",
+          "limitations": [
+            "Synthetic policy/rates only; payroll tax and insurance settings require accountant/legal review before use.",
+            "No real-account browser acceptance or employee payslip privacy review.",
+            "Payroll recalculation versioning, locked-period correction workflow and external payroll/bank integration remain incomplete."
+          ]
+        }
+      ]
+    },
+    "2.23": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610240013_business_payroll_statutory.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Payroll tax and insurance schemas are present, and synthetic tax/payroll read models ran across six tenants.",
+          "limitations": [
+            "Government filing/submission, acknowledgement, current statutory parameter review and real-account authorization remain outstanding."
+          ]
+        }
+      ]
+    },
+    "2.24": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610260022_business_performance_cycles.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Synthetic PostgreSQL E2E passed an open cycle, approved parent/child KPI assignments, approved check-ins, an approved target change with old/new values and approver in history, latest-value scoring, a manager distinct from the employee, weighted goal score 94, calibrated final score 94, employee acknowledgement tied to the linked staff account, cycle close requiring review and acknowledgement, frozen review snapshot and rejection of a 99-percent weight set. The combined local schema build passed with 81 migrations and 136 entities.",
+          "limitations": [
+            "Target hierarchy supports parent/child goals; organization-wide cascading, BSC dimensions and 360-degree feedback are not implemented.",
+            "Only manual KPI check-in values were exercised; source verification against project, production and attendance records is not wired.",
+            "Department reports, trend dashboards and calibration comparison across teams remain incomplete.",
+            "The E2E uses synthetic accounts/data and does not replace browser acceptance by real managers and employees."
+          ]
+        }
+      ]
+    },
+    "2.25": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230016_business_finance_commands.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic bank matching, cash/treasury datasets and advance settlement ran; MISA bank/advance views returned rows for six tenants.",
+          "limitations": [
+            "Real bank connectivity, statement import, payment-request limits and cashier segregation are not fully accepted."
+          ]
+        }
+      ]
+    },
+    "2.26": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230017_business_finance_readmodels.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic finance data and report views were queried; payroll and project postings also produced balanced synthetic journals.",
+          "limitations": [
+            "Accounting-regime-specific report acceptance, foreign-exchange revaluation, invoice matching and full audit export remain open."
+          ]
+        }
+      ]
+    },
+    "2.27": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610240021_business_payroll_cost_allocation.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic costing views ran for six tenants; payroll allocations balanced and project budget baselines were verified.",
+          "limitations": [
+            "All construction cost methods, late source adjustment, WIP methods and budget-by-period acceptance remain incomplete."
+          ]
+        }
+      ]
+    },
+    "2.28": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610240013_business_payroll_statutory.sql",
+            "supabase/migrations/202610230016_business_finance_commands.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Sales invoices, adjustments and tax filing records are modeled in the local registry and synthetic tax read model.",
+          "limitations": [
+            "E-invoice provider API, certificate-based signing, authority responses and legal-document integration require external providers and credentials."
+          ]
+        }
+      ]
+    },
+    "3.01": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230015_business_misa_finance.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202610260019_business_payment_requests.sql"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (advances, reports) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module. A separate synthetic payment request passed two-person approval and was verified not to create a cash journal.",
+          "limitations": [
+            "Cash receipt/payment, physical cash count, cashier-vs-accountant separation and cashbook reconciliation were not exercised by this run.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed.",
+            "Cash receipt/payment execution, physical cash count and cashier/accountant segregation remain unverified."
+          ]
+        }
+      ]
+    },
+    "3.02": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230015_business_misa_finance.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (bank) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Synthetic bank matching was seeded; real bank connectivity, statement-import deduplication and failed payment handling were not tested.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.03": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-operations.mjs",
+            "supabase/migrations/202610240003_business_procurement_matching.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (operationsVerification) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Supplier invoice matching, purchase returns, import costs, service purchases and full AP aging remain unverified.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.04": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-crm.mjs",
+            "supabase/migrations/202610230010_business_sales_fulfillment.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (crmVerification, reports) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "The CRM path covers accepted quote, contract and partial orders; complete delivery, sales invoice/receivable, discount return and duplicate-invoice acceptance remain open.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.05": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610240013_business_payroll_statutory.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (tax) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "No e-invoice provider, digital signature, tax-authority response, replacement invoice or provider-state reconciliation was run.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.06": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-operations.mjs",
+            "supabase/migrations/202610230013_business_industry_readmodels.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (operationsVerification, stockConcurrencyVerification) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Concurrency and synthetic movement flows were checked; lot/serial valuation, consignment stock, closed-period and negative-stock-by-date acceptance remain open.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.07": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230015_business_misa_finance.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (assets) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Asset views were queried, but multi-period CCDC allocation, transfer splitting, physical inventory and double-expense prevention were not fully accepted.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.08": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230015_business_misa_finance.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (assets) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Synthetic asset snapshots were queried; revaluation, full disposal cases and tax/accounting depreciation acceptance remain open.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.09": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610240013_business_payroll_statutory.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (tax) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "The tax snapshot was queried; supplier XML/PDF intake, tax-code verification, duplicate invoice detection and purchase matching remain unverified.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.10": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610240013_business_payroll_statutory.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (tax) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Synthetic tax read models were queried; full VAT/CIT/PIT filing, electronic submission and government acknowledgement were not tested.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.11": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230017_business_finance_readmodels.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (reports) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Report snapshots were queried; accounting-standard acceptance, FX revaluation, closing dependencies and all drill-downs remain open.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.12": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230017_business_finance_readmodels.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (costing) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Costing snapshots were queried; equivalent/co-product, multi-stage allocation, all WIP and late-invoice adjustments were not fully accepted.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.13": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/compile-business-schema.mjs",
+            "supabase/migrations/202610240013_business_payroll_statutory.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (payroll) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Synthetic payroll totals, balanced journals and allocations passed; statutory-rate validation, all sensitive report permissions and account-based acceptance remain open.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.14": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230015_business_misa_finance.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (loans) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Synthetic loan and movement snapshots were queried; schedule variants, fee separation and maturity alerts were not fully accepted against real terms.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.15": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-crm.mjs",
+            "supabase/migrations/202610260015_business_employment_records.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (crmVerification, employmentVerification) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Sales and employment contract records are covered separately; contract milestones, purchase contracts and automatic receivable schedules are not complete end-to-end.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.16": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/compile-business-schema.mjs",
+            "supabase/migrations/202610230012_business_industry_execution.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (projectTaskVerification) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Project budget versioning and baseline preservation passed; cost-center/account-period commitments, exception approvals and plan-vs-actual-by-period remain open.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.17": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-operations.mjs",
+            "supabase/migrations/202610230013_business_industry_readmodels.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (operationsVerification, stockConcurrencyVerification) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Synthetic warehouse receipts, issues, counts and concurrent stock protection were checked; warehouse-role segregation and physical quantity variance workflow need full acceptance.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.18": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610230016_business_finance_commands.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (advances, reports) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Treasury/report views were queried; physical cashier receipt, cash custody, signature evidence and separate cashier/accountant workflow remain unverified.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.19": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610230017_business_finance_readmodels.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "scripts/commercial/compile-business-schema.mjs"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Combined synthetic PostgreSQL run queried MISA read models (reports) over 2026-10-01 through 2026-10-24 for six tenant datasets. The current evidence artifact stores per-tenant row totals for eight views; this confirms read-model execution only, not complete acceptance of this module.",
+          "limitations": [
+            "Financial report snapshots were queried; ratio definitions, comparison periods, explainable alerts and permission-scoped analytics need acceptance.",
+            "No external MISA, bank, e-invoice or real-account/browser acceptance was performed."
+          ]
+        }
+      ]
+    },
+    "3.20": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "supabase/migrations/202610230017_business_finance_readmodels.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "scripts/commercial/compile-business-schema.mjs",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "src/features/business/BusinessMisaWorkspace.tsx",
+            "src/features/business/businessMisaExport.ts",
+            "src/features/business/businessMisaExport.test.ts",
+            "src/features/business/BusinessMisaWorkspace.test.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts",
+            "docs/commercial-erp/evidence/misa-read-export-checks.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "CSV export uses registered columns, spreadsheet-formula escaping, a 5,000-row cap and pagination guards against changed totals, missing rows and duplicated IDs. Focused checks passed 15 CSV/pagination tests, 10 export API tests with session/RPC mocks and 4 component download tests in jsdom. UI preserves the report on error, supports retry, cancels on unmount and releases download URLs. Full PostgreSQL compilation passed with 90 migrations and 142 entities.",
+          "limitations": [
+            "Real-account browser and deployed API acceptance remain open; route/component checks mock external boundaries.",
+            "Custom report/pivot definitions, XLSX/PDF, export history, report drill-down parity, full-text search and the complete report/export permission administration remain incomplete."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "4.01": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-crm.mjs",
+            "supabase/migrations/202610240036_business_crm_entities.sql",
+            "supabase/migrations/202610240037_business_crm_workflows.sql",
+            "supabase/migrations/202610240038_business_crm_workspace.sql",
+            "supabase/migrations/202610260017_business_project_sales_contract_link.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "In the synthetic construction tenant, a qualified lead was converted to an existing customer and won opportunity, an accepted quote was posted, its contract was signed, amended, ordered in two releases and linked to a project. The source contract link is immutable and the contract cannot be cancelled while the project references it.",
+          "limitations": [
+            "WBS and budget were not created from this CRM project in the same flow; task execution, acceptance, receivable and collection were not run from this specific source contract.",
+            "External handoff/outbox, attachment trace and full actor/time evidence were not end-to-end validated.",
+            "No browser acceptance, real customer data, cloud migration or application deployment.",
+            "The full combined synthetic PostgreSQL workflow passed with 76 migrations and 119 entities."
+          ]
+        }
+      ]
+    },
+    "4.02": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-operations.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic operations flow ran in six tenants: procurement request, two supplier quotes, split awards, partial receipt; an over-award was rejected. Results are recorded in operationsVerification.",
+          "limitations": [
+            "Invoice-before-receipt/receipt-before-invoice reconciliation, AP invoice matching, purchase returns and real supplier channels remain unverified.",
+            "Synthetic local data only; no real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "4.03": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-operations.mjs",
+            "src/config/businessEntities.json",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "The synthetic operations generator creates source-linked project material issues and posts a return when a posted issue is available; the combined run completed without command errors.",
+          "limitations": [
+            "The acceptance artifact does not yet assert returned quantity against source issue and stock ledger for this E2E path; serial/lot and partial-return cases need targeted verification.",
+            "Synthetic local data only; no real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "4.04": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-attendance.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic attendance run passed across six tenants with an 8-hour night card, approved paid leave, posted attendance lock and overtime approval requirement recorded in attendanceVerification.",
+          "limitations": [
+            "Real device/import reconciliation, biometric integration, payroll-period acceptance and account-based browser flow remain unverified.",
+            "Synthetic local data only; no real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "4.05": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/compile-business-schema.mjs",
+            "supabase/migrations/202610240021_business_payroll_cost_allocation.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic payroll verification passed six tenants with eight payroll lines each, balanced journal totals and balanced project cost allocations.",
+          "limitations": [
+            "Statutory payroll rates, full salary-field access matrix, historical effective salary, month close/reopen and real-account acceptance remain open.",
+            "Synthetic local data only; no real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "4.06": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-operations.mjs",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic project operations post a WBS, two budget versions, variation, acceptance and invoice reconciliation when a posted sales invoice is available; project task acceptance was also verified.",
+          "limitations": [
+            "Milestone billing, customer collection/payment execution, retention, withholding, settlement and full contract-to-cash linkage are not yet proven in one E2E run.",
+            "Synthetic local data only; no real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "4.07": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "scripts/commercial/populate-business-operations.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Construction budget verification passed revision 1 to 2, preserved the baseline calculation snapshot and confirmed the revised budget limit; a budget exception and quantity variation are posted by the synthetic journey.",
+          "limitations": [
+            "Commitment-vs-actual accounting by period/cost code and exception approver matrix remain unverified.",
+            "Synthetic local data only; no real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "4.08": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "The asset read model returned three synthetic assets in each of six tenant datasets; the asset registry supports assignment, return and maintenance event types.",
+          "limitations": [
+            "The combined run did not execute an end-to-end asset handover-to-maintenance-to-return scenario or full CCDC allocation acceptance.",
+            "Synthetic local data only; no real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "4.09": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610260021_business_recruitment_workflow.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "The local synthetic flow passed requisition → job post → consented candidate → screening → interview → approved offer → new employee record and a single approved candidate-to-staff handoff.",
+          "limitations": [
+            "The run does not continue through an effective employment contract, HSE certificate gate, project assignment and attendance; cross-system outbox/retry acceptance and site-user permissions remain unverified."
+          ]
+        }
+      ]
+    },
+    "4.10": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "scripts/commercial/prepare-dimixo-experience.mjs",
+            "supabase/migrations/202610230012_business_industry_execution.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "The tenant registry and local synthetic seed support BOM, work-order, operation, production-report and production-receipt records.",
+          "limitations": [
+            "No end-to-end steel fabrication run was asserted for BOM revision, material issue, scrap, quality release, finished receipt and cost posting."
+          ]
+        }
+      ]
+    },
+    "4.11": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202611020001_business_document_signing_outbox.sql",
+            "supabase/migrations/202610260009_business_attachments.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020002_business_document_repository_versions.sql",
+            "supabase/migrations/202611020003_business_document_classification_access.sql"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Synthetic PostgreSQL E2E passed two-person signing-request approval, exact source document version and attachment SHA-256 pinning, tenant-scoped outbox claim/dispatch, rejection of an unsigned callback, private signed attachment hash verification, source hash preservation and duplicate provider-event replay handling. The document repository E2E also created a signing request against the published Rev B record and verified the exact version, attachment and hash were pinned. Combined local schema build passed with 83 migrations and 138 entities.",
+          "limitations": [
+            "No signing provider was selected or connected. The provider callback verifier only accepts events from the service-role adapter after it asserts signatureVerified=true; provider-specific HMAC/certificate verification and callback authentication are not implemented.",
+            "No real signed bytes, certificate chain, legal signature validation, template merge/versioning or archive/browser acceptance were tested. Provider credentials, callback endpoint configuration and private storage access remain external dependencies."
+          ]
+        }
+      ]
+    },
+    "4.12": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610260020_business_safety_quality_actions.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "scripts/commercial/compile-business-schema.mjs",
+            "supabase/migrations/202611020006_business_approval_non_misa_routing.sql"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Synthetic incident-to-CAPA sequence passed: critical work-stopped incident submitted, approved and posted; premature CAPA against an unposted incident was rejected; linked corrective action completed and independently verified; two-person CAPA approval and posting passed.",
+          "limitations": [
+            "A separate formal investigation record/state and real site evidence retention have not been implemented; no real HSE account or browser acceptance was used."
+          ]
+        }
+      ]
+    },
+    "5.01": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020010_business_item_unit_conversions.sql",
+            "src/features/business/BusinessItemQuantityConverter.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "scripts/commercial/verify-business-master-data.mjs",
+            "docs/erp/item-unit-conversions.md",
+            "docs/commercial-erp/evidence/misa-read-export-checks.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Material master now rejects blank base units and changing the base unit after document/configuration references exist. Registered effective-dated item conversions expose a protected quantity preview and preserve historical factors; synthetic PostgreSQL checks passed, including positive factor, non-overlap, serial integrality and tenant/row access.",
+          "limitations": [
+            "Excel import, row-level conflict resolution, alias/merge history and the remaining material-group/accounting/image/minimum-stock fields remain incomplete.",
+            "Alternate-unit snapshots on transaction lines and real-account browser acceptance remain open."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "5.02": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Project records are schema-backed; synthetic project workflow and sales-contract source-link verification passed. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Project creation wizard, validations across all project types and browser form acceptance remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.03": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic project run posted two budget revisions and preserved the baseline calculation snapshot. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Cost-code/period commitments, import template and full budget exception approval acceptance remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.04": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic procurement request and its requested lines were posted across six tenant datasets. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Vendor-channel RFQ delivery and import/export validation remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.05": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Two synthetic supplier quotes were captured and compared in the procurement generator. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Negotiation history, multi-currency and vendor response integrations were not accepted.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.06": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Split procurement awards generated purchase orders; an over-award was rejected. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Full tax/fee allocation, amendment, cancellation and supplier-account acceptance remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.07": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Partial receipt against a purchase order was posted in six synthetic tenant datasets. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Returns, supplier invoice-before-receipt and receipt-before-invoice reconciliation remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.08": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Project material issue records are part of the operational generator. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Issue/return source quantity and ledger parity need a dedicated asserted E2E test.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.09": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic stock counts were posted with ledger adjustments in the combined local run. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Multi-team count, freeze/resume, recount and account-based acceptance remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.10": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic attendance generated night-shift timecards and reconciled scheduled/worked totals. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Device import and full worksite role/mobile acceptance remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.11": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Paid leave was approved and included in attendance verification across six synthetic tenants. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Policy variations and accrual/proration edge cases remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.12": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "The combined synthetic attendance flow verified overtime approval requirements. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Statutory caps, split shifts and payroll recalculation edge cases remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.13": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic payroll generated eight lines per tenant with balanced journal totals. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Statutory-rate table review, confidential field matrix and browser payroll review remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.14": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic payroll cost allocations balanced for six tenants. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Allocation rules by WBS/cost code, effective-dated rules and full recalculation acceptance remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.15": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Project acceptance records were posted in the synthetic project journey. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Milestone, evidence attachment, retention and over-quantity acceptance cases remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.16": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/businessMisaViews.ts",
+            "supabase/migrations/202610260019_business_payment_requests.sql",
+            "scripts/commercial/compile-business-schema.mjs",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Added a tenant-scoped payment-request record, source-deduplication, separate review/post path and no cash journal on request approval. Synthetic PostgreSQL passed two-person approval, source-link preservation, duplicate-source rejection and posted-record immutability.",
+          "limitations": [
+            "A posted request is not a completed payment; downstream cash/bank execution, project budget limit approvals and actual tenant approval policies remain to be configured and accepted.",
+            "No real-account browser or provider integration was run."
+          ]
+        },
+        {
+          "kind": "release-ui-api-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-release-readiness.json",
+            "docs/commercial-erp/evidence/misa-feature-rollout.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Release validation passed 33 responsive screens at 390/768/1440px using an existing demo owner, 12 real REST reads, application search, mobile navigation, quantity preview, supplier selection on a payment-request form and a CSV download. No business document was saved by the browser check. The 32 pending/fix migrations were applied with preserved account/document totals, RLS and private storage checks.",
+          "limitations": [
+            "These are release read/UI checks; requirement-specific full transaction acceptance remains open where listed. External provider integrations and the full 82-item scope are not complete."
+          ]
+        }
+      ]
+    },
+    "5.17": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Asset event registry supports assignment and return event types. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Handover-to-return workflow, custody signatures and physical inventory were not run end-to-end.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.18": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Asset event registry supports maintenance start/end actions and asset read models were queried. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Maintenance schedule, work order, parts, approval and return-to-service workflow remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.19": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "supabase/migrations/202610260020_business_safety_quality_actions.sql",
+            "docs/commercial-erp/evidence/industry-schema-build.json",
+            "supabase/migrations/202611020007_business_quality_dashboard.sql",
+            "supabase/migrations/202611020009_business_quality_trends.sql",
+            "src/features/business/BusinessQualityWorkspace.tsx",
+            "src/app/api/v1/business/[slug]/[...path]/route.ts",
+            "scripts/commercial/compile-business-schema.mjs"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Synthetic PostgreSQL E2E passed incident-to-verified-CAPA, independent verifier enforcement, two-person workflow, tenant-scoped dashboard, severity distribution and a 12-month trend series with current-month incident counts; cloudAccess=false.",
+          "limitations": [
+            "Legal-form completeness, retention/archival, real attachments/signatures and browser acceptance remain open."
+          ]
+        }
+      ]
+    },
+    "5.20": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic accepted quote produced a posted sales contract/amendment; H02 contracts have separate approval and expiry checks. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Template field acceptance, milestone schedule, versioned attachments and buyer payment schedule are incomplete.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.21": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Synthetic loans and movements were populated; the loan MISA read model returned rows in all six tenants. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "Bank-verified drawdown, schedule variants and all early/late repayment cases remain open.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    },
+    "5.22": {
+      "status": "in_progress",
+      "acceptanceComplete": false,
+      "evidence": [
+        {
+          "kind": "local-implementation",
+          "status": "partial",
+          "artifacts": [
+            "src/config/businessEntities.json",
+            "src/config/businessEntities.json",
+            "src/features/business/BusinessRecords.tsx",
+            "docs/commercial-erp/evidence/industry-schema-build.json"
+          ],
+          "verifiedAt": "2026-10-26",
+          "verification": "Tax and payroll-tax registry and synthetic MISA tax read models were exercised. Generic record routes render registered entity fields; typecheck and native PostgreSQL schema compilation passed.",
+          "limitations": [
+            "External tax/BHXH submission, authority acknowledgements and production signature flow are not connected.",
+            "No real-account browser acceptance."
+          ]
+        }
+      ]
+    }
+  },
+  "externalDependencies": [
+    "All known demo credentials have verified login/session/logout. Full real-account business browser acceptance remains outstanding.",
+    "Connected digital-signature, e-invoice, bank and social-insurance providers, credentials and provider-specific callback verification are still required for real integration."
+  ],
+  "typecheck": {
+    "command": "npm run typecheck",
+    "passed": true
+  },
+  "targetedRuntimeVerification": {
+    "passed": true,
+    "scope": "Project-task/task-update migrations 011-014 with synthetic tenants",
+    "checks": [
+      "required_checklist",
+      "required_predecessor",
+      "dependency_cycle",
+      "task_hierarchy_cycle",
+      "task_acceptance",
+      "stale_version",
+      "tenant_workspace",
+      "tenant_isolation",
+      "task_update_idempotency",
+      "daily_shift_log"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "procurementRuntimeVerification": {
+    "passed": true,
+    "scope": "Synthetic operations population for six industry demo tenants",
+    "checks": [
+      "100_unit_request",
+      "60_plus_40_split_awards",
+      "partial_receipt_30",
+      "120_unit_over_order_rejected",
+      "project_budget_guard"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "stockConcurrencyVerification": {
+    "passed": true,
+    "check": "two_concurrent_issues_only_one_posts",
+    "quantityEach": 627,
+    "startingBalance": 1045,
+    "rejectedWith": "BUSINESS_INSUFFICIENT_STOCK",
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "projectBudgetVersionVerification": {
+    "passed": true,
+    "tenant": "synthetic construction tenant",
+    "baselineRevision": 1,
+    "currentRevision": 2,
+    "baselineSnapshotPreserved": true,
+    "currentBudget": 1205000000,
+    "cloudAccess": false
+  },
+  "attendanceVerification": {
+    "passed": true,
+    "companies": 6,
+    "checks": [
+      "overnight_shift_one_workday_card",
+      "paid_leave_8_hours",
+      "unapproved_overtime_rejected",
+      "confirmation_after_attendance_lock_rejected"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "payrollVerification": {
+    "passed": true,
+    "companies": 6,
+    "checks": [
+      "gross_equals_net_plus_deductions",
+      "posted_payroll_journal_balanced",
+      "payments_not_over_net_payable",
+      "cost_allocations_sum_to_100_percent"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "misaReadModelVerification": {
+    "passed": true,
+    "period": {
+      "from": "2026-10-01",
+      "to": "2026-10-24"
+    },
+    "views": [
+      "assets",
+      "bank",
+      "advances",
+      "loans",
+      "costing",
+      "tax",
+      "payroll",
+      "reports"
+    ],
+    "companies": [
+      {
+        "industry": "metalworking",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "plastics_packaging",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "electronics",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "food_beverage",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "trading",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 0,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      },
+      {
+        "industry": "construction",
+        "totals": {
+          "assets": 3,
+          "bank": 1,
+          "advances": 1,
+          "loans": 1,
+          "costing": 3,
+          "tax": 4,
+          "payroll": 16,
+          "reports": 23
+        }
+      }
+    ]
+  },
+  "paymentRequestVerification": {
+    "passed": true,
+    "checks": [
+      "two_person_approval",
+      "source_link_preserved",
+      "duplicate_source_rejected",
+      "posted_record_immutable",
+      "request_post_does_not_create_cash_journal"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "documentRepositoryVerification": {
+    "passed": true,
+    "tenant": "synthetic construction tenant",
+    "checks": [
+      "two_person_document_approval",
+      "private_version_attachment_and_hash",
+      "rev_a_immutable_after_publication",
+      "rev_b_becomes_current",
+      "rev_a_history_preserved",
+      "signing_request_pins_published_version_and_hash",
+      "version_gap_rejected",
+      "cross_tenant_list_isolated",
+      "confidential_hidden_from_viewer",
+      "confidential_available_to_editor",
+      "restricted_owner_only",
+      "restricted_deep_link_denied",
+      "restricted_signing_denied",
+      "cloud_access_false"
+    ],
+    "revisions": 2,
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "masterDataVerification": {
+    "passed": true,
+    "checks": [
+      "nonblank_base_unit",
+      "unused_base_unit_edit",
+      "referenced_base_unit_locked",
+      "effective_date_lookup",
+      "historical_factor_immutable",
+      "future_version_preserves_history",
+      "overlap_rejected",
+      "positive_factor",
+      "serial_integrality",
+      "tenant_isolation",
+      "row_scope",
+      "module_disabled",
+      "no_direct_table_access"
+    ],
+    "data": "synthetic only",
+    "cloudAccess": false
+  },
+  "applicationVerification": {
+    "artifact": "docs/commercial-erp/evidence/misa-read-export-checks.json",
+    "command": "npx vitest run src/features/business/businessMisaExport.test.ts src/features/business/BusinessMisaWorkspace.test.tsx 'src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts' --reporter=json --outputFile=.tmp/misa-read-exports-tests.json",
+    "passed": true,
+    "totalTests": 35,
+    "groups": {
+      "MISA CSV export": {
+        "passed": 15,
+        "failed": 0
+      },
+      "MISA report download": {
+        "passed": 4,
+        "failed": 0
+      },
+      "business MISA export API": {
+        "passed": 10,
+        "failed": 0
+      },
+      "item quantity conversion API": {
+        "passed": 6,
+        "failed": 0
+      }
+    },
+    "realAccountBrowserAcceptance": false
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "exitCode": 0,
+    "observedLogs": []
+  },
+  "releaseGate": {
+    "fullScopeComplete": false,
+    "githubPushAuthorized": true,
+    "vercelDeployAuthorized": true,
+    "remainingLocalMigrationsApplied": true,
+    "currentChangesPublished": false
+  },
+  "accountVerification": {
+    "artifact": "docs/commercial-erp/evidence/misa-account-verification.json",
+    "knownAccounts": 18,
+    "verifiedAccounts": 18,
+    "fullSetVerified": true,
+    "scope": "Existing login, role metadata, immediate logout; no business acceptance."
+  },
+  "developmentRollout": {
+    "artifact": "docs/commercial-erp/evidence/misa-feature-rollout.json",
+    "migrationsApplied": 32,
+    "totalMigrations": 150,
+    "existingDataPreserved": true,
+    "newTablesRls": 33
+  },
+  "releaseReadiness": {
+    "artifact": "docs/commercial-erp/evidence/misa-release-readiness.json",
+    "passed": true
+  },
+  "unitSuite": {
+    "command": "npx vitest run --exclude 'scripts/**' --exclude 'supabase/**' --maxWorkers=3",
+    "passed": 1680,
+    "skipped": 37,
+    "failed": 0,
+    "unhandledErrors": 0,
+    "skippedScope": "37 optional internal live-read tests require a separate live test setup."
+  },
+  "browserVerification": {
+    "origin": "http://localhost:3100",
+    "screenCaptureAt": "2026-11-02T04:14:51.192Z",
+    "screens": [
+      {
+        "route": "/",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/item_unit_conversions",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Quy đổi đơn vị vật tư"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 1440,
+        "httpStatus": 200,
+        "documentWidth": 1430,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/item_unit_conversions",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Quy đổi đơn vị vật tư"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 768,
+        "httpStatus": 200,
+        "documentWidth": 758,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/item_unit_conversions",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Quy đổi đơn vị vật tư"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 390,
+        "httpStatus": 200,
+        "documentWidth": 390,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      }
+    ],
+    "screenshotsDirectory": ".tmp/misa-release-ui-after",
+    "javascriptErrors": [],
+    "apiFailures": [],
+    "actions": {
+      "applicationFilter": true,
+      "mobileNavigation": true,
+      "quantityPreview": true,
+      "paymentPartnerField": true,
+      "csvDownload": true
+    },
+    "logoutStatus": 200
+  }
+}

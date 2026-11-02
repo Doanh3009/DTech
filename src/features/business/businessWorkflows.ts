@@ -9,6 +9,7 @@ export type OperationRow = Record<string, string | number | null | Record<string
 export interface OperationsSnapshot { rows: OperationRow[]; details: OperationRow[]; limit: number }
 interface ViewDefinition { title: string; kind: EntityKind; columns: string[]; detailTitle?: string; detailKind?: EntityKind; detailColumns?: string[] }
 export const operationViews: Record<BusinessFeature, ViewDefinition> = {
+ collaboration:{title:"L\u1ecbch h\u1ecdp",kind:"meetings",columns:["code","name","meeting_date","starts_at","ends_at","room_id","meeting_state"]},
  assets:{title:"Sổ tài sản & phân bổ",kind:"assets",columns:["code","name","asset_type","original_cost","service_state"]},
  costing:{title:"Giá thành & dở dang",kind:"costing_runs",columns:["code","name","starts_on","ends_on","total_amount","completed_amount"]},
  accounting: { title: "Nhật ký kế toán", kind: "journal_entries", columns: ["code","name","posting_date","status","debit","credit"] },

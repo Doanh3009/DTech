@@ -8,6 +8,7 @@ import {Drawer} from "@/components/shared/Overlays";
 import {PageHeader} from "@/components/shared/PageHeader";
 import {StatusBadge} from "@/components/shared/StatusBadge";
 import {BusinessAccessWorkspace} from "./BusinessAccessWorkspace";
+import {BusinessApprovalSettings} from "./BusinessApprovalSettings";
 import {BusinessReference} from "./BusinessReference";
 import {businessEntities,type EntityKind} from "./businessCatalog";
 import {businessMemberCommand,type BusinessWorkspace} from "./businessSchemas";
@@ -15,6 +16,8 @@ import styles from "./Business.module.css";
 
 interface Member{id:string;username:string;display_name:string;role:"owner"|"editor"|"viewer";status:string;management_version:number;staff_id:string|null;staff_name:string|null;access_expires_at:string|null;last_seen_at:string|null;must_change_password:boolean}
 interface Audit{id:string;created_at:string;actor:string;action:string;entity_kind:string|null;entity_id:string|null;details:Record<string,unknown>}
+interface OwnerTargets{ownerVersion:number;targets:{id:string;name:string;username:string}[]}
+interface OwnerTransfer{requestId:string;ownerVersion:number;targetId:string;reason:string}
 type Command=ReturnType<typeof businessMemberCommand.parse>;
 const datetime=(v:string|null)=>v?new Date(v).toLocaleString("vi-VN",{timeZone:"Asia/Ho_Chi_Minh"}):"—";
 const roles={owner:"Chủ doanh nghiệp",editor:"Nhân viên",viewer:"Chỉ xem"};
@@ -22,9 +25,10 @@ const roles={owner:"Chủ doanh nghiệp",editor:"Nhân viên",viewer:"Chỉ xem
 export function BusinessGovernanceWorkspace({workspace:w}:{workspace:BusinessWorkspace}){
  const [tab,setTab]=useState("members"),[visited,setVisited]=useState(["members"]);
  return <div className={styles.stack}>
-  <nav className={styles.actions} aria-label="Quản trị doanh nghiệp">{[["members","Tài khoản"],["access","Phân quyền"],["audit","Nhật ký"]].map(([key,label])=><Button key={key} variant={tab===key?"primary":"secondary"} aria-pressed={tab===key} onClick={()=>{setTab(key);setVisited(v=>[...new Set([...v,key])]);}}>{label}</Button>)}</nav>
+  <nav className={styles.actions} aria-label="Quản trị doanh nghiệp">{[["members","Tài khoản"],["access","Phân quyền"],["approval","Luồng duyệt & biểu mẫu"],["audit","Nhật ký"]].map(([key,label])=><Button key={key} variant={tab===key?"primary":"secondary"} aria-pressed={tab===key} onClick={()=>{setTab(key);setVisited(v=>[...new Set([...v,key])]);}}>{label}</Button>)}</nav>
   {visited.includes("members")?<section hidden={tab!=="members"}><BusinessMembers workspace={w}/></section>:null}
   {visited.includes("access")?<section hidden={tab!=="access"}><BusinessAccessWorkspace workspace={w}/></section>:null}
+  {visited.includes("approval")?<section hidden={tab!=="approval"}><BusinessApprovalSettings workspace={w}/></section>:null}
   {visited.includes("audit")?<section hidden={tab!=="audit"}><BusinessAudit workspace={w}/></section>:null}
  </div>;
 }
@@ -32,7 +36,9 @@ export function BusinessGovernanceWorkspace({workspace:w}:{workspace:BusinessWor
 function BusinessMembers({workspace:w}:{workspace:BusinessWorkspace}){
  const [data,setData]=useState<{rows:Member[];total:number}|null>(null),[page,setPage]=useState(1),[q,setQ]=useState(""),[query,setQuery]=useState(""),[revision,setRevision]=useState(0),[loading,setLoading]=useState(true),[error,setError]=useState("");
  const [draft,setDraft]=useState<Command|null>(null),[pending,setPending]=useState<Command|null>(null),[busy,setBusy]=useState(false),[secret,setSecret]=useState("");
+ const [ownerTargets,setOwnerTargets]=useState<OwnerTargets|null>(null),[transferDraft,setTransferDraft]=useState<OwnerTransfer|null>(null),[transferPending,setTransferPending]=useState<OwnerTransfer|null>(null),[transferBusy,setTransferBusy]=useState(false),[transferMessage,setTransferMessage]=useState(""),[transferError,setTransferError]=useState("");
  useEffect(()=>{const c=new AbortController();fetch(`/api/v1/business/${w.slug}/members?${new URLSearchParams({page:String(page),q:query})}`,{cache:"no-store",signal:AbortSignal.any([c.signal,AbortSignal.timeout(15000)])}).then(async r=>{const b=await r.json();if(!r.ok||!b.ok)throw Error(b.error?.message);if(!c.signal.aborted)setData(b.data);}).catch(e=>{if(!c.signal.aborted)setError(e instanceof Error?e.message:"Chưa tải được tài khoản.");}).finally(()=>{if(!c.signal.aborted)setLoading(false);});return()=>c.abort();},[w.slug,page,query,revision]);
+ useEffect(()=>{if(w.role!=="owner")return;const c=new AbortController();fetch(`/api/v1/business/${w.slug}/members/owner-targets`,{cache:"no-store",signal:AbortSignal.any([c.signal,AbortSignal.timeout(15000)])}).then(async r=>{const b=await r.json();if(!r.ok||!b.ok)throw Error(b.error?.message);if(!c.signal.aborted)setOwnerTargets(b.data);}).catch(e=>{if(!c.signal.aborted)setTransferError(e instanceof Error?e.message:"Không tải được danh sách chủ sở hữu mới.");});return()=>c.abort();},[w.slug,w.role,revision]);
  useEffect(()=>{if(!draft)return;const warn=(e:BeforeUnloadEvent)=>e.preventDefault();window.addEventListener("beforeunload",warn);return()=>window.removeEventListener("beforeunload",warn);},[draft]);
  function open(m:Member|null,operation:Command["operation"]="create"){
   setError("");setSecret("");setPending(null);
@@ -43,6 +49,7 @@ function BusinessMembers({workspace:w}:{workspace:BusinessWorkspace}){
   setBusy(true);setPending(parsed.data);setError("");
   try{const r=await fetch(`/api/v1/business/${w.slug}/members`,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(parsed.data),signal:AbortSignal.timeout(20000)});const b=await r.json();if(!r.ok||!b.ok){if(r.status<500&&r.status!==429)setPending(null);throw Error(b.error?.message);}setSecret(b.data.initialPassword??"");setPending(null);setDraft(null);setLoading(true);setError("");setRevision(v=>v+1);}catch(e){setError(e instanceof Error?e.message:"Chưa xác nhận được thay đổi.");}finally{setBusy(false);}
  }
+ async function transferOwner(){if(!transferDraft||transferBusy)return;const command=transferPending??transferDraft;if(!window.confirm("Xác nhận chuyển quyền chủ sở hữu? Tài khoản hiện tại sẽ chuyển thành nhân viên."))return;setTransferBusy(true);setTransferPending(command);setTransferError("");setTransferMessage("");try{const r=await fetch(`/api/v1/business/${w.slug}/members/transfer-owner`,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(command),signal:AbortSignal.timeout(20000)});const b=await r.json();if(!r.ok||!b.ok){if(r.status<500&&r.status!==429)setTransferPending(null);throw Error(b.error?.message??"Không chuyển được chủ sở hữu.");}setTransferPending(null);setTransferDraft(null);setOwnerTargets(null);setTransferMessage("Đã chuyển chủ sở hữu. Tài khoản hiện tại chuyển thành nhân viên.");}catch(e){setTransferError(e instanceof Error?e.message:"Chưa xác nhận được chuyển chủ sở hữu. Thử lại cùng yêu cầu.");}finally{setTransferBusy(false);}}
  const edit=draft&&(draft.operation==="create"||draft.operation==="update");
  return <div className={styles.stack}>
   <PageHeader title="Tài khoản doanh nghiệp" action={<Button variant="primary" onClick={()=>open(null)}>Cấp tài khoản</Button>}/>
@@ -55,6 +62,7 @@ function BusinessMembers({workspace:w}:{workspace:BusinessWorkspace}){
    {id:"access_expires_at",header:"Hạn truy cập",cell:m=>datetime(m.access_expires_at)},{id:"last_seen_at",header:"Hoạt động gần nhất",cell:m=>datetime(m.last_seen_at)}
   ]} actions={m=>m.role!=="owner"?<div className={styles.actions}><Button onClick={()=>open(m,"update")}>Sửa</Button><Button onClick={()=>open(m,"reset")}>Cấp lại mật khẩu</Button><Button onClick={()=>open(m,m.status==="active"?"disable":"enable")}>{m.status==="active"?"Khóa":"Mở khóa"}</Button></div>:null}/>
   <div className={styles.pagination}><span>{data?.total??0} tài khoản · Trang {page}</span><div className={styles.actions}><Button disabled={loading||page===1} onClick={()=>{setLoading(true);setError("");setPage(v=>v-1);}}>Trước</Button><Button disabled={loading||page*25>=(data?.total??0)} onClick={()=>{setLoading(true);setError("");setPage(v=>v+1);}}>Sau</Button></div></div>
+  {w.role==="owner"?<section className={styles.stack}><h2>Chuyển chủ sở hữu</h2>{transferError?<div className="form-alert form-alert--error" role="alert">{transferError}</div>:null}{transferMessage?<div className="form-alert" role="status">{transferMessage}<Button onClick={()=>window.location.reload()}>T?i l?i quy?n truy c?p</Button></div>:null}{ownerTargets?.targets.length?<form className={styles.stack} onSubmit={e=>{e.preventDefault();if(transferDraft?.reason.trim())void transferOwner();}}><Select label="Chủ sở hữu mới" required disabled={transferBusy||!!transferPending} value={transferDraft?.targetId??ownerTargets.targets[0].id} options={ownerTargets.targets.map(t=>({value:t.id,label:`${t.name} · ${t.username}`}))} onChange={e=>setTransferDraft({requestId:crypto.randomUUID(),ownerVersion:ownerTargets.ownerVersion,targetId:e.target.value,reason:transferDraft?.reason??""})}/><Input label="Lý do" required minLength={3} maxLength={500} disabled={transferBusy||!!transferPending} value={transferDraft?.reason??""} onChange={e=>setTransferDraft({requestId:transferDraft?.requestId??crypto.randomUUID(),ownerVersion:ownerTargets.ownerVersion,targetId:transferDraft?.targetId??ownerTargets.targets[0].id,reason:e.target.value})}/><Button type="submit" variant="primary" disabled={transferBusy||!!transferPending||(transferDraft?.reason.trim().length??0)<3} busy={transferBusy}>{transferPending?"Thử lại cùng yêu cầu":"Chuyển chủ sở hữu"}</Button></form>:<StatusBadge tone="neutral">Chưa có tài khoản đủ điều kiện nhận quyền chủ sở hữu</StatusBadge>}</section>:null}
   <Drawer open={!!draft} title={draft?({create:"Cấp tài khoản",update:"Cập nhật tài khoản",reset:"Cấp lại mật khẩu",disable:"Khóa tài khoản",enable:"Mở khóa tài khoản"})[draft.operation]:"Tài khoản"} onClose={()=>{if(busy||pending)return;if(window.confirm("Đóng thay đổi chưa lưu?"))setDraft(null);}}>
    {draft?<form className={styles.stack} onSubmit={e=>{e.preventDefault();void save();}}>
     <fieldset disabled={busy||!!pending} className={styles.fields}>
@@ -68,7 +76,7 @@ function BusinessMembers({workspace:w}:{workspace:BusinessWorkspace}){
  </div>;
 }
 
-const auditLabels:Record<string,string>={"access.updated":"Thay đổi quyền","access.validity_changed":"Thời hạn quyền","member.create":"Cấp tài khoản","member.update":"Cập nhật tài khoản","member.reset":"Cấp lại mật khẩu","member.disable":"Khóa tài khoản","member.enable":"Mở khóa tài khoản","password.changed":"Đổi mật khẩu"};
+const auditLabels:Record<string,string>={"access.updated":"Thay đổi quyền","access.validity_changed":"Thời hạn quyền","member.create":"Cấp tài khoản","member.update":"Cập nhật tài khoản","member.reset":"Cấp lại mật khẩu","member.disable":"Khóa tài khoản","member.enable":"Mở khóa tài khoản","owner.transferred":"Chuyển chủ sở hữu","password.changed":"Đổi mật khẩu"};
 function BusinessAudit({workspace:w}:{workspace:BusinessWorkspace}){
  const [page,setPage]=useState(1),[q,setQ]=useState(""),[query,setQuery]=useState(""),[revision,setRevision]=useState(0),[data,setData]=useState<{rows:Audit[];total:number}|null>(null),[loading,setLoading]=useState(true),[error,setError]=useState(""),[selected,setSelected]=useState<Audit|null>(null);
  useEffect(()=>{const c=new AbortController();fetch(`/api/v1/business/${w.slug}/audit?${new URLSearchParams({page:String(page),q:query})}`,{cache:"no-store",signal:AbortSignal.any([c.signal,AbortSignal.timeout(15000)])}).then(async r=>{const b=await r.json();if(!r.ok||!b.ok)throw Error(b.error?.message);if(!c.signal.aborted)setData(b.data);}).catch(e=>{if(!c.signal.aborted)setError(e instanceof Error?e.message:"Chưa tải được nhật ký.");}).finally(()=>{if(!c.signal.aborted)setLoading(false);});return()=>c.abort();},[w.slug,page,query,revision]);

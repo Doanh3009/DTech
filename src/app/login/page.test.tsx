@@ -32,7 +32,7 @@ const pageProps = (reason?: string): PageProps<"/login"> => ({
 describe("login page settings and session handling", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    vi.stubEnv("DTECH_CONTROL_CENTER_ENABLED","true");
+    vi.stubEnv("DTECH_CONTROL_CENTER_ENABLED","false");
     mocks.user.mockResolvedValue(null);
     mocks.presentationSettings.mockResolvedValue(structuredClone(defaultSystemSettings));
     mocks.testToolsAvailable.mockReturnValue(null);
@@ -59,8 +59,8 @@ describe("login page settings and session handling", () => {
     expect(screen.getAllByText("Acme ERP")).toHaveLength(2);
     expect(screen.getAllByText("Acme Company")).toHaveLength(2);
     expect(screen.queryByRole("navigation")).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Giới thiệu DTech ERP" })).toHaveAttribute("href", "/");
-    expect(screen.getByRole("link", { name: "Đăng ký dùng thử cho doanh nghiệp" })).toHaveAttribute("href", "/dang-ky-dung-thu");
+    expect(screen.queryByRole("link", { name: /Giới thiệu/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Đăng ký dùng thử cho doanh nghiệp" })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Module" })).not.toBeInTheDocument();
     expect(screen.queryByTestId("test-account-picker")).not.toBeInTheDocument();
     expect(mocks.presentationSettings).toHaveBeenCalledOnce();
@@ -76,6 +76,7 @@ describe("login page settings and session handling", () => {
     expect(mocks.redirect).toHaveBeenCalledExactlyOnceWith("/applications");
     expect(mocks.testToolsAvailable).not.toHaveBeenCalled();
   });
+  it("uses the tenant selector in the commercial deployment without resolving an internal session",async()=>{vi.stubEnv("DTECH_CONTROL_CENTER_ENABLED","true");render(await LoginPage(pageProps()));expect(screen.getByRole("textbox",{name:"Mã doanh nghiệp của bạn"})).toBeInTheDocument();expect(screen.getByRole("link",{name:/Team triển khai/})).toHaveAttribute("href","/control-center/login");expect(mocks.user).not.toHaveBeenCalled();expect(mocks.presentationSettings).not.toHaveBeenCalled();});
 
   it("shows the expired session state for an anonymous visitor", async () => {
     render(await LoginPage(pageProps("session-expired")));

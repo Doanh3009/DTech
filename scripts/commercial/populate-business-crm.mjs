@@ -5,8 +5,9 @@ export async function populateBusinessCrm(connection,{capture}={}){
  const db={async query(sql,params){const r=await connection.query(sql,params);if(/^(select public\.business_(save_record|record_action|access_update|member_command)|insert into public\.business_sessions|update public\.business_sessions)/.test(sql))capture?.query(sql,params);return r;}};
  const entities=JSON.parse(await readFile('src/config/businessEntities.json','utf8')),companies=JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8'));
  const digest=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
+ const verification=[];
  for(const[index,company]of companies.entries()){
-  const tenant=(await db.query('select id from public.business_tenants where slug=$1 and is_demo',[company.slug])).rows[0];if(!tenant)continue;
+  const tenant=(await db.query('select id,features from public.business_tenants where slug=$1 and is_demo',[company.slug])).rows[0];if(!tenant)continue;
   const actors=(await db.query('select id,role,credential_version from public.business_accounts where tenant_id=$1',[tenant.id])).rows;
   const owner=actors.find(a=>a.role==='owner'),reviewer=actors.find(a=>a.role==='editor');const hash=randomBytes(32).toString('hex'),reviewHash=randomBytes(32).toString('hex');
   await db.query('begin');
@@ -34,6 +35,7 @@ export async function populateBusinessCrm(connection,{capture}={}){
    await rec('customer_quote_lines',item.name,{quote_id:quote,item_id:item.id,quantity:100,unit_price:price,discount_percent:2});await post('customer_quotes',quote);
    await post('quote_decisions',await rec('quote_decisions','Khách hàng xác nhận phương án cung ứng',{quote_id:quote,decision:'accepted',document_date:'2026-10-21',evidence:'Thư xác nhận chấp nhận báo giá và lịch giao từng đợt'}));
    const contract=await post('sales_contracts',await rec('sales_contracts','Hợp đồng cung ứng và dịch vụ quý IV',{quote_id:quote,document_date:'2026-10-22',signed_on:'2026-10-22',starts_on:'2026-10-22',ends_on:'2026-12-31',evidence:'Hợp đồng hai bên xác nhận ngày 22/10, giá chưa bao gồm thuế GTGT'}));
+   const project=tenant.features?.includes('projects')&&tenant.features?.includes('sales')?await rec('projects','Công trình từ hợp đồng quý IV',{sales_contract_id:contract,starts_on:'2026-10-26',ends_on:'2026-12-31',budget:Math.round(price*0.98*120)}):null;
    const line=(await db.query('select id from public.business_sales_contract_lines where tenant_id=$1 and contract_id=$2',[tenant.id,contract])).rows[0].id;
    capture?.reference(line,`(select id from public.business_sales_contract_lines where tenant_id='${tenant.id}'::uuid and contract_id='${contract}'::uuid limit 1)`);
    await post('contract_amendments',await rec('contract_amendments','Phụ lục bổ sung khối lượng cung ứng',{contract_line_id:line,new_quantity:120,new_unit_price:Math.round(price*0.98*10000)/10000,document_date:'2026-10-23',evidence:'Phụ lục bổ sung 20 đơn vị, giữ nguyên đơn giá đã thống nhất'}));
@@ -48,9 +50,44 @@ export async function populateBusinessCrm(connection,{capture}={}){
    for(const[event,date,evidence]of[['respond','2026-10-21','Đã phản hồi khách hàng và xác nhận bộ tài liệu cần bổ sung'],['resolve','2026-10-22','Đã bàn giao đầy đủ tài liệu, khách xác nhận nội dung chính xác'],['close','2026-10-23','Khách hàng đồng ý đóng yêu cầu sau đối chiếu']])await post('ticket_events',await rec('ticket_events',evidence,{ticket_id:ticket,event_type:event,responder_id:people[0].id,document_date:date,evidence}));
    const overdue=await rec('support_tickets','Xác minh yêu cầu điều chỉnh lịch cung ứng',{partner_id:customers[1]?.id??customers[0].id,owner_staff_id:people[1].id,opened_on:'2026-10-20',response_due_on:'2026-10-21',resolve_due_on:'2026-10-23',priority:'high',subject:'Đối chiếu phương án thay đổi lịch giao và nguồn hàng thay thế'});
    await post('ticket_events',await rec('ticket_events','Chuyển quản lý xử lý yêu cầu quá hạn',{ticket_id:overdue,event_type:'escalate',responder_id:people[0].id,document_date:'2026-10-24',evidence:'Quá hạn xác minh nguồn cung, chuyển quản lý kinh doanh phối hợp vận hành'}));
+   await db.query('savepoint crm_order_overrun_probe');
+   let overrunRejected=false;
+   try{
+    const probe=randomUUID();
+    await db.query(`insert into public.business_contract_order_releases(id,tenant_id,code,name,created_by,contract_id,document_date,due_date)
+      values($1,$2,$3,'Over-order verification',$4,$5,'2026-10-24','2026-11-23')`,[probe,tenant.id,`KD-PROBE-${probe.slice(0,10)}`,owner.id,contract]);
+    await db.query(`insert into public.business_contract_order_lines(tenant_id,code,name,created_by,release_id,contract_line_id,quantity)
+      values($1,$2,'Over-order line verification',$3,$4,$5,71)`,[tenant.id,`KD-PROBE-L-${probe.slice(0,8)}`,owner.id,probe,line]);
+    await db.query(`select public.business_crm_calculation($1,'contract_order_releases',to_jsonb(r)) from public.business_contract_order_releases r where r.tenant_id=$1 and r.id=$2`,[tenant.id,probe]);
+   }catch(error){if(String(error.message).includes('BUSINESS_CONTRACT_EXCEEDED'))overrunRejected=true;else throw error;}
+   finally{await db.query('rollback to savepoint crm_order_overrun_probe');await db.query('release savepoint crm_order_overrun_probe');}
+   if(!overrunRejected)throw new Error(`${company.slug} / CRM allowed order quantity to exceed the amended contract quantity`);
+   const flow=(await db.query(`select l.stage lead_stage,l.partner_id lead_partner,o.stage opportunity_stage,
+     q.commercial_state quote_state,q.status quote_status,c.status contract_status,c.quote_id,
+     a.new_quantity amended_quantity,public.business_contract_ordered($1,$2) ordered_quantity,
+     t.stage closed_ticket_stage,t.closed_on,et.escalated overdue_escalated,p.sales_contract_id project_contract_id,p.budget project_budget
+    from public.business_leads l
+    join public.business_opportunities o on o.tenant_id=l.tenant_id and o.id=l.opportunity_id
+    join public.business_customer_quotes q on q.tenant_id=o.tenant_id and q.opportunity_id=o.id
+    join public.business_sales_contracts c on c.tenant_id=q.tenant_id and c.quote_id=q.id
+    join public.business_contract_amendments a on a.tenant_id=c.tenant_id and a.contract_line_id=$2
+    join public.business_support_tickets t on t.tenant_id=l.tenant_id and t.id=$3
+    join public.business_support_tickets et on et.tenant_id=l.tenant_id and et.id=$4
+    left join public.business_projects p on p.tenant_id=c.tenant_id and p.id=$9
+    where l.tenant_id=$1 and l.id=$5 and o.id=$6 and q.id=$7 and c.id=$8
+    order by a.created_at desc limit 1`,[tenant.id,line,ticket,overdue,lead,opportunity,quote,contract,project])).rows[0];
+   if(!flow||flow.lead_stage!=='converted'||flow.lead_partner!==customers[0].id||flow.opportunity_stage!=='won'||flow.quote_state!=='accepted'||flow.quote_status!=='posted'||flow.contract_status!=='posted'||flow.quote_id!==quote||Number(flow.amended_quantity)!==120||Number(flow.ordered_quantity)!==50||flow.closed_ticket_stage!=='closed'||!flow.closed_on||flow.overdue_escalated!=='yes'||(project&&flow.project_contract_id!==contract)||(!project&&flow.project_contract_id!==null)||((tenant.features?.includes('projects')&&tenant.features?.includes('sales'))&&!project)||project&&Number(flow.project_budget)!==Math.round(price*0.98*120))throw new Error(`${company.slug} / CRM lifecycle verification failed`);
+   let projectLinkLocked=null;let contractProjectLock=null;
+   if(project){
+    await db.query('savepoint crm_project_source_lock_probe');try{await db.query('update public.business_projects set sales_contract_id=null where tenant_id=$1 and id=$2',[tenant.id,project]);}catch(error){if(String(error.message).includes('BUSINESS_RECORD_LOCKED'))projectLinkLocked=true;else throw error;}finally{await db.query('rollback to savepoint crm_project_source_lock_probe');await db.query('release savepoint crm_project_source_lock_probe');}
+    await db.query('savepoint crm_contract_project_lock_probe');try{await db.query(`update public.business_sales_contracts set status='cancelled' where tenant_id=$1 and id=$2`,[tenant.id,contract]);}catch(error){if(String(error.message).includes('BUSINESS_RECORD_LOCKED'))contractProjectLock=true;else throw error;}finally{await db.query('rollback to savepoint crm_contract_project_lock_probe');await db.query('release savepoint crm_contract_project_lock_probe');}
+    if(!projectLinkLocked||!contractProjectLock)throw new Error(`${company.slug} / project contract source lock verification failed`);
+   }
+   verification.push({industry:company.industry,leadConvertedToExistingCustomer:true,opportunityWon:true,acceptedQuoteLinkedToContract:true,projectLinkedToContract:project!==null,projectSourceImmutable:projectLinkLocked,contractCannotBeCancelledWhileProjectLinked:contractProjectLock,amendedQuantity:Number(flow.amended_quantity),orderedQuantity:Number(flow.ordered_quantity),remainingQuantity:Number(flow.amended_quantity)-Number(flow.ordered_quantity),overOrderRejected:overrunRejected,ticketClosed:true,overdueTicketEscalated:true});
    await db.query('update public.business_sessions set revoked_at=now() where token_hash=any($1::text[])',[[hash,reviewHash]]);
    await db.query('commit');
    console.log(JSON.stringify({crmPopulation:company.industry,contracts:1,partialOrders:2,tickets:2}));
   }catch(e){await db.query('rollback');throw e;}
  }
+ return verification;
 }

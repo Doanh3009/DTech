@@ -5,7 +5,7 @@ import entities from "@/config/businessEntities.json";
 export const businessIndustries=industries;
 export type BusinessIndustry=keyof typeof industries;
 export const businessIndustryKeys=Object.keys(industries) as [BusinessIndustry,...BusinessIndustry[]];
-export const featureLabels={accounting:"Kế toán",purchasing:"Mua hàng",people:"Nhân sự & chấm công",inventory:"Kho & vật tư",production:"Quản lý sản xuất",mes:"Điều hành sản xuất",traceability:"Truy xuất lô",quality:"Chất lượng",sales:"Bán hàng & công nợ",crm:"Khách hàng",projects:"Công trình & chi phí",assets:"Tài sản & phân bổ",costing:"Giá thành & giá vốn"} as const;
+export const featureLabels={accounting:"Kế toán",purchasing:"Mua hàng",people:"Nhân sự & chấm công",inventory:"Kho & vật tư",production:"Quản lý sản xuất",mes:"Điều hành sản xuất",traceability:"Truy xuất lô",quality:"Chất lượng",sales:"Bán hàng & công nợ",crm:"Khách hàng",projects:"Công trình & chi phí",assets:"Tài sản & phân bổ",costing:"Giá thành & giá vốn",collaboration:"L\u1ecbch h\u1ecdp & th\u00f4ng b\u00e1o"} as const;
 export type BusinessFeature=keyof typeof featureLabels;
 export const featureKeys=Object.keys(featureLabels) as [BusinessFeature,...BusinessFeature[]];
 export type EntityKind=keyof typeof entities;
@@ -32,6 +32,7 @@ export function recordSchema(kind:EntityKind){
   fields[key]=f.required||f.default!==undefined?schema:z.union([schema,z.null()]);
  }
  return z.object(fields).strict().superRefine((data,ctx)=>{
+  if(kind==="item_unit_conversions"&&data.effective_to&&String(data.effective_from)>String(data.effective_to))ctx.addIssue({code:z.ZodIssueCode.custom,path:["effective_to"],message:"Ngày kết thúc phải từ ngày bắt đầu."});
   if(["vendor_invoices","sales_invoices"].includes(kind)&&Number(data.tax_amount)>0&&!data.tax_account_id)ctx.addIssue({code:z.ZodIssueCode.custom,path:["tax_account_id"],message:"Chọn tài khoản thuế."});
   const dates=kind==="sales_orders"?["order_date","due_date"]:kind==="purchase_orders"?["order_date","expected_on"]:kind==="salary_runs"||kind==="accounting_periods"?["starts_on","ends_on"]:kind==="vendor_invoices"||kind==="sales_invoices"?["document_date","due_date"]:null;
   if(dates&&String(data[dates[0]])>String(data[dates[1]]))ctx.addIssue({code:z.ZodIssueCode.custom,path:[dates[1]],message:"Ngày kết thúc phải từ ngày bắt đầu."});

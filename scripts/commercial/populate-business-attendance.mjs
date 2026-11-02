@@ -1,9 +1,9 @@
 import {readFile} from 'node:fs/promises';
 import {randomUUID,randomBytes,createHash} from 'node:crypto';
 export async function populateBusinessAttendance(connection,{capture}={}){
- const db={connectionParameters:connection.connectionParameters,async query(sql,values){const result=await connection.query(sql,values);if(/^(select public\.business_(save_record|record_action|access_update)|insert into public\.business_sessions|update public\.business_sessions)/.test(sql))capture?.query(sql,values);return result;}};
+ let captureEnabled=true;const db={connectionParameters:connection.connectionParameters,async query(sql,values){const result=await connection.query(sql,values);if(captureEnabled&&/^(select public\.business_(save_record|record_action|access_update)|insert into public\.business_sessions|update public\.business_sessions)/.test(sql))capture?.query(sql,values);return result;}};
  if(db.connectionParameters.host!=='127.0.0.1')throw Error('Attendance population requires the temporary local database');
- const entities=JSON.parse(await readFile('src/config/businessEntities.json','utf8')),companies=JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8'));
+ const entities=JSON.parse(await readFile('src/config/businessEntities.json','utf8')),companies=JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8')),results=[];
  const digest=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
  for(const company of companies){
   const t=(await db.query('select * from public.business_tenants where slug=$1 and is_demo',[company.slug])).rows[0];if(!t)continue;
@@ -22,11 +22,23 @@ export async function populateBusinessAttendance(connection,{capture}={}){
    const leave=await rec('leave_requests',`Nghỉ việc gia đình ngày 17/10 · ${person.name}`,{staff_id:person.id,leave_type:'paid',entitlement_id:entitlement,document_date:'2026-10-16',reason:'Giải quyết công việc gia đình theo lịch đã thống nhất'});
    await rec('leave_request_lines',`Nghỉ ca ngày 17/10 · ${person.name}`,{request_id:leave,work_date:'2026-10-17',hours:8});await post('leave_requests',leave);
    const assignment=await post('shift_assignments',await rec('shift_assignments',`Phân ca đêm 18/10 · ${person.name}`,{staff_id:person.id,shift_id:night,project_id:project,starts_on:'2026-10-18',document_date:'2026-10-18'}));
+   await db.query('savepoint overtime_guard_probe');captureEnabled=false;let overtimeGuarded=false;
+   try{const overtimeProbe=await rec('attendance_confirmations',`Kiểm tra duyệt OT trước chốt ca · ${person.name}`,{assignment_id:assignment,staff_id:person.id,project_id:project,check_in_time:'20:00',check_out_time:'07:00',checkout_day_offset:'1',document_date:'2026-10-19',evidence:'Probe yêu cầu duyệt OT'});await act('attendance_confirmations',overtimeProbe,'calculate');}catch(error){if(String(error.message).includes('BUSINESS_OVERTIME_APPROVAL_REQUIRED'))overtimeGuarded=true;else throw error;}finally{await db.query('rollback to savepoint overtime_guard_probe');await db.query('release savepoint overtime_guard_probe');captureEnabled=true;}
+   if(!overtimeGuarded)throw Error(`Unapproved overtime was not rejected for ${company.slug}`);
    await post('overtime_requests',await rec('overtime_requests',`Làm thêm hoàn tất bàn giao ca · ${person.name}`,{assignment_id:assignment,staff_id:person.id,project_id:project,work_date:'2026-10-18',hours:2,document_date:'2026-10-18',reason:'Hoàn tất công việc và đối chiếu bàn giao trước ca tiếp theo'}));
-   const confirmation=await post('attendance_confirmations',await rec('attendance_confirmations',`Xác nhận ca đêm 18–19/10 · ${person.name}`,{assignment_id:assignment,staff_id:person.id,project_id:project,check_in_time:'20:00',check_out_time:'07:00',checkout_day_offset:'1',document_date:'2026-10-19',evidence:'Nhật ký vào ra và biên bản bàn giao được trưởng ca xác nhận'}));
+   const confirmDraft=await rec('attendance_confirmations',`Xác nhận ca đêm 18–19/10 · ${person.name}`,{assignment_id:assignment,staff_id:person.id,project_id:project,check_in_time:'20:00',check_out_time:'05:00',checkout_day_offset:'1',document_date:'2026-10-19',evidence:'Nhật ký vào ra và biên bản bàn giao được trưởng ca xác nhận'});
+   const confirmation=await post('attendance_confirmations',confirmDraft);
+   const lockProbePerson=(await db.query('select * from public.business_staff where tenant_id=$1 and id<>$2 order by code desc limit 1',[t.id,person.id])).rows[0];
+   const lockProbeAssignment=await post('shift_assignments',await rec('shift_assignments',`Phân ca kiểm tra khóa công · ${lockProbePerson.name}`,{staff_id:lockProbePerson.id,shift_id:night,project_id:project,starts_on:'2026-10-18',document_date:'2026-10-18'}));
    await post('attendance_locks',await rec('attendance_locks','Khóa công đã đối chiếu ngày 17–18/10',{starts_on:'2026-10-17',ends_on:'2026-10-18',department:person.department,project_id:project,document_date:'2026-10-20',reason:'Chốt công, nghỉ phép và tăng ca trước khi lập bảng lương'}));
-   const card=(await db.query('select t.work_date::text work_date,t.worked_hours,t.overtime_hours from public.business_attendance_confirmations c join public.business_timecards t on t.tenant_id=c.tenant_id and t.id=c.timecard_id where c.tenant_id=$1 and c.id=$2',[t.id,confirmation])).rows[0];
-   await db.query('update public.business_sessions set revoked_at=now() where token_hash=any($1::text[])',[[hash,reviewHash]]);await db.query('commit');console.log(JSON.stringify({attendanceExperience:company.industry,staff:person.name,nightCard:card,paidLeaveHours:8,attendanceLocked:true}));
+   const cards=(await db.query('select t.work_date::text work_date,t.worked_hours,t.overtime_hours from public.business_attendance_confirmations c join public.business_timecards t on t.tenant_id=c.tenant_id and t.id=c.timecard_id where c.tenant_id=$1 and c.id=$2 and t.status=\'posted\'',[t.id,confirmation])).rows;const card=cards[0];
+   if(cards.length!==1||card.work_date!=='2026-10-18'||Number(card.worked_hours)!==8||Number(card.overtime_hours)!==0)throw Error(`Night shift 20:00-05:00 generated an invalid or duplicate timecard for ${company.slug}`);
+   await db.query('savepoint attendance_lock_probe');captureEnabled=false;let lockedAttendanceRejected=false;
+   try{const locked=await rec('attendance_confirmations',`Kiểm tra khóa công · ${lockProbePerson.name}`,{assignment_id:lockProbeAssignment,staff_id:lockProbePerson.id,project_id:project,check_in_time:'20:00',check_out_time:'05:00',checkout_day_offset:'1',document_date:'2026-10-19',evidence:'Probe'});await act('attendance_confirmations',locked,'calculate');}catch(error){if(String(error.message).includes('BUSINESS_ATTENDANCE_LOCKED'))lockedAttendanceRejected=true;else throw error;}finally{await db.query('rollback to savepoint attendance_lock_probe');await db.query('release savepoint attendance_lock_probe');captureEnabled=true;}
+   if(!lockedAttendanceRejected)throw Error(`Locked attendance accepted a new confirmation for ${company.slug}`);
+   const result={industry:company.industry,nightCard:card,paidLeaveHours:8,attendanceLocked:true,overtimeApprovalRequired:true};results.push(result);
+   await db.query('update public.business_sessions set revoked_at=now() where token_hash=any($1::text[])',[[hash,reviewHash]]);await db.query('commit');console.log(JSON.stringify({attendanceExperience:company.industry,staff:person.name,...result}));
   }catch(e){await db.query('rollback');throw e;}
  }
+ return results;
 }

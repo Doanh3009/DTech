@@ -2,6 +2,8 @@
 
 import { LayoutGrid } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
+import { can } from "@/lib/auth/permissions";
 
 import { AppLogo } from "@/components/layout/AppLogo";
 import { useCurrentUser } from "@/components/providers/CurrentUserProvider";
@@ -52,5 +54,6 @@ export function ModuleHub({controlCenter=false}:{controlCenter?:boolean}={}) {
       {displayed.length ? <div className={styles.grid}>{displayed.map((application) => <ErpModuleCard application={application} key={application.id} />)}</div> : <EmptyState title={applications.length ? "Không tìm thấy module" : "Chưa có module được cấp quyền"} action={applications.length ? <Button onClick={() => setQuery("")}>Xóa tìm kiếm</Button> : undefined} />}
     </section>
 
+    {!controlCenter&&can(user.permissions,"system_admin.access")?<nav aria-label="Cấu hình doanh nghiệp" className={styles.toolbar}>{(["branding.manage","organization_settings.manage","localization.manage","module.manage"] as const).every(permission=>can(user.permissions,permission))?<Link className="button button--secondary button--md" href="/system-admin/setup">Thiết lập ERP</Link>:null}{can(user.permissions,"module.manage")?<Link className="button button--secondary button--md" href="/system-admin/modules">Module</Link>:null}</nav>:null}
   </div>;
 }

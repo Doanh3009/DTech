@@ -507,6 +507,211 @@
       }
     }
   },
+  "safety_incidents": {
+    "label": "Sự cố an toàn lao động",
+    "feature": "quality",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "reported_by": {
+        "label": "Người báo cáo",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people"
+      },
+      "incident_date": {
+        "label": "Ngày xảy ra",
+        "type": "date",
+        "required": true
+      },
+      "severity": {
+        "label": "Mức độ",
+        "type": "enum",
+        "values": {
+          "near_miss": "Suýt xảy ra",
+          "minor": "Nhẹ",
+          "serious": "Nghiêm trọng",
+          "critical": "Đặc biệt nghiêm trọng"
+        },
+        "required": true
+      },
+      "location": {
+        "label": "Vị trí",
+        "type": "text",
+        "max": 180
+      },
+      "description": {
+        "label": "Diễn biến",
+        "type": "text",
+        "required": true,
+        "max": 2000
+      },
+      "immediate_action": {
+        "label": "Xử lý ban đầu",
+        "type": "text",
+        "max": 1500
+      },
+      "injury_count": {
+        "label": "Số người bị thương",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "work_stopped": {
+        "label": "Dừng công việc",
+        "type": "boolean"
+      },
+      "reported_on": {
+        "label": "Ngày ghi nhận",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "quality_nonconformances": {
+    "label": "Điểm không phù hợp chất lượng",
+    "feature": "quality",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "lot_id": {
+        "label": "Lô hàng",
+        "type": "ref",
+        "ref": "lots"
+      },
+      "detected_on": {
+        "label": "Ngày phát hiện",
+        "type": "date",
+        "required": true
+      },
+      "source_kind": {
+        "label": "Công đoạn phát hiện",
+        "type": "enum",
+        "values": {
+          "incoming": "Đầu vào",
+          "production": "Sản xuất",
+          "delivery": "Giao hàng",
+          "site": "Công trường",
+          "other": "Khác"
+        },
+        "required": true
+      },
+      "severity": {
+        "label": "Mức độ",
+        "type": "enum",
+        "values": {
+          "minor": "Nhẹ",
+          "major": "Lớn",
+          "critical": "Nghiêm trọng"
+        },
+        "required": true
+      },
+      "affected_quantity": {
+        "label": "Số lượng ảnh hưởng",
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "description": {
+        "label": "Mô tả điểm không phù hợp",
+        "type": "text",
+        "required": true,
+        "max": 2000
+      },
+      "containment_action": {
+        "label": "Xử lý cách ly",
+        "type": "text",
+        "max": 1500
+      },
+      "detected_by": {
+        "label": "Người phát hiện",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people"
+      }
+    }
+  },
+  "corrective_actions": {
+    "label": "Hành động khắc phục",
+    "feature": "quality",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "source_kind": {
+        "label": "Loại nguồn",
+        "type": "enum",
+        "values": {
+          "safety_incidents": "Sự cố an toàn",
+          "quality_nonconformances": "Điểm không phù hợp"
+        },
+        "required": true
+      },
+      "source_id": {
+        "label": "Nguồn phát sinh",
+        "type": "text",
+        "required": true,
+        "max": 36
+      },
+      "action_type": {
+        "label": "Loại hành động",
+        "type": "enum",
+        "values": {
+          "corrective": "Khắc phục",
+          "preventive": "Phòng ngừa",
+          "containment": "Ngăn chặn"
+        },
+        "required": true
+      },
+      "owner_staff_id": {
+        "label": "Người phụ trách",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people",
+        "required": true
+      },
+      "due_on": {
+        "label": "Hạn hoàn thành",
+        "type": "date",
+        "required": true
+      },
+      "action_plan": {
+        "label": "Kế hoạch hành động",
+        "type": "text",
+        "required": true,
+        "max": 2000
+      },
+      "completed_on": {
+        "label": "Ngày hoàn thành",
+        "type": "date"
+      },
+      "effectiveness_result": {
+        "label": "Kết quả xác nhận",
+        "type": "text",
+        "max": 1500
+      },
+      "verified_by": {
+        "label": "Người xác nhận",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people"
+      }
+    }
+  },
   "sales_orders": {
     "label": "Đơn bán hàng",
     "feature": "sales",
@@ -648,6 +853,12 @@
       "ends_on": {
         "label": "Ngày kết thúc dự kiến",
         "type": "date"
+      },
+      "sales_contract_id": {
+        "label": "Hợp đồng nguồn",
+        "type": "ref",
+        "ref": "sales_contracts",
+        "requiresFeature": "sales"
       },
       "operational_state": {
         "label": "Trạng thái công trình",
@@ -1375,7 +1586,11 @@
         "label": "Lương thỏa thuận",
         "type": "number",
         "default": 0,
-        "min": 0
+        "min": 0,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
       },
       "phone": {
         "label": "Điện thoại",
@@ -1384,6 +1599,146 @@
         "max": 30
       }
     }
+  },
+  "employment_contracts": {
+    "label": "Hợp đồng lao động",
+    "feature": "people",
+    "mode": "document",
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "contract_no": {
+        "label": "Số hợp đồng",
+        "type": "text",
+        "required": true,
+        "max": 50
+      },
+      "contract_type": {
+        "label": "Loại hợp đồng",
+        "type": "enum",
+        "values": {
+          "probation": "Thử việc",
+          "fixed_term": "Xác định thời hạn",
+          "indefinite": "Không xác định thời hạn",
+          "amendment": "Phụ lục"
+        },
+        "default": "fixed_term"
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "signed_on": {
+        "label": "Ngày ký",
+        "type": "date",
+        "required": true
+      },
+      "starts_on": {
+        "label": "Hiệu lực từ",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Hiệu lực đến",
+        "type": "date"
+      },
+      "department": {
+        "label": "Phòng ban",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "position": {
+        "label": "Chức danh",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "monthly_salary": {
+        "label": "Lương tháng",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      }
+    },
+    "requiresApproval": true,
+    "misaDomain": true
+  },
+  "staff_history": {
+    "label": "Lịch sử nhân sự",
+    "feature": "people",
+    "mode": "document",
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "effective_on": {
+        "label": "Ngày hiệu lực",
+        "type": "date",
+        "required": true
+      },
+      "change_type": {
+        "label": "Loại thay đổi",
+        "type": "enum",
+        "values": {
+          "department": "Phòng ban",
+          "position": "Chức danh",
+          "compensation": "Lương",
+          "assignment": "Điều động công trình",
+          "termination": "Nghỉ việc"
+        },
+        "default": "position"
+      },
+      "department": {
+        "label": "Phòng ban mới",
+        "type": "text",
+        "max": 180
+      },
+      "position": {
+        "label": "Chức danh mới",
+        "type": "text",
+        "max": 180
+      },
+      "base_salary": {
+        "label": "Lương mới",
+        "type": "number",
+        "min": 0,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects"
+      },
+      "reason": {
+        "label": "Lý do",
+        "type": "text",
+        "required": true,
+        "max": 500
+      }
+    },
+    "requiresApproval": true,
+    "misaDomain": true
   },
   "timecards": {
     "label": "Bảng công",
@@ -1503,7 +1858,11 @@
         "label": "Lương thỏa thuận",
         "type": "number",
         "default": 0,
-        "min": 0
+        "min": 0,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
       },
       "worked_days": {
         "label": "Ngày công",
@@ -5512,6 +5871,1255 @@
         "type": "text",
         "required": true,
         "max": 1000
+      }
+    }
+  },
+  "project_tasks": {
+    "label": "Công việc công trình",
+    "feature": "projects",
+    "mode": "master",
+    "operationDomain": true,
+    "misaDomain": true,
+    "fields": {
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "required": true
+      },
+      "wbs_id": {
+        "label": "Hạng mục",
+        "type": "ref",
+        "ref": "project_wbs"
+      },
+      "parent_task_id": {
+        "label": "Công việc cha",
+        "type": "ref",
+        "ref": "project_tasks"
+      },
+      "assigned_staff_id": {
+        "label": "Người phụ trách",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "planned_start_on": {
+        "label": "Bắt đầu",
+        "type": "date",
+        "required": true
+      },
+      "due_on": {
+        "label": "Hạn hoàn thành",
+        "type": "date",
+        "required": true
+      },
+      "priority": {
+        "label": "Ưu tiên",
+        "type": "enum",
+        "values": {
+          "low": "Thấp",
+          "normal": "Bình thường",
+          "high": "Cao",
+          "urgent": "Khẩn cấp"
+        },
+        "default": "normal"
+      },
+      "task_state": {
+        "label": "Trạng thái",
+        "type": "enum",
+        "values": {
+          "pending": "Chờ",
+          "in_progress": "Đang làm",
+          "awaiting_acceptance": "Chờ nghiệm thu",
+          "completed": "Hoàn thành",
+          "cancelled": "Đã hủy"
+        },
+        "default": "pending"
+      },
+      "progress_percent": {
+        "label": "Tiến độ (%)",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "integer": true,
+        "default": 0
+      }
+    }
+  },
+  "employee_documents": {
+    "label": "Giấy tờ nhân viên",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "document_type": {
+        "label": "Loại giấy tờ",
+        "type": "enum",
+        "values": {
+          "identity_card": "CCCD/CMND",
+          "passport": "Hộ chiếu",
+          "tax_code": "Mã số thuế",
+          "social_insurance": "BHXH",
+          "certificate": "Chứng chỉ",
+          "work_permit": "Giấy phép lao động",
+          "other": "Khác"
+        },
+        "required": true
+      },
+      "document_no": {
+        "label": "Số giấy tờ",
+        "type": "text",
+        "required": true,
+        "max": 80,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "issued_on": {
+        "label": "Ngày cấp",
+        "type": "date",
+        "required": true
+      },
+      "expires_on": {
+        "label": "Ngày hết hạn",
+        "type": "date"
+      },
+      "issuing_authority": {
+        "label": "Nơi cấp",
+        "type": "text",
+        "max": 180
+      }
+    }
+  },
+  "payment_requests": {
+    "label": "Đề nghị thanh toán",
+    "feature": "accounting",
+    "mode": "document",
+    "misaDomain": true,
+    "requiresApproval": true,
+    "fields": {
+      "request_type": {
+        "label": "Loại đề nghị",
+        "type": "enum",
+        "values": {
+          "supplier": "Nhà cung cấp",
+          "employee": "Nhân viên",
+          "other": "Khác"
+        },
+        "required": true
+      },
+      "partner_id": {
+        "label": "Nhà cung cấp",
+        "type": "ref",
+        "ref": "partners"
+      },
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people"
+      },
+      "beneficiary_name": {
+        "label": "Người thụ hưởng",
+        "type": "text",
+        "max": 180
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "source_kind": {
+        "label": "Nguồn",
+        "type": "text",
+        "max": 80
+      },
+      "source_id": {
+        "label": "Mã chứng từ nguồn",
+        "type": "text",
+        "max": 36
+      },
+      "requested_on": {
+        "label": "Ngày đề nghị",
+        "type": "date",
+        "required": true
+      },
+      "due_on": {
+        "label": "Hạn thanh toán",
+        "type": "date"
+      },
+      "amount": {
+        "label": "Số tiền",
+        "type": "number",
+        "min": 0.01,
+        "required": true
+      },
+      "requested_account_id": {
+        "label": "Tài khoản chi",
+        "type": "ref",
+        "ref": "gl_accounts"
+      },
+      "purpose": {
+        "label": "Nội dung",
+        "type": "text",
+        "required": true,
+        "max": 500
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "recruitment_requisitions": {
+    "label": "Yêu cầu tuyển dụng",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "department": {
+        "label": "Bộ phận",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "position": {
+        "label": "Chức danh",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "headcount": {
+        "label": "Số lượng",
+        "type": "number",
+        "required": true,
+        "min": 1
+      },
+      "employment_type": {
+        "label": "Loại hình",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "full_time": "Toàn thời gian",
+          "part_time": "Bán thời gian",
+          "seasonal": "Thời vụ",
+          "contract": "Hợp đồng"
+        }
+      },
+      "opened_on": {
+        "label": "Ngày mở",
+        "type": "date",
+        "required": true
+      },
+      "target_on": {
+        "label": "Ngày cần nhân sự",
+        "type": "date",
+        "required": true
+      },
+      "salary_min": {
+        "label": "Lương từ",
+        "type": "number",
+        "min": 0,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "salary_max": {
+        "label": "Lương đến",
+        "type": "number",
+        "min": 0,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "hiring_manager_id": {
+        "label": "Quản lý tuyển dụng",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people",
+        "required": true
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "recruitment_candidates": {
+    "label": "Ứng viên",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "requisition_id": {
+        "label": "Yêu cầu tuyển dụng",
+        "type": "ref",
+        "ref": "recruitment_requisitions",
+        "required": true
+      },
+      "email": {
+        "label": "Email",
+        "type": "text",
+        "required": true,
+        "max": 254,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "phone": {
+        "label": "Điện thoại",
+        "type": "text",
+        "max": 30,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "source": {
+        "label": "Nguồn ứng viên",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "referral": "Giới thiệu",
+          "job_board": "Trang tuyển dụng",
+          "agency": "Đơn vị tuyển dụng",
+          "direct": "Ứng tuyển trực tiếp",
+          "other": "Khác"
+        }
+      },
+      "applied_on": {
+        "label": "Ngày ứng tuyển",
+        "type": "date",
+        "required": true
+      },
+      "years_experience": {
+        "label": "Số năm kinh nghiệm",
+        "type": "number",
+        "min": 0
+      },
+      "candidate_status": {
+        "label": "Trạng thái tuyển dụng",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "applied": "Mới ứng tuyển",
+          "interview": "Đạt phỏng vấn",
+          "rejected": "Không phù hợp",
+          "offer": "Đã gửi đề nghị",
+          "hired": "Đã nhận việc",
+          "screening": "Đang sơ loại"
+        }
+      },
+      "staff_id": {
+        "label": "Hồ sơ nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people"
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "job_post_id": {
+        "label": "Tin tuyển dụng",
+        "type": "ref",
+        "ref": "recruitment_job_posts",
+        "requiresFeature": "people"
+      },
+      "consent_granted": {
+        "label": "Đồng ý xử lý hồ sơ",
+        "type": "boolean",
+        "required": true,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "consented_on": {
+        "label": "Ngày đồng ý",
+        "type": "date",
+        "required": true,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "consent_expires_on": {
+        "label": "Ngày hết hạn đồng ý",
+        "type": "date",
+        "required": true,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      }
+    }
+  },
+  "recruitment_interviews": {
+    "label": "Đánh giá phỏng vấn",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "candidate_id": {
+        "label": "Ứng viên",
+        "type": "ref",
+        "ref": "recruitment_candidates",
+        "required": true
+      },
+      "interview_on": {
+        "label": "Ngày phỏng vấn",
+        "type": "date",
+        "required": true
+      },
+      "stage": {
+        "label": "Vòng phỏng vấn",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "screening": "Sơ loại",
+          "technical": "Chuyên môn",
+          "manager": "Quản lý",
+          "final": "Cuối cùng"
+        }
+      },
+      "interviewer_id": {
+        "label": "Người phỏng vấn",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people",
+        "required": true
+      },
+      "score": {
+        "label": "Điểm đánh giá",
+        "type": "number",
+        "min": 0,
+        "required": true,
+        "max": 100
+      },
+      "decision": {
+        "label": "Kết quả",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "advance": "Qua vòng",
+          "hold": "Cân nhắc",
+          "reject": "Không phù hợp"
+        }
+      },
+      "feedback": {
+        "label": "Nhận xét",
+        "type": "text",
+        "max": 2000,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "recruitment_offers": {
+    "label": "Đề nghị tuyển dụng",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "candidate_id": {
+        "label": "Ứng viên",
+        "type": "ref",
+        "ref": "recruitment_candidates",
+        "required": true
+      },
+      "offered_on": {
+        "label": "Ngày đề nghị",
+        "type": "date",
+        "required": true
+      },
+      "expires_on": {
+        "label": "Hạn phản hồi",
+        "type": "date",
+        "required": true
+      },
+      "proposed_start_on": {
+        "label": "Ngày dự kiến vào làm",
+        "type": "date",
+        "required": true
+      },
+      "monthly_salary": {
+        "label": "Lương tháng",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "benefits": {
+        "label": "Chế độ",
+        "type": "text",
+        "max": 1500
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "recruitment_hires": {
+    "label": "Tiếp nhận nhân sự mới",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "candidate_id": {
+        "label": "Ứng viên",
+        "type": "ref",
+        "ref": "recruitment_candidates",
+        "required": true
+      },
+      "offer_id": {
+        "label": "Đề nghị được chấp thuận",
+        "type": "ref",
+        "ref": "recruitment_offers",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Hồ sơ nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people",
+        "required": true
+      },
+      "accepted_on": {
+        "label": "Ngày chấp thuận",
+        "type": "date",
+        "required": true
+      },
+      "start_on": {
+        "label": "Ngày bắt đầu",
+        "type": "date",
+        "required": true
+      },
+      "employment_contract_id": {
+        "label": "Hợp đồng lao động",
+        "type": "ref",
+        "ref": "employment_contracts",
+        "requiresFeature": "people"
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "recruitment_job_posts": {
+    "label": "Tin tuyển dụng",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "requisition_id": {
+        "label": "Yêu cầu tuyển dụng",
+        "type": "ref",
+        "ref": "recruitment_requisitions",
+        "required": true
+      },
+      "channel": {
+        "label": "Kênh đăng",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "company_site": "Trang công ty",
+          "job_board": "Trang tuyển dụng",
+          "agency": "Đơn vị tuyển dụng",
+          "social": "Mạng xã hội",
+          "other": "Khác"
+        }
+      },
+      "published_on": {
+        "label": "Ngày đăng",
+        "type": "date",
+        "required": true
+      },
+      "closes_on": {
+        "label": "Ngày đóng",
+        "type": "date",
+        "required": true
+      },
+      "headline": {
+        "label": "Tiêu đề",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "content": {
+        "label": "Nội dung công việc",
+        "type": "text",
+        "required": true,
+        "max": 4000
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "performance_cycles": {
+    "label": "Chu kỳ đánh giá",
+    "feature": "people",
+    "mode": "master",
+    "misaDomain": false,
+    "requiresApproval": false,
+    "fields": {
+      "starts_on": {
+        "label": "Bắt đầu kỳ",
+        "type": "date",
+        "required": true
+      },
+      "ends_on": {
+        "label": "Kết thúc kỳ",
+        "type": "date",
+        "required": true
+      },
+      "review_due_on": {
+        "label": "Hạn đánh giá",
+        "type": "date",
+        "required": true
+      },
+      "cycle_state": {
+        "label": "Trạng thái chu kỳ",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "planned": "Dự kiến",
+          "open": "Đang thực hiện",
+          "closed": "Đã chốt"
+        }
+      }
+    }
+  },
+  "performance_goals": {
+    "label": "Mục tiêu/KPI",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "cycle_id": {
+        "label": "Chu kỳ",
+        "type": "ref",
+        "ref": "performance_cycles",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Người phụ trách",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "parent_goal_id": {
+        "label": "Mục tiêu cha",
+        "type": "ref",
+        "ref": "performance_goals"
+      },
+      "metric_name": {
+        "label": "Chỉ tiêu",
+        "type": "text",
+        "required": true,
+        "max": 180
+      },
+      "unit": {
+        "label": "Đơn vị đo",
+        "type": "text",
+        "required": true,
+        "max": 40
+      },
+      "target_value": {
+        "label": "Mục tiêu",
+        "type": "number",
+        "required": true,
+        "min": 0.0001
+      },
+      "weight_pct": {
+        "label": "Trọng số (%)",
+        "type": "number",
+        "required": true,
+        "min": 0.01,
+        "max": 100
+      },
+      "direction": {
+        "label": "Hướng đánh giá",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "higher_better": "Càng cao càng tốt",
+          "lower_better": "Càng thấp càng tốt"
+        }
+      },
+      "document_date": {
+        "label": "Ngày giao mục tiêu",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "performance_goal_checkins": {
+    "label": "Cập nhật KPI",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "goal_id": {
+        "label": "Mục tiêu",
+        "type": "ref",
+        "ref": "performance_goals",
+        "required": true
+      },
+      "checked_on": {
+        "label": "Ngày cập nhật",
+        "type": "date",
+        "required": true
+      },
+      "actual_value": {
+        "label": "Giá trị thực tế",
+        "type": "number",
+        "required": true,
+        "min": 0
+      },
+      "source_kind": {
+        "label": "Nguồn số liệu",
+        "type": "enum",
+        "required": true,
+        "values": {
+          "manual": "Nhập thủ công",
+          "project": "Công trình",
+          "work_order": "Lệnh sản xuất",
+          "attendance": "Chấm công"
+        }
+      },
+      "source_ref": {
+        "label": "Mã nguồn",
+        "type": "text",
+        "max": 100
+      },
+      "comment": {
+        "label": "Ghi chú",
+        "type": "text",
+        "max": 1000
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "performance_goal_changes": {
+    "label": "Điều chỉnh mục tiêu",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "goal_id": {
+        "label": "Mục tiêu",
+        "type": "ref",
+        "ref": "performance_goals",
+        "required": true
+      },
+      "new_target": {
+        "label": "Mục tiêu mới",
+        "type": "number",
+        "required": true,
+        "min": 0.0001
+      },
+      "effective_on": {
+        "label": "Ngày hiệu lực",
+        "type": "date",
+        "required": true
+      },
+      "change_reason": {
+        "label": "Lý do thay đổi",
+        "type": "text",
+        "required": true,
+        "max": 500
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "performance_reviews": {
+    "label": "Đánh giá cuối kỳ",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "cycle_id": {
+        "label": "Chu kỳ",
+        "type": "ref",
+        "ref": "performance_cycles",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Nhân viên",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "manager_staff_id": {
+        "label": "Quản lý đánh giá",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "self_score": {
+        "label": "Tự đánh giá",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 100
+      },
+      "manager_score": {
+        "label": "Điểm quản lý",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 100
+      },
+      "calibration_adjustment": {
+        "label": "Điều chỉnh hiệu chuẩn",
+        "type": "number",
+        "min": -20,
+        "max": 20,
+        "default": 0
+      },
+      "manager_comment": {
+        "label": "Nhận xét quản lý",
+        "type": "text",
+        "max": 2000,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "document_date": {
+        "label": "Ngày đánh giá",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "performance_review_acknowledgements": {
+    "label": "Xác nhận đánh giá",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "review_id": {
+        "label": "Kết quả đánh giá",
+        "type": "ref",
+        "ref": "performance_reviews",
+        "required": true
+      },
+      "acknowledged_on": {
+        "label": "Ngày xác nhận",
+        "type": "date",
+        "required": true
+      },
+      "comment": {
+        "label": "Ý kiến nhân viên",
+        "type": "text",
+        "max": 1200
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "document_signing_requests": {
+    "label": "Yêu cầu ký văn bản",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "source_kind": {
+        "label": "Loại hồ sơ nguồn",
+        "type": "text",
+        "required": true,
+        "max": 80
+      },
+      "source_record_id": {
+        "label": "Mã hồ sơ nguồn",
+        "type": "text",
+        "required": true,
+        "max": 36
+      },
+      "source_version": {
+        "label": "Phiên bản hồ sơ",
+        "type": "number",
+        "required": true,
+        "min": 1
+      },
+      "source_attachment_id": {
+        "label": "Tệp cần ký",
+        "type": "text",
+        "required": true,
+        "max": 36
+      },
+      "provider_key": {
+        "label": "Nhà cung cấp ký",
+        "type": "text",
+        "required": true,
+        "max": 50
+      },
+      "idempotency_key": {
+        "label": "Mã yêu cầu duy nhất",
+        "type": "text",
+        "required": true,
+        "max": 100
+      },
+      "signer_staff_id": {
+        "label": "Người ký",
+        "type": "ref",
+        "ref": "staff",
+        "requiresFeature": "people",
+        "required": true
+      },
+      "signer_email": {
+        "label": "Email người ký",
+        "type": "text",
+        "max": 254,
+        "readRoles": [
+          "owner",
+          "editor"
+        ]
+      },
+      "requested_on": {
+        "label": "Ngày gửi ký",
+        "type": "date",
+        "required": true
+      },
+      "expires_on": {
+        "label": "Hạn ký",
+        "type": "date"
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      }
+    }
+  },
+  "document_repository": {
+    "label": "Kho văn bản",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "fields": {
+      "document_type": {
+        "label": "Loại văn bản",
+        "type": "enum",
+        "values": {
+          "incoming": "Văn bản đến",
+          "outgoing": "Văn bản đi",
+          "contract": "Hợp đồng",
+          "drawing": "Bản vẽ",
+          "procedure": "Quy trình",
+          "other": "Khác"
+        },
+        "required": true
+      },
+      "document_number": {
+        "label": "Số văn bản",
+        "type": "text",
+        "required": true,
+        "max": 80
+      },
+      "project_id": {
+        "label": "Công trình",
+        "type": "ref",
+        "ref": "projects",
+        "requiresFeature": "projects"
+      },
+      "effective_on": {
+        "label": "Ngày hiệu lực",
+        "type": "date",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "confidentiality": {
+        "label": "Mức truy cập",
+        "type": "enum",
+        "values": {
+          "internal": "Nội bộ",
+          "confidential": "Mật",
+          "restricted": "Hạn chế"
+        },
+        "default": "internal"
+      },
+      "retention_until": {
+        "label": "Lưu đến ngày",
+        "type": "date"
+      },
+      "current_version_id": {
+        "label": "Phiên bản hiện hành",
+        "type": "ref",
+        "computed": true,
+        "ref": "document_versions"
+      }
+    }
+  },
+  "document_versions": {
+    "label": "Phiên bản văn bản",
+    "feature": "people",
+    "mode": "document",
+    "misaDomain": false,
+    "requiresApproval": true,
+    "parentKind": "document_repository",
+    "parentField": "document_id",
+    "fields": {
+      "document_id": {
+        "label": "Văn bản",
+        "type": "ref",
+        "ref": "document_repository",
+        "required": true
+      },
+      "version_number": {
+        "label": "Lần phát hành",
+        "type": "number",
+        "required": true,
+        "min": 1,
+        "integer": true
+      },
+      "change_reason": {
+        "label": "Lý do thay đổi",
+        "type": "text",
+        "required": true,
+        "max": 1000
+      },
+      "effective_on": {
+        "label": "Ngày hiệu lực",
+        "type": "date",
+        "required": true
+      },
+      "document_date": {
+        "label": "Ngày chứng từ",
+        "type": "date",
+        "required": true
+      },
+      "source_attachment_id": {
+        "label": "Tệp phiên bản",
+        "type": "text",
+        "computed": true
+      },
+      "source_sha256": {
+        "label": "SHA-256",
+        "type": "text",
+        "computed": true
+      }
+    }
+  },
+  "meeting_rooms": {
+    "label": "Phòng họp",
+    "feature": "collaboration",
+    "mode": "master",
+    "fields": {
+      "location": {
+        "label": "Vị trí",
+        "type": "text",
+        "max": 160
+      },
+      "capacity": {
+        "label": "Sức chứa",
+        "type": "number",
+        "min": 1,
+        "integer": true
+      },
+      "room_state": {
+        "label": "Trạng thái",
+        "type": "enum",
+        "values": {
+          "active": "Đang sử dụng",
+          "inactive": "Ngừng sử dụng"
+        },
+        "default": "active"
+      }
+    }
+  },
+  "meetings": {
+    "label": "Cuộc họp",
+    "feature": "collaboration",
+    "mode": "document",
+    "fields": {
+      "meeting_date": {
+        "label": "Ngày họp",
+        "type": "date",
+        "required": true
+      },
+      "starts_at": {
+        "label": "Bắt đầu",
+        "type": "time",
+        "required": true
+      },
+      "ends_at": {
+        "label": "Kết thúc",
+        "type": "time",
+        "required": true
+      },
+      "timezone": {
+        "label": "Múi giờ",
+        "type": "text",
+        "required": true,
+        "max": 64,
+        "default": "Asia/Ho_Chi_Minh"
+      },
+      "room_id": {
+        "label": "Phòng họp",
+        "type": "ref",
+        "ref": "meeting_rooms"
+      },
+      "organizer_staff_id": {
+        "label": "Người chủ trì",
+        "type": "ref",
+        "ref": "staff"
+      },
+      "meeting_state": {
+        "label": "Trạng thái",
+        "type": "enum",
+        "values": {
+          "planned": "Dự kiến",
+          "confirmed": "Đã xác nhận",
+          "completed": "Hoàn thành",
+          "cancelled": "Đã hủy"
+        },
+        "default": "planned"
+      }
+    },
+    "lineKind": "meeting_attendees"
+  },
+  "meeting_attendees": {
+    "label": "Người tham dự",
+    "feature": "collaboration",
+    "mode": "document",
+    "parentKind": "meetings",
+    "parentField": "meeting_id",
+    "fields": {
+      "meeting_id": {
+        "label": "Cuộc họp",
+        "type": "ref",
+        "ref": "meetings",
+        "required": true
+      },
+      "staff_id": {
+        "label": "Nhân sự",
+        "type": "ref",
+        "ref": "staff",
+        "required": true
+      },
+      "response_state": {
+        "label": "Phản hồi",
+        "type": "enum",
+        "values": {
+          "invited": "Đã mời",
+          "accepted": "Chấp nhận",
+          "declined": "Từ chối"
+        },
+        "default": "invited"
+      }
+    }
+  },
+  "item_unit_conversions": {
+    "label": "Quy đổi đơn vị vật tư",
+    "feature": "inventory",
+    "mode": "master",
+    "fields": {
+      "item_id": {
+        "label": "Vật tư",
+        "type": "ref",
+        "ref": "items",
+        "required": true
+      },
+      "alternate_unit": {
+        "label": "Đơn vị quy đổi",
+        "type": "text",
+        "required": true,
+        "max": 30
+      },
+      "base_unit": {
+        "label": "Đơn vị cơ sở",
+        "type": "text",
+        "computed": true
+      },
+      "factor": {
+        "label": "Hệ số về đơn vị cơ sở",
+        "type": "number",
+        "required": true,
+        "min": 0.0001,
+        "max": 1000000000000
+      },
+      "effective_from": {
+        "label": "Hiệu lực từ",
+        "type": "date",
+        "required": true
+      },
+      "effective_to": {
+        "label": "Hiệu lực đến",
+        "type": "date"
       }
     }
   }

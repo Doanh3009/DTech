@@ -1,0 +1,28 @@
+"use client";
+import {useEffect,useRef,useState} from "react";
+import {Button} from "@/components/shared/Button";
+import {Textarea} from "@/components/shared/FormControls";
+import {StatusBadge} from "@/components/shared/StatusBadge";
+import {DataTable} from "@/components/shared/DataTable";
+import type {EntityKind} from "./businessCatalog";
+import styles from "./Business.module.css";
+interface Decision{id:string;actor_id:string;principal_id:string|null;actor_name:string;principal_name:string|null;decision:string;reason:string;created_at:string;delegation_id:string|null}
+interface Step{index:number;name:string;mode:"all"|"any";approvers:{id:string;name:string}[];escalationApprovers?:{id:string;name:string}[];decisions:Decision[];current:boolean;dueAt:string|null;escalated?:boolean}
+export interface ApprovalContext{required:boolean;status?:string;stale?:boolean;documentVersion:number;actions:string[];policyName?:string;policyVersion?:number;steps?:Step[];runs?:{id:string;status:string;policy_version:number;created_at:string}[]}
+const statusLabels:Record<string,string>={not_submitted:"Chưa trình duyệt",pending:"Đang chờ duyệt",approved:"Đã duyệt đủ cấp",returned:"Trả về chỉnh sửa",rejected:"Đã từ chối",recalled:"Đã thu hồi",superseded:"Đã thay bằng lượt mới",posted:"Đã ghi nhận",cancelled:"Đã hủy",reversed:"Đã đảo"};
+const actionLabels:Record<string,string>={submit:"Trình duyệt",approve:"Duyệt bước hiện tại",return:"Trả về chỉnh sửa",reject:"Từ chối",recall:"Thu hồi lượt duyệt"};
+const decisionLabels:Record<string,string>={approve:"Đồng ý",return:"Trả về",reject:"Từ chối",recall:"Thu hồi"};
+const time=(v:string)=>new Date(v).toLocaleString("vi-VN",{timeZone:"Asia/Ho_Chi_Minh"});
+export function BusinessApprovalPanel({slug,kind,id,version,disabled,onContext,onAction}:{slug:string;kind:EntityKind;id:string;version:number;disabled:boolean;onContext:(v:ApprovalContext)=>void;onAction:(action:string,reason:string)=>void}){
+ const [data,setData]=useState<ApprovalContext|null>(null),[error,setError]=useState(""),[reason,setReason]=useState(""),[revision,setRevision]=useState(0);
+ const report=useRef(onContext);useEffect(()=>{report.current=onContext;},[onContext]);
+ useEffect(()=>{const c=new AbortController();fetch(`/api/v1/business/${slug}/approval/${kind}/${id}`,{cache:"no-store",signal:AbortSignal.any([c.signal,AbortSignal.timeout(15000)])}).then(async r=>{const b=await r.json();if(!r.ok||!b.ok)throw Error(b.error?.message);if(!c.signal.aborted){setData(b.data);setError("");setReason("");report.current(b.data);}}).catch(e=>{if(!c.signal.aborted)setError(e instanceof Error?e.message:"Chưa tải được luồng duyệt.");});return()=>c.abort();},[slug,kind,id,version,revision]);
+ if(error)return <section className={styles.stack}><div className="form-alert form-alert--error" role="alert">{error}</div><Button disabled={disabled} onClick={()=>setRevision(v=>v+1)}>Tải lại luồng duyệt</Button></section>;
+ if(!data||data.documentVersion!==version)return <div role="status" className={styles.readOnly}>{data&&data.documentVersion!==version?"Chứng từ đã thay đổi. Mở lại chi tiết để tiếp tục.":"Đang tải trạng thái phê duyệt"}</div>;
+ if(!data.required)return null;
+ return <section className={styles.stack} aria-label="Luồng phê duyệt"><div className={styles.actions}><h2>{data.policyName}</h2><StatusBadge tone={data.status==="approved"||data.status==="posted"?"success":data.stale?"warning":"info"}>{data.stale?"Cần trình duyệt lại":statusLabels[data.status??""]??data.status}</StatusBadge><span>Phiên bản {data.policyVersion}</span></div>
+  {data.steps?.map(s=><section className={styles.readOnly} key={s.index}><div className={styles.actions}><strong>{s.index+1}. {s.name}</strong>{s.current?<StatusBadge tone={s.escalated?"warning":"info"}>{s.escalated?"Quá hạn · đã chuyển cấp":"Đang xử lý"}</StatusBadge>:null}</div><div className={styles.actions}><span>{s.mode==="all"?"Tất cả người duyệt":"Một người duyệt"}</span><span>{s.approvers.map(a=>a.name).join(" · ")}</span>{s.dueAt?<span>Hạn: {time(s.dueAt)}</span>:null}</div>{(s.escalationApprovers??[]).length?<div className={styles.actions}><span>{s.escalated?"Người thay thế đang được giao":"Người thay thế khi quá hạn"}</span><span>{(s.escalationApprovers??[]).map(a=>a.name).join(" · ")}</span></div>:null}{s.decisions.length?<DataTable<Decision> data={s.decisions} getRowId={d=>d.id} emptyTitle="Chưa có quyết định" columns={[{id:"actor",header:"Người xử lý",priority:"primary",cell:d=>d.principal_id&&d.actor_id!==d.principal_id?`${d.actor_name} · thay ${d.principal_name}`:d.actor_name},{id:"decision",header:"Quyết định",cell:d=>decisionLabels[d.decision]??d.decision},{id:"reason",header:"Nội dung",accessor:"reason"},{id:"created",header:"Thời điểm",cell:d=>time(d.created_at)}]}/>:null}</section>)}
+  {data.actions.length?<><Textarea label="Nội dung quyết định" minLength={3} maxLength={500} rows={2} value={reason} disabled={disabled} onChange={e=>setReason(e.target.value)}/><div className={styles.actions}>{data.actions.map(action=><Button key={action} variant={action==="approve"||action==="submit"?"primary":"secondary"} disabled={disabled||reason.trim().length<3} onClick={()=>onAction(action,reason)}>{actionLabels[action]}</Button>)}</div></>:null}
+  {(data.runs?.length??0)>1?<details><summary>Lịch sử lượt duyệt</summary><DataTable data={data.runs??[]} getRowId={r=>r.id} emptyTitle="Chưa có lịch sử" columns={[{id:"status",header:"Trạng thái",cell:r=>statusLabels[r.status]??r.status},{id:"version",header:"Phiên bản luồng",accessor:"policy_version"},{id:"created",header:"Trình lúc",cell:r=>time(r.created_at)}]}/></details>:null}
+ </section>;
+}

@@ -57,8 +57,8 @@ describe("request session resolution", () => {
     expect(user?.permissions).toEqual(expect.arrayContaining(["employee.view", "profile.view"]));
     expect(user?.permissions).not.toContain("unknown.permission");
     expect(from.mock.calls.every(([table]) => table === "app_sessions")).toBe(true);
-    expect(from).toHaveBeenCalledTimes(2); // Session read and nonblocking activity write.
-    await vi.waitFor(() => expect(activityWrite).toHaveBeenCalledOnce());
+    expect(from).toHaveBeenCalledTimes(1); // Recent activity is throttled to avoid a write on every page read.
+    expect(activityWrite).not.toHaveBeenCalled();
   });
 
   it("rejects a session belonging to a different authenticated user", async () => {
@@ -68,6 +68,7 @@ describe("request session resolution", () => {
     expect(await resolveRequestUser()).toBeNull();
     expect(update).not.toHaveBeenCalled();
   });
+  it("touches session activity after the throttle interval without blocking the response",async()=>{const session=activeSession();session.last_seen_at=new Date(Date.now()-120_000).toISOString();const{from,activityWrite}=mockSession(session);expect(await resolveRequestUser()).toMatchObject({id:"account-id"});await vi.waitFor(()=>expect(activityWrite).toHaveBeenCalledOnce());expect(from).toHaveBeenCalledTimes(2);});
 
   it.each(["disabled", "locked", "pending_activation"])("rejects %s accounts", async (status) => {
     const session = activeSession();
@@ -103,7 +104,7 @@ describe("request session resolution", () => {
     first?.permissions.splice(0);
     expect(second?.permissions).toContain("employee.view");
     expect(getUser).toHaveBeenCalledOnce();
-    expect(from).toHaveBeenCalledTimes(2);
+    expect(from).toHaveBeenCalledTimes(1);
 
     const disabled = activeSession();
     disabled.account.status = "disabled";

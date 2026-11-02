@@ -1,0 +1,783 @@
+{
+  "generatedAt": "2026-11-02T04:12:05.767Z",
+  "target": "tcjjhxqtreemccdbvyza",
+  "environment": "development",
+  "migrations": [
+    {
+      "filename": "202610260004_business_approval_inbox.sql",
+      "sha256": "e41a0c0983c94424c4ba8c57a48bfd9be6991e289fedb0973f76e0ece3c5045a"
+    },
+    {
+      "filename": "202610260005_business_approval_escalations.sql",
+      "sha256": "1ce723e4cc409b6abffba9fbdbbd89bc6826811239c2899061dce01fe3f1a737"
+    },
+    {
+      "filename": "202610260006_business_eform_conditions.sql",
+      "sha256": "103f1ab8d84ee9fac7bffa89d39be3ad2204a84c111ecb5757e8cdf0f9abb58b"
+    },
+    {
+      "filename": "202610260007_business_eform_field_access.sql",
+      "sha256": "cfe676f58ec26bd85797fbb0c96530be2a00dbf4fc542ab58af1b0ac588f0a7f"
+    },
+    {
+      "filename": "202610260008_business_approval_report.sql",
+      "sha256": "ab2c55e7880c17b32c3c0d3add600335c1413de4e3a1fa59ef65cd30bef8be5f"
+    },
+    {
+      "filename": "202610260009_business_attachments.sql",
+      "sha256": "d412eb06aa5e784a4806208e0bcef86736bfc047ff9a85c50238121358f8bbe7"
+    },
+    {
+      "filename": "202610260010_business_owner_transfer.sql",
+      "sha256": "08fee0afea84de1ce5f2e89e1a84734bb59c0a73255116c9ba9484c4347647fb"
+    },
+    {
+      "filename": "202610260011_business_project_tasks.sql",
+      "sha256": "d7e2d8c6732f9350bcb2bc1582a8296367a82037fa39ac240477c361b98d1594"
+    },
+    {
+      "filename": "202610260012_business_project_task_updates.sql",
+      "sha256": "17fed043477c235e1414f622e1d59c4277d094da633b5e26b5ca58e8b32c1369"
+    },
+    {
+      "filename": "202610260013_business_project_task_hierarchy.sql",
+      "sha256": "10ce7ffcc7c05708fd66375a1c9805d8d266cb218eeb9eb926e8f06060f3008d"
+    },
+    {
+      "filename": "202610260014_business_project_task_acceptance.sql",
+      "sha256": "2933abd88d2b9385d5df0505dea4f30295e3c4827be3e682108cf394ce3af45f"
+    },
+    {
+      "filename": "202610260015_business_employment_records.sql",
+      "sha256": "d865aac4a4d36d5a617cda28bbe9100aed1224bcb1436f14ebb914796b04847d"
+    },
+    {
+      "filename": "202610260016_business_employment_offboarding.sql",
+      "sha256": "fe4a72122f63925c72155797edc9b4081b637ed918c5b9cf6d65d207aaf6c441"
+    },
+    {
+      "filename": "202610260017_business_project_sales_contract_link.sql",
+      "sha256": "f1a3fc4dee5922d3fc24af71f6ed404fe510aaa877f0e08ee645c72fac76751f"
+    },
+    {
+      "filename": "202610260018_business_employee_documents.sql",
+      "sha256": "5ad5e44d37503fd1dce2478bffc4f2728a73a1d12d614053cc6a789cf1a60fa0"
+    },
+    {
+      "filename": "202610260019_business_payment_requests.sql",
+      "sha256": "5e4dddbf3db8b310b9991b4e226f2495c8731105470bccd132de62197650ca12"
+    },
+    {
+      "filename": "202610260020_business_safety_quality_actions.sql",
+      "sha256": "55075ac242f8a6014c3e17c40f0817cfedb15862473b7a8c5b720a91c6f053df"
+    },
+    {
+      "filename": "202610260021_business_recruitment_workflow.sql",
+      "sha256": "e7fda1c500508f0a9f71260ff1087b1dbcfe6249b2c8db714ec790c6b08b0de7"
+    },
+    {
+      "filename": "202610260022_business_performance_cycles.sql",
+      "sha256": "430f8ce4bb750a680aa901952b22a574de7dcc299c92faa2d5d10c1284296eab"
+    },
+    {
+      "filename": "202611020001_business_document_signing_outbox.sql",
+      "sha256": "7460bafd4be07d646dc1338ddb7e4c862cce57845e8d6c13f53cda2366030365"
+    },
+    {
+      "filename": "202611020002_business_document_repository_versions.sql",
+      "sha256": "60359386c766c2e61e2621c373a9f60a01adcd073dce47279b35735dece286c4"
+    },
+    {
+      "filename": "202611020003_business_document_classification_access.sql",
+      "sha256": "e39685e4130a01e029cf774d83f236168c0dd2b870ce1c34e30656feaf5bf909"
+    },
+    {
+      "filename": "202611020004_business_meetings_notifications.sql",
+      "sha256": "c9b8d3d4f47a6828667d6923b2567d723bbee3668622367c05fc9854e160700f"
+    },
+    {
+      "filename": "202611020005_business_global_search.sql",
+      "sha256": "f056993c9c54f24f0d7c4340b68e09dfcf438a8cd20a44a4d846c9e01f6b2358"
+    },
+    {
+      "filename": "202611020006_business_approval_non_misa_routing.sql",
+      "sha256": "178d045758f69512792e3026a91b089052022ba7cd291574b63f7ffde6a0bec6"
+    },
+    {
+      "filename": "202611020007_business_quality_dashboard.sql",
+      "sha256": "501c5481c6e3d01fa8e9e3ae6c28f66416aee6ddbfbed286e7d1b67218586c07"
+    },
+    {
+      "filename": "202611020008_business_meeting_calendar.sql",
+      "sha256": "c85c71aa5e56a87deefa43d00d41ce85495e5a8509c396575b36fc28e41ce845"
+    },
+    {
+      "filename": "202611020009_business_quality_trends.sql",
+      "sha256": "1d7f677121e0ce670a39e7a98fa835ce9df65135823bcee8a9bc94f9bf206c1c"
+    },
+    {
+      "filename": "202611020010_business_item_unit_conversions.sql",
+      "sha256": "2ac0416b31b82cbe09e24465bdae2fd52a1e761b2f59082e75ee592759353d53"
+    },
+    {
+      "filename": "202611020011_business_release_privileges.sql",
+      "sha256": "f0cc22e029a9df73f47a191193ef60e07c3f363b18ee1f8cb9000982f31187e4"
+    },
+    {
+      "filename": "202611020012_business_payment_request_partner_reference.sql",
+      "sha256": "fe666b4408333177b3c3f1668ab394c87cbbae3376efc9fe38656fa77ace0325"
+    },
+    {
+      "filename": "202611020013_business_session_rpc_volatility.sql",
+      "sha256": "2a3099a4091e586c34f4db25ce9c5c5eb34972d3ba20c1b32edb901581e7f74b"
+    }
+  ],
+  "before": {
+    "accounts": 18,
+    "commands": 5358,
+    "creditTotal": 25944199991.4171,
+    "debitTotal": 25944199991.4171,
+    "entities": 115,
+    "invalidBaseUnits": 0,
+    "items": 60,
+    "journalLines": 1060,
+    "journals": 247,
+    "latestMigration": "202610260003",
+    "legacyAccounts": 1,
+    "legacyEmployees": 1,
+    "migrationCount": 118,
+    "staff": 48,
+    "stockMoves": 162,
+    "stockQuantityTotal": 61904,
+    "tenants": 6,
+    "unbalancedPostedJournals": 0
+  },
+  "after": {
+    "accounts": 18,
+    "commands": 5358,
+    "creditTotal": 25944199991.4171,
+    "debitTotal": 25944199991.4171,
+    "entities": 142,
+    "invalidBaseUnits": 0,
+    "items": 60,
+    "journalLines": 1060,
+    "journals": 247,
+    "latestMigration": "202611020013",
+    "legacyAccounts": 1,
+    "legacyEmployees": 1,
+    "migrationCount": 150,
+    "staff": 48,
+    "stockMoves": 162,
+    "stockQuantityTotal": 61904,
+    "tenants": 6,
+    "unbalancedPostedJournals": 0
+  },
+  "acl": {
+    "functions": [
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_approval_actor"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_approval_fingerprint"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_approval_inbox"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_approval_report"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_approval_snapshot"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_approval_validate_escalations"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_attachment_begin"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_attachment_complete"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_attachment_download"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_attachments_snapshot"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_corrective_action_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_classification_allowed"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_repository_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_signing_apply_event"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_signing_claim"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_signing_dispatch_result"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_signing_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_version_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_version_publish"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_employee_document_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_employment_contract_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_entity_authorized_write"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_entity_redact_fields"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_form_authorized_data"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_form_config_validate"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_form_default_data"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_form_record_defaults"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_form_snapshot"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_form_validate"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_item_base_unit_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_item_quantity_conversion"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_item_unit_conversion_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_list_records"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_meeting_calendar"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_meeting_invitation_notice"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_meeting_room_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_notification_read"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_notifications_workspace"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_owner_transfer"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_owner_transfer_targets"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_payment_request_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_ack_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_checkin_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_cycle_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_goal_change_apply"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_goal_change_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_goal_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_review_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_contract_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_acceptance"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_save"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_update_add"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_updates_workspace"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_workspace"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_quality_dashboard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_quality_trend"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_record_action_before_workflow"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_record_detail"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_candidate_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_hire_complete"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_hire_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_interview_advance"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_interview_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_job_post_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_offer_advance"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_offer_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_requisition_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_sales_contract_project_lock"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_save_record"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_search_records"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_staff_history_guard"
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_staff_record_guard"
+      }
+    ],
+    "privateBucket": true,
+    "tables": [
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_attachments",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_corrective_actions",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_repository",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_signing_events",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_signing_requests",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_document_versions",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_employee_documents",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_employment_contracts",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_item_unit_conversions",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_meeting_attendees",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_meeting_rooms",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_meetings",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_notifications",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_payment_requests",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_cycles",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_goal_changes",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_goal_checkins",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_goal_target_history",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_goals",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_review_acknowledgements",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_performance_reviews",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_dependencies",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_task_updates",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_project_tasks",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_quality_nonconformances",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_candidates",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_hires",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_interviews",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_job_posts",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_offers",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_recruitment_requisitions",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_safety_incidents",
+        "rls": true,
+        "service": false
+      },
+      {
+        "anon": false,
+        "authenticated": false,
+        "name": "business_staff_history",
+        "rls": true,
+        "service": false
+      }
+    ]
+  },
+  "preservedExistingData": true,
+  "includesSeed": false,
+  "customerAccountsCreated": false,
+  "cloudAccess": true,
+  "authorization": "User requested completing the application and deploying a usable full interface; rollout only targets the existing DIMIXO development project."
+}
