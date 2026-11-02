@@ -26,3 +26,9 @@ Ma trận 82 yêu cầu vẫn được quản lý tại [misa-requirements.json]
 Còn các nghiệp vụ chưa hoàn chỉnh như nhập Excel/xử lý xung đột từng dòng, alias/gộp trùng, snapshot quy đổi trên các dòng giao dịch, báo cáo tùy biến/XLSX/PDF/lịch sử xuất và các trường hợp chốt kỳ/điều chỉnh nêu trong từng yêu cầu. Ngân hàng, hóa đơn điện tử, chữ ký số, BHXH/thuế và phản hồi cơ quan tiếp nhận cần nhà cung cấp, credentials và cấu hình thực tế. Các tham số lương/thuế/bảo hiểm phải được đối chiếu theo hồ sơ vận hành trước khi dùng cho giao dịch thật.
 
 Bằng chứng deployment cuối cùng sẽ ghi URL, deployment ID, commit và kết quả kiểm tra sau phát hành. Tài liệu này không xác nhận hệ thống đã đáp ứng toàn bộ chế độ kế toán hoặc mọi tiêu chí của 82 yêu cầu.
+
+## Bản vá trước bàn giao
+
+Đã cập nhật Next.js lên `16.4.3`, Zod lên `4.6.7` và các dependency bắc cầu tương thích. Chuyển schema record sang khóa chuỗi tường minh, sửa truy cập schema CRM và giữ nguyên ngữ nghĩa PATCH nhân sự: trường trạng thái không gửi lên thì không tự nhận mặc định `active`. Bộ kiểm tra hồi quy hiện có xác nhận lệnh rỗng bị từ chối và nhân sự đã nghỉ việc không bị đổi trạng thái khi sửa thông tin khác.
+
+Build, TypeScript, lint phạm vi sửa và 1.680 test đã qua; 37 test live tùy chọn bỏ qua. Kiểm tra 159 client artifact không thấy secret. Audit dependency runtime không còn mức high/critical; vẫn còn chín cảnh báo moderate trong chuỗi ExcelJS, chưa coi là đã xử lý toàn bộ bảo mật dependency. Chi tiết và nguồn advisory nằm trong [bằng chứng bản vá](../commercial-erp/evidence/misa-security-release.json).

@@ -215,7 +215,7 @@ export const featureFlagDefinitionSchema = z
     key: z.string().regex(/^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$/),
     moduleKey: z.string().regex(/^[a-z][a-z0-9_-]*$/),
     enabled: z.boolean(),
-    config: z.record(z.unknown()).default({})
+    config: z.record(z.string(), z.unknown()).default({})
   })
   .strict();
 

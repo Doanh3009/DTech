@@ -42,7 +42,7 @@ export async function saveCustomer(input:unknown,actorId:string) {
 export async function convertTrial(input:unknown,actorId:string) {
   const p=crmConvertSchema.safeParse(input);if(!p.success)throw new AppError("VALIDATION_ERROR");
   const r=await client().from("product_trial_requests").select("industry").eq("request_id",p.data.requestId).abortSignal(AbortSignal.timeout(10_000)).maybeSingle();if(r.error)failure(r.error.message);if(!r.data)throw new AppError("NOT_FOUND");
-  const industry=crmSetupSchema.innerType().shape.industryPreset.safeParse(r.data.industry); const setup=emptySetup(industry.success?industry.data:"general");
+  const industry=crmSetupSchema.shape.industryPreset.safeParse(r.data.industry); const setup=emptySetup(industry.success?industry.data:"general");
   return command("crm_convert_trial",{p_id:p.data.customerId,p_request_id:p.data.requestId,p_expected_version:p.data.rowVersion,p_setup:setup,p_actor_id:actorId});
 }
 export async function addCustomerActivity(id:string,input:unknown,actorId:string) {

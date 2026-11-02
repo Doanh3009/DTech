@@ -11,7 +11,7 @@ import { requirePermission } from "@/services/authorization/requirePermission";
 const webhookEventSchema = z.object({
   id: z.string().uuid(),
   type: webhookEventTypeSchema,
-  payload: z.record(z.unknown())
+  payload: z.record(z.string(), z.unknown())
 });
 
 export async function POST(request: Request) {

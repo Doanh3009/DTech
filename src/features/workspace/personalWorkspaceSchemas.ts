@@ -11,7 +11,7 @@ export const uiPreferencesSchema = z.object({
   density: z.enum(["compact", "default", "comfortable"]),
   sidebarCollapsed: z.boolean(),
   pinnedModules: z.array(z.string().trim().min(1).max(80)).max(20),
-  dashboardWidgetVisibility: z.record(z.boolean()),
+  dashboardWidgetVisibility: z.record(z.string(), z.boolean()),
   dashboardWidgetOrder: z.array(z.string().trim().min(1).max(80)).max(30),
   themePreference: z.enum(["system", "light"])
 });

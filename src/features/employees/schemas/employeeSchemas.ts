@@ -129,6 +129,7 @@ export const patchEmployeeSchema = createEmployeeBaseSchema
   .partial()
   .extend({
     rowVersion: z.number().int().min(1).max(2147483646),
+    employmentStatus: employeeStatusSchema.optional(),
     displayName: patchText,
     personalPhone: nullablePatchValue(z.string().trim().min(8, "Số điện thoại chưa hợp lệ.")),
     personalEmail: nullablePatchValue(z.string().trim().email("Email chưa hợp lệ.")),

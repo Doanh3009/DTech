@@ -1,0 +1,127 @@
+{
+  "generatedAt": "2026-11-02T06:30:00.230Z",
+  "scope": "Security patch layered on the verified MISA UI release; no database changes",
+  "baseUiCommit": "0e2d6c177789846b3d1949fd24e29474e3b1afc9",
+  "versions": {
+    "next": "16.4.3",
+    "zod": "4.6.7"
+  },
+  "runtimeAudit": {
+    "before": {
+      "info": 0,
+      "low": 0,
+      "moderate": 9,
+      "high": 4,
+      "critical": 1,
+      "total": 14
+    },
+    "after": {
+      "info": 0,
+      "low": 0,
+      "moderate": 9,
+      "high": 0,
+      "critical": 0,
+      "total": 9
+    },
+    "remaining": [
+      "archiver",
+      "archiver-utils",
+      "exceljs",
+      "glob",
+      "minimatch",
+      "readdir-glob",
+      "rimraf",
+      "uuid",
+      "zip-stream"
+    ],
+    "allFindingsResolved": false
+  },
+  "changes": [
+    "Patched Next.js, matching ESLint/SWC packages, Zod and compatible brace-expansion/source-map-js dependencies.",
+    "Migrated records to explicit string keys and CRM schema access to the Zod 4 API.",
+    "Preserved PATCH semantics: omitted employment status stays omitted; empty patches remain invalid.",
+    "Vercel upload records its exact source commit in deployment metadata."
+  ],
+  "validation": {
+    "build": true,
+    "buildId": "q8wtl5ub8_kIYVjSmWCfr",
+    "typecheck": true,
+    "lintChangedSchemas": true,
+    "tests": {
+      "passed": 1680,
+      "failed": 0,
+      "skipped": 37,
+      "total": 1717
+    },
+    "clientArtifactsSecretScan": {
+      "passed": true,
+      "files": 159,
+      "secretMatches": 0
+    }
+  },
+  "sourceHashes": [
+    {
+      "file": "package-lock.json",
+      "sha256LfNormalized": "e1d8b02aec707d67e62e8228b815c05913c3f23c1415460c441dedd5c9468262"
+    },
+    {
+      "file": "package.json",
+      "sha256LfNormalized": "d8d323824cbe4e59625d170a73ecb51bed48c9c98f49944d4131ac909d99f60a"
+    },
+    {
+      "file": "scripts/commercial/deploy-dimixo.mjs",
+      "sha256LfNormalized": "638ca7ec082876086a0e524a0fe30c6cbe209f16cbc2b1b778ae72ae5d5dc58e"
+    },
+    {
+      "file": "src/app/api/v1/webhooks/events/route.ts",
+      "sha256LfNormalized": "7322e27da418102f6984bc2f7efa61238500088686c0f0464a6c2c63f9e53a61"
+    },
+    {
+      "file": "src/config/systemSettings.ts",
+      "sha256LfNormalized": "e5eebb306f7c3adcd41d038614c7dd3b673618a88454c3dc6991ca662c27a775"
+    },
+    {
+      "file": "src/features/business/businessApprovalSchemas.ts",
+      "sha256LfNormalized": "dd98671e7d1ab14ec47b084f4009435ca12fb58f9b56c0596d0004f7ae333d0d"
+    },
+    {
+      "file": "src/features/business/businessSchemas.ts",
+      "sha256LfNormalized": "01f1ee74ee49e436532b88aea262c1914297ea4dc25dfefef659cf88658dbd91"
+    },
+    {
+      "file": "src/features/crm/crmService.ts",
+      "sha256LfNormalized": "f10eacbb187d2381738ab5f405b8482a12e16a67661af54e023e360b48aed276"
+    },
+    {
+      "file": "src/features/employees/schemas/employeeSchemas.ts",
+      "sha256LfNormalized": "505c3697cd62264592c32b5ef72070eefe5acd29c3669fa3e03b5c856779a035"
+    },
+    {
+      "file": "src/features/integrations/schemas.ts",
+      "sha256LfNormalized": "fd72f9734b8c199fb00f5a4d3079480c77fdc6be64059923c8aaca2a85b228c0"
+    },
+    {
+      "file": "src/features/shared-platforms/schemas.ts",
+      "sha256LfNormalized": "c7b79231c5713a4d0c9ec48c704158ebfd3c28bd5917eb380aa3f8dd66d016d6"
+    },
+    {
+      "file": "src/features/workspace/personalWorkspaceSchemas.ts",
+      "sha256LfNormalized": "2a3304f6b2facfd01dbc75deb75bc309df501fc2636b171d2dc5389b218c3628"
+    },
+    {
+      "file": "src/services/system-settings/systemSettingsCommands.ts",
+      "sha256LfNormalized": "827b041ed4a2b5157710882c07fa03029894dce0a21dc0970a24887e7b0ee9a8"
+    }
+  ],
+  "references": [
+    "https://github.com/advisories/GHSA-2464-fhr4-w9xw",
+    "https://github.com/advisories/GHSA-673q-mjm6-r5xr",
+    "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+    "https://zod.dev/v4/changelog"
+  ],
+  "limitations": [
+    "Nine moderate runtime findings remain in the ExcelJS archive/glob/UUID dependency chain; the suggested ExcelJS downgrade is a breaking change and was not applied. Excel import/export dependency remediation remains open.",
+    "The UI/read checks and security patch do not complete acceptance of the 82 MISA requirements."
+  ],
+  "credentialsIncluded": false
+}

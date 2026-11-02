@@ -7,7 +7,7 @@ export const SETTINGS_VERSION_MAX = 2_147_483_646;
 export const settingsVersionSchema = z.number().int().min(0).max(SETTINGS_VERSION_MAX);
 const receiptSchema = z.object({
   requestId: z.string().uuid(),
-  versions: z.record(z.number().int().min(1).max(SETTINGS_VERSION_MAX + 1))
+  versions: z.record(z.string(), z.number().int().min(1).max(SETTINGS_VERSION_MAX + 1))
 }).strict();
 
 export interface SettingsCommandInput {
