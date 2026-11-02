@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-02T07:22:27.185Z",
-  "phase": "validated-locally",
+  "generatedAt": "2026-11-02T07:28:53.114Z",
+  "phase": "published",
   "target": "https://dimixo-erp.vercel.app",
   "catalogs": [
     "items",
@@ -276,5 +276,244 @@
     "passed": 42,
     "failed": 0,
     "skipped": 0
-  }
+  },
+  "preparedAt": "2026-11-02T07:22:27.185Z",
+  "publishedSourceCommit": "3dfac27f53152f1225e43e2027bc286b1ffc40d2",
+  "deployment": {
+    "checkedAt": "2026-11-02T07:27:43.140Z",
+    "project": "dimixo-erp",
+    "projectId": "prj_o7pcu5PyLCWrXtb6itgS3YuIrY3u",
+    "sourceCommit": "3dfac27f53152f1225e43e2027bc286b1ffc40d2",
+    "deploymentId": "dpl_5gQaNFAacEFASWWwBuzxbbuDzArN",
+    "deploymentUrl": "https://dimixo-2pynwdwb1-chau-tuan.vercel.app",
+    "productionUrl": "https://dimixo-erp.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "regions": [
+      "sin1"
+    ],
+    "nodeVersion": "24.x",
+    "aliasMatches": true,
+    "checks": [
+      {
+        "route": "/api/health/live",
+        "httpStatus": 200,
+        "status": "alive"
+      },
+      {
+        "route": "/api/health/ready",
+        "httpStatus": 200,
+        "status": "ready"
+      },
+      {
+        "route": "/",
+        "httpStatus": 200
+      },
+      {
+        "route": "/erp/xay-dung-chau-tuan/login",
+        "httpStatus": 200
+      }
+    ],
+    "passed": true,
+    "credentialsIncluded": false
+  },
+  "deployedBrowser": {
+    "generatedAt": "2026-11-02T07:27:57.645Z",
+    "origin": "https://dimixo-erp.vercel.app",
+    "scope": "Template downloads and file preview only; no catalog commit",
+    "screens": [
+      {
+        "kind": "items",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "items",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "items",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      }
+    ],
+    "actions": [
+      {
+        "kind": "items",
+        "templateDownloaded": true,
+        "fileType": "xlsx",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      },
+      {
+        "kind": "partners",
+        "templateDownloaded": true,
+        "fileType": "csv",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      },
+      {
+        "kind": "warehouses",
+        "templateDownloaded": true,
+        "fileType": "csv",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      }
+    ],
+    "errors": [],
+    "apiFailures": [],
+    "businessRecordsCreated": false,
+    "credentialsIncluded": false,
+    "logoutStatus": 200,
+    "passed": true
+  },
+  "apiSmoke": {
+    "generatedAt": "2026-11-02T07:27:45.259Z",
+    "origin": "https://dimixo-erp.vercel.app",
+    "scope": "Read-only release API smoke using an existing demo owner account",
+    "checks": [
+      {
+        "route": "session",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/inbox",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/report",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/settings",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "quality/dashboard",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "calendar",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "notifications",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "members/owner-targets",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "search",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "records/item_unit_conversions",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "project-tasks",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "misa",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "credentialsIncluded": false,
+    "boundaries": [
+      {
+        "name": "anonymousTenantRead",
+        "status": 401,
+        "denied": true
+      },
+      {
+        "name": "crossTenantRead",
+        "status": 403,
+        "denied": true
+      },
+      {
+        "name": "internalErpRead",
+        "status": 401,
+        "denied": true
+      }
+    ],
+    "logoutStatus": 200,
+    "passed": true
+  },
+  "finalCssSpacingValidatedOnVercel": true
 }

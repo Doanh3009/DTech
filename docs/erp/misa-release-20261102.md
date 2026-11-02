@@ -44,3 +44,5 @@ Tài khoản/mật khẩu ở tệp riêng `.tmp/DIMIXO-ban-giao-tai-khoan.md`, 
 ## Nhập danh mục CSV/XLSX
 
 Bổ sung nhập vật tư, đối tác và kho với mẫu XLSX, xem trước từng dòng, chọn tạo/cập nhật/bỏ qua, hiển thị giá trị cũ → mới, CSV lỗi, receipt thử lại và lịch sử nhập theo tenant. Migration `202611020014` đã áp dụng trên môi trường phát triển, tổng 151 migration; dữ liệu cũ và 18 tài khoản giữ nguyên. [Hướng dẫn và giới hạn](catalog-import.md), [bằng chứng kiểm chứng](../commercial-erp/evidence/misa-catalog-import-release.json). Phạm vi này chưa hoàn tất toàn bộ 2.02 hay ma trận 82 yêu cầu.
+
+Đã phát hành chức năng nhập danh mục tại [DIMIXO ERP](https://dimixo-erp.vercel.app), commit [`3dfac27`](https://github.com/Doanh3009/DTech/commit/3dfac27f53152f1225e43e2027bc286b1ffc40d2), deployment `dpl_5gQaNFAacEFASWWwBuzxbbuDzArN` READY. Kiểm tra sau deploy: 9 màn nhập ở 390/768/1440px, tải mẫu, xem trước CSV/XLSX, chọn mã trùng và giữ trường không có trong tệp đều qua; 12 API đọc và ba ranh giới truy cập vẫn đúng. Không ghi dữ liệu danh mục thử qua trình duyệt live.

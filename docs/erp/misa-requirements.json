@@ -148,6 +148,19 @@
             "Live browser validation covers download/preview/selection, not a committed customer-data import. Commit acceptance uses synthetic native PostgreSQL data.",
             "The 82-item MISA acceptance scope is not complete."
           ]
+        },
+        {
+          "kind": "deployed-catalog-import-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-catalog-import-release.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Published commit 3dfac27f53152f1225e43e2027bc286b1ffc40d2 to dimixo-erp.vercel.app. Verified production alias/source metadata, Node 24, health/readiness, 12 REST reads and three access-boundary denials. Nine deployed responsive import screens passed XLSX template downloads, XLSX/CSV previews, per-row validation, duplicate selection and omitted-field preservation; logout succeeded. No catalog commit was clicked in the live browser.",
+          "limitations": [
+            "The committed import workflow is verified with synthetic PostgreSQL data. Live preview checks do not constitute customer-data write acceptance.",
+            "Imports outside the three catalogs, alias/merge, fuzzy duplicates and full MISA acceptance remain incomplete."
+          ]
         }
       ],
       "acceptanceComplete": false

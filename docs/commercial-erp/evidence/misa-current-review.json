@@ -204,6 +204,19 @@
             "Live browser validation covers download/preview/selection, not a committed customer-data import. Commit acceptance uses synthetic native PostgreSQL data.",
             "The 82-item MISA acceptance scope is not complete."
           ]
+        },
+        {
+          "kind": "deployed-catalog-import-check",
+          "status": "partial",
+          "artifacts": [
+            "docs/commercial-erp/evidence/misa-catalog-import-release.json"
+          ],
+          "verifiedAt": "2026-11-02",
+          "verification": "Published commit 3dfac27f53152f1225e43e2027bc286b1ffc40d2 to dimixo-erp.vercel.app. Verified production alias/source metadata, Node 24, health/readiness, 12 REST reads and three access-boundary denials. Nine deployed responsive import screens passed XLSX template downloads, XLSX/CSV previews, per-row validation, duplicate selection and omitted-field preservation; logout succeeded. No catalog commit was clicked in the live browser.",
+          "limitations": [
+            "The committed import workflow is verified with synthetic PostgreSQL data. Live preview checks do not constitute customer-data write acceptance.",
+            "Imports outside the three catalogs, alias/merge, fuzzy duplicates and full MISA acceptance remain incomplete."
+          ]
         }
       ]
     },
@@ -2432,9 +2445,9 @@
     "githubPushAuthorized": true,
     "vercelDeployAuthorized": true,
     "remainingLocalMigrationsApplied": true,
-    "currentChangesPublished": false,
-    "codeCommit": "c847c8b8b901f2a54b6897db2063fce0e5cffdbf",
-    "deploymentArtifact": "docs/commercial-erp/evidence/misa-vercel-release-20261102.json"
+    "currentChangesPublished": true,
+    "codeCommit": "3dfac27f53152f1225e43e2027bc286b1ffc40d2",
+    "deploymentArtifact": "docs/commercial-erp/evidence/misa-catalog-import-release.json"
   },
   "accountVerification": {
     "artifact": "docs/commercial-erp/evidence/misa-account-verification.json",
@@ -2456,7 +2469,7 @@
   },
   "unitSuite": {
     "command": "npx vitest run --exclude 'scripts/**' --exclude 'supabase/**' --maxWorkers=3",
-    "passed": 1680,
+    "passed": 1715,
     "skipped": 37,
     "failed": 0,
     "unhandledErrors": 0,
@@ -2777,11 +2790,11 @@
     "logoutStatus": 200
   },
   "publishedRelease": {
-    "artifact": "docs/commercial-erp/evidence/misa-vercel-release-20261102.json",
-    "checkedAt": "2026-11-02T06:42:14.668Z",
-    "sourceCommit": "c847c8b8b901f2a54b6897db2063fce0e5cffdbf",
+    "artifact": "docs/commercial-erp/evidence/misa-catalog-import-release.json",
+    "checkedAt": "2026-11-02T07:28:53.114Z",
+    "sourceCommit": "3dfac27f53152f1225e43e2027bc286b1ffc40d2",
     "url": "https://dimixo-erp.vercel.app",
-    "deploymentId": "dpl_ANFxh8FaSAXuMSgsCCVyNvAeKn4C",
+    "deploymentId": "dpl_5gQaNFAacEFASWWwBuzxbbuDzArN",
     "state": "READY",
     "nodeVersion": "24.x"
   },
@@ -2822,6 +2835,14 @@
     ],
     "native": true,
     "localScreens": 9,
-    "liveCommit": false
+    "deployedScreens": 9,
+    "liveCommit": false,
+    "publishedSourceCommit": "3dfac27f53152f1225e43e2027bc286b1ffc40d2"
+  },
+  "developmentCatalogImportRollout": {
+    "artifact": "docs/commercial-erp/evidence/misa-catalog-import-rollout.json",
+    "migrations": 151,
+    "latest": "202611020014",
+    "existingDataPreserved": true
   }
 }

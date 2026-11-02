@@ -1,5 +1,7 @@
 ﻿# Tiến độ triển khai nghiệp vụ tham chiếu MISA
 
+Nhập CSV/XLSX cho vật tư/đối tác/kho đã phát hành ở commit `3dfac27`, database 151 migration. Có xem trước, đối chiếu giá trị, chọn dòng và receipt thử lại. [Hướng dẫn](catalog-import.md), [bằng chứng](../commercial-erp/evidence/misa-catalog-import-release.json). Nghiệm thu đầy đủ 82 yêu cầu vẫn mở.
+
 Bản cập nhật UI/nghiệp vụ đã deploy Vercel ngày 02/11/2026, commit `c847c8b`; xem [biên bản phát hành](../commercial-erp/evidence/misa-vercel-release-20261102.json). Phần nghiệm thu đầy đủ 82 yêu cầu và các phụ thuộc còn mở không được đánh dấu hoàn tất từ kết quả phát hành.
 
 Ngày cập nhật: 02/11/2026. Hai DOCX là nguồn yêu cầu tham khảo. Bảng này ghi phần triển khai hiện có, không thay thế nghiệm thu và không xác nhận hệ thống tuân thủ toàn bộ chế độ kế toán/thuế.
