@@ -1,6 +1,6 @@
 {
   "date": "2026-11-02",
-  "scope": "Current local evidence update for requirements 2.01-2.07, 2.08-2.28, 3.01-3.20, 4.01-4.12 and 5.01-5.22",
+  "scope": "MISA implementation, development rollout and published responsive UI release; full 82-item acceptance remains incomplete",
   "requirementCount": 82,
   "fullMisaComplete": false,
   "changedRequirements": [
@@ -2412,7 +2412,9 @@
     "githubPushAuthorized": true,
     "vercelDeployAuthorized": true,
     "remainingLocalMigrationsApplied": true,
-    "currentChangesPublished": false
+    "currentChangesPublished": true,
+    "codeCommit": "c847c8b8b901f2a54b6897db2063fce0e5cffdbf",
+    "deploymentArtifact": "docs/commercial-erp/evidence/misa-vercel-release-20261102.json"
   },
   "accountVerification": {
     "artifact": "docs/commercial-erp/evidence/misa-account-verification.json",
@@ -2753,5 +2755,42 @@
       "csvDownload": true
     },
     "logoutStatus": 200
+  },
+  "publishedRelease": {
+    "artifact": "docs/commercial-erp/evidence/misa-vercel-release-20261102.json",
+    "checkedAt": "2026-11-02T06:42:14.668Z",
+    "sourceCommit": "c847c8b8b901f2a54b6897db2063fce0e5cffdbf",
+    "url": "https://dimixo-erp.vercel.app",
+    "deploymentId": "dpl_ANFxh8FaSAXuMSgsCCVyNvAeKn4C",
+    "state": "READY",
+    "nodeVersion": "24.x"
+  },
+  "securityRelease": {
+    "artifact": "docs/commercial-erp/evidence/misa-security-release.json",
+    "runtimeHigh": 0,
+    "runtimeCritical": 0,
+    "runtimeModerate": 9
+  },
+  "publishedBrowserVerification": {
+    "artifact": "docs/commercial-erp/evidence/misa-vercel-release-20261102.json",
+    "checkedAt": "2026-11-02T06:40:36.994Z",
+    "origin": "https://dimixo-erp.vercel.app",
+    "screens": 33,
+    "viewportWidths": [
+      390,
+      768,
+      1440
+    ],
+    "actions": {
+      "applicationFilter": true,
+      "mobileNavigation": true,
+      "quantityPreview": true,
+      "paymentPartnerField": true,
+      "csvDownload": true
+    },
+    "javascriptErrors": 0,
+    "apiFailures": 0,
+    "logoutStatus": 200,
+    "privateScreenshotsDirectory": ".tmp/misa-release-ui-vercel"
   }
 }

@@ -1,5 +1,7 @@
 ﻿# Tiến độ triển khai nghiệp vụ tham chiếu MISA
 
+Bản cập nhật UI/nghiệp vụ đã deploy Vercel ngày 02/11/2026, commit `c847c8b`; xem [biên bản phát hành](../commercial-erp/evidence/misa-vercel-release-20261102.json). Phần nghiệm thu đầy đủ 82 yêu cầu và các phụ thuộc còn mở không được đánh dấu hoàn tất từ kết quả phát hành.
+
 Ngày cập nhật: 02/11/2026. Hai DOCX là nguồn yêu cầu tham khảo. Bảng này ghi phần triển khai hiện có, không thay thế nghiệm thu và không xác nhận hệ thống tuân thủ toàn bộ chế độ kế toán/thuế.
 
 ## Trạng thái môi trường

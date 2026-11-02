@@ -1,0 +1,475 @@
+{
+  "generatedAt": "2026-11-02T06:42:14.668Z",
+  "scope": "Published MISA workflows and responsive ERP UI; demo/development environment",
+  "source": {
+    "repository": "https://github.com/Doanh3009/DTech",
+    "branch": "feature/commercial-erp-p0-audit",
+    "codeCommit": "c847c8b8b901f2a54b6897db2063fce0e5cffdbf",
+    "baseUiCommit": "0e2d6c177789846b3d1949fd24e29474e3b1afc9"
+  },
+  "deployment": {
+    "checkedAt": "2026-11-02T06:40:09.753Z",
+    "project": "dimixo-erp",
+    "projectId": "prj_o7pcu5PyLCWrXtb6itgS3YuIrY3u",
+    "sourceCommit": "c847c8b8b901f2a54b6897db2063fce0e5cffdbf",
+    "deploymentId": "dpl_ANFxh8FaSAXuMSgsCCVyNvAeKn4C",
+    "deploymentUrl": "https://dimixo-h6ftg5g42-chau-tuan.vercel.app",
+    "productionUrl": "https://dimixo-erp.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "regions": [
+      "sin1"
+    ],
+    "nodeVersion": "24.x",
+    "aliasMatches": true,
+    "checks": [
+      {
+        "route": "/api/health/live",
+        "httpStatus": 200,
+        "status": "alive"
+      },
+      {
+        "route": "/api/health/ready",
+        "httpStatus": 200,
+        "status": "ready"
+      },
+      {
+        "route": "/",
+        "httpStatus": 200
+      },
+      {
+        "route": "/erp/xay-dung-chau-tuan/login",
+        "httpStatus": 200
+      }
+    ],
+    "passed": true,
+    "credentialsIncluded": false
+  },
+  "validation": {
+    "securityArtifact": "docs/commercial-erp/evidence/misa-security-release.json",
+    "releaseReadinessArtifact": "docs/commercial-erp/evidence/misa-release-readiness.json",
+    "databaseArtifact": "docs/commercial-erp/evidence/misa-feature-rollout.json",
+    "tests": {
+      "passed": 1680,
+      "failed": 0,
+      "skipped": 37,
+      "total": 1717
+    },
+    "apiSmoke": {
+      "generatedAt": "2026-11-02T06:40:24.077Z",
+      "origin": "https://dimixo-erp.vercel.app",
+      "scope": "Read-only release API smoke using an existing demo owner account",
+      "checks": [
+        {
+          "route": "session",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "approval/inbox",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "approval/report",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "approval/settings",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "quality/dashboard",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "calendar",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "notifications",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "members/owner-targets",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "search",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "records/item_unit_conversions",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "project-tasks",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "route": "misa",
+          "status": 200,
+          "ok": true
+        }
+      ],
+      "credentialsIncluded": false,
+      "boundaries": [
+        {
+          "name": "anonymousTenantRead",
+          "status": 401,
+          "denied": true
+        },
+        {
+          "name": "crossTenantRead",
+          "status": 403,
+          "denied": true
+        },
+        {
+          "name": "internalErpRead",
+          "status": 401,
+          "denied": true
+        }
+      ],
+      "logoutStatus": 200,
+      "passed": true
+    },
+    "browser": {
+      "checkedAt": "2026-11-02T06:40:36.994Z",
+      "origin": "https://dimixo-erp.vercel.app",
+      "screens": [
+        {
+          "route": "/",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Xây dựng Châu Tuấn"
+          ]
+        },
+        {
+          "route": "/module/inventory",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Kho & vật tư"
+          ]
+        },
+        {
+          "route": "/items",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Vật tư & thành phẩm"
+          ]
+        },
+        {
+          "route": "/item_unit_conversions",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Quy đổi đơn vị vật tư"
+          ]
+        },
+        {
+          "route": "/module/accounting",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Kế toán"
+          ]
+        },
+        {
+          "route": "/module/quality",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Chất lượng & an toàn"
+          ]
+        },
+        {
+          "route": "/module/collaboration",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Lịch họp & thông báo"
+          ]
+        },
+        {
+          "route": "/module/people",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Nhân sự & chấm công"
+          ]
+        },
+        {
+          "route": "/module/projects",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Công trình & ngân sách"
+          ]
+        },
+        {
+          "route": "/access",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Tài khoản doanh nghiệp"
+          ]
+        },
+        {
+          "route": "/payment_requests",
+          "width": 1440,
+          "httpStatus": 200,
+          "documentWidth": 1430,
+          "headings": [
+            "Đề nghị thanh toán"
+          ]
+        },
+        {
+          "route": "/",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Xây dựng Châu Tuấn"
+          ]
+        },
+        {
+          "route": "/module/inventory",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Kho & vật tư"
+          ]
+        },
+        {
+          "route": "/items",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Vật tư & thành phẩm"
+          ]
+        },
+        {
+          "route": "/item_unit_conversions",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Quy đổi đơn vị vật tư"
+          ]
+        },
+        {
+          "route": "/module/accounting",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Kế toán"
+          ]
+        },
+        {
+          "route": "/module/quality",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Chất lượng & an toàn"
+          ]
+        },
+        {
+          "route": "/module/collaboration",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Lịch họp & thông báo"
+          ]
+        },
+        {
+          "route": "/module/people",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Nhân sự & chấm công"
+          ]
+        },
+        {
+          "route": "/module/projects",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Công trình & ngân sách"
+          ]
+        },
+        {
+          "route": "/access",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Tài khoản doanh nghiệp"
+          ]
+        },
+        {
+          "route": "/payment_requests",
+          "width": 768,
+          "httpStatus": 200,
+          "documentWidth": 758,
+          "headings": [
+            "Đề nghị thanh toán"
+          ]
+        },
+        {
+          "route": "/",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Xây dựng Châu Tuấn"
+          ]
+        },
+        {
+          "route": "/module/inventory",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Kho & vật tư"
+          ]
+        },
+        {
+          "route": "/items",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Vật tư & thành phẩm"
+          ]
+        },
+        {
+          "route": "/item_unit_conversions",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Quy đổi đơn vị vật tư"
+          ]
+        },
+        {
+          "route": "/module/accounting",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Kế toán"
+          ]
+        },
+        {
+          "route": "/module/quality",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Chất lượng & an toàn"
+          ]
+        },
+        {
+          "route": "/module/collaboration",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Lịch họp & thông báo"
+          ]
+        },
+        {
+          "route": "/module/people",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Nhân sự & chấm công"
+          ]
+        },
+        {
+          "route": "/module/projects",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Công trình & ngân sách"
+          ]
+        },
+        {
+          "route": "/access",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Tài khoản doanh nghiệp"
+          ]
+        },
+        {
+          "route": "/payment_requests",
+          "width": 390,
+          "httpStatus": 200,
+          "documentWidth": 390,
+          "headings": [
+            "Đề nghị thanh toán"
+          ]
+        }
+      ],
+      "javascriptErrors": [],
+      "apiFailures": [],
+      "actions": {
+        "applicationFilter": true,
+        "mobileNavigation": true,
+        "quantityPreview": true,
+        "paymentPartnerField": true,
+        "csvDownload": true
+      },
+      "logoutStatus": 200,
+      "privateScreenshotsDirectory": ".tmp/misa-release-ui-vercel"
+    },
+    "accounts": {
+      "artifact": "docs/commercial-erp/evidence/misa-account-verification.json",
+      "verified": 18,
+      "total": 18,
+      "roles": [
+        "owner",
+        "editor",
+        "viewer"
+      ],
+      "tenants": 6
+    }
+  },
+  "businessDocumentsCreatedByReleaseChecks": false,
+  "credentialsIncluded": false,
+  "fullMisaAcceptanceComplete": false,
+  "outstanding": "See docs/erp/misa-release-20261102.md and the 82-item requirements matrix. External-provider integrations, unfinished imports/reports and remaining transaction acceptance are not certified by this deployment."
+}
