@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-03T01:25:29.813Z",
+  "generatedAt": "2026-11-03T01:34:13.015Z",
   "releaseDate": "2026-11-03",
-  "phase": "validated",
+  "phase": "published",
   "target": "https://dimixo-erp.vercel.app",
   "scope": "Shared tenant ERP UI; separate MISA business acceptance remains in progress",
   "build": {
@@ -777,5 +777,970 @@
     ]
   },
   "customerBusinessRecordsCreated": false,
-  "credentialsIncluded": false
+  "credentialsIncluded": false,
+  "sourceCommit": "dd1bbec31dc04a7f529d6c19e1d6d456756ea6f0",
+  "deployment": {
+    "checkedAt": "2026-11-03T01:30:50.781Z",
+    "project": "dimixo-erp",
+    "projectId": "prj_o7pcu5PyLCWrXtb6itgS3YuIrY3u",
+    "sourceCommit": "dd1bbec31dc04a7f529d6c19e1d6d456756ea6f0",
+    "deploymentId": "dpl_CBMqAyNpzcJ9c7GR6XAUTQzCsLB4",
+    "deploymentUrl": "https://dimixo-ppmnrtasm-chau-tuan.vercel.app",
+    "productionUrl": "https://dimixo-erp.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "regions": [
+      "sin1"
+    ],
+    "nodeVersion": "24.x",
+    "aliasMatches": true,
+    "checks": [
+      {
+        "route": "/api/health/live",
+        "httpStatus": 200,
+        "status": "alive"
+      },
+      {
+        "route": "/api/health/ready",
+        "httpStatus": 200,
+        "status": "ready"
+      },
+      {
+        "route": "/",
+        "httpStatus": 200
+      },
+      {
+        "route": "/erp/xay-dung-chau-tuan/login",
+        "httpStatus": 200
+      }
+    ],
+    "passed": true,
+    "credentialsIncluded": false
+  },
+  "deployedBrowser": {
+    "generatedAt": "2026-11-03T01:31:24.065Z",
+    "origin": "https://dimixo-erp.vercel.app",
+    "screens": [
+      {
+        "route": "/login",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/login",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/login",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/module/crm",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Khách hàng & kinh doanh"
+        ]
+      },
+      {
+        "route": "/module/purchasing",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Mua hàng & đối chiếu"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/sales",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Bán hàng & công nợ"
+        ]
+      },
+      {
+        "route": "/module/assets",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Tài sản & phân bổ"
+        ]
+      },
+      {
+        "route": "/module/costing",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Giá thành & giá vốn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/purchase_orders",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Đơn mua hàng"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      },
+      {
+        "route": "/salary_runs",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Bảng lương"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ]
+      },
+      {
+        "route": "/module/inventory",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Kho & vật tư"
+        ]
+      },
+      {
+        "route": "/module/projects",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Công trình & ngân sách"
+        ]
+      },
+      {
+        "route": "/module/crm",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Khách hàng & kinh doanh"
+        ]
+      },
+      {
+        "route": "/module/purchasing",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Mua hàng & đối chiếu"
+        ]
+      },
+      {
+        "route": "/module/accounting",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Kế toán"
+        ]
+      },
+      {
+        "route": "/module/people",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Nhân sự & chấm công"
+        ]
+      },
+      {
+        "route": "/module/sales",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Bán hàng & công nợ"
+        ]
+      },
+      {
+        "route": "/module/assets",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Tài sản & phân bổ"
+        ]
+      },
+      {
+        "route": "/module/costing",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Giá thành & giá vốn"
+        ]
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Lịch họp & thông báo"
+        ]
+      },
+      {
+        "route": "/module/quality",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Chất lượng & an toàn"
+        ]
+      },
+      {
+        "route": "/items",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ]
+      },
+      {
+        "route": "/purchase_orders",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Đơn mua hàng"
+        ]
+      },
+      {
+        "route": "/payment_requests",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Đề nghị thanh toán"
+        ]
+      },
+      {
+        "route": "/salary_runs",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Bảng lương"
+        ]
+      },
+      {
+        "route": "/access",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Xây dựng Châu Tuấn"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/inventory",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Kho & vật tư"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/projects",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Công trình & ngân sách"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/crm",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Khách hàng & kinh doanh"
+        ],
+        "headingWidth": 358,
+        "tabWidth": 72.03125
+      },
+      {
+        "route": "/module/purchasing",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Mua hàng & đối chiếu"
+        ],
+        "headingWidth": 358,
+        "tabWidth": 223.375
+      },
+      {
+        "route": "/module/accounting",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Kế toán"
+        ],
+        "headingWidth": 358,
+        "tabWidth": 97.9375
+      },
+      {
+        "route": "/module/people",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Nhân sự & chấm công"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/sales",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Bán hàng & công nợ"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/assets",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Tài sản & phân bổ"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/costing",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Giá thành & giá vốn"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/collaboration",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Lịch họp & thông báo"
+        ],
+        "headingWidth": 734
+      },
+      {
+        "route": "/module/quality",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Chất lượng & an toàn"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/items",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Vật tư & thành phẩm"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/purchase_orders",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Đơn mua hàng"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/payment_requests",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Đề nghị thanh toán"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/salary_runs",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Bảng lương"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/access",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Tài khoản doanh nghiệp"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/login",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Điện tử Minh Tín"
+        ]
+      },
+      {
+        "route": "/login",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Điện tử Minh Tín"
+        ]
+      },
+      {
+        "route": "/login",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Điện tử Minh Tín"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Điện tử Minh Tín"
+        ]
+      },
+      {
+        "route": "/module/production",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Quản lý sản xuất"
+        ]
+      },
+      {
+        "route": "/module/mes",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Điều hành sản xuất"
+        ]
+      },
+      {
+        "route": "/module/traceability",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Truy xuất lô"
+        ]
+      },
+      {
+        "route": "/lots",
+        "width": 1440,
+        "documentWidth": 1430,
+        "headings": [
+          "Lô & hạn sử dụng"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Điện tử Minh Tín"
+        ]
+      },
+      {
+        "route": "/module/production",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Quản lý sản xuất"
+        ]
+      },
+      {
+        "route": "/module/mes",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Điều hành sản xuất"
+        ]
+      },
+      {
+        "route": "/module/traceability",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Truy xuất lô"
+        ]
+      },
+      {
+        "route": "/lots",
+        "width": 768,
+        "documentWidth": 758,
+        "headings": [
+          "Lô & hạn sử dụng"
+        ]
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Điện tử Minh Tín"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/production",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Quản lý sản xuất"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/mes",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Điều hành sản xuất"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/module/traceability",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Truy xuất lô"
+        ],
+        "headingWidth": 358
+      },
+      {
+        "route": "/lots",
+        "width": 390,
+        "documentWidth": 390,
+        "headings": [
+          "Lô & hạn sử dụng"
+        ],
+        "headingWidth": 358
+      }
+    ],
+    "forms": [
+      {
+        "kind": "items",
+        "width": 1440,
+        "footerVisible": true
+      },
+      {
+        "kind": "purchase_orders",
+        "width": 1440,
+        "footerVisible": true
+      },
+      {
+        "kind": "payment_requests",
+        "width": 1440,
+        "footerVisible": true
+      },
+      {
+        "kind": "staff",
+        "width": 1440,
+        "footerVisible": true
+      },
+      {
+        "kind": "safety_incidents",
+        "width": 1440,
+        "footerVisible": true
+      },
+      {
+        "kind": "journal_entries",
+        "width": 1440,
+        "footerVisible": true
+      },
+      {
+        "kind": "items",
+        "width": 768,
+        "footerVisible": true
+      },
+      {
+        "kind": "purchase_orders",
+        "width": 768,
+        "footerVisible": true
+      },
+      {
+        "kind": "payment_requests",
+        "width": 768,
+        "footerVisible": true
+      },
+      {
+        "kind": "staff",
+        "width": 768,
+        "footerVisible": true
+      },
+      {
+        "kind": "safety_incidents",
+        "width": 768,
+        "footerVisible": true
+      },
+      {
+        "kind": "journal_entries",
+        "width": 768,
+        "footerVisible": true
+      },
+      {
+        "kind": "items",
+        "width": 390,
+        "footerVisible": true
+      },
+      {
+        "kind": "purchase_orders",
+        "width": 390,
+        "footerVisible": true
+      },
+      {
+        "kind": "payment_requests",
+        "width": 390,
+        "footerVisible": true
+      },
+      {
+        "kind": "staff",
+        "width": 390,
+        "footerVisible": true
+      },
+      {
+        "kind": "safety_incidents",
+        "width": 390,
+        "footerVisible": true
+      },
+      {
+        "kind": "journal_entries",
+        "width": 390,
+        "footerVisible": true
+      }
+    ],
+    "actions": {
+      "columnChooser": true,
+      "invalidFieldFocused": true,
+      "keyboardTabs": true,
+      "accountingExtensions": true,
+      "crmTabs": true,
+      "searchShortcut": true,
+      "moduleSearch": true,
+      "searchResultFocus": true,
+      "mobileAccentFilter": true
+    },
+    "pageErrors": [],
+    "apiFailures": [],
+    "unexpectedWrites": [],
+    "logouts": [
+      {
+        "industry": "construction",
+        "status": 200
+      },
+      {
+        "industry": "electronics",
+        "status": 200
+      }
+    ]
+  },
+  "importRegression": {
+    "screens": [
+      {
+        "kind": "items",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "items",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "items",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "partners",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 1440,
+        "documentWidth": 1430,
+        "dialogWidth": 1120,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 768,
+        "documentWidth": 758,
+        "dialogWidth": 736,
+        "selectedRows": 2
+      },
+      {
+        "kind": "warehouses",
+        "width": 390,
+        "documentWidth": 390,
+        "dialogWidth": 366,
+        "selectedRows": 2
+      }
+    ],
+    "actions": [
+      {
+        "kind": "items",
+        "templateDownloaded": true,
+        "fileType": "xlsx",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      },
+      {
+        "kind": "partners",
+        "templateDownloaded": true,
+        "fileType": "csv",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      },
+      {
+        "kind": "warehouses",
+        "templateDownloaded": true,
+        "fileType": "csv",
+        "previewRows": 3,
+        "invalidRows": 1,
+        "duplicateDefaultsToSkip": true,
+        "selectDuplicateUpdate": true,
+        "omittedFieldsPreserved": true,
+        "commitClicked": false
+      }
+    ],
+    "errors": [],
+    "apiFailures": [],
+    "businessRecordsCreated": false
+  },
+  "restSmoke": {
+    "generatedAt": "2026-11-03T01:31:24.384Z",
+    "origin": "https://dimixo-erp.vercel.app",
+    "scope": "Read-only release API smoke using an existing demo owner account",
+    "checks": [
+      {
+        "route": "session",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/inbox",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/report",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "approval/settings",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "quality/dashboard",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "calendar",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "notifications",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "members/owner-targets",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "search",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "records/item_unit_conversions",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "project-tasks",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "route": "misa",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "credentialsIncluded": false,
+    "boundaries": [
+      {
+        "name": "anonymousTenantRead",
+        "status": 401,
+        "denied": true
+      },
+      {
+        "name": "crossTenantRead",
+        "status": 403,
+        "denied": true
+      },
+      {
+        "name": "internalErpRead",
+        "status": 401,
+        "denied": true
+      }
+    ],
+    "logoutStatus": 200,
+    "passed": true
+  },
+  "accounts": {
+    "verified": 18,
+    "roles": [
+      "owner",
+      "editor",
+      "viewer"
+    ],
+    "tenants": 6,
+    "allLoggedOut": true,
+    "generatedAt": "2026-11-03T01:31:41.082Z"
+  }
 }

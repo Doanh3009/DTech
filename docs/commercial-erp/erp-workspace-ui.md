@@ -2,6 +2,8 @@
 
 Giao diện tại `/erp/[slug]` dùng chung cho sáu gói ngành. Tên doanh nghiệp, thương hiệu, module và quyền lấy từ cấu hình và phiên đăng nhập. Bộ quy tắc nằm tại [Design DNA](../../design-system/dtech-erp/MASTER.md) và [thiết kế workspace](../../design-system/dtech-erp/pages/business-workspace.md).
 
+Bản ngày 03/11/2026 đã triển khai tại [DIMIXO ERP](https://dimixo-erp.vercel.app), nguồn [dd1bbec](https://github.com/Doanh3009/DTech/commit/dd1bbec31dc04a7f529d6c19e1d6d456756ea6f0). [Chứng cứ phát hành](evidence/erp-workspace-ui-release.json) ghi nhận 2.033 kiểm thử qua, 72 ảnh màn hình và 18 lượt mở biểu mẫu trên mỗi môi trường local/Vercel, 9 màn nhập danh mục trên Vercel và 18 tài khoản được xác minh. Các lượt kiểm tra cloud không tạo chứng từ hay danh mục.
+
 ## Bố cục và thao tác
 
 - Gateway dùng `ErpModuleCard` chung, icon Lucide và màu nghiệp vụ từ registry. Tìm module bỏ qua dấu tiếng Việt.
