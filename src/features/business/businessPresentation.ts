@@ -21,6 +21,9 @@ export function defaultRecordColumns(kind:EntityKind,entries:RecordFieldEntry[])
 export function recordFieldText(row:Record<string,unknown>,key:string,field:EntityField){
  const value=row[key];if(value===null||value===undefined||value==="")return "—";
  if(field.type==="boolean")return value===true?"Có":"Không";
+ if(field.kindOptions)return businessEntities[value as EntityKind]?.label??"—";
+ if(field.lookup)return (row.references as Record<string,string>|undefined)?.[key]??"—";
+ if(field.uiOptions)return field.uiOptions[String(value)]??String(value);
  if(field.type==="enum")return field.values?.[String(value)]??String(value);
  if(field.type==="ref")return (row.references as Record<string,string>|undefined)?.[key]??"—";
  if(field.type==="number")return Number(value).toLocaleString("vi-VN",{maximumFractionDigits:4});

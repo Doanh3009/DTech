@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-11-03T06:43:40.018Z",
+  "target": "tcjjhxqtreemccdbvyza",
+  "environment": "development",
+  "migrations": [
+    {
+      "file": "202611030001_business_document_workspace.sql",
+      "sha256": "6264bbfce7fc2d37a6741e7cb932bd2588bbc67cc121984c577086055ad4f9cb"
+    },
+    {
+      "file": "202611030002_business_base_document_lines.sql",
+      "sha256": "758b877bb16283522ec1f9fe43f468f1d9825643e79d61dad788f91624882286"
+    },
+    {
+      "file": "202611030003_business_document_export.sql",
+      "sha256": "f29e543a0bb8e0a3945f7961997982c2899ec020511dbdc0df3b72cd9ba5c1e4"
+    },
+    {
+      "file": "202611030004_business_sensitive_read_boundaries.sql",
+      "sha256": "8798a25792dfa92b5edc421572abb883af5e847dbb0b1a81fe9f7ce708182678"
+    },
+    {
+      "file": "202611030005_business_source_field_metadata.sql",
+      "sha256": "cb7e3f63f3c25ce72a12242647b8a7244421a69dd7b3d465b807b003b142de41"
+    },
+    {
+      "file": "202611030006_business_source_access.sql",
+      "sha256": "c6a00c4c95582a9cb41031224707db2339729aef1eef1e81bb5eefe68ae4e5a5"
+    },
+    {
+      "file": "202611030007_business_simulation_metadata.sql",
+      "sha256": "677526ad4db92581b90eb47da2e1bf023c547951ff96d9e2c2bd24f148e3b50a"
+    },
+    {
+      "file": "202611030008_business_integration_simulation.sql",
+      "sha256": "83b03a0fbd8cef101e5b7a2c900f8fd62051e26c32c0d586f35519e5c19cf82f"
+    },
+    {
+      "file": "202611030009_business_document_ledger_projection.sql",
+      "sha256": "40da4765db4ae408731a1f19653a53a52d22b59251324a3edf476d5a5cf94dd0"
+    }
+  ],
+  "before": {
+    "accounts": 18,
+    "commands": 5358,
+    "creditTotal": 25944199991.4171,
+    "debitTotal": 25944199991.4171,
+    "entities": 142,
+    "invalidBaseUnits": 0,
+    "items": 60,
+    "journalLines": 1060,
+    "journals": 247,
+    "latestMigration": "202611020015",
+    "legacyAccounts": 1,
+    "legacyEmployees": 1,
+    "migrationCount": 152,
+    "staff": 48,
+    "stockMoves": 162,
+    "stockQuantityTotal": 61904,
+    "tenants": 6,
+    "unbalancedPostedJournals": 0
+  },
+  "after": {
+    "accounts": 18,
+    "commands": 5358,
+    "creditTotal": 25944199991.4171,
+    "debitTotal": 25944199991.4171,
+    "entities": 142,
+    "invalidBaseUnits": 0,
+    "items": 60,
+    "journalLines": 1060,
+    "journals": 247,
+    "latestMigration": "202611030009",
+    "legacyAccounts": 1,
+    "legacyEmployees": 1,
+    "migrationCount": 161,
+    "staff": 48,
+    "stockMoves": 162,
+    "stockQuantityTotal": 61904,
+    "tenants": 6,
+    "unbalancedPostedJournals": 0
+  },
+  "acl": {
+    "browser_rpc_exposed": false,
+    "rpc_count": 7,
+    "security_definer": true,
+    "server_rpc_allowed": true,
+    "tables_private": true,
+    "volatile": true
+  },
+  "existingDataPreserved": true,
+  "cloudAccess": true,
+  "seed": false,
+  "externalProviders": "simulation only; demo tenants only"
+}

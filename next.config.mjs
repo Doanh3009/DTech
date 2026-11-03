@@ -38,6 +38,7 @@ const nextConfig = {
   devIndicators: false,
   reactStrictMode: true,
   outputFileTracingIncludes: {
+    "/api/v1/business/*/*": ["./assets/fonts/pdf/**"],
     "/api/v1/accounting/payslips/*/download": ["./assets/fonts/pdf/**"],
     "/api/v1/leave-requests/*/pdf": ["./assets/fonts/pdf/**"]
   },

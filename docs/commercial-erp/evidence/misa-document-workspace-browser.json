@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-11-03T06:41:11.225Z",
+  "origin": "http://127.0.0.1:3101",
+  "transport": "Real PostgreSQL RPC through loopback HTTP bridge; private files stored locally",
+  "cloudAccess": false,
+  "checks": [
+    "owner_and_editor_real_login",
+    "create_numbered_order_keeps_drawer",
+    "inline_line_changes_parent_version",
+    "actual_attachment_bytes_uploaded_and_hashed",
+    "private_attachment_download_matches_bytes",
+    "order_release_from_saved_lines",
+    "authorized_vietnamese_document_pdf",
+    "posted_line_direct_api_edit_denied",
+    "source_picker_saves_actual_order",
+    "two_actor_payment_request_workflow",
+    "email_transient_retry_persists_receipt",
+    "browser_unknown_response_reuses_exact_command",
+    "delayed_callback_persists_result",
+    "einvoice_rejection_and_success_visible",
+    "simulation_preserves_invoice_number",
+    "cash_voucher_two_actor_posting",
+    "bank_simulation_creates_statement_without_second_journal",
+    "signing_form_pins_source_version_and_attachment",
+    "signature_simulation_keeps_legal_signature_unset",
+    "history_visible_after_real_commands",
+    "no_browser_exceptions"
+  ],
+  "screens": [
+    {
+      "key": "purchase-order-information",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/purchase-order-information-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "purchase-order-information",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/purchase-order-information-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "purchase-order-information",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/purchase-order-information-390.png",
+      "documentWidth": 380
+    },
+    {
+      "key": "purchase-order-lines",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/purchase-order-lines-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "purchase-order-lines",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/purchase-order-lines-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "purchase-order-lines",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/purchase-order-lines-390.png",
+      "documentWidth": 380
+    },
+    {
+      "key": "payment-request-approval",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/payment-request-approval-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "payment-request-approval",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/payment-request-approval-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "payment-request-approval",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/payment-request-approval-390.png",
+      "documentWidth": 380
+    },
+    {
+      "key": "email-simulation-receipt",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/email-simulation-receipt-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "email-simulation-receipt",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/email-simulation-receipt-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "email-simulation-receipt",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/email-simulation-receipt-390.png",
+      "documentWidth": 380
+    },
+    {
+      "key": "einvoice-simulation",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/einvoice-simulation-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "einvoice-simulation",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/einvoice-simulation-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "einvoice-simulation",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/einvoice-simulation-390.png",
+      "documentWidth": 380
+    },
+    {
+      "key": "bank-simulation",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/bank-simulation-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "bank-simulation",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/bank-simulation-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "bank-simulation",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/bank-simulation-390.png",
+      "documentWidth": 380
+    },
+    {
+      "key": "signature-simulation",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/signature-simulation-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "signature-simulation",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/signature-simulation-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "signature-simulation",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/signature-simulation-390.png",
+      "documentWidth": 380
+    },
+    {
+      "key": "document-history",
+      "width": 1440,
+      "path": "docs/ui-evidence/misa-document-workspace/document-history-1440.png",
+      "documentWidth": 1430
+    },
+    {
+      "key": "document-history",
+      "width": 768,
+      "path": "docs/ui-evidence/misa-document-workspace/document-history-768.png",
+      "documentWidth": 758
+    },
+    {
+      "key": "document-history",
+      "width": 390,
+      "path": "docs/ui-evidence/misa-document-workspace/document-history-390.png",
+      "documentWidth": 380
+    }
+  ],
+  "errors": [],
+  "expectedFailures": [
+    {
+      "path": "/records/purchase_lines/ff572d67-54df-469f-8e31-9d4e23dc0037/actions",
+      "status": 409
+    }
+  ],
+  "downloads": [
+    {
+      "key": "email-receipt",
+      "pages": 1,
+      "subject": "Mô phỏng · Không có giá trị giao dịch hoặc chữ ký số pháp lý",
+      "title": "MÔ PHỎNG · SIM-EMAIL-2afc224a-a354-4ee0-ba50-b9337f25f5fe"
+    },
+    {
+      "key": "signature-receipt",
+      "pages": 1,
+      "subject": "Mô phỏng · Không có giá trị giao dịch hoặc chữ ký số pháp lý",
+      "title": "MÔ PHỎNG · SIM-SIGNATURE-507914ab-0315-4f75-8cb0-4aef1d11fdaa"
+    }
+  ],
+  "completed": true
+}

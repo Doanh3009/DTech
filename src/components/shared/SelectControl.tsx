@@ -40,8 +40,7 @@ export function SelectControl({ id, options, placeholder, className, disabled, r
     if (!element || disabled) return;
     // Dispatch a real select change: existing handlers retain target.value,
     // FormData, required validation, and their current controlled contract.
-    element.value = next;
-    element.dispatchEvent(new Event("change", { bubbles: true }));
+    if(element.value!==next){element.value = next;element.dispatchEvent(new Event("change", { bubbles: true }));}
     setInvalid(false);
     setOpen(false);
     trigger.current?.focus({ preventScroll: true });

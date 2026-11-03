@@ -9,6 +9,7 @@ import { StatusBadge } from "@/components/shared/StatusBadge";
 import { businessEntities,entitiesFor,recordStates,type EntityKind } from "./businessCatalog";
 import type { BusinessWorkspace } from "./businessSchemas";
 import {BusinessMetricValue} from "./BusinessMetricValue";
+import{businessCan}from"./businessAccess";
 import { misaViews,misaColumnLabels,misaStateLabels,type MisaView } from "./businessMisaViews";
 import styles from "./Business.module.css";
 type Row=Record<string,string|number|boolean|null>;
@@ -19,7 +20,7 @@ export function BusinessMisaWorkspace({workspace:w,initialView,embedded=false}:{
  const config=misaViews[view];const allowed=entitiesFor(w.industry,w.features);
  const [exporting,setExporting]=useState(false),[exportError,setExportError]=useState(""),[exportStatus,setExportStatus]=useState("");const exportController=useRef<AbortController|null>(null);
  useEffect(()=>()=>exportController.current?.abort(),[]);
- const available=(initialView==="assets"?["assets"]:initialView==="costing"?["costing"]:["bank","advances","loans","payroll","tax","reports"]).filter(v=>allowed.includes(misaViews[v as MisaView].kind)) as MisaView[];
+ const available=(initialView==="assets"?["assets"]:initialView==="costing"?["costing"]:["bank","advances","loans","payroll","tax","reports"]).filter(v=>allowed.includes(misaViews[v as MisaView].kind)&&businessCan(w,misaViews[v as MisaView].kind,"read")) as MisaView[];
  useEffect(()=>{const c=new AbortController();fetch(`/api/v1/business/${w.slug}/misa?${new URLSearchParams({view,from:filters.from,to:filters.to,page:String(page)})}`,{cache:"no-store",signal:c.signal}).then(async r=>{const b=await r.json();if(!r.ok||!b.ok)throw new Error(b.error?.message??"Chưa tải được dữ liệu.");setSnapshot(b.data);}).catch(e=>{if(!c.signal.aborted)setError(e instanceof Error?e.message:"Không thể tải dữ liệu.");}).finally(()=>{if(!c.signal.aborted)setLoading(false);});return()=>c.abort();},[w.slug,view,filters,page,reload]);
  function selectView(v:MisaView){setView(v);setSnapshot(null);setPage(1);setLoading(true);setError("");}
  async function exportCsv(){

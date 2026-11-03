@@ -8,6 +8,7 @@ import { Modal } from "@/components/shared/Overlays";
 const options = [{ label: "Nhân sự", value: "hr" }, { label: "Kỹ thuật", value: "engineering" }];
 
 describe("enterprise Select", () => {
+  it("closes and restores focus without changing the current value",()=>{const change=vi.fn();render(<Select label="Phần hành" value="hr" options={options} onChange={change}/>);const trigger=screen.getByRole("combobox");fireEvent.click(trigger);fireEvent.click(screen.getByRole("option",{name:"Nhân sự"}));expect(change).not.toHaveBeenCalled();expect(screen.queryByRole("listbox")).toBeNull();expect(trigger).toHaveFocus();});
   it("updates FormData and passes the original select event contract", () => {
     const change = vi.fn();
     const { container } = render(<form><Select label="Phòng ban" name="departmentId" onChange={change} options={options} placeholder="Tất cả" /></form>);

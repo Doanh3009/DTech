@@ -3,6 +3,7 @@ import type {BusinessWorkspace} from "./businessSchemas";
 export const businessActionLabels={read:"Xem",report:"Báo cáo",create:"Tạo",update:"Sửa",calculate:"Tính toán",approve:"Duyệt",post:"Ghi nhận / ghi sổ",release:"Phát hành / mở kỳ",complete:"Hoàn thành / khóa kỳ",cancel:"Hủy nháp",reverse:"Đảo chứng từ"};
 export function businessCan(w:BusinessWorkspace,kind:EntityKind,action:keyof typeof businessActionLabels){
  if(w.role==="owner")return true;
+ if(businessEntities[kind]?.readRoles&&!businessEntities[kind].readRoles?.includes(w.role))return false;
  if(w.customAccess&&w.accessExpiresAt&&Date.parse(w.accessExpiresAt)<=Date.now())return false;
  if(action==="reverse"||(w.role==="viewer"&&action!=="read"&&action!=="report"))return false;
  return !w.customAccess||!!w.grants?.find(g=>g.kind===kind)?.actions.includes(action);

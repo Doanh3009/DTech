@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T08:20:06.063Z",
+  "generatedAt": "2026-11-03T06:26:01.616Z",
   "schemaCompiled": true,
   "entityCount": 142,
   "migrations": [
@@ -382,6 +382,42 @@
     {
       "filename": "202611020015_business_module_search.sql",
       "sha256": "6a4dfa3c1dd6b3014ce23f37bed8475f8fd75e68cfb20a11f2673062d9425cc7"
+    },
+    {
+      "filename": "202611030001_business_document_workspace.sql",
+      "sha256": "6264bbfce7fc2d37a6741e7cb932bd2588bbc67cc121984c577086055ad4f9cb"
+    },
+    {
+      "filename": "202611030002_business_base_document_lines.sql",
+      "sha256": "758b877bb16283522ec1f9fe43f468f1d9825643e79d61dad788f91624882286"
+    },
+    {
+      "filename": "202611030003_business_document_export.sql",
+      "sha256": "f29e543a0bb8e0a3945f7961997982c2899ec020511dbdc0df3b72cd9ba5c1e4"
+    },
+    {
+      "filename": "202611030004_business_sensitive_read_boundaries.sql",
+      "sha256": "8798a25792dfa92b5edc421572abb883af5e847dbb0b1a81fe9f7ce708182678"
+    },
+    {
+      "filename": "202611030005_business_source_field_metadata.sql",
+      "sha256": "cb7e3f63f3c25ce72a12242647b8a7244421a69dd7b3d465b807b003b142de41"
+    },
+    {
+      "filename": "202611030006_business_source_access.sql",
+      "sha256": "c6a00c4c95582a9cb41031224707db2339729aef1eef1e81bb5eefe68ae4e5a5"
+    },
+    {
+      "filename": "202611030007_business_simulation_metadata.sql",
+      "sha256": "677526ad4db92581b90eb47da2e1bf023c547951ff96d9e2c2bd24f148e3b50a"
+    },
+    {
+      "filename": "202611030008_business_integration_simulation.sql",
+      "sha256": "83b03a0fbd8cef101e5b7a2c900f8fd62051e26c32c0d586f35519e5c19cf82f"
+    },
+    {
+      "filename": "202611030009_business_document_ledger_projection.sql",
+      "sha256": "40da4765db4ae408731a1f19653a53a52d22b59251324a3edf476d5a5cf94dd0"
     }
   ],
   "cloudAccess": false,
@@ -639,7 +675,7 @@
       "job_post_two_person_approval",
       "candidate_two_person_approval",
       "candidate_consent_validated",
-      "candidate_email_field_redaction",
+      "candidate_pii_viewer_denied",
       "posted_candidate_pii_immutable",
       "duplicate_candidate_rejected",
       "screening_stage_advance",
@@ -1044,8 +1080,82 @@
       "bounded_200_row_batch"
     ],
     "batchRows": 200,
-    "batchDurationMs": 853,
+    "batchDurationMs": 514,
     "data": "synthetic only",
     "cloudAccess": false
+  },
+  "documentWorkspaceVerification": {
+    "passed": true,
+    "checks": [
+      "allocate_on_successful_save",
+      "stable_retry_receipt",
+      "retry_payload_conflict",
+      "failed_save_rolls_back_number",
+      "sequential_numbers",
+      "concurrent_unique_numbers",
+      "purchase_lines_in_document",
+      "child_change_advances_parent_version",
+      "released_line_edit_denied",
+      "released_line_removal_denied",
+      "saved_receipt_replay_after_release",
+      "header_update_permission_required",
+      "draft_line_removal_with_receipt",
+      "minimal_document_history",
+      "cross_tenant_history_denied",
+      "document_export_with_lines",
+      "cross_tenant_export_denied",
+      "viewer_sensitive_records_denied",
+      "viewer_payroll_report_denied",
+      "viewer_history_reason_redacted",
+      "private_calculation_snapshot_redacted",
+      "invalid_polymorphic_source_denied",
+      "draft_polymorphic_source_denied",
+      "cross_tenant_source_denied",
+      "source_read_scope_required",
+      "source_labels_respect_row_scope",
+      "source_picker_status_filter",
+      "private_numbering_table"
+    ],
+    "cloudAccess": false,
+    "data": "synthetic only"
+  },
+  "simulationVerification": {
+    "passed": true,
+    "checks": [
+      "einvoice_success",
+      "einvoice_transient",
+      "einvoice_delayed",
+      "einvoice_rejected",
+      "signature_success",
+      "signature_transient",
+      "signature_delayed",
+      "signature_rejected",
+      "bank_success",
+      "bank_transient",
+      "bank_delayed",
+      "bank_rejected",
+      "email_success",
+      "email_transient",
+      "email_delayed",
+      "email_rejected",
+      "stable_command_retry",
+      "semantic_create_deduplication",
+      "command_payload_conflict",
+      "stale_simulation_version_denied",
+      "cross_tenant_receipt_denied",
+      "viewer_write_denied",
+      "viewer_recipient_redacted",
+      "non_demo_command_denied",
+      "non_demo_receipt_denied",
+      "cancel_delayed_request",
+      "bank_statement_created_once_per_success",
+      "simulation_creates_no_journal",
+      "simulation_does_not_mark_legal_signature",
+      "private_tables"
+    ],
+    "cloudAccess": false,
+    "data": "synthetic only",
+    "objectStorageBytesVerified": false,
+    "externalNetworkRequests": 0
   }
 }

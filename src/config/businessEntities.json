@@ -123,7 +123,8 @@
         "type": "text",
         "max": 30
       }
-    }
+    },
+    "lineKind": "bom_lines"
   },
   "bom_lines": {
     "label": "Nguyên liệu định mức",
@@ -155,7 +156,9 @@
         "max": 100,
         "default": 0
       }
-    }
+    },
+    "parentKind": "boms",
+    "parentField": "bom_id"
   },
   "work_centers": {
     "label": "Trạm & nguồn lực",
@@ -208,7 +211,11 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "lineKind": "operations",
+    "simulationServices": [
+      "email"
+    ]
   },
   "operations": {
     "label": "Công đoạn sản xuất",
@@ -240,7 +247,9 @@
         "min": 0,
         "default": 0
       }
-    }
+    },
+    "parentKind": "work_orders",
+    "parentField": "work_order_id"
   },
   "lots": {
     "label": "Lô & hạn sử dụng",
@@ -298,7 +307,10 @@
         "min": 0.0001,
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "stock_moves": {
     "label": "Nhập / xuất kho",
@@ -353,7 +365,10 @@
         "type": "ref",
         "ref": "sales_orders"
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "material_issues": {
     "label": "Cấp nguyên liệu",
@@ -400,7 +415,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "production_reports": {
     "label": "Sản lượng & hao hụt",
@@ -466,7 +484,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "quality_checks": {
     "label": "Kiểm tra chất lượng",
@@ -505,7 +526,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "safety_incidents": {
     "label": "Sự cố an toàn lao động",
@@ -573,7 +597,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "quality_nonconformances": {
     "label": "Điểm không phù hợp chất lượng",
@@ -643,7 +670,10 @@
         "ref": "staff",
         "requiresFeature": "people"
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "corrective_actions": {
     "label": "Hành động khắc phục",
@@ -662,10 +692,20 @@
         "required": true
       },
       "source_id": {
-        "label": "Nguồn phát sinh",
+        "label": "Hồ sơ nguồn",
         "type": "text",
         "required": true,
-        "max": 36
+        "max": 36,
+        "lookup": {
+          "kindField": "source_kind",
+          "kinds": [
+            "safety_incidents",
+            "quality_nonconformances"
+          ],
+          "statuses": [
+            "posted"
+          ]
+        }
       },
       "action_type": {
         "label": "Loại hành động",
@@ -710,7 +750,10 @@
         "ref": "staff",
         "requiresFeature": "people"
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "sales_orders": {
     "label": "Đơn bán hàng",
@@ -733,7 +776,11 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "lineKind": "sales_lines",
+    "simulationServices": [
+      "email"
+    ]
   },
   "sales_lines": {
     "label": "Chi tiết đơn bán",
@@ -764,7 +811,9 @@
         "min": 0,
         "default": 0
       }
-    }
+    },
+    "parentKind": "sales_orders",
+    "parentField": "sales_order_id"
   },
   "receivables": {
     "label": "Công nợ khách hàng",
@@ -801,7 +850,10 @@
         "required": true
       }
     },
-    "workspaceFeature": "accounting"
+    "workspaceFeature": "accounting",
+    "simulationServices": [
+      "email"
+    ]
   },
   "payments": {
     "label": "Thu tiền",
@@ -832,7 +884,11 @@
         "requiresFeature": "accounting"
       }
     },
-    "workspaceFeature": "accounting"
+    "workspaceFeature": "accounting",
+    "simulationServices": [
+      "bank",
+      "email"
+    ]
   },
   "projects": {
     "label": "Công trình & ngân sách",
@@ -907,7 +963,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "project_updates": {
     "label": "Tiến độ công trình",
@@ -932,7 +991,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "interactions": {
     "label": "Chăm sóc khách hàng",
@@ -1001,7 +1063,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "project_materials": {
     "label": "Vật tư công trình",
@@ -1055,7 +1120,10 @@
         "required": false,
         "requiresFeature": "purchasing"
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "gl_accounts": {
     "label": "Hệ thống tài khoản",
@@ -1098,7 +1166,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "journal_entries": {
     "label": "Chứng từ kế toán",
@@ -1137,7 +1208,10 @@
         },
         "default": "general"
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "journal_lines": {
     "label": "Chi tiết định khoản",
@@ -1232,7 +1306,11 @@
         "type": "ref",
         "ref": "projects"
       }
-    }
+    },
+    "simulationServices": [
+      "bank",
+      "email"
+    ]
   },
   "purchase_orders": {
     "label": "Đơn mua hàng",
@@ -1269,7 +1347,11 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "lineKind": "purchase_lines",
+    "simulationServices": [
+      "email"
+    ]
   },
   "purchase_lines": {
     "label": "Chi tiết đơn mua",
@@ -1307,7 +1389,9 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "parentKind": "purchase_orders",
+    "parentField": "purchase_order_id"
   },
   "purchase_receipts": {
     "label": "Nhận hàng theo đơn mua",
@@ -1354,7 +1438,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "vendor_invoices": {
     "label": "Hóa đơn mua hàng",
@@ -1422,7 +1509,10 @@
         "ref": "gl_accounts",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "sales_invoices": {
     "label": "Hóa đơn bán hàng",
@@ -1491,7 +1581,11 @@
         "ref": "gl_accounts",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "einvoice",
+      "email"
+    ]
   },
   "payables": {
     "label": "Công nợ nhà cung cấp",
@@ -1528,7 +1622,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "supplier_payments": {
     "label": "Thanh toán nhà cung cấp",
@@ -1558,7 +1655,11 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "bank",
+      "email"
+    ]
   },
   "staff": {
     "label": "Nhân sự",
@@ -1671,7 +1772,10 @@
       }
     },
     "requiresApproval": true,
-    "misaDomain": true
+    "misaDomain": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "staff_history": {
     "label": "Lịch sử nhân sự",
@@ -1738,7 +1842,10 @@
       }
     },
     "requiresApproval": true,
-    "misaDomain": true
+    "misaDomain": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "timecards": {
     "label": "Bảng công",
@@ -1782,7 +1889,10 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "salary_runs": {
     "label": "Bảng lương",
@@ -1835,7 +1945,15 @@
         "min": 0.0001,
         "max": 24
       }
-    }
+    },
+    "lineKind": "salary_lines",
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "email"
+    ]
   },
   "salary_lines": {
     "label": "Chi tiết bảng lương",
@@ -1896,7 +2014,13 @@
         "min": 0,
         "computed": true
       }
-    }
+    },
+    "parentKind": "salary_runs",
+    "parentField": "salary_run_id",
+    "readRoles": [
+      "owner",
+      "editor"
+    ]
   },
   "assets": {
     "label": "TSCĐ, CCDC & chi phí trả trước",
@@ -2095,7 +2219,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "asset_charge_runs": {
     "label": "Tính khấu hao & phân bổ",
@@ -2127,7 +2254,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "asset_charge_lines": {
     "label": "Chi tiết khấu hao & phân bổ",
@@ -2257,7 +2387,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "advances": {
     "label": "Đề nghị tạm ứng",
@@ -2315,6 +2448,9 @@
     "requiresApproval": true,
     "requiresFeatures": [
       "people"
+    ],
+    "simulationServices": [
+      "email"
     ]
   },
   "advance_settlements": {
@@ -2370,7 +2506,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "loans": {
     "label": "Khế ước vay",
@@ -2440,7 +2579,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "loan_movements": {
     "label": "Giải ngân & trả nợ",
@@ -2506,7 +2648,11 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "bank",
+      "email"
+    ]
   },
   "loan_installments": {
     "label": "Lịch đáo hạn",
@@ -2652,7 +2798,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "costing_lines": {
     "label": "Nguồn chi phí giá thành",
@@ -2740,7 +2889,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "overhead_allocations": {
     "label": "Phân bổ chi phí chung",
@@ -2843,7 +2995,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "invoice_refunds": {
     "label": "Hoàn tiền điều chỉnh hóa đơn",
@@ -2880,7 +3035,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "closing_runs": {
     "label": "Kết chuyển cuối kỳ",
@@ -2923,7 +3081,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "financial_report_lines": {
     "label": "Chỉ tiêu báo cáo tài chính",
@@ -3147,7 +3308,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "tax_filing_lines": {
     "label": "Chỉ tiêu hồ sơ thuế",
@@ -3236,7 +3400,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "stock_valuation_lines": {
     "label": "Chi tiết tính giá xuất kho",
@@ -3340,9 +3507,21 @@
         "default": "journal"
       },
       "source_record_id": {
-        "label": "ID chứng từ vận hành",
+        "label": "Chứng từ vận hành",
         "type": "text",
-        "max": 50
+        "max": 50,
+        "lookup": {
+          "kindField": "source_kind",
+          "kinds": [
+            "material_issues",
+            "project_materials",
+            "production_reports",
+            "project_costs"
+          ],
+          "statuses": [
+            "posted"
+          ]
+        }
       },
       "document_date": {
         "label": "Ngày đối chiếu",
@@ -3351,7 +3530,10 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "simulationServices": [
+      "email"
+    ]
   },
   "tax_brackets": {
     "label": "Bậc thuế theo chính sách",
@@ -3451,7 +3633,11 @@
     "requiresFeatures": [
       "accounting"
     ],
-    "misaDomain": true
+    "misaDomain": true,
+    "readRoles": [
+      "owner",
+      "editor"
+    ]
   },
   "payroll_tax_runs": {
     "label": "Tính bảo hiểm & thuế trên lương",
@@ -3496,7 +3682,14 @@
       }
     },
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "email"
+    ]
   },
   "payroll_statutory_lines": {
     "label": "Chi tiết thuế & bảo hiểm lương",
@@ -3650,7 +3843,14 @@
       "people"
     ],
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "email"
+    ]
   },
   "project_wbs": {
     "label": "Hạng mục công trình",
@@ -3754,7 +3954,10 @@
         "computed": true
       }
     },
-    "lineKind": "budget_lines"
+    "lineKind": "budget_lines",
+    "simulationServices": [
+      "email"
+    ]
   },
   "budget_lines": {
     "label": "Chi tiết ngân sách",
@@ -3835,7 +4038,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "project_acceptances": {
     "label": "Nghiệm thu khối lượng",
@@ -3893,7 +4099,10 @@
         "default": 0,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "acceptance_billings": {
     "label": "Đối chiếu nghiệm thu & hóa đơn",
@@ -3936,7 +4145,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "procurement_requests": {
     "label": "Đề nghị mua sắm",
@@ -3978,7 +4190,10 @@
         "computed": true
       }
     },
-    "lineKind": "procurement_request_lines"
+    "lineKind": "procurement_request_lines",
+    "simulationServices": [
+      "email"
+    ]
   },
   "procurement_request_lines": {
     "label": "Chi tiết đề nghị mua",
@@ -4078,7 +4293,10 @@
         "computed": true
       }
     },
-    "lineKind": "supplier_quote_lines"
+    "lineKind": "supplier_quote_lines",
+    "simulationServices": [
+      "email"
+    ]
   },
   "supplier_quote_lines": {
     "label": "Chi tiết báo giá nhà cung cấp",
@@ -4156,7 +4374,10 @@
         "computed": true
       }
     },
-    "lineKind": "procurement_award_lines"
+    "lineKind": "procurement_award_lines",
+    "simulationServices": [
+      "email"
+    ]
   },
   "procurement_award_lines": {
     "label": "Chi tiết lựa chọn đặt mua",
@@ -4238,7 +4459,10 @@
         "default": 0,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "stock_counts": {
     "label": "Biên bản kiểm kê kho",
@@ -4282,7 +4506,10 @@
         "computed": true
       }
     },
-    "lineKind": "stock_count_lines"
+    "lineKind": "stock_count_lines",
+    "simulationServices": [
+      "email"
+    ]
   },
   "stock_count_lines": {
     "label": "Chi tiết kiểm kê",
@@ -4391,7 +4618,10 @@
         "default": 0,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "project_variations": {
     "label": "Điều chỉnh khối lượng hợp đồng",
@@ -4437,7 +4667,10 @@
         "required": true,
         "max": 500
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "project_lifecycle_events": {
     "label": "Trạng thái vận hành công trình",
@@ -4475,7 +4708,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "shifts": {
     "label": "Ca làm việc",
@@ -4597,7 +4833,10 @@
         "default": 0,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "leave_entitlements": {
     "label": "Hạn mức nghỉ phép",
@@ -4690,7 +4929,10 @@
         "default": 0,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "leave_request_lines": {
     "label": "Ngày nghỉ phép",
@@ -4774,7 +5016,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "attendance_confirmations": {
     "label": "Xác nhận giờ công theo ca",
@@ -4858,7 +5103,10 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "attendance_locks": {
     "label": "Khóa kỳ chấm công",
@@ -4904,7 +5152,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "salary_payments": {
     "label": "Chi trả lương nhân viên",
@@ -4972,7 +5223,15 @@
     ],
     "calculable": true,
     "misaDomain": true,
-    "requiresApproval": true
+    "requiresApproval": true,
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "bank",
+      "email"
+    ]
   },
   "campaigns": {
     "label": "Chiến dịch marketing",
@@ -5140,7 +5399,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "lead_conversions": {
     "label": "Chuyển đổi khách tiềm năng",
@@ -5210,7 +5472,10 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "opportunities": {
     "label": "Cơ hội bán hàng",
@@ -5315,7 +5580,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "customer_quotes": {
     "label": "Báo giá khách hàng",
@@ -5398,7 +5666,10 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "customer_quote_lines": {
     "label": "Chi tiết báo giá khách hàng",
@@ -5487,7 +5758,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "sales_contracts": {
     "label": "Hợp đồng bán hàng",
@@ -5550,7 +5824,10 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "sales_contract_lines": {
     "label": "Hạng mục hợp đồng",
@@ -5644,7 +5921,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "contract_order_releases": {
     "label": "Đơn hàng từ hợp đồng",
@@ -5691,7 +5971,10 @@
         "required": false,
         "computed": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "contract_order_lines": {
     "label": "Chi tiết đặt hàng hợp đồng",
@@ -5872,7 +6155,10 @@
         "required": true,
         "max": 1000
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "project_tasks": {
     "label": "Công việc công trình",
@@ -6002,7 +6288,10 @@
         "type": "text",
         "max": 180
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "payment_requests": {
     "label": "Đề nghị thanh toán",
@@ -6046,12 +6335,36 @@
       "source_kind": {
         "label": "Nguồn",
         "type": "text",
-        "max": 80
+        "max": 80,
+        "kindOptions": [
+          "vendor_invoices",
+          "purchase_orders",
+          "salary_runs",
+          "advances",
+          "project_acceptances",
+          "loans"
+        ]
       },
       "source_id": {
-        "label": "Mã chứng từ nguồn",
+        "label": "Chứng từ nguồn",
         "type": "text",
-        "max": 36
+        "max": 36,
+        "lookup": {
+          "kindField": "source_kind",
+          "kinds": [
+            "vendor_invoices",
+            "purchase_orders",
+            "salary_runs",
+            "advances",
+            "project_acceptances",
+            "loans"
+          ],
+          "statuses": [
+            "posted",
+            "released",
+            "completed"
+          ]
+        }
       },
       "requested_on": {
         "label": "Ngày đề nghị",
@@ -6084,7 +6397,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "recruitment_requisitions": {
     "label": "Yêu cầu tuyển dụng",
@@ -6168,7 +6484,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "recruitment_candidates": {
     "label": "Ứng viên",
@@ -6281,7 +6600,14 @@
           "editor"
         ]
       }
-    }
+    },
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "email"
+    ]
   },
   "recruitment_interviews": {
     "label": "Đánh giá phỏng vấn",
@@ -6350,7 +6676,14 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "email"
+    ]
   },
   "recruitment_offers": {
     "label": "Đề nghị tuyển dụng",
@@ -6400,7 +6733,14 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "email"
+    ]
   },
   "recruitment_hires": {
     "label": "Tiếp nhận nhân sự mới",
@@ -6449,7 +6789,14 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "readRoles": [
+      "owner",
+      "editor"
+    ],
+    "simulationServices": [
+      "email"
+    ]
   },
   "recruitment_job_posts": {
     "label": "Tin tuyển dụng",
@@ -6503,7 +6850,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "performance_cycles": {
     "label": "Chu kỳ đánh giá",
@@ -6602,7 +6952,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "performance_goal_checkins": {
     "label": "Cập nhật KPI",
@@ -6654,7 +7007,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "performance_goal_changes": {
     "label": "Điều chỉnh mục tiêu",
@@ -6691,7 +7047,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "performance_reviews": {
     "label": "Đánh giá cuối kỳ",
@@ -6753,7 +7112,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "performance_review_acknowledgements": {
     "label": "Xác nhận đánh giá",
@@ -6783,7 +7145,10 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "document_signing_requests": {
     "label": "Yêu cầu ký văn bản",
@@ -6796,37 +7161,240 @@
         "label": "Loại hồ sơ nguồn",
         "type": "text",
         "required": true,
-        "max": 80
+        "max": 80,
+        "kindOptions": [
+          "work_orders",
+          "lot_links",
+          "stock_moves",
+          "material_issues",
+          "production_reports",
+          "quality_checks",
+          "safety_incidents",
+          "quality_nonconformances",
+          "corrective_actions",
+          "sales_orders",
+          "receivables",
+          "payments",
+          "project_costs",
+          "project_updates",
+          "production_receipts",
+          "project_materials",
+          "accounting_periods",
+          "journal_entries",
+          "cash_vouchers",
+          "purchase_orders",
+          "purchase_receipts",
+          "vendor_invoices",
+          "sales_invoices",
+          "payables",
+          "supplier_payments",
+          "employment_contracts",
+          "staff_history",
+          "timecards",
+          "salary_runs",
+          "asset_events",
+          "asset_charge_runs",
+          "bank_matches",
+          "advances",
+          "advance_settlements",
+          "loans",
+          "loan_movements",
+          "costing_runs",
+          "overhead_pools",
+          "invoice_adjustments",
+          "invoice_refunds",
+          "closing_runs",
+          "tax_filings",
+          "stock_valuation_runs",
+          "cost_source_links",
+          "payroll_tax_runs",
+          "payroll_cost_allocations",
+          "budget_versions",
+          "budget_exceptions",
+          "project_acceptances",
+          "acceptance_billings",
+          "procurement_requests",
+          "supplier_quotes",
+          "procurement_awards",
+          "stock_transfers",
+          "stock_counts",
+          "project_material_returns",
+          "project_variations",
+          "project_lifecycle_events",
+          "shift_assignments",
+          "leave_requests",
+          "overtime_requests",
+          "attendance_confirmations",
+          "attendance_locks",
+          "salary_payments",
+          "lead_events",
+          "lead_conversions",
+          "opportunity_events",
+          "customer_quotes",
+          "quote_decisions",
+          "sales_contracts",
+          "contract_amendments",
+          "contract_order_releases",
+          "ticket_events",
+          "employee_documents",
+          "payment_requests",
+          "recruitment_requisitions",
+          "recruitment_candidates",
+          "recruitment_interviews",
+          "recruitment_offers",
+          "recruitment_hires",
+          "recruitment_job_posts",
+          "performance_goals",
+          "performance_goal_checkins",
+          "performance_goal_changes",
+          "performance_reviews",
+          "performance_review_acknowledgements",
+          "document_repository",
+          "document_versions",
+          "meetings",
+          "meeting_attendees"
+        ]
       },
       "source_record_id": {
-        "label": "Mã hồ sơ nguồn",
+        "label": "Hồ sơ cần ký",
         "type": "text",
         "required": true,
-        "max": 36
+        "max": 36,
+        "lookup": {
+          "kindField": "source_kind",
+          "kinds": [
+            "work_orders",
+            "lot_links",
+            "stock_moves",
+            "material_issues",
+            "production_reports",
+            "quality_checks",
+            "safety_incidents",
+            "quality_nonconformances",
+            "corrective_actions",
+            "sales_orders",
+            "receivables",
+            "payments",
+            "project_costs",
+            "project_updates",
+            "production_receipts",
+            "project_materials",
+            "accounting_periods",
+            "journal_entries",
+            "cash_vouchers",
+            "purchase_orders",
+            "purchase_receipts",
+            "vendor_invoices",
+            "sales_invoices",
+            "payables",
+            "supplier_payments",
+            "employment_contracts",
+            "staff_history",
+            "timecards",
+            "salary_runs",
+            "asset_events",
+            "asset_charge_runs",
+            "bank_matches",
+            "advances",
+            "advance_settlements",
+            "loans",
+            "loan_movements",
+            "costing_runs",
+            "overhead_pools",
+            "invoice_adjustments",
+            "invoice_refunds",
+            "closing_runs",
+            "tax_filings",
+            "stock_valuation_runs",
+            "cost_source_links",
+            "payroll_tax_runs",
+            "payroll_cost_allocations",
+            "budget_versions",
+            "budget_exceptions",
+            "project_acceptances",
+            "acceptance_billings",
+            "procurement_requests",
+            "supplier_quotes",
+            "procurement_awards",
+            "stock_transfers",
+            "stock_counts",
+            "project_material_returns",
+            "project_variations",
+            "project_lifecycle_events",
+            "shift_assignments",
+            "leave_requests",
+            "overtime_requests",
+            "attendance_confirmations",
+            "attendance_locks",
+            "salary_payments",
+            "lead_events",
+            "lead_conversions",
+            "opportunity_events",
+            "customer_quotes",
+            "quote_decisions",
+            "sales_contracts",
+            "contract_amendments",
+            "contract_order_releases",
+            "ticket_events",
+            "employee_documents",
+            "payment_requests",
+            "recruitment_requisitions",
+            "recruitment_candidates",
+            "recruitment_interviews",
+            "recruitment_offers",
+            "recruitment_hires",
+            "recruitment_job_posts",
+            "performance_goals",
+            "performance_goal_checkins",
+            "performance_goal_changes",
+            "performance_reviews",
+            "performance_review_acknowledgements",
+            "document_repository",
+            "document_versions",
+            "meetings",
+            "meeting_attendees"
+          ],
+          "statuses": [
+            "posted",
+            "released",
+            "completed"
+          ]
+        }
       },
       "source_version": {
         "label": "Phiên bản hồ sơ",
         "type": "number",
         "required": true,
-        "min": 1
+        "min": 1,
+        "uiReadOnly": true
       },
       "source_attachment_id": {
         "label": "Tệp cần ký",
         "type": "text",
         "required": true,
-        "max": 36
+        "max": 36,
+        "attachmentSource": {
+          "kindField": "source_kind",
+          "recordField": "source_record_id"
+        }
       },
       "provider_key": {
         "label": "Nhà cung cấp ký",
         "type": "text",
         "required": true,
-        "max": 50
+        "max": 50,
+        "uiOptions": {
+          "simulation": "Mô phỏng"
+        },
+        "default": "simulation"
       },
       "idempotency_key": {
         "label": "Mã yêu cầu duy nhất",
         "type": "text",
         "required": true,
-        "max": 100
+        "max": 100,
+        "uiReadOnly": true,
+        "uiGenerate": "uuid"
       },
       "signer_staff_id": {
         "label": "Người ký",
@@ -6858,7 +7426,11 @@
         "type": "date",
         "required": true
       }
-    }
+    },
+    "simulationServices": [
+      "signature",
+      "email"
+    ]
   },
   "document_repository": {
     "label": "Kho văn bản",
@@ -6922,7 +7494,10 @@
         "computed": true,
         "ref": "document_versions"
       }
-    }
+    },
+    "simulationServices": [
+      "email"
+    ]
   },
   "document_versions": {
     "label": "Phiên bản văn bản",
@@ -7050,7 +7625,10 @@
         "default": "planned"
       }
     },
-    "lineKind": "meeting_attendees"
+    "lineKind": "meeting_attendees",
+    "simulationServices": [
+      "email"
+    ]
   },
   "meeting_attendees": {
     "label": "Người tham dự",

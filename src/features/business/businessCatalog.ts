@@ -9,16 +9,17 @@ export const featureLabels={accounting:"Kế toán",purchasing:"Mua hàng",peopl
 export type BusinessFeature=keyof typeof featureLabels;
 export const featureKeys=Object.keys(featureLabels) as [BusinessFeature,...BusinessFeature[]];
 export type EntityKind=keyof typeof entities;
-export interface EntityField {label:string;type:"text"|"email"|"number"|"date"|"time"|"enum"|"ref"|"boolean";required?:boolean;min?:number;max?:number;integer?:boolean;default?:string|number|boolean;computed?:boolean;requiresFeature?:BusinessFeature;ref?:EntityKind;values?:Record<string,string>}
-export interface EntityDefinition {label:string;feature:BusinessFeature;workspaceFeature?:BusinessFeature;mode:"master"|"order"|"document";industries?:BusinessIndustry[];requiresFeatures?:BusinessFeature[];requiresApproval?:boolean;calculable?:boolean;generatedOnly?:boolean;lineKind?:EntityKind;parentKind?:EntityKind;parentField?:string;fields:Record<string,EntityField>}
+export interface EntityField {label:string;type:"text"|"email"|"number"|"date"|"time"|"enum"|"ref"|"boolean";required?:boolean;min?:number;max?:number;integer?:boolean;default?:string|number|boolean;computed?:boolean;requiresFeature?:BusinessFeature;ref?:EntityKind;values?:Record<string,string>;readRoles?:string[];writeRoles?:string[];lookup?:{kindField:string;kinds:EntityKind[];statuses?:string[]};kindOptions?:EntityKind[];attachmentSource?:{kindField:string;recordField:string};uiReadOnly?:boolean;uiGenerate?:"uuid";uiOptions?:Record<string,string>}
+export interface EntityDefinition {label:string;feature:BusinessFeature;workspaceFeature?:BusinessFeature;mode:"master"|"order"|"document";industries?:BusinessIndustry[];requiresFeatures?:BusinessFeature[];requiresApproval?:boolean;calculable?:boolean;generatedOnly?:boolean;lineKind?:EntityKind;parentKind?:EntityKind;parentField?:string;fields:Record<string,EntityField>;readRoles?:string[];simulationServices?:("einvoice"|"signature"|"bank"|"email")[]}
 export const businessEntities=entities as Record<EntityKind,EntityDefinition>;
 export const entityKeys=Object.keys(entities) as [EntityKind,...EntityKind[]];
 export const recordStates={draft:"Nháp",active:"Đang sử dụng",inactive:"Ngừng sử dụng",released:"Đang thực hiện",completed:"Hoàn thành",posted:"Đã ghi nhận",cancelled:"Đã hủy"} as const;
 export function entitiesFor(industry:BusinessIndustry,features:readonly string[]){return entityKeys.filter(k=>{const e=businessEntities[k];return features.includes(e.feature)&&(!e.industries||e.industries.includes(industry))&&(!e.requiresFeatures||e.requiresFeatures.every(f=>features.includes(f)));});}
 export function workspaceFeatureFor(kind:EntityKind,features:readonly string[]){const e=businessEntities[kind];return e?.workspaceFeature&&features.includes(e.workspaceFeature)?e.workspaceFeature:e?.feature;}
 export function entitiesForFeature(industry:BusinessIndustry,features:readonly string[],feature:BusinessFeature){return entitiesFor(industry,features).filter(k=>workspaceFeatureFor(k,features)===feature);}
-export function recordSchema(kind:EntityKind){
- const fields:Record<string,z.ZodTypeAny>={code:z.string().trim().min(1).max(50).regex(/^[\p{L}\p{N}._/-]+$/u),name:z.string().trim().min(2).max(180),notes:z.string().trim().max(2000)};
+export function recordSchema(kind:EntityKind,{autoCode=false}:{autoCode?:boolean}={}){
+ const code=z.string().trim().min(1).max(50).regex(/^[\p{L}\p{N}._/-]+$/u);
+ const fields:Record<string,z.ZodTypeAny>={code:autoCode?z.union([z.literal(""),code]):code,name:z.string().trim().min(2).max(180),notes:z.string().trim().max(2000)};
  for(const [key,f]of Object.entries(businessEntities[kind].fields)){
   if(f.computed)continue;
   let schema:z.ZodTypeAny;

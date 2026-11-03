@@ -9,13 +9,36 @@ import { businessAccessCommand, businessKind, businessListSchema, businessLoginS
 import { businessRpc, businessSessionArgs, changeBusinessPassword, commandBusinessMember, loginBusiness, logoutBusiness, readBusinessWorkspace, saveBusinessRecord } from "@/features/business/businessService";
 import { salesDeliverySchema } from "@/features/business/salesFulfillment";
 import { featureKeys } from "@/features/business/businessCatalog";
+import{buildBusinessDocumentPdf,type BusinessDocumentExport}from"@/features/business/businessDocumentPdf";
 import { misaViewKeys } from "@/features/business/businessMisaViews";
 import { buildBusinessMisaCsv, collectBusinessMisaExportRows, type BusinessMisaExportPage } from "@/features/business/businessMisaExport";
 import {approvalPolicySchema,approvalDelegationSchema,formVersionSchema,formRecordSchema} from "@/features/business/businessApprovalSchemas";
+import {businessSimulationCommand,type SimulationReceipt} from "@/features/business/businessSimulation";
+import {buildBusinessSimulationPdf} from "@/features/business/businessSimulationPdf";
 type Context={params:Promise<{slug:string;path:string[]}>};
 const ok=(data:unknown)=>successResponse(data,{headers:{"cache-control":"no-store"}});
 export async function GET(request:Request,{params}:Context){try{
  const {slug,path}=await params;
+ if(path.length===4&&path[0]==="records"&&path[3]==="simulations"){
+  if(new URL(request.url).search)throw new AppError("VALIDATION_ERROR");
+  return ok(await businessRpc("business_simulation_snapshot",{...await businessSessionArgs(slug),p_kind:parseWithSchema(businessKind,path[1]),p_id:parseWithSchema(z.string().uuid(),path[2])}));
+ }
+ if(path.length===3&&path[0]==="simulations"&&path[2]==="receipt"){
+  const query=parseWithSchema(z.object({format:z.enum(["pdf","json"]).default("pdf")}).strict(),Object.fromEntries(new URL(request.url).searchParams));
+  const id=parseWithSchema(z.string().uuid(),path[1]),receipt=await businessRpc<SimulationReceipt>("business_simulation_receipt",{...await businessSessionArgs(slug),p_id:id});
+  if(query.format==="json")return new Response(JSON.stringify(receipt,null,2),{headers:{"content-type":"application/json; charset=utf-8","cache-control":"private, no-store","content-disposition":`attachment; filename="SIM-${id}.json"`,"x-content-type-options":"nosniff"}});
+  return new Response(Uint8Array.from(await buildBusinessSimulationPdf(receipt)),{headers:{"content-type":"application/pdf","cache-control":"private, no-store","content-disposition":`attachment; filename="SIM-${id}.pdf"`,"x-content-type-options":"nosniff"}});
+ }
+ if(path.length===4&&path[0]==="records"&&path[3]==="pdf"){
+  if(new URL(request.url).search)throw new AppError("VALIDATION_ERROR");
+  const kind=parseWithSchema(businessKind,path[1]),id=parseWithSchema(z.string().uuid(),path[2]);
+  const source=await businessRpc<BusinessDocumentExport>("business_document_export",{...await businessSessionArgs(slug),p_kind:kind,p_id:id});
+  const pdf=await buildBusinessDocumentPdf(kind,source);return new Response(Uint8Array.from(pdf),{headers:{"content-type":"application/pdf","cache-control":"private, no-store","content-disposition":`attachment; filename="${kind}-${id}.pdf"`}});
+ }
+ if(path.length===4&&path[0]==="records"&&path[3]==="history"){
+  const query=parseWithSchema(z.object({page:z.coerce.number().int().min(1).max(100000).default(1)}).strict(),Object.fromEntries(new URL(request.url).searchParams));
+  return ok(await businessRpc("business_record_history",{...await businessSessionArgs(slug),p_kind:parseWithSchema(businessKind,path[1]),p_id:parseWithSchema(z.string().uuid(),path[2]),p_page:query.page}));
+ }
  if(path.length===3&&path[0]==="attachments")return ok(await listBusinessAttachments(slug,parseWithSchema(businessKind,path[1]),parseWithSchema(z.string().uuid(),path[2])));
  if(path.length===4&&path[0]==="attachments")return await downloadBusinessAttachment(slug,parseWithSchema(businessKind,path[1]),parseWithSchema(z.string().uuid(),path[2]),parseWithSchema(z.string().uuid(),path[3]));
  if(path.length===1&&path[0]==="session")return ok(await readBusinessWorkspace(slug));
@@ -112,13 +135,17 @@ export async function GET(request:Request,{params}:Context){try{
  }
  if(path.length===2&&["records","options"].includes(path[0])){
   const kind=parseWithSchema(businessKind,path[1]);const args={...await businessSessionArgs(slug),p_kind:kind};
-  if(path[0]==="options"){const f=parseWithSchema(z.object({q:z.string().max(100).default(""),selected:z.string().uuid().optional()}).strict(),Object.fromEntries(new URL(request.url).searchParams));return ok(await businessRpc("business_record_options",{...args,p_query:f.q,p_selected:f.selected??null}));}
+  if(path[0]==="options"){const f=parseWithSchema(z.object({q:z.string().max(100).default(""),selected:z.string().uuid().optional(),statuses:z.string().max(80).regex(/^(draft|active|inactive|released|completed|posted|cancelled)(,(draft|active|inactive|released|completed|posted|cancelled)){0,6}$/).optional()}).strict(),Object.fromEntries(new URL(request.url).searchParams));return ok(await businessRpc(f.statuses?"business_record_options_filtered":"business_record_options",{...args,p_query:f.q,p_selected:f.selected??null,...(f.statuses?{p_statuses:f.statuses.split(",")}:{} )}));}
   const f=parseWithSchema(businessListSchema,Object.fromEntries(new URL(request.url).searchParams));
   return ok(await businessRpc("business_list_records",{...args,p_page:f.page,p_query:f.q}));
  }throw new AppError("NOT_FOUND");
 }catch(e){return errorResponse(e);}}
 export async function POST(request:Request,{params}:Context){try{
  const {slug,path}=await params;
+ if(path.length===4&&path[0]==="records"&&path[3]==="simulations"){
+  const kind=parseWithSchema(businessKind,path[1]),id=parseWithSchema(z.string().uuid(),path[2]),d=parseWithSchema(businessSimulationCommand,await readTrialBody(request,4000));
+  return ok(await businessRpc("business_simulation_command",{...await businessSessionArgs(slug),p_kind:kind,p_id:id,p_expected_version:d.rowVersion,p_service:d.service,p_scenario:d.scenario,p_recipient:d.recipient,p_operation:d.operation,p_simulation_id:d.simulationId,p_simulation_version:d.simulationVersion,p_request_id:d.requestId,p_payload_hash:businessHash("simulation",JSON.stringify({kind,id,...d}))}));
+ }
  if(path.length===2&&path[0]==="notifications"&&path[1]==="read"){const d=parseWithSchema(z.object({id:z.string().uuid()}).strict(),await readTrialBody(request,1000));return ok(await businessRpc("business_notification_read",{...await businessSessionArgs(slug),p_id:d.id}));}
  if(path.length===2&&path[0]==="members"&&path[1]==="transfer-owner"){
   const d=parseWithSchema(businessOwnerTransfer,await readTrialBody(request,3000));

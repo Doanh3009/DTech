@@ -1,0 +1,6 @@
+{
+  "einvoice": {"label": "Hóa đơn điện tử", "action": "Phát hành mô phỏng", "result": "Đã phát hành mô phỏng"},
+  "signature": {"label": "Chữ ký số", "action": "Ký mô phỏng", "result": "Đã ký mô phỏng"},
+  "bank": {"label": "Ngân hàng", "action": "Nhận sao kê mô phỏng", "result": "Đã nhận sao kê mô phỏng"},
+  "email": {"label": "Email", "action": "Gửi mô phỏng", "result": "Đã gửi mô phỏng"}
+}
