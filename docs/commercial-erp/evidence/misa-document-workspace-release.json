@@ -1,0 +1,239 @@
+{
+  "generatedAt": "2026-11-03T06:56:47.979Z",
+  "deployment": {
+    "checkedAt": "2026-11-03T06:50:42.223Z",
+    "project": "dimixo-erp",
+    "projectId": "prj_o7pcu5PyLCWrXtb6itgS3YuIrY3u",
+    "sourceCommit": "e6cb821dc27830ef4b270efba9958781628a47ce",
+    "deploymentId": "dpl_6mGvreTzQoyWdQokzQyWwij1ZQ8k",
+    "deploymentUrl": "https://dimixo-4n5lqt00u-chau-tuan.vercel.app",
+    "productionUrl": "https://dimixo-erp.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "regions": [
+      "sin1"
+    ],
+    "nodeVersion": "24.x",
+    "aliasMatches": true,
+    "checks": [
+      {
+        "route": "/api/health/live",
+        "httpStatus": 200,
+        "status": "alive"
+      },
+      {
+        "route": "/api/health/ready",
+        "httpStatus": 200,
+        "status": "ready"
+      },
+      {
+        "route": "/",
+        "httpStatus": 200
+      },
+      {
+        "route": "/erp/xay-dung-chau-tuan/login",
+        "httpStatus": 200
+      }
+    ],
+    "passed": true,
+    "credentialsIncluded": false
+  },
+  "database": {
+    "project": "tcjjhxqtreemccdbvyza",
+    "environment": "development",
+    "migrations": 161,
+    "latestMigration": "202611030009",
+    "existingDataPreserved": true
+  },
+  "validation": {
+    "unit": {
+      "passed": 2053,
+      "skipped": 37
+    },
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 5
+    },
+    "typecheck": true,
+    "build": true,
+    "tracedPdfFonts": 3,
+    "clientSecretScan": {
+      "artifacts": 159,
+      "matches": 0
+    },
+    "nativeSql": {
+      "migrations": 104,
+      "entities": 142,
+      "documentChecks": 28,
+      "simulationChecks": 30
+    },
+    "localBrowser": {
+      "checks": 21,
+      "screens": 24,
+      "cloudWrites": false,
+      "transport": "Loopback HTTP bridge to actual isolated PostgreSQL; local private object files"
+    },
+    "vercelBrowser": {
+      "screens": 84,
+      "forms": 18,
+      "actions": {
+        "columnChooser": true,
+        "invalidFieldFocused": true,
+        "keyboardTabs": true,
+        "accountingExtensions": true,
+        "crmTabs": true,
+        "searchShortcut": true,
+        "moduleSearch": true,
+        "searchResultFocus": true,
+        "mobileAccentFilter": true
+      },
+      "errors": 0,
+      "apiFailures": 0,
+      "unexpectedBusinessPosts": 0,
+      "recordScreens": [
+        {
+          "route": "/purchase_orders#document-information",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-information-1440.png",
+          "documentWidth": 1430,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-lines",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-lines-1440.png",
+          "documentWidth": 1430,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-simulation",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-simulation-1440.png",
+          "documentWidth": 1430,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-history",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-history-1440.png",
+          "documentWidth": 1430,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-information",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-information-768.png",
+          "documentWidth": 758,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-lines",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-lines-768.png",
+          "documentWidth": 758,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-simulation",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-simulation-768.png",
+          "documentWidth": 758,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-history",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-history-768.png",
+          "documentWidth": 758,
+          "headings": [
+            "Đơn mua hàng"
+          ]
+        },
+        {
+          "route": "/purchase_orders#document-information",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-information-390.png",
+          "documentWidth": 390,
+          "headings": [
+            "Đơn mua hàng"
+          ],
+          "headingWidth": 358,
+          "tabWidth": 83.765625
+        },
+        {
+          "route": "/purchase_orders#document-lines",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-lines-390.png",
+          "documentWidth": 390,
+          "headings": [
+            "Đơn mua hàng"
+          ],
+          "headingWidth": 358,
+          "tabWidth": 82.265625
+        },
+        {
+          "route": "/purchase_orders#document-simulation",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-simulation-390.png",
+          "documentWidth": 390,
+          "headings": [
+            "Đơn mua hàng"
+          ],
+          "headingWidth": 358,
+          "tabWidth": 82.265625
+        },
+        {
+          "route": "/purchase_orders#document-history",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/misa-document-workspace-vercel/construction-document-history-390.png",
+          "documentWidth": 390,
+          "headings": [
+            "Đơn mua hàng"
+          ],
+          "headingWidth": 358,
+          "tabWidth": 82.265625
+        }
+      ]
+    },
+    "vercelApi": {
+      "generalChecks": 12,
+      "boundaryChecks": 3,
+      "documentChecks": 22,
+      "passed": true
+    },
+    "credentials": {
+      "checkedAt": "2026-11-03T06:55:11.828Z",
+      "accounts": 18,
+      "companies": 6,
+      "roles": [
+        "owner",
+        "editor",
+        "viewer"
+      ],
+      "allLoginRoleLogoutVerified": true,
+      "passwordsIncluded": false
+    }
+  },
+  "externalProviders": {
+    "mode": "simulation",
+    "demoOnly": true,
+    "realMessagesSent": 0,
+    "legalSignatureAcceptance": false
+  },
+  "businessCommandsOnVercelByVerification": 0,
+  "all82AcceptanceComplete": false
+}

@@ -170,7 +170,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -243,7 +244,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -318,7 +320,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -381,7 +384,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -455,7 +459,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -553,7 +558,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -898,7 +904,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -1002,7 +1009,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -1156,7 +1164,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -1307,7 +1316,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -1445,7 +1455,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -1501,7 +1512,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -1597,7 +1609,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [
@@ -2669,7 +2682,8 @@
             "docs/commercial-erp/misa-document-workspace.md",
             "docs/commercial-erp/evidence/industry-schema-build.json",
             "docs/commercial-erp/evidence/misa-document-workspace-browser.json",
-            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json"
+            "docs/commercial-erp/evidence/misa-document-workspace-rollout.json",
+            "docs/commercial-erp/evidence/misa-document-workspace-release.json"
           ],
           "verification": "Actual PostgreSQL transactions and two-actor browser workflows; source permissions, numbering, inline lines, private files, PDF and demo provider simulation. Cloud database migrations applied with existing totals preserved.",
           "limitations": [

@@ -26,7 +26,7 @@ Người dùng đã chọn **mô phỏng** hóa đơn điện tử, chữ ký s�
 - RPC đọc chi tiết áp dụng che trường theo vai trò và không loại nhầm chi tiết có trạng thái nháp/đã ghi nhận như người tham dự cuộc họp.
 - Chọn lại giá trị hiện tại ở Select không phát sự kiện thay đổi, tránh kẹt trạng thái tải.
 
-Các migration `202611030001`–`202611030009` đã áp dụng lên Supabase phát triển ngày 03/11/2026, tổng 161 migration, không đổi dữ liệu hiện có. PostgreSQL cục bộ đầy đủ, các luồng ghi trên trình duyệt, PDF/tệp và bốn dịch vụ mô phỏng đã được kiểm chứng. Chi tiết và giới hạn kiểm tra ở [bản chứng từ và mô phỏng](../commercial-erp/misa-document-workspace.md). GitHub/Vercel được ghi bằng receipt riêng sau khi triển khai xong.
+Các migration `202611030001`–`202611030009` đã áp dụng lên Supabase phát triển ngày 03/11/2026, tổng 161 migration, không đổi dữ liệu hiện có. PostgreSQL cục bộ đầy đủ, các luồng ghi trên trình duyệt, PDF/tệp và bốn dịch vụ mô phỏng đã được kiểm chứng. Chi tiết và giới hạn kiểm tra ở [bản chứng từ và mô phỏng](../commercial-erp/misa-document-workspace.md). Đã push GitHub và deploy Vercel commit `e6cb821`. [Receipt](../commercial-erp/evidence/misa-document-workspace-release.json) xác nhận READY, 84 ảnh/18 biểu mẫu trên Vercel và 18 tài khoản đúng vai trò.
 
 ## Đợt kiểm chứng ngày 03/11/2026
 

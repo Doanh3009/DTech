@@ -30,6 +30,8 @@ Kỳ kế toán phải được mở trước ngày hạch toán. Khi sang thán
 - Unit: 2.053 đạt, 37 bỏ qua theo cấu hình tích hợp. Typecheck và build đạt. Lint không có lỗi, có 5 cảnh báo đã tồn tại. Kiểm tra 159 artifact phía trình duyệt không tìm thấy secret.
 - Supabase phát triển: migration `202611030001`–`202611030009`, tổng 161 migration. So sánh trước/sau giữ nguyên số bản ghi và các tổng kiểm soát của dữ liệu hiện có, sổ cân đối; RPC mới chỉ cho máy chủ thực thi, bảng riêng không có quyền truy cập trực tiếp.
 
+Bản trực tuyến: [DIMIXO ERP](https://dimixo-erp.vercel.app), commit [`e6cb821`](https://github.com/Doanh3009/DTech/commit/e6cb821dc27830ef4b270efba9958781628a47ce), deployment `dpl_6mGvreTzQoyWdQokzQyWwij1ZQ8k` đã READY. Kiểm tra trực tuyến: 84 ảnh, 18 biểu mẫu, 22 kiểm tra chứng từ/quyền, 12 API và 3 ranh giới truy cập; 18 tài khoản đã đăng nhập, đọc đúng vai trò và đăng xuất. Không gửi lệnh nghiệp vụ trong đợt kiểm tra Vercel. [Biên bản phát hành](evidence/misa-document-workspace-release.json).
+
 Bằng chứng: [kiểm tra schema](evidence/industry-schema-build.json), [kiểm tra trình duyệt](evidence/misa-document-workspace-browser.json), [triển khai database](evidence/misa-document-workspace-rollout.json).
 
 ## Phạm vi còn mở

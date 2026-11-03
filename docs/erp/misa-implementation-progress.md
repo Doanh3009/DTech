@@ -1,3 +1,5 @@
+> Cập nhật 03/11/2026: đã deploy commit `e6cb821` lên [DIMIXO ERP](https://dimixo-erp.vercel.app), Supabase phát triển 161 migration. Chứng từ, phân quyền nhạy cảm và bốn dịch vụ mô phỏng đã qua SQL thực và trình duyệt; 18 tài khoản đã kiểm chứng trên Vercel. Đây là đợt hoàn thiện trong 82 mục, không phải nghiệm thu toàn bộ. Xem [biên bản mới](../commercial-erp/misa-document-workspace.md) và [việc còn mở](misa-launch-worklist.md).
+
 ﻿# Tiến độ triển khai nghiệp vụ tham chiếu MISA
 
 Nhập CSV/XLSX cho vật tư/đối tác/kho đã phát hành ở commit `3dfac27`, database 151 migration. Có xem trước, đối chiếu giá trị, chọn dòng và receipt thử lại. [Hướng dẫn](catalog-import.md), [bằng chứng](../commercial-erp/evidence/misa-catalog-import-release.json). Nghiệm thu đầy đủ 82 yêu cầu vẫn mở.
