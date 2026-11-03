@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, type KeyboardEvent, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils/cn";
 
@@ -71,4 +71,13 @@ export function ContextTabs({ items, label, tone, className }: TabsProps) {
 /** Backwards-compatible name while feature pages move to ContextTabs. */
 export function Tabs(props: TabsProps) {
   return <ContextTabs {...props} />;
+}
+
+export function ViewTabs<T extends string>({id,label,items,value,onValueChange,className}:{id:string;label:string;items:{value:T;label:string}[];value:T;onValueChange:(value:T)=>void;className?:string}){
+ const root=useRef<HTMLDivElement>(null);
+ function keyboard(event:KeyboardEvent<HTMLButtonElement>,index:number){
+  let next:number;if(event.key==="ArrowRight")next=(index+1)%items.length;else if(event.key==="ArrowLeft")next=(index-1+items.length)%items.length;else if(event.key==="Home")next=0;else if(event.key==="End")next=items.length-1;else return;
+  event.preventDefault();if(items[next].value!==value)onValueChange(items[next].value);root.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[next]?.focus();
+ }
+ return <div className={cn("tabs","context-tabs",className)} role="tablist" aria-label={label} ref={root}><div className="context-tabs__scroller">{items.map((item,index)=><button key={item.value} type="button" role="tab" id={`${id}-${item.value}`} aria-controls={`${id}-panel`} aria-selected={item.value===value} tabIndex={item.value===value?0:-1} className={cn("tabs__item",item.value===value&&"is-active")} onClick={()=>{if(item.value!==value)onValueChange(item.value);}} onKeyDown={event=>keyboard(event,index)}>{item.label}</button>)}</div></div>;
 }

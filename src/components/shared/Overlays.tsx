@@ -158,7 +158,7 @@ export function Modal({ open, title, children, onClose, className }: OverlayProp
 /** Dialog is the semantic public name; Modal remains for backwards compatibility. */
 export const Dialog = Modal;
 
-export function Drawer({ open, title, children, onClose, className, keepMounted, size = "default" }: OverlayProps & { size?: "default" | "wide" }) {
+export function Drawer({ open, title, children, onClose, className, keepMounted, size = "default", footer }: OverlayProps & { size?: "default" | "wide"; footer?: ReactNode }) {
   const portalReady = usePortalReady();
   const { present, state, finishExit } = useOverlayPresence(open, portalReady);
   const drawerRef = useOverlay(present && portalReady, () => { if (open) onClose(); });
@@ -178,6 +178,7 @@ export function Drawer({ open, title, children, onClose, className, keepMounted,
           </IconButton>
         </header>
         {children}
+        {footer ? <footer className="overlay__footer">{footer}</footer> : null}
       </aside>
     </div>,
     document.body

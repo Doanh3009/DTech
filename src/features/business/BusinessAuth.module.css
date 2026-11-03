@@ -1,0 +1,11 @@
+.page{min-height:100dvh;display:grid;place-items:center;padding:var(--space-6);background:var(--erp-workspace-bg);color:var(--text-primary)}
+.card{width:min(100%,480px);display:grid;gap:var(--space-6);padding:var(--space-8);border:1px solid var(--border-default);border-radius:var(--radius-panel);background:var(--surface);box-shadow:var(--erp-surface-shadow)}
+.identity{display:grid;gap:var(--space-3);padding-bottom:var(--space-5);border-bottom:1px solid var(--border-subtle)}
+.identity h1{margin:0;font-size:var(--font-page);line-height:1.3;letter-spacing:-.025em;text-wrap:balance}
+.industry{width:fit-content;padding:var(--space-1) var(--space-2);background:var(--color-primary-soft);color:var(--color-primary);border-radius:var(--radius-sm);font-size:var(--font-meta)}
+.card form{display:grid;gap:var(--space-5)}
+.card form>button{width:100%;min-height:44px}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;font-size:var(--font-meta)}
+.footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--text-secondary);text-decoration:none}
+.footer a:hover,.footer a:focus-visible{color:var(--color-primary)}
+@media(max-width:600px){.page{padding:var(--space-4)}.card{padding:var(--space-6);gap:var(--space-5);border-radius:var(--radius-card)}}

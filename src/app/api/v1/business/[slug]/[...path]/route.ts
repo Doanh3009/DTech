@@ -24,7 +24,7 @@ export async function GET(request:Request,{params}:Context){try{
   const d=parseWithSchema(z.object({itemId:z.string().uuid(),fromUnit:z.string().trim().min(1).max(30),quantity:z.coerce.number().finite().positive().max(1e15),on:date}).strict(),Object.fromEntries(new URL(request.url).searchParams));
   return ok(await businessRpc("business_item_quantity_conversion",{...await businessSessionArgs(slug),p_item_id:d.itemId,p_from_unit:d.fromUnit,p_quantity:d.quantity,p_on:d.on}));
  }
- if(path.length===1&&path[0]==="search"){const d=parseWithSchema(z.object({q:z.string().trim().min(2).max(80)}).strict(),Object.fromEntries(new URL(request.url).searchParams));return ok(await businessRpc("business_search_records",{...await businessSessionArgs(slug),p_query:d.q}));}
+ if(path.length===1&&path[0]==="search"){const d=parseWithSchema(z.object({q:z.string().trim().min(2).max(80),feature:z.enum(featureKeys).optional()}).strict(),Object.fromEntries(new URL(request.url).searchParams));const args={...await businessSessionArgs(slug),p_query:d.q};return ok(await businessRpc(d.feature?"business_search_module_records":"business_search_records",d.feature?{...args,p_feature:d.feature}:args));}
  if(path.length===1&&path[0]==="notifications"){const d=parseWithSchema(z.object({page:z.coerce.number().int().min(1).max(10000).default(1)}).strict(),Object.fromEntries(new URL(request.url).searchParams));return ok(await businessRpc("business_notifications_workspace",{...await businessSessionArgs(slug),p_page:d.page}));}
  if(path.length===1&&path[0]==="calendar"){
   const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(v=>!Number.isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v);

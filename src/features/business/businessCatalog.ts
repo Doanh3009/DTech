@@ -9,7 +9,7 @@ export const featureLabels={accounting:"Kế toán",purchasing:"Mua hàng",peopl
 export type BusinessFeature=keyof typeof featureLabels;
 export const featureKeys=Object.keys(featureLabels) as [BusinessFeature,...BusinessFeature[]];
 export type EntityKind=keyof typeof entities;
-export interface EntityField {label:string;type:"text"|"email"|"number"|"date"|"time"|"enum"|"ref";required?:boolean;min?:number;max?:number;integer?:boolean;default?:string|number;computed?:boolean;requiresFeature?:BusinessFeature;ref?:EntityKind;values?:Record<string,string>}
+export interface EntityField {label:string;type:"text"|"email"|"number"|"date"|"time"|"enum"|"ref"|"boolean";required?:boolean;min?:number;max?:number;integer?:boolean;default?:string|number|boolean;computed?:boolean;requiresFeature?:BusinessFeature;ref?:EntityKind;values?:Record<string,string>}
 export interface EntityDefinition {label:string;feature:BusinessFeature;workspaceFeature?:BusinessFeature;mode:"master"|"order"|"document";industries?:BusinessIndustry[];requiresFeatures?:BusinessFeature[];requiresApproval?:boolean;calculable?:boolean;generatedOnly?:boolean;lineKind?:EntityKind;parentKind?:EntityKind;parentField?:string;fields:Record<string,EntityField>}
 export const businessEntities=entities as Record<EntityKind,EntityDefinition>;
 export const entityKeys=Object.keys(entities) as [EntityKind,...EntityKind[]];
@@ -28,6 +28,7 @@ export function recordSchema(kind:EntityKind){
   else if(f.type==="date")schema=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(v=>!Number.isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v);
   else if(f.type==="time")schema=z.string().regex(/^([01]\d|2[0-3]):[0-5]\d(?::00)?$/).transform(v=>v.slice(0,5));
   else if(f.type==="email")schema=z.string().trim().email().max(f.max??254);
+  else if(f.type==="boolean")schema=z.boolean();
   else schema=z.string().trim().min(f.required?1:0).max(f.max??240);
   fields[key]=f.required||f.default!==undefined?schema:z.union([schema,z.null()]);
  }
@@ -38,7 +39,7 @@ export function recordSchema(kind:EntityKind){
   if(dates&&String(data[dates[0]])>String(data[dates[1]]))ctx.addIssue({code:z.ZodIssueCode.custom,path:[dates[1]],message:"Ngày kết thúc phải từ ngày bắt đầu."});
  });
 }
-export function emptyRecord(kind:EntityKind,industry?:BusinessIndustry):Record<string,string|number|null>{return {code:"",name:"",notes:"",...Object.fromEntries(Object.entries(businessEntities[kind].fields).filter(([,f])=>!f.computed).map(([k,f])=>[k,k==="tracking"&&(industry==="electronics"||industry==="food_beverage")?"lot":f.default??(f.type==="number"?0:f.type==="enum"?Object.keys(f.values!)[0]:f.required?"":null)]))};}
+export function emptyRecord(kind:EntityKind,industry?:BusinessIndustry):Record<string,string|number|boolean|null>{return {code:"",name:"",notes:"",...Object.fromEntries(Object.entries(businessEntities[kind].fields).filter(([,f])=>!f.computed).map(([k,f])=>[k,k==="tracking"&&(industry==="electronics"||industry==="food_beverage")?"lot":f.default??(f.type==="number"?0:f.type==="boolean"?false:f.type==="enum"?Object.keys(f.values!)[0]:f.required?"":null)]))};}
 export const featureDependencies:Partial<Record<BusinessFeature,BusinessFeature[]>>={production:["inventory"],mes:["inventory","production"],traceability:["inventory"],quality:["inventory"],sales:["inventory","crm"],projects:["inventory"],accounting:["crm"],purchasing:["inventory","crm"],assets:["accounting","crm"],costing:["accounting","inventory","crm"]};
 export function selectBusinessFeature(current:BusinessFeature[],key:BusinessFeature,enabled:boolean){
  const next=new Set(current);

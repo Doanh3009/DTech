@@ -17,7 +17,8 @@ describe("customer deployment manifests", () => {
     expect(legacy).toBe(false);
     expect(target.projectRef).toBe("tcjjhxqtreemccdbvyza");
     expect(target.admin.username).toBe("admin");
-    expect(target.customer.systemName).toBe("DTech ERP");
+    const configured = JSON.parse(await readFile(new URL("../../supabase/deployments/dtech-erp.json", import.meta.url), "utf8"));
+    expect(target.customer.systemName).toBe(configured.customer.systemName);
   });
 
   it("preserves the original versionless DTech contract", () => {

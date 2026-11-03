@@ -117,3 +117,11 @@ describe("item quantity conversion API", () => {
     expect(body.error.code).toBe("PERMISSION_DENIED");
   });
 });
+
+describe("module scoped search API",()=>{
+ const params=()=>({params:Promise.resolve({slug:"acme",path:["search"]})});
+ beforeEach(()=>{vi.clearAllMocks();mocks.session.mockResolvedValue({p_hash:"session",p_slug:"acme"});mocks.rpc.mockResolvedValue({results:[]});});
+ it("uses the session and module RPC when a feature is provided",async()=>{expect((await GET(new Request("https://erp.invalid/api/v1/business/acme/search?q=VT&feature=inventory"),params())).status).toBe(200);expect(mocks.rpc).toHaveBeenCalledExactlyOnceWith("business_search_module_records",{p_hash:"session",p_slug:"acme",p_query:"VT",p_feature:"inventory"});});
+ it("preserves all module search on the gateway",async()=>{await GET(new Request("https://erp.invalid/api/v1/business/acme/search?q=VT"),params());expect(mocks.rpc).toHaveBeenCalledExactlyOnceWith("business_search_records",{p_hash:"session",p_slug:"acme",p_query:"VT"});});
+ it.each(["q=VT&feature=invalid","q=V&feature=inventory","q=VT&feature=inventory&tenant_id=forged"])("rejects invalid search parameters: %s",async query=>{expect((await GET(new Request(`https://erp.invalid/api/v1/business/acme/search?${query}`),params())).status).toBe(400);expect(mocks.rpc).not.toHaveBeenCalled();});
+});

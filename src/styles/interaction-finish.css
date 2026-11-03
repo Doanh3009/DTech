@@ -265,6 +265,7 @@ body:has(.app-shell),
 /* Keep workspace panels in the user's focus and show all four rounded corners. */
 .overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
   align-items: center;
   justify-content: center;
@@ -272,6 +273,7 @@ body:has(.app-shell),
 }
 .overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer {
   display: flex;
+  justify-self: center;
   width: min(720px, 100%);
   max-width: 720px;
   height: auto;
@@ -292,6 +294,13 @@ body:has(.app-shell),
   flex: 1 1 auto;
   overflow-y: auto;
   overscroll-behavior: contain;
+}
+.overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer > .overlay__footer {
+  flex: 0 0 auto;
+  overflow: visible;
+  border-top: 1px solid var(--border-default);
+  background: var(--surface);
+  padding: var(--space-4) var(--space-5) max(var(--space-4), env(safe-area-inset-bottom));
 }
 .overlay.overlay--drawer:not([hidden]):not(:has(.mobile-app-sheet)) > .drawer[data-size="wide"] {
   width: min(var(--overlay-wide-width), calc(100vw - var(--space-8)));

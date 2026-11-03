@@ -1,0 +1,6 @@
+import {Boxes,Factory,ScanLine,ShieldCheck,ShoppingCart,Contact,HardHat,Settings2,BookOpenCheck,ShoppingBag,Users,Landmark,Calculator,CalendarDays} from "lucide-react";
+import type {BusinessFeature} from "./businessCatalog";
+import type {LucideIcon} from "lucide-react";
+import {moduleIconRegistry} from "@/config/moduleIconRegistry";
+export const businessFeatureIcons:Record<BusinessFeature,LucideIcon>={assets:Landmark,costing:Calculator,accounting:BookOpenCheck,purchasing:ShoppingBag,people:Users,inventory:Boxes,production:Factory,mes:Settings2,traceability:ScanLine,quality:ShieldCheck,sales:ShoppingCart,crm:Contact,projects:HardHat,collaboration:CalendarDays};
+export const businessFeatureAppearance:Record<BusinessFeature,typeof moduleIconRegistry.accounting>={assets:moduleIconRegistry.accounting,costing:moduleIconRegistry.accounting,accounting:moduleIconRegistry.accounting,purchasing:moduleIconRegistry.warehouse,people:moduleIconRegistry["human-resources"],inventory:moduleIconRegistry.warehouse,production:moduleIconRegistry.projects,mes:moduleIconRegistry.system,traceability:moduleIconRegistry["import-export"],quality:moduleIconRegistry["human-resources"],sales:moduleIconRegistry.operations,crm:moduleIconRegistry.messaging,projects:moduleIconRegistry.projects,collaboration:moduleIconRegistry.attendance};

@@ -4,6 +4,7 @@ import type {BusinessWorkspace} from "./businessSchemas";
 import {BusinessGlobalSearch} from "./BusinessGlobalSearch";
 const workspace={slug:"acme"} as BusinessWorkspace;
 describe("business search keyboard navigation",()=>{
+ it("sends module scope and supports Ctrl K",async()=>{render(<BusinessGlobalSearch workspace={workspace} feature="inventory"/>);const input=screen.getByRole("searchbox",{name:"Tìm trong Kho & vật tư"});fireEvent.keyDown(document,{key:"k",ctrlKey:true});expect(input).toHaveFocus();fireEvent.change(input,{target:{value:"VT"}});await screen.findByRole("link");expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain("q=VT&feature=inventory");});
  beforeEach(()=>vi.stubGlobal("fetch",vi.fn().mockResolvedValue(new Response(JSON.stringify({ok:true,data:{results:[{id:"1",kind:"items",label:"Vật tư",code:"VT01",name:"Thép",updatedAt:"2026-11-02"}]}})))));
  afterEach(()=>vi.unstubAllGlobals());
  it("keeps results open while moving focus into a result and closes on Escape",async()=>{

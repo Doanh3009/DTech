@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T07:06:44.264Z",
+  "generatedAt": "2026-11-02T08:20:06.063Z",
   "schemaCompiled": true,
   "entityCount": 142,
   "migrations": [
@@ -378,6 +378,10 @@
     {
       "filename": "202611020014_business_catalog_import.sql",
       "sha256": "46d89485d8f6e6b843f643578fc7d3be8d6a46500d281b08f1165f45a5e59e57"
+    },
+    {
+      "filename": "202611020015_business_module_search.sql",
+      "sha256": "6a4dfa3c1dd6b3014ce23f37bed8475f8fd75e68cfb20a11f2673062d9425cc7"
     }
   ],
   "cloudAccess": false,
@@ -953,6 +957,11 @@
       "custom_scope_filter",
       "minimal_search_result",
       "enabled_feature_search",
+      "module_ownership_filter",
+      "module_read_scope",
+      "module_tenant_isolation",
+      "disabled_module_denied",
+      "minimal_module_payload",
       "cloud_access_false"
     ],
     "data": "synthetic only",
@@ -1035,7 +1044,7 @@
       "bounded_200_row_batch"
     ],
     "batchRows": 200,
-    "batchDurationMs": 685,
+    "batchDurationMs": 853,
     "data": "synthetic only",
     "cloudAccess": false
   }

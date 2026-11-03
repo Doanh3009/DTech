@@ -5,7 +5,9 @@ import {Button} from "@/components/shared/Button";
 import {DataTable} from "@/components/shared/DataTable";
 import {PageHeader} from "@/components/shared/PageHeader";
 import {StatusBadge} from "@/components/shared/StatusBadge";
-import {businessEntities,entitiesForFeature,type EntityKind} from "./businessCatalog";
+import {ViewTabs} from "@/components/shared/Tabs";
+import {BusinessMetricValue} from "./BusinessMetricValue";
+import {type EntityKind} from "./businessCatalog";
 import type {BusinessWorkspace} from "./businessSchemas";
 import styles from "./Business.module.css";
 const views={pipeline:"Cơ hội",quotes:"Báo giá & hợp đồng",tickets:"Hỗ trợ khách hàng",campaigns:"Chiến dịch"} as const;
@@ -31,11 +33,10 @@ export function BusinessCrmWorkspace({workspace:w}:{workspace:BusinessWorkspace}
  const kind:EntityKind=({pipeline:"opportunities",quotes:"customer_quotes",tickets:"support_tickets",campaigns:"campaigns"})[view] as EntityKind;
  function cell(r:Row,key:string){const v=r[key];if(v===null||v===undefined)return "—";if(key==="stage")return <StatusBadge tone={v==="won"||v==="accepted"||v==="resolved"?"success":v==="lost"||v==="rejected"?"warning":"info"}>{stages[String(v)]??String(v)}</StatusBadge>;if(key==="overdue")return <StatusBadge tone={v?"warning":"neutral"}>{v?"Quá hạn":"Trong hạn"}</StatusBadge>;if(key==="escalated")return v==="yes"?"Đã chuyển cấp":"—";if(typeof v==="number")return v.toLocaleString("vi-VN",{maximumFractionDigits:4});if(key.endsWith("_on")||key.endsWith("until"))return String(v).split("-").reverse().join("/");return String(v);}
  return <div className={styles.stack}><PageHeader title="Khách hàng & kinh doanh" action={<Button disabled={loading} onClick={()=>{setLoading(true);setError("");setRevision(v=>v+1);}}>Cập nhật</Button>}/>
-  <nav className={styles.quickLinks} aria-label="Nghiệp vụ CRM">{entitiesForFeature(w.industry,w.features,"crm").map(k=><Link prefetch={false} key={k} href={`/erp/${w.slug}/${k}`}>{businessEntities[k].label}</Link>)}</nav>
-  <div className={styles.actions}>{Object.entries(views).filter(([k])=>k!=="quotes"||w.features.includes("sales")).map(([k,label])=><Button key={k} variant={view===k?"primary":"secondary"} aria-pressed={view===k} onClick={()=>{setLoading(true);setError("");setView(k as View);setPage(1);setData(null);}}>{label}</Button>)}</div>
-  <section className={styles.overviewMetrics} aria-label="Tổng hợp CRM">{metrics[view].map(([key,label,unit])=><div key={key}><span>{label}</span><strong>{loading||error||data?.totals[key]===null||data?.totals[key]===undefined?"—":data.totals[key]?.toLocaleString("vi-VN",{maximumFractionDigits:0})}{unit?` ${unit}`:""}</strong></div>)}</section>
-  {view==="pipeline"&&!loading&&!error&&data?<section className={styles.progressSurface} aria-label="Phân bố cơ hội"><h2>Phân bố cơ hội</h2><div>{data.stages.map(s=><div key={s.stage}><span>{stages[s.stage]??s.stage}</span><progress max={Math.max(1,data.total)} value={s.count} aria-label={`${stages[s.stage]} · ${s.count} cơ hội`}/><strong>{s.count} / {data.total}</strong></div>)}</div></section>:null}
+  <ViewTabs id="crm-view" label="Phần hành CRM" className={styles.viewTabs} items={Object.entries(views).filter(([k])=>k!=="quotes"||w.features.includes("sales")).map(([value,label])=>({value:value as View,label}))} value={view} onValueChange={next=>{setLoading(true);setError("");setView(next);setPage(1);setData(null);}}/><div id="crm-view-panel" role="tabpanel" aria-labelledby={`crm-view-${view}`} className={styles.stack}>
+  <section className={styles.overviewMetrics} aria-label="Tổng hợp CRM">{metrics[view].map(([key,label,unit])=><div key={key}><span>{label}</span><BusinessMetricValue value={data?.totals[key]} currency={unit==="VND"} loading={loading||!!error}/></div>)}</section>
+  {view==="pipeline"&&!loading&&!error&&data?<section className={styles.progressSurface} aria-label="Phân bố cơ hội"><h2>Phân bố cơ hội</h2><div className={styles.stageGrid}>{data.stages.map(s=><div key={s.stage}><span>{stages[s.stage]??s.stage}</span><progress max={Math.max(1,data.total)} value={s.count} aria-label={`${stages[s.stage]} · ${s.count} cơ hội`}/><strong>{s.count} / {data.total}</strong></div>)}</div></section>:null}
   <DataTable<Row> className={styles.operationalTable} loading={loading} error={error} data={data?.rows??[]} getRowId={r=>r.id} emptyTitle="Chưa có phát sinh" columns={[{id:"name",header:"Tên",priority:"primary",cell:r=><Link className={styles.link} prefetch={false} href={`/erp/${w.slug}/${kind}?q=${encodeURIComponent(r.code)}`}>{r.name}</Link>},...fields[view].map(([key,label],i)=>({id:key,header:label,hiddenOnMobile:i>1,cell:(r:Row)=>cell(r,key)}))]}/>
   <div className={styles.pagination}><span>{data?.total??0} bản ghi · Trang {page}{data&&!loading&&!error?` · ${new Date(data.asOf).toLocaleTimeString("vi-VN",{timeZone:"Asia/Ho_Chi_Minh"})}`:""}</span><div className={styles.actions}><Button disabled={loading||page===1} onClick={()=>{setLoading(true);setError("");setPage(v=>v-1);}}>Trước</Button><Button disabled={loading||page*25>=(data?.total??0)} onClick={()=>{setLoading(true);setError("");setPage(v=>v+1);}}>Sau</Button></div></div>
- </div>;
+ </div></div>;
 }
