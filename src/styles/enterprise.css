@@ -232,54 +232,7 @@
 .overlay__header { position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--border-subtle); background: var(--surface); padding: var(--space-4) var(--space-5); }
 .overlay__header h2 { font-size: var(--font-section); font-weight: var(--font-weight-semibold); }
 .modal :is(.form-actions, .confirm-dialog footer) { position: sticky; bottom: 0; z-index: 2; margin-top: var(--space-4); border-top: 1px solid var(--border-subtle); background: var(--surface); padding-block: var(--space-3); }
-.floating-panel {
-  position: fixed;
-  z-index: var(--floating-layer);
-  inset: auto;
-  margin: 0;
-  overflow: auto;
-  overscroll-behavior: contain;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-card);
-  padding: var(--space-1);
-  background: var(--surface);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-floating);
-}
-.floating-panel::backdrop { background: transparent; }
-.select-control { position: relative; display: block; width: 100%; min-width: 0; }
-.select-control__native { display: none; }
-.select-control__trigger, .page-main .select-control__trigger {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-  padding: 0 var(--space-3);
-  background-image: none;
-  text-align: left;
-  cursor: pointer;
-}
-.select-control__trigger > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.select-control__trigger svg { flex-shrink: 0; color: var(--text-muted); }
-.select-control[data-open] .select-control__trigger { border-color: var(--border-focus); }
-.select-control[data-open] .select-control__trigger svg { transform: rotate(180deg); }
-.select-control__trigger:disabled { cursor: not-allowed; background: var(--surface-2); color: var(--text-disabled); box-shadow: none; }
-.select-control__search { position: sticky; top: calc(-1 * var(--space-1)); display: flex; min-height: var(--control-height-md); align-items: center; gap: var(--space-2); border-bottom: 1px solid var(--border-subtle); padding: var(--space-2); background: var(--surface); }
-.select-control__search svg { color: var(--text-muted); }
-.select-control__search input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text-primary); font: inherit; }
-.select-control__option { display: flex; min-height: var(--control-height-md); align-items: center; justify-content: space-between; gap: var(--space-2); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); font-size: var(--font-body); cursor: pointer; overflow-wrap: anywhere; }
-.select-control__option[data-active] { background: var(--surface-2); }
-.select-control__option[aria-selected="true"] { background: var(--color-primary-soft); color: var(--color-primary-active); font-weight: var(--font-weight-medium); }
-.select-control__option svg { flex-shrink: 0; }
-.select-control__empty { margin: 0; padding: var(--space-4); color: var(--text-secondary); text-align: center; }
-.dropdown__trigger { display: inline-flex; min-width: var(--control-height-sm); min-height: var(--control-height-sm); align-items: center; justify-content: center; gap: var(--space-2); border: 1px solid transparent; border-radius: var(--radius-control); background: transparent; color: var(--text-secondary); cursor: pointer; }
-.dropdown__trigger:hover, .dropdown__trigger[aria-expanded="true"] { border-color: var(--border-subtle); background: var(--surface-2); color: var(--text-primary); }
-.floating-panel.dropdown__content { display: grid; gap: var(--space-1); }
-.floating-panel.dropdown__content :is(a, button) { display: flex; width: 100%; min-height: var(--control-height-md); align-items: center; gap: var(--space-2); border: 0; border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); background: transparent; color: var(--text-primary); font: inherit; text-align: left; cursor: pointer; }
-.floating-panel.dropdown__content :is(a, button):hover { background: var(--surface-hover); }
-.floating-panel.dropdown__content :is(a, button):focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; }
-.floating-panel.dropdown__content :is(a, button):disabled { color: var(--text-disabled); cursor: not-allowed; }
+/* Shared selection and action popovers are owned by dropdowns.css. */
 
 @media (min-width: 768px) {
   .app-content--chat .page-main { padding-right: var(--page-padding-inline); }

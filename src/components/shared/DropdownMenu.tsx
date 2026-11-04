@@ -43,7 +43,7 @@ export function DropdownMenu({ label = "Mở menu", trigger, mobileTriggerLabel,
     if (!open) return;
     const panel = document.getElementById(id);
     const actions = enabledActions(panel);
-    if (!mobile) panel?.querySelectorAll<HTMLElement>('a[href], button').forEach((action) => action.setAttribute("role", "menuitem"));
+    if (!mobile) panel?.querySelectorAll<HTMLElement>('a[href], button:not([aria-haspopup], [role="combobox"])').forEach((action) => {if(!action.closest('.combobox-control, .select-control'))action.setAttribute("role", "menuitem");});
     let fieldObserver: MutationObserver | undefined;
     if (mobile && anchor.current?.form) {
       const form = anchor.current.form;
@@ -67,6 +67,7 @@ export function DropdownMenu({ label = "Mở menu", trigger, mobileTriggerLabel,
         if (!(event.target instanceof Element)) return;
         const action = event.target.closest("a, button");
         if (!action || action.matches(":disabled, [aria-disabled='true'], [aria-haspopup], [role='combobox']")) return;
+        if (action.closest('.combobox-control, .select-control')) return;
         if (mobile && action instanceof HTMLButtonElement && action.type === "submit") return;
         setOpen(false);
         if (action.tagName === "BUTTON") anchor.current?.focus({ preventScroll: true });

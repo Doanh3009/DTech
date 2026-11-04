@@ -1,11 +1,13 @@
 import { fireEvent,render,screen,waitFor } from "@testing-library/react";
 import { afterEach,beforeEach,describe,expect,it,vi } from "vitest";
 import { TrialRequestForm } from "./TrialRequestForm";
+import {trialCompanySizes} from "./trialSchemas";
 const id="10000000-0000-4000-8000-000000000001";
 const result=(status:number,data:unknown)=>({ok:status<400,status,json:async()=>data});
-function fill(){for(const [name,value]of [["Tên doanh nghiệp","Công ty minh họa"],["Họ và tên","Người liên hệ"],["Số điện thoại","0901234567"],["Email liên hệ","contact@example.invalid"]])fireEvent.change(screen.getByLabelText(new RegExp(name)),{target:{value}});fireEvent.change(screen.getByLabelText(/Quy mô nhân sự/),{target:{value:"20_100"}});fireEvent.click(screen.getByRole("checkbox"));}
+function choose(label:string,option:string){fireEvent.click(screen.getByRole("combobox",{name:label}));fireEvent.click(screen.getByRole("option",{name:option}));}
+function fill(){for(const [name,value]of [["Tên doanh nghiệp","Công ty minh họa"],["Họ và tên","Người liên hệ"],["Số điện thoại","0901234567"],["Email liên hệ","contact@example.invalid"]])fireEvent.change(screen.getByLabelText(new RegExp(name)),{target:{value}});choose("Quy mô nhân sự",trialCompanySizes["20_100"]);fireEvent.click(screen.getByRole("checkbox"));}
 const originalFill=fill;
-function fillFull(){originalFill();fireEvent.change(screen.getByRole("textbox",{name:/Nhu cầu/}),{target:{value:"Synthetic site operations"}});for(const [name,value] of [["Chức vụ","Director"],["Tỉnh / thành phố","Synthetic province"],["Địa chỉ doanh nghiệp","Synthetic address"]])fireEvent.change(screen.getByLabelText(new RegExp(name)),{target:{value}});fireEvent.change(screen.getByLabelText(/Loại hình doanh nghiệp/),{target:{value:"limited"}});fireEvent.change(screen.getByLabelText(/Thời gian triển khai/),{target:{value:"quarter"}});}
+function fillFull(){originalFill();fireEvent.change(screen.getByRole("textbox",{name:/Nhu cầu/}),{target:{value:"Synthetic site operations"}});for(const [name,value] of [["Chức vụ","Director"],["Tỉnh / thành phố","Synthetic province"],["Địa chỉ doanh nghiệp","Synthetic address"]])fireEvent.change(screen.getByLabelText(new RegExp(name)),{target:{value}});choose("Loại hình doanh nghiệp","Công ty TNHH");choose("Thời gian triển khai","Trong 3 tháng");}
 beforeEach(()=>{vi.spyOn(crypto,"randomUUID").mockReturnValue(id);});
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();});
 describe("trial request form",()=>{

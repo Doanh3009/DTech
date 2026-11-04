@@ -198,6 +198,9 @@ export function Textarea({
 export interface SelectOption {
   label: string;
   value: string;
+  disabled?: boolean;
+  code?: string;
+  name?: string;
 }
 
 export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {

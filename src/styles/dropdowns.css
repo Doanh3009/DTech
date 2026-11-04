@@ -1,0 +1,153 @@
+/* Shared dropdowns also render in portals, outside feature page selectors. */
+.floating-panel {
+  position: fixed;
+  z-index: var(--floating-layer);
+  inset: auto;
+  margin: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  --dropdown-surface: var(--surface-elevated);
+  --dropdown-radius: var(--radius-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--dropdown-radius);
+  padding: var(--space-2);
+  background: var(--dropdown-surface);
+  color: var(--text-primary);
+  box-shadow: var(--dropdown-shadow);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-body);
+  isolation: isolate;
+  animation: dropdown-enter var(--motion-fast, 140ms) ease-out;
+  transform-origin: top;
+}
+.floating-panel::backdrop { background: transparent; }
+.select-control { position: relative; display: block; width: 100%; min-width: 0; }
+.floating-panel[data-side="top"] { transform-origin: bottom; }
+.select-control__native[hidden] { display: none; }
+.select-control__trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: 0 var(--space-3);
+  background-image: none;
+  text-align: left;
+  cursor: pointer;
+  min-height: var(--control-height-md);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-control);
+  background-color: var(--surface);
+  color: var(--text-primary);
+  transition: border-color var(--motion-fast, 140ms), box-shadow var(--motion-fast, 140ms);
+}
+.select-control__trigger[data-placeholder="true"] { color: var(--text-secondary); }
+.select-control__trigger > span { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.select-control__trigger > svg { width: 17px; height: 17px; flex-shrink: 0; color: var(--text-muted); transition: transform var(--motion-fast, 140ms); }
+.select-control[data-open] .select-control__trigger { box-shadow: 0 0 0 3px var(--color-focus-ring); }
+.select-control[data-open] .select-control__trigger > svg { transform: rotate(180deg); }
+.select-control__trigger:disabled { cursor: not-allowed; background: var(--surface-2); color: var(--text-disabled); box-shadow: none; }
+.floating-panel.select-control__panel { display: flex; flex-direction: column; overflow: hidden; }
+.select-control__search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: auto;
+  flex: 0 0 auto;
+  gap: var(--space-2);
+  min-height: var(--control-height-md);
+  margin: 0 0 var(--space-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-control);
+  padding: 0 var(--space-3);
+  background: var(--surface-2);
+}
+.select-control__search:focus-within { border-color: var(--color-primary); box-shadow: inset 0 0 0 1px var(--color-primary); }
+.select-control__search > svg { flex: 0 0 auto; }
+.select-control__search input {
+  width: 100%;
+  min-width: 0;
+  outline: 0;
+  font: inherit;
+  min-height: 42px;
+  margin: 0;
+  padding: var(--space-2) 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-primary);
+  box-shadow: none;
+  font-size: var(--font-meta);
+}
+.select-control__search input:focus-visible { outline: none; box-shadow: none; }
+.select-control__search input::placeholder { color: var(--text-secondary); }
+.select-control__options { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.select-control__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  min-height: var(--control-height-md);
+  gap: var(--space-3);
+  margin: 0;
+  border-radius: var(--radius-control);
+  padding: var(--space-3);
+  color: var(--text-primary);
+  font-size: var(--font-meta);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  text-align: left;
+  touch-action: manipulation;
+}
+.select-control__option + .select-control__option { margin-top: var(--space-1); }
+.select-control__option-copy { display: grid; gap: var(--space-1); flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.select-control__option-name { font-weight: var(--font-weight-medium); }
+.select-control__option-code { color: var(--text-secondary); font-size: var(--font-meta); font-variant-numeric: tabular-nums; }
+.select-control__option[data-active], .select-control__option:not([aria-disabled="true"]):hover { background: var(--surface-2); }
+.select-control__option[aria-selected="true"], .select-control__option[aria-selected="true"]:hover { background: var(--color-primary-soft); color: var(--color-primary-active); }
+.select-control__option[aria-selected="true"] .select-control__option-code { color: var(--color-primary-active); }
+.select-control__option[aria-disabled="true"] { color: var(--text-disabled); cursor: not-allowed; }
+.select-control__check { display: grid; place-items: center; width: 20px; height: 20px; flex: 0 0 20px; color: var(--color-primary); }
+.select-control__empty { display: grid; justify-items: center; gap: var(--space-2); margin: 0; padding: var(--space-5) var(--space-3); color: var(--text-secondary); font-size: var(--font-meta); }
+.select-control__empty > svg { color: var(--text-muted); }
+.combobox-control { position: relative; display: block; width: 100%; min-width: 0; }
+.combobox-control > input { width: 100%; padding-right: 76px; }
+.combobox-control__tools { position: absolute; top: 0; right: var(--space-2); bottom: 0; display: flex; align-items: center; gap: var(--space-1); color: var(--text-muted); }
+.combobox-control .combobox-control__tools > button { display: grid; place-items: center; width: 28px; height: 32px; min-height: 0; padding: 0; border: 0; border-radius: var(--radius-sm); background: transparent; color: inherit; cursor: pointer; }
+.combobox-control .combobox-control__tools > button:hover:not(:disabled) { background: var(--surface-2); color: var(--text-primary); }
+.combobox-control .combobox-control__tools > button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; box-shadow: none; }
+.combobox-control .combobox-control__tools > button:last-child svg { transition: transform var(--motion-fast, 140ms); }
+.combobox-control[data-open] .combobox-control .combobox-control__tools > button:last-child svg { transform: rotate(180deg); }
+.combobox-control[data-open] > input { border-color: var(--color-primary); }
+.combobox-control__spinner { animation: dropdown-spin 900ms linear infinite; }
+.dropdown__trigger { display: inline-flex; min-width: var(--control-height-sm); min-height: var(--control-height-sm); align-items: center; justify-content: center; gap: var(--space-2); border: 1px solid transparent; border-radius: var(--radius-control); background: transparent; color: var(--text-secondary); cursor: pointer; }
+.dropdown__trigger:hover, .dropdown__trigger[aria-expanded="true"] { border-color: var(--border-subtle); background: var(--surface-2); color: var(--text-primary); }
+.floating-panel.dropdown__content { display: grid; gap: var(--space-1); padding: var(--space-2); }
+.floating-panel.dropdown__content > div { display: grid; gap: var(--space-1); }
+.floating-panel.dropdown__content [role="menuitem"] { display: flex; width: 100%; min-height: var(--control-height-md); align-items: center; gap: var(--space-3); border: 0; border-radius: var(--radius-control); padding: var(--space-3); background: transparent; color: var(--text-primary); font: inherit; font-size: var(--font-meta); font-weight: var(--font-weight-medium); line-height: 1.5; text-align: left; white-space: normal; overflow-wrap: anywhere; cursor: pointer; }
+.floating-panel.dropdown__content :is(a, button) > svg { width: 17px; height: 17px; flex: 0 0 auto; color: var(--text-secondary); }
+.floating-panel.dropdown__content [role="menuitem"]:not(:disabled):hover { background: var(--color-primary-soft); color: var(--color-primary-active); }
+.floating-panel.dropdown__content [role="menuitem"]:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; box-shadow: none; }
+.floating-panel.dropdown__content [role="menuitem"]:is(:disabled,[aria-disabled="true"]) { color: var(--text-disabled); cursor: not-allowed; }
+.floating-panel.dropdown__content .button--danger { margin-top: var(--space-2); color: var(--danger); }
+.floating-panel.dropdown__content .button--danger:hover:not(:disabled) { background: var(--danger-soft); color: var(--danger); }
+.floating-panel.dropdown__content .button--danger > svg { color: inherit; }
+.mobile-dropdown-sheet__items :is(a, button) { box-shadow: none; }
+@keyframes dropdown-enter { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes dropdown-spin { to { transform: rotate(360deg); } }
+@media (max-width: 767px), (pointer: coarse) {
+  .floating-panel { border-radius: var(--radius-card); }
+  .floating-panel .select-control__option { min-height: 48px; padding: var(--space-3); font-size: var(--font-body); }
+  .select-control__search input { min-height: 46px; font-size: 16px; }
+  .combobox-control > input { padding-right: 90px; }
+  .combobox-control__tools { right: var(--space-1); gap: 0; }
+  .combobox-control .combobox-control__tools > button { width: 40px; height: 44px; }
+  .mobile-dropdown-sheet__items { gap: var(--space-2); }
+  .mobile-dropdown-sheet__items :is(a, button) { min-height: 48px; border-radius: var(--radius-control); background: var(--surface); color: var(--text-primary); white-space: normal; }
+  .mobile-dropdown-sheet__items .button--danger { border-color: var(--danger); background: var(--danger-soft); color: var(--danger); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-panel, .combobox-control__spinner { animation: none; }
+  .select-control__trigger, .select-control__trigger > svg, .combobox-control .combobox-control__tools > button:last-child svg { transition: none; }
+}

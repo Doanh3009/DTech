@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-11-04T02:01:32.904Z",
+  "origin": "http://127.0.0.1:3100",
+  "screens": [
+    {
+      "name": "simple",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/dropdowns/simple-1440.png"
+    },
+    {
+      "name": "search",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/dropdowns/search-1440.png"
+    },
+    {
+      "name": "references",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/dropdowns/references-1440.png"
+    },
+    {
+      "name": "actions",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/dropdowns/actions-1440.png"
+    },
+    {
+      "name": "nested",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/dropdowns/nested-1440.png"
+    },
+    {
+      "name": "dialog",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/dropdowns/dialog-1440.png"
+    },
+    {
+      "name": "trial-form",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/dropdowns/trial-form-1440.png"
+    },
+    {
+      "name": "simple",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/dropdowns/simple-768.png"
+    },
+    {
+      "name": "search",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/dropdowns/search-768.png"
+    },
+    {
+      "name": "references",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/dropdowns/references-768.png"
+    },
+    {
+      "name": "actions",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/dropdowns/actions-768.png"
+    },
+    {
+      "name": "nested",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/dropdowns/nested-768.png"
+    },
+    {
+      "name": "dialog",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/dropdowns/dialog-768.png"
+    },
+    {
+      "name": "trial-form",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/dropdowns/trial-form-768.png"
+    },
+    {
+      "name": "simple",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/simple-390.png"
+    },
+    {
+      "name": "search",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/search-390.png"
+    },
+    {
+      "name": "references",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/references-390.png"
+    },
+    {
+      "name": "actions",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/actions-390.png"
+    },
+    {
+      "name": "nested",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/nested-390.png"
+    },
+    {
+      "name": "dialog",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/dialog-390.png"
+    },
+    {
+      "name": "trial-form",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/trial-form-390.png"
+    },
+    {
+      "name": "small-viewport",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/dropdowns/small-viewport-390.png"
+    }
+  ],
+  "checks": [
+    "accent_search_1440",
+    "reference_select_clear_1440",
+    "nested_choice_keeps_owner_1440",
+    "escape_keeps_dialog_1440",
+    "trial_form_data_1440",
+    "accent_search_768",
+    "reference_select_clear_768",
+    "nested_choice_keeps_owner_768",
+    "escape_keeps_dialog_768",
+    "trial_form_data_768",
+    "accent_search_390",
+    "reference_select_clear_390",
+    "nested_choice_keeps_owner_390",
+    "escape_keeps_dialog_390",
+    "trial_form_data_390",
+    "small_visual_viewport"
+  ],
+  "errors": [],
+  "writes": [],
+  "passed": true,
+  "scope": "Development preview fixtures and public trial form; visual/interaction validation only"
+}

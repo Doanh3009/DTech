@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import {SelectControl} from "@/components/shared/SelectControl";
 import { ArrowUpRight, CheckCircle2, LockKeyhole } from "lucide-react";
 import { useRef, useState, type FormEvent } from "react";
 import { trialCompanySizes, trialIndustries, trialRequestSchema } from "./trialSchemas";
@@ -44,19 +45,19 @@ export function TrialRequestForm({initialIndustry="construction"}:{initialIndust
     <fieldset disabled={busy||pending}>
       <div className={styles.grid}>
         <label className={styles.full}>Tên doanh nghiệp <span>*</span><input autoComplete="organization" maxLength={120} minLength={2} name="companyName" required /></label>
-        <label>Loại hình doanh nghiệp <span>*</span><select defaultValue="" name="companyType" required><option value="" disabled>Chọn loại hình</option><option value="limited">Công ty TNHH</option><option value="joint_stock">Công ty cổ phần</option><option value="private">Doanh nghiệp tư nhân</option><option value="household">Hộ kinh doanh</option><option value="other">Loại hình khác</option></select></label>
+        <label htmlFor="trial-companyType">Loại hình doanh nghiệp <span aria-hidden="true">*</span><SelectControl id="trial-companyType" aria-label="Loại hình doanh nghiệp" defaultValue={""} name="companyType" required options={[{value:"",label:"Chọn loại hình",disabled:true},...[{value:'limited',label:'Công ty TNHH'},{value:'joint_stock',label:'Công ty cổ phần'},{value:'private',label:'Doanh nghiệp tư nhân'},{value:'household',label:'Hộ kinh doanh'},{value:'other',label:'Loại hình khác'}]]}/></label>
         <label>Mã số thuế<input maxLength={30} name="taxCode" /></label>
         <label>Họ và tên <span>*</span><input autoComplete="name" maxLength={100} minLength={2} name="contactName" required /></label>
         <label>Chức vụ <span>*</span><input autoComplete="organization-title" maxLength={100} minLength={2} name="contactRole" required /></label>
         <label>Số điện thoại <span>*</span><input autoComplete="tel" inputMode="tel" maxLength={24} minLength={9} name="phone" required type="tel" /></label>
         <label className={styles.full}>Email liên hệ <span>*</span><input autoComplete="email" maxLength={254} name="email" required type="email" /></label>
-        <label>Lĩnh vực <span>*</span><select defaultValue={initialIndustry} name="industry" required>{Object.entries(trialIndustries).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>
-        <label>Quy mô nhân sự <span>*</span><select defaultValue="" name="companySize" required><option disabled value="">Chọn quy mô</option>{Object.entries(trialCompanySizes).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>
+        <label htmlFor="trial-industry">Lĩnh vực <span aria-hidden="true">*</span><SelectControl id="trial-industry" aria-label="Lĩnh vực" defaultValue={initialIndustry} name="industry" required options={Object.entries(trialIndustries).map(([value,label])=>({value,label}))}/></label>
+        <label htmlFor="trial-companySize">Quy mô nhân sự <span aria-hidden="true">*</span><SelectControl id="trial-companySize" aria-label="Quy mô nhân sự" defaultValue={""} name="companySize" required options={[{value:"",label:"Chọn quy mô",disabled:true},...Object.entries(trialCompanySizes).map(([value,label])=>({value,label}))]}/></label>
         <label>Tỉnh / thành phố <span>*</span><input autoComplete="address-level1" name="province" maxLength={100} minLength={2} required /></label>
         <label>Số chi nhánh / công trường <span>*</span><input type="number" name="branchCount" defaultValue={1} min={1} max={10000} required /></label>
         <label className={styles.full}>Địa chỉ doanh nghiệp <span>*</span><input autoComplete="street-address" name="address" maxLength={240} minLength={5} required /></label>
         <label>Website doanh nghiệp<input type="url" name="companyWebsite" maxLength={240} placeholder="https://" /></label>
-        <label>Thời gian triển khai <span>*</span><select name="rolloutWindow" defaultValue="" required><option value="" disabled>Chọn thời gian</option><option value="now">Trong tháng này</option><option value="quarter">Trong 3 tháng</option><option value="later">Sau 3 tháng</option><option value="exploring">Đang tìm hiểu</option></select></label>
+        <label htmlFor="trial-rolloutWindow">Thời gian triển khai <span aria-hidden="true">*</span><SelectControl id="trial-rolloutWindow" aria-label="Thời gian triển khai" defaultValue={""} name="rolloutWindow" required options={[{value:"",label:"Chọn thời gian",disabled:true},...[{value:'now',label:'Trong tháng này'},{value:'quarter',label:'Trong 3 tháng'},{value:'later',label:'Sau 3 tháng'},{value:'exploring',label:'Đang tìm hiểu'}]]}/></label>
         <label className={styles.full}>Công cụ đang sử dụng<input maxLength={500} name="currentTools" placeholder="Excel, phần mềm hiện tại..." /></label>
         <label className={styles.full}>Nhu cầu của doanh nghiệp <span>*</span><textarea maxLength={1500} minLength={10} required name="needs" placeholder="Ví dụ: quản lý sản xuất theo định mức, truy xuất lô hoặc đối chiếu chi phí công trình" rows={4} /></label>
         <label aria-hidden="true" className={styles.honeypot}>Website<input autoComplete="off" name="website" tabIndex={-1} /></label>

@@ -26,6 +26,7 @@ import "@/styles/header-toolbar.css";
 import "@/styles/ui-dna.css";
 import "@/styles/erp-platform.css";
 import "@/styles/erp-workspace.css";
+import "@/styles/dropdowns.css";
 import { SystemSettingsProvider } from "@/components/providers/SystemSettingsProvider";
 import { GlobalLoadingIndicator } from "@/components/shared/GlobalLoadingIndicator";
 import { deriveBrandColorTokens } from "@/config/systemSettings";
