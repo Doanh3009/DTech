@@ -29,3 +29,9 @@ Luồng hiện hữu: khách gửi yêu cầu → đội triển khai xử lý h
 Nguồn kiểm tra: `TrialRequestForm.tsx`, `BusinessProvisionPanel.tsx`, `businessService.provisionBusiness`, API `/api/v1/crm/customers/[id]/workspace` và RPC `business_provision_customer`. API cấp ERP dùng quyền trung tâm triển khai; tài khoản khách không có quyền cấp doanh nghiệp mới.
 
 Đã có lõi ERP lưu dữ liệu và xử lý giao dịch thật, cùng cơ chế cách ly doanh nghiệp và phân quyền. Chưa nghiệm thu đủ 82 yêu cầu; bốn kết nối hóa đơn điện tử, ký số, ngân hàng và email là mô phỏng theo lựa chọn của người dùng. Chưa có bằng chứng nghiệm thu luồng mua/thanh toán tự động cấp trọn bộ ERP. Vì vậy, trạng thái hiện tại phù hợp demo và triển khai thử nghiệm theo phạm vi đã kiểm chứng; không được mô tả là đã hoàn thiện toàn bộ ERP thương mại.
+
+## Bản triển khai đã kiểm tra
+
+Commit ứng dụng `b6fa9c5c28cef80a92790e55952e36a3dd6de74c` đã push GitHub và triển khai tại https://dimixo-erp.vercel.app; Vercel READY, alias khớp và health trả ready. [Receipt phát hành](evidence/dropdown-release.json) ghi mã triển khai và kết quả.
+
+Trên Vercel: 25 ảnh, 18 kiểm tra tại 390/768/1440 px; kỳ theo dõi hiển thị đủ tháng/năm, mũi tên tham chiếu chuyển trạng thái và menu desktop căn hàng. Kiểm tra chọn kỳ có API 200, chọn rồi bỏ bản nháp, FormData đăng ký và production 404 cho trang preview. Không có lỗi trang/API hoặc lệnh ghi nghiệp vụ; phiên trải nghiệm đã đăng xuất (200). Build cuối và TypeScript đạt; quét 166 artifact client không có giá trị bí mật.

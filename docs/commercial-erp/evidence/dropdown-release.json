@@ -1,0 +1,245 @@
+{
+  "generatedAt": "2026-11-04T02:27:41.169Z",
+  "releaseDate": "2026-11-04",
+  "scope": "Shared dropdown presentation and interactions; no database or business acceptance changes",
+  "sourceCommit": "b6fa9c5c28cef80a92790e55952e36a3dd6de74c",
+  "deployment": {
+    "checkedAt": "2026-11-04T02:26:41.295Z",
+    "project": "dimixo-erp",
+    "projectId": "prj_o7pcu5PyLCWrXtb6itgS3YuIrY3u",
+    "sourceCommit": "b6fa9c5c28cef80a92790e55952e36a3dd6de74c",
+    "deploymentId": "dpl_2JZxh9Gjd4pMbSQBgUij7RhL3BcW",
+    "deploymentUrl": "https://dimixo-rkgqy7oky-chau-tuan.vercel.app",
+    "productionUrl": "https://dimixo-erp.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "regions": [
+      "sin1"
+    ],
+    "nodeVersion": "24.x",
+    "aliasMatches": true,
+    "checks": [
+      {
+        "route": "/api/health/live",
+        "httpStatus": 200,
+        "status": "alive"
+      },
+      {
+        "route": "/api/health/ready",
+        "httpStatus": 200,
+        "status": "ready"
+      },
+      {
+        "route": "/",
+        "httpStatus": 200
+      },
+      {
+        "route": "/erp/xay-dung-chau-tuan/login",
+        "httpStatus": 200
+      }
+    ],
+    "passed": true,
+    "credentialsIncluded": false
+  },
+  "verification": {
+    "build": {
+      "passed": true,
+      "buildId": "K29Bf0VaxEMUxaNKrtQ3a",
+      "typecheck": true,
+      "clientArtifacts": 166,
+      "privateValueMatches": 0
+    },
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 5
+    },
+    "unit": {
+      "passed": 2060,
+      "skipped": 37,
+      "failed": 0,
+      "sourceCommit": "1ca3fe84d00c41178abb3d3e0dad02da30a28133",
+      "note": "Full suite before final CSS-only adjustments; focused tests and browser checks repeated afterward"
+    },
+    "focusedFinal": {
+      "passed": 20,
+      "failed": 0,
+      "sourceCommit": "b6fa9c5c28cef80a92790e55952e36a3dd6de74c"
+    },
+    "localBrowser": {
+      "artifact": "docs/commercial-erp/evidence/dropdown-browser.json",
+      "screens": 22,
+      "checks": 16,
+      "passed": true
+    },
+    "productionBrowser": {
+      "generatedAt": "2026-11-04T02:26:37.784Z",
+      "origin": "https://dimixo-erp.vercel.app",
+      "screens": [
+        {
+          "name": "trial-company-type",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-company-type-1440.png"
+        },
+        {
+          "name": "trial-industry",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-industry-1440.png"
+        },
+        {
+          "name": "trial-company-size",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-company-size-1440.png"
+        },
+        {
+          "name": "trial-rollout",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-rollout-1440.png"
+        },
+        {
+          "name": "trial-company-type",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-company-type-768.png"
+        },
+        {
+          "name": "trial-industry",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-industry-768.png"
+        },
+        {
+          "name": "trial-company-size",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-company-size-768.png"
+        },
+        {
+          "name": "trial-rollout",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-rollout-768.png"
+        },
+        {
+          "name": "trial-company-type",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-company-type-390.png"
+        },
+        {
+          "name": "trial-industry",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-industry-390.png"
+        },
+        {
+          "name": "trial-company-size",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-company-size-390.png"
+        },
+        {
+          "name": "trial-rollout",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/trial-rollout-390.png"
+        },
+        {
+          "name": "dashboard-period",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/dashboard-period-1440.png"
+        },
+        {
+          "name": "supplier-reference",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/supplier-reference-1440.png"
+        },
+        {
+          "name": "document-source",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/document-source-1440.png"
+        },
+        {
+          "name": "account-actions",
+          "width": 1440,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/account-actions-1440.png"
+        },
+        {
+          "name": "dashboard-period",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/dashboard-period-768.png"
+        },
+        {
+          "name": "supplier-reference",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/supplier-reference-768.png"
+        },
+        {
+          "name": "document-source",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/document-source-768.png"
+        },
+        {
+          "name": "account-actions",
+          "width": 768,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/account-actions-768.png"
+        },
+        {
+          "name": "dashboard-period",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/dashboard-period-390.png"
+        },
+        {
+          "name": "supplier-reference",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/supplier-reference-390.png"
+        },
+        {
+          "name": "document-source",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/document-source-390.png"
+        },
+        {
+          "name": "account-actions",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/account-actions-390.png"
+        },
+        {
+          "name": "table-actions",
+          "width": 390,
+          "screenshot": "docs/ui-evidence/dropdowns-vercel/table-actions-390.png"
+        }
+      ],
+      "checks": [
+        "trial_values_1440",
+        "trial_values_768",
+        "trial_values_390",
+        "period_label_visible_1440",
+        "dashboard_period_1440",
+        "reference_arrow_open_1440",
+        "reference_code_name_1440",
+        "menu_actions_aligned_1440",
+        "period_label_visible_768",
+        "dashboard_period_768",
+        "reference_arrow_open_768",
+        "reference_code_name_768",
+        "menu_actions_aligned_768",
+        "period_label_visible_390",
+        "dashboard_period_390",
+        "reference_arrow_open_390",
+        "reference_code_name_390",
+        "production_preview_hidden"
+      ],
+      "errors": [],
+      "apiFailures": [],
+      "unexpectedWrites": [],
+      "credentialsIncluded": false,
+      "passed": true,
+      "logoutStatus": 200,
+      "scope": "Public trial form and existing demo tenant; read-only form/menu interactions; drafts discarded"
+    }
+  },
+  "database": {
+    "changed": false,
+    "environment": "development"
+  },
+  "productStatus": {
+    "tenantErpAvailable": true,
+    "all82RequirementsAccepted": false,
+    "providerIntegrations": "simulation as requested",
+    "purchaseFlow": "Trial request -> operator scopes/configures/provisions tenant and accounts -> scoped acceptance -> handoff",
+    "automatedPaymentProvisioningAccepted": false
+  },
+  "credentialsIncluded": false
+}
