@@ -118,14 +118,14 @@
 .combobox-control .combobox-control__tools > button:hover:not(:disabled) { background: var(--surface-2); color: var(--text-primary); }
 .combobox-control .combobox-control__tools > button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; box-shadow: none; }
 .combobox-control .combobox-control__tools > button:last-child svg { transition: transform var(--motion-fast, 140ms); }
-.combobox-control[data-open] .combobox-control .combobox-control__tools > button:last-child svg { transform: rotate(180deg); }
+.combobox-control[data-open] .combobox-control__tools > button:last-child svg { transform: rotate(180deg); }
 .combobox-control[data-open] > input { border-color: var(--color-primary); }
 .combobox-control__spinner { animation: dropdown-spin 900ms linear infinite; }
 .dropdown__trigger { display: inline-flex; min-width: var(--control-height-sm); min-height: var(--control-height-sm); align-items: center; justify-content: center; gap: var(--space-2); border: 1px solid transparent; border-radius: var(--radius-control); background: transparent; color: var(--text-secondary); cursor: pointer; }
 .dropdown__trigger:hover, .dropdown__trigger[aria-expanded="true"] { border-color: var(--border-subtle); background: var(--surface-2); color: var(--text-primary); }
 .floating-panel.dropdown__content { display: grid; gap: var(--space-1); padding: var(--space-2); }
 .floating-panel.dropdown__content > div { display: grid; gap: var(--space-1); }
-.floating-panel.dropdown__content [role="menuitem"] { display: flex; width: 100%; min-height: var(--control-height-md); align-items: center; gap: var(--space-3); border: 0; border-radius: var(--radius-control); padding: var(--space-3); background: transparent; color: var(--text-primary); font: inherit; font-size: var(--font-meta); font-weight: var(--font-weight-medium); line-height: 1.5; text-align: left; white-space: normal; overflow-wrap: anywhere; cursor: pointer; }
+.floating-panel.dropdown__content [role="menuitem"] { display: flex; width: 100%; min-height: var(--control-height-md); align-items: center; justify-content: flex-start; gap: var(--space-3); border: 0; border-radius: var(--radius-control); padding: var(--space-3); background: transparent; color: var(--text-primary); font: inherit; font-size: var(--font-meta); font-weight: var(--font-weight-medium); line-height: 1.5; text-align: left; white-space: normal; overflow-wrap: anywhere; cursor: pointer; }
 .floating-panel.dropdown__content :is(a, button) > svg { width: 17px; height: 17px; flex: 0 0 auto; color: var(--text-secondary); }
 .floating-panel.dropdown__content [role="menuitem"]:not(:disabled):hover { background: var(--color-primary-soft); color: var(--color-primary-active); }
 .floating-panel.dropdown__content [role="menuitem"]:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; box-shadow: none; }

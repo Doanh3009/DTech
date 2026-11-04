@@ -81,7 +81,8 @@
 .card[data-feature=quality]>span{background:var(--success-soft);color:var(--success)}
 .dashboardToolbar{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}
 .dashboardToolbar h2{font-size:var(--font-section);margin:0}
-.dashboardToolbar>div{display:flex;align-items:end;gap:var(--space-3);flex-wrap:nowrap}
+.dashboardToolbar>div{display:flex;align-items:end;gap:var(--space-3);flex-wrap:wrap}
+.dashboardToolbar :global(.field){width:11.5rem;max-width:100%;flex:0 0 auto}
 .dashboardToolbar label{display:grid;gap:var(--space-2);width:auto;flex:0 0 auto;font-size:var(--font-meta);color:var(--text-secondary)}
 .dashboardToolbar select{min-height:44px;border:1px solid var(--border-default);border-radius:var(--radius-control);background:var(--surface);color:var(--text-primary);padding:var(--space-2) var(--space-3);font:inherit}
 .dashboardLoading{min-height:240px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--border-default);border-radius:var(--radius-card);color:var(--text-secondary)}

@@ -9,6 +9,7 @@
 - Danh sách cuộn trong khung; vị trí tự chọn phía trên/dưới và bám viewport. Dropdown lồng trong menu giữ menu cha khi chọn; Escape đóng lớp trên cùng trước.
 - Giữ FormData, kiểm tra trường bắt buộc, reset form và sự kiện select/input hiện có. Placeholder bị vô hiệu hóa không được trình bày như một giá trị hợp lệ.
 - Bộ chọn kỳ trên tổng quan ERP và bốn ô chọn trong đăng ký dùng thử sử dụng component chung. Loại bỏ popup select mặc định của trình duyệt tại các vị trí này.
+- Kỳ theo dõi hiển thị đủ tháng/năm; icon và nhãn trong menu thao tác thẳng hàng. Mũi tên ô tham chiếu phản ánh trạng thái mở.
 - Preview phát triển ở `/ui-preview/dropdowns`; production trả 404.
 
 Styles được tập trung tại `src/styles/dropdowns.css`; token bóng tại `src/styles/tokens.css`. Phần styles cũ tương ứng đã được chuyển khỏi `enterprise.css`.
