@@ -1,0 +1,28 @@
+.workbench{display:grid;gap:var(--space-4);min-width:0}
+.header,.heading,.actions,.rowActions,.editorHeading,.editorFooter{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap}
+.header{justify-content:space-between}
+.heading h2{margin:0;font-size:var(--font-section)}
+.actions{gap:var(--space-2)}
+.rowActions{gap:var(--space-1);flex-wrap:nowrap}
+.grid{min-width:0}
+.table{min-width:0}
+.identity{display:grid;gap:var(--space-1);min-width:0;overflow-wrap:anywhere}
+.identity strong{font-weight:var(--font-weight-medium)}
+.identity span{font-size:var(--font-meta);color:var(--text-secondary)}
+.amount{font-variant-numeric:tabular-nums;font-weight:var(--font-weight-medium);white-space:nowrap}
+.summary{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;padding:var(--space-3) var(--space-4);border:1px solid var(--border-subtle);border-radius:var(--radius-control);background:var(--surface)}
+.summary>span,.preview{display:flex;align-items:baseline;gap:var(--space-3);font-size:var(--font-meta);color:var(--text-secondary)}
+.summary strong,.preview strong{font-size:var(--font-body);font-weight:var(--font-weight-semibold);font-variant-numeric:tabular-nums;color:var(--text-primary)}
+.total strong{font-size:var(--font-section)}
+.editor{display:grid;gap:var(--space-4);min-width:0;border:1px solid var(--border-default);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-4)}
+.editorHeading h3{margin:0;font-size:var(--font-body);font-weight:var(--font-weight-semibold)}
+.editorHeading>button{margin-left:auto}
+.editorFields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);align-items:end;min-width:0}
+.editorFields>:global([aria-label="Số lượng và đơn vị"]){grid-column:1/-1}
+.editorFields :global([aria-label="Số lượng và đơn vị"])>div{grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;gap:var(--space-3)}
+.editorFields :global([aria-label="Số lượng và đơn vị"] .field:has(input[readonly])){gap:var(--space-1)}
+.editorFields :global([aria-label="Số lượng và đơn vị"] input[readonly]){background:var(--surface-2);font-size:var(--font-meta)}
+.editorFooter{justify-content:space-between;border-top:1px solid var(--border-subtle);padding-top:var(--space-4)}
+.editorFooter>.actions{margin-left:auto}
+.preview{flex-wrap:wrap}
+@media(max-width:767px){.header{align-items:flex-start}.header>.actions{width:100%}.header>.actions>button:last-child{margin-left:auto}.editor{padding:var(--space-3)}.editorFields{grid-template-columns:minmax(0,1fr);gap:var(--space-3)}.editorFields :global([aria-label="Số lượng và đơn vị"])>div{grid-template-columns:repeat(2,minmax(0,1fr))}.editorFooter>.actions{width:100%;margin-left:0}.editorFooter>.actions>button:first-child{flex:1}.summary{padding:var(--space-3)}.summary>span{justify-content:space-between}.summary>.total{width:100%}.total strong{font-size:var(--font-body)}.rowActions{gap:var(--space-2)}}

@@ -1,0 +1,228 @@
+{
+  "generatedAt": "2026-11-05T02:10:28.340Z",
+  "workDate": "2026-11-05",
+  "status": "local_verified_native_and_publication_pending",
+  "baselineCommit": "59510f2ff8893b3aed97276c33653f9eb51aa802",
+  "sourceState": "uncommitted workspace changes",
+  "sourceFiles": [
+    {
+      "file": "scripts/commercial/compile-business-schema.mjs",
+      "sha256": "9a99b25fd83fb4a6032efc51f61631f8f21c7a16ae739fed51b69957496be288"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/[...path]/business-read-routes.test.ts",
+      "sha256": "90fc8fb62dd8438b615a6464e0672e5456f53acca5ab9c816e5e707fd8dff136"
+    },
+    {
+      "file": "src/app/api/v1/business/[slug]/[...path]/route.ts",
+      "sha256": "f0e2f171b58ad96415c7c297c1519ba86f85dc56c50c1a2c879b27f85b526c7e"
+    },
+    {
+      "file": "src/app/erp/[slug]/(workspace)/[kind]/page.tsx",
+      "sha256": "d0d18e3ee5d11f7326e61de6153e6f9f055d9e27e36d0a5192734f32d47abe78"
+    },
+    {
+      "file": "src/app/erp/[slug]/(workspace)/module/[feature]/page.tsx",
+      "sha256": "dc23d0db6f6559e63df9a31856c0857cd0d392801ffa952e0ee82eab77e87dc1"
+    },
+    {
+      "file": "src/config/businessEntities.json",
+      "sha256": "67bdee45b3086e16f7c7f7cfe573c117a4d22f5f0c25a7edf4e5498fc031b9e8"
+    },
+    {
+      "file": "src/features/business/BusinessDocumentLines.tsx",
+      "sha256": "2dacff3f73c2bc4211aa6dd482d31d5a5be7bf22cd85d974707d87a6b54d8dbc"
+    },
+    {
+      "file": "src/features/business/BusinessLink.tsx",
+      "sha256": "9ba5024a0526ebeece386edff131e78a93fd6d58951337af33d4cf0cf4e6f36a"
+    },
+    {
+      "file": "src/features/business/BusinessMisaWorkspace.tsx",
+      "sha256": "4f626bec431ebf10f95a2d6aaec6c10a19c7b8b4ba3a5c42d8af462dbbd218ac"
+    },
+    {
+      "file": "src/features/business/BusinessModuleWorkspace.tsx",
+      "sha256": "782f1fd57cc288da73ecfa5e9ca8a7b287b62f3835860b35a4972840dbad20c6"
+    },
+    {
+      "file": "src/features/business/BusinessPeopleWorkspace.tsx",
+      "sha256": "f210ac100e423eb86011526232153da028e01126a3c55a8bc82d23454104e486"
+    },
+    {
+      "file": "src/features/business/BusinessRecordFormFields.tsx",
+      "sha256": "51fd9c763916d7efe3c6a8e3d55ac979a2681a4ac86af6c576006f7a5acf178d"
+    },
+    {
+      "file": "src/features/business/BusinessRecords.tsx",
+      "sha256": "605c2b4a736bbd365aa52f04715be62993e67e2ce3600893b01f0b4efa390045"
+    },
+    {
+      "file": "src/features/business/BusinessScopedModule.tsx",
+      "sha256": "886598cb60a3b309e06da6adaff7ac4d31d53f22d1934d67043430d416350bb1"
+    },
+    {
+      "file": "src/features/business/BusinessShell.tsx",
+      "sha256": "e89803569fd24731e03c2a8f0297dd2ecc45542b4ef9a4f0948030407710d7d2"
+    },
+    {
+      "file": "src/features/business/BusinessWorkflowWorkspace.tsx",
+      "sha256": "a3f9453ea42a6b0d2168b1bec53ea6e488473dadffe95bf159c701c427ca0440"
+    },
+    {
+      "file": "src/features/business/businessCatalog.test.ts",
+      "sha256": "10a8b3817e479ae03c97ce4b88bb9a5644c9cfc542874dc0c2d29442d1efad50"
+    },
+    {
+      "file": "src/features/business/businessCatalog.ts",
+      "sha256": "92bfee46506fb6cb972c10f3fb8857b57993cf1a2eeb8e1e6080cfb9195abaf9"
+    },
+    {
+      "file": "src/features/business/businessService.ts",
+      "sha256": "a9453f4519662b57071f4f384d40829cb4740821adf1b15a751ca71f86e5d37d"
+    },
+    {
+      "file": "scripts/commercial/verify-business-transaction-units.mjs",
+      "sha256": "c05f610cf7e469d582a44a8fc68f9805053e7c03b6e72145495e040b728a842f"
+    },
+    {
+      "file": "src/app/ui-preview/erp-workareas/page.tsx",
+      "sha256": "f55bb512c12bba84a385746052bafea6d4acdf87880b55904148674672185379"
+    },
+    {
+      "file": "src/app/ui-preview/erp-workareas/preview.tsx",
+      "sha256": "8584fd2b6b938d4a391125f78a7cf00e792a2038efe6ce51963ac2dbfff761d5"
+    },
+    {
+      "file": "src/config/businessWorkAreas.json",
+      "sha256": "d0a047965faf81c56a37c2f50375e2c1cea0ffefaa487d8ecabc93fa9c5c15d5"
+    },
+    {
+      "file": "src/features/business/BusinessAreaLinks.tsx",
+      "sha256": "214bdec8d603835e9051ed0c8e227a069b3216b914dd2fb489b12cdf4401d450"
+    },
+    {
+      "file": "src/features/business/BusinessTransactionQuantity.test.tsx",
+      "sha256": "7bb16d1ef9342ed2e7398fc52210347216f054f42f92bba668ee2714efc7ed95"
+    },
+    {
+      "file": "src/features/business/BusinessTransactionQuantity.tsx",
+      "sha256": "458472d666d8124d9c88f92f1d9abd970b93200be3539647642e37e024435ce6"
+    },
+    {
+      "file": "src/features/business/BusinessWorkArea.module.css",
+      "sha256": "64ee0df801f6225b2a4033b5054efa3074ed615f6f1950bb64bcd3c4cbc02ac5"
+    },
+    {
+      "file": "src/features/business/BusinessWorkArea.test.tsx",
+      "sha256": "2eb3e4e23353f93a5558cc6a89627b2def3bdcd383769b303a199566f3956b1e"
+    },
+    {
+      "file": "src/features/business/BusinessWorkArea.tsx",
+      "sha256": "43208e67d37394a65f93c75980dca65cb7c16eb061467b410fcaf90b05ffee02"
+    },
+    {
+      "file": "src/features/business/businessDocumentColumns.test.ts",
+      "sha256": "d54522da4755a77083ccf621e1511ec6269f703f1b3f9376472cc57ff470ccb5"
+    },
+    {
+      "file": "src/features/business/businessDocumentColumns.ts",
+      "sha256": "267a6ca0449f755c3c971281e44e9faa31ff08fcb99e9b037b630cc200ac18c4"
+    },
+    {
+      "file": "src/features/business/businessNavigationGuard.test.ts",
+      "sha256": "04de9e8068cbb96a76e98f4a9d48254be1b6ff3c59e614dae7d1de32c457f8c5"
+    },
+    {
+      "file": "src/features/business/businessNavigationGuard.ts",
+      "sha256": "ed26d15f6018a4581de38be0d1cc3c37aa5243e7a55c7e8b7fa3ae28a7c28345"
+    },
+    {
+      "file": "src/features/business/businessWorkAreaRoutes.test.tsx",
+      "sha256": "15ac047d95095b764414d52367ae93f1393fa9c3dcb28d62760f5b400f26742a"
+    },
+    {
+      "file": "src/features/business/businessWorkAreas.test.ts",
+      "sha256": "04808cd5174e9073e1a5ec8d9a0ff13f87675b254b8001496fc79839f70afeda"
+    },
+    {
+      "file": "src/features/business/businessWorkAreas.ts",
+      "sha256": "d0868a1334de74164056ce0a3c5e3abf487247f8d58a69420508c65b2e96dc3e"
+    },
+    {
+      "file": "supabase/migrations/202611040001_business_transaction_units.sql",
+      "sha256": "2d3cd5412163ca1524ec09c8c2f81b48923051af0dac2cb960b9b492ab65633c"
+    }
+  ],
+  "scope": {
+    "modules": 14,
+    "primaryWorkAreasPerModuleAtMost": 6,
+    "deepLinksPreserved": true,
+    "childDetailsContextual": true,
+    "unitEntryKinds": [
+      "purchase_lines",
+      "sales_lines",
+      "purchase_receipts",
+      "stock_moves"
+    ]
+  },
+  "verification": {
+    "unit": {
+      "passed": 2103,
+      "skipped": 37,
+      "failed": 0
+    },
+    "typecheck": true,
+    "build": true,
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 5
+    },
+    "browser": {
+      "artifact": "docs/commercial-erp/evidence/workareas-local.json",
+      "screens": 45,
+      "checks": 43,
+      "viewports": [
+        390,
+        768,
+        1440
+      ],
+      "apiMode": "mocked fixture responses",
+      "businessWrites": 0,
+      "passed": true
+    },
+    "privateValues": {
+      "sourceFilesScanned": 37,
+      "matches": 0,
+      "clientArtifacts": 167,
+      "clientMatches": 0
+    }
+  },
+  "native": {
+    "passed": false,
+    "fullAcceptance": false,
+    "previousFailure": "Unicode unit casing did not resolve; candidate updated with NFC and Vietnamese case normalization",
+    "rerunBlocked": "Windows pg_ctl restricted-token startup unavailable in sandbox; elevated review capacity unavailable",
+    "candidate": "supabase/migrations/202611040001_business_transaction_units.sql"
+  },
+  "publication": {
+    "authorizedByUser": true,
+    "githubPushed": false,
+    "vercelDeployed": false,
+    "migrationApplied": false,
+    "approvalReview": {
+      "action": "Supabase db push dry-run on tcjjhxqtreemccdbvyza",
+      "executed": false,
+      "status": "review_failed",
+      "reason": "Automatic approval review usage limit; no unsafe-action determination"
+    },
+    "lastVerifiedProductionSource": "b6fa9c5c28cef80a92790e55952e36a3dd6de74c",
+    "lastVerifiedProductionAt": "2026-11-04T02:26:41.295Z"
+  },
+  "remaining": {
+    "all82Accepted": false,
+    "purchasingInventoryEndToEndAccepted": false,
+    "browserBackForwardDraftProtectionAccepted": false
+  },
+  "credentialsIncluded": false
+}

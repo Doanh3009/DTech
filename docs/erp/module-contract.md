@@ -24,6 +24,8 @@ Không ghi mô tả dưới từng chức năng, action, permission và menu. Qu
 
 Danh sách module chỉ xuất hiện tại gateway sau đăng nhập. Khi vào module, sidebar, menu điện thoại, breadcrumb và tìm kiếm bám nghiệp vụ của module hiện tại. Dashboard riêng của module được giữ trong cùng phạm vi. Dùng liên kết “Tất cả module” để quay về gateway; không nhúng `ModuleLauncher` hoặc lặp dãy ứng dụng trong trang nghiệp vụ.
 
+Gom chứng từ liên quan vào vùng tác nghiệp trong `businessWorkAreas.json`, với tối đa sáu vùng chính mỗi module. Chuyển bước bằng tab trong cùng vùng; chi tiết con nằm trong chứng từ và danh mục/thiết lập thu gọn. Giữ deep link, quyền và module scope; kiểm tra dữ liệu chưa lưu trước khi chuyển màn hình. Xem [điều hướng vùng làm việc](work-area-navigation.md).
+
 ## Dữ liệu
 
 Schema có khóa liên kết, ràng buộc, index, audit và kiểm soát trạng thái. Giao dịch nhiều bảng nguyên tử ở RPC/service. Chứng từ đã ghi sổ có luồng đảo/điều chỉnh. UI dùng read model/service để truy cập nghiệp vụ khác. Import/export tuân thủ cùng quyền và quy tắc.

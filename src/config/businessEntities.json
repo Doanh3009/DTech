@@ -344,13 +344,13 @@
         "default": "in"
       },
       "quantity": {
-        "label": "Số lượng",
+        "label": "Số lượng cơ sở",
         "type": "number",
         "min": 0.0001,
         "required": true
       },
       "unit_cost": {
-        "label": "Đơn giá",
+        "label": "Đơn giá cơ sở",
         "type": "number",
         "min": 0,
         "default": 0
@@ -364,11 +364,52 @@
         "label": "Đơn bán hàng",
         "type": "ref",
         "ref": "sales_orders"
+      },
+      "entry_unit": {
+        "label": "Đơn vị nhập",
+        "type": "text",
+        "max": 30,
+        "uiHidden": true
+      },
+      "entry_quantity": {
+        "label": "Số lượng nhập",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "entry_price": {
+        "label": "Đơn giá theo đơn vị nhập",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "base_unit": {
+        "label": "Đơn vị cơ sở",
+        "type": "text",
+        "computed": true
+      },
+      "unit_factor": {
+        "label": "Hệ số quy đổi",
+        "type": "number",
+        "computed": true,
+        "uiHidden": true
+      },
+      "unit_effective_on": {
+        "label": "Ngày quy đổi",
+        "type": "date",
+        "computed": true,
+        "uiHidden": true
       }
     },
     "simulationServices": [
       "email"
-    ]
+    ],
+    "quantityEntry": {
+      "priceField": "unit_cost",
+      "dateField": "document_date"
+    }
   },
   "material_issues": {
     "label": "Cấp nguyên liệu",
@@ -800,20 +841,60 @@
         "required": true
       },
       "quantity": {
-        "label": "Số lượng",
+        "label": "Số lượng cơ sở",
         "type": "number",
         "min": 0.0001,
         "required": true
       },
       "unit_price": {
-        "label": "Đơn giá",
+        "label": "Đơn giá cơ sở",
         "type": "number",
         "min": 0,
         "default": 0
+      },
+      "entry_unit": {
+        "label": "Đơn vị nhập",
+        "type": "text",
+        "max": 30,
+        "uiHidden": true
+      },
+      "entry_quantity": {
+        "label": "Số lượng nhập",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "entry_price": {
+        "label": "Đơn giá theo đơn vị nhập",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "base_unit": {
+        "label": "Đơn vị cơ sở",
+        "type": "text",
+        "computed": true
+      },
+      "unit_factor": {
+        "label": "Hệ số quy đổi",
+        "type": "number",
+        "computed": true,
+        "uiHidden": true
+      },
+      "unit_effective_on": {
+        "label": "Ngày quy đổi",
+        "type": "date",
+        "computed": true,
+        "uiHidden": true
       }
     },
     "parentKind": "sales_orders",
-    "parentField": "sales_order_id"
+    "parentField": "sales_order_id",
+    "quantityEntry": {
+      "priceField": "unit_price"
+    }
   },
   "receivables": {
     "label": "Công nợ khách hàng",
@@ -1371,13 +1452,13 @@
         "required": true
       },
       "quantity": {
-        "label": "Số lượng",
+        "label": "Số lượng cơ sở",
         "type": "number",
         "default": 0,
         "min": 0.0001
       },
       "unit_price": {
-        "label": "Đơn giá",
+        "label": "Đơn giá cơ sở",
         "type": "number",
         "default": 0,
         "min": 0
@@ -1388,10 +1469,50 @@
         "ref": "procurement_award_lines",
         "required": false,
         "computed": true
+      },
+      "entry_unit": {
+        "label": "Đơn vị nhập",
+        "type": "text",
+        "max": 30,
+        "uiHidden": true
+      },
+      "entry_quantity": {
+        "label": "Số lượng nhập",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "entry_price": {
+        "label": "Đơn giá theo đơn vị nhập",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "base_unit": {
+        "label": "Đơn vị cơ sở",
+        "type": "text",
+        "computed": true
+      },
+      "unit_factor": {
+        "label": "Hệ số quy đổi",
+        "type": "number",
+        "computed": true,
+        "uiHidden": true
+      },
+      "unit_effective_on": {
+        "label": "Ngày quy đổi",
+        "type": "date",
+        "computed": true,
+        "uiHidden": true
       }
     },
     "parentKind": "purchase_orders",
-    "parentField": "purchase_order_id"
+    "parentField": "purchase_order_id",
+    "quantityEntry": {
+      "priceField": "unit_price"
+    }
   },
   "purchase_receipts": {
     "label": "Nhận hàng theo đơn mua",
@@ -1422,13 +1543,13 @@
         "ref": "lots"
       },
       "quantity": {
-        "label": "Số lượng nhận",
+        "label": "Số lượng cơ sở",
         "type": "number",
         "default": 0,
         "min": 0.0001
       },
       "unit_cost": {
-        "label": "Đơn giá nhập",
+        "label": "Đơn giá cơ sở",
         "type": "number",
         "default": 0,
         "min": 0
@@ -1437,11 +1558,52 @@
         "label": "Ngày nhận",
         "type": "date",
         "required": true
+      },
+      "entry_unit": {
+        "label": "Đơn vị nhập",
+        "type": "text",
+        "max": 30,
+        "uiHidden": true
+      },
+      "entry_quantity": {
+        "label": "Số lượng nhập",
+        "type": "number",
+        "min": 0.0001,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "entry_price": {
+        "label": "Đơn giá theo đơn vị nhập",
+        "type": "number",
+        "min": 0,
+        "max": 1000000000000000,
+        "uiHidden": true
+      },
+      "base_unit": {
+        "label": "Đơn vị cơ sở",
+        "type": "text",
+        "computed": true
+      },
+      "unit_factor": {
+        "label": "Hệ số quy đổi",
+        "type": "number",
+        "computed": true,
+        "uiHidden": true
+      },
+      "unit_effective_on": {
+        "label": "Ngày quy đổi",
+        "type": "date",
+        "computed": true,
+        "uiHidden": true
       }
     },
     "simulationServices": [
       "email"
-    ]
+    ],
+    "quantityEntry": {
+      "priceField": "unit_cost",
+      "dateField": "document_date"
+    }
   },
   "vendor_invoices": {
     "label": "Hóa đơn mua hàng",

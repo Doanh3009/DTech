@@ -234,8 +234,9 @@
  .portal .main :global(.page-header[data-ui="page-header"] .page-action-bar){width:100%;justify-content:flex-start}
  .recordForm :global(.form-section__grid),.columnOptions{grid-template-columns:minmax(0,1fr)}
  .recordFooter{gap:var(--space-3)}
- .recordFooter>.actions{width:100%;flex-wrap:nowrap}
- .recordFooter>.actions>button:first-child{flex:1}
+ .recordFooter>.actions{display:grid;width:100%;min-width:0;grid-template-columns:minmax(0,1fr) auto}
+ .recordFooter>.actions>button{min-width:0;max-width:100%;white-space:normal}
+ .recordFooter>.actions>button:first-child:nth-last-child(n+3){grid-column:1/-1}
  .recordIdentity{font-size:var(--font-body)}
  .portal .main .recordsTable .recordIdentity{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-1);width:100%;text-align:left;white-space:normal;justify-content:start;align-items:start}
  .portal .main .recordsTable .recordIdentity>strong,.portal .main .recordsTable .recordIdentity>span{display:block;text-align:left;white-space:normal}

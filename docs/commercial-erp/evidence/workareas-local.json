@@ -1,0 +1,280 @@
+{
+  "generatedAt": "2026-11-05T02:06:35.144Z",
+  "origin": "http://127.0.0.1:3102",
+  "scope": "Development fixtures with actual shared components and work-area layouts; APIs mocked; no server/native/customer acceptance",
+  "screens": [
+    {
+      "name": "inventory",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/inventory-1440.png"
+    },
+    {
+      "name": "purchasing",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/purchasing-1440.png"
+    },
+    {
+      "name": "sales",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/sales-1440.png"
+    },
+    {
+      "name": "crm",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/crm-1440.png"
+    },
+    {
+      "name": "accounting",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/accounting-1440.png"
+    },
+    {
+      "name": "people",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/people-1440.png"
+    },
+    {
+      "name": "projects",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/projects-1440.png"
+    },
+    {
+      "name": "production",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/production-1440.png"
+    },
+    {
+      "name": "mes",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/mes-1440.png"
+    },
+    {
+      "name": "traceability",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/traceability-1440.png"
+    },
+    {
+      "name": "quality",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/quality-1440.png"
+    },
+    {
+      "name": "assets",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/assets-1440.png"
+    },
+    {
+      "name": "costing",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/costing-1440.png"
+    },
+    {
+      "name": "collaboration",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/collaboration-1440.png"
+    },
+    {
+      "name": "inventory",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/inventory-768.png"
+    },
+    {
+      "name": "purchasing",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/purchasing-768.png"
+    },
+    {
+      "name": "sales",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/sales-768.png"
+    },
+    {
+      "name": "crm",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/crm-768.png"
+    },
+    {
+      "name": "accounting",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/accounting-768.png"
+    },
+    {
+      "name": "people",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/people-768.png"
+    },
+    {
+      "name": "projects",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/projects-768.png"
+    },
+    {
+      "name": "production",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/production-768.png"
+    },
+    {
+      "name": "mes",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/mes-768.png"
+    },
+    {
+      "name": "traceability",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/traceability-768.png"
+    },
+    {
+      "name": "quality",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/quality-768.png"
+    },
+    {
+      "name": "assets",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/assets-768.png"
+    },
+    {
+      "name": "costing",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/costing-768.png"
+    },
+    {
+      "name": "collaboration",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/collaboration-768.png"
+    },
+    {
+      "name": "inventory",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/inventory-390.png"
+    },
+    {
+      "name": "purchasing",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/purchasing-390.png"
+    },
+    {
+      "name": "sales",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/sales-390.png"
+    },
+    {
+      "name": "crm",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/crm-390.png"
+    },
+    {
+      "name": "accounting",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/accounting-390.png"
+    },
+    {
+      "name": "people",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/people-390.png"
+    },
+    {
+      "name": "projects",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/projects-390.png"
+    },
+    {
+      "name": "production",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/production-390.png"
+    },
+    {
+      "name": "mes",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/mes-390.png"
+    },
+    {
+      "name": "traceability",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/traceability-390.png"
+    },
+    {
+      "name": "quality",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/quality-390.png"
+    },
+    {
+      "name": "assets",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/assets-390.png"
+    },
+    {
+      "name": "costing",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/costing-390.png"
+    },
+    {
+      "name": "collaboration",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/collaboration-390.png"
+    },
+    {
+      "name": "quantity-entry",
+      "width": 1440,
+      "screenshot": "docs/ui-evidence/workareas-local/quantity-entry-1440.png"
+    },
+    {
+      "name": "quantity-entry",
+      "width": 768,
+      "screenshot": "docs/ui-evidence/workareas-local/quantity-entry-768.png"
+    },
+    {
+      "name": "quantity-entry",
+      "width": 390,
+      "screenshot": "docs/ui-evidence/workareas-local/quantity-entry-390.png"
+    }
+  ],
+  "checks": [
+    "work_area_inventory_1440",
+    "work_area_purchasing_1440",
+    "work_area_sales_1440",
+    "work_area_crm_1440",
+    "work_area_accounting_1440",
+    "work_area_people_1440",
+    "work_area_projects_1440",
+    "work_area_production_1440",
+    "work_area_mes_1440",
+    "work_area_traceability_1440",
+    "work_area_quality_1440",
+    "work_area_assets_1440",
+    "work_area_costing_1440",
+    "work_area_collaboration_1440",
+    "work_area_inventory_768",
+    "work_area_purchasing_768",
+    "work_area_sales_768",
+    "work_area_crm_768",
+    "work_area_accounting_768",
+    "work_area_people_768",
+    "work_area_projects_768",
+    "work_area_production_768",
+    "work_area_mes_768",
+    "work_area_traceability_768",
+    "work_area_quality_768",
+    "work_area_assets_768",
+    "work_area_costing_768",
+    "work_area_collaboration_768",
+    "work_area_inventory_390",
+    "work_area_purchasing_390",
+    "work_area_sales_390",
+    "work_area_crm_390",
+    "work_area_accounting_390",
+    "work_area_people_390",
+    "work_area_projects_390",
+    "work_area_production_390",
+    "work_area_mes_390",
+    "work_area_traceability_390",
+    "work_area_quality_390",
+    "work_area_assets_390",
+    "work_area_costing_390",
+    "work_area_collaboration_390",
+    "inline_unit_conversion_preview"
+  ],
+  "pageErrors": [],
+  "unexpectedWrites": [],
+  "passed": true
+}

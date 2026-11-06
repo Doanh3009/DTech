@@ -1,0 +1,72 @@
+{
+  "inventory": [
+    {"key":"stock","label":"Nhập xuất & kiểm kê","kinds":["stock_moves","stock_transfers","stock_counts"]},
+    {"key":"catalogs","label":"Vật tư & kho","secondary":true,"kinds":["items","warehouses","lots","item_unit_conversions"]}
+  ],
+  "purchasing": [
+    {"key":"sourcing","label":"Nhu cầu & lựa chọn NCC","kinds":["procurement_requests","supplier_quotes","procurement_awards"]},
+    {"key":"orders","label":"Đặt mua & nhận hàng","kinds":["purchase_orders","purchase_receipts"]}
+  ],
+  "sales": [
+    {"key":"orders","label":"Đơn hàng & giao nhận","kinds":["sales_orders"]}
+  ],
+  "crm": [
+    {"key":"customers","label":"Khách hàng & chăm sóc","kinds":["partners","interactions"]},
+    {"key":"leads","label":"Khách hàng tiềm năng","kinds":["leads","lead_events","lead_conversions"]},
+    {"key":"pipeline","label":"Cơ hội & báo giá","kinds":["opportunities","opportunity_events","customer_quotes","quote_decisions"]},
+    {"key":"contracts","label":"Hợp đồng & đơn hàng","kinds":["sales_contracts","contract_amendments","contract_order_releases"]},
+    {"key":"support","label":"Hỗ trợ khách hàng","kinds":["support_tickets","ticket_events"]},
+    {"key":"campaigns","label":"Chiến dịch","secondary":true,"kinds":["campaigns"]}
+  ],
+  "accounting": [
+    {"key":"cash","label":"Thu chi & thanh toán","kinds":["cash_vouchers","payment_requests","payments","supplier_payments"]},
+    {"key":"invoices","label":"Hóa đơn & công nợ","kinds":["vendor_invoices","sales_invoices","receivables","payables","invoice_adjustments","invoice_refunds"]},
+    {"key":"bank","label":"Ngân hàng & khoản vay","kinds":["bank_statement_lines","bank_matches","loans","loan_movements","loan_installments"]},
+    {"key":"payroll","label":"Lương & tạm ứng","kinds":["salary_runs","salary_payments","payroll_tax_runs","advances","advance_settlements"]},
+    {"key":"books","label":"Sổ & cuối kỳ","kinds":["journal_entries","closing_runs","financial_report_lines"]},
+    {"key":"tax","label":"Thuế & nghĩa vụ","kinds":["tax_filings"]},
+    {"key":"settings","label":"Thiết lập kế toán","secondary":true,"kinds":["gl_accounts","accounting_periods","tax_policies","tax_brackets"]}
+  ],
+  "people": [
+    {"key":"staff","label":"Hồ sơ nhân sự","kinds":["staff","employment_contracts","staff_history","employee_documents","staff_tax_profiles"]},
+    {"key":"attendance","label":"Công & phân ca","kinds":["shift_assignments","timecards","attendance_confirmations","overtime_requests","attendance_locks"]},
+    {"key":"leave","label":"Nghỉ phép","kinds":["leave_requests","leave_entitlements"]},
+    {"key":"recruitment","label":"Tuyển dụng & tiếp nhận","kinds":["recruitment_requisitions","recruitment_candidates","recruitment_interviews","recruitment_offers","recruitment_hires","recruitment_job_posts"]},
+    {"key":"performance","label":"Mục tiêu & đánh giá","kinds":["performance_cycles","performance_goals","performance_goal_checkins","performance_goal_changes","performance_reviews","performance_review_acknowledgements"]},
+    {"key":"documents","label":"Văn bản & ký","kinds":["document_repository","document_signing_requests"]},
+    {"key":"settings","label":"Thiết lập ca","secondary":true,"kinds":["shifts"]}
+  ],
+  "projects": [
+    {"key":"execution","label":"Thi công & tiến độ","kinds":["projects","project_tasks","project_updates"]},
+    {"key":"budget","label":"Hạng mục & ngân sách","kinds":["project_wbs","budget_versions","budget_exceptions"]},
+    {"key":"costs","label":"Vật tư & chi phí","kinds":["project_materials","project_material_returns","project_costs"]},
+    {"key":"acceptance","label":"Nghiệm thu & hoàn thành","kinds":["project_acceptances","project_variations","acceptance_billings","project_lifecycle_events"]}
+  ],
+  "production": [
+    {"key":"execution","label":"Điều hành sản xuất","kinds":["work_orders","material_issues","production_reports","production_receipts"]},
+    {"key":"standards","label":"Định mức & khuôn","secondary":true,"kinds":["boms","molds"]}
+  ],
+  "mes": [
+    {"key":"operations","label":"Công đoạn & nguồn lực","kinds":["operations","work_centers"]}
+  ],
+  "traceability": [
+    {"key":"lots","label":"Liên kết & truy xuất lô","kinds":["lot_links"]}
+  ],
+  "quality": [
+    {"key":"quality","label":"Kiểm tra & khắc phục","kinds":["quality_checks","quality_nonconformances","corrective_actions"]},
+    {"key":"safety","label":"An toàn lao động","kinds":["safety_incidents"]}
+  ],
+  "assets": [
+    {"key":"assets","label":"Tài sản & biến động","kinds":["assets","asset_events"]},
+    {"key":"charges","label":"Khấu hao & phân bổ","kinds":["asset_charge_runs"]}
+  ],
+  "costing": [
+    {"key":"production","label":"Giá thành & phân bổ","kinds":["costing_runs","overhead_pools","overhead_allocations","payroll_cost_allocations"]},
+    {"key":"valuation","label":"Giá vốn & tồn kho","kinds":["stock_valuation_runs"]},
+    {"key":"sources","label":"Đối chiếu nguồn chi phí","secondary":true,"kinds":["cost_source_links","cost_receipt_values"]}
+  ],
+  "collaboration": [
+    {"key":"meetings","label":"Lịch & cuộc họp","kinds":["meetings"]},
+    {"key":"rooms","label":"Phòng họp","secondary":true,"kinds":["meeting_rooms"]}
+  ]
+}

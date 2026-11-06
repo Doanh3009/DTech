@@ -39,3 +39,15 @@ Các migration `202611030001`–`202611030009` đã áp dụng lên Supabase ph�
 - Kiểm tra sâu các nguồn suy diễn lương trên sổ, ngân hàng và báo cáo; mở rộng quyền theo nhiệm vụ thực tế.
 - Hoàn trả/điều chỉnh và đối chiếu chi tiết mua–nhận–hóa đơn–chi; phân tách kế toán/thủ quỹ và kiểm kê quỹ.
 - Hoàn thiện các tiêu chí còn thiếu của 12 E2E, form version migration, báo cáo tùy biến và kiểm chứng vận hành/khôi phục. Tiếp tục đối chiếu từng tiêu chí của 82 mục, không dùng số test hoặc ảnh để thay cho nghiệm thu.
+
+## Checkpoint ngày 05/11/2026 — gom vùng làm việc
+
+Theo phản hồi người dùng, 14 module được tổ chức theo vùng tác nghiệp: chứng từ liên quan dùng chung màn hình và tab, dòng chi tiết nằm theo chứng từ, danh mục/thiết lập thu gọn. Deep link và bộ lọc cũ được giữ; chuyển loại bản ghi remount form và nhắc trước khi rời chứng từ chưa hoàn tất. Xem [thiết kế và kiểm chứng](work-area-navigation.md).
+
+Đã viết ứng viên snapshot đơn vị cho đơn mua/đơn bán, nhận hàng và phiếu kho, cùng UI nhập trực tiếp. Kiểm tra giao diện dùng fixture đã đạt; bộ kiểm chứng PostgreSQL chưa hoàn tất và migration chưa áp dụng lên cloud. Alias/ghép danh mục, các giao dịch khác và nghiệm thu toàn luồng mua–kho vẫn mở. Mã hiện chưa commit/push/deploy vì công cụ duyệt hành động hết hạn mức.
+
+## Đợt tiếp theo ngày 05/11/2026 — nội dung chứng từ
+
+Đã mở rộng phần bên trong: đầu chứng từ và dòng nằm cùng vùng, nhóm trường theo nghiệp vụ, nhập/sửa dòng theo thao tác chủ đích, thành tiền từ dữ liệu đã lưu, dạng chỉ xem khi phát hành. Nhận một phần và sửa phiếu nhận nháp được thực hiện trong đơn mua; lưu/ghi nhận đều đọc xác nhận bằng GET. Bản nháp đầu chứng từ được giữ khi dòng ngoài phiên thay đổi; chỉ nhận phiên bản cha sau khi đọc lại dữ liệu, tránh dùng phiên bản mới với nội dung cũ. Định khoản và nhận hàng cũng tham gia kiểm tra dữ liệu chưa lưu. [Chi tiết giao diện và giới hạn](document-workspace.md).
+
+Đã vượt qua điểm chặn thực thi của checkpoint trước: hồi quy SQL đủ 22 bộ trên 105 migration/142 thực thể, 32 kiểm tra giao dịch quy đổi và sáu kiểm tra nâng cấp. Migration `202611040001` đã nâng Supabase phát triển từ 161 lên 162, giữ nguyên dữ liệu giao dịch và 18 tài khoản. Xem [SQL](../commercial-erp/evidence/document-interior-native.json), [nâng cấp](../commercial-erp/evidence/document-interior-cloud-upgrade.json). Snapshot cho bốn loại giao dịch đã có bằng chứng; alias/ghép danh mục, các loại khác, đối chiếu số lượng còn nhận theo từng vật tư và toàn bộ tiêu chí mua–kho vẫn mở.

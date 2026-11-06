@@ -5,8 +5,8 @@ import { Button } from "@/components/shared/Button";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { DataTable } from "@/components/shared/DataTable";
 import { StatusBadge } from "@/components/shared/StatusBadge";
-import { businessEntities, entitiesFor, featureLabels, recordStates, type BusinessFeature } from "./businessCatalog";
-import { businessWorkflows, enrichOperationRow, industryOperationView, industrySteps, operationColumnLabels, type OperationRow, type OperationsSnapshot } from "./businessWorkflows";
+import { featureLabels, recordStates, type BusinessFeature } from "./businessCatalog";
+import { enrichOperationRow, industryOperationView, operationColumnLabels, type OperationRow, type OperationsSnapshot } from "./businessWorkflows";
 import type { BusinessWorkspace } from "./businessSchemas";
 import styles from "./Business.module.css";
 import { TraceabilityExplorer } from "./TraceabilityExplorer";
@@ -20,8 +20,7 @@ export function BusinessModuleWorkspace({workspace:w,feature}:{workspace:Busines
  const table=(detail=false)=>{const kind=detail?view.detailKind!:view.kind;const columns=detail?view.detailColumns!:view.columns;return <DataTable<OperationRow> className={styles.operationalTable} ariaLabel={detail?view.detailTitle:view.title} loading={loading} error={error} data={(detail?snapshot?.details:snapshot?.rows)?.map(enrichOperationRow)??[]} emptyTitle="Chưa có phát sinh" columns={columns.map((key,i)=>({id:key,header:operationColumnLabels[key],priority:i===0?"primary":undefined,hiddenOnMobile:i>2,cell:(row:OperationRow)=>key==="code"?<Link prefetch={false} className={styles.link} href={`/erp/${w.slug}/${kind}?q=${encodeURIComponent(String(row.code))}`}>{String(row.code)}</Link>:cell(row,key)}))}/>;};
  return <div className={styles.stack}>
   <PageHeader title={featureLabels[feature]} action={<Button onClick={()=>{setLoading(true);setError("");setReload(v=>v+1);}} disabled={loading}>Cập nhật</Button>}/>
-  <section className={styles.workflow} aria-label={businessWorkflows[w.industry].title}><ol>{industrySteps(w.industry,w.features).map((step,index)=><li key={`${step.kind}-${index}`}><Link prefetch={false} href={`/erp/${w.slug}/${step.kind}`}><span>{String(index+1).padStart(2,"0")}</span>{step.label}</Link></li>)}</ol></section>
-  <nav className={styles.quickLinks} aria-label="Chứng từ trong module">{entitiesFor(w.industry,w.features).filter(k=>businessEntities[k].feature===feature).map(k=><Link prefetch={false} key={k} href={`/erp/${w.slug}/${k}`}>{businessEntities[k].label}</Link>)}</nav>
+
   {feature==="traceability"?<TraceabilityExplorer slug={w.slug}/>:null}
   <section className={styles.stack}><div className={styles.actions}><h2>{view.title}</h2><StatusBadge tone="neutral">{snapshot?.limit??100} bản ghi gần nhất</StatusBadge></div>{table()}</section>
   {view.detailTitle?<section className={styles.stack}><h2>{view.detailTitle}</h2>{table(true)}</section>:null}

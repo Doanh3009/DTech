@@ -179,6 +179,46 @@
             "Browser writes used an isolated local SQL/HTTP transport and local private files; hosted PostgREST/Storage write acceptance is separate.",
             "All four external services are explicitly simulations, limited to demo tenants; no real provider dispatch or legal signature acceptance."
           ]
+        },
+        {
+          "kind": "historical-local-work-area-checkpoint",
+          "status": "partial",
+          "verifiedAt": "2026-11-05",
+          "artifacts": [
+            "docs/erp/work-area-navigation.md",
+            "docs/commercial-erp/evidence/workareas-local.json",
+            "docs/commercial-erp/evidence/workareas-checkpoint.json",
+            "src/config/businessWorkAreas.json",
+            "src/features/business/BusinessTransactionQuantity.tsx",
+            "supabase/migrations/202611040001_business_transaction_units.sql"
+          ],
+          "verification": "14 module work-area registry preserves authorized entities and deep links. Local component/route tests and mocked-API browser fixtures validate grouped workflow navigation and inline entry-unit UI. Transaction-unit SQL is a candidate; complete native and cloud acceptance has not passed.",
+          "limitations": [
+            "Workspace changes are uncommitted, not pushed to GitHub and not deployed.",
+            "The new unit snapshot migration has not been applied remotely.",
+            "Full native transaction verification remains incomplete; the prior Unicode-case failure was addressed in the candidate, but a clean rerun is still required.",
+            "This does not establish acceptance of the full purchasing cycle or all 82 requirements."
+          ]
+        },
+        {
+          "kind": "document-interior-and-transaction-unit-verification",
+          "status": "partial",
+          "verifiedAt": "2026-11-05",
+          "artifacts": [
+            "docs/erp/document-workspace.md",
+            "docs/commercial-erp/evidence/document-interior-local.json",
+            "docs/commercial-erp/evidence/document-interior-native.json",
+            "docs/commercial-erp/evidence/document-interior-cloud-upgrade.json",
+            "src/features/business/BusinessDocumentWorkspace.tsx",
+            "src/features/business/BusinessPurchaseReceiving.tsx",
+            "supabase/migrations/202611040001_business_transaction_units.sql"
+          ],
+          "verification": "Unified document header/lines, deliberate inline line editor, readonly released documents and partial receipt workflow. Fixture browser: 29 checks/41 images, four viewport cases, identical retry payload after lost response. Native PostgreSQL: 105 migrations/142 entities, 22 passing verification suites, including 32 transaction-unit and six upgrade checks. Development Supabase migration applied: 161 to 162; existing business rows, 18 accounts, journals, debit/credit, audit and commands unchanged.",
+          "limitations": [
+            "Fixture UI evidence and native SQL evidence have separate scopes; hosted application deployment is recorded separately in the release receipt.",
+            "Receiving currently creates one item per receipt and lacks a cumulative per-item remaining-quantity read model. Invoice/payable/payment matching, returns and full cross-domain acceptance remain open.",
+            "Alias/merge catalogs and transaction kinds outside stock_moves, purchase_receipts, purchase_lines and sales_lines remain open; the full 82 requirements are not marked complete."
+          ]
         }
       ],
       "acceptanceComplete": false
@@ -912,6 +952,46 @@
             "This evidence covers the documented shared workflow slice, not every acceptance criterion of this requirement.",
             "Browser writes used an isolated local SQL/HTTP transport and local private files; hosted PostgREST/Storage write acceptance is separate.",
             "All four external services are explicitly simulations, limited to demo tenants; no real provider dispatch or legal signature acceptance."
+          ]
+        },
+        {
+          "kind": "historical-local-work-area-checkpoint",
+          "status": "partial",
+          "verifiedAt": "2026-11-05",
+          "artifacts": [
+            "docs/erp/work-area-navigation.md",
+            "docs/commercial-erp/evidence/workareas-local.json",
+            "docs/commercial-erp/evidence/workareas-checkpoint.json",
+            "src/config/businessWorkAreas.json",
+            "src/features/business/BusinessTransactionQuantity.tsx",
+            "supabase/migrations/202611040001_business_transaction_units.sql"
+          ],
+          "verification": "14 module work-area registry preserves authorized entities and deep links. Local component/route tests and mocked-API browser fixtures validate grouped workflow navigation and inline entry-unit UI. Transaction-unit SQL is a candidate; complete native and cloud acceptance has not passed.",
+          "limitations": [
+            "Workspace changes are uncommitted, not pushed to GitHub and not deployed.",
+            "The new unit snapshot migration has not been applied remotely.",
+            "Full native transaction verification remains incomplete; the prior Unicode-case failure was addressed in the candidate, but a clean rerun is still required.",
+            "This does not establish acceptance of the full purchasing cycle or all 82 requirements."
+          ]
+        },
+        {
+          "kind": "document-interior-and-transaction-unit-verification",
+          "status": "partial",
+          "verifiedAt": "2026-11-05",
+          "artifacts": [
+            "docs/erp/document-workspace.md",
+            "docs/commercial-erp/evidence/document-interior-local.json",
+            "docs/commercial-erp/evidence/document-interior-native.json",
+            "docs/commercial-erp/evidence/document-interior-cloud-upgrade.json",
+            "src/features/business/BusinessDocumentWorkspace.tsx",
+            "src/features/business/BusinessPurchaseReceiving.tsx",
+            "supabase/migrations/202611040001_business_transaction_units.sql"
+          ],
+          "verification": "Unified document header/lines, deliberate inline line editor, readonly released documents and partial receipt workflow. Fixture browser: 29 checks/41 images, four viewport cases, identical retry payload after lost response. Native PostgreSQL: 105 migrations/142 entities, 22 passing verification suites, including 32 transaction-unit and six upgrade checks. Development Supabase migration applied: 161 to 162; existing business rows, 18 accounts, journals, debit/credit, audit and commands unchanged.",
+          "limitations": [
+            "Fixture UI evidence and native SQL evidence have separate scopes; hosted application deployment is recorded separately in the release receipt.",
+            "Receiving currently creates one item per receipt and lacks a cumulative per-item remaining-quantity read model. Invoice/payable/payment matching, returns and full cross-domain acceptance remain open.",
+            "Alias/merge catalogs and transaction kinds outside stock_moves, purchase_receipts, purchase_lines and sales_lines remain open; the full 82 requirements are not marked complete."
           ]
         }
       ],

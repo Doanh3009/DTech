@@ -6,7 +6,7 @@ import { Input,Select } from "@/components/shared/FormControls";
 import { DataTable } from "@/components/shared/DataTable";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { StatusBadge } from "@/components/shared/StatusBadge";
-import { businessEntities,entitiesFor,recordStates,type EntityKind } from "./businessCatalog";
+import { entitiesFor,recordStates } from "./businessCatalog";
 import type { BusinessWorkspace } from "./businessSchemas";
 import {BusinessMetricValue} from "./BusinessMetricValue";
 import{businessCan}from"./businessAccess";
@@ -38,7 +38,7 @@ export function BusinessMisaWorkspace({workspace:w,initialView,embedded=false}:{
  <form className={styles.toolbar} onSubmit={e=>{e.preventDefault();setSnapshot(null);setPage(1);setFilters({from,to});setLoading(true);setError("");setReload(n=>n+1);}}>{available.length>1?<Select label="Phần hành" value={view} options={available.map(v=>({value:v,label:misaViews[v].label}))} onChange={e=>selectView(e.target.value as MisaView)}/>:null}<Input label="Từ ngày" type="date" required value={from} max={to} onChange={e=>setFrom(e.target.value)}/><Input label="Đến ngày" type="date" required value={to} min={from} onChange={e=>setTo(e.target.value)}/><Button disabled={loading} type="submit">Xem dữ liệu</Button></form>
  <div className={styles.actions}><Button type="button" busy={exporting} disabled={loading||!snapshot} onClick={exportCsv}>Tải CSV</Button>{exportError?<span role="alert">{exportError}</span>:null}{exportStatus?<span role="status">{exportStatus}</span>:null}</div>
  <section className={styles.overviewMetrics} aria-label={config.label}>{Object.entries(config.metrics).map(([key,label])=><div key={key}><span>{label}</span><BusinessMetricValue value={snapshot?.totals[key]} currency={!(["maintenance","draft","posted","accepted","unpaidStaffRows","indicators","balanceIndicators","incomeIndicators","cashIndicators"].includes(key))} loading={loading||!!error}/></div>)}</section>
- <nav className={styles.quickLinks} aria-label="Chứng từ phần hành">{config.links.filter(k=>allowed.includes(k)).map(k=><Link prefetch={false} key={k} href={`/erp/${w.slug}/${k}`}>{businessEntities[k as EntityKind].label}</Link>)}</nav>
+
  <div className={styles.actions}><h2>{config.label}</h2><StatusBadge tone="neutral">{["assets","advances","loans","payroll"].includes(view)?"Dư hiện tại":"Theo kỳ"} · VND</StatusBadge></div>
  <DataTable<Row> className={styles.operationalTable} ariaLabel={config.label} loading={loading} error={error} data={snapshot?.rows??[]} getRowId={r=>String(r.id)} emptyTitle="Chưa có dữ liệu" columns={config.columns.map((key,i)=>({id:key,header:misaColumnLabels[key]??key,priority:i===0?"primary":undefined,hiddenOnMobile:i>2,cell:r=>render(r,key)}))}/>
  <div className={styles.pagination}><span>{snapshot?.total??0} bản ghi · Trang {page}/{Math.max(1,Math.ceil((snapshot?.total??0)/25))}</span><div className={styles.actions}><Button disabled={loading||page===1} onClick={()=>{setPage(n=>n-1);setLoading(true);setError("");}}>Trước</Button><Button disabled={loading||page*25>=(snapshot?.total??0)} onClick={()=>{setPage(n=>n+1);setLoading(true);setError("");}}>Sau</Button></div></div></div>;

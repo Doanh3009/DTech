@@ -11,4 +11,16 @@ describe("shared business industry contracts",()=>{
  it("requires industry, server generated password and unique feature selection",()=>{const d={requestId:"10000000-0000-4000-8000-000000000001",customerVersion:1,slug:"synthetic-company",industry:"construction",features:["inventory","projects"],systemName:"Synthetic ERP",username:"admin",displayName:"Synthetic owner",trialDays:14};expect(businessProvisionSchema.safeParse(d).success).toBe(true);expect(businessProvisionSchema.safeParse({...d,password:"forged"}).success).toBe(false);expect(businessProvisionSchema.safeParse({...d,features:["inventory","inventory"]}).success).toBe(false);expect(businessProvisionSchema.safeParse({...d,industry:""}).success).toBe(false);});
  it("requires a strong personal password",()=>{expect(businessPassword.safeParse("short").success).toBe(false);expect(businessPassword.safeParse("Synthetic!Personal928").success).toBe(true);});
  it("preserves boolean controls as booleans",()=>{expect(emptyRecord("safety_incidents").work_stopped).toBe(false);const data={...emptyRecord("safety_incidents"),code:"AT01",name:"Synthetic incident",incident_date:"2026-11-02",reported_on:"2026-11-02",description:"Synthetic description",work_stopped:true};const schema=recordSchema("safety_incidents");expect(schema.safeParse(data).success).toBe(true);expect(schema.safeParse({...data,work_stopped:"true"}).success).toBe(false);});
+ it("keeps legacy base-unit commands compatible without zero entry values overriding their quantity",()=>{
+  const data:Record<string,unknown>={...emptyRecord("stock_moves"),code:"KHO-01",name:"Nhập vật tư",item_id:"10000000-0000-4000-8000-000000000001",warehouse_id:"10000000-0000-4000-8000-000000000002",quantity:24,unit_cost:100,document_date:"2026-11-05"};
+  expect(data).toMatchObject({entry_unit:null,entry_quantity:null,entry_price:null});
+  const {entry_unit,entry_quantity,entry_price,...legacy}=data;void entry_unit;void entry_quantity;void entry_price;
+  expect(recordSchema("stock_moves").parse(legacy)).toMatchObject({quantity:24,entry_unit:null,entry_quantity:null,entry_price:null});
+ });
+ it("accepts entry units while rejecting forged conversion snapshots and invalid entry quantities",()=>{
+  const data={...emptyRecord("purchase_lines"),code:"CT-01",name:"Mua vật tư",purchase_order_id:"10000000-0000-4000-8000-000000000001",item_id:"10000000-0000-4000-8000-000000000002",quantity:2,unit_price:120,entry_unit:"thùng",entry_quantity:2,entry_price:120};
+  expect(recordSchema("purchase_lines").safeParse(data).success).toBe(true);
+  for(const key of ["base_unit","unit_factor","unit_effective_on","unit_conversion_id","unit_conversion_version"])expect(recordSchema("purchase_lines").safeParse({...data,[key]:"forged"}).success).toBe(false);
+  for(const value of [0,-1,Infinity])expect(recordSchema("purchase_lines").safeParse({...data,entry_quantity:value}).success).toBe(false);
+ });
 });

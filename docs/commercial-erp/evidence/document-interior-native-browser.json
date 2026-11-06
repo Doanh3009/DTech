@@ -1,0 +1,274 @@
+{
+  "generatedAt": "2026-11-05T07:37:49.678Z",
+  "origin": "http://127.0.0.1:3101",
+  "transport": "Actual PostgreSQL through isolated loopback RPC bridge",
+  "scope": "Synthetic purchase order, line entry/edit, release and partial receiving through actual UI at three widths",
+  "cloudAccess": false,
+  "credentialsIncluded": false,
+  "checks": [
+    "actual_owner_login_loopback",
+    "actual_unit_prerequisites_created",
+    "unit_entry_saved_1440",
+    "actual_line_edit_cas_1440",
+    "released_readonly_footer_1440",
+    "partial_receipt_post_stock_matching_1440",
+    "unit_entry_saved_768",
+    "actual_line_edit_cas_768",
+    "released_readonly_footer_768",
+    "partial_receipt_post_stock_matching_768",
+    "unit_entry_saved_390",
+    "actual_line_edit_cas_390",
+    "released_readonly_footer_390",
+    "partial_receipt_post_stock_matching_390"
+  ],
+  "cases": [
+    {
+      "width": 1440,
+      "orderId": "75af9b12-2285-447b-b4c4-a4b64b13e06e",
+      "orderCode": "PO-2026-000009",
+      "lineId": "ef80a30d-5048-498d-b952-46b450004b0e",
+      "entryQuantity": 3,
+      "entryUnit": "hộp",
+      "factor": 12,
+      "baseQuantity": 36,
+      "receiptId": "a72e8bab-698d-403d-9717-1be2f18c10c1",
+      "receivedQuantity": 6,
+      "stockMoveId": "76a977e7-7dc8-4f6e-8cd6-f72abdad54f9",
+      "orderedAmount": 72000,
+      "receivedAmount": 12000,
+      "readonly": true
+    },
+    {
+      "width": 768,
+      "orderId": "934592e6-6c82-41ae-9739-3d63412f7983",
+      "orderCode": "PO-2026-000010",
+      "lineId": "505b6a5b-6888-450e-8191-b9d5c6a3aa62",
+      "entryQuantity": 3,
+      "entryUnit": "hộp",
+      "factor": 12,
+      "baseQuantity": 36,
+      "receiptId": "fd2a53de-c685-475b-a430-3a3e27a1e237",
+      "receivedQuantity": 6,
+      "stockMoveId": "970f08cd-3957-4345-984e-f037f68cd9fc",
+      "orderedAmount": 72000,
+      "receivedAmount": 12000,
+      "readonly": true
+    },
+    {
+      "width": 390,
+      "orderId": "256b6f9b-81e6-48bc-bb13-02c0e6968c09",
+      "orderCode": "PO-2026-000011",
+      "lineId": "d057eb45-0969-40a8-8a36-3423c9684de5",
+      "entryQuantity": 3,
+      "entryUnit": "hộp",
+      "factor": 12,
+      "baseQuantity": 36,
+      "receiptId": "5f74d98c-c15b-4148-b481-0b17731381d6",
+      "receivedQuantity": 6,
+      "stockMoveId": "5cc93fe2-b1f6-4324-8f77-adb962008fb7",
+      "orderedAmount": 72000,
+      "receivedAmount": 12000,
+      "readonly": true
+    }
+  ],
+  "screens": [
+    {
+      "name": "parent-inline-line-entry",
+      "width": 1440,
+      "footerBottom": 983,
+      "documentWidth": 1430,
+      "screenshot": "docs/ui-evidence/document-interior-native/parent-inline-line-entry-1440.png"
+    },
+    {
+      "name": "line-edit",
+      "width": 1440,
+      "footerBottom": 983,
+      "documentWidth": 1430,
+      "capturedLocally": true
+    },
+    {
+      "name": "released-readonly",
+      "width": 1440,
+      "footerBottom": 983,
+      "documentWidth": 1430,
+      "capturedLocally": true
+    },
+    {
+      "name": "receipt-draft",
+      "width": 1440,
+      "footerBottom": 983,
+      "documentWidth": 1430,
+      "capturedLocally": true
+    },
+    {
+      "name": "receipt-posted-matching",
+      "width": 1440,
+      "footerBottom": 983,
+      "documentWidth": 1430,
+      "screenshot": "docs/ui-evidence/document-interior-native/receipt-posted-matching-1440.png"
+    },
+    {
+      "name": "parent-inline-line-entry",
+      "width": 768,
+      "footerBottom": 983,
+      "documentWidth": 758,
+      "capturedLocally": true
+    },
+    {
+      "name": "line-edit",
+      "width": 768,
+      "footerBottom": 983,
+      "documentWidth": 758,
+      "capturedLocally": true
+    },
+    {
+      "name": "released-readonly",
+      "width": 768,
+      "footerBottom": 983,
+      "documentWidth": 758,
+      "screenshot": "docs/ui-evidence/document-interior-native/released-readonly-768.png"
+    },
+    {
+      "name": "receipt-draft",
+      "width": 768,
+      "footerBottom": 983,
+      "documentWidth": 758,
+      "capturedLocally": true
+    },
+    {
+      "name": "receipt-posted-matching",
+      "width": 768,
+      "footerBottom": 983,
+      "documentWidth": 758,
+      "capturedLocally": true
+    },
+    {
+      "name": "parent-inline-line-entry",
+      "width": 390,
+      "footerBottom": 987,
+      "documentWidth": 380,
+      "capturedLocally": true
+    },
+    {
+      "name": "line-edit",
+      "width": 390,
+      "footerBottom": 987,
+      "documentWidth": 380,
+      "screenshot": "docs/ui-evidence/document-interior-native/line-edit-390.png"
+    },
+    {
+      "name": "released-readonly",
+      "width": 390,
+      "footerBottom": 987,
+      "documentWidth": 380,
+      "capturedLocally": true
+    },
+    {
+      "name": "receipt-draft",
+      "width": 390,
+      "footerBottom": 987,
+      "documentWidth": 380,
+      "capturedLocally": true
+    },
+    {
+      "name": "receipt-posted-matching",
+      "width": 390,
+      "footerBottom": 987,
+      "documentWidth": 380,
+      "screenshot": "docs/ui-evidence/document-interior-native/receipt-posted-matching-390.png"
+    }
+  ],
+  "pageErrors": [],
+  "apiFailures": [],
+  "externalBlocked": [],
+  "writes": [
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_orders"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_lines"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_lines"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_orders/75af9b12-2285-447b-b4c4-a4b64b13e06e/actions"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_receipts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_receipts/a72e8bab-698d-403d-9717-1be2f18c10c1/actions"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_orders"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_lines"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_lines"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_orders/934592e6-6c82-41ae-9739-3d63412f7983/actions"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_receipts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_receipts/fd2a53de-c685-475b-a430-3a3e27a1e237/actions"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_orders"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_lines"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_lines"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_orders/256b6f9b-81e6-48bc-bb13-02c0e6968c09/actions"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_receipts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/business/xay-dung-chau-tuan/records/purchase_receipts/5f74d98c-c15b-4148-b481-0b17731381d6/actions"
+    }
+  ],
+  "passed": true,
+  "prerequisites": {
+    "itemId": "d3b5102d-8e90-476c-aeef-74cc3bef6c47",
+    "conversionId": "06bd7ae7-257d-4c44-b20e-369c356b824d",
+    "baseUnit": "cái",
+    "alternateUnit": "hộp",
+    "factor": 12
+  },
+  "logouts": [
+    200
+  ],
+  "limitations": [
+    "Synthetic records in isolated PostgreSQL; no cloud business records were created.",
+    "Local RPC executes actual SQL/grants/transactions but does not emulate hosted PostgREST or Supabase Storage services.",
+    "Three purchase/receipt cases do not establish complete acceptance of all 82 requirements."
+  ]
+}

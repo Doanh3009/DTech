@@ -9,8 +9,8 @@ export const featureLabels={accounting:"Kế toán",purchasing:"Mua hàng",peopl
 export type BusinessFeature=keyof typeof featureLabels;
 export const featureKeys=Object.keys(featureLabels) as [BusinessFeature,...BusinessFeature[]];
 export type EntityKind=keyof typeof entities;
-export interface EntityField {label:string;type:"text"|"email"|"number"|"date"|"time"|"enum"|"ref"|"boolean";required?:boolean;min?:number;max?:number;integer?:boolean;default?:string|number|boolean;computed?:boolean;requiresFeature?:BusinessFeature;ref?:EntityKind;values?:Record<string,string>;readRoles?:string[];writeRoles?:string[];lookup?:{kindField:string;kinds:EntityKind[];statuses?:string[]};kindOptions?:EntityKind[];attachmentSource?:{kindField:string;recordField:string};uiReadOnly?:boolean;uiGenerate?:"uuid";uiOptions?:Record<string,string>}
-export interface EntityDefinition {label:string;feature:BusinessFeature;workspaceFeature?:BusinessFeature;mode:"master"|"order"|"document";industries?:BusinessIndustry[];requiresFeatures?:BusinessFeature[];requiresApproval?:boolean;calculable?:boolean;generatedOnly?:boolean;lineKind?:EntityKind;parentKind?:EntityKind;parentField?:string;fields:Record<string,EntityField>;readRoles?:string[];simulationServices?:("einvoice"|"signature"|"bank"|"email")[]}
+export interface EntityField {label:string;type:"text"|"email"|"number"|"date"|"time"|"enum"|"ref"|"boolean";required?:boolean;min?:number;max?:number;integer?:boolean;default?:string|number|boolean;computed?:boolean;requiresFeature?:BusinessFeature;ref?:EntityKind;values?:Record<string,string>;readRoles?:string[];writeRoles?:string[];lookup?:{kindField:string;kinds:EntityKind[];statuses?:string[]};kindOptions?:EntityKind[];attachmentSource?:{kindField:string;recordField:string};uiReadOnly?:boolean;uiHidden?:boolean;uiGenerate?:"uuid";uiOptions?:Record<string,string>}
+export interface EntityDefinition {label:string;feature:BusinessFeature;workspaceFeature?:BusinessFeature;mode:"master"|"order"|"document";industries?:BusinessIndustry[];requiresFeatures?:BusinessFeature[];requiresApproval?:boolean;calculable?:boolean;generatedOnly?:boolean;lineKind?:EntityKind;parentKind?:EntityKind;parentField?:string;quantityEntry?:{priceField:string;dateField?:string};fields:Record<string,EntityField>;readRoles?:string[];simulationServices?:("einvoice"|"signature"|"bank"|"email")[]}
 export const businessEntities=entities as Record<EntityKind,EntityDefinition>;
 export const entityKeys=Object.keys(entities) as [EntityKind,...EntityKind[]];
 export const recordStates={draft:"Nháp",active:"Đang sử dụng",inactive:"Ngừng sử dụng",released:"Đang thực hiện",completed:"Hoàn thành",posted:"Đã ghi nhận",cancelled:"Đã hủy"} as const;
@@ -31,7 +31,7 @@ export function recordSchema(kind:EntityKind,{autoCode=false}:{autoCode?:boolean
   else if(f.type==="email")schema=z.string().trim().email().max(f.max??254);
   else if(f.type==="boolean")schema=z.boolean();
   else schema=z.string().trim().min(f.required?1:0).max(f.max??240);
-  fields[key]=f.required||f.default!==undefined?schema:z.union([schema,z.null()]);
+  fields[key]=f.required||f.default!==undefined?schema:businessEntities[kind].quantityEntry&&["entry_unit","entry_quantity","entry_price"].includes(key)?z.union([schema,z.null()]).default(null):z.union([schema,z.null()]);
  }
  return z.object(fields).strict().superRefine((data,ctx)=>{
   if(kind==="item_unit_conversions"&&data.effective_to&&String(data.effective_from)>String(data.effective_to))ctx.addIssue({code:z.ZodIssueCode.custom,path:["effective_to"],message:"Ngày kết thúc phải từ ngày bắt đầu."});
@@ -40,7 +40,7 @@ export function recordSchema(kind:EntityKind,{autoCode=false}:{autoCode?:boolean
   if(dates&&String(data[dates[0]])>String(data[dates[1]]))ctx.addIssue({code:z.ZodIssueCode.custom,path:[dates[1]],message:"Ngày kết thúc phải từ ngày bắt đầu."});
  });
 }
-export function emptyRecord(kind:EntityKind,industry?:BusinessIndustry):Record<string,string|number|boolean|null>{return {code:"",name:"",notes:"",...Object.fromEntries(Object.entries(businessEntities[kind].fields).filter(([,f])=>!f.computed).map(([k,f])=>[k,k==="tracking"&&(industry==="electronics"||industry==="food_beverage")?"lot":f.default??(f.type==="number"?0:f.type==="boolean"?false:f.type==="enum"?Object.keys(f.values!)[0]:f.required?"":null)]))};}
+export function emptyRecord(kind:EntityKind,industry?:BusinessIndustry):Record<string,string|number|boolean|null>{return {code:"",name:"",notes:"",...Object.fromEntries(Object.entries(businessEntities[kind].fields).filter(([,f])=>!f.computed).map(([k,f])=>[k,businessEntities[kind].quantityEntry&&["entry_unit","entry_quantity","entry_price"].includes(k)?null:k==="tracking"&&(industry==="electronics"||industry==="food_beverage")?"lot":f.default??(f.type==="number"?0:f.type==="boolean"?false:f.type==="enum"?Object.keys(f.values!)[0]:f.required?"":null)]))};}
 export const featureDependencies:Partial<Record<BusinessFeature,BusinessFeature[]>>={production:["inventory"],mes:["inventory","production"],traceability:["inventory"],quality:["inventory"],sales:["inventory","crm"],projects:["inventory"],accounting:["crm"],purchasing:["inventory","crm"],assets:["accounting","crm"],costing:["accounting","inventory","crm"]};
 export function selectBusinessFeature(current:BusinessFeature[],key:BusinessFeature,enabled:boolean){
  const next=new Set(current);

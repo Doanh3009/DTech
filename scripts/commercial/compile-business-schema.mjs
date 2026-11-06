@@ -12,17 +12,29 @@ let masterDataVerification=null;
 let catalogImportVerification=null;
 let documentWorkspaceVerification=null;
 let simulationVerification=null;
+let transactionUnitsVerification=null;
+let transactionUnitsUpgradeVerification=null;
+let experiencePopulated=false;
 function binary(cmd,args){return new Promise((resolve,reject)=>{const p=spawn(cmd,args,{windowsHide:true,shell:false,stdio:['ignore','pipe','pipe']});let output='';p.stdout.on('data',v=>output+=v);p.stderr.on('data',v=>output+=v);p.on('error',reject);p.on('exit',code=>code===0?resolve():reject(new Error(output)));});}
 try{
  await mkdir(directory,{recursive:true});const password=randomUUID();const passwordFile=path.join(directory,'password');await writeFile(passwordFile,password);
- await binary(binaries.initdb,['-D',data,'-U','postgres','--auth=scram-sha-256','--pwfile',passwordFile,'--encoding=UTF8','--locale=C']);
+ await binary(binaries.initdb,['-D',path.relative(root,data),'-U','postgres','--auth=scram-sha-256','--pwfile',passwordFile,'--encoding=UTF8','--locale=C']);
  const socket=createServer();await new Promise(resolve=>socket.listen(0,'127.0.0.1',resolve));const port=socket.address().port;await new Promise(resolve=>socket.close(resolve));
  await binary(binaries.pg_ctl,['-D',data,'-l',path.join(directory,'postgres.log'),'-o',`-h 127.0.0.1 -p ${port}`,'-w','start']);started=true;
  db=new Client({host:'127.0.0.1',port,user:'postgres',password,database:'postgres',statement_timeout:20000});await db.connect();
  await db.query("create role anon nologin;create role authenticated nologin;create role service_role nologin bypassrls;create schema auth;create function auth.uid() returns uuid language sql stable as 'select null::uuid';");
  await db.query("alter default privileges for role postgres in schema public grant all on tables to anon,authenticated,service_role;alter default privileges for role postgres in schema public grant execute on functions to anon,authenticated,service_role;");
  const files=['202609090001_foundation_system_primitives.sql','202609090002_employee_rbac_foundation.sql','202610220004_product_trial_requests.sql','202610220005_operator_customer_crm.sql',...(await readdir('supabase/migrations')).filter(n=>/^\d{12}_.*business.*\.sql$/.test(n)&&n.slice(0,12)>='202610230001').sort()];
- const migrations=[];for(const filename of files){const source=await readFile(path.join(root,'supabase/migrations',filename));await db.query(source.toString());migrations.push({filename,sha256:createHash('sha256').update(source).digest('hex')});}
+ const migrations=[];for(const filename of files){
+  const source=await readFile(path.join(root,'supabase/migrations',filename));
+  if(filename==='202611040001_business_transaction_units.sql'&&process.argv.includes('--verify-unit-upgrade')){
+   await db.query("insert into public.app_accounts(display_name) values('Quản trị cục bộ');");
+   const legacyEntityCount=Number((await db.query('select count(*)::int n from public.business_entity_definitions')).rows[0].n);
+   await db.query((await readFile('.tmp/dimixo-experience.sql','utf8')).replace(/(public\.business_entity_definitions\)<>)[0-9]+/,(_,prefix)=>prefix+legacyEntityCount));experiencePopulated=true;
+   transactionUnitsUpgradeVerification=await (await import('./verify-business-transaction-units.mjs')).verifyBusinessTransactionUnitUpgrade(db,()=>db.query(source.toString()));
+  }else await db.query(source.toString());
+  migrations.push({filename,sha256:createHash('sha256').update(source).digest('hex')});
+ }
  const readOnlySessionRpcs=(await db.query("select p.proname from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.proname like 'business_%' and p.prokind='f' and p.provolatile<>'v' and 'p_hash'=any(p.proargnames)")).rows;
  if(readOnlySessionRpcs.length)throw new Error(`Session RPCs would run in PostgREST read-only transactions: ${readOnlySessionRpcs.map(row=>row.proname).join(',')}`);
  const registry=JSON.parse(await readFile('src/config/businessEntities.json','utf8'));const definitions=(await db.query('select kind,definition from public.business_entity_definitions order by kind')).rows;
@@ -31,8 +43,10 @@ try{
  const definitionMismatches=definitions.filter(r=>canonical(registry[r.kind])!==canonical(r.definition)).map(r=>r.kind);const missingDefinitions=Object.keys(registry).filter(kind=>!definitions.some(r=>r.kind===kind));
  if(definitionMismatches.length||missingDefinitions.length)throw new Error(`Entity registry differs from SQL definitions: mismatch=${definitionMismatches.join(',')||'none'} missing=${missingDefinitions.join(',')||'none'} counts=${definitions.length}/${Object.keys(registry).length}`);
  if(process.argv.includes('--populate-experience')){
-  await db.query("insert into public.app_accounts(display_name) values('Quản trị cục bộ');");
-  try {const sampleSql=(await readFile('.tmp/dimixo-experience.sql','utf8')).replace(/(public\.business_entity_definitions\)<>)[0-9]+/,(_,prefix)=>prefix+Object.keys(registry).length);await db.query(sampleSql);}catch(e){console.error(e.where);throw e;}
+  if(!experiencePopulated){
+   await db.query("insert into public.app_accounts(display_name) values('Quản trị cục bộ');");
+   try {const sampleSql=(await readFile('.tmp/dimixo-experience.sql','utf8')).replace(/(public\.business_entity_definitions\)<>)[0-9]+/,(_,prefix)=>prefix+Object.keys(registry).length);await db.query(sampleSql);}catch(e){console.error(e.where);throw e;}
+  }
   const capture=(await import('./finance-demo-sql.mjs')).financeDemoSql(JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8')));
   if(process.argv.includes('--populate-operations'))operationsVerification={passed:true,companies:await (await import('./populate-business-operations.mjs')).populateBusinessOperations(db,{capture}),data:'synthetic only',cloudAccess:false};
   if(process.argv.includes('--populate-attendance'))attendanceVerification={passed:true,companies:await (await import('./populate-business-attendance.mjs')).populateBusinessAttendance(db,{capture}),data:'synthetic only',cloudAccess:false};
@@ -274,6 +288,10 @@ try{
    masterDataVerification=await (await import('./verify-business-master-data.mjs')).verifyBusinessMasterData(db,{registry,companies:JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8')),credentials});
    console.log(JSON.stringify({masterDataVerification:'passed',checks:masterDataVerification.checks}));
   }
+  if(process.argv.includes('--verify-transaction-units')){
+   transactionUnitsVerification=await (await import('./verify-business-transaction-units.mjs')).verifyBusinessTransactionUnits(db,{registry,companies:JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8')),credentials,createConnection:async()=>{const client=new Client({host:'127.0.0.1',port,user:'postgres',password,database:'postgres',statement_timeout:30000});await client.connect();return client;}});
+   console.log(JSON.stringify({transactionUnitsVerification}));
+  }
   if(process.argv.includes('--verify-document-workspace')){
    documentWorkspaceVerification=await (await import('./verify-business-document-workspace.mjs')).verifyBusinessDocumentWorkspace(db,{registry,companies:JSON.parse(await readFile('src/config/businessDemoCompanies.json','utf8')),credentials,createConnection:async()=>{const client=new Client({host:'127.0.0.1',port,user:'postgres',password,database:'postgres',statement_timeout:20000});await client.connect();return client;}});
    console.log(JSON.stringify({documentWorkspaceVerification}));
@@ -379,7 +397,9 @@ try{
   }
   if(process.argv.includes('--refresh-dashboard-previews'))await writeFile('src/config/businessDashboardPreviews.json',JSON.stringify(snapshots,null,2)+'\n');
  }
- await writeFile('docs/commercial-erp/evidence/industry-schema-build.json',JSON.stringify({generatedAt:new Date().toISOString(),schemaCompiled:true,entityCount:definitions.length,migrations,cloudAccess:false,realCustomerRecordsCreated:false,syntheticDataPopulated:process.argv.includes("--populate-experience"),testSuiteRun:false,...(operationsVerification?{operationsVerification}:{}),...(attendanceVerification?{attendanceVerification}:{}),...(payrollVerification?{payrollVerification}:{}),...(employmentVerification?{employmentVerification}:{}),...(recruitmentVerification?{recruitmentVerification}:{}),...(performanceVerification?{performanceVerification}:{}),...(signingVerification?{signingVerification}:{}),...(documentRepositoryVerification?{documentRepositoryVerification}:{}),...(paymentRequestVerification?{paymentRequestVerification}:{}),...(crmVerification?{crmVerification}:{}),...(misaReadModelVerification?{misaReadModelVerification}:{}),...(projectTaskVerification?{projectTaskVerification}:{}),...(stockConcurrencyVerification?{stockConcurrencyVerification}:{}),...(globalSearchVerification?{globalSearchVerification}:{}),...(collaborationVerification?{collaborationVerification}:{}),...(safetyQualityVerification?{safetyQualityVerification}:{}),...(masterDataVerification?{masterDataVerification}:{}),...(catalogImportVerification?{catalogImportVerification}:{}),...(documentWorkspaceVerification?{documentWorkspaceVerification}:{}),...(simulationVerification?{simulationVerification}:{})},null,2));
+ const evidenceTarget=process.argv.find(value=>value.startsWith('--evidence-file='))?.slice('--evidence-file='.length)||'docs/commercial-erp/evidence/industry-schema-build.json';
+ const evidenceRelative=path.relative(root,path.resolve(root,evidenceTarget));if(!evidenceRelative||evidenceRelative.startsWith('..')||path.isAbsolute(evidenceRelative))throw Error('Evidence file must stay in the workspace');
+ await writeFile(evidenceTarget,JSON.stringify({generatedAt:new Date().toISOString(),schemaCompiled:true,entityCount:definitions.length,migrations,cloudAccess:false,realCustomerRecordsCreated:false,syntheticDataPopulated:process.argv.includes("--populate-experience"),testSuiteRun:false,...(operationsVerification?{operationsVerification}:{}),...(attendanceVerification?{attendanceVerification}:{}),...(payrollVerification?{payrollVerification}:{}),...(employmentVerification?{employmentVerification}:{}),...(recruitmentVerification?{recruitmentVerification}:{}),...(performanceVerification?{performanceVerification}:{}),...(signingVerification?{signingVerification}:{}),...(documentRepositoryVerification?{documentRepositoryVerification}:{}),...(paymentRequestVerification?{paymentRequestVerification}:{}),...(crmVerification?{crmVerification}:{}),...(misaReadModelVerification?{misaReadModelVerification}:{}),...(projectTaskVerification?{projectTaskVerification}:{}),...(stockConcurrencyVerification?{stockConcurrencyVerification}:{}),...(globalSearchVerification?{globalSearchVerification}:{}),...(collaborationVerification?{collaborationVerification}:{}),...(safetyQualityVerification?{safetyQualityVerification}:{}),...(masterDataVerification?{masterDataVerification}:{}),...(catalogImportVerification?{catalogImportVerification}:{}),...(documentWorkspaceVerification?{documentWorkspaceVerification}:{}),...(simulationVerification?{simulationVerification}:{}),...(transactionUnitsVerification?{transactionUnitsVerification}:{}),...(transactionUnitsUpgradeVerification?{transactionUnitsUpgradeVerification}:{})},null,2));
  completed=true;console.log(JSON.stringify({schemaCompiled:true,migrations:files.length,entities:definitions.length,cloudAccess:false,testSuiteRun:false,projectTaskVerification:!!projectTaskVerification,crmVerification:!!crmVerification}));
  if(process.argv.includes('--serve-rpc'))await (await import('./local-business-rpc.mjs')).serveLocalBusinessRpc({directory,createConnection:async()=>{const client=new Client({host:'127.0.0.1',port,user:'postgres',password,database:'postgres',statement_timeout:20000});await client.connect();return client;}});
 }finally{await db?.end();if(started)await binary(binaries.pg_ctl,['-D',data,'-m','fast','-w','stop']);if(completed&&!process.argv.includes('--keep-local-data')){const temporaryRoot=path.resolve(root,'.tmp/erp-schema-build');const relative=path.relative(temporaryRoot,path.resolve(directory));if(!relative||relative.startsWith('..')||path.isAbsolute(relative))throw Error('Refuse cleanup outside generated cluster');await rm(directory,{recursive:true,force:false,maxRetries:5,retryDelay:100}).catch(error=>{if(["EPERM","EBUSY","ENOTEMPTY"].includes(error.code))console.warn(JSON.stringify({cleanupPending:relative,code:error.code}));else throw error;});}}

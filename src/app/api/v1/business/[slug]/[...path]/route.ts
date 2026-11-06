@@ -42,6 +42,11 @@ export async function GET(request:Request,{params}:Context){try{
  if(path.length===3&&path[0]==="attachments")return ok(await listBusinessAttachments(slug,parseWithSchema(businessKind,path[1]),parseWithSchema(z.string().uuid(),path[2])));
  if(path.length===4&&path[0]==="attachments")return await downloadBusinessAttachment(slug,parseWithSchema(businessKind,path[1]),parseWithSchema(z.string().uuid(),path[2]),parseWithSchema(z.string().uuid(),path[3]));
  if(path.length===1&&path[0]==="session")return ok(await readBusinessWorkspace(slug));
+ if(path.length===3&&path[0]==="items"&&path[2]==="units"){
+  const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(v=>!Number.isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v);
+  const query=parseWithSchema(z.object({on:date}).strict(),Object.fromEntries(new URL(request.url).searchParams));
+  return ok(await businessRpc("business_item_unit_options",{...await businessSessionArgs(slug),p_item_id:parseWithSchema(z.string().uuid(),path[1]),p_on:query.on}));
+ }
  if(path.length===2&&path[0]==="items"&&path[1]==="convert-quantity"){
   const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(v=>!Number.isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v);
   const d=parseWithSchema(z.object({itemId:z.string().uuid(),fromUnit:z.string().trim().min(1).max(30),quantity:z.coerce.number().finite().positive().max(1e15),on:date}).strict(),Object.fromEntries(new URL(request.url).searchParams));

@@ -79,6 +79,24 @@ describe("business MISA export API", () => {
   });
 });
 
+describe("transaction unit options API",()=>{
+ const itemId="a3547751-0208-4d79-b136-9194555e868a";
+ const params=(id=itemId)=>({params:Promise.resolve({slug:"acme",path:["items",id,"units"]})});
+ const request=(query="on=2026-11-05")=>new Request(`https://erp.invalid/api/v1/business/acme/items/${itemId}/units?${query}`);
+ beforeEach(()=>{vi.clearAllMocks();mocks.session.mockResolvedValue({p_hash:"server-session-hash",p_slug:"acme"});});
+ it("uses the authenticated tenant and the document date for the allowed unit list",async()=>{
+  const result={baseUnit:"cái",effectiveOn:"2026-11-05",options:[{unit:"cái",factor:1},{unit:"thùng",factor:12}]};mocks.rpc.mockResolvedValue(result);
+  const response=await GET(request(),params());expect(response.status).toBe(200);expect(response.headers.get("cache-control")).toBe("no-store");expect((await response.json()).data).toEqual(result);
+  expect(mocks.rpc).toHaveBeenCalledExactlyOnceWith("business_item_unit_options",{p_hash:"server-session-hash",p_slug:"acme",p_item_id:itemId,p_on:"2026-11-05"});
+ });
+ it.each(["on=2026-02-30","on=2026-11-05&tenant_id=injected",""])("rejects invalid effective dates or extra scope input: %s",async query=>{expect((await GET(request(query),params())).status).toBe(400);expect(mocks.rpc).not.toHaveBeenCalled();});
+ it("rejects an invalid item identifier before requesting units",async()=>{expect((await GET(request(),params("invalid"))).status).toBe(400);expect(mocks.rpc).not.toHaveBeenCalled();});
+ it("requires a business session and preserves a denied item scope",async()=>{
+  mocks.session.mockRejectedValueOnce(new AppError("AUTHENTICATION_REQUIRED"));expect((await GET(request(),params())).status).toBe(401);expect(mocks.rpc).not.toHaveBeenCalled();
+  mocks.rpc.mockRejectedValueOnce(new AppError("PERMISSION_DENIED"));expect((await GET(request(),params())).status).toBe(403);
+ });
+});
+
 describe("item quantity conversion API", () => {
   const itemId = "a3547751-0208-4d79-b136-9194555e868a";
   const params = () => ({ params: Promise.resolve({ slug: "acme", path: ["items", "convert-quantity"] }) });

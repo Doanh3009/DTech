@@ -1,0 +1,39 @@
+.area{display:grid;gap:var(--space-5);min-width:0}
+.header{display:grid;gap:var(--space-3);min-width:0}
+.heading{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);flex-wrap:wrap}
+.areaName{font-size:var(--font-body);line-height:var(--line-height-normal);font-weight:var(--font-weight-medium);color:var(--text-secondary)}
+.overview{display:inline-flex;align-items:center;gap:var(--space-2);min-height:44px;color:var(--text-secondary);font-size:var(--font-meta);text-decoration:none}
+.overview:hover{color:var(--color-primary)}
+.tabs{min-width:0;border-bottom:1px solid var(--border-default)}
+.tabs>div{display:flex;gap:var(--space-2);overflow:auto;scrollbar-width:thin;overscroll-behavior-x:contain}
+.tabs a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:var(--space-3) var(--space-4);border:1px solid transparent;border-bottom:2px solid transparent;border-radius:var(--radius-control) var(--radius-control) 0 0;white-space:nowrap;color:var(--text-secondary);font-size:var(--font-body);font-weight:var(--font-weight-medium);text-decoration:none}
+.tabs a:hover{background:var(--surface-2);color:var(--text-primary)}
+.tabs a[aria-current]{color:var(--color-primary-active);border-bottom-color:var(--color-primary);background:var(--color-primary-soft)}
+.tabs a:focus-visible,.context summary:focus-visible,.context a:focus-visible,.overview:focus-visible{outline:2px solid var(--color-primary);outline-offset:-2px}
+.context{min-width:0;max-width:100%;border:1px solid var(--border-subtle);border-radius:var(--radius-control);background:var(--surface)}
+.context summary{display:flex;align-items:center;gap:var(--space-2);min-height:44px;padding:var(--space-2) var(--space-3);font-size:var(--font-meta);color:var(--text-secondary);cursor:pointer;list-style:none}
+.context summary::-webkit-details-marker{display:none}
+.context summary svg:last-child{margin-left:auto}
+.context[open] summary svg:last-child{transform:rotate(180deg)}
+.contextLinks{display:flex;gap:var(--space-2);flex-wrap:wrap;padding:0 var(--space-3) var(--space-3)}
+.context a{display:inline-flex;align-items:center;min-height:44px;padding:var(--space-2) var(--space-3);border-radius:var(--radius-control);color:var(--text-secondary);font-size:var(--font-meta);text-decoration:none}
+.context a:hover,.context a[aria-current]{background:var(--color-primary-soft);color:var(--color-primary-active)}
+.content{min-width:0}
+.launch{display:grid;gap:var(--space-4);min-width:0}
+.launchList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3)}
+.launchList>a{display:flex;align-items:center;gap:var(--space-3);min-height:64px;padding:var(--space-4);border:1px solid var(--border-default);border-radius:var(--radius-card);background:var(--surface);color:var(--text-primary);font-weight:var(--font-weight-medium);text-decoration:none}
+.launchList>a:hover{border-color:var(--color-primary);background:var(--color-primary-soft)}
+.launchList>a>svg:last-child{margin-left:auto;color:var(--text-muted);flex-shrink:0}
+.setup summary{display:flex;align-items:center;gap:var(--space-2);min-height:44px;padding:var(--space-3) 0;color:var(--text-secondary);font-size:var(--font-meta);cursor:pointer;list-style:none}
+.setup summary::-webkit-details-marker{display:none}
+.setup summary svg:last-child{margin-left:auto}
+.setup[open] summary svg:last-child{transform:rotate(180deg)}
+.sidebarAreas{display:grid;gap:var(--space-1);padding-top:var(--space-3)}
+.sidebarAreas>a{font-weight:var(--font-weight-medium)}
+.sidebarSetup{margin-top:var(--space-4);border-top:1px solid var(--border-subtle);padding-top:var(--space-2)}
+.sidebarSetup summary{display:flex;align-items:center;gap:var(--space-2);min-height:44px;color:var(--text-secondary);font-size:var(--font-meta);cursor:pointer;list-style:none}
+.sidebarSetup summary::-webkit-details-marker{display:none}
+.sidebarSetup summary>svg:last-child{margin-left:auto}
+.sidebarSetup[open] summary>svg:last-child{transform:rotate(180deg)}
+.searchResults{display:grid;gap:var(--space-1);margin-top:var(--space-3)}
+@media(max-width:767px){.area{gap:var(--space-4)}.launchList{grid-template-columns:minmax(0,1fr)}.tabs a{font-size:var(--font-meta);padding-inline:var(--space-3);min-height:48px}.context summary,.setup summary,.sidebarSetup summary{min-height:48px}.sidebarAreas{grid-template-columns:minmax(0,1fr)}}

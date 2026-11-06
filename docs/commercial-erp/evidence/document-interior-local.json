@@ -1,0 +1,670 @@
+{
+  "generatedAt": "2026-11-05T07:37:01.970Z",
+  "scope": "Development UI fixture using actual BusinessRecords/document workbench/line/receiving components, synthetic stateful API mocks. No native SQL, real tenant, authorization, provider or production acceptance.",
+  "origin": "http://127.0.0.1:3102",
+  "browser": {
+    "passed": true,
+    "capturedScreens": 41,
+    "representativeScreens": 12,
+    "checks": [
+      "dirty_navigation_cancel_1440x1000",
+      "parent_save_get_inline_line_1440x1000",
+      "line_edit_cas_1440x1000",
+      "release_then_partial_receipt_1440x1000",
+      "receipt_save_get_post_get_1440x1000",
+      "matching_refresh_1440x1000",
+      "workbench_footer_forms_1440x1000",
+      "dirty_navigation_cancel_768x1000",
+      "parent_save_get_inline_line_768x1000",
+      "line_edit_cas_768x1000",
+      "release_then_partial_receipt_768x1000",
+      "receipt_save_get_post_get_768x1000",
+      "matching_refresh_768x1000",
+      "workbench_footer_forms_768x1000",
+      "dirty_navigation_cancel_390x1000",
+      "parent_save_get_inline_line_390x1000",
+      "line_edit_cas_390x1000",
+      "release_then_partial_receipt_390x1000",
+      "receipt_save_get_post_get_390x1000",
+      "matching_refresh_390x1000",
+      "workbench_footer_forms_390x1000",
+      "dirty_navigation_cancel_390x620",
+      "parent_save_get_inline_line_390x620",
+      "line_edit_cas_390x620",
+      "release_then_partial_receipt_390x620",
+      "receipt_save_get_post_get_390x620",
+      "matching_refresh_390x620",
+      "workbench_footer_forms_390x620",
+      "lost_receipt_response_same_command_replay"
+    ],
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 768,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 620
+      }
+    ],
+    "footerActionBoundsVerified": true,
+    "initialLineFocusVisible": true,
+    "harnessSha256": "d506736ff9118805956aa4e00ce0b3b075fc636d321c1ec253e69933f7e4d4ef",
+    "pageErrors": [],
+    "apiFailures": [],
+    "mockErrors": [],
+    "blockedRealWrites": [],
+    "expectedLostResponses": 1
+  },
+  "geometry": [
+    {
+      "name": "released-readonly",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "new-document-draft",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-parent-inline-editor",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-entry-conversion",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-line-grid",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-edit",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "order-review",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "partial-receiving",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-draft",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-posted-match",
+      "width": 1440,
+      "height": 1000,
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "released-readonly",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "new-document-draft",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-parent-inline-editor",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-entry-conversion",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-line-grid",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-edit",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "order-review",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "partial-receiving",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-draft",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-approved",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-posted-match",
+      "width": 768,
+      "height": 1000,
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "released-readonly",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "new-document-draft",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-parent-inline-editor",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-entry-conversion",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-line-grid",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-edit",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "order-review",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "partial-receiving",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-draft",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-posted-match",
+      "width": 390,
+      "height": 1000,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "released-readonly",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "new-document-draft",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-parent-inline-editor",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-entry-conversion",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-line-grid",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-edit",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "order-review",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "partial-receiving",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-draft",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-posted-match",
+      "width": 390,
+      "height": 620,
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    }
+  ],
+  "cases": [
+    {
+      "viewport": "1440x1000",
+      "policy": "not-required",
+      "orderStatus": "released",
+      "baseQuantity": 36,
+      "entryQuantity": 3,
+      "receiptStatus": "posted",
+      "receivedQuantity": 12,
+      "matching": {
+        "ordered": 36000,
+        "received_agreed": 12000,
+        "received_actual": 12000,
+        "invoiced": 0,
+        "payable": 0
+      }
+    },
+    {
+      "viewport": "768x1000",
+      "policy": "required-and-approved",
+      "orderStatus": "released",
+      "baseQuantity": 36,
+      "entryQuantity": 3,
+      "receiptStatus": "posted",
+      "receivedQuantity": 12,
+      "matching": {
+        "ordered": 36000,
+        "received_agreed": 12000,
+        "received_actual": 12000,
+        "invoiced": 0,
+        "payable": 0
+      }
+    },
+    {
+      "viewport": "390x1000",
+      "policy": "not-required",
+      "orderStatus": "released",
+      "baseQuantity": 36,
+      "entryQuantity": 3,
+      "receiptStatus": "posted",
+      "receivedQuantity": 12,
+      "matching": {
+        "ordered": 36000,
+        "received_agreed": 12000,
+        "received_actual": 12000,
+        "invoiced": 0,
+        "payable": 0
+      }
+    },
+    {
+      "viewport": "390x620",
+      "policy": "not-required",
+      "orderStatus": "released",
+      "baseQuantity": 36,
+      "entryQuantity": 3,
+      "receiptStatus": "posted",
+      "receivedQuantity": 12,
+      "matching": {
+        "ordered": 36000,
+        "received_agreed": 12000,
+        "received_actual": 12000,
+        "invoiced": 0,
+        "payable": 0
+      }
+    }
+  ],
+  "receiptReplay": {
+    "fixture": "390x1000",
+    "attempts": 2,
+    "requestId": "174394c2-1f40-4694-ab0f-8405096912c3",
+    "recordId": "f8743a28-ac44-4216-a93d-a5fb6664d661",
+    "payloadSha256": "bd5fb74d4ca86401ad0ae7627cf6c592aa7226e15d365c32462b3bc0e3fb08f6",
+    "samePayload": true,
+    "singleFixtureReceipt": true,
+    "scope": "Client retries one mocked receipt save after its first mocked response is lost; SQL exactly-once behavior is not established by this fixture."
+  },
+  "representativeScreens": [
+    {
+      "name": "released-readonly",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-released-readonly.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "new-document-draft",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-new-document-draft.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": false,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-parent-inline-editor",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-saved-parent-inline-editor.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-entry-conversion",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-line-entry-conversion.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "saved-line-grid",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-saved-line-grid.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-edit",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-line-edit.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "partial-receiving",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-partial-receiving.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-posted-match",
+      "width": 1440,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/1440x1000-receipt-posted-match.png",
+      "drawerWidth": 1408,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-approved",
+      "width": 768,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/768x1000-receipt-approved.png",
+      "drawerWidth": 736,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-entry-conversion",
+      "width": 390,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/390x1000-line-entry-conversion.png",
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "receipt-posted-match",
+      "width": 390,
+      "height": 1000,
+      "screenshot": "docs/ui-evidence/document-interior-local/390x1000-receipt-posted-match.png",
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    },
+    {
+      "name": "line-edit",
+      "width": 390,
+      "height": 620,
+      "screenshot": "docs/ui-evidence/document-interior-local/390x620-line-edit.png",
+      "drawerWidth": 366,
+      "bodyScrollable": true,
+      "footerPinned": true,
+      "nestedForms": 0
+    }
+  ],
+  "relatedChecks": {
+    "unit": {
+      "passed": 2162,
+      "skipped": 37,
+      "failed": 0,
+      "passedFiles": 250,
+      "skippedFiles": 1,
+      "scope": "Repository unit verification on 2026-11-05; does not establish business acceptance"
+    },
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 5
+    },
+    "localBuild": {
+      "passed": true
+    }
+  },
+  "boundaries": {
+    "statefulBrowserMocks": true,
+    "syntheticDataOnly": true,
+    "realNetworkWrites": 0,
+    "realTenantLogin": false,
+    "nativeSqlVerifiedByThisArtifact": false,
+    "authorizationVerifiedByThisArtifact": false,
+    "productionVerifiedByThisArtifact": false,
+    "externalProvidersUsed": false,
+    "all82RequirementsAccepted": false
+  },
+  "limitations": [
+    "One item is received per new receipt; cumulative remaining quantity by item is not supplied by the current receiving read model.",
+    "Purchase matching values, policy decisions and receipt state changes are synthetic API responses; they do not establish real stock, finance or multi-actor authorization behavior.",
+    "Geometry checks bound the document, footer container and each footer action, reject nested forms, and verify initial line-entry focus is visible; they do not establish usability of every screen/state.",
+    "No deployment, cloud migration or real-customer readiness conclusion follows from this local UI artifact."
+  ]
+}

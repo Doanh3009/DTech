@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-11-05T07:31:47.851Z",
+  "target": "tcjjhxqtreemccdbvyza",
+  "environment": "development",
+  "filename": "202611040001_business_transaction_units.sql",
+  "sha256": "e3224770445fd7a9cfaed4a4876ce8d9ea020d339ed9ee179964cb2e654d7c3d",
+  "migrationsBefore": 161,
+  "migrationsAfter": 162,
+  "seedExecuted": false,
+  "rolesApplied": false,
+  "vaultChanged": false,
+  "existingDataUnchanged": true,
+  "verifiedDimensions": [
+    "accounts",
+    "audit",
+    "commands",
+    "creditTotal",
+    "debitTotal",
+    "entities",
+    "items",
+    "journalLines",
+    "tables",
+    "tenants"
+  ],
+  "tenants": 6,
+  "accounts": 18,
+  "tables": {
+    "purchase_lines": {
+      "digest": "8a014d18b176c842bc794905b0695c3b",
+      "rows": 36
+    },
+    "purchase_receipts": {
+      "digest": "ba8160dcef337ef380f22f15ee400bf7",
+      "rows": 24
+    },
+    "sales_lines": {
+      "digest": "9abccf72bb1c8974d4ded664db63e1db",
+      "rows": 42
+    },
+    "stock_moves": {
+      "digest": "8695ed558220503d5bf78831a02f26f0",
+      "rows": 162
+    }
+  },
+  "acl": {
+    "completeSnapshots": true,
+    "normalizerPrivate": true,
+    "previousSavePrivate": true,
+    "unitOptionsServerOnly": true
+  },
+  "nativeVerificationSuites": 22
+}
